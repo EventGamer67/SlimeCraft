@@ -1,0 +1,11 @@
+{
+	"name": "Btns",
+	"plugin-id": "Sprite",
+	"sid": 891815499494656,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Inventory_Blank"
+	]
+}

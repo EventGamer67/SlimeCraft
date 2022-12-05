@@ -1,0 +1,106 @@
+{
+	"name": "Sprite",
+	"plugin-id": "Sprite",
+	"sid": 941961348496375,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Health",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 396923074251108
+		},
+		{
+			"name": "Mining_Speed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 742839122116720
+		},
+		{
+			"name": "Mining_fine",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 178539663821376
+		},
+		{
+			"name": "Is_On_Ground",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 928658623528871
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 127322259992768
+		},
+		{
+			"behaviorId": "wrap",
+			"name": "Wrap",
+			"sid": 868013704450332
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 684251968512752
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 256,
+						"height": 256,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2807060,
+						"collisionPoly": {
+							"points": [
+								0.12890625,
+								0.125,
+								0.875,
+								0.125,
+								0.875,
+								1,
+								0.12890625,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 256,
+						"height": 256,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2479500,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 712562762089591,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

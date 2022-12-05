@@ -1,0 +1,540 @@
+{
+	"name": "Menu_es",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 956837403548500
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 252386912874940,
+					"parameters": {
+						"scale": "0.85"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 364964027294502,
+					"parameters": {
+						"audio-file": "MusicBackground01",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"Back\""
+					}
+				}
+			],
+			"sid": 713691689381775,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-key",
+							"objectClass": "JSON",
+							"sid": 365707989814033,
+							"parameters": {
+								"path": "\"Data\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 512644798820143,
+							"parameters": {
+								"layout": "Loader"
+							}
+						}
+					],
+					"sid": 743492244262115
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 550337423793525,
+					"parameters": {
+						"object": "Button"
+					}
+				},
+				{
+					"id": "is-playing",
+					"objectClass": "Button",
+					"sid": 314000012402085,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"Pop\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 779579219008239,
+					"parameters": {
+						"instance-variable": "Active"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Button",
+					"sid": 398143638993105,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 270676617872038,
+					"parameters": {
+						"audio-file": "FX_Shoot01",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"Click\""
+					}
+				}
+			],
+			"sid": 873785637738809,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 731470762245795,
+							"parameters": {
+								"instance-variable": "Type",
+								"comparison": 0,
+								"value": "\"Play\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "StartGame",
+							"sid": 499103894186531,
+							"parameters": [
+								false
+							]
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 674370792173803,
+							"parameters": {
+								"key": "\"World\""
+							}
+						}
+					],
+					"sid": 131543809810859
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 884017548577863,
+							"parameters": {
+								"instance-variable": "Type",
+								"comparison": 0,
+								"value": "\"CreateNewWorld\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 630066190142646
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 405397056398599,
+							"parameters": {
+								"instance-variable": "Type",
+								"comparison": 0,
+								"value": "\"Language\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 287221285405611,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 796761454596955,
+									"parameters": {
+										"layer": "\"Language\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 454233447946825,
+									"parameters": {
+										"layer": "\"Language\"",
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 908838815667698
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 702737544012468
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 500216419811803,
+									"parameters": {
+										"layer": "\"Language\"",
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 795022178799220
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "Button",
+							"sid": 258387010226958,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"Pop\"",
+								"property": "size",
+								"end-x": "Self.Width+3",
+								"end-y": "Self.Height+6",
+								"time": "0.15",
+								"ease": "easeinoutcubic",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "yes"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 630250560688524
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Button",
+							"sid": 316174565662534,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 710278098385369
+				}
+			]
+		},
+		{
+			"functionName": "StartGame",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "New",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 451801853849306
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 298256485055420,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 439902999523372,
+							"parameters": {
+								"variable": "New"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 532785896969106
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 788115826463582
+						}
+					],
+					"actions": [],
+					"sid": 213238658175018
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-missing",
+					"objectClass": "LocalStorage",
+					"sid": 476486134639495,
+					"parameters": {
+						"key": "\"World\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "fade-volume",
+					"objectClass": "Audio",
+					"sid": 480359531194517,
+					"parameters": {
+						"tag": "\"Back\"",
+						"db": "-100",
+						"duration": "1",
+						"ending": "stop"
+					}
+				},
+				{
+					"id": "tween-value",
+					"objectClass": "GameManager",
+					"sid": 732969267725482,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"Fade\"",
+						"start-value": "0",
+						"end-value": "100",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 791869256532249
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 213642765049079,
+					"parameters": {
+						"layout": "Main"
+					}
+				}
+			],
+			"sid": 737834828232796
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 922907674012730,
+					"parameters": {
+						"key": "\"World\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 820119003364376
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-playing",
+					"objectClass": "GameManager",
+					"sid": 533737722146705,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"Fade\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-opacity",
+					"objectClass": "System",
+					"sid": 409565826726435,
+					"parameters": {
+						"layer": "\"Fade\"",
+						"opacity": "GameManager.Tween.Value(\"Fade\")"
+					}
+				}
+			],
+			"sid": 637063706107676
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 171461734597128,
+					"parameters": {
+						"object": "Sprite13"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 162472278915069,
+					"parameters": {
+						"layer": "\"Language\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 935660563549149,
+					"parameters": {
+						"audio-file": "FX_Shoot01",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"Click\""
+					}
+				}
+			],
+			"sid": 913342621158115,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 443278743480504,
+							"parameters": {
+								"path": "\"Player.Language\"",
+								"value": "Sprite13.Type"
+							}
+						}
+					],
+					"sid": 163805429659234,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 653987481543205,
+									"parameters": {
+										"object": "Text"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Text",
+									"sid": 960700534941972,
+									"parameters": {
+										"text": "JSON.Get(\"Languages.\"&Sprite13.Type&\".\"&Self.Type)"
+									}
+								}
+							],
+							"sid": 914782513107103
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-start",
+					"objectClass": "Touch",
+					"sid": 998854661325330
+				}
+			],
+			"actions": [],
+			"sid": 611905066771256,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 899184183239595,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "request-fullscreen",
+							"objectClass": "Browser",
+							"sid": 307973364803704,
+							"parameters": {
+								"mode": "stretch-scale-outer",
+								"navigation-ui": "hide"
+							}
+						}
+					],
+					"sid": 700820277669255
+				}
+			]
+		}
+	],
+	"sid": 743666173854903
+}

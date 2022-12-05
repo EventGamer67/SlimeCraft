@@ -1,0 +1,1096 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 31702,
+	"name": "Arrow_Rain",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Tilemap",
+			"name": "Tilemap",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "DrawingCanvas",
+			"name": "Drawing canvas",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Json",
+			"name": "JSON",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "shadowlight",
+			"name": "Shadow light",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Date",
+			"name": "Date",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Platform",
+			"name": "Platform",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "wrap",
+			"name": "Wrap",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Rotate",
+			"name": "Rotate",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "skymen_BetterOutline",
+			"name": "BetterOutline",
+			"author": "skymen",
+			"version": "1.4.0.3",
+			"bundled": false
+		}
+	],
+	"uniqueId": "hzewnjjqm0u",
+	"objectTypes": {
+		"items": [
+			"Terrain",
+			"Sprite",
+			"Drop",
+			"Sprite3",
+			"Arrow_Zone",
+			"GameManager",
+			"DrawingCanvas",
+			"Text",
+			"Sprite4",
+			"TiledBackground",
+			"Sprite5",
+			"Sprite6",
+			"Browser",
+			"TiledBackground2",
+			"Inventory",
+			"Drop_Zone",
+			"Inventory_Item",
+			"Particles",
+			"Touch",
+			"Keyboard",
+			"Movement_Button",
+			"Sprite2",
+			"TiledBackground3",
+			"Tree",
+			"Slider",
+			"Slider_Point",
+			"Sprite7",
+			"Obstacle",
+			"Ladder",
+			"Sign_Desk",
+			"InventoryBlank",
+			"Tilemap2",
+			"Sprite8",
+			"Crafted_Slot",
+			"Inventory_Blank",
+			"Sprite10",
+			"JSON",
+			"RecipeShape",
+			"Recipe_Current",
+			"AJAX",
+			"Tilemap_Back",
+			"Shatter",
+			"Player_Light",
+			"Light",
+			"ShadowLight",
+			"Sprite9",
+			"Torch_Light",
+			"Sprite11",
+			"ShatterEffect",
+			"Button",
+			"Cam",
+			"Sprite12",
+			"Audio",
+			"LocalStorage",
+			"Sprite13",
+			"ShatterView",
+			"Sprite14",
+			"Message_Text",
+			"Drop_Item",
+			"Sprite15",
+			"Progress_Back",
+			"Progress",
+			"Block_Brain",
+			"Timers",
+			"Date",
+			"Lupa",
+			"TiledBackground4",
+			"Sprite16"
+		],
+		"subfolders": []
+	},
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [
+			"Btns",
+			"Family1"
+		],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"Main",
+			"Repository",
+			"Menu",
+			"Loader"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [
+			"Main_es",
+			"Player",
+			"UI",
+			"Init",
+			"Menu_es",
+			"Loader_es"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [
+				{
+					"name": "MusicBackground01.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 232136961341358,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "FX_Shoot01.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 671119429742130,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "pop.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 961513470944447,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "cloth1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 866506178115342,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "cloth2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 151083132621216,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "cloth3.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 463111561294197,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "cloth4.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 288804322851061,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "grass1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 324516501793056,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "grass2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 164095530774042,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "grass3.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 943290085282500,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "grass4.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 479508191159564,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "gravel1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 859818019433463,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "gravel2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 756789457075955,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "gravel3.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 388161902518514,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "gravel4.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 828141449847466,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "sand1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 865613779015058,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "sand2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 375505799814030,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "sand3.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 712687250825408,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "sand4.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 540364368921079,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "snow1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 281527273159995,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "snow2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 948930271404295,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "snow3.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 707422575819439,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "snow4.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 808568055789450,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "stone1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 333093649025149,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "stone2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 523523329668632,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "stone3.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 426384895612216,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "stone4.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 999419012370547,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "wood1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 490768306725101,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "wood2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 890174752124189,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "wood3.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 179475946660642,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "wood4.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 551701468397737,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "Place"
+				},
+				{
+					"items": [
+						{
+							"name": "Hitstone1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 335410951310040,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitstone2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 303937400785263,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitstone3.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 328145010662001,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitstone4.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 757474618237840,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitstone5.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 351372140638362,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitstone6.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 811420427753587,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitcloth1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 974552384606712,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitcloth2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 341686067771094,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitcloth3.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 952082465708800,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitcloth4.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 736951897224829,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitgrass1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 319366834992563,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitgrass2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 264501559182152,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitgrass3.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 962801171433226,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitgrass4.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 743255499590326,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitgrass5.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 850030583512592,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitgrass6.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 652343552147656,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitgravel1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 538255356829951,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitgravel2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 890451081753690,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitgravel3.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 975081918106137,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitgravel4.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 187306324973532,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitladder1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 315814060163022,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitladder2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 317499798112072,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitladder3.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 974644752374329,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitladder4.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 945516864535055,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitladder5.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 445421192466230,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitsand1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 183426278448122,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitsand2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 897460787959424,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitsand3.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 171075852909218,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitsand4.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 517939720045101,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitsand5.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 560615178961056,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitsnow1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 276786490895385,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitsnow2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 376939014410179,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitsnow3.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 737398931664147,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitsnow4.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 779047791767032,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitwood1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 233726578248201,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitwood2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 967523045590679,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitwood3.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 546103768411462,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitwood4.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 503379144680280,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitwood5.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 371795863403653,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Hitwood6.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 893351645824546,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "Hit"
+				}
+			]
+		},
+		"music": {
+			"items": [],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 614433831299058,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 808662534216935,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 698332209435724,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 406059311269130,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 830989795027337,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 379826290613616,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 992298105985997,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [
+				{
+					"name": "Recipes.json",
+					"type": "application/json",
+					"sid": 437685128906041,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Config.json",
+					"type": "application/json",
+					"sid": 974172835653314,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Language.json",
+					"type": "application/json",
+					"sid": 380225346437580,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player.json",
+					"type": "application/json",
+					"sid": 404669212529197,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [
+			"Timeline 1"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"author": "",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": false,
+		"zAxisScale": "normalized",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": true,
+		"fullscreenMode": "scale-outer",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "landscape",
+		"webgpu": "auto",
+		"gpuPreference": "high-performance",
+		"scriptsType": "module",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "nearest",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "splash",
+		"preloadSounds": true,
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"autoReloadScriptsOnPreview": false,
+		"exportFileStructure": "flat"
+	},
+	"viewportWidth": 371,
+	"viewportHeight": 208,
+	"firstLayout": "Loader"
+}

@@ -1,0 +1,79 @@
+{
+	"name": "Sprite11",
+	"plugin-id": "Sprite",
+	"sid": 236150021014577,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Selected_Item_Index",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 111529335051827
+		},
+		{
+			"name": "Selected_Item_Type",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 925107494515108
+		},
+		{
+			"name": "Tile",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 824488089273089
+		},
+		{
+			"name": "Item_Type",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 951736887054778
+		},
+		{
+			"name": "Item_SubType",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 932781298702621
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 915374152087112
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 98,
+						"height": 98,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4904882,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 210781741063808,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

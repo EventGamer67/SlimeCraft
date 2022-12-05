@@ -1,0 +1,1884 @@
+{
+	"name": "Player",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-on-floor",
+					"objectClass": "Sprite",
+					"sid": 339574698913322,
+					"behaviorType": "Platform"
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Sprite",
+					"sid": 229998547901580,
+					"parameters": {
+						"object": "Ladder"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 627335571451447
+				}
+			],
+			"actions": [
+				{
+					"id": "set-rate",
+					"objectClass": "Particles",
+					"sid": 648305688929330,
+					"parameters": {
+						"rate": "80"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "Particles",
+					"sid": 624193898969520,
+					"parameters": {
+						"angle": "270"
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "Sprite",
+					"sid": 753794705496479,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"Fall\"",
+						"property": "size",
+						"end-x": "Self.Width>0? 20 : -20",
+						"end-y": "12",
+						"time": "0.1",
+						"ease": "easeoutsine",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no"
+					}
+				}
+			],
+			"sid": 584299584867881
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tweens-finished",
+					"objectClass": "Sprite",
+					"sid": 677337561214889,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"Fall\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "tween-two-properties",
+					"objectClass": "Sprite",
+					"sid": 206835606196855,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"Standart\"",
+						"property": "size",
+						"end-x": "Self.Width > 0? 16 : -16",
+						"end-y": "16",
+						"time": "0.1",
+						"ease": "easeoutsine",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no"
+					}
+				}
+			],
+			"sid": 850219782024662
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 441486763256061
+				}
+			],
+			"actions": [
+				{
+					"id": "scroll-to-position",
+					"objectClass": "System",
+					"sid": 200932804225860,
+					"parameters": {
+						"x": "lerp(scrollx,Sprite.X,0.05)",
+						"y": "lerp(scrollY,Sprite.Y-30,0.05)"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "Player_Light",
+					"sid": 598997607402173,
+					"parameters": {
+						"x": "Sprite.X",
+						"y": "Sprite.Y"
+					}
+				}
+			],
+			"sid": 667970289491570
+		},
+		{
+			"functionName": "Player_Message",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Message",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 160620284638583
+				},
+				{
+					"name": "Duration",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 433081273444901
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 426240373930261,
+					"parameters": {
+						"object-to-create": "Message_Text",
+						"layer": "\"Layer 1\"",
+						"x": "Sprite.X",
+						"y": "Sprite.Y+10",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "typewriter-text",
+					"objectClass": "Message_Text",
+					"sid": 833355980744095,
+					"parameters": {
+						"text": "JSON.Get(\"Languages.\"&JSON.Get(\"Player.Language\")&\".\"&Message)",
+						"duration": "Duration"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Message_Text",
+					"sid": 417713617356012,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetY",
+						"end-value": "Self.Y-8",
+						"time": "Duration+0.2",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 935282770112710
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Message_Text",
+					"sid": 537724990751798,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "0",
+						"time": "Duration+0.3",
+						"ease": "default",
+						"destroy-on-complete": "yes",
+						"loop": "no",
+						"ping-pong": "no"
+					}
+				}
+			],
+			"sid": 327658829279139
+		},
+		{
+			"functionName": "Drop_Item",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Count",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 374348071304253
+				},
+				{
+					"name": "Item",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 314496793928151
+				},
+				{
+					"name": "X",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 454381776555828
+				},
+				{
+					"name": "Y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 130401027578962
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 296610340255137,
+					"parameters": {
+						"object-to-create": "Drop_Item",
+						"layer": "\"BG\"",
+						"x": "X",
+						"y": "Y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Drop_Item",
+					"sid": 626103479377656,
+					"parameters": {
+						"instance-variable": "Type",
+						"value": "Item"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Drop_Item",
+					"sid": 346276589907354,
+					"parameters": {
+						"animation": "Item",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Drop_Item",
+					"sid": 490388430892710,
+					"parameters": {
+						"instance-variable": "Count_",
+						"value": "Count"
+					}
+				}
+			],
+			"sid": 645502988959202
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Main",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "Mining",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 359069394900937
+				},
+				{
+					"eventType": "variable",
+					"name": "Building",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 234759987752359
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Mining",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-in-touch",
+									"objectClass": "Touch",
+									"sid": 594945157433517
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 991669636544874,
+									"parameters": {
+										"tile-x": "Terrain.PositionToTileX(Touch.X)",
+										"tile-y": "Terrain.PositionToTileY(Touch.Y)",
+										"comparison": 1,
+										"tile": "-1"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 775059796349203,
+									"parameters": {
+										"variable": "Building"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "Shatter",
+									"sid": 445681372539696,
+									"parameters": {
+										"x": "Terrain.SnapX(Touch.X)",
+										"y": "Terrain.SnapY(Touch.Y)"
+									}
+								}
+							],
+							"sid": 604864282854122,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Shatter",
+											"sid": 777778056988014,
+											"parameters": {
+												"instance-variable": "Target_Tile_X",
+												"comparison": 0,
+												"value": "Terrain.PositionToTileX(Shatter.X)"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Shatter",
+											"sid": 684175971268463,
+											"parameters": {
+												"instance-variable": "Target_Tile_Y",
+												"comparison": 0,
+												"value": "Terrain.PositionToTileX(Shatter.Y)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-rate",
+											"objectClass": "ShatterEffect",
+											"sid": 429853884348982,
+											"parameters": {
+												"rate": "18"
+											}
+										}
+									],
+									"sid": 929459520344219,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-tag-playing",
+													"objectClass": "Audio",
+													"sid": 999925598155210,
+													"parameters": {
+														"tag": "\"Hit\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [],
+											"sid": 559272600132115,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "has-key",
+															"objectClass": "JSON",
+															"sid": 875902131659138,
+															"parameters": {
+																"path": "\"Settings.Config.Tiles.\"&Terrain.TileAt(Shatter.Target_Tile_X, Shatter.Target_Tile_Y)&\".HitSound\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 144323154815391,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Shatter.Target_Tile_X, Shatter.Target_Tile_Y)&\".HitSound\")",
+																"loop": "not-looping",
+																"volume": "0",
+																"stereo-pan": "0",
+																"tag-optional": "\"Hit\""
+															}
+														}
+													],
+													"sid": 216510774591393
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 155042488267519
+														}
+													],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 281461670207214,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "\"Hitstone2\"",
+																"loop": "not-looping",
+																"volume": "0",
+																"stereo-pan": "0",
+																"tag-optional": "\"Hit\""
+															}
+														}
+													],
+													"sid": 924359650822248
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 371246131007027
+										}
+									],
+									"actions": [],
+									"sid": 522382833876434,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 454991740782894
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "Shatter",
+													"sid": 529622405813321,
+													"parameters": {
+														"frame-number": "0"
+													}
+												},
+												{
+													"id": "set-rate",
+													"objectClass": "ShatterEffect",
+													"sid": 896266536999623,
+													"parameters": {
+														"rate": "0"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "Shatter",
+													"sid": 668117632698077,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Shatter",
+													"sid": 633091131666777,
+													"parameters": {
+														"instance-variable": "Target_Tile_X",
+														"value": "Terrain.PositionToTileX(Self.X)"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Shatter",
+													"sid": 306989918400266,
+													"parameters": {
+														"instance-variable": "Target_Tile_Y",
+														"value": "Terrain.PositionToTileY(Self.Y)"
+													}
+												},
+												{
+													"id": "set-animation-speed",
+													"objectClass": "Shatter",
+													"sid": 299544487244558,
+													"parameters": {
+														"speed": "Functions.Define_Mining_Speed(Sprite.Mining_Speed,1,Terrain.TileAt(Terrain.PositionToTileX(Touch.X),Terrain.PositionToTileY(Touch.Y)),Sprite11.Item_SubType)"
+													}
+												},
+												{
+													"id": "set-position",
+													"objectClass": "ShatterEffect",
+													"sid": 120880142862412,
+													"parameters": {
+														"x": "Shatter.X",
+														"y": "Shatter.Y"
+													}
+												}
+											],
+											"sid": 448296963333048
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 976636158916234
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 185921034213109
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Shatter",
+									"sid": 728889544477397,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-rate",
+									"objectClass": "ShatterEffect",
+									"sid": 104382247348558,
+									"parameters": {
+										"rate": "0"
+									}
+								},
+								{
+									"id": "set-animation-speed",
+									"objectClass": "Shatter",
+									"sid": 804100931201021,
+									"parameters": {
+										"speed": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Shatter",
+									"sid": 696801613417193,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 739944602671223
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "Shatter",
+									"sid": 413100777112412,
+									"parameters": {
+										"comparison": 0,
+										"number": "Shatter.AnimationFrameCount-1"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 164121092832957,
+									"parameters": {
+										"tile-x": "Terrain.PositionToTileX(Shatter.X)",
+										"tile-y": "Terrain.PositionToTileY(Shatter.Y)",
+										"comparison": 1,
+										"tile": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 320872642574889,
+									"parameters": {
+										"variable": "Mining",
+										"value": "true"
+									}
+								},
+								{
+									"callFunction": "Drop_Item",
+									"sid": 556236078753166,
+									"parameters": [
+										"1",
+										"JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Shatter.Target_Tile_X, Shatter.Target_Tile_Y)&\".No_Silk_Drop\")",
+										"Shatter.X+random(-5,5)",
+										"Shatter.Y+random(-5,5)"
+									]
+								},
+								{
+									"id": "set-rate",
+									"objectClass": "ShatterEffect",
+									"sid": 841852734262041,
+									"parameters": {
+										"rate": "0"
+									}
+								}
+							],
+							"sid": 427957457417562,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-key",
+											"objectClass": "JSON",
+											"sid": 724897635363174,
+											"parameters": {
+												"path": "\"Settings.Config.Tiles.\"&Terrain.TileAt(Shatter.Target_Tile_X, Shatter.Target_Tile_Y)&\".DestroySound\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 499040654541248,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Shatter.Target_Tile_X, Shatter.Target_Tile_Y)&\".DestroySound\")",
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
+										}
+									],
+									"sid": 895446952226619
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 932935150181542
+										}
+									],
+									"actions": [
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 292353326914201,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "\"stone1\"",
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
+										}
+									],
+									"sid": 627378878803744
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "erase-tile",
+											"objectClass": "Terrain",
+											"sid": 122099593621810,
+											"parameters": {
+												"tile-x": "Shatter.Target_Tile_X",
+												"tile-y": "Shatter.Target_Tile_Y"
+											}
+										}
+									],
+									"sid": 293882403086635
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Sprite11",
+											"sid": 213809194646220,
+											"parameters": {
+												"instance-variable": "Item_Type",
+												"comparison": 0,
+												"value": "\"Instrument\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 876461013718616,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-comparison",
+													"objectClass": "System",
+													"sid": 830961935150805,
+													"parameters": {
+														"object": "Inventory_Item",
+														"expression": "Inventory_Item.PosX",
+														"comparison": 0,
+														"value": "Sprite11.Selected_Item_Index"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "Inventory_Item",
+													"sid": 794438008355988,
+													"parameters": {
+														"instance-variable": "Count_",
+														"value": "1"
+													}
+												},
+												{
+													"id": "set-at-xy",
+													"objectClass": "Inventory",
+													"sid": 201637296318666,
+													"parameters": {
+														"x": "Inventory_Item.PosX",
+														"y": "1",
+														"value": "Inventory.At(loopindex(\"x\"),1)-1"
+													}
+												},
+												{
+													"callFunction": "Draw_Item_Durability",
+													"sid": 282496766989237,
+													"parameters": [
+														"Inventory_Item.UID"
+													]
+												}
+											],
+											"sid": 360405535060298
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-touch-start",
+									"objectClass": "Touch",
+									"sid": 194537848817574
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 471361648340037,
+									"parameters": {
+										"tile-x": "Terrain.PositionToTileX(Touch.X)",
+										"tile-y": "Terrain.PositionToTileY(Touch.Y)",
+										"comparison": 1,
+										"tile": "-1"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 531198305201039,
+									"parameters": {
+										"variable": "Building"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 951695219295966,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 651148900279416
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "ShatterView",
+											"sid": 584709419081766,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "Sprite14",
+											"sid": 583720589370753,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "Shatter",
+											"sid": 713454377475204,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "Shatter",
+											"sid": 474969495971138,
+											"parameters": {
+												"frame-number": "0"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "Shatter",
+											"sid": 455974307515186,
+											"parameters": {
+												"x": "Terrain.SnapX(Touch.X)",
+												"y": "Terrain.SnapY(Touch.Y)"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Shatter",
+											"sid": 234063685178575,
+											"parameters": {
+												"instance-variable": "Target_Tile_X",
+												"value": "Terrain.PositionToTileX(Self.X)"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Shatter",
+											"sid": 341823835007527,
+											"parameters": {
+												"instance-variable": "Target_Tile_Y",
+												"value": "Terrain.PositionToTileY(Self.Y)"
+											}
+										},
+										{
+											"id": "set-animation-speed",
+											"objectClass": "Shatter",
+											"sid": 951948462261938,
+											"parameters": {
+												"speed": "Functions.Define_Mining_Speed(Sprite.Mining_Speed,1,Terrain.TileAt(Terrain.PositionToTileX(Touch.X),Terrain.PositionToTileY(Touch.Y)),Sprite11.Item_SubType)"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "ShatterEffect",
+											"sid": 960253087603905,
+											"parameters": {
+												"x": "Shatter.X",
+												"y": "Shatter.Y"
+											}
+										}
+									],
+									"sid": 488452195866976
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-touch-end",
+									"objectClass": "Touch",
+									"sid": 796404885133391
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 795641716095242,
+									"parameters": {
+										"variable": "Mining"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 709520101262546,
+									"parameters": {
+										"variable": "Mining",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 322339481791932
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-touch-end",
+									"objectClass": "Touch",
+									"sid": 253568957846739
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 492723690033765,
+									"parameters": {
+										"variable": "Building"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 441747774708843,
+									"parameters": {
+										"variable": "Building",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 825199411915605
+						}
+					],
+					"sid": 448200272672768
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Building",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "TileX",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 872302929692316
+						},
+						{
+							"eventType": "variable",
+							"name": "TileY",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 485708808395145
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-in-touch",
+									"objectClass": "Touch",
+									"sid": 342872309569841
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 356138391080592,
+									"parameters": {
+										"tile-x": "Terrain.PositionToTileX(Touch.X)",
+										"tile-y": "Terrain.PositionToTileY(Touch.Y)",
+										"comparison": 0,
+										"tile": "-1"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 548246535990151,
+									"parameters": {
+										"variable": "Mining"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 663299248743532,
+									"parameters": {
+										"variable": "TileX",
+										"value": "Terrain.PositionToTileX(Touch.X)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 637591408235659,
+									"parameters": {
+										"variable": "TileY",
+										"value": "Terrain.PositionToTileY(Touch.Y)"
+									}
+								}
+							],
+							"sid": 369446714426785,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-tile-at",
+											"objectClass": "Terrain",
+											"sid": 366397109266040,
+											"parameters": {
+												"tile-x": "TileX-1",
+												"tile-y": "TileY-1",
+												"comparison": 1,
+												"tile": "-1"
+											}
+										},
+										{
+											"id": "compare-tile-at",
+											"objectClass": "Terrain",
+											"sid": 536341122473020,
+											"parameters": {
+												"tile-x": "TileX",
+												"tile-y": "TileY-1",
+												"comparison": 1,
+												"tile": "-1"
+											}
+										},
+										{
+											"id": "compare-tile-at",
+											"objectClass": "Terrain",
+											"sid": 987663878017083,
+											"parameters": {
+												"tile-x": "TileX+1",
+												"tile-y": "TileY-1",
+												"comparison": 1,
+												"tile": "-1"
+											}
+										},
+										{
+											"id": "compare-tile-at",
+											"objectClass": "Terrain",
+											"sid": 139110525568423,
+											"parameters": {
+												"tile-x": "TileX-1",
+												"tile-y": "TileY",
+												"comparison": 1,
+												"tile": "-1"
+											}
+										},
+										{
+											"id": "compare-tile-at",
+											"objectClass": "Terrain",
+											"sid": 989160878769533,
+											"parameters": {
+												"tile-x": "TileX+1",
+												"tile-y": "TileY",
+												"comparison": 1,
+												"tile": "-1"
+											}
+										},
+										{
+											"id": "compare-tile-at",
+											"objectClass": "Terrain",
+											"sid": 945930527202453,
+											"parameters": {
+												"tile-x": "TileX-1",
+												"tile-y": "TileY+1",
+												"comparison": 1,
+												"tile": "-1"
+											}
+										},
+										{
+											"id": "compare-tile-at",
+											"objectClass": "Terrain",
+											"sid": 475710109018770,
+											"parameters": {
+												"tile-x": "TileX",
+												"tile-y": "TileY+1",
+												"comparison": 1,
+												"tile": "-1"
+											}
+										},
+										{
+											"id": "compare-tile-at",
+											"objectClass": "Terrain",
+											"sid": 561811502190820,
+											"parameters": {
+												"tile-x": "TileX+1",
+												"tile-y": "TileY+1",
+												"comparison": 1,
+												"tile": "-1"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 331597576159374,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-comparison",
+													"objectClass": "System",
+													"sid": 954565814192087,
+													"parameters": {
+														"object": "Inventory_Item",
+														"expression": "Inventory_Item.PosX",
+														"comparison": 0,
+														"value": "Sprite11.Selected_Item_Index"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Inventory_Item",
+													"sid": 587402910884853,
+													"parameters": {
+														"instance-variable": "Using",
+														"comparison": 0,
+														"value": "\"Block\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 327417485708323,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-between-values",
+															"objectClass": "System",
+															"sid": 494306666108983,
+															"parameters": {
+																"value": "distance(Touch.X,Touch.Y,Sprite.X,Sprite.Y)",
+																"lower-bound": "16",
+																"upper-bound": "50"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 233188655116115,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Sprite11",
+																	"sid": 612806036012668,
+																	"parameters": {
+																		"instance-variable": "Selected_Item_Type",
+																		"comparison": 1,
+																		"value": "\"-1\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-tile",
+																	"objectClass": "Terrain",
+																	"sid": 230293702011760,
+																	"parameters": {
+																		"tile-x": "TileX",
+																		"tile-y": "TileY",
+																		"tile": "Sprite11.Tile",
+																		"state": "normal"
+																	}
+																}
+															],
+															"sid": 414695417391300,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "compare-tile-at",
+																			"objectClass": "Terrain",
+																			"sid": 235433023159297,
+																			"parameters": {
+																				"tile-x": "TileX",
+																				"tile-y": "TileY",
+																				"comparison": 0,
+																				"tile": "61"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-tile",
+																			"objectClass": "Terrain",
+																			"sid": 412273961983218,
+																			"parameters": {
+																				"tile-x": "TileX",
+																				"tile-y": "TileY",
+																				"tile": "44",
+																				"state": "normal"
+																			}
+																		}
+																	],
+																	"sid": 482729102302493
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [
+																		{
+																			"id": "set-at-xy",
+																			"objectClass": "Inventory",
+																			"sid": 230978460064522,
+																			"parameters": {
+																				"x": "Sprite11.Selected_Item_Index",
+																				"y": "1",
+																				"value": "Inventory.At(Sprite11.Selected_Item_Index,1)-1"
+																			}
+																		},
+																		{
+																			"id": "subtract-from-instvar",
+																			"objectClass": "Inventory_Item",
+																			"sid": 709849863037081,
+																			"parameters": {
+																				"instance-variable": "Count_",
+																				"value": "1"
+																			}
+																		},
+																		{
+																			"id": "set-boolean-eventvar",
+																			"objectClass": "System",
+																			"sid": 652440633037821,
+																			"parameters": {
+																				"variable": "Building",
+																				"value": "true"
+																			}
+																		}
+																	],
+																	"sid": 796213307387479,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "compare-instance-variable",
+																					"objectClass": "Inventory_Item",
+																					"sid": 316791372191536,
+																					"parameters": {
+																						"instance-variable": "Count_",
+																						"comparison": 3,
+																						"value": "0"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-instvar-value",
+																					"objectClass": "Sprite11",
+																					"sid": 209339721302011,
+																					"parameters": {
+																						"instance-variable": "Selected_Item_Type",
+																						"value": "\"-1\""
+																					}
+																				},
+																				{
+																					"id": "set-at-xy",
+																					"objectClass": "Inventory",
+																					"sid": 352819068719878,
+																					"parameters": {
+																						"x": "Sprite11.Selected_Item_Index",
+																						"y": "0",
+																						"value": "0"
+																					}
+																				},
+																				{
+																					"id": "destroy",
+																					"objectClass": "Inventory_Item",
+																					"sid": 253181515869985
+																				}
+																			],
+																			"sid": 800492887095300
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "pick-children",
+																					"objectClass": "Inventory_Item",
+																					"sid": 252036264348806,
+																					"parameters": {
+																						"child": "Text",
+																						"which": "own"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-text",
+																					"objectClass": "Text",
+																					"sid": 423673223168408,
+																					"parameters": {
+																						"text": "Inventory_Item.Count_"
+																					}
+																				}
+																			],
+																			"sid": 933495848124274
+																		}
+																	]
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 608534236671746,
+																	"parameters": {
+																		"first-value": "JSON.Get(\"Settings.Config.Tiles.\"&Sprite11.Tile&\".Interface\")",
+																		"comparison": 1,
+																		"second-value": "0"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 882521636155918,
+																	"parameters": {
+																		"object-to-create": "Block_Brain",
+																		"layer": "0",
+																		"x": "Terrain.TileToPositionX(TileX)",
+																		"y": "Terrain.TileToPositionY(TileY)",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "Block_Brain",
+																	"sid": 168796136737503,
+																	"parameters": {
+																		"instance-variable": "Interface",
+																		"value": "JSON.Get(\"Settings.Config.Tiles.\"&Sprite11.Tile&\".Interface\")"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "Block_Brain",
+																	"sid": 824409322868256,
+																	"parameters": {
+																		"instance-variable": "Link_X",
+																		"value": "TileX"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "Block_Brain",
+																	"sid": 173681398394184,
+																	"parameters": {
+																		"instance-variable": "Link_Y",
+																		"value": "TileY"
+																	}
+																},
+																{
+																	"id": "set-object",
+																	"objectClass": "JSON",
+																	"sid": 454997709739123,
+																	"parameters": {
+																		"path": "\"Player.World.\"&JSON.Get(\"Settings.Config.Tiles.\"&Sprite11.Tile&\".Interface\")&\".\"&str(TileX&\",\"&TileY)"
+																	}
+																}
+															],
+															"sid": 516596917916199,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "compare-instance-variable",
+																			"objectClass": "Sprite11",
+																			"sid": 835503066401666,
+																			"parameters": {
+																				"instance-variable": "Tile",
+																				"comparison": 0,
+																				"value": "7"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-array",
+																			"objectClass": "JSON",
+																			"sid": 573500982864937,
+																			"parameters": {
+																				"path": "\"Player.World.\"&JSON.Get(\"Settings.Config.Tiles.\"&Sprite11.Tile&\".Interface\")&\".\"&str(TileX&\",\"&TileY)",
+																				"size": "JSON.Get(\"Settings.Config.Tiles.\"&Sprite11.Tile&\".Params.SizeX\")*JSON.Get(\"Settings.Config.Tiles.\"&Sprite11.Tile&\".Params.SizeY\")"
+																			}
+																		}
+																	],
+																	"sid": 399420637286710
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 387597234961025
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 803199276377335,
+													"parameters": {
+														"first-value": "distance(Touch.X,Touch.Y,Sprite.X,Sprite.Y)",
+														"comparison": 4,
+														"second-value": "50"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 536962351568779
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "Player_Message",
+													"sid": 801187269883535,
+													"parameters": [
+														"\"ToFar\"",
+														"0.3"
+													]
+												}
+											],
+											"sid": 137298710300098
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						}
+					],
+					"sid": 269617181867562
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Interactive",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap",
+									"objectClass": "Touch",
+									"sid": 613815975533735
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 413675753352257,
+									"parameters": {
+										"tile-x": "Terrain.PositionToTileX(Touch.X)",
+										"tile-y": "Terrain.PositionToTileY(Touch.Y)",
+										"comparison": 1,
+										"tile": "-1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 148834719595323,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 202654850395023,
+											"parameters": {
+												"first-value": "JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Terrain.PositionToTileX(Touch.X),Terrain.PositionToTileY(Touch.Y))&\".Interface\")",
+												"comparison": 1,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 762603977287596,
+											"parameters": {
+												"variable": "Current_Link",
+												"value": "Terrain.PositionToTileX(Touch.X)&\",\"&Terrain.PositionToTileY(Touch.Y)"
+											}
+										},
+										{
+											"id": "call-mapped-function",
+											"objectClass": "Functions",
+											"sid": 656029250357616,
+											"parameters": {
+												"name": "\"Interfaces\"",
+												"string": "JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Terrain.PositionToTileX(Touch.X),Terrain.PositionToTileY(Touch.Y))&\".Interface\")",
+												"forward-params": "0"
+											}
+										}
+									],
+									"sid": 780992267367728
+								}
+							]
+						}
+					],
+					"sid": 942056517152293
+				}
+			],
+			"sid": 268452022038563
+		},
+		{
+			"functionName": "Draw_Item_Durability",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "uid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 443770495992207
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 703809437826987,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Inventory_Item",
+							"sid": 313256594465983,
+							"parameters": {
+								"unique-id": "uid"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 357201212434558,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "Inventory_Item",
+									"sid": 935437407494082,
+									"parameters": {
+										"child": "Sprite15",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-width",
+									"objectClass": "Sprite15",
+									"sid": 925891041064043,
+									"parameters": {
+										"width": "(14/JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.Type&\".Durability\"))*Inventory_Item.Count_"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Sprite15",
+									"sid": 593622496913683,
+									"parameters": {
+										"frame-number": "Sprite15.AnimationFrameCount-floor((Inventory_Item.Count_/JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.Type&\".Durability\"))*10)"
+									}
+								}
+							],
+							"sid": 699303590496308
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "Is_Best_Tool",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Tile",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 286429567851263
+				},
+				{
+					"name": "Instrument",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 202131087034246
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 151403104588606,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 306075904247466,
+							"parameters": {
+								"first-value": "JSON.Get(\"Settings.Config.Tiles.\"&Tile&\".Best_Tool\")",
+								"comparison": 0,
+								"second-value": "Instrument"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 615185137141313,
+							"parameters": {
+								"value": "1"
+							}
+						}
+					],
+					"sid": 293048660846140
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 249923340195789
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 245492649600636,
+							"parameters": {
+								"value": "0"
+							}
+						}
+					],
+					"sid": 608327085650851
+				}
+			]
+		},
+		{
+			"functionName": "Define_Mining_Speed",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Tool_Speed",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 242225236742016
+				},
+				{
+					"name": "Effecienty",
+					"type": "number",
+					"initialValue": "1",
+					"comment": "",
+					"sid": 647632133676549
+				},
+				{
+					"name": "Tile",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 238678417138942
+				},
+				{
+					"name": "Instrument_Type",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 860506956041903
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 254891808928213,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "Speed",
+					"type": "number",
+					"initialValue": "1",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 962391797105002
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 751500282455217,
+							"parameters": {
+								"first-value": "Functions.Is_Best_Tool(str(Tile),Instrument_Type)",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 828677424336161,
+							"parameters": {
+								"variable": "Speed",
+								"value": "Tool_Speed"
+							}
+						}
+					],
+					"sid": 366292843849551
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 430386759852208
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 514156311150765,
+							"parameters": {
+								"variable": "Speed",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 612052725634202
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 829041349518614,
+							"parameters": {
+								"type": "log",
+								"message": "Speed/JSON.Get(\"Settings.Config.Tiles.\"&Tile&\".Dur\")"
+							}
+						},
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 455806748900822,
+							"parameters": {
+								"value": "Shatter.AnimationFrameCount/round((1/((Speed/JSON.Get(\"Settings.Config.Tiles.\"&Tile&\".Dur\"))))*1.5)"
+							}
+						}
+					],
+					"sid": 725616767292287
+				}
+			]
+		}
+	],
+	"sid": 380699106854873
+}

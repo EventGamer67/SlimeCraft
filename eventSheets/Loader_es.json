@@ -1,0 +1,182 @@
+{
+	"name": "Loader_es",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-loader-layout-complete",
+					"objectClass": "System",
+					"sid": 384338266311405
+				}
+			],
+			"actions": [],
+			"sid": 711261742818397
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 319072669569402
+				}
+			],
+			"actions": [
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 725251096419333,
+					"parameters": {
+						"tag": "\"\"",
+						"file": "Recipes.json"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 912324338739102
+				},
+				{
+					"id": "set-json",
+					"objectClass": "JSON",
+					"sid": 466635905564649,
+					"parameters": {
+						"path": "\"Data\"",
+						"json": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 506523152388682,
+					"parameters": {
+						"tag": "\"\"",
+						"file": "Config.json"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 162318978083431
+				},
+				{
+					"id": "set-json",
+					"objectClass": "JSON",
+					"sid": 383377008837049,
+					"parameters": {
+						"path": "\"Settings\"",
+						"json": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 438116176700708,
+					"parameters": {
+						"tag": "\"\"",
+						"file": "Language.json"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 147676927566905
+				},
+				{
+					"id": "set-json",
+					"objectClass": "JSON",
+					"sid": 767160442911537,
+					"parameters": {
+						"path": "\"Languages\"",
+						"json": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 919013437534399,
+					"parameters": {
+						"tag": "\"\"",
+						"file": "Player.json"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 161657232826127
+				},
+				{
+					"id": "set-json",
+					"objectClass": "JSON",
+					"sid": 437244849091622,
+					"parameters": {
+						"path": "\"Player\"",
+						"json": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 969306414927983
+				}
+			],
+			"sid": 815301384338360,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "map-function",
+							"objectClass": "Functions",
+							"sid": 600073251931899,
+							"parameters": {
+								"name": "\"Interfaces\"",
+								"string": "\"Furnace\"",
+								"function": "Show_Furnace"
+							}
+						},
+						{
+							"id": "map-function",
+							"objectClass": "Functions",
+							"sid": 745102038909414,
+							"parameters": {
+								"name": "\"Interfaces\"",
+								"string": "\"WorkBench\"",
+								"function": "Show_WorkBench"
+							}
+						},
+						{
+							"id": "map-function",
+							"objectClass": "Functions",
+							"sid": 296840877265655,
+							"parameters": {
+								"name": "\"Interfaces\"",
+								"string": "\"Chest\"",
+								"function": "Chest"
+							}
+						}
+					],
+					"sid": 605160722394723
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 416819387277550,
+							"parameters": {
+								"layout": "Menu"
+							}
+						}
+					],
+					"sid": 157096974907558
+				}
+			]
+		}
+	],
+	"sid": 472532338784313
+}

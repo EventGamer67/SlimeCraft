@@ -1,0 +1,34 @@
+{
+	"name": "Message_Text",
+	"plugin-id": "Spritefont2",
+	"sid": 914856128864951,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Type",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 880082287130651
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 286815375835386
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 1024,
+		"height": 4096,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 508284,
+		"useCollisionPoly": true
+	}
+}

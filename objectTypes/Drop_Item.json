@@ -1,0 +1,178 @@
+{
+	"name": "Drop_Item",
+	"plugin-id": "Sprite",
+	"sid": 689299795572504,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Type",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 653184382110208
+		},
+		{
+			"name": "Count_",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 706514769881795
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 334153531811662
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 368549376713733
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8798478,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 149364421681620,
+				"name": "Oak_Log",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7890712,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 934944442914897,
+				"name": "Oak_Planks",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4466879,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 476525155179464,
+				"name": "Dirt",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8880381,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 491178169263912,
+				"name": "Grass",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9423477,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 650414844774506,
+				"name": "Stone",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2301037,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 666686652350342,
+				"name": "Cobblestone",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

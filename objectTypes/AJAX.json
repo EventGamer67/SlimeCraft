@@ -1,0 +1,10 @@
+{
+	"name": "AJAX",
+	"plugin-id": "AJAX",
+	"sid": 499293129734178,
+	"singleglobal-inst": {
+		"type": "AJAX",
+		"properties": {},
+		"uid": 65
+	}
+}

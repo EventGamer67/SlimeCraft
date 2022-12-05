@@ -1,0 +1,192 @@
+{
+	"Config":{
+		"Hotbar_Size":3,
+		"Hotbar_Pos":{
+			"x":1,
+			"y":5
+		},
+		"Inventory_Size_X":3,
+		"Inventory_Size_Y":3,
+		"Inventory":{
+			"x":1,
+			"y":1
+		},
+		"Glossary":{
+			"Wooden_Pickaxe":{
+				"Type": "Pickaxe",
+				"Using":"Instrument",
+				"Stackable":0,
+				"Durability":59,
+				"Mining_Speed":2
+			},
+			"Stone_Pickaxe":{
+				"Using":"Instrument",
+				"Stackable":0,
+				"Durability":131,
+				"Mining_Speed":4
+			},
+			"Iron_Pickaxe":{
+				"Using":"Instrument",
+				"Stackable":0,
+				"Durability":250,
+				"Mining_Speed":6
+			},
+			"Gold_Pickaxe":{
+				"Using":"Instrument",
+				"Stackable":0,
+				"Durability":32,
+				"Mining_Speed":12
+			},
+			"Diamond_Pickaxe":{
+				"Using":"Instrument",
+				"Stackable":0,
+				"Durability":1561,
+				"Mining_Speed":8
+			},
+			"Oak_Planks":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32,
+				"Fuel": 30000
+			},
+			"Stone":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32
+			},
+			"Oak_Log":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32,
+				"Fuel": 50000
+			},
+			"Wood_Stick":{
+				"Using":"Material",
+				"Stackable":1,
+				"MaxStack":32,
+				"Fuel": 30
+			},
+			"WorkBench":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32
+			},
+			"Furnace":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32
+			},
+			"Grass":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32
+			},
+			"Dirt":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32
+			},
+			"Cobblestone":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32
+			},
+			"Chest":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32
+			}
+		},
+		"Tiles":{
+			"3":{
+				"Dur": 0.6,
+				"Type": "Grass",
+				"Silk_Drop": "Grass",
+				"No_Silk_Drop": "Dirt",
+				"Best_Tool": "Shovel",
+				"HitSound":"Hitgravel1",
+				"DestroySound":"grass3"
+			},
+			"16":{
+				"Dur": 0.6,
+				"Type": "Cobblestone",
+				"Silk_Drop": "Cobblestone",
+				"No_Silk_Drop": "Cobblestone",
+				"Best_Tool": "Pickaxe"
+			},
+			"1":{
+				"Dur": 1.5,
+				"Type": "Stone",
+				"Silk_Drop": "Stone",
+				"No_Silk_Drop": "Cobblestone",
+				"Best_Tool": "Pickaxe",
+				"HitSound":"Hitgravel1",
+				"DestroySound":"grass1"
+			},
+			"2":{
+				"Dur": 0.5,
+				"Type": "Dirt",
+				"Silk_Drop": "Dirt",
+				"No_Silk_Drop": "Dirt",
+				"Best_Tool": "Shovel"
+			},
+			"4":{
+				"Dur": 2,
+				"Type": "Oak_Planks",
+				"Silk_Drop": "Oak_Planks",
+				"No_Silk_Drop": "Oak_Planks",
+				"Best_Tool": "Axe"
+			},
+			"20":{
+				"Dur": 2,
+				"Type": "Oak_Log",
+				"Silk_Drop": "Oak_Log",
+				"No_Silk_Drop": "Oak_Log",
+				"Best_Tool": "Axe"
+				
+			},
+			"60":{
+				"Dur": 2.5,
+				"Type": "WorkBench",
+				"Silk_Drop": "WorkBench",
+				"No_Silk_Drop": "WorkBench",
+				"Best_Tool": "Axe",
+				"Interface":"WorkBench"
+				
+			},
+			"44":{
+				"Dur": 2.5,
+				"Type": "Furnace",
+				"Silk_Drop": "Furnace",
+				"No_Silk_Drop": "Furnace",
+				"Best_Tool": "Pickaxe",
+				"Interface":"Furnace"
+				
+			},
+			"61":{
+				"Dur": 2.5,
+				"Type": "Furnace",
+				"Silk_Drop": "Furnace",
+				"No_Silk_Drop": "Furnace",
+				"Best_Tool": "Pickaxe",
+				"Interface":"Furnace"
+				
+			},
+			"8":{
+				"Dur": 5,
+				"Type": "Chest",
+				"Silk_Drop": "Chest",
+				"No_Silk_Drop": "Chest",
+				"Best_Tool": "Axe",
+				"Interface":"Chest",
+				"Params":{
+					"SizeX":4,
+					"SizeY":4
+				}
+			}
+		}
+	},
+	"System":{
+		
+	}
+}

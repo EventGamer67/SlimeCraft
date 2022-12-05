@@ -1,0 +1,84 @@
+{
+	"name": "GameManager",
+	"plugin-id": "Sprite",
+	"sid": 500319682631146,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Game_State",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 505446749814636
+		},
+		{
+			"name": "Period",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 773760691694473
+		},
+		{
+			"name": "min",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 909813579657710
+		},
+		{
+			"name": "sec",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 691530059168305
+		},
+		{
+			"name": "h",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 320134734051944
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 225380054724483
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 485155933195242
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5463765,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 120058590612268,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}
