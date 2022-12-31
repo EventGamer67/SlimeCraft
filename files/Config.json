@@ -11,15 +11,20 @@
 			"x":1,
 			"y":1
 		},
+		"OnlyOnBlocks":[
+			15,39,12,13,28,29,30,70,55,56,73,79,99,80
+		],
 		"Glossary":{
 			"Wooden_Pickaxe":{
 				"Type": "Pickaxe",
 				"Using":"Instrument",
 				"Stackable":0,
 				"Durability":59,
-				"Mining_Speed":2
+				"Mining_Speed":2,
+				"MiningTier":1
 			},
 			"Stone_Pickaxe":{
+				"Type": "Pickaxe",
 				"Using":"Instrument",
 				"Stackable":0,
 				"Durability":131,
@@ -95,6 +100,13 @@
 				"Using":"Block",
 				"Stackable":1,
 				"MaxStack":32
+			},
+			"Apple":{
+				"Using":"Food",
+				"Stackable":1,
+				"MaxStack":16,
+				"FoodPoints":4,
+				"Duration":120
 			}
 		},
 		"Tiles":{
@@ -106,6 +118,17 @@
 				"Best_Tool": "Shovel",
 				"HitSound":"Hitgravel1",
 				"DestroySound":"grass3"
+			},
+			"52":{
+				"Dur": 0.1,
+				"Type": "OakLeaves",
+				"Silk_Drop": "OakLeaves",
+				"Best_Tool": "Scissors",
+				"HitSound":"Hitgravel1",
+				"DestroySound":"grass3",
+				"Drop":{
+					"Apple":50
+				}
 			},
 			"16":{
 				"Dur": 0.6,
@@ -183,6 +206,45 @@
 					"SizeX":4,
 					"SizeY":4
 				}
+			},
+			"17":{
+				"Dur": 999999999999,
+				"Type": "Bedrock",
+				"Silk_Drop": "Bedrock",
+				"No_Silk_Drop": "Bedrock",
+				"Best_Tool": "-1"
+			},
+			"34":{
+				"Dur": 3,
+				"Type": "CoalOre",
+				"Silk_Drop": "CoalOre",
+				"No_Silk_Drop": "Coal",
+				"Best_Tool": "Pickaxe",
+				"MiningTier":1
+			},
+			"33":{
+				"Dur": 3,
+				"Type": "IronOre",
+				"Silk_Drop": "IronOre",
+				"No_Silk_Drop": "IronOre",
+				"Best_Tool": "Pickaxe",
+				"MiningTier":1
+			},
+			"32":{
+				"Dur": 3,
+				"Type": "GoldOre",
+				"Silk_Drop": "GoldOre",
+				"No_Silk_Drop": "GoldOre",
+				"Best_Tool": "Pickaxe",
+				"MiningTier":2
+			},
+			"50":{
+				"Dur": 3,
+				"Type": "DiamondOre",
+				"Silk_Drop": "DiamondOre",
+				"No_Silk_Drop": "Diamond",
+				"Best_Tool": "Pickaxe",
+				"MiningTier":4
 			}
 		}
 	},

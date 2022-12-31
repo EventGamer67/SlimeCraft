@@ -1,0 +1,107 @@
+{
+	"name": "Console",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 532072847032393
+				}
+			],
+			"actions": [
+				{
+					"id": "register-command",
+					"objectClass": "InGameConsole",
+					"sid": 858974809367981,
+					"parameters": {
+						"command": "\"give\"",
+						"params": "\"item,count\"",
+						"description": "\"give item\"",
+						"hide": false
+					}
+				},
+				{
+					"id": "register-command",
+					"objectClass": "InGameConsole",
+					"sid": 293592121674150,
+					"parameters": {
+						"command": "\"hungry\"",
+						"params": "\"count\"",
+						"description": "\"give stauration\"",
+						"hide": false
+					}
+				}
+			],
+			"sid": 659873891636185
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-command",
+					"objectClass": "InGameConsole",
+					"sid": 948808701553162,
+					"parameters": {
+						"command": "\"give\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 975532469111670,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "repeat",
+							"objectClass": "System",
+							"sid": 714289807364550,
+							"parameters": {
+								"count": "InGameConsole.GetParam(\"count\",\"number\")"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Drop_Item",
+							"sid": 601222008795764,
+							"parameters": [
+								"1",
+								"InGameConsole.GetParam(\"item\",\"string\")",
+								"Sprite.X",
+								"Sprite.Y-20"
+							]
+						}
+					],
+					"sid": 942685325882417
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-command",
+					"objectClass": "InGameConsole",
+					"sid": 715534198436219,
+					"parameters": {
+						"command": "\"hungry\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "addHungry",
+					"sid": 206117873896861,
+					"parameters": [
+						"InGameConsole.GetParam(\"count\",\"number\")"
+					]
+				}
+			],
+			"sid": 349290098954021
+		}
+	],
+	"sid": 593640233702149
+}

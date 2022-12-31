@@ -1,0 +1,811 @@
+{
+	"name": "Functions_es",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Tick",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 742849780678016
+		},
+		{
+			"functionName": "Get_Center_X",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Layer",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 153803403886730
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-function-return-value",
+					"objectClass": "Functions",
+					"sid": 763327686280222,
+					"parameters": {
+						"value": "(ViewportLeft(Layer)+ViewportRight(Layer))/2"
+					}
+				}
+			],
+			"sid": 627467283471818
+		},
+		{
+			"functionName": "Get_Center_Y",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Layer",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 175899493410793
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-function-return-value",
+					"objectClass": "Functions",
+					"sid": 841298261981816,
+					"parameters": {
+						"value": "(ViewportTop(Layer)+ViewportBottom(Layer))/2"
+					}
+				}
+			],
+			"sid": 955018349939944
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Ticks",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 857053081084021,
+							"parameters": {
+								"interval-seconds": "0.05"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 112829168527706,
+							"parameters": {
+								"variable": "Tick",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 857247020783574,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-at-xy",
+									"objectClass": "Timers",
+									"sid": 348641039079901,
+									"parameters": {
+										"x": "0",
+										"y": "0",
+										"comparison": 2,
+										"value": "Tick"
+									}
+								},
+								{
+									"id": "is-empty",
+									"objectClass": "Timers",
+									"sid": 568410556026234,
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 782510064643436,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-xy",
+											"objectClass": "Timers",
+											"sid": 225826243867175,
+											"parameters": {
+												"x": "0",
+												"y": "2",
+												"comparison": 0,
+												"value": "\"Fuel_Out\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 759261371637098,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 578779055956988,
+													"parameters": {
+														"first-value": "JSON.Get(\"Player.World.Furnace.\"&Timers.At(0,1)&\".Fuel.Count\")",
+														"comparison": 4,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "Add_Timer",
+													"sid": 413170334287235,
+													"parameters": [
+														"Timers.At(0,1)",
+														"JSON.Get(\"Settings.Config.Glossary.\"&JSON.Get(\"Player.World.Furnace.\"&Timers.At(0,1)&\".Fuel.Type\")&\".Fuel\")",
+														"\"Fuel_Out\""
+													]
+												},
+												{
+													"id": "subtract-from",
+													"objectClass": "JSON",
+													"sid": 983244323993578,
+													"parameters": {
+														"path": "\"Player.World.Furnace.\"&Timers.At(0,1)&\".Fuel.Count\"",
+														"value": "1"
+													}
+												},
+												{
+													"id": "set-value",
+													"objectClass": "JSON",
+													"sid": 375353007828991,
+													"parameters": {
+														"path": "\"Player.World.Furnace.\"&Timers.At(0,1)&\".Fuel.Left\"",
+														"value": "JSON.Get(\"Settings.Config.Glossary.\"&JSON.Get(\"Player.World.Furnace.\"&Timers.At(0,1)&\".Fuel.Type\")&\".Fuel\")"
+													}
+												},
+												{
+													"id": "set-tile",
+													"objectClass": "Terrain",
+													"sid": 192777286037080,
+													"parameters": {
+														"tile-x": "int(tokenat(Timers.At(0,1),0,\",\"))",
+														"tile-y": "int(tokenat(Timers.At(0,1),1,\",\"))",
+														"tile": "61",
+														"state": "normal"
+													}
+												}
+											],
+											"sid": 476387467480642,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 689437822525807,
+															"parameters": {
+																"first-value": "JSON.Get(\"Player.World.Furnace.\"&Timers.At(0,1)&\".Fuel.Count\")",
+																"comparison": 3,
+																"second-value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-value",
+															"objectClass": "JSON",
+															"sid": 517108783272942,
+															"parameters": {
+																"path": "\"Player.World.Furnace.\"&Timers.At(0,1)&\".Fuel.Type\"",
+																"value": "0"
+															}
+														}
+													],
+													"sid": 300127623081474
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 394540477154925
+												}
+											],
+											"actions": [
+												{
+													"id": "set-value",
+													"objectClass": "JSON",
+													"sid": 117476597960932,
+													"parameters": {
+														"path": "\"Player.World.Furnace.\"&Timers.At(0,1)&\".Fuel.Type\"",
+														"value": "0"
+													}
+												},
+												{
+													"id": "set-value",
+													"objectClass": "JSON",
+													"sid": 717184649353718,
+													"parameters": {
+														"path": "\"Player.World.Furnace.\"&Timers.At(0,1)&\".Fuel.Left\"",
+														"value": "0"
+													}
+												},
+												{
+													"id": "set-value",
+													"objectClass": "JSON",
+													"sid": 517734241773398,
+													"parameters": {
+														"path": "\"Player.World.Furnace.\"&Timers.At(0,1)&\".Fuel.Burning_End\"",
+														"value": "0"
+													}
+												},
+												{
+													"id": "set-tile",
+													"objectClass": "Terrain",
+													"sid": 120547256809070,
+													"parameters": {
+														"tile-x": "int(tokenat(Timers.At(0,1),0,\",\"))",
+														"tile-y": "int(tokenat(Timers.At(0,1),1,\",\"))",
+														"tile": "44",
+														"state": "normal"
+													}
+												}
+											],
+											"sid": 514249681241138
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-xy",
+											"objectClass": "Timers",
+											"sid": 772303726497853,
+											"parameters": {
+												"x": "0",
+												"y": "2",
+												"comparison": 0,
+												"value": "\"Grow15\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 845959897740797,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "GrowPlant",
+													"sid": 551997913998443,
+													"parameters": [
+														"int(tokenat(Timers.At(0,1),0,\",\"))",
+														"int(tokenat(Timers.At(0,1),1,\",\"))",
+														"\"Grow15\""
+													]
+												}
+											],
+											"sid": 425189917225744
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-xy",
+											"objectClass": "Timers",
+											"sid": 756218762885241,
+											"parameters": {
+												"x": "0",
+												"y": "2",
+												"comparison": 0,
+												"value": "\"Cook_Complete\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 474441902874567,
+											"parameters": {
+												"path": "\"Player.World.Furnace.\"&Timers.At(0,1)&\".Result.Type\"",
+												"value": "JSON.Get(\"Player.World.Furnace.\"&Timers.At(0,1)&\".Melting.Type\")"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 474783335819680,
+											"parameters": {
+												"path": "\"Player.World.Furnace.\"&Timers.At(0,1)&\".Result.Count\"",
+												"value": "JSON.Get(\"Player.World.Furnace.\"&Timers.At(0,1)&\".Result.Count\")+1"
+											}
+										}
+									],
+									"sid": 950258905324298,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "Current_Key",
+											"type": "string",
+											"initialValue": "",
+											"comment": "",
+											"isStatic": true,
+											"isConstant": false,
+											"sid": 991294268989742
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 705369811344813,
+													"parameters": {
+														"variable": "Current_Key",
+														"value": "JSON.Get(\"Player.World.Furnace.\"&Timers.At(0,1)&\".Melting.Type\")"
+													}
+												},
+												{
+													"id": "delete-key",
+													"objectClass": "JSON",
+													"sid": 330482023831467,
+													"parameters": {
+														"path": "\"Player.World.Furnace.\"&Timers.At(0,1)&\".Melting\""
+													}
+												}
+											],
+											"sid": 406402200932682
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 811979073235714,
+													"parameters": {
+														"first-value": "JSON.Get(\"Player.World.Furnace.\"&Timers.At(0,1)&\".ToMelt.Count\")",
+														"comparison": 4,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 722604994784143,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 218378940293211,
+															"parameters": {
+																"first-value": "Current_Link",
+																"comparison": 0,
+																"second-value": "Timers.At(0,1)"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 725678152849606,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Inventory_Item",
+																	"sid": 224202449430318,
+																	"parameters": {
+																		"instance-variable": "Global_Pos_X",
+																		"comparison": 0,
+																		"value": "7"
+																	}
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Inventory_Item",
+																	"sid": 657628290252737,
+																	"parameters": {
+																		"instance-variable": "Global_Pos_Y",
+																		"comparison": 0,
+																		"value": "1"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "subtract-from",
+																	"objectClass": "JSON",
+																	"sid": 614987633442054,
+																	"parameters": {
+																		"path": "\"Player.World.Furnace.\"&Timers.At(0,1)&\".ToMelt.Count\"",
+																		"value": "1"
+																	}
+																},
+																{
+																	"id": "subtract-from-instvar",
+																	"objectClass": "Inventory_Item",
+																	"sid": 972350644954496,
+																	"parameters": {
+																		"instance-variable": "Count_",
+																		"value": "1"
+																	}
+																}
+															],
+															"sid": 928994904139014,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "compare-instance-variable",
+																			"objectClass": "Inventory_Item",
+																			"sid": 485295088193737,
+																			"parameters": {
+																				"instance-variable": "Count_",
+																				"comparison": 3,
+																				"value": "0"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-value",
+																			"objectClass": "JSON",
+																			"sid": 921100182694289,
+																			"parameters": {
+																				"path": "\"Player.World.Furnace.\"&Current_Link&\".ToMelt.Type\"",
+																				"value": "0"
+																			}
+																		},
+																		{
+																			"id": "set-value",
+																			"objectClass": "JSON",
+																			"sid": 577720173858305,
+																			"parameters": {
+																				"path": "\"Player.World.Furnace.\"&Current_Link&\".ToMelt.Count\"",
+																				"value": "0"
+																			}
+																		},
+																		{
+																			"id": "destroy",
+																			"objectClass": "Inventory_Item",
+																			"sid": 103876732752497
+																		}
+																	],
+																	"sid": 345868552681461
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "pick-children",
+																			"objectClass": "Inventory_Item",
+																			"sid": 594776049621359,
+																			"parameters": {
+																				"child": "Text",
+																				"which": "own"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-text",
+																			"objectClass": "Text",
+																			"sid": 792432078210750,
+																			"parameters": {
+																				"text": "Inventory_Item.Count_ > 1 ? Inventory_Item.Count_ : \"\""
+																			}
+																		}
+																	],
+																	"sid": 708038129431098
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-overlapping-another-object",
+																	"objectClass": "Inventory_Item",
+																	"sid": 737968557283463,
+																	"parameters": {
+																		"object": "Crafted_Slot"
+																	}
+																},
+																{
+																	"id": "is-boolean-instance-variable-set",
+																	"objectClass": "Inventory_Item",
+																	"sid": 937436366993671,
+																	"parameters": {
+																		"instance-variable": "Picked"
+																	},
+																	"isInverted": true
+																}
+															],
+															"actions": [
+																{
+																	"id": "destroy",
+																	"objectClass": "Inventory_Item",
+																	"sid": 456029430890413
+																}
+															],
+															"sid": 100348578027320
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 420393933504102,
+																	"parameters": {
+																		"object-to-create": "Inventory_Item",
+																		"layer": "\"Interfaces\"",
+																		"x": "Crafted_Slot.X",
+																		"y": "Crafted_Slot.Y",
+																		"create-hierarchy": true,
+																		"template-name": "JSON.Get(\"Settings.Config.Glossary.\"&JSON.Get(\"Player.World.Furnace.\"&Timers.At(0,1)&\".Result.Count\")&\".Using\")"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "Inventory_Item",
+																	"sid": 995050859629963,
+																	"parameters": {
+																		"instance-variable": "Count_",
+																		"value": "JSON.Get(\"Player.World.Furnace.\"&Timers.At(0,1)&\".Result.Count\")"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "Inventory_Item",
+																	"sid": 358701262622091,
+																	"parameters": {
+																		"instance-variable": "Type",
+																		"value": "JSON.Get(\"Player.World.Furnace.\"&Timers.At(0,1)&\".Result.Type\")"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "Inventory_Item",
+																	"sid": 954384398430230,
+																	"parameters": {
+																		"instance-variable": "PosX",
+																		"value": "-1"
+																	}
+																},
+																{
+																	"id": "set-animation",
+																	"objectClass": "Inventory_Item",
+																	"sid": 850742284622327,
+																	"parameters": {
+																		"animation": "Inventory_Item.Type",
+																		"from": "beginning"
+																	}
+																},
+																{
+																	"id": "set-size",
+																	"objectClass": "Inventory_Item",
+																	"sid": 676902727895129,
+																	"parameters": {
+																		"width": "14",
+																		"height": "14"
+																	}
+																}
+															],
+															"sid": 656746805522781,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "pick-children",
+																			"objectClass": "Inventory_Item",
+																			"sid": 582936061046528,
+																			"parameters": {
+																				"child": "Text",
+																				"which": "own"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-text",
+																			"objectClass": "Text",
+																			"sid": 239962733037981,
+																			"parameters": {
+																				"text": "Inventory_Item.Count_ > 1 ? Inventory_Item.Count_ : \"\""
+																			}
+																		}
+																	],
+																	"sid": 281022513867643
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"callFunction": "Furnace_Get_Pattern",
+																	"sid": 954165087477202
+																}
+															],
+															"sid": 647219766044489
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 661496684508843
+														}
+													],
+													"actions": [
+														{
+															"id": "subtract-from",
+															"objectClass": "JSON",
+															"sid": 203292312400438,
+															"parameters": {
+																"path": "\"Player.World.Furnace.\"&Timers.At(0,1)&\".ToMelt.Count\"",
+																"value": "1"
+															}
+														},
+														{
+															"id": "set-value",
+															"objectClass": "JSON",
+															"sid": 363827072026522,
+															"parameters": {
+																"path": "\"Player.World.Furnace.\"&Timers.At(0,1)&\".ToMelt.Type\"",
+																"value": "JSON.Get(\"Player.World.Furnace.\"&Timers.At(0,1)&\".ToMelt.Count\") > 0? JSON.Get(\"Player.World.Furnace.\"&Timers.At(0,1)&\".ToMelt.Type\") :  0"
+															}
+														}
+													],
+													"sid": 849843618780049,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 151191582148041,
+																	"parameters": {
+																		"first-value": "JSON.Get(\"Player.World.Furnace.\"&Timers.At(0,1)&\".ToMelt.Count\")",
+																		"comparison": 4,
+																		"second-value": "0"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 959060609810225,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "compare-two-values",
+																			"objectClass": "System",
+																			"sid": 892887379064099,
+																			"parameters": {
+																				"first-value": "JSON.Get(\"Player.World.Furnace.\"&Timers.At(0,1)&\".Fuel.Left\")",
+																				"comparison": 4,
+																				"second-value": "0"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"callFunction": "Add_Timer",
+																			"sid": 374838345902499,
+																			"parameters": [
+																				"Timers.At(0,1)",
+																				"JSON.Get(\"Data.Smelting.\"&Current_Key&\".CookingTime\")",
+																				"\"Cook_Complete\""
+																			]
+																		},
+																		{
+																			"id": "set-value",
+																			"objectClass": "JSON",
+																			"sid": 689570087964288,
+																			"parameters": {
+																				"path": "\"Player.World.Furnace.\"&Timers.At(0,1)&\".Melting.Type\"",
+																				"value": "Current_Key"
+																			}
+																		},
+																		{
+																			"id": "set-value",
+																			"objectClass": "JSON",
+																			"sid": 659639828170989,
+																			"parameters": {
+																				"path": "\"Player.World.Furnace.\"&Timers.At(0,1)&\".Melting.End\"",
+																				"value": "Tick+JSON.Get(\"Data.Smelting.\"&Current_Key&\".CookingTime\")"
+																			}
+																		},
+																		{
+																			"id": "set-value",
+																			"objectClass": "JSON",
+																			"sid": 521051204964793,
+																			"parameters": {
+																				"path": "\"Player.World.Furnace.\"&Timers.At(0,1)&\".Melting.Time\"",
+																				"value": "JSON.Get(\"Data.Smelting.\"&Current_Key&\".CookingTime\")"
+																			}
+																		}
+																	],
+																	"sid": 533842426736290
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "delete",
+											"objectClass": "Timers",
+											"sid": 102155931381582,
+											"parameters": {
+												"index": "0",
+												"axis": "x"
+											}
+										}
+									],
+									"sid": 630042949077635
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 134432844019489
+		}
+	],
+	"sid": 921570436268604
+}

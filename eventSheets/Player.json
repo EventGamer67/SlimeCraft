@@ -2,132 +2,6 @@
 	"name": "Player",
 	"events": [
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-on-floor",
-					"objectClass": "Sprite",
-					"sid": 339574698913322,
-					"behaviorType": "Platform"
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "Sprite",
-					"sid": 229998547901580,
-					"parameters": {
-						"object": "Ladder"
-					},
-					"isInverted": true
-				},
-				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 627335571451447
-				}
-			],
-			"actions": [
-				{
-					"id": "set-rate",
-					"objectClass": "Particles",
-					"sid": 648305688929330,
-					"parameters": {
-						"rate": "80"
-					}
-				},
-				{
-					"id": "set-angle",
-					"objectClass": "Particles",
-					"sid": 624193898969520,
-					"parameters": {
-						"angle": "270"
-					}
-				},
-				{
-					"id": "tween-two-properties",
-					"objectClass": "Sprite",
-					"sid": 753794705496479,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "\"Fall\"",
-						"property": "size",
-						"end-x": "Self.Width>0? 20 : -20",
-						"end-y": "12",
-						"time": "0.1",
-						"ease": "easeoutsine",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no"
-					}
-				}
-			],
-			"sid": 584299584867881
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-tweens-finished",
-					"objectClass": "Sprite",
-					"sid": 677337561214889,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "\"Fall\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "tween-two-properties",
-					"objectClass": "Sprite",
-					"sid": 206835606196855,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "\"Standart\"",
-						"property": "size",
-						"end-x": "Self.Width > 0? 16 : -16",
-						"end-y": "16",
-						"time": "0.1",
-						"ease": "easeoutsine",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no"
-					}
-				}
-			],
-			"sid": 850219782024662
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 441486763256061
-				}
-			],
-			"actions": [
-				{
-					"id": "scroll-to-position",
-					"objectClass": "System",
-					"sid": 200932804225860,
-					"parameters": {
-						"x": "lerp(scrollx,Sprite.X,0.05)",
-						"y": "lerp(scrollY,Sprite.Y-30,0.05)"
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "Player_Light",
-					"sid": 598997607402173,
-					"parameters": {
-						"x": "Sprite.X",
-						"y": "Sprite.Y"
-					}
-				}
-			],
-			"sid": 667970289491570
-		},
-		{
 			"functionName": "Player_Message",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -269,6 +143,24 @@
 					}
 				},
 				{
+					"id": "set-enabled",
+					"objectClass": "Drop_Item",
+					"sid": 132653431171271,
+					"behaviorType": "Physics",
+					"parameters": {
+						"mode": "disabled"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Drop_Item",
+					"sid": 944475198212316,
+					"parameters": {
+						"width": "16",
+						"height": "16"
+					}
+				},
+				{
 					"id": "set-instvar-value",
 					"objectClass": "Drop_Item",
 					"sid": 626103479377656,
@@ -294,9 +186,212 @@
 						"instance-variable": "Count_",
 						"value": "Count"
 					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "Drop_Item",
+					"sid": 512023366375302,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "size",
+						"end-x": "8",
+						"end-y": "8",
+						"time": "0.3",
+						"ease": "easeoutbounce",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 112161638496640
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Drop_Item",
+					"sid": 156326203200130,
+					"behaviorType": "Physics",
+					"parameters": {
+						"mode": "enabled"
+					}
 				}
 			],
 			"sid": 645502988959202
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Food",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 188099163630335,
+							"parameters": {
+								"object": "FoodBtn"
+							}
+						},
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 573288426685933,
+							"parameters": {
+								"value": "Sprite.Hungry < Sprite19.Count*2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 274724984039518,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "progress",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 808688592646624
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-opacity",
+									"objectClass": "FoodBtn",
+									"sid": 890982075886128,
+									"parameters": {
+										"comparison": 0,
+										"opacity": "100"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 157478285055245,
+									"parameters": {
+										"variable": "progress",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 444900623075644
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "FoodBtn",
+									"sid": 906655065372706,
+									"parameters": {
+										"opacity": "60"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 122304084655047,
+									"parameters": {
+										"variable": "progress",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 143697938441536,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 969879171267129,
+											"parameters": {
+												"value": "JSON.Get(\"Settings.Config.Glossary.\"&Sprite11.Item_SubType&\".Duration\") <= progress"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-opacity",
+											"objectClass": "FoodBtn",
+											"sid": 536154255566722,
+											"parameters": {
+												"opacity": "100"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 343557983081866,
+											"parameters": {
+												"variable": "progress",
+												"value": "0"
+											}
+										},
+										{
+											"callFunction": "addHungry",
+											"sid": 139429438726418,
+											"parameters": [
+												"JSON.Get(\"Settings.Config.Glossary.\"&Sprite11.Item_SubType&\".FoodPoints\")"
+											]
+										}
+									],
+									"sid": 935387947366209
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 826715171444575
+						}
+					],
+					"actions": [],
+					"sid": 464662798121458,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 110394052387387
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "FoodBtn",
+									"sid": 997317994366144,
+									"parameters": {
+										"opacity": "100"
+									}
+								}
+							],
+							"sid": 262027841698559
+						}
+					]
+				}
+			],
+			"sid": 248311830983499
 		},
 		{
 			"eventType": "group",
@@ -330,7 +425,7 @@
 					"disabled": false,
 					"title": "Mining",
 					"description": "",
-					"isActiveOnStart": true,
+					"isActiveOnStart": false,
 					"children": [
 						{
 							"eventType": "block",
@@ -659,12 +754,12 @@
 								},
 								{
 									"callFunction": "Drop_Item",
-									"sid": 556236078753166,
+									"sid": 953826357311915,
 									"parameters": [
 										"1",
 										"JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Shatter.Target_Tile_X, Shatter.Target_Tile_Y)&\".No_Silk_Drop\")",
-										"Shatter.X+random(-5,5)",
-										"Shatter.Y+random(-5,5)"
+										"Shatter.X",
+										"Shatter.Y"
 									]
 								},
 								{
@@ -1244,6 +1339,14 @@
 																		"tile": "Sprite11.Tile",
 																		"state": "normal"
 																	}
+																},
+																{
+																	"callFunction": "UpdateNearest",
+																	"sid": 808392898751266,
+																	"parameters": [
+																		"TileX",
+																		"TileY"
+																	]
 																}
 															],
 															"sid": 414695417391300,
@@ -1878,6 +1981,2560 @@
 					"sid": 725616767292287
 				}
 			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Control",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "joystick",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-touch-end",
+									"objectClass": "Touch",
+									"sid": 431293030383310
+								}
+							],
+							"actions": [],
+							"sid": 554309710613389,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 718216200419908,
+											"parameters": {
+												"object": "JoyStick",
+												"expression": "JoyStick.TouchID = Touch.TouchID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "JoyStick",
+											"sid": 117325518369844,
+											"parameters": {
+												"instance-variable": "Picked",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 149509094061132,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "JoyStick",
+													"sid": 814687612262087,
+													"parameters": {
+														"instance-variable": "Type",
+														"comparison": 0,
+														"value": "\"Action\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "Shatter",
+													"sid": 517576484857108,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-rate",
+													"objectClass": "ShatterEffect",
+													"sid": 236241390044552,
+													"parameters": {
+														"rate": "0"
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "Shatter",
+													"sid": 312006027105796,
+													"parameters": {
+														"frame-number": "0"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "PlayerDigRay",
+													"sid": 666035241370254,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "stop-all-tweens",
+													"objectClass": "BlockDestroyingFx",
+													"sid": 585984890746377,
+													"behaviorType": "Tween"
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "BlockBlackout",
+													"sid": 316651185899923,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-size",
+													"objectClass": "BlockDestroyingFx",
+													"sid": 329289482273695,
+													"parameters": {
+														"width": "0",
+														"height": "0"
+													}
+												}
+											],
+											"sid": 171627879696658
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 334814877028319,
+									"parameters": {
+										"object": "JoyStickBlank"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 887898797100959,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "JoyStickBlank",
+											"sid": 334992470505450,
+											"parameters": {
+												"child": "JoyStick",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 659168253598835,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "JoyStick",
+													"sid": 221644534232998,
+													"parameters": {
+														"instance-variable": "Picked"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "JoyStick",
+													"sid": 284754283498242,
+													"parameters": {
+														"instance-variable": "Picked",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "JoyStick",
+													"sid": 146532874336828,
+													"parameters": {
+														"instance-variable": "TouchID",
+														"value": "Touch.TouchID"
+													}
+												}
+											],
+											"sid": 499547046394054
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 238252421462097,
+									"parameters": {
+										"object": "JoyStick"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 896060509010480,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "JoyStick",
+											"sid": 947507600339151,
+											"parameters": {
+												"instance-variable": "Picked"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 914563540695029,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-parent",
+													"objectClass": "JoyStick",
+													"sid": 605942382731570,
+													"parameters": {
+														"parent": "JoyStickBlank",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 126083047464454,
+											"children": [
+												{
+													"eventType": "variable",
+													"name": "TouchAngle",
+													"type": "number",
+													"initialValue": "0",
+													"comment": "",
+													"isStatic": false,
+													"isConstant": false,
+													"sid": 848143284716441
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 228433809850522,
+															"parameters": {
+																"variable": "TouchAngle",
+																"value": "angle(JoyStickBlank.X,JoyStickBlank.Y,Touch.XForID(JoyStick.TouchID,\"JoyStick\"),Touch.YForID(JoyStick.TouchID,\"JoyStick\"))"
+															}
+														},
+														{
+															"id": "set-position",
+															"objectClass": "JoyStick",
+															"sid": 893382819291160,
+															"parameters": {
+																"x": "JoyStickBlank.X+cos(TouchAngle)*clamp(distance(JoyStickBlank.X,JoyStickBlank.Y,Touch.XForID(Self.TouchID,\"JoyStick\"),Touch.YForID(Self.TouchID,\"JoyStick\")),0,JoyStickBlank.Width/2)",
+																"y": "JoyStickBlank.Y+sin(TouchAngle)*clamp(distance(JoyStickBlank.X,JoyStickBlank.Y,Touch.XForID(Self.TouchID,\"JoyStick\"),Touch.YForID(Self.TouchID,\"JoyStick\")),0,JoyStickBlank.Width/2)"
+															}
+														}
+													],
+													"sid": 542422926457192
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "JoyStick",
+															"sid": 779041736905575,
+															"parameters": {
+																"instance-variable": "Type",
+																"comparison": 0,
+																"value": "\"Movement\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 135936855030036,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-x",
+																	"objectClass": "JoyStick",
+																	"sid": 276955070091900,
+																	"parameters": {
+																		"comparison": 4,
+																		"x-co-ordinate": "JoyStickBlank.X"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "simulate-control",
+																	"objectClass": "Sprite",
+																	"sid": 661924914169381,
+																	"behaviorType": "Platform",
+																	"parameters": {
+																		"control": "right"
+																	}
+																}
+															],
+															"sid": 618315876380030
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-x",
+																	"objectClass": "JoyStick",
+																	"sid": 563870783442896,
+																	"parameters": {
+																		"comparison": 2,
+																		"x-co-ordinate": "JoyStickBlank.X"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "simulate-control",
+																	"objectClass": "Sprite",
+																	"sid": 677348935877713,
+																	"behaviorType": "Platform",
+																	"parameters": {
+																		"control": "left"
+																	}
+																}
+															],
+															"sid": 425519316828225
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-y",
+																	"objectClass": "JoyStick",
+																	"sid": 628871149202040,
+																	"parameters": {
+																		"comparison": 2,
+																		"y-co-ordinate": "JoyStickBlank.Y-10"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "simulate-control",
+																	"objectClass": "Sprite",
+																	"sid": 685776463929772,
+																	"behaviorType": "Platform",
+																	"parameters": {
+																		"control": "jump"
+																	}
+																}
+															],
+															"sid": 509756384025142
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "JoyStick",
+															"sid": 943748871996811,
+															"parameters": {
+																"instance-variable": "Type",
+																"comparison": 0,
+																"value": "\"Action\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 823556530151681,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-position",
+																	"objectClass": "PlayerDigRay",
+																	"sid": 228991223698111,
+																	"parameters": {
+																		"x": "Sprite.X",
+																		"y": "Sprite.Y"
+																	}
+																},
+																{
+																	"id": "set-angle",
+																	"objectClass": "PlayerDigRay",
+																	"sid": 435367583357829,
+																	"parameters": {
+																		"angle": "TouchAngle"
+																	}
+																},
+																{
+																	"id": "cast-ray",
+																	"objectClass": "Sprite",
+																	"sid": 947567655984986,
+																	"behaviorType": "LineOfSight",
+																	"parameters": {
+																		"from-x": "Self.X",
+																		"from-y": "Self.Y",
+																		"to-x": "Self.X+cos(TouchAngle)*300",
+																		"to-y": "Self.Y+sin(TouchAngle)*300",
+																		"use-collision-cells": true
+																	}
+																}
+															],
+															"sid": 502025753732826,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "ray-intersected",
+																			"objectClass": "Sprite",
+																			"sid": 242387490705056,
+																			"behaviorType": "LineOfSight"
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-width",
+																			"objectClass": "PlayerDigRay",
+																			"sid": 171102670696537,
+																			"parameters": {
+																				"width": "lerp(Self.Width,clamp(Sprite.LineOfSight.HitDistance,0,40),0.2)\n"
+																			}
+																		}
+																	],
+																	"sid": 484705263619814,
+																	"children": [
+																		{
+																			"eventType": "variable",
+																			"name": "Tilex",
+																			"type": "number",
+																			"initialValue": "0",
+																			"comment": "",
+																			"isStatic": false,
+																			"isConstant": false,
+																			"sid": 675098375195988
+																		},
+																		{
+																			"eventType": "variable",
+																			"name": "TileY",
+																			"type": "number",
+																			"initialValue": "0",
+																			"comment": "",
+																			"isStatic": false,
+																			"isConstant": false,
+																			"sid": 827018352783485
+																		},
+																		{
+																			"eventType": "variable",
+																			"name": "TileABSX",
+																			"type": "number",
+																			"initialValue": "0",
+																			"comment": "",
+																			"isStatic": false,
+																			"isConstant": false,
+																			"sid": 460031051251544
+																		},
+																		{
+																			"eventType": "variable",
+																			"name": "TileABSY",
+																			"type": "number",
+																			"initialValue": "0",
+																			"comment": "",
+																			"isStatic": false,
+																			"isConstant": false,
+																			"sid": 543317272581078
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "compare-two-values",
+																					"objectClass": "System",
+																					"sid": 726641018943318,
+																					"parameters": {
+																						"first-value": "Sprite.LineOfSight.HitDistance",
+																						"comparison": 2,
+																						"second-value": "40"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-eventvar-value",
+																					"objectClass": "System",
+																					"sid": 263024340906320,
+																					"parameters": {
+																						"variable": "TileABSX",
+																						"value": "Sprite.LineOfSight.HitX+cos(PlayerDigRay.Angle)*2"
+																					}
+																				},
+																				{
+																					"id": "set-eventvar-value",
+																					"objectClass": "System",
+																					"sid": 943731732597724,
+																					"parameters": {
+																						"variable": "TileABSY",
+																						"value": "Sprite.LineOfSight.HitY+sin(PlayerDigRay.Angle)*2"
+																					}
+																				},
+																				{
+																					"id": "set-eventvar-value",
+																					"objectClass": "System",
+																					"sid": 408944560407291,
+																					"parameters": {
+																						"variable": "Tilex",
+																						"value": "Terrain.PositionToTileX(TileABSX)"
+																					}
+																				},
+																				{
+																					"id": "set-eventvar-value",
+																					"objectClass": "System",
+																					"sid": 477462386149283,
+																					"parameters": {
+																						"variable": "TileY",
+																						"value": "Terrain.PositionToTileY(TileABSY)"
+																					}
+																				},
+																				{
+																					"id": "set-visible",
+																					"objectClass": "PlayerDigRay",
+																					"sid": 860478306557795,
+																					"parameters": {
+																						"visibility": "visible"
+																					}
+																				}
+																			],
+																			"sid": 787577707965528,
+																			"children": [
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "compare-tile-at",
+																							"objectClass": "Terrain",
+																							"sid": 229612502791724,
+																							"parameters": {
+																								"tile-x": "Tilex",
+																								"tile-y": "TileY",
+																								"comparison": 1,
+																								"tile": "-1"
+																							}
+																						}
+																					],
+																					"actions": [],
+																					"sid": 648331393832527,
+																					"children": [
+																						{
+																							"eventType": "block",
+																							"conditions": [
+																								{
+																									"id": "compare-instance-variable",
+																									"objectClass": "Shatter",
+																									"sid": 276249974416222,
+																									"parameters": {
+																										"instance-variable": "Target_Tile_X",
+																										"comparison": 0,
+																										"value": "Tilex"
+																									}
+																								},
+																								{
+																									"id": "compare-instance-variable",
+																									"objectClass": "Shatter",
+																									"sid": 360824624684864,
+																									"parameters": {
+																										"instance-variable": "Target_Tile_Y",
+																										"comparison": 0,
+																										"value": "TileY"
+																									}
+																								}
+																							],
+																							"actions": [],
+																							"sid": 297307402344028,
+																							"children": [
+																								{
+																									"eventType": "block",
+																									"conditions": [
+																										{
+																											"id": "every-x-seconds",
+																											"objectClass": "System",
+																											"sid": 465765949635050,
+																											"parameters": {
+																												"interval-seconds": "0.1"
+																											}
+																										}
+																									],
+																									"actions": [],
+																									"sid": 417240269640960,
+																									"children": [
+																										{
+																											"eventType": "block",
+																											"conditions": [
+																												{
+																													"id": "is-playing",
+																													"objectClass": "BlockDestroyingFx",
+																													"sid": 226690408715373,
+																													"behaviorType": "Tween",
+																													"parameters": {
+																														"tags": "\"angleset\""
+																													},
+																													"isInverted": true
+																												}
+																											],
+																											"actions": [],
+																											"sid": 119989361717616,
+																											"children": [
+																												{
+																													"eventType": "variable",
+																													"name": "ra",
+																													"type": "number",
+																													"initialValue": "0",
+																													"comment": "",
+																													"isStatic": false,
+																													"isConstant": false,
+																													"sid": 103653877033842
+																												},
+																												{
+																													"eventType": "block",
+																													"conditions": [
+																														{
+																															"id": "is-playing",
+																															"objectClass": "BlockDestroyingFx",
+																															"sid": 785676427027142,
+																															"behaviorType": "Tween",
+																															"parameters": {
+																																"tags": "\"angle\""
+																															},
+																															"isInverted": true
+																														}
+																													],
+																													"actions": [
+																														{
+																															"id": "set-eventvar-value",
+																															"objectClass": "System",
+																															"sid": 936879603124404,
+																															"parameters": {
+																																"variable": "ra",
+																																"value": "random(6,10)"
+																															}
+																														},
+																														{
+																															"id": "tween-one-property",
+																															"objectClass": "BlockDestroyingFx",
+																															"sid": 327270142165038,
+																															"behaviorType": "Tween",
+																															"parameters": {
+																																"tags": "\"angle\"",
+																																"property": "offsetAngle",
+																																"end-value": "330",
+																																"time": "0.1",
+																																"ease": "default",
+																																"destroy-on-complete": "no",
+																																"loop": "no",
+																																"ping-pong": "yes"
+																															}
+																														},
+																														{
+																															"id": "tween-two-properties",
+																															"objectClass": "BlockDestroyingFx",
+																															"sid": 801504308091382,
+																															"behaviorType": "Tween",
+																															"parameters": {
+																																"tags": "\"\"",
+																																"property": "size",
+																																"end-x": "ra",
+																																"end-y": "ra",
+																																"time": "0.1",
+																																"ease": "default",
+																																"destroy-on-complete": "no",
+																																"loop": "yes",
+																																"ping-pong": "yes"
+																															}
+																														}
+																													],
+																													"sid": 464222356420267
+																												}
+																											]
+																										},
+																										{
+																											"eventType": "block",
+																											"conditions": [
+																												{
+																													"id": "is-playing",
+																													"objectClass": "Hand",
+																													"sid": 258286936881340,
+																													"behaviorType": "Tween",
+																													"parameters": {
+																														"tags": "\"angleset\""
+																													},
+																													"isInverted": true
+																												}
+																											],
+																											"actions": [],
+																											"sid": 572922835943018,
+																											"children": [
+																												{
+																													"eventType": "variable",
+																													"name": "ra",
+																													"type": "number",
+																													"initialValue": "0",
+																													"comment": "",
+																													"isStatic": false,
+																													"isConstant": false,
+																													"sid": 667556639537959
+																												},
+																												{
+																													"eventType": "block",
+																													"conditions": [
+																														{
+																															"id": "is-playing",
+																															"objectClass": "Hand",
+																															"sid": 594319826160876,
+																															"behaviorType": "Tween",
+																															"parameters": {
+																																"tags": "\"angle\""
+																															},
+																															"isInverted": true
+																														}
+																													],
+																													"actions": [
+																														{
+																															"id": "set-eventvar-value",
+																															"objectClass": "System",
+																															"sid": 796929886480163,
+																															"parameters": {
+																																"variable": "ra",
+																																"value": "random(4,6)"
+																															}
+																														},
+																														{
+																															"id": "tween-one-property",
+																															"objectClass": "Hand",
+																															"sid": 908478884481192,
+																															"behaviorType": "Tween",
+																															"parameters": {
+																																"tags": "\"angle\"",
+																																"property": "offsetAngle",
+																																"end-value": "330",
+																																"time": "0.1",
+																																"ease": "default",
+																																"destroy-on-complete": "no",
+																																"loop": "no",
+																																"ping-pong": "yes"
+																															}
+																														},
+																														{
+																															"id": "tween-two-properties",
+																															"objectClass": "Hand",
+																															"sid": 309380584975449,
+																															"behaviorType": "Tween",
+																															"parameters": {
+																																"tags": "\"\"",
+																																"property": "size",
+																																"end-x": "ra",
+																																"end-y": "ra",
+																																"time": "0.1",
+																																"ease": "default",
+																																"destroy-on-complete": "no",
+																																"loop": "yes",
+																																"ping-pong": "yes"
+																															}
+																														}
+																													],
+																													"sid": 851695433853990
+																												}
+																											]
+																										}
+																									]
+																								},
+																								{
+																									"eventType": "block",
+																									"conditions": [
+																										{
+																											"id": "trigger-once-while-true",
+																											"objectClass": "System",
+																											"sid": 119520612666445
+																										}
+																									],
+																									"actions": [
+																										{
+																											"id": "set-animation-frame",
+																											"objectClass": "Shatter",
+																											"sid": 970512677706516,
+																											"parameters": {
+																												"frame-number": "0"
+																											}
+																										},
+																										{
+																											"id": "set-visible",
+																											"objectClass": "Shatter",
+																											"sid": 767587964115986,
+																											"parameters": {
+																												"visibility": "visible"
+																											}
+																										},
+																										{
+																											"id": "set-animation-speed",
+																											"objectClass": "Shatter",
+																											"sid": 537996161707180,
+																											"parameters": {
+																												"speed": "Functions.Define_Mining_Speed(Sprite.Mining_Speed,1,Terrain.TileAt(Tilex,TileY),Sprite11.Item_SubType)"
+																											}
+																										},
+																										{
+																											"id": "set-position",
+																											"objectClass": "Shatter",
+																											"sid": 508958973252197,
+																											"parameters": {
+																												"x": "Terrain.SnapX(TileABSX)",
+																												"y": "Terrain.SnapY(TileABSY)"
+																											}
+																										},
+																										{
+																											"id": "set-position",
+																											"objectClass": "ShatterEffect",
+																											"sid": 863815739716667,
+																											"parameters": {
+																												"x": "Shatter.X",
+																												"y": "Shatter.Y"
+																											}
+																										},
+																										{
+																											"id": "set-rate",
+																											"objectClass": "ShatterEffect",
+																											"sid": 358347910941756,
+																											"parameters": {
+																												"rate": "18"
+																											}
+																										},
+																										{
+																											"id": "set-instvar-value",
+																											"objectClass": "Shatter",
+																											"sid": 157730192269267,
+																											"parameters": {
+																												"instance-variable": "Target_Tile_X",
+																												"value": "Tilex"
+																											}
+																										},
+																										{
+																											"id": "set-instvar-value",
+																											"objectClass": "Shatter",
+																											"sid": 876957485235367,
+																											"parameters": {
+																												"instance-variable": "Target_Tile_Y",
+																												"value": "TileY"
+																											}
+																										},
+																										{
+																											"id": "set-position",
+																											"objectClass": "BlockBlackout",
+																											"sid": 376145122196381,
+																											"parameters": {
+																												"x": "Shatter.X",
+																												"y": "Shatter.Y"
+																											}
+																										},
+																										{
+																											"id": "set-visible",
+																											"objectClass": "BlockBlackout",
+																											"sid": 888395637943132,
+																											"parameters": {
+																												"visibility": "visible"
+																											}
+																										},
+																										{
+																											"id": "set-visible",
+																											"objectClass": "BlockDestroyingFx",
+																											"sid": 492008348768440,
+																											"parameters": {
+																												"visibility": "visible"
+																											}
+																										},
+																										{
+																											"id": "stop-all-tweens",
+																											"objectClass": "BlockDestroyingFx",
+																											"sid": 553744594921640,
+																											"behaviorType": "Tween"
+																										},
+																										{
+																											"id": "stop-all-tweens",
+																											"objectClass": "Hand",
+																											"sid": 113825739544178,
+																											"behaviorType": "Tween"
+																										},
+																										{
+																											"id": "set-size",
+																											"objectClass": "BlockDestroyingFx",
+																											"sid": 106965015013715,
+																											"parameters": {
+																												"width": "16",
+																												"height": "16"
+																											}
+																										},
+																										{
+																											"id": "set-position",
+																											"objectClass": "BlockDestroyingFx",
+																											"sid": 206700520379074,
+																											"parameters": {
+																												"x": "Shatter.X",
+																												"y": "Shatter.Y"
+																											}
+																										},
+																										{
+																											"id": "tween-two-properties",
+																											"objectClass": "BlockDestroyingFx",
+																											"sid": 488660516015991,
+																											"behaviorType": "Tween",
+																											"parameters": {
+																												"tags": "\"\"",
+																												"property": "size",
+																												"end-x": "8",
+																												"end-y": "8",
+																												"time": "0.2",
+																												"ease": "easeoutcubic",
+																												"destroy-on-complete": "no",
+																												"loop": "no",
+																												"ping-pong": "no"
+																											}
+																										},
+																										{
+																											"id": "tween-one-property",
+																											"objectClass": "BlockDestroyingFx",
+																											"sid": 677145348819017,
+																											"behaviorType": "Tween",
+																											"parameters": {
+																												"tags": "\"angleset\"",
+																												"property": "offsetAngle",
+																												"end-value": "30",
+																												"time": "0.1",
+																												"ease": "default",
+																												"destroy-on-complete": "no",
+																												"loop": "no",
+																												"ping-pong": "no"
+																											}
+																										},
+																										{
+																											"id": "tween-one-property",
+																											"objectClass": "Hand",
+																											"sid": 443028761766186,
+																											"behaviorType": "Tween",
+																											"parameters": {
+																												"tags": "\"angleset\"",
+																												"property": "offsetAngle",
+																												"end-value": "30",
+																												"time": "0.1",
+																												"ease": "default",
+																												"destroy-on-complete": "no",
+																												"loop": "no",
+																												"ping-pong": "no"
+																											}
+																										}
+																									],
+																									"sid": 208785531215426
+																								},
+																								{
+																									"eventType": "block",
+																									"conditions": [],
+																									"actions": [],
+																									"sid": 302631482648168,
+																									"children": [
+																										{
+																											"eventType": "block",
+																											"conditions": [
+																												{
+																													"id": "is-tag-playing",
+																													"objectClass": "Audio",
+																													"sid": 988939354943047,
+																													"parameters": {
+																														"tag": "\"Hit\""
+																													},
+																													"isInverted": true
+																												}
+																											],
+																											"actions": [],
+																											"sid": 984869088600739,
+																											"children": [
+																												{
+																													"eventType": "block",
+																													"conditions": [
+																														{
+																															"id": "has-key",
+																															"objectClass": "JSON",
+																															"sid": 209653081337210,
+																															"parameters": {
+																																"path": "\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex, TileY)&\".HitSound\""
+																															}
+																														}
+																													],
+																													"actions": [
+																														{
+																															"id": "play-by-name",
+																															"objectClass": "Audio",
+																															"sid": 652759366911925,
+																															"parameters": {
+																																"folder": "sounds",
+																																"audio-file-name": "JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex,TileY)&\".HitSound\")",
+																																"loop": "not-looping",
+																																"volume": "0",
+																																"stereo-pan": "0",
+																																"tag-optional": "\"Hit\""
+																															}
+																														}
+																													],
+																													"sid": 529014426075394
+																												},
+																												{
+																													"eventType": "block",
+																													"conditions": [
+																														{
+																															"id": "else",
+																															"objectClass": "System",
+																															"sid": 800146994527234
+																														}
+																													],
+																													"actions": [
+																														{
+																															"id": "play-by-name",
+																															"objectClass": "Audio",
+																															"sid": 587284729567480,
+																															"parameters": {
+																																"folder": "sounds",
+																																"audio-file-name": "\"Hitstone2\"",
+																																"loop": "not-looping",
+																																"volume": "0",
+																																"stereo-pan": "0",
+																																"tag-optional": "\"Hit\""
+																															}
+																														}
+																													],
+																													"sid": 364405512372345
+																												}
+																											]
+																										},
+																										{
+																											"eventType": "block",
+																											"conditions": [
+																												{
+																													"id": "compare-animation-frame",
+																													"objectClass": "Shatter",
+																													"sid": 175178306171487,
+																													"parameters": {
+																														"comparison": 0,
+																														"number": "Shatter.AnimationFrameCount-1"
+																													}
+																												}
+																											],
+																											"actions": [
+																												{
+																													"id": "set-rate",
+																													"objectClass": "ShatterEffect",
+																													"sid": 298386815050680,
+																													"parameters": {
+																														"rate": "0"
+																													}
+																												},
+																												{
+																													"id": "set-visible",
+																													"objectClass": "Shatter",
+																													"sid": 898895232802857,
+																													"parameters": {
+																														"visibility": "invisible"
+																													}
+																												},
+																												{
+																													"id": "set-animation-frame",
+																													"objectClass": "Shatter",
+																													"sid": 857116977270135,
+																													"parameters": {
+																														"frame-number": "0"
+																													}
+																												},
+																												{
+																													"id": "stop-all-tweens",
+																													"objectClass": "BlockDestroyingFx",
+																													"sid": 315075900799770,
+																													"behaviorType": "Tween"
+																												},
+																												{
+																													"id": "stop-all-tweens",
+																													"objectClass": "Hand",
+																													"sid": 436353958962652,
+																													"behaviorType": "Tween"
+																												},
+																												{
+																													"id": "tween-two-properties",
+																													"objectClass": "BlockDestroyingFx",
+																													"sid": 404289652791559,
+																													"behaviorType": "Tween",
+																													"parameters": {
+																														"tags": "\"\"",
+																														"property": "size",
+																														"end-x": "0",
+																														"end-y": "0",
+																														"time": "0.1",
+																														"ease": "easeoutcubic",
+																														"destroy-on-complete": "no",
+																														"loop": "no",
+																														"ping-pong": "no"
+																													}
+																												},
+																												{
+																													"id": "set-visible",
+																													"objectClass": "BlockDestroyingFx",
+																													"sid": 310658924083258,
+																													"parameters": {
+																														"visibility": "invisible"
+																													}
+																												},
+																												{
+																													"id": "set-visible",
+																													"objectClass": "BlockBlackout",
+																													"sid": 394387457925260,
+																													"parameters": {
+																														"visibility": "invisible"
+																													}
+																												},
+																												{
+																													"callFunction": "UpdateNearest",
+																													"sid": 373149463657391,
+																													"parameters": [
+																														"Tilex",
+																														"TileY"
+																													]
+																												},
+																												{
+																													"callFunction": "DeleteTimer",
+																													"sid": 993177705423583,
+																													"parameters": [
+																														"TileX",
+																														"TileY"
+																													]
+																												}
+																											],
+																											"sid": 420809002002084,
+																											"children": [
+																												{
+																													"eventType": "block",
+																													"conditions": [
+																														{
+																															"id": "has-key",
+																															"objectClass": "JSON",
+																															"sid": 567781264944064,
+																															"parameters": {
+																																"path": "\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex, TileY)&\".No_Silk_Drop\""
+																															}
+																														}
+																													],
+																													"actions": [
+																														{
+																															"callFunction": "Drop_Item",
+																															"sid": 773965828033859,
+																															"parameters": [
+																																"1",
+																																"JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex, TileY)&\".No_Silk_Drop\")",
+																																"Shatter.X",
+																																"Shatter.Y"
+																															]
+																														}
+																													],
+																													"sid": 413381679157282
+																												},
+																												{
+																													"eventType": "block",
+																													"conditions": [
+																														{
+																															"id": "has-key",
+																															"objectClass": "JSON",
+																															"sid": 646699249348572,
+																															"parameters": {
+																																"path": "\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex, TileY)&\".Drop\""
+																															}
+																														}
+																													],
+																													"actions": [
+																														{
+																															"callFunction": "BlockDrop",
+																															"sid": 656395160203151,
+																															"parameters": [
+																																"Terrain.TileAt(Tilex, TileY)",
+																																"Shatter.X",
+																																"Shatter.Y"
+																															]
+																														}
+																													],
+																													"sid": 984121299045600
+																												},
+																												{
+																													"eventType": "block",
+																													"conditions": [
+																														{
+																															"id": "has-key",
+																															"objectClass": "JSON",
+																															"sid": 221341933232177,
+																															"parameters": {
+																																"path": "\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex,TileY)&\".DestroySound\""
+																															}
+																														}
+																													],
+																													"actions": [
+																														{
+																															"id": "play-by-name",
+																															"objectClass": "Audio",
+																															"sid": 204539753240178,
+																															"parameters": {
+																																"folder": "sounds",
+																																"audio-file-name": "JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex,TileY)&\".DestroySound\")",
+																																"loop": "not-looping",
+																																"volume": "0",
+																																"stereo-pan": "0",
+																																"tag-optional": "\"\""
+																															}
+																														}
+																													],
+																													"sid": 850717815522891
+																												},
+																												{
+																													"eventType": "block",
+																													"conditions": [
+																														{
+																															"id": "else",
+																															"objectClass": "System",
+																															"sid": 381231378986463
+																														}
+																													],
+																													"actions": [
+																														{
+																															"id": "play-by-name",
+																															"objectClass": "Audio",
+																															"sid": 926271536994283,
+																															"parameters": {
+																																"folder": "sounds",
+																																"audio-file-name": "\"stone1\"",
+																																"loop": "not-looping",
+																																"volume": "0",
+																																"stereo-pan": "0",
+																																"tag-optional": "\"\""
+																															}
+																														}
+																													],
+																													"sid": 529051056091932
+																												},
+																												{
+																													"eventType": "block",
+																													"conditions": [],
+																													"actions": [
+																														{
+																															"id": "erase-tile",
+																															"objectClass": "Terrain",
+																															"sid": 542599167368041,
+																															"parameters": {
+																																"tile-x": "Tilex",
+																																"tile-y": "TileY"
+																															}
+																														}
+																													],
+																													"sid": 768849898577668
+																												},
+																												{
+																													"eventType": "block",
+																													"conditions": [
+																														{
+																															"id": "compare-instance-variable",
+																															"objectClass": "Sprite11",
+																															"sid": 413457495082683,
+																															"parameters": {
+																																"instance-variable": "Item_Type",
+																																"comparison": 0,
+																																"value": "\"Instrument\""
+																															}
+																														}
+																													],
+																													"actions": [],
+																													"sid": 335000970678748,
+																													"children": [
+																														{
+																															"eventType": "block",
+																															"conditions": [
+																																{
+																																	"id": "pick-by-comparison",
+																																	"objectClass": "System",
+																																	"sid": 475859591306890,
+																																	"parameters": {
+																																		"object": "Inventory_Item",
+																																		"expression": "Inventory_Item.PosX",
+																																		"comparison": 0,
+																																		"value": "Sprite11.Selected_Item_Index"
+																																	}
+																																}
+																															],
+																															"actions": [
+																																{
+																																	"id": "subtract-from-instvar",
+																																	"objectClass": "Inventory_Item",
+																																	"sid": 871539895929544,
+																																	"parameters": {
+																																		"instance-variable": "Count_",
+																																		"value": "1"
+																																	}
+																																},
+																																{
+																																	"id": "set-at-xy",
+																																	"objectClass": "Inventory",
+																																	"sid": 564206365090375,
+																																	"parameters": {
+																																		"x": "Inventory_Item.PosX",
+																																		"y": "1",
+																																		"value": "Inventory.At(loopindex(\"x\"),1)-1"
+																																	}
+																																},
+																																{
+																																	"callFunction": "Draw_Item_Durability",
+																																	"sid": 967636944109724,
+																																	"parameters": [
+																																		"Inventory_Item.UID"
+																																	]
+																																}
+																															],
+																															"sid": 120235485937440
+																														}
+																													]
+																												}
+																											]
+																										}
+																									]
+																								}
+																							]
+																						},
+																						{
+																							"eventType": "block",
+																							"conditions": [
+																								{
+																									"id": "else",
+																									"objectClass": "System",
+																									"sid": 804923555599634
+																								}
+																							],
+																							"actions": [
+																								{
+																									"id": "set-animation-frame",
+																									"objectClass": "Shatter",
+																									"sid": 557411652238142,
+																									"parameters": {
+																										"frame-number": "0"
+																									}
+																								},
+																								{
+																									"id": "set-visible",
+																									"objectClass": "Shatter",
+																									"sid": 516806189049757,
+																									"parameters": {
+																										"visibility": "visible"
+																									}
+																								},
+																								{
+																									"id": "set-animation-speed",
+																									"objectClass": "Shatter",
+																									"sid": 926023010097555,
+																									"parameters": {
+																										"speed": "Functions.Define_Mining_Speed(Sprite.Mining_Speed,1,Terrain.TileAt(Tilex,TileY),Sprite11.Item_SubType)"
+																									}
+																								},
+																								{
+																									"id": "set-position",
+																									"objectClass": "Shatter",
+																									"sid": 581717275481490,
+																									"parameters": {
+																										"x": "Terrain.SnapX(TileABSX)",
+																										"y": "Terrain.SnapY(TileABSY)"
+																									}
+																								},
+																								{
+																									"id": "set-position",
+																									"objectClass": "ShatterEffect",
+																									"sid": 311701386703281,
+																									"parameters": {
+																										"x": "Shatter.X",
+																										"y": "Shatter.Y"
+																									}
+																								},
+																								{
+																									"id": "set-rate",
+																									"objectClass": "ShatterEffect",
+																									"sid": 393411461173688,
+																									"parameters": {
+																										"rate": "18"
+																									}
+																								},
+																								{
+																									"id": "set-instvar-value",
+																									"objectClass": "Shatter",
+																									"sid": 395151018460641,
+																									"parameters": {
+																										"instance-variable": "Target_Tile_X",
+																										"value": "Tilex"
+																									}
+																								},
+																								{
+																									"id": "set-instvar-value",
+																									"objectClass": "Shatter",
+																									"sid": 207982117748770,
+																									"parameters": {
+																										"instance-variable": "Target_Tile_Y",
+																										"value": "TileY"
+																									}
+																								},
+																								{
+																									"id": "set-position",
+																									"objectClass": "BlockBlackout",
+																									"sid": 735278772314850,
+																									"parameters": {
+																										"x": "Shatter.X",
+																										"y": "Shatter.Y"
+																									}
+																								},
+																								{
+																									"id": "set-visible",
+																									"objectClass": "BlockBlackout",
+																									"sid": 844212974586814,
+																									"parameters": {
+																										"visibility": "visible"
+																									}
+																								},
+																								{
+																									"id": "set-visible",
+																									"objectClass": "BlockDestroyingFx",
+																									"sid": 985896653645462,
+																									"parameters": {
+																										"visibility": "visible"
+																									}
+																								},
+																								{
+																									"id": "stop-all-tweens",
+																									"objectClass": "BlockDestroyingFx",
+																									"sid": 612324455837277,
+																									"behaviorType": "Tween"
+																								},
+																								{
+																									"id": "stop-all-tweens",
+																									"objectClass": "Hand",
+																									"sid": 563183097759576,
+																									"behaviorType": "Tween"
+																								},
+																								{
+																									"id": "set-size",
+																									"objectClass": "BlockDestroyingFx",
+																									"sid": 204990912595749,
+																									"parameters": {
+																										"width": "16",
+																										"height": "16"
+																									}
+																								},
+																								{
+																									"id": "set-position",
+																									"objectClass": "BlockDestroyingFx",
+																									"sid": 428633145332341,
+																									"parameters": {
+																										"x": "Shatter.X",
+																										"y": "Shatter.Y"
+																									}
+																								},
+																								{
+																									"id": "tween-two-properties",
+																									"objectClass": "BlockDestroyingFx",
+																									"sid": 932028281818991,
+																									"behaviorType": "Tween",
+																									"parameters": {
+																										"tags": "\"\"",
+																										"property": "size",
+																										"end-x": "8",
+																										"end-y": "8",
+																										"time": "0.2",
+																										"ease": "easeoutcubic",
+																										"destroy-on-complete": "no",
+																										"loop": "no",
+																										"ping-pong": "no"
+																									}
+																								},
+																								{
+																									"id": "tween-one-property",
+																									"objectClass": "BlockDestroyingFx",
+																									"sid": 833746961851054,
+																									"behaviorType": "Tween",
+																									"parameters": {
+																										"tags": "\"angleset\"",
+																										"property": "offsetAngle",
+																										"end-value": "30",
+																										"time": "0.1",
+																										"ease": "default",
+																										"destroy-on-complete": "no",
+																										"loop": "no",
+																										"ping-pong": "no"
+																									}
+																								}
+																							],
+																							"sid": 551309880242701
+																						}
+																					]
+																				}
+																			]
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "else",
+																					"objectClass": "System",
+																					"sid": 540962255290699
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-visible",
+																					"objectClass": "Shatter",
+																					"sid": 680199523133606,
+																					"parameters": {
+																						"visibility": "invisible"
+																					}
+																				},
+																				{
+																					"id": "set-rate",
+																					"objectClass": "ShatterEffect",
+																					"sid": 801634491315298,
+																					"parameters": {
+																						"rate": "0"
+																					}
+																				},
+																				{
+																					"id": "set-animation-frame",
+																					"objectClass": "Shatter",
+																					"sid": 729166519907219,
+																					"parameters": {
+																						"frame-number": "0"
+																					}
+																				},
+																				{
+																					"id": "stop-all-tweens",
+																					"objectClass": "BlockDestroyingFx",
+																					"sid": 325010728999037,
+																					"behaviorType": "Tween"
+																				},
+																				{
+																					"id": "stop-all-tweens",
+																					"objectClass": "Hand",
+																					"sid": 444532075891068,
+																					"behaviorType": "Tween"
+																				},
+																				{
+																					"id": "set-visible",
+																					"objectClass": "BlockBlackout",
+																					"sid": 124435625484852,
+																					"parameters": {
+																						"visibility": "invisible"
+																					}
+																				},
+																				{
+																					"id": "set-visible",
+																					"objectClass": "BlockDestroyingFx",
+																					"sid": 310594404535429,
+																					"parameters": {
+																						"visibility": "invisible"
+																					}
+																				}
+																			],
+																			"sid": 135056304571162
+																		}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 304153761562653
+										}
+									],
+									"actions": [],
+									"sid": 597522905822717,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-parent",
+													"objectClass": "JoyStick",
+													"sid": 218595129773765,
+													"parameters": {
+														"parent": "JoyStickBlank",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-position",
+													"objectClass": "JoyStick",
+													"sid": 600590879220837,
+													"parameters": {
+														"x": "lerp(Self.X,JoyStickBlank.X,0.1)",
+														"y": "lerp(Self.Y,JoyStickBlank.y,0.1)"
+													}
+												}
+											],
+											"sid": 496886544213494
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 863280538135750
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "arrow",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [],
+					"sid": 601897071686525
+				}
+			],
+			"sid": 216439551789126
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Hungry",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "addHungry",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "value",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 312705898119917
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Sprite",
+							"sid": 506189545256851,
+							"parameters": {
+								"instance-variable": "Hungry",
+								"value": "clamp(Sprite.Hungry+value,0,999)"
+							}
+						}
+					],
+					"sid": 847470039495994,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each-ordered",
+									"objectClass": "System",
+									"sid": 145054751811660,
+									"parameters": {
+										"object": "Sprite19",
+										"expression": "Sprite19.X",
+										"order": "ascending"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Sprite19",
+									"sid": 571347337063905,
+									"parameters": {
+										"frame-number": "Sprite.Hungry > loopindex*2 ? ( (loopindex*2)+1 = Sprite.Hungry ? 1: 0) : 2"
+									}
+								}
+							],
+							"sid": 614220713690643
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 482001588549340,
+									"parameters": {
+										"value": "Sprite.Hungry = 0"
+									}
+								},
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 392619348979827,
+									"parameters": {
+										"value": "Sprite.Health = 1"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "addHealth",
+									"sid": 275049287916873,
+									"parameters": [
+										"-1",
+										false
+									]
+								}
+							],
+							"sid": 385820561527315
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 166800079628343,
+							"parameters": {
+								"interval-seconds": "1.0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "addHungry",
+							"sid": 243961172388849,
+							"parameters": [
+								"-1"
+							]
+						}
+					],
+					"sid": 314338299405590,
+					"disabled": true
+				}
+			],
+			"sid": 405937839722839
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Health",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "addHealth",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "value",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 530270770406208
+						},
+						{
+							"name": "Killable",
+							"type": "boolean",
+							"initialValue": "true",
+							"comment": "",
+							"sid": 912258594358621
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Sprite",
+							"sid": 263052670765368,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "Killable = 1 ? Sprite.Health + value : clamp(Sprite.Health + value,1,999) "
+							}
+						}
+					],
+					"sid": 410689551703180,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each-ordered",
+									"objectClass": "System",
+									"sid": 848230144909021,
+									"parameters": {
+										"object": "Heart",
+										"expression": "Heart.X",
+										"order": "ascending"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Heart",
+									"sid": 664430605420556,
+									"parameters": {
+										"frame-number": "Sprite.Health > loopindex*2 ? ( (loopindex*2)+1 = Sprite.Health ? 1: 0) : 2"
+									}
+								}
+							],
+							"sid": 418030072891586
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 391665513072911,
+									"parameters": {
+										"value": "Sprite.Health <= 0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 984606964438283,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "alert",
+											"objectClass": "Browser",
+											"sid": 123972915931246,
+											"parameters": {
+												"message": "\"Die\""
+											}
+										}
+									],
+									"sid": 984604408456545
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 455466885219185
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Sprite",
+									"sid": 701836277926814,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "Heart",
+									"sid": 104827804841016,
+									"parameters": {
+										"mode": "enable",
+										"effect": "\"SetColor\""
+									}
+								},
+								{
+									"id": "shake",
+									"objectClass": "Cam",
+									"sid": 704878445999193,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"magnitude": "2",
+										"duration": "0.3",
+										"mode": "reducing-magnitude"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 299195152385673,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "Heart",
+									"sid": 741787500100479,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"SetColor\""
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Sprite",
+									"sid": 824023149788428,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 417646083279208
+						}
+					]
+				}
+			],
+			"sid": 876148770860425
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "DropItem",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "BlockDrop",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "Tile",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 413312711593794
+						},
+						{
+							"name": "X",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 472570197343355
+						},
+						{
+							"name": "Y",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 177832207636636
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 424648017201026,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "JSON",
+									"sid": 214026014038266,
+									"parameters": {
+										"path": "\"Settings.Config.Tiles.\"&Tile&\".Drop\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 830592679938374,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 632863238924857,
+											"parameters": {
+												"value": "random(100) < JSON.Get(\"Settings.Config.Tiles.\"&Tile&\".Drop.\"&JSON.CurrentKey)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Drop_Item",
+											"sid": 688910798687356,
+											"parameters": [
+												"1",
+												"JSON.CurrentKey",
+												"X",
+												"Y"
+											]
+										}
+									],
+									"sid": 619336413472792
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 154639868326919
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 551686075072714
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Player_Light",
+							"sid": 526598336979721,
+							"parameters": {
+								"x": "Sprite.X",
+								"y": "Sprite.Y"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Cam",
+							"sid": 879669127842135,
+							"parameters": {
+								"x": "lerp(Self.X,Sprite.X,0.07)",
+								"y": "lerp(Self.Y,Sprite.Y-15,0.07)"
+							}
+						}
+					],
+					"sid": 168301247513330
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Sprite",
+							"sid": 992206534564324,
+							"parameters": {
+								"object": "Ladder"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-gravity",
+							"objectClass": "Sprite",
+							"sid": 250210079699392,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "1500"
+							}
+						}
+					],
+					"sid": 389884325896404
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 694787762734473
+						}
+					],
+					"actions": [
+						{
+							"id": "set-gravity",
+							"objectClass": "Sprite",
+							"sid": 212785244666685,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "100"
+							}
+						}
+					],
+					"sid": 196153639247014,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 354640514413455
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "Sprite",
+									"sid": 605812239175256,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"Standart\"",
+										"property": "size",
+										"end-x": "Self.Width>0? 16: -16",
+										"end-y": "16",
+										"time": "0.1",
+										"ease": "easeoutsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no"
+									}
+								}
+							],
+							"sid": 421619711793504
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-floor",
+							"objectClass": "Sprite",
+							"sid": 367470573633877,
+							"behaviorType": "Platform"
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 397462248967696
+						}
+					],
+					"actions": [],
+					"sid": 847169483562625,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Sprite",
+									"sid": 324230037042500,
+									"parameters": {
+										"object": "Ladder"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-rate",
+									"objectClass": "Particles",
+									"sid": 557983615208977,
+									"parameters": {
+										"rate": "80"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "Particles",
+									"sid": 699072458972715,
+									"parameters": {
+										"angle": "270"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "Sprite",
+									"sid": 113243759548397,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"Fall\"",
+										"property": "size",
+										"end-x": "Self.Width>0? 20 : -20",
+										"end-y": "12",
+										"time": "0.1",
+										"ease": "easeoutsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no"
+									}
+								}
+							],
+							"sid": 587971041085888
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "Sprite",
+							"sid": 594242297637168,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"Fall\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "Sprite",
+							"sid": 408879620246423,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"Standart\"",
+								"property": "size",
+								"end-x": "Self.Width > 0? 16 : -16",
+								"end-y": "16",
+								"time": "0.1",
+								"ease": "easeoutsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						}
+					],
+					"sid": 344406284029453
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 659961677922172,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Sprite",
+							"sid": 136726201916521,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Particles",
+							"sid": 439871424756944,
+							"parameters": {
+								"angle": "202"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Sprite",
+							"sid": 159710153653352,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 731278505351780
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 361476126832718,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Sprite",
+							"sid": 957688888671045,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Particles",
+							"sid": 262020193159077,
+							"parameters": {
+								"angle": "338"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Sprite",
+							"sid": 705922539343502,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 805061699744791
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 553721777048608,
+							"parameters": {
+								"key": 32
+							}
+						}
+					],
+					"actions": [],
+					"sid": 947672849411947,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Sprite",
+									"sid": 194320138587400,
+									"parameters": {
+										"object": "Ladder"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-y",
+									"objectClass": "Sprite",
+									"sid": 104266960527456,
+									"parameters": {
+										"y": "Self.Y-1"
+									}
+								},
+								{
+									"id": "set-gravity",
+									"objectClass": "Sprite",
+									"sid": 161833597131604,
+									"behaviorType": "Platform",
+									"parameters": {
+										"gravity": "0"
+									}
+								}
+							],
+							"sid": 852940436547670
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 284452873089599
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Sprite",
+									"sid": 411647509214356,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "jump"
+									}
+								},
+								{
+									"id": "set-gravity",
+									"objectClass": "Sprite",
+									"sid": 893476736691829,
+									"behaviorType": "Platform",
+									"parameters": {
+										"gravity": "1500"
+									}
+								}
+							],
+							"sid": 787613402483454,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 221470422214983
+										},
+										{
+											"id": "compare-tile-at",
+											"objectClass": "Terrain",
+											"sid": 625543764251832,
+											"parameters": {
+												"tile-x": "Terrain.PositionToTileX(Sprite.X)",
+												"tile-y": "Terrain.PositionToTileY(Sprite.Y)-1",
+												"comparison": 0,
+												"tile": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-two-properties",
+											"objectClass": "Sprite",
+											"sid": 564107619957583,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"Jump\"",
+												"property": "size",
+												"end-x": "Self.Width >0? 12: -12",
+												"end-y": "20",
+												"time": "0.3",
+												"ease": "easeoutelastic",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no"
+											}
+										}
+									],
+									"sid": 669845910903984
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "Sprite",
+							"sid": 318797902674250,
+							"behaviorType": "Platform",
+							"isInverted": true
+						},
+						{
+							"id": "is-on-floor",
+							"objectClass": "Sprite",
+							"sid": 311606414949070,
+							"behaviorType": "Platform",
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-rate",
+							"objectClass": "Particles",
+							"sid": 481822805755842,
+							"parameters": {
+								"rate": "0"
+							}
+						}
+					],
+					"sid": 108083826655001,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 162750738922560
+						}
+					],
+					"actions": [
+						{
+							"id": "set-rate",
+							"objectClass": "Particles",
+							"sid": 192666589504667,
+							"parameters": {
+								"rate": "50"
+							}
+						}
+					],
+					"sid": 547578797432325
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 636153823593855,
+							"parameters": {
+								"interval-seconds": "120"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "addHungry",
+							"sid": 815965700804413,
+							"parameters": [
+								"-1"
+							]
+						}
+					],
+					"sid": 286379571092572
+				}
+			],
+			"sid": 378347907631198
 		}
 	],
 	"sid": 380699106854873

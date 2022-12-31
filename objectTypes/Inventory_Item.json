@@ -75,6 +75,29 @@
 			{
 				"frames": [
 					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3211782,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 958464645595696,
+				"name": "-1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
 						"width": 265,
 						"height": 265,
 						"originX": 0.5,
@@ -607,6 +630,98 @@
 				],
 				"sid": 512955363983782,
 				"name": "Furnace",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9557019,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 983944836959352,
+				"name": "Apple",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 983196,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 780173560217059,
+				"name": "Coal",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 300,
+						"height": 300,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8225554,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 794189104189354,
+				"name": "IronOre",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 300,
+						"height": 300,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2850298,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 369713236542035,
+				"name": "GoldOre",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

@@ -21,19 +21,42 @@
 	],
 	"behaviorTypes": [
 		{
-			"behaviorId": "Platform",
-			"name": "Platform",
-			"sid": 334153531811662
-		},
-		{
 			"behaviorId": "Tween",
 			"name": "Tween",
 			"sid": 368549376713733
+		},
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 180305329697321
 		}
 	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7765696,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 292900270870967,
+				"name": "-1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
 			{
 				"frames": [
 					{
@@ -166,6 +189,221 @@
 				],
 				"sid": 666686652350342,
 				"name": "Cobblestone",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1018396,
+						"collisionPoly": {
+							"points": [
+								0.3125,
+								0.3125,
+								0.5,
+								0.125,
+								0.625,
+								0.3125,
+								0.8125,
+								0.5,
+								0.75,
+								0.75,
+								0.5,
+								0.875,
+								0.1875,
+								0.75,
+								0.125,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 804209149326036,
+				"name": "Apple",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1346778,
+						"collisionPoly": {
+							"points": [
+								0.3125,
+								0.3125,
+								0.5,
+								0.125,
+								0.625,
+								0.3125,
+								0.8125,
+								0.5,
+								0.75,
+								0.75,
+								0.5,
+								0.875,
+								0.1875,
+								0.75,
+								0.125,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 239076386032173,
+				"name": "Coal",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9524827,
+						"collisionPoly": {
+							"points": [
+								0.3125,
+								0.3125,
+								0.5,
+								0.125,
+								0.625,
+								0.3125,
+								0.8125,
+								0.5,
+								0.75,
+								0.75,
+								0.5,
+								0.875,
+								0.1875,
+								0.75,
+								0.125,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 158944453249556,
+				"name": "IronOre",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2834827,
+						"collisionPoly": {
+							"points": [
+								0.3125,
+								0.3125,
+								0.5,
+								0.125,
+								0.625,
+								0.3125,
+								0.8125,
+								0.5,
+								0.75,
+								0.75,
+								0.5,
+								0.875,
+								0.1875,
+								0.75,
+								0.125,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 515737053884065,
+				"name": "GoldOre",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 719152,
+						"collisionPoly": {
+							"points": [
+								0.3125,
+								0.3125,
+								0.5,
+								0.125,
+								0.625,
+								0.3125,
+								0.8125,
+								0.5,
+								0.75,
+								0.75,
+								0.5,
+								0.875,
+								0.1875,
+								0.75,
+								0.125,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 561216303082783,
+				"name": "Diamond",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

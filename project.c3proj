@@ -40,16 +40,16 @@
 		},
 		{
 			"type": "plugin",
-			"id": "TiledBg",
-			"name": "Tiled Background",
+			"id": "Browser",
+			"name": "Browser",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
-			"id": "Browser",
-			"name": "Browser",
+			"id": "TiledBg",
+			"name": "Tiled Background",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -143,9 +143,33 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "MixonGames_EasyInGameConsole",
+			"name": "In-Game Console",
+			"author": "Mixon Games",
+			"version": "1.0.0.0",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Physics",
+			"name": "Physics",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -170,6 +194,14 @@
 			"type": "behavior",
 			"id": "Tween",
 			"name": "Tween",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "LOS",
+			"name": "Line of sight",
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
@@ -221,6 +253,14 @@
 			"author": "skymen",
 			"version": "1.4.0.3",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "setcolor",
+			"name": "Set color",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
 		}
 	],
 	"uniqueId": "hzewnjjqm0u",
@@ -235,9 +275,8 @@
 			"DrawingCanvas",
 			"Text",
 			"Sprite4",
-			"TiledBackground",
 			"Sprite5",
-			"Sprite6",
+			"Heart",
 			"Browser",
 			"TiledBackground2",
 			"Inventory",
@@ -293,12 +332,36 @@
 			"Date",
 			"Lupa",
 			"TiledBackground4",
-			"Sprite16"
+			"Sprite16",
+			"JoyStick",
+			"JoyStickBlank",
+			"PlayerDigRay",
+			"Sprite6",
+			"Sprite17",
+			"Hand",
+			"BlockBlackout",
+			"BlockDestroyingFx",
+			"Sprite19",
+			"Mouse",
+			"Click",
+			"LightMap",
+			"Sprite20",
+			"InGameConsole",
+			"FoodBtn",
+			"Sprite18"
 		],
 		"subfolders": []
 	},
 	"autosaveData": null,
-	"containers": [],
+	"containers": [
+		{
+			"members": [
+				"PlayerDigRay",
+				"Sprite"
+			],
+			"selectMode": "normal"
+		}
+	],
 	"families": {
 		"items": [
 			"Btns",
@@ -322,7 +385,9 @@
 			"UI",
 			"Init",
 			"Menu_es",
-			"Loader_es"
+			"Loader_es",
+			"Functions_es",
+			"Console"
 		],
 		"subfolders": []
 	},

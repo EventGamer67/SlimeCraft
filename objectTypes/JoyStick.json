@@ -1,0 +1,79 @@
+{
+	"name": "JoyStick",
+	"plugin-id": "Sprite",
+	"sid": 968648697863974,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Picked",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 831232531268108
+		},
+		{
+			"name": "Type",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 601126857193304
+		},
+		{
+			"name": "TouchID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 217551430665151
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9078247,
+						"collisionPoly": {
+							"points": [
+								0.15,
+								0.15,
+								0.5,
+								0,
+								0.8375,
+								0.15,
+								0.9875,
+								0.5,
+								0.85,
+								0.85,
+								0.5,
+								0.9875,
+								0.15,
+								0.8375,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 973743902836103,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

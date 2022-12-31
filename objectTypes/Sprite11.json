@@ -38,6 +38,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 932781298702621
+		},
+		{
+			"name": "CurrentSlot",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 527975979636558
 		}
 	],
 	"behaviorTypes": [

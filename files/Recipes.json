@@ -70,7 +70,7 @@
 				"Item": "Furnace",
 				"Count": 1
 			}
-		},
+		},	
 		"Wooden_Pickaxe": {
 			"Type": "Crafting_Shapeless",
 			"Pattern": [

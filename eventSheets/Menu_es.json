@@ -30,6 +30,22 @@
 						"stereo-pan": "0",
 						"tag-optional": "\"Back\""
 					}
+				},
+				{
+					"id": "tween-value",
+					"objectClass": "GameManager",
+					"sid": 175058075470532,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"Fade\"",
+						"start-value": "100",
+						"end-value": "0",
+						"time": "0.4",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no"
+					}
 				}
 			],
 			"sid": 713691689381775,
@@ -58,6 +74,21 @@
 						}
 					],
 					"sid": 743492244262115
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "check-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 827746557741763,
+							"parameters": {
+								"key": "\"World\""
+							}
+						}
+					],
+					"sid": 760979725008640
 				}
 			]
 		},
@@ -136,14 +167,6 @@
 							"parameters": [
 								false
 							]
-						},
-						{
-							"id": "check-item-exists",
-							"objectClass": "LocalStorage",
-							"sid": 674370792173803,
-							"parameters": {
-								"key": "\"World\""
-							}
 						}
 					],
 					"sid": 131543809810859
@@ -162,7 +185,15 @@
 							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"callFunction": "StartGame",
+							"sid": 532067558630240,
+							"parameters": [
+								true
+							]
+						}
+					],
 					"sid": 630066190142646
 				},
 				{
@@ -233,6 +264,33 @@
 				},
 				{
 					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 811313858094293,
+							"parameters": {
+								"instance-variable": "Type",
+								"comparison": 0,
+								"value": "\"OtherGames\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-url",
+							"objectClass": "Browser",
+							"sid": 579431465474422,
+							"parameters": {
+								"url": "\"https://yandex.ru/games/developer?name=CerberusDev\"",
+								"target": "top"
+							}
+						}
+					],
+					"sid": 764006271156795
+				},
+				{
+					"eventType": "block",
 					"conditions": [],
 					"actions": [
 						{
@@ -269,127 +327,6 @@
 					"sid": 710278098385369
 				}
 			]
-		},
-		{
-			"functionName": "StartGame",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "New",
-					"type": "boolean",
-					"initialValue": "false",
-					"comment": "",
-					"sid": 451801853849306
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 298256485055420,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 439902999523372,
-							"parameters": {
-								"variable": "New"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 532785896969106
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 788115826463582
-						}
-					],
-					"actions": [],
-					"sid": 213238658175018
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-item-missing",
-					"objectClass": "LocalStorage",
-					"sid": 476486134639495,
-					"parameters": {
-						"key": "\"World\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "fade-volume",
-					"objectClass": "Audio",
-					"sid": 480359531194517,
-					"parameters": {
-						"tag": "\"Back\"",
-						"db": "-100",
-						"duration": "1",
-						"ending": "stop"
-					}
-				},
-				{
-					"id": "tween-value",
-					"objectClass": "GameManager",
-					"sid": 732969267725482,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "\"Fade\"",
-						"start-value": "0",
-						"end-value": "100",
-						"time": "1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no"
-					}
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 791869256532249
-				},
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 213642765049079,
-					"parameters": {
-						"layout": "Main"
-					}
-				}
-			],
-			"sid": 737834828232796
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-item-exists",
-					"objectClass": "LocalStorage",
-					"sid": 922907674012730,
-					"parameters": {
-						"key": "\"World\""
-					}
-				}
-			],
-			"actions": [],
-			"sid": 820119003364376
 		},
 		{
 			"eventType": "block",
@@ -499,41 +436,355 @@
 			]
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-any-touch-start",
-					"objectClass": "Touch",
-					"sid": 998854661325330
-				}
-			],
-			"actions": [],
-			"sid": 611905066771256,
+			"eventType": "group",
+			"disabled": false,
+			"title": "Saves",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
+				{
+					"functionName": "StartGame",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "New",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 451801853849306
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 420696352867505,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 253354564609561,
+									"parameters": {
+										"variable": "New"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 158335558833793,
+									"parameters": {
+										"tag": "\"Back\"",
+										"db": "-100",
+										"duration": "1",
+										"ending": "stop"
+									}
+								},
+								{
+									"id": "tween-value",
+									"objectClass": "GameManager",
+									"sid": 496828210662595,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"Fade\"",
+										"start-value": "0",
+										"end-value": "100",
+										"time": "1",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 656287807046359
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 670050991160079,
+									"parameters": {
+										"layout": "Main"
+									}
+								}
+							],
+							"sid": 813701296032384
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 949088601796800
+								}
+							],
+							"actions": [
+								{
+									"id": "get-item",
+									"objectClass": "LocalStorage",
+									"sid": 543604025262233,
+									"parameters": {
+										"key": "\"World\""
+									}
+								}
+							],
+							"sid": 597392422958161
+						}
+					]
+				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-fullscreen",
-							"objectClass": "Browser",
-							"sid": 899184183239595,
-							"isInverted": true
+							"id": "on-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 932833431093590,
+							"parameters": {
+								"key": "\"World\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 971563506347428,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 180490120250102,
+									"parameters": {
+										"object": "Button",
+										"expression": "Button.Type = \"CreateNewWorld\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Button",
+									"sid": 873645613707984,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Button",
+									"sid": 576932991292439,
+									"parameters": {
+										"instance-variable": "Active",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 564895692288561,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Button",
+											"sid": 427362405342251,
+											"parameters": {
+												"child": "Text",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-default-color",
+											"objectClass": "Text",
+											"sid": 413360083001671,
+											"parameters": {
+												"color": "rgbEx255(255, 255, 255)"
+											}
+										}
+									],
+									"sid": 238669631732859
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-missing",
+							"objectClass": "LocalStorage",
+							"sid": 167901292412533,
+							"parameters": {
+								"key": "\"World\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 958498487417739,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 943628289235234,
+									"parameters": {
+										"object": "Button",
+										"expression": "Button.Type = \"Play\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Button",
+									"sid": 629982117220140,
+									"parameters": {
+										"frame-number": "2"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Button",
+									"sid": 516924628755841,
+									"parameters": {
+										"instance-variable": "Active",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 874373088161185,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Button",
+											"sid": 990434286205300,
+											"parameters": {
+												"child": "Text",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-default-color",
+											"objectClass": "Text",
+											"sid": 233135357620081,
+											"parameters": {
+												"color": "rgbEx255(120, 120, 120)"
+											}
+										}
+									],
+									"sid": 423863253295024
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 356402281068763,
+									"parameters": {
+										"object": "Button",
+										"expression": "Button.Type = \"CreateNewWorld\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Button",
+									"sid": 469994259352814,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Button",
+									"sid": 366801546974825,
+									"parameters": {
+										"instance-variable": "Active",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 133773055302922,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Button",
+											"sid": 814764512440514,
+											"parameters": {
+												"child": "Text",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-default-color",
+											"objectClass": "Text",
+											"sid": 656681575024871,
+											"parameters": {
+												"color": "rgbEx255(255, 255, 255)"
+											}
+										}
+									],
+									"sid": 463196582758187
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "LocalStorage",
+							"sid": 179849165063729,
+							"parameters": {
+								"key": "\"World\""
+							}
 						}
 					],
 					"actions": [
 						{
-							"id": "request-fullscreen",
-							"objectClass": "Browser",
-							"sid": 307973364803704,
+							"id": "load-from-json",
+							"objectClass": "System",
+							"sid": 998548550472896,
 							"parameters": {
-								"mode": "stretch-scale-outer",
-								"navigation-ui": "hide"
+								"json": "LocalStorage.ItemValue"
 							}
 						}
 					],
-					"sid": 700820277669255
+					"sid": 905086746733905
 				}
-			]
+			],
+			"sid": 182675245115746
 		}
 	],
 	"sid": 743666173854903

@@ -1,20 +1,20 @@
 {
-	"name": "TiledBackground",
-	"plugin-id": "TiledBg",
-	"sid": 329267620225607,
+	"name": "Click",
+	"plugin-id": "Particles",
+	"sid": 702963195476467,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
-		"width": 194,
-		"height": 316,
+		"width": 250,
+		"height": 250,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 6339007,
+		"imageSpriteId": 979919,
 		"useCollisionPoly": true
 	}
 }
