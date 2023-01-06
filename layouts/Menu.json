@@ -799,7 +799,13 @@
 					},
 					"uid": 84,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": null,
 						"uid": 84,
@@ -828,10 +834,10 @@
 					"world": {
 						"x": 416,
 						"y": 240,
-						"width": 600.1884841450076,
-						"height": 171.3052861416477,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 477.75003337942604,
+						"height": 136.35900776875158,
+						"originX": 0.4824120603015075,
+						"originY": 0.5226130653266332,
 						"color": [
 							1,
 							1,
@@ -854,7 +860,13 @@
 					},
 					"uid": 85,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": null,
 						"uid": 85,
@@ -883,10 +895,10 @@
 					"world": {
 						"x": 48,
 						"y": 272,
-						"width": 774.4796668374283,
-						"height": 171.3052861416477,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 616.4858148025929,
+						"height": 136.35900776875158,
+						"originX": 0.4824120603015075,
+						"originY": 0.5226130653266332,
 						"color": [
 							1,
 							1,

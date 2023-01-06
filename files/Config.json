@@ -107,6 +107,27 @@
 				"MaxStack":16,
 				"FoodPoints":4,
 				"Duration":120
+			},
+			"Oak_Sampling":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":16,
+				"Fuel": 300
+			},
+			"Torch":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32
+			},
+			"Coal":{
+				"Using":"Material",
+				"Stackable":1,
+				"MaxStack":32
+			},
+			"Diamond":{
+				"Using":"Material",
+				"Stackable":1,
+				"MaxStack":32
 			}
 		},
 		"Tiles":{
@@ -116,7 +137,7 @@
 				"Silk_Drop": "Grass",
 				"No_Silk_Drop": "Dirt",
 				"Best_Tool": "Shovel",
-				"HitSound":"Hitgravel1",
+				"HitSound":"Hitgrass4",
 				"DestroySound":"grass3"
 			},
 			"52":{
@@ -127,7 +148,8 @@
 				"HitSound":"Hitgravel1",
 				"DestroySound":"grass3",
 				"Drop":{
-					"Apple":50
+					"Apple":20,
+					"Oak_Sampling":20
 				}
 			},
 			"16":{
@@ -144,14 +166,17 @@
 				"No_Silk_Drop": "Cobblestone",
 				"Best_Tool": "Pickaxe",
 				"HitSound":"Hitgravel1",
-				"DestroySound":"grass1"
+				"DestroySound":"grass1",
+				"MiningTier":1
 			},
 			"2":{
 				"Dur": 0.5,
 				"Type": "Dirt",
 				"Silk_Drop": "Dirt",
 				"No_Silk_Drop": "Dirt",
-				"Best_Tool": "Shovel"
+				"Best_Tool": "Shovel",
+				"HitSound":"Hitgravel1",
+				"DestroySound":"Hitgravel3"
 			},
 			"4":{
 				"Dur": 2,
@@ -177,13 +202,21 @@
 				"Interface":"WorkBench"
 				
 			},
+			"15":{
+				"Dur": 1,
+				"Type": "Oak_Sampling",
+				"Silk_Drop": "Oak_Sampling",
+				"No_Silk_Drop": "Oak_Sampling",
+				"Best_Tool": "Scissors"
+			},
 			"44":{
 				"Dur": 2.5,
 				"Type": "Furnace",
 				"Silk_Drop": "Furnace",
 				"No_Silk_Drop": "Furnace",
 				"Best_Tool": "Pickaxe",
-				"Interface":"Furnace"
+				"Interface":"Furnace",
+				"MiningTier":1
 				
 			},
 			"61":{
@@ -192,7 +225,8 @@
 				"Silk_Drop": "Furnace",
 				"No_Silk_Drop": "Furnace",
 				"Best_Tool": "Pickaxe",
-				"Interface":"Furnace"
+				"Interface":"Furnace",
+				"MiningTier":1
 				
 			},
 			"8":{
@@ -245,6 +279,53 @@
 				"No_Silk_Drop": "Diamond",
 				"Best_Tool": "Pickaxe",
 				"MiningTier":4
+			},
+			"80":{
+				"Dur": 0.1,
+				"Type": "Torch",
+				"No_Silk_Drop": "Torch"
+			}
+			
+		},
+		"Traders":{
+			"Test":{
+				"Offers":{
+					"Apple":{
+						"Cost":-10,
+						"CostType":"Coin",
+						"Count":1
+					},
+					"Dirt":{
+						"Cost":10,
+						"CostType":"Coin",
+						"Count":1
+					},
+					"Diamond":{
+						"Cost":10,
+						"CostType":"Coin",
+						"Count":1
+					},
+					"Cobblestone":{
+						"Cost":10,
+						"CostType":"Coin",
+						"Count":1
+					},
+					"Grass":{
+						"Cost":-10,
+						"CostType":"Coin",
+						"Count":1
+					},
+					"Chest":{
+						"Cost":10,
+						"CostType":"Coin",
+						"Count":1
+					},
+					"Furnace":{
+						"Cost":10,
+						"CostType":"Coin",
+						"Count":1
+					}
+				}
 			}
 		}
 	},

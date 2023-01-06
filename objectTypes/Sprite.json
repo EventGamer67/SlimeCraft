@@ -45,6 +45,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 419189116810064
+		},
+		{
+			"name": "State",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 786999636179888
+		},
+		{
+			"name": "Silk",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 201014962713657
 		}
 	],
 	"behaviorTypes": [

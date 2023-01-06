@@ -1,35 +1,37 @@
 {
-	"name": "Torch_Light",
+	"name": "SellSlot",
 	"plugin-id": "Sprite",
-	"sid": 420580625854275,
+	"sid": 179751411928177,
 	"isGlobal": false,
-	"instanceVariables": [],
-	"behaviorTypes": [
+	"instanceVariables": [
 		{
-			"behaviorId": "Tween",
-			"name": "Tween",
-			"sid": 903086412134231
+			"name": "Offer",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 837691556889344
 		}
 	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 199,
-						"height": 199,
-						"originX": 0.4824120603015075,
-						"originY": 0.5226130653266332,
+						"width": 18,
+						"height": 18,
+						"originX": 0.5,
+						"originY": 0.5555555555555556,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7147117,
+						"imageSpriteId": 6489469,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 944156467302875,
+				"sid": 456280725885497,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

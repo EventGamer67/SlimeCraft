@@ -1042,7 +1042,7 @@
 			"disabled": false,
 			"title": "DayNightCycle",
 			"description": "",
-			"isActiveOnStart": false,
+			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "variable",
@@ -1058,7 +1058,7 @@
 					"eventType": "variable",
 					"name": "coef",
 					"type": "number",
-					"initialValue": "1",
+					"initialValue": "20",
 					"comment": "",
 					"isStatic": false,
 					"isConstant": false,
@@ -1084,6 +1084,15 @@
 							"parameters": {
 								"layer": "\"Tiled_Bg\"",
 								"color": "rgbEx255(3*Value, 219*Value, 252*Value)"
+							}
+						},
+						{
+							"id": "set-layer-opacity",
+							"objectClass": "System",
+							"sid": 971815197915364,
+							"parameters": {
+								"layer": "\"Lights\"",
+								"opacity": "100-(50+Value*50)"
 							}
 						}
 					],
@@ -1196,6 +1205,31 @@
 						}
 					],
 					"sid": 901916788175125
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 752972322799908,
+							"parameters": {
+								"object": "Light",
+								"expression": "Light.Type = \"Global\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "Light",
+							"sid": 544354856181397,
+							"parameters": {
+								"opacity": "50+Value*50"
+							}
+						}
+					],
+					"sid": 454150986584544
 				}
 			],
 			"sid": 489515448115811
@@ -1731,6 +1765,22 @@
 									"sid": 154714613883762
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "plantInit",
+									"sid": 183617543063259,
+									"parameters": [
+										"Terrain.TileAt(TileX,TileY)",
+										"TileX",
+										"TileY"
+									]
+								}
+							],
+							"sid": 675370730153294
 						}
 					]
 				},
@@ -1867,17 +1917,7 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 731763239831710,
-									"parameters": {
-										"type": "log",
-										"message": "\"TileX: \"&TileX&newline&\"TileY: \"&TileY"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 565059108649466,
 							"children": [
 								{
@@ -1925,6 +1965,15 @@
 											"eventType": "block",
 											"conditions": [],
 											"actions": [
+												{
+													"callFunction": "OnTileDestroyed",
+													"sid": 291914833096675,
+													"parameters": [
+														"Terrain.TileAt(TileX,TileY-1)",
+														"TileX",
+														"TileX-1"
+													]
+												},
 												{
 													"id": "erase-tile",
 													"objectClass": "Terrain",
@@ -2218,15 +2267,6 @@
 																	"sid": 899620976682648
 																},
 																{
-																	"id": "log",
-																	"objectClass": "Browser",
-																	"sid": 395512830036233,
-																	"parameters": {
-																		"type": "log",
-																		"message": "\">stack\""
-																	}
-																},
-																{
 																	"type": "comment",
 																	"text": "больше стака"
 																}
@@ -2343,6 +2383,32 @@
 																	"parameters": {
 																		"instance-variable": "Count_",
 																		"value": "Inventory.At(loopindex,1)"
+																	}
+																},
+																{
+																	"id": "stop-tweens",
+																	"objectClass": "Inventory_Item",
+																	"sid": 269951607735396,
+																	"behaviorType": "Tween",
+																	"parameters": {
+																		"tags": "\"1\""
+																	}
+																},
+																{
+																	"id": "tween-two-properties",
+																	"objectClass": "Inventory_Item",
+																	"sid": 987350469445892,
+																	"behaviorType": "Tween",
+																	"parameters": {
+																		"tags": "\"1\"",
+																		"property": "size",
+																		"end-x": "20",
+																		"end-y": "20",
+																		"time": "0.1",
+																		"ease": "easeinoutbounce",
+																		"destroy-on-complete": "no",
+																		"loop": "no",
+																		"ping-pong": "yes"
 																	}
 																}
 															],
@@ -2548,6 +2614,23 @@
 																	"parameters": {
 																		"instance-variable": "Using",
 																		"value": "JSON.Get(\"Settings.Config.Glossary.\"&Item&\".Using\")"
+																	}
+																},
+																{
+																	"id": "tween-two-properties",
+																	"objectClass": "Inventory_Item",
+																	"sid": 423010051470263,
+																	"behaviorType": "Tween",
+																	"parameters": {
+																		"tags": "\"1\"",
+																		"property": "size",
+																		"end-x": "24",
+																		"end-y": "24",
+																		"time": "0.1",
+																		"ease": "easeinoutbounce",
+																		"destroy-on-complete": "no",
+																		"loop": "no",
+																		"ping-pong": "yes"
 																	}
 																}
 															],

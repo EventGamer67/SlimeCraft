@@ -66,12 +66,12 @@
 					"actions": [
 						{
 							"callFunction": "Drop_Item",
-							"sid": 601222008795764,
+							"sid": 159936642867384,
 							"parameters": [
 								"1",
 								"InGameConsole.GetParam(\"item\",\"string\")",
 								"Sprite.X",
-								"Sprite.Y-20"
+								"Sprite.Y-20-loopindex"
 							]
 						}
 					],

@@ -66,9 +66,22 @@
 			"desc": "",
 			"show": true,
 			"sid": 919230121893800
+		},
+		{
+			"name": "Dragable",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 100922989953875
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 333735072489687
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -618,7 +631,7 @@
 					{
 						"width": 300,
 						"height": 300,
-						"originX": 0.5423728813559322,
+						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
@@ -722,6 +735,52 @@
 				],
 				"sid": 369713236542035,
 				"name": "GoldOre",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2734130,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 237988165801551,
+				"name": "Oak_Sampling",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2876938,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 497388457874903,
+				"name": "Torch",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

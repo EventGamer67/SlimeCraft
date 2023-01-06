@@ -27,6 +27,21 @@
 				"Count": 4
 			}
 		},
+		"Torch": {
+			"Type": "Crafting_Shapeless",
+			"Pattern": [
+				"A",
+				"B"
+			],
+			"Key": {
+				"A": "Coal",
+				"B": "Wood_Stick"
+			},
+			"Result": {
+				"Item": "Torch",
+				"Count": 2
+			}
+		},
 		"WorkBench": {
 			"Type": "Crafting_Shapeless",
 			"Pattern": [
@@ -84,7 +99,7 @@
 			},
 			"Result": {
 				"Item": "Wooden_Pickaxe",
-				"Count": 30
+				"Count": 59
 			}
 		},
 		"Stone_Pickaxe": {
@@ -100,7 +115,7 @@
 			},
 			"Result": {
 				"Item": "Stone_Pickaxe",
-				"Count": 30
+				"Count": 131
 			}
 		},
 		"Iron_Pickaxe": {
@@ -116,7 +131,7 @@
 			},
 			"Result": {
 				"Item": "Iron_Pickaxe",
-				"Count": 30
+				"Count": 250
 			}
 		},
 		"Gold_Pickaxe": {
@@ -132,7 +147,7 @@
 			},
 			"Result": {
 				"Item": "Gold_Pickaxe",
-				"Count": 30
+				"Count": 32
 			}
 		},
 		"Diamond_Pickaxe": {
@@ -164,7 +179,7 @@
 			},
 			"Result": {
 				"Item": "Wooden_Axe",
-				"Count": 30
+				"Count": 60
 			}
 		},
 		"Stone_Axe": {
@@ -180,7 +195,7 @@
 			},
 			"Result": {
 				"Item": "Stone_Axe",
-				"Count": 30
+				"Count": 132
 			}
 		},
 		"Iron_Axe": {
@@ -196,7 +211,7 @@
 			},
 			"Result": {
 				"Item": "Iron_Axe",
-				"Count": 30
+				"Count": 251
 			}
 		},
 		"Gold_Axe": {
@@ -212,7 +227,7 @@
 			},
 			"Result": {
 				"Item": "Gold_Axe",
-				"Count": 30
+				"Count": 33
 			}
 		},
 		"Diamond_Axe": {
@@ -228,7 +243,7 @@
 			},
 			"Result": {
 				"Item": "Diamond_Axe",
-				"Count": 30
+				"Count": 1562
 			}
 		}
 	},
