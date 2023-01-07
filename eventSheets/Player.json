@@ -2455,6 +2455,72 @@
 																								"comparison": 1,
 																								"tile": "-1"
 																							}
+																						},
+																						{
+																							"id": "compare-tile-at",
+																							"objectClass": "Terrain",
+																							"sid": 867260872501560,
+																							"parameters": {
+																								"tile-x": "Tilex",
+																								"tile-y": "TileY",
+																								"comparison": 1,
+																								"tile": "206"
+																							}
+																						},
+																						{
+																							"id": "compare-tile-at",
+																							"objectClass": "Terrain",
+																							"sid": 877216913562877,
+																							"parameters": {
+																								"tile-x": "Tilex",
+																								"tile-y": "TileY",
+																								"comparison": 1,
+																								"tile": "205"
+																							}
+																						},
+																						{
+																							"id": "compare-tile-at",
+																							"objectClass": "Terrain",
+																							"sid": 101082075843956,
+																							"parameters": {
+																								"tile-x": "Tilex",
+																								"tile-y": "TileY",
+																								"comparison": 1,
+																								"tile": "217"
+																							}
+																						},
+																						{
+																							"id": "compare-tile-at",
+																							"objectClass": "Terrain",
+																							"sid": 965522733317678,
+																							"parameters": {
+																								"tile-x": "Tilex",
+																								"tile-y": "TileY",
+																								"comparison": 1,
+																								"tile": "218"
+																							}
+																						},
+																						{
+																							"id": "compare-tile-at",
+																							"objectClass": "Terrain",
+																							"sid": 558935949299890,
+																							"parameters": {
+																								"tile-x": "Tilex",
+																								"tile-y": "TileY",
+																								"comparison": 1,
+																								"tile": "219"
+																							}
+																						},
+																						{
+																							"id": "compare-tile-at",
+																							"objectClass": "Terrain",
+																							"sid": 335222917508070,
+																							"parameters": {
+																								"tile-x": "Tilex",
+																								"tile-y": "TileY",
+																								"comparison": 1,
+																								"tile": "220"
+																							}
 																						}
 																					],
 																					"actions": [],
@@ -3048,11 +3114,12 @@
 																												},
 																												{
 																													"callFunction": "OnTileDestroyed",
-																													"sid": 997523248692166,
+																													"sid": 822725473312681,
 																													"parameters": [
 																														"Terrain.TileAt(Tilex,TileY)",
 																														"Tilex",
-																														"TileY"
+																														"TileY",
+																														"Sprite.Silk"
 																													]
 																												}
 																											],
@@ -6683,6 +6750,13 @@
 					"initialValue": "0",
 					"comment": "",
 					"sid": 666845273454705
+				},
+				{
+					"name": "Silk",
+					"type": "number",
+					"initialValue": "1",
+					"comment": "",
+					"sid": 798313760024692
 				}
 			],
 			"eventType": "function-block",
@@ -6760,6 +6834,342 @@
 							]
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 892186819513279,
+							"parameters": {
+								"value": "Tile = 67"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 378112622759831,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 319396235417296,
+									"parameters": {
+										"value": "Silk = 0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 856173375982921,
+									"parameters": {
+										"seconds": "0"
+									}
+								},
+								{
+									"id": "set-tile",
+									"objectClass": "Terrain",
+									"sid": 319468646710950,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY",
+										"tile": "206",
+										"state": "normal"
+									}
+								},
+								{
+									"callFunction": "UpdateNearest",
+									"sid": 938511722197672,
+									"parameters": [
+										"TileX",
+										"TileY"
+									]
+								}
+							],
+							"sid": 578398197367971
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-tile-at",
+							"objectClass": "Terrain",
+							"sid": 576273284363800,
+							"parameters": {
+								"tile-x": "TileX+1",
+								"tile-y": "TileY",
+								"comparison": 0,
+								"tile": "217"
+							}
+						},
+						{
+							"id": "compare-tile-at",
+							"objectClass": "Terrain",
+							"sid": 928125297443712,
+							"parameters": {
+								"tile-x": "TileX+1",
+								"tile-y": "TileY",
+								"comparison": 0,
+								"tile": "218"
+							}
+						},
+						{
+							"id": "compare-tile-at",
+							"objectClass": "Terrain",
+							"sid": 478248261056812,
+							"parameters": {
+								"tile-x": "TileX+1",
+								"tile-y": "TileY",
+								"comparison": 0,
+								"tile": "205"
+							}
+						},
+						{
+							"id": "compare-tile-at",
+							"objectClass": "Terrain",
+							"sid": 950699787667768,
+							"parameters": {
+								"tile-x": "TileX+1",
+								"tile-y": "TileY",
+								"comparison": 0,
+								"tile": "219"
+							}
+						},
+						{
+							"id": "compare-tile-at",
+							"objectClass": "Terrain",
+							"sid": 446964593057019,
+							"parameters": {
+								"tile-x": "TileX+1",
+								"tile-y": "TileY",
+								"comparison": 0,
+								"tile": "206"
+							}
+						},
+						{
+							"id": "compare-tile-at",
+							"objectClass": "Terrain",
+							"sid": 761163569730970,
+							"parameters": {
+								"tile-x": "TileX+1",
+								"tile-y": "TileY",
+								"comparison": 0,
+								"tile": "220"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 265073076793393,
+							"parameters": {
+								"seconds": "0"
+							}
+						},
+						{
+							"callFunction": "UpdateWater",
+							"sid": 466852343716875,
+							"parameters": [
+								"TileX+1",
+								"TileY",
+								"Terrain.TileAt(TileX+1,TileY)"
+							]
+						}
+					],
+					"sid": 590478761968384,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-tile-at",
+							"objectClass": "Terrain",
+							"sid": 615557623917016,
+							"parameters": {
+								"tile-x": "TileX-1",
+								"tile-y": "TileY",
+								"comparison": 0,
+								"tile": "217"
+							}
+						},
+						{
+							"id": "compare-tile-at",
+							"objectClass": "Terrain",
+							"sid": 125746425554778,
+							"parameters": {
+								"tile-x": "TileX-1",
+								"tile-y": "TileY",
+								"comparison": 0,
+								"tile": "218"
+							}
+						},
+						{
+							"id": "compare-tile-at",
+							"objectClass": "Terrain",
+							"sid": 546073236910214,
+							"parameters": {
+								"tile-x": "TileX-1",
+								"tile-y": "TileY",
+								"comparison": 0,
+								"tile": "205"
+							}
+						},
+						{
+							"id": "compare-tile-at",
+							"objectClass": "Terrain",
+							"sid": 179623876603724,
+							"parameters": {
+								"tile-x": "TileX-1",
+								"tile-y": "TileY",
+								"comparison": 0,
+								"tile": "219"
+							}
+						},
+						{
+							"id": "compare-tile-at",
+							"objectClass": "Terrain",
+							"sid": 741295096349642,
+							"parameters": {
+								"tile-x": "TileX-1",
+								"tile-y": "TileY",
+								"comparison": 0,
+								"tile": "220"
+							}
+						},
+						{
+							"id": "compare-tile-at",
+							"objectClass": "Terrain",
+							"sid": 841058599123589,
+							"parameters": {
+								"tile-x": "TileX-1",
+								"tile-y": "TileY",
+								"comparison": 0,
+								"tile": "206"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 215922072885988,
+							"parameters": {
+								"seconds": "0"
+							}
+						},
+						{
+							"callFunction": "UpdateWater",
+							"sid": 822059427770658,
+							"parameters": [
+								"TileX-1",
+								"TileY",
+								"Terrain.TileAt(TileX-1,TileY)"
+							]
+						}
+					],
+					"sid": 506298071605862,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-tile-at",
+							"objectClass": "Terrain",
+							"sid": 568051100223220,
+							"parameters": {
+								"tile-x": "TileX",
+								"tile-y": "TileY-1",
+								"comparison": 0,
+								"tile": "217"
+							}
+						},
+						{
+							"id": "compare-tile-at",
+							"objectClass": "Terrain",
+							"sid": 821613663830562,
+							"parameters": {
+								"tile-x": "TileX",
+								"tile-y": "TileY-1",
+								"comparison": 0,
+								"tile": "218"
+							}
+						},
+						{
+							"id": "compare-tile-at",
+							"objectClass": "Terrain",
+							"sid": 900662578314803,
+							"parameters": {
+								"tile-x": "TileX",
+								"tile-y": "TileY-1",
+								"comparison": 0,
+								"tile": "205"
+							}
+						},
+						{
+							"id": "compare-tile-at",
+							"objectClass": "Terrain",
+							"sid": 280465787317378,
+							"parameters": {
+								"tile-x": "TileX",
+								"tile-y": "TileY-1",
+								"comparison": 0,
+								"tile": "219"
+							}
+						},
+						{
+							"id": "compare-tile-at",
+							"objectClass": "Terrain",
+							"sid": 739494690027173,
+							"parameters": {
+								"tile-x": "TileX",
+								"tile-y": "TileY-1",
+								"comparison": 0,
+								"tile": "206"
+							}
+						},
+						{
+							"id": "compare-tile-at",
+							"objectClass": "Terrain",
+							"sid": 865737181808701,
+							"parameters": {
+								"tile-x": "TileX",
+								"tile-y": "TileY-1",
+								"comparison": 0,
+								"tile": "220"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 143023090010849,
+							"parameters": {
+								"seconds": "0"
+							}
+						},
+						{
+							"callFunction": "UpdateWater",
+							"sid": 941881971155892,
+							"parameters": [
+								"TileX",
+								"TileY-1",
+								"Terrain.TileAt(TileX,TileY-1)"
+							]
+						}
+					],
+					"sid": 393731309075799,
+					"isOrBlock": true
 				}
 			]
 		}

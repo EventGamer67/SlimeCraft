@@ -1284,6 +1284,10 @@
 						{
 							"type": "comment",
 							"text": "self"
+						},
+						{
+							"type": "comment",
+							"text": "waterfall"
 						}
 					],
 					"sid": 761336745677482,
@@ -1305,6 +1309,7 @@
 							],
 							"actions": [],
 							"sid": 591045498039605,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -1335,6 +1340,7 @@
 										}
 									],
 									"sid": 297099759533275,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -1393,7 +1399,8 @@
 													]
 												}
 											],
-											"sid": 420027952401052
+											"sid": 420027952401052,
+											"disabled": true
 										}
 									]
 								},
@@ -1408,6 +1415,7 @@
 									],
 									"actions": [],
 									"sid": 493881250791885,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -1437,6 +1445,7 @@
 											],
 											"actions": [],
 											"sid": 321235011447140,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "variable",
@@ -1486,6 +1495,7 @@
 														}
 													],
 													"sid": 734959775905254,
+													"disabled": true,
 													"children": [
 														{
 															"eventType": "block",
@@ -1512,7 +1522,8 @@
 																	}
 																}
 															],
-															"sid": 243360493858306
+															"sid": 243360493858306,
+															"disabled": true
 														},
 														{
 															"eventType": "block",
@@ -1561,7 +1572,8 @@
 																	]
 																}
 															],
-															"sid": 801389658062505
+															"sid": 801389658062505,
+															"disabled": true
 														}
 													]
 												},
@@ -1576,6 +1588,7 @@
 													],
 													"actions": [],
 													"sid": 470401471504568,
+													"disabled": true,
 													"children": [
 														{
 															"eventType": "block",
@@ -1630,7 +1643,8 @@
 																	]
 																}
 															],
-															"sid": 361757040515682
+															"sid": 361757040515682,
+															"disabled": true
 														},
 														{
 															"eventType": "block",
@@ -1690,7 +1704,8 @@
 																	]
 																}
 															],
-															"sid": 740253110283598
+															"sid": 740253110283598,
+															"disabled": true
 														}
 													]
 												}
@@ -1702,20 +1717,13 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
+							"conditions": [],
+							"actions": [
 								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 864637564369824,
-									"parameters": {
-										"tile-x": "TileX",
-										"tile-y": "TileY",
-										"comparison": 0,
-										"tile": "206"
-									}
+									"type": "comment",
+									"text": "spawner"
 								}
 							],
-							"actions": [],
 							"sid": 351294258188502,
 							"children": [
 								{
@@ -1762,7 +1770,8 @@
 											]
 										}
 									],
-									"sid": 154714613883762
+									"sid": 154714613883762,
+									"disabled": true
 								}
 							]
 						},
@@ -1781,6 +1790,90 @@
 								}
 							],
 							"sid": 675370730153294
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 887334006545827,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "217"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 869551145288562,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "218"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 871511677148580,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "205"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 453183240118082,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "219"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 363943035468820,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "206"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 417815723899604,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "220"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "UpdateWater",
+									"sid": 812004154146935,
+									"parameters": [
+										"TileX",
+										"TileY",
+										"Terrain.TileAt(TileX,TileY)"
+									]
+								}
+							],
+							"sid": 476599303895180,
+							"isOrBlock": true
 						}
 					]
 				},
@@ -1793,7 +1886,15 @@
 							"text": "Right"
 						}
 					],
-					"sid": 919187929510409
+					"sid": 919187929510409,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 105275595922325
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -1971,7 +2072,8 @@
 													"parameters": [
 														"Terrain.TileAt(TileX,TileY-1)",
 														"TileX",
-														"TileX-1"
+														"TileX-1",
+														"1"
 													]
 												},
 												{
@@ -2021,15 +2123,27 @@
 			],
 			"actions": [
 				{
+					"id": "set-tile",
+					"objectClass": "Terrain",
+					"sid": 835625293064600,
+					"parameters": {
+						"tile-x": "Terrain.PositionToTileX(Touch.X)",
+						"tile-y": "Terrain.PositionToTileY(Touch.y)",
+						"tile": "206",
+						"state": "normal"
+					}
+				},
+				{
 					"callFunction": "UpdateNearest",
-					"sid": 762560388838054,
+					"sid": 673717710463913,
 					"parameters": [
 						"Terrain.PositionToTileX(Touch.X)",
 						"Terrain.PositionToTileY(Touch.Y)"
 					]
 				}
 			],
-			"sid": 208708527073793
+			"sid": 208708527073793,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -3381,6 +3495,2511 @@
 				}
 			],
 			"sid": 125010619764147
+		},
+		{
+			"functionName": "UpdateWater",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "TileX",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 212251124948145
+				},
+				{
+					"name": "TileY",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 173428900495021
+				},
+				{
+					"name": "Tile",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 440276447168191
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 641485601794110,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 625288197455931,
+							"parameters": {
+								"value": "Tile = 206"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 443086710854824,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 513112629799425,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "-1"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 233683885764433,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "217"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 843842223690871,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "218"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 898443879302760,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "219"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 782127698709206,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "220"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 774158403896162,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-tile",
+									"objectClass": "Terrain",
+									"sid": 401020123793153,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"tile": "205",
+										"state": "normal"
+									}
+								},
+								{
+									"callFunction": "UpdateNearest",
+									"sid": 275354655112014,
+									"parameters": [
+										"TileX",
+										"Tiley+1"
+									]
+								}
+							],
+							"sid": 150370286508042,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 148258510767381,
+									"parameters": {
+										"tile-x": "TileX+1",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 367864331889628,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-tile",
+									"objectClass": "Terrain",
+									"sid": 124954780750973,
+									"parameters": {
+										"tile-x": "TileX+1",
+										"tile-y": "TileY",
+										"tile": "217",
+										"state": "normal"
+									}
+								},
+								{
+									"callFunction": "UpdateNearest",
+									"sid": 558321427802239,
+									"parameters": [
+										"TileX+1",
+										"Tiley"
+									]
+								}
+							],
+							"sid": 456601429607193
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 779646718500173,
+									"parameters": {
+										"tile-x": "TileX-1",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 581146795889436,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-tile",
+									"objectClass": "Terrain",
+									"sid": 420850880945084,
+									"parameters": {
+										"tile-x": "TileX-1",
+										"tile-y": "TileY",
+										"tile": "217",
+										"state": "flipped-horizontal"
+									}
+								},
+								{
+									"callFunction": "UpdateNearest",
+									"sid": 266981040852687,
+									"parameters": [
+										"TileX-1",
+										"Tiley"
+									]
+								}
+							],
+							"sid": 618712665419208
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 458383838253688,
+							"parameters": {
+								"value": "Tile = 217"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 258360390927441,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 746575636149718,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "-1"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 964961753434991,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "217"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 632948960638453,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "218"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 750213681361932,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "219"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 930647213236709,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "220"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 241199774602028,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-tile",
+									"objectClass": "Terrain",
+									"sid": 441904974811178,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"tile": "205",
+										"state": "normal"
+									}
+								},
+								{
+									"callFunction": "UpdateNearest",
+									"sid": 676670819766103,
+									"parameters": [
+										"TileX",
+										"Tiley+1"
+									]
+								}
+							],
+							"sid": 779238681393777,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 657181162213053
+								}
+							],
+							"actions": [],
+							"sid": 963771334208333,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "found",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 413041916720697
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "JSON",
+											"sid": 926413440521832,
+											"parameters": {
+												"path": "\"Settings.Config.OnlyOnBlocks\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 174373688191870,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 910402880700781,
+													"parameters": {
+														"tile-x": "TileX",
+														"tile-y": "TileY+1",
+														"comparison": 0,
+														"tile": "JSON.CurrentValue"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 812723709281302,
+													"parameters": {
+														"variable": "found",
+														"value": "true"
+													}
+												},
+												{
+													"id": "stop-loop",
+													"objectClass": "System",
+													"sid": 579925382861433
+												},
+												{
+													"callFunction": "Drop_Item",
+													"sid": 643857512595921,
+													"parameters": [
+														"1",
+														"JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex-1, TileY+1)&\".Type\")",
+														"Terrain.TileToPositionX(TileX)",
+														"Terrain.TileToPositionY(TileY+1)"
+													]
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 486502659661654,
+													"parameters": {
+														"seconds": "0.1"
+													}
+												},
+												{
+													"id": "set-tile",
+													"objectClass": "Terrain",
+													"sid": 864335091817085,
+													"parameters": {
+														"tile-x": "TileX",
+														"tile-y": "TileY+1",
+														"tile": "205",
+														"state": "normal"
+													}
+												},
+												{
+													"callFunction": "UpdateNearest",
+													"sid": 452934737827829,
+													"parameters": [
+														"TileX",
+														"Tiley+1"
+													]
+												}
+											],
+											"sid": 631153506203836
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 856812385635999,
+											"parameters": {
+												"variable": "found"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 939826240159539,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 244595662456469,
+													"parameters": {
+														"tile-x": "TileX-1",
+														"tile-y": "TileY",
+														"comparison": 0,
+														"tile": "-1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 988842985109597,
+													"parameters": {
+														"seconds": "0.1"
+													}
+												},
+												{
+													"id": "set-tile",
+													"objectClass": "Terrain",
+													"sid": 275982457093402,
+													"parameters": {
+														"tile-x": "TileX-1",
+														"tile-y": "TileY",
+														"tile": "218",
+														"state": "flipped-horizontal"
+													}
+												},
+												{
+													"callFunction": "UpdateNearest",
+													"sid": 216098488759969,
+													"parameters": [
+														"TileX-1",
+														"Tiley"
+													]
+												}
+											],
+											"sid": 140267947857206
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 126379101166320
+												}
+											],
+											"actions": [],
+											"sid": 498794530387654,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "for-each",
+															"objectClass": "JSON",
+															"sid": 702260799478305,
+															"parameters": {
+																"path": "\"Settings.Config.OnlyOnBlocks\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 200315880274095,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-tile-at",
+																	"objectClass": "Terrain",
+																	"sid": 730024808188745,
+																	"parameters": {
+																		"tile-x": "TileX-1",
+																		"tile-y": "TileY",
+																		"comparison": 0,
+																		"tile": "JSON.CurrentValue"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "stop-loop",
+																	"objectClass": "System",
+																	"sid": 666347279754836
+																},
+																{
+																	"callFunction": "Drop_Item",
+																	"sid": 247958025118509,
+																	"parameters": [
+																		"1",
+																		"JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex, TileY-1)&\".Type\")",
+																		"Terrain.TileToPositionX(TileX-1)",
+																		"Terrain.TileToPositionY(TileY)"
+																	]
+																},
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 741538450984978,
+																	"parameters": {
+																		"seconds": "0.1"
+																	}
+																},
+																{
+																	"id": "set-tile",
+																	"objectClass": "Terrain",
+																	"sid": 642062806326834,
+																	"parameters": {
+																		"tile-x": "TileX-1",
+																		"tile-y": "TileY",
+																		"tile": "218",
+																		"state": "flipped-horizontal"
+																	}
+																},
+																{
+																	"callFunction": "UpdateNearest",
+																	"sid": 414926210109595,
+																	"parameters": [
+																		"TileX-1",
+																		"Tiley"
+																	]
+																}
+															],
+															"sid": 910224343386910
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 687411206836738,
+													"parameters": {
+														"tile-x": "TileX+1",
+														"tile-y": "TileY",
+														"comparison": 0,
+														"tile": "-1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 906042382302732,
+													"parameters": {
+														"seconds": "0.1"
+													}
+												},
+												{
+													"id": "set-tile",
+													"objectClass": "Terrain",
+													"sid": 404346455870637,
+													"parameters": {
+														"tile-x": "TileX+1",
+														"tile-y": "TileY",
+														"tile": "218",
+														"state": "normal"
+													}
+												},
+												{
+													"callFunction": "UpdateNearest",
+													"sid": 718741300318297,
+													"parameters": [
+														"TileX+1",
+														"Tiley"
+													]
+												}
+											],
+											"sid": 175180879222951
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 922575590342730
+												}
+											],
+											"actions": [],
+											"sid": 965540218284229,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "for-each",
+															"objectClass": "JSON",
+															"sid": 136925853679270,
+															"parameters": {
+																"path": "\"Settings.Config.OnlyOnBlocks\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 237590829453150,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-tile-at",
+																	"objectClass": "Terrain",
+																	"sid": 212220178347785,
+																	"parameters": {
+																		"tile-x": "TileX+1",
+																		"tile-y": "TileY",
+																		"comparison": 0,
+																		"tile": "JSON.CurrentValue"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "stop-loop",
+																	"objectClass": "System",
+																	"sid": 688622802369420
+																},
+																{
+																	"callFunction": "Drop_Item",
+																	"sid": 430623303262283,
+																	"parameters": [
+																		"1",
+																		"JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex, TileY+1)&\".Type\")",
+																		"Terrain.TileToPositionX(TileX+1)",
+																		"Terrain.TileToPositionY(TileY)"
+																	]
+																},
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 388722259220679,
+																	"parameters": {
+																		"seconds": "0.1"
+																	}
+																},
+																{
+																	"id": "set-tile",
+																	"objectClass": "Terrain",
+																	"sid": 716256466073527,
+																	"parameters": {
+																		"tile-x": "TileX+1",
+																		"tile-y": "TileY",
+																		"tile": "218",
+																		"state": "normal"
+																	}
+																},
+																{
+																	"callFunction": "UpdateNearest",
+																	"sid": 236558216003870,
+																	"parameters": [
+																		"TileX+1",
+																		"Tiley"
+																	]
+																}
+															],
+															"sid": 929225749248604
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 287182363453498,
+							"parameters": {
+								"value": "Tile = 205"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 122385460188300,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 385171925351904,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "-1"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 884431060240820,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "217"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 683850512346046,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "218"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 323170701815364,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "219"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 462106333663059,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "220"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 616409384862570,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-tile",
+									"objectClass": "Terrain",
+									"sid": 972088473596012,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"tile": "205",
+										"state": "normal"
+									}
+								},
+								{
+									"callFunction": "UpdateNearest",
+									"sid": 351771875710314,
+									"parameters": [
+										"TileX",
+										"Tiley+1"
+									]
+								}
+							],
+							"sid": 770905993562777,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 454979501671413
+								}
+							],
+							"actions": [],
+							"sid": 158627787122652,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "found",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 973906653084159
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "JSON",
+											"sid": 660523162631595,
+											"parameters": {
+												"path": "\"Settings.Config.OnlyOnBlocks\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 202340537689704,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 191405039918041,
+													"parameters": {
+														"tile-x": "TileX",
+														"tile-y": "TileY+1",
+														"comparison": 0,
+														"tile": "JSON.CurrentValue"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 399288234228921,
+													"parameters": {
+														"variable": "found",
+														"value": "true"
+													}
+												},
+												{
+													"id": "stop-loop",
+													"objectClass": "System",
+													"sid": 894349485010288
+												},
+												{
+													"callFunction": "Drop_Item",
+													"sid": 433524284517111,
+													"parameters": [
+														"1",
+														"JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex, TileY+1)&\".Type\")",
+														"Terrain.TileToPositionX(TileX)",
+														"Terrain.TileToPositionY(TileY+1)"
+													]
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 905729041489443,
+													"parameters": {
+														"seconds": "0.1"
+													}
+												},
+												{
+													"id": "set-tile",
+													"objectClass": "Terrain",
+													"sid": 933927439131277,
+													"parameters": {
+														"tile-x": "TileX",
+														"tile-y": "TileY+1",
+														"tile": "205",
+														"state": "normal"
+													}
+												},
+												{
+													"callFunction": "UpdateNearest",
+													"sid": 704918761771918,
+													"parameters": [
+														"TileX",
+														"Tiley+1"
+													]
+												}
+											],
+											"sid": 723296845350982
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 661188589962611,
+											"parameters": {
+												"variable": "found"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 397361715580759,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 652803887171005,
+													"parameters": {
+														"tile-x": "TileX+1",
+														"tile-y": "TileY",
+														"comparison": 0,
+														"tile": "-1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 647089633101678,
+													"parameters": {
+														"seconds": "0.1"
+													}
+												},
+												{
+													"id": "set-tile",
+													"objectClass": "Terrain",
+													"sid": 743964456118979,
+													"parameters": {
+														"tile-x": "TileX+1",
+														"tile-y": "TileY",
+														"tile": "217",
+														"state": "normal"
+													}
+												},
+												{
+													"callFunction": "UpdateNearest",
+													"sid": 564256164474651,
+													"parameters": [
+														"TileX+1",
+														"Tiley"
+													]
+												}
+											],
+											"sid": 861853369294886
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 978810854781321
+												}
+											],
+											"actions": [],
+											"sid": 374753357411422,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "for-each",
+															"objectClass": "JSON",
+															"sid": 104726690938490,
+															"parameters": {
+																"path": "\"Settings.Config.OnlyOnBlocks\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 256872164036043,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-tile-at",
+																	"objectClass": "Terrain",
+																	"sid": 101146759141488,
+																	"parameters": {
+																		"tile-x": "TileX+1",
+																		"tile-y": "TileY",
+																		"comparison": 0,
+																		"tile": "JSON.CurrentValue"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 104313710510316,
+																	"parameters": {
+																		"seconds": "0.1"
+																	}
+																},
+																{
+																	"id": "set-tile",
+																	"objectClass": "Terrain",
+																	"sid": 893446939462963,
+																	"parameters": {
+																		"tile-x": "TileX+1",
+																		"tile-y": "TileY",
+																		"tile": "217",
+																		"state": "normal"
+																	}
+																},
+																{
+																	"callFunction": "UpdateNearest",
+																	"sid": 169523430440915,
+																	"parameters": [
+																		"TileX+1",
+																		"Tiley"
+																	]
+																}
+															],
+															"sid": 499170456455764
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 951531299838485,
+													"parameters": {
+														"tile-x": "TileX-1",
+														"tile-y": "TileY",
+														"comparison": 0,
+														"tile": "-1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 362473894575384,
+													"parameters": {
+														"seconds": "0.1"
+													}
+												},
+												{
+													"id": "set-tile",
+													"objectClass": "Terrain",
+													"sid": 142289672852789,
+													"parameters": {
+														"tile-x": "TileX-1",
+														"tile-y": "TileY",
+														"tile": "217",
+														"state": "flipped-horizontal"
+													}
+												},
+												{
+													"callFunction": "UpdateNearest",
+													"sid": 705662565400454,
+													"parameters": [
+														"TileX-1",
+														"Tiley"
+													]
+												}
+											],
+											"sid": 639393689804679
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 606972738704743
+												}
+											],
+											"actions": [],
+											"sid": 904334777445749,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "for-each",
+															"objectClass": "JSON",
+															"sid": 673357069412487,
+															"parameters": {
+																"path": "\"Settings.Config.OnlyOnBlocks\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 576679800791214,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-tile-at",
+																	"objectClass": "Terrain",
+																	"sid": 819261322103082,
+																	"parameters": {
+																		"tile-x": "TileX-1",
+																		"tile-y": "TileY",
+																		"comparison": 0,
+																		"tile": "JSON.CurrentValue"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 234788956425845,
+																	"parameters": {
+																		"seconds": "0.1"
+																	}
+																},
+																{
+																	"id": "set-tile",
+																	"objectClass": "Terrain",
+																	"sid": 793541590785181,
+																	"parameters": {
+																		"tile-x": "TileX-1",
+																		"tile-y": "TileY",
+																		"tile": "217",
+																		"state": "flipped-horizontal"
+																	}
+																},
+																{
+																	"callFunction": "UpdateNearest",
+																	"sid": 860852874891793,
+																	"parameters": [
+																		"TileX-1",
+																		"Tiley"
+																	]
+																}
+															],
+															"sid": 351762494723236
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 725384152242662,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "217"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 611241979219232,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-tile",
+									"objectClass": "Terrain",
+									"sid": 801094500190266,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"tile": "205",
+										"state": "normal"
+									}
+								},
+								{
+									"callFunction": "UpdateNearest",
+									"sid": 725528692320118,
+									"parameters": [
+										"TileX",
+										"Tiley+1"
+									]
+								}
+							],
+							"sid": 339083322570169
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 360275110252914,
+							"parameters": {
+								"value": "Tile = 218"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 711509448528948,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 131438694067759,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "-1"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 208896045891781,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "217"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 407586522964976,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "218"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 754750802378638,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "219"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 671941236459442,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "220"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 150429905835437,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-tile",
+									"objectClass": "Terrain",
+									"sid": 139326552624313,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"tile": "205",
+										"state": "normal"
+									}
+								},
+								{
+									"callFunction": "UpdateNearest",
+									"sid": 865724109627054,
+									"parameters": [
+										"TileX",
+										"Tiley+1"
+									]
+								}
+							],
+							"sid": 180947044270148,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 282843618497749
+								}
+							],
+							"actions": [],
+							"sid": 633129964819539,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "found",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 339702203233810
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "JSON",
+											"sid": 431372509147432,
+											"parameters": {
+												"path": "\"Settings.Config.OnlyOnBlocks\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 204534694594335,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 454039658095048,
+													"parameters": {
+														"tile-x": "TileX",
+														"tile-y": "TileY+1",
+														"comparison": 0,
+														"tile": "JSON.CurrentValue"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 576997546102736,
+													"parameters": {
+														"variable": "found",
+														"value": "true"
+													}
+												},
+												{
+													"id": "stop-loop",
+													"objectClass": "System",
+													"sid": 651294695275157
+												},
+												{
+													"callFunction": "Drop_Item",
+													"sid": 733732680242252,
+													"parameters": [
+														"1",
+														"JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex-1, TileY+1)&\".Type\")",
+														"Terrain.TileToPositionX(TileX)",
+														"Terrain.TileToPositionY(TileY+1)"
+													]
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 437171147347174,
+													"parameters": {
+														"seconds": "0.1"
+													}
+												},
+												{
+													"id": "set-tile",
+													"objectClass": "Terrain",
+													"sid": 781037720950746,
+													"parameters": {
+														"tile-x": "TileX",
+														"tile-y": "TileY+1",
+														"tile": "205",
+														"state": "normal"
+													}
+												},
+												{
+													"callFunction": "UpdateNearest",
+													"sid": 714713827830769,
+													"parameters": [
+														"TileX",
+														"Tiley+1"
+													]
+												}
+											],
+											"sid": 320336023582870
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 187199441574139,
+											"parameters": {
+												"variable": "found"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 463653597912525,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 448233742481627,
+													"parameters": {
+														"tile-x": "TileX-1",
+														"tile-y": "TileY",
+														"comparison": 0,
+														"tile": "-1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 191463882069684,
+													"parameters": {
+														"seconds": "0.1"
+													}
+												},
+												{
+													"id": "set-tile",
+													"objectClass": "Terrain",
+													"sid": 998329937645294,
+													"parameters": {
+														"tile-x": "TileX-1",
+														"tile-y": "TileY",
+														"tile": "219",
+														"state": "flipped-horizontal"
+													}
+												},
+												{
+													"callFunction": "UpdateNearest",
+													"sid": 546421207233391,
+													"parameters": [
+														"TileX-1",
+														"Tiley"
+													]
+												}
+											],
+											"sid": 418471767273406
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 414831220501017
+												}
+											],
+											"actions": [],
+											"sid": 521842160479513,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "for-each",
+															"objectClass": "JSON",
+															"sid": 778359292559923,
+															"parameters": {
+																"path": "\"Settings.Config.OnlyOnBlocks\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 218132487852929,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-tile-at",
+																	"objectClass": "Terrain",
+																	"sid": 113877910579093,
+																	"parameters": {
+																		"tile-x": "TileX-1",
+																		"tile-y": "TileY",
+																		"comparison": 0,
+																		"tile": "JSON.CurrentValue"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "stop-loop",
+																	"objectClass": "System",
+																	"sid": 551434654654007
+																},
+																{
+																	"callFunction": "Drop_Item",
+																	"sid": 189956954410443,
+																	"parameters": [
+																		"1",
+																		"JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex, TileY-1)&\".Type\")",
+																		"Terrain.TileToPositionX(TileX-1)",
+																		"Terrain.TileToPositionY(TileY)"
+																	]
+																},
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 437621700747592,
+																	"parameters": {
+																		"seconds": "0.1"
+																	}
+																},
+																{
+																	"id": "set-tile",
+																	"objectClass": "Terrain",
+																	"sid": 179417752130615,
+																	"parameters": {
+																		"tile-x": "TileX-1",
+																		"tile-y": "TileY",
+																		"tile": "219",
+																		"state": "flipped-horizontal"
+																	}
+																},
+																{
+																	"callFunction": "UpdateNearest",
+																	"sid": 906604995720761,
+																	"parameters": [
+																		"TileX-1",
+																		"Tiley"
+																	]
+																}
+															],
+															"sid": 729737026849226
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 258993560505441,
+													"parameters": {
+														"tile-x": "TileX+1",
+														"tile-y": "TileY",
+														"comparison": 0,
+														"tile": "-1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 171216674428446,
+													"parameters": {
+														"seconds": "0.1"
+													}
+												},
+												{
+													"id": "set-tile",
+													"objectClass": "Terrain",
+													"sid": 303424585615148,
+													"parameters": {
+														"tile-x": "TileX+1",
+														"tile-y": "TileY",
+														"tile": "219",
+														"state": "normal"
+													}
+												},
+												{
+													"callFunction": "UpdateNearest",
+													"sid": 183753441231251,
+													"parameters": [
+														"TileX+1",
+														"Tiley"
+													]
+												}
+											],
+											"sid": 400058604807899
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 432820602995517
+												}
+											],
+											"actions": [],
+											"sid": 788165771645104,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "for-each",
+															"objectClass": "JSON",
+															"sid": 467396256698099,
+															"parameters": {
+																"path": "\"Settings.Config.OnlyOnBlocks\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 309159598245192,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-tile-at",
+																	"objectClass": "Terrain",
+																	"sid": 888134157271068,
+																	"parameters": {
+																		"tile-x": "TileX+1",
+																		"tile-y": "TileY",
+																		"comparison": 0,
+																		"tile": "JSON.CurrentValue"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "stop-loop",
+																	"objectClass": "System",
+																	"sid": 983332781201844
+																},
+																{
+																	"callFunction": "Drop_Item",
+																	"sid": 635053521521265,
+																	"parameters": [
+																		"1",
+																		"JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex, TileY+1)&\".Type\")",
+																		"Terrain.TileToPositionX(TileX+1)",
+																		"Terrain.TileToPositionY(TileY)"
+																	]
+																},
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 550958591323465,
+																	"parameters": {
+																		"seconds": "0.1"
+																	}
+																},
+																{
+																	"id": "set-tile",
+																	"objectClass": "Terrain",
+																	"sid": 891457651649560,
+																	"parameters": {
+																		"tile-x": "TileX+1",
+																		"tile-y": "TileY",
+																		"tile": "219",
+																		"state": "normal"
+																	}
+																},
+																{
+																	"callFunction": "UpdateNearest",
+																	"sid": 645525044552205,
+																	"parameters": [
+																		"TileX+1",
+																		"Tiley"
+																	]
+																}
+															],
+															"sid": 443551748965008
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 679525960357602,
+							"parameters": {
+								"value": "Tile = 219"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 912129855185210,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 433159877860883,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "-1"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 748349134494064,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "217"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 350766676993759,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "218"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 641548476600844,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "219"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 472546389946103,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "220"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 530318325364419,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-tile",
+									"objectClass": "Terrain",
+									"sid": 838168567399108,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"tile": "205",
+										"state": "normal"
+									}
+								},
+								{
+									"callFunction": "UpdateNearest",
+									"sid": 707717481524839,
+									"parameters": [
+										"TileX",
+										"Tiley+1"
+									]
+								}
+							],
+							"sid": 870603472693998,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 843756692833902
+								}
+							],
+							"actions": [],
+							"sid": 519915257926337,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "found",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 665046941221669
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "JSON",
+											"sid": 608476408984452,
+											"parameters": {
+												"path": "\"Settings.Config.OnlyOnBlocks\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 156132204447196,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 823619901630670,
+													"parameters": {
+														"tile-x": "TileX",
+														"tile-y": "TileY+1",
+														"comparison": 0,
+														"tile": "JSON.CurrentValue"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 774869958969301,
+													"parameters": {
+														"variable": "found",
+														"value": "true"
+													}
+												},
+												{
+													"id": "stop-loop",
+													"objectClass": "System",
+													"sid": 278210572399582
+												},
+												{
+													"callFunction": "Drop_Item",
+													"sid": 626189252573879,
+													"parameters": [
+														"1",
+														"JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex, TileY+1)&\".Type\")",
+														"Terrain.TileToPositionX(TileX)",
+														"Terrain.TileToPositionY(TileY+1)"
+													]
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 316882954020760,
+													"parameters": {
+														"seconds": "0.1"
+													}
+												},
+												{
+													"id": "set-tile",
+													"objectClass": "Terrain",
+													"sid": 541973440097623,
+													"parameters": {
+														"tile-x": "TileX",
+														"tile-y": "TileY+1",
+														"tile": "205",
+														"state": "normal"
+													}
+												},
+												{
+													"callFunction": "UpdateNearest",
+													"sid": 836571273940258,
+													"parameters": [
+														"TileX",
+														"Tiley+1"
+													]
+												}
+											],
+											"sid": 556088704349837
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 129264310980293,
+											"parameters": {
+												"variable": "found"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 465819464201883,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 206128743971382,
+													"parameters": {
+														"tile-x": "TileX-1",
+														"tile-y": "TileY",
+														"comparison": 0,
+														"tile": "-1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 642096098462065,
+													"parameters": {
+														"seconds": "0.1"
+													}
+												},
+												{
+													"id": "set-tile",
+													"objectClass": "Terrain",
+													"sid": 144237506213599,
+													"parameters": {
+														"tile-x": "TileX-1",
+														"tile-y": "TileY",
+														"tile": "220",
+														"state": "flipped-horizontal"
+													}
+												},
+												{
+													"callFunction": "UpdateNearest",
+													"sid": 753406597348223,
+													"parameters": [
+														"TileX-1",
+														"Tiley"
+													]
+												}
+											],
+											"sid": 298727486773596
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 850551360694505
+												}
+											],
+											"actions": [],
+											"sid": 386159116972800,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "for-each",
+															"objectClass": "JSON",
+															"sid": 348269357333846,
+															"parameters": {
+																"path": "\"Settings.Config.OnlyOnBlocks\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 798843868347913,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-tile-at",
+																	"objectClass": "Terrain",
+																	"sid": 401781296926092,
+																	"parameters": {
+																		"tile-x": "TileX-1",
+																		"tile-y": "TileY",
+																		"comparison": 0,
+																		"tile": "JSON.CurrentValue"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "stop-loop",
+																	"objectClass": "System",
+																	"sid": 308810126894416
+																},
+																{
+																	"callFunction": "Drop_Item",
+																	"sid": 116483469717008,
+																	"parameters": [
+																		"1",
+																		"JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex-1, TileY)&\".Type\")",
+																		"Terrain.TileToPositionX(TileX-1)",
+																		"Terrain.TileToPositionY(TileY)"
+																	]
+																},
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 860738050377709,
+																	"parameters": {
+																		"seconds": "0.1"
+																	}
+																},
+																{
+																	"id": "set-tile",
+																	"objectClass": "Terrain",
+																	"sid": 964255678916999,
+																	"parameters": {
+																		"tile-x": "TileX-1",
+																		"tile-y": "TileY",
+																		"tile": "220",
+																		"state": "flipped-horizontal"
+																	}
+																},
+																{
+																	"callFunction": "UpdateNearest",
+																	"sid": 174254945490757,
+																	"parameters": [
+																		"TileX-1",
+																		"Tiley"
+																	]
+																}
+															],
+															"sid": 547551787687941
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 826756338325187,
+													"parameters": {
+														"tile-x": "TileX+1",
+														"tile-y": "TileY",
+														"comparison": 0,
+														"tile": "-1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 890517867840577,
+													"parameters": {
+														"seconds": "0.1"
+													}
+												},
+												{
+													"id": "set-tile",
+													"objectClass": "Terrain",
+													"sid": 795476723586299,
+													"parameters": {
+														"tile-x": "TileX+1",
+														"tile-y": "TileY",
+														"tile": "220",
+														"state": "normal"
+													}
+												},
+												{
+													"callFunction": "UpdateNearest",
+													"sid": 308653620346223,
+													"parameters": [
+														"TileX+1",
+														"Tiley"
+													]
+												}
+											],
+											"sid": 337506804935633
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 845795745814589
+												}
+											],
+											"actions": [],
+											"sid": 554860744934040,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "for-each",
+															"objectClass": "JSON",
+															"sid": 232719730044098,
+															"parameters": {
+																"path": "\"Settings.Config.OnlyOnBlocks\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 924100475621519,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-tile-at",
+																	"objectClass": "Terrain",
+																	"sid": 543781221284639,
+																	"parameters": {
+																		"tile-x": "TileX+1",
+																		"tile-y": "TileY",
+																		"comparison": 0,
+																		"tile": "JSON.CurrentValue"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "stop-loop",
+																	"objectClass": "System",
+																	"sid": 582936224969734
+																},
+																{
+																	"callFunction": "Drop_Item",
+																	"sid": 222044702183281,
+																	"parameters": [
+																		"1",
+																		"JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex+1, TileY)&\".Type\")",
+																		"Terrain.TileToPositionX(TileX+1)",
+																		"Terrain.TileToPositionY(TileY)"
+																	]
+																},
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 251062030759395,
+																	"parameters": {
+																		"seconds": "0.1"
+																	}
+																},
+																{
+																	"id": "set-tile",
+																	"objectClass": "Terrain",
+																	"sid": 343408541532798,
+																	"parameters": {
+																		"tile-x": "TileX+1",
+																		"tile-y": "TileY",
+																		"tile": "220",
+																		"state": "normal"
+																	}
+																},
+																{
+																	"callFunction": "UpdateNearest",
+																	"sid": 709330341946959,
+																	"parameters": [
+																		"TileX+1",
+																		"Tiley"
+																	]
+																}
+															],
+															"sid": 539537802540352
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 139792522854115,
+							"parameters": {
+								"value": "Tile = 220\n"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 773925334887543,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 656611362231366,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "-1"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 361509836211538,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "217"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 587690368008738,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "218"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 873351229771899,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "219"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 266462791083586,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"comparison": 0,
+										"tile": "220"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 809306655320231,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-tile",
+									"objectClass": "Terrain",
+									"sid": 114689699112684,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY+1",
+										"tile": "205",
+										"state": "normal"
+									}
+								},
+								{
+									"callFunction": "UpdateNearest",
+									"sid": 670593055608048,
+									"parameters": [
+										"TileX",
+										"Tiley+1"
+									]
+								}
+							],
+							"sid": 291377421830563,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 277168900469329
+								}
+							],
+							"actions": [],
+							"sid": 332120341044635,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "JSON",
+											"sid": 165108554265124,
+											"parameters": {
+												"path": "\"Settings.Config.OnlyOnBlocks\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 200686107032886,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 521112740964873,
+													"parameters": {
+														"tile-x": "TileX",
+														"tile-y": "TileY+1",
+														"comparison": 0,
+														"tile": "JSON.CurrentValue"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "stop-loop",
+													"objectClass": "System",
+													"sid": 962822554745629
+												},
+												{
+													"callFunction": "Drop_Item",
+													"sid": 145966125275713,
+													"parameters": [
+														"1",
+														"JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex, TileY+1)&\".Type\")",
+														"Terrain.TileToPositionX(TileX)",
+														"Terrain.TileToPositionY(TileY+1)"
+													]
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 321366139309097,
+													"parameters": {
+														"seconds": "0.1"
+													}
+												},
+												{
+													"id": "set-tile",
+													"objectClass": "Terrain",
+													"sid": 463556028613762,
+													"parameters": {
+														"tile-x": "TileX",
+														"tile-y": "TileY+1",
+														"tile": "205",
+														"state": "normal"
+													}
+												},
+												{
+													"callFunction": "UpdateNearest",
+													"sid": 480051752050384,
+													"parameters": [
+														"TileX",
+														"Tiley+1"
+													]
+												}
+											],
+											"sid": 517898413503597
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 270941678251427

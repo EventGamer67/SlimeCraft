@@ -86,6 +86,11 @@
 				"Stackable":1,
 				"MaxStack":32
 			},
+			"Ice":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32
+			},
 			"Dirt":{
 				"Using":"Block",
 				"Stackable":1,
@@ -284,8 +289,15 @@
 				"Dur": 0.1,
 				"Type": "Torch",
 				"No_Silk_Drop": "Torch"
+			},
+			"67":{
+				"Dur": 0.5,
+				"Type": "Ice",
+				"Silk_Drop": "Ice",
+				"Best_Tool": "Pickaxe",
+				"HitSound":"Hitgravel1",
+				"DestroySound":"Hitgravel3"
 			}
-			
 		},
 		"Traders":{
 			"Test":{
