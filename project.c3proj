@@ -167,6 +167,22 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "TextBox",
+			"name": "Text input",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "BinaryData",
+			"name": "Binary Data",
+			"author": "Scirra",
+			"version": "r317.2",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
@@ -269,6 +285,22 @@
 			"author": "Scirra",
 			"version": "r317.2",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "lineargradient",
+			"name": "Linear Gradient",
+			"author": "Ludonaut",
+			"version": "0.1",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "Richard Lems_GaussianBlur",
+			"name": "GuassianBlur",
+			"author": "Richard Lems",
+			"version": "1.1.1",
+			"bundled": false
 		}
 	],
 	"uniqueId": "hzewnjjqm0u",
@@ -366,7 +398,17 @@
 			"9patch2",
 			"Sprite24",
 			"9patch3",
-			"TiledBackground"
+			"TiledBackground",
+			"Sprite23",
+			"TextInput",
+			"Blackout",
+			"BinaryData",
+			"SnapShot",
+			"Sprite25",
+			"Player_Light_Terrain",
+			"Torch_Light_Terrain",
+			"WeatherParticle",
+			"Sprite26"
 		],
 		"subfolders": []
 	},
@@ -383,7 +425,8 @@
 	"families": {
 		"items": [
 			"Btns",
-			"Family1"
+			"Family1",
+			"ToSave"
 		],
 		"subfolders": []
 	},
@@ -405,7 +448,8 @@
 			"Menu_es",
 			"Loader_es",
 			"Functions_es",
-			"Console"
+			"Console",
+			"SceneLoader_es"
 		],
 		"subfolders": []
 	},
@@ -1119,6 +1163,14 @@
 					"name": "ios.css",
 					"type": "text/css",
 					"sid": 969818206584969,
+					"file-info": {
+						"purpose": "stylesheet"
+					}
+				},
+				{
+					"name": "file.css",
+					"type": "text/css",
+					"sid": 779738007427503,
 					"file-info": {
 						"purpose": "stylesheet"
 					}

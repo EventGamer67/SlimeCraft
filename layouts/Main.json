@@ -56,7 +56,30 @@
 				}
 			],
 			"sid": 613829643748630,
-			"effectTypes": [],
+			"effectTypes": [
+				{
+					"effectId": "lineargradient",
+					"name": "LinearGradient",
+					"instance": {
+						"isEnabled": true,
+						"parameters": {
+							"color1": [
+								0,
+								0.7843137254901961,
+								0.8392156862745098,
+								1
+							],
+							"color2": [
+								0.7215686274509804,
+								0.9450980392156862,
+								1,
+								1
+							],
+							"angle": 0
+						}
+					}
+				}
+			],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
 			"color": [
@@ -1652,12 +1675,60 @@
 			"global": false
 		},
 		{
-			"name": "Lights",
+			"name": "TerrainLight",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Player_Light",
+					"type": "LightMap",
+					"properties": {
+						"initially-visible": true,
+						"tile-width": 16,
+						"tile-height": 16,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0,
+						"tile-x-drawing-offset": 0,
+						"tile-y-drawing-offset": 0,
+						"drawing-mode": "top-to-right"
+					},
+					"uid": 188,
+					"instanceVariables": {},
+					"behaviors": {},
+					"ownData": {
+						"tilemapData": {
+							"width": 108,
+							"height": 62,
+							"max-width": 108,
+							"max-height": 62,
+							"data": "6696x0"
+						},
+						"tile-width": 16,
+						"tile-height": 16,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0
+					},
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 1728,
+						"height": 1000,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Player_Light_Terrain",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -1665,12 +1736,12 @@
 						"enable-collisions": false,
 						"live-preview": false
 					},
-					"uid": 69,
+					"uid": 220,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 641,
-						"y": 403,
+						"x": 731,
+						"y": -80,
 						"width": 80,
 						"height": 80,
 						"originX": 0.5,
@@ -1686,6 +1757,114 @@
 						"blendMode": "destination-out"
 					}
 				},
+				{
+					"type": "Torch_Light_Terrain",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 221,
+					"instanceVariables": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 221,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 1594,
+						"y": -186,
+						"width": 10,
+						"height": 10,
+						"originX": 0.4824120603015075,
+						"originY": 0.5226130653266332,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0,
+						"blendMode": "destination-out"
+					}
+				}
+			],
+			"sid": 994450513715188,
+			"effectTypes": [
+				{
+					"effectId": "Richard Lems_GaussianBlur",
+					"name": "GuassianBlur",
+					"instance": {
+						"isEnabled": false,
+						"parameters": {
+							"blursize": 3,
+							"bloomvalue": 0,
+							"bloomthreshold": 0
+						}
+					}
+				}
+			],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": true,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Lights",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
 				{
 					"type": "Torch_Light",
 					"properties": {
@@ -1746,6 +1925,36 @@
 						"zElevation": 0,
 						"blendMode": "destination-out"
 					}
+				},
+				{
+					"type": "Player_Light",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 69,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 614,
+						"y": -72,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.5
+						],
+						"angle": 0,
+						"zElevation": 0,
+						"blendMode": "destination-out"
+					}
 				}
 			],
 			"sid": 644957307845331,
@@ -1756,7 +1965,7 @@
 				1,
 				1,
 				1,
-				1
+				0
 			],
 			"backgroundColor": [
 				0,
@@ -1916,7 +2125,7 @@
 					"isTransparent": true,
 					"parallaxX": 0,
 					"parallaxY": 0,
-					"scaleRate": 1,
+					"scaleRate": 0,
 					"forceOwnTexture": false,
 					"renderingMode": "3d",
 					"drawOrder": "z-order",
@@ -2204,7 +2413,7 @@
 					"isTransparent": true,
 					"parallaxX": 0,
 					"parallaxY": 0,
-					"scaleRate": 1,
+					"scaleRate": 0,
 					"forceOwnTexture": false,
 					"renderingMode": "3d",
 					"drawOrder": "z-order",
@@ -2370,7 +2579,7 @@
 					"isTransparent": true,
 					"parallaxX": 0,
 					"parallaxY": 0,
-					"scaleRate": 1,
+					"scaleRate": 0,
 					"forceOwnTexture": false,
 					"renderingMode": "3d",
 					"drawOrder": "z-order",
@@ -3073,7 +3282,7 @@
 			"isTransparent": true,
 			"parallaxX": 0,
 			"parallaxY": 0,
-			"scaleRate": 1,
+			"scaleRate": 0,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",
 			"drawOrder": "z-order",
@@ -3137,7 +3346,8 @@
 					"uid": 54,
 					"instanceVariables": {
 						"Type": "Inventory",
-						"SubType": ""
+						"SubType": "",
+						"SlotY": 0
 					},
 					"behaviors": {
 						"Tween": {
@@ -3502,7 +3712,13 @@
 					"instanceVariables": {
 						"Type": "Close"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": 54,
 						"uid": 58,
@@ -3558,8 +3774,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 112,
-						"y": -144,
+						"x": 115,
+						"y": -152,
 						"width": 16,
 						"height": 16,
 						"originX": 0.5,
@@ -3587,7 +3803,13 @@
 					"instanceVariables": {
 						"Type": "To_one"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": 54,
 						"uid": 66,
@@ -3643,7 +3865,13 @@
 					"instanceVariables": {
 						"Type": "Div"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": 54,
 						"uid": 120,
@@ -4125,7 +4353,7 @@
 			"isTransparent": true,
 			"parallaxX": 0,
 			"parallaxY": 0,
-			"scaleRate": 1,
+			"scaleRate": 0,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",
 			"drawOrder": "z-order",
@@ -4177,6 +4405,14 @@
 				"depth": 1
 			},
 			"uid": 124,
+			"instanceVariables": {}
+		},
+		{
+			"type": "BinaryData",
+			"properties": {
+				"endian": "big"
+			},
+			"uid": 210,
 			"instanceVariables": {}
 		}
 	],

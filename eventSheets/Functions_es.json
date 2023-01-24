@@ -63,9 +63,9 @@
 				{
 					"id": "set-function-return-value",
 					"objectClass": "Functions",
-					"sid": 841298261981816,
+					"sid": 409725641954277,
 					"parameters": {
-						"value": "(ViewportTop(Layer)+ViewportBottom(Layer))/2"
+						"value": "((ViewportTop(Layer)+ViewportBottom(Layer))/2)"
 					}
 				}
 			],

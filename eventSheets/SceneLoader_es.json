@@ -1,0 +1,401 @@
+{
+	"name": "SceneLoader_es",
+	"events": [
+		{
+			"functionName": "LoadWorld",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": true,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 454956768390310,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-key",
+							"objectClass": "JSON",
+							"sid": 626336319753376,
+							"parameters": {
+								"path": "\"World.Terrain\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 352334426187683,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 815499952068505,
+									"parameters": {
+										"type": "log",
+										"message": "\"Loaded\""
+									}
+								},
+								{
+									"id": "load",
+									"objectClass": "Terrain",
+									"sid": 906162446152319,
+									"parameters": {
+										"json": "JSON.Get(\"World.Terrain\")"
+									}
+								},
+								{
+									"id": "set-from-json",
+									"objectClass": "Sprite",
+									"sid": 988860170552825,
+									"parameters": {
+										"json": "JSON.Get(\"World.Sprite\")"
+									}
+								},
+								{
+									"id": "load",
+									"objectClass": "Timers",
+									"sid": 712187681370742,
+									"parameters": {
+										"json": "JSON.Get(\"World.Timers\")"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 109855746978114,
+									"parameters": {
+										"variable": "Tick",
+										"value": "JSON.Get(\"World.Ticks\")"
+									}
+								}
+							],
+							"sid": 211104706587326
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "JSON",
+									"sid": 889268359590047,
+									"parameters": {
+										"path": "\"World.Items\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "CreateObj",
+									"sid": 480208277675177,
+									"parameters": [
+										"JSON.CurrentKey"
+									]
+								}
+							],
+							"sid": 628333309942649
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "ReloadLightMap",
+									"sid": 629996292172296,
+									"parameters": [
+										"0",
+										"LightMap.MapDisplayWidth"
+									]
+								}
+							],
+							"sid": 781547894958555
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 788397034576955
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "ReloadLightMap",
+							"sid": 692512933650350,
+							"parameters": [
+								"0",
+								"LightMap.MapDisplayWidth"
+							]
+						}
+					],
+					"sid": 399299460310341
+				}
+			]
+		},
+		{
+			"functionName": "CreateObj",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "ObjName",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 659247646678485
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 669549865271922,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "JSON",
+							"sid": 157069187301740,
+							"parameters": {
+								"path": "\"World.Items.\"&ObjName"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object-by-name",
+							"objectClass": "System",
+							"sid": 317321642487446,
+							"parameters": {
+								"object-name": "ObjName",
+								"layer": "0",
+								"x": "-100",
+								"y": "-100",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 306700342701338,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-last-created",
+									"objectClass": "System",
+									"sid": 752826116217668,
+									"parameters": {
+										"object": "ToSave"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-from-json",
+									"objectClass": "ToSave",
+									"sid": 519508897539474,
+									"parameters": {
+										"json": "JSON.CurrentValue"
+									}
+								}
+							],
+							"sid": 390259193489931
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "SaveWorld",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 509577900953457,
+					"parameters": {
+						"path": "\"World.Terrain\"",
+						"value": "Terrain.TilesJSON"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 907636141390580,
+					"parameters": {
+						"path": "\"World.Sprite\"",
+						"value": "Sprite.AsJSON"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 345559151385185,
+					"parameters": {
+						"path": "\"World.Timers\"",
+						"value": "Timers.AsJSON"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 247035923845313,
+					"parameters": {
+						"path": "\"World.Ticks\"",
+						"value": "Tick"
+					}
+				}
+			],
+			"sid": 515967922578590,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 803078317230097,
+							"parameters": {
+								"object": "ToSave"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 867444442691048,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "JSON",
+									"sid": 782810850474385,
+									"parameters": {
+										"path": "\"World.Items.\"&ToSave.ObjectTypeName"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-array",
+									"objectClass": "JSON",
+									"sid": 559782305927473,
+									"parameters": {
+										"path": "\"World.Items.\"&ToSave.ObjectTypeName",
+										"size": "0"
+									}
+								}
+							],
+							"sid": 983537751550691
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "push-value",
+									"objectClass": "JSON",
+									"sid": 544440654930747,
+									"parameters": {
+										"where": "back",
+										"path": "\"World.Items.\"&ToSave.ObjectTypeName",
+										"value": "ToSave.AsJSON"
+									}
+								}
+							],
+							"sid": 876730546730277
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 736951385459751,
+							"parameters": {
+								"key": "JSON.Get(\"World.ID\")",
+								"value": "JSON.GetAsCompactString(\"World\")"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 416752683812304
+						},
+						{
+							"id": "signal",
+							"objectClass": "System",
+							"sid": 813511120499322,
+							"parameters": {
+								"tag": "\"saved\""
+							}
+						}
+					],
+					"sid": 281104103031040
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 703396765134185,
+					"parameters": {
+						"key": 53
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "SaveWorld",
+					"sid": 484938426989389
+				},
+				{
+					"id": "wait-for-signal",
+					"objectClass": "System",
+					"sid": 581555014139218,
+					"parameters": {
+						"tag": "\"saved\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 486436758908458,
+					"parameters": {
+						"layout": "Menu"
+					}
+				}
+			],
+			"sid": 148789803614736
+		}
+	],
+	"sid": 290609745636765
+}

@@ -2,6 +2,16 @@
 	"name": "Loader_es",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "deviceType",
+			"type": "string",
+			"initialValue": "PC",
+			"comment": "",
+			"isStatic": true,
+			"isConstant": false,
+			"sid": 585902925650179
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -119,6 +129,22 @@
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 969306414927983
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 778761602751882,
+					"parameters": {
+						"key": "\"Worlds\""
+					}
+				},
+				{
+					"id": "wait-for-signal",
+					"objectClass": "System",
+					"sid": 894606507713455,
+					"parameters": {
+						"tag": "\"WorldsLoaded\""
+					}
 				}
 			],
 			"sid": 815301384338360,
@@ -158,12 +184,65 @@
 							}
 						}
 					],
-					"sid": 605160722394723
+					"sid": 605160722394723,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 311913300008690,
+									"parameters": {
+										"object": "Message_Text",
+										"expression": "Message_Text.Type = \"ControlDefine\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "typewriter-text",
+									"objectClass": "Message_Text",
+									"sid": 696699543592358,
+									"parameters": {
+										"text": "\"Press any key to start\"",
+										"duration": "0.5"
+									}
+								}
+							],
+							"sid": 546005116597609
+						}
+					]
 				},
 				{
 					"eventType": "block",
 					"conditions": [],
 					"actions": [
+						{
+							"callFunction": "defineInput",
+							"sid": 479237162589410
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 413976485287407
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Message_Text",
+							"sid": 956642267460433,
+							"parameters": {
+								"text": "\"\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 209211395715592,
+							"parameters": {
+								"seconds": "0.2"
+							}
+						},
 						{
 							"id": "go-to-layout",
 							"objectClass": "System",
@@ -176,6 +255,280 @@
 					"sid": 157096974907558
 				}
 			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Worlds",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 426041350459569,
+							"parameters": {
+								"key": "\"Worlds\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "LocalStorage",
+							"sid": 928282422307166,
+							"parameters": {
+								"key": "\"Worlds\""
+							}
+						}
+					],
+					"sid": 698666136000323
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-missing",
+							"objectClass": "LocalStorage",
+							"sid": 723178183802593,
+							"parameters": {
+								"key": "\"Worlds\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "signal",
+							"objectClass": "System",
+							"sid": 491622632631761,
+							"parameters": {
+								"tag": "\"WorldsLoaded\""
+							}
+						}
+					],
+					"sid": 400773486119740
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "LocalStorage",
+							"sid": 627232991863880,
+							"parameters": {
+								"key": "\"Worlds\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-json",
+							"objectClass": "JSON",
+							"sid": 151830820236786,
+							"parameters": {
+								"path": "\"Worlds\"",
+								"json": "LocalStorage.ItemValue"
+							}
+						}
+					],
+					"sid": 751957049969706,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-type",
+									"objectClass": "JSON",
+									"sid": 799388291678216,
+									"parameters": {
+										"path": "\"Worlds\"",
+										"type": "null"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "delete-key",
+									"objectClass": "JSON",
+									"sid": 520484606247972,
+									"parameters": {
+										"path": "\"Worlds\""
+									}
+								},
+								{
+									"id": "signal",
+									"objectClass": "System",
+									"sid": 474425632456892,
+									"parameters": {
+										"tag": "\"WorldsLoaded\""
+									}
+								}
+							],
+							"sid": 205576799994828,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 258789209696456
+								}
+							],
+							"actions": [
+								{
+									"id": "signal",
+									"objectClass": "System",
+									"sid": 452169720511445,
+									"parameters": {
+										"tag": "\"WorldsLoaded\""
+									}
+								}
+							],
+							"sid": 844344152866522
+						}
+					]
+				}
+			],
+			"sid": 936854843437455
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Definer",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "defineInput",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": true,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 339169974566180,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 596129325976241,
+									"parameters": {
+										"group-name": "\"keyWait\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 690512391150362,
+									"parameters": {
+										"tag": "\"Defined\""
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 161093515342731,
+									"parameters": {
+										"group-name": "\"keyWait\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 843321542089018
+						}
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "keyWait",
+					"description": "",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 757662134952004
+								},
+								{
+									"id": "on-any-click",
+									"objectClass": "Mouse",
+									"sid": 276539336267493
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 987228276267224,
+									"parameters": {
+										"variable": "deviceType",
+										"value": "\"PC\""
+									}
+								},
+								{
+									"id": "signal",
+									"objectClass": "System",
+									"sid": 782014510563862,
+									"parameters": {
+										"tag": "\"Defined\""
+									}
+								}
+							],
+							"sid": 899882770313619,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-touch-start",
+									"objectClass": "Touch",
+									"sid": 407954052903387
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 876305901851044,
+									"parameters": {
+										"variable": "deviceType",
+										"value": "\"Mobile\""
+									}
+								},
+								{
+									"id": "signal",
+									"objectClass": "System",
+									"sid": 723180862471329,
+									"parameters": {
+										"tag": "\"Defined\""
+									}
+								}
+							],
+							"sid": 778164574517985
+						}
+					],
+					"sid": 182850259673895
+				}
+			],
+			"sid": 556380002151223
 		}
 	],
 	"sid": 472532338784313

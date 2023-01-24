@@ -1,0 +1,14 @@
+{
+	"name": "ToSave",
+	"plugin-id": "Sprite",
+	"sid": 585774940525102,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Drop_Item",
+		"Cam",
+		"Hand",
+		"Sprite6"
+	]
+}

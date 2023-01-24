@@ -17,6 +17,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 477246749695936
+		},
+		{
+			"name": "SlotY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 450847693024824
 		}
 	],
 	"behaviorTypes": [

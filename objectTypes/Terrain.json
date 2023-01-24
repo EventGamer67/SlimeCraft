@@ -30,7 +30,7 @@
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 5343500,
+		"imageSpriteId": 2590731,
 		"useCollisionPoly": true
 	},
 	"tile-collision-polys": {
@@ -266,6 +266,21 @@
 				]
 			},
 			"useCollisionPoly": false
+		},
+		"149": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0.4375,
+					1,
+					0.4375,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": true
 		},
 		"205": {
 			"collisionPoly": {

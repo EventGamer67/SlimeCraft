@@ -1,0 +1,43 @@
+{
+	"name": "Torch_Light_Terrain",
+	"plugin-id": "Sprite",
+	"sid": 848356578390277,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 399771854586422
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 199,
+						"height": 199,
+						"originX": 0.4824120603015075,
+						"originY": 0.5226130653266332,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2430281,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 399872294249069,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

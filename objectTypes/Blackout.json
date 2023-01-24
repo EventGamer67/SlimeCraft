@@ -1,0 +1,26 @@
+{
+	"name": "Blackout",
+	"plugin-id": "TiledBg",
+	"sid": 805774758936214,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 564092825401133
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 2,
+		"height": 2,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 6200898,
+		"useCollisionPoly": true
+	}
+}

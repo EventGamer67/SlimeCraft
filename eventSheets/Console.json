@@ -32,6 +32,28 @@
 						"description": "\"give stauration\"",
 						"hide": false
 					}
+				},
+				{
+					"id": "register-command",
+					"objectClass": "InGameConsole",
+					"sid": 747861902758480,
+					"parameters": {
+						"command": "\"Weather\"",
+						"params": "\"Weather\"",
+						"description": "\"Weather\"",
+						"hide": false
+					}
+				},
+				{
+					"id": "register-command",
+					"objectClass": "InGameConsole",
+					"sid": 182260553246201,
+					"parameters": {
+						"command": "\"SetTime\"",
+						"params": "\"Time,Duration\"",
+						"description": "\"Time\"",
+						"hide": false
+					}
 				}
 			],
 			"sid": 659873891636185
@@ -101,6 +123,111 @@
 				}
 			],
 			"sid": 349290098954021
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-command",
+					"objectClass": "InGameConsole",
+					"sid": 438383500593851,
+					"parameters": {
+						"command": "\"Weather\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "StartWeather",
+					"sid": 584248791381822,
+					"parameters": [
+						"InGameConsole.GetParam(\"Weather\",\"string\")"
+					]
+				}
+			],
+			"sid": 625758950808135
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-command",
+					"objectClass": "InGameConsole",
+					"sid": 523090675922737,
+					"parameters": {
+						"command": "\"SetTime\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "SetTime",
+					"sid": 431037745958817,
+					"parameters": [
+						"InGameConsole.GetParam(\"Time\",\"number\")",
+						"InGameConsole.GetParam(\"Duration\",\"number\")"
+					]
+				}
+			],
+			"sid": 561224747468607
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-open",
+					"objectClass": "InGameConsole",
+					"sid": 985969001931737
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "Sprite",
+					"sid": 531993118787011,
+					"behaviorType": "Platform",
+					"parameters": {
+						"state": "disabled"
+					}
+				}
+			],
+			"sid": 319116144459749
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 452483748822940
+				}
+			],
+			"actions": [],
+			"sid": 515457248957452,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 124434371672348
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "Sprite",
+							"sid": 707879020551682,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 161789458700554
+				}
+			]
 		}
 	],
 	"sid": 593640233702149

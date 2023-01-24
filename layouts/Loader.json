@@ -63,6 +63,52 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "Message_Text",
+					"properties": {
+						"text": "",
+						"enable-bbcode": true,
+						"character-width": 139,
+						"character-height": 176,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
+						"spacing-data": "[[77,\" \"],[23,\"i.,;:!|\"],[37,\"l'`\"],[48,\"°\"],[49,\"г\"],[52,\"It[]\"],[61,\"Г\"],[62,\"ЕЁз\"],[63,\"стэ\"],[64,\"ь\"],[65,\"я\"],[66,\"fk\\\"()*<>ав\"],[68,\"ч\"],[69,\"ийкнп\"],[70,\"Р\"],[71,\"БВЬх\"],[72,\"Зеёл\"],[73,\"€\"],[75,\"р\"],[76,\"Яу\"],[77,\"б\"],[79,\"КТЧ\"],[80,\"ABCDEFGHJKLMNOPQRSTUVWXYZabcdeghjmnopqrsuvwxyz0123456789?-_#&\\\\/+=$£%оц\"],[82,\"д\"],[84,\"НСЭ\"],[85,\"П\"],[86,\"ъ\"],[87,\"Ум\"],[88,\"ы\"],[89,\"Х\"],[90,\"ИЙ\"],[91,\"Л\"],[94,\"ф\"],[95,\"~@Ы\"],[98,\"Ц\"],[99,\"А\"],[101,\"Ъш\"],[102,\"Ф\"],[103,\"Д\"],[104,\"О\"],[108,\"ю\"],[111,\"М\"],[112,\"щ\"],[116,\"ж\"],[119,\"Ш\"],[132,\"Щ\"],[135,\"Ю\"],[137,\"Ж\"]]",
+						"scale": 0.07,
+						"character-spacing": 1,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "bottom"
+					},
+					"uid": 222,
+					"instanceVariables": {
+						"Type": "ControlDefine"
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 184.81866088460427,
+						"y": 159.0990453868594,
+						"width": 178.5650739714294,
+						"height": 43.034344075089464,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 540140448788230,

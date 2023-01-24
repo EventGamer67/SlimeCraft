@@ -18,10 +18,10 @@
 				1,
 				1
 			],
-			"font": "Arial",
-			"size": 12,
+			"font": "Minecraft",
+			"size": 36,
 			"transparency": 0.6,
-			"height": 0.8
+			"height": 0.4
 		},
 		"uid": 42
 	}

@@ -11,8 +11,13 @@
 			"x":1,
 			"y":1
 		},
+		"LightTransparentBlocks":[15,39,12,13,28,29,30,70,55,56,73,79,99,80,52,149],
+		"TilesWhatOnCanPlace":[39,205,206,217,218,219,220,-1],
 		"OnlyOnBlocks":[
 			15,39,12,13,28,29,30,70,55,56,73,79,99,80
+		],
+		"CantPlacedBlocks":[
+			15,39,12,13,28,29,30,70,55,56,73,79,99,80,-1
 		],
 		"Glossary":{
 			"Wooden_Pickaxe":{
@@ -117,22 +122,70 @@
 				"Using":"Block",
 				"Stackable":1,
 				"MaxStack":16,
-				"Fuel": 300
+				"Fuel": 300,
+				"OnlyOn":[3,2]
 			},
 			"Torch":{
 				"Using":"Block",
 				"Stackable":1,
-				"MaxStack":32
+				"MaxStack":32,
+				"NotOnSpecial":1
+			},
+			"Bed":{
+				"Using":"Block",
+				"Stackable":0,
+				"NotOnSpecial":1
 			},
 			"Coal":{
 				"Using":"Material",
 				"Stackable":1,
 				"MaxStack":32
 			},
-			"Diamond":{
+			"Diamond":{	
 				"Using":"Material",
 				"Stackable":1,
 				"MaxStack":32
+			},
+			"Rose":{
+				"Using":"Material",
+				"Stackable":1,
+				"MaxStack":32
+			},
+			"Dandelion":{
+				"Using":"Material",
+				"Stackable":1,
+				"MaxStack":32
+			},
+			"Trava":{
+				"Using":"Material",
+				"Stackable":1,
+				"MaxStack":32
+			},
+			"RedMushroom":{
+				"Using":"Material",
+				"Stackable":1,
+				"MaxStack":32
+			},
+			"BrownMushroom":{
+				"Using":"Material",
+				"Stackable":1,
+				"MaxStack":32
+			},
+			"WheatSeeds":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32,
+				"OnlyOn":[71]
+			},
+			"Bucket":{
+				"Type":"Bucket",
+				"Using":"Bucket",
+				"Stackable":0
+			},
+			"WaterBucket":{
+				"Type": "WaterBucket",
+				"Using":"Bucket",
+				"Stackable":0
 			}
 		},
 		"Tiles":{
@@ -177,6 +230,15 @@
 			"2":{
 				"Dur": 0.5,
 				"Type": "Dirt",
+				"Silk_Drop": "Dirt",
+				"No_Silk_Drop": "Dirt",
+				"Best_Tool": "Shovel",
+				"HitSound":"Hitgravel1",
+				"DestroySound":"Hitgravel3"
+			},
+			"71":{
+				"Dur": 0.6,
+				"Type": "FarmLand",
 				"Silk_Drop": "Dirt",
 				"No_Silk_Drop": "Dirt",
 				"Best_Tool": "Shovel",
@@ -289,6 +351,43 @@
 				"Dur": 0.1,
 				"Type": "Torch",
 				"No_Silk_Drop": "Torch"
+			},
+			"149":{
+				"Dur": 1,
+				"Type": "Bed",
+				"Stackable":0,
+				"No_Silk_Drop": "Bed",
+				"Interface":"Bed"
+			},
+			"12":{
+				"Dur": 0.1,
+				"Type": "Rose",
+				"No_Silk_Drop": "Rose"
+			},
+			"13":{
+				"Dur": 0.1,
+				"Type": "Dandelion",
+				"No_Silk_Drop": "Dandelion"
+			},
+			"39":{
+				"Dur": 0.1,
+				"Type": "Trava",
+				"No_Silk_Drop": "Trava"
+			},
+			"29":{
+				"Dur": 0.1,
+				"Type": "RedMushroom",
+				"No_Silk_Drop": "RedMushroom"
+			},
+			"28":{
+				"Dur": 0.1,
+				"Type": "BrownMushroom",
+				"No_Silk_Drop": "BrownMushroom"
+			},
+			"88":{
+				"Dur": 0.1,
+				"Type": "WheatSeeds",
+				"No_Silk_Drop": "WheatSeeds"
 			},
 			"67":{
 				"Dur": 0.5,

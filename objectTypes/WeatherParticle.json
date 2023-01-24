@@ -1,0 +1,58 @@
+{
+	"name": "WeatherParticle",
+	"plugin-id": "Sprite",
+	"sid": 322508475831956,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Weight",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 526582780370786
+		},
+		{
+			"name": "RotateSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 742662930485032
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 719366414777953
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 8,
+						"height": 8,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7949742,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 388714137237707,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

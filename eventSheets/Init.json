@@ -113,11 +113,11 @@
 						{
 							"id": "map-function",
 							"objectClass": "Functions",
-							"sid": 833049082887596,
+							"sid": 303368393751806,
 							"parameters": {
 								"name": "\"Interfaces\"",
 								"string": "\"Furnace\"",
-								"function": "Show_Furnace"
+								"function": "ShowFurnaceNew"
 							}
 						},
 						{
@@ -139,9 +139,126 @@
 								"string": "\"Chest\"",
 								"function": "Chest"
 							}
+						},
+						{
+							"id": "map-function",
+							"objectClass": "Functions",
+							"sid": 948435281818622,
+							"parameters": {
+								"name": "\"Interfaces\"",
+								"string": "\"Bed\"",
+								"function": "Bed"
+							}
 						}
 					],
-					"sid": 499561958437041
+					"sid": 499561958437041,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 408259995512375,
+									"parameters": {
+										"object": "JoyStick"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 689347172784657,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 285256623620075,
+											"parameters": {
+												"object": "JoyStick",
+												"expression": "JoyStick.Type = \"Movement\""
+											}
+										},
+										{
+											"id": "pick-parent",
+											"objectClass": "JoyStick",
+											"sid": 933724628972372,
+											"parameters": {
+												"parent": "JoyStickBlank",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "JoyStickBlank",
+											"sid": 547206831532937,
+											"parameters": {
+												"x": "ViewportLeft(\"JoyStick\")+((JoyStickBlank.Width/2)*2)",
+												"y": "ViewportBottom(\"JoyStick\")-((JoyStickBlank.Width/2)*2)"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "JoyStick",
+											"sid": 482361121398297,
+											"parameters": {
+												"x": "JoyStickBlank.X",
+												"y": "JoyStickBlank.Y"
+											}
+										}
+									],
+									"sid": 851751417896771
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 932728891530796,
+											"parameters": {
+												"object": "JoyStick",
+												"expression": "JoyStick.Type = \"Action\""
+											}
+										},
+										{
+											"id": "pick-parent",
+											"objectClass": "JoyStick",
+											"sid": 183434985309745,
+											"parameters": {
+												"parent": "JoyStickBlank",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "JoyStickBlank",
+											"sid": 757303041807588,
+											"parameters": {
+												"x": "ViewportRight(\"JoyStick\")-((JoyStickBlank.Width/2)*2)",
+												"y": "ViewportBottom(\"JoyStick\")-((JoyStickBlank.Width/2)*2)"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "JoyStick",
+											"sid": 523177174782326,
+											"parameters": {
+												"x": "JoyStickBlank.X",
+												"y": "JoyStickBlank.Y"
+											}
+										}
+									],
+									"sid": 938028751283597
+								}
+							]
+						}
+					]
 				}
 			]
 		}

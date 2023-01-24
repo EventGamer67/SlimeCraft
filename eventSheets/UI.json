@@ -926,8 +926,8 @@
 									]
 								},
 								{
-									"callFunction": "Save",
-									"sid": 233294572777830
+									"callFunction": "SaveWorld",
+									"sid": 303018233603317
 								},
 								{
 									"id": "wait-for-signal",
@@ -1825,6 +1825,14 @@
 															"parameters": {
 																"value": "InventoryBlank.Type = \"Trade\""
 															}
+														},
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 660114991801710,
+															"parameters": {
+																"value": "InventoryBlank.Type = \"Furnace\""
+															}
 														}
 													],
 													"actions": [
@@ -1886,7 +1894,8 @@
 															],
 															"sid": 575401981121943
 														}
-													]
+													],
+													"isOrBlock": true
 												},
 												{
 													"eventType": "block",
@@ -2971,13 +2980,13 @@
 								{
 									"id": "tween-two-properties",
 									"objectClass": "InventoryBlank",
-									"sid": 423656988556616,
+									"sid": 117903206333683,
 									"behaviorType": "Tween",
 									"parameters": {
 										"tags": "\"show\"",
 										"property": "position",
 										"end-x": "Self.X",
-										"end-y": "ViewportBottom(\"Interfaces\")/2",
+										"end-y": "Functions.Get_Center_Y(\"Interfaces\")",
 										"time": "0.3",
 										"ease": "easeinoutcubic",
 										"destroy-on-complete": "no",
@@ -3699,18 +3708,7 @@
 													}
 												}
 											],
-											"actions": [
-												{
-													"id": "log",
-													"objectClass": "Browser",
-													"sid": 456497464297035,
-													"disabled": true,
-													"parameters": {
-														"type": "log",
-														"message": "\"array idendefic: \"&CurrentKey"
-													}
-												}
-											],
+											"actions": [],
 											"sid": 304328094703573,
 											"children": [
 												{
@@ -9718,13 +9716,13 @@
 						{
 							"id": "tween-two-properties",
 							"objectClass": "InventoryBlank",
-							"sid": 679078862883717,
+							"sid": 393177669890884,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"show\"",
 								"property": "position",
 								"end-x": "Self.X",
-								"end-y": "ViewportBottom(\"Interfaces\")/2",
+								"end-y": "Functions.Get_Center_Y(\"Interfaces\")",
 								"time": "0.3",
 								"ease": "easeinoutcubic",
 								"destroy-on-complete": "no",
@@ -10860,13 +10858,13 @@
 						{
 							"id": "tween-two-properties",
 							"objectClass": "InventoryBlank",
-							"sid": 115813216249820,
+							"sid": 510270943175828,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"show\"",
 								"property": "position",
 								"end-x": "Self.X",
-								"end-y": "ViewportBottom(\"Interfaces\")/2",
+								"end-y": "Functions.Get_Center_Y(\"Interfaces\")",
 								"time": "0.3",
 								"ease": "easeinoutcubic",
 								"destroy-on-complete": "no",
@@ -10903,262 +10901,1310 @@
 			]
 		},
 		{
-			"functionName": "Check_Inventory_Full",
+			"functionName": "ShowFurnaceNew",
 			"functionDescription": "",
 			"functionCategory": "",
-			"functionReturnType": "number",
+			"functionReturnType": "none",
 			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
-			"sid": 300225388689829,
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 650330804845493,
+					"parameters": {
+						"layer": "\"Interfaces\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 994263479311392,
+					"parameters": {
+						"layer": "\"UI\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 468703636445752,
+					"parameters": {
+						"variable": "Interface",
+						"value": "\"Furnace\""
+					}
+				}
+			],
+			"sid": 361517987487144,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [],
 					"actions": [
 						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 597685150758694,
+							"id": "erase-tile-range",
+							"objectClass": "Tilemap2",
+							"sid": 470555753910160,
 							"parameters": {
-								"variable": "Inv_Full",
-								"value": "true"
+								"tile-x": "7",
+								"tile-y": "1",
+								"width": "5",
+								"height": "5"
 							}
-						}
-					],
-					"sid": 949326573391462
-				},
-				{
-					"eventType": "variable",
-					"name": "Inv_Full",
-					"type": "boolean",
-					"initialValue": "true",
-					"comment": "",
-					"isStatic": true,
-					"isConstant": false,
-					"sid": 319196109560145
-				},
-				{
-					"eventType": "block",
-					"conditions": [
+						},
 						{
-							"id": "for",
-							"objectClass": "System",
-							"sid": 579719656867716,
+							"id": "set-tile",
+							"objectClass": "Tilemap2",
+							"sid": 154402436525836,
 							"parameters": {
-								"name": "\"x\"",
-								"start-index": "0",
-								"end-index": "Inventory.Width-1"
+								"tile-x": "7",
+								"tile-y": "1",
+								"tile": "0",
+								"state": "normal"
+							}
+						},
+						{
+							"id": "set-tile",
+							"objectClass": "Tilemap2",
+							"sid": 814004804454753,
+							"parameters": {
+								"tile-x": "7",
+								"tile-y": "3",
+								"tile": "0",
+								"state": "normal"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 318711960361997,
+							"parameters": {
+								"object-to-create": "InventoryBlank",
+								"layer": "\"Interfaces\"",
+								"x": "Functions.Get_Center_X(\"Interfaces\")",
+								"y": "-1000",
+								"create-hierarchy": true,
+								"template-name": "\"Furnace\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Tilemap2",
+							"sid": 546181496986214,
+							"parameters": {
+								"x": "InventoryBlank.BBoxLeft-8",
+								"y": "InventoryBlank.BBoxTop-8"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 252131654865265,
+							"parameters": {
+								"seconds": "0"
 							}
 						}
 					],
-					"actions": [],
-					"sid": 480875082156329,
+					"sid": 885499705813712,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-at-xy",
-									"objectClass": "Inventory",
-									"sid": 645585203772975,
-									"parameters": {
-										"x": "loopindex(\"x\")",
-										"y": "0",
-										"comparison": 1,
-										"value": "0"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 475602580633749
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
+									"id": "pick-last-created",
 									"objectClass": "System",
-									"sid": 985427936201897
+									"sid": 208760563882163,
+									"parameters": {
+										"object": "InventoryBlank"
+									}
 								}
 							],
 							"actions": [
 								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 700042719858091,
+									"id": "move-to-object",
+									"objectClass": "Tilemap2",
+									"sid": 478270928902721,
 									"parameters": {
-										"variable": "Inv_Full",
-										"value": "false"
+										"where": "in-front",
+										"object": "InventoryBlank"
 									}
 								},
 								{
-									"id": "stop-loop",
-									"objectClass": "System",
-									"sid": 676430494836504
+									"id": "move-to-object",
+									"objectClass": "Sprite10",
+									"sid": 170720764198218,
+									"parameters": {
+										"where": "in-front",
+										"object": "Tilemap2"
+									}
 								}
 							],
-							"sid": 940327822289119,
+							"sid": 193674842361271,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "pick-by-comparison",
+											"id": "pick-all",
 											"objectClass": "System",
-											"sid": 465896291856770,
+											"sid": 424769307365090,
 											"parameters": {
-												"object": "Inventory_Blank",
-												"expression": "Inventory_Blank.Type",
-												"comparison": 0,
-												"value": "\"Div\""
+												"object": "Inventory_Item"
 											}
 										}
 									],
 									"actions": [
 										{
-											"id": "set-animation-frame",
-											"objectClass": "Inventory_Blank",
-											"sid": 501007677331841,
-											"parameters": {
-												"frame-number": "0"
-											}
+											"id": "destroy",
+											"objectClass": "Inventory_Item",
+											"sid": 989623809438320
 										}
 									],
-									"sid": 621894359428200
+									"sid": 720170976727061
 								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "pick-by-comparison",
+											"id": "for",
 											"objectClass": "System",
-											"sid": 840425030446484,
+											"sid": 322087638671704,
 											"parameters": {
-												"object": "Inventory_Blank",
-												"expression": "Inventory_Blank.Type",
-												"comparison": 0,
-												"value": "\"ToOne\""
+												"name": "\"Hot_Bar\"",
+												"start-index": "0",
+												"end-index": "2"
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 888808708517165,
+									"children": [
 										{
-											"id": "set-animation-frame",
-											"objectClass": "Inventory_Blank",
-											"sid": 627656389629301,
-											"parameters": {
-												"frame-number": "0"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-at-xy",
+													"objectClass": "Inventory",
+													"sid": 573385785188598,
+													"parameters": {
+														"x": "loopindex(\"Hot_Bar\")",
+														"y": "1",
+														"comparison": 1,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 915797911135139,
+													"parameters": {
+														"object-to-create": "Inventory_Item",
+														"layer": "\"Interfaces\"",
+														"x": "Tilemap2.TileToPositionX(1+loopindex(\"Hot_Bar\"))",
+														"y": "Tilemap2.TileToPositionY(5)",
+														"create-hierarchy": true,
+														"template-name": "JSON.Get(\"Settings.Config.Glossary.\"&JSON.Get(\"Data.Recipes.\"&Inventory.At(loopindex(\"Hot_Bar\"),0)&\".Result.Item\")&\".Using\")"
+													}
+												},
+												{
+													"id": "move-to-top",
+													"objectClass": "Inventory_Item",
+													"sid": 310159230617020
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "Inventory_Item",
+													"sid": 559505812307977,
+													"parameters": {
+														"animation": "Inventory.At(loopindex(\"Hot_Bar\"),0)",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "set-size",
+													"objectClass": "Inventory_Item",
+													"sid": 840231055211640,
+													"parameters": {
+														"width": "14",
+														"height": "14"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Inventory_Item",
+													"sid": 525384655537943,
+													"parameters": {
+														"instance-variable": "Type",
+														"value": "Inventory.At(loopindex(\"Hot_Bar\"),0)"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Inventory_Item",
+													"sid": 157881692937448,
+													"parameters": {
+														"instance-variable": "Using",
+														"value": "JSON.Get(\"Settings.Config.Glossary.\"&self.type&\".Using\")"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Inventory_Item",
+													"sid": 302909581990253,
+													"parameters": {
+														"instance-variable": "Count_",
+														"value": "Inventory.At(loopindex(\"Hot_Bar\"),1)"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Inventory_Item",
+													"sid": 255482896106395,
+													"parameters": {
+														"instance-variable": "Global_Pos_X",
+														"value": "Tilemap2.PositionToTileX(Tilemap2.SnapX(Inventory_Item.X))"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Inventory_Item",
+													"sid": 603319208580380,
+													"parameters": {
+														"instance-variable": "Global_Pos_Y",
+														"value": "Tilemap2.PositionToTileY(Tilemap2.SnapY(Inventory_Item.Y))"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Inventory_Item",
+													"sid": 790866126721683,
+													"parameters": {
+														"instance-variable": "PosX",
+														"value": "Functions.Define_Inventory_Pos(Inventory_Item.Global_Pos_X,Inventory_Item.Global_Pos_Y)-1"
+													}
+												}
+											],
+											"sid": 578526925848378,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 634313063993831,
+															"parameters": {
+																"first-value": "JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.type&\".Stackable\")",
+																"comparison": 0,
+																"second-value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Inventory_Item",
+															"sid": 553559214045280,
+															"parameters": {
+																"instance-variable": "Stackable",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 868556540881741
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 584936209498838,
+															"parameters": {
+																"first-value": "JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.type&\".Stackable\")",
+																"comparison": 0,
+																"second-value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Inventory_Item",
+															"sid": 894244957364852,
+															"parameters": {
+																"instance-variable": "Stackable",
+																"value": "false"
+															}
+														}
+													],
+													"sid": 790836323791902
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-last-created",
+															"objectClass": "System",
+															"sid": 738201225471875,
+															"parameters": {
+																"object": "Inventory_Item"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "add-child",
+															"objectClass": "InventoryBlank",
+															"sid": 868218507252309,
+															"parameters": {
+																"child": "Inventory_Item",
+																"transform-x": false,
+																"transform-y": true,
+																"transform-w": false,
+																"transform-h": false,
+																"transform-a": false,
+																"transform-z-elevation": false,
+																"destroy-with-parent": false
+															}
+														}
+													],
+													"sid": 615686870554817,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "pick-children",
+																	"objectClass": "Inventory_Item",
+																	"sid": 930324185857351,
+																	"parameters": {
+																		"child": "Text",
+																		"which": "own"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "move-to-top",
+																	"objectClass": "Text",
+																	"sid": 469728151607461
+																},
+																{
+																	"id": "set-text",
+																	"objectClass": "Text",
+																	"sid": 814202421619789,
+																	"parameters": {
+																		"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
+																	}
+																}
+															],
+															"sid": 955139519849337
+														}
+													]
+												}
+											]
 										}
-									],
-									"sid": 839244251988211
+									]
 								},
 								{
 									"eventType": "block",
-									"conditions": [],
-									"actions": [
+									"conditions": [
 										{
-											"id": "set-function-return-value",
-											"objectClass": "Functions",
-											"sid": 722258585898969,
+											"id": "for",
+											"objectClass": "System",
+											"sid": 287085833850606,
 											"parameters": {
-												"value": "0"
+												"name": "\"Inventory\"",
+												"start-index": "3",
+												"end-index": "Inventory.Width"
 											}
 										}
 									],
-									"sid": 457935867099812
+									"actions": [],
+									"sid": 962462967822720,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-at-xy",
+													"objectClass": "Inventory",
+													"sid": 707928588063789,
+													"parameters": {
+														"x": "loopindex(\"Inventory\")",
+														"y": "1",
+														"comparison": 1,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 380039762150987,
+													"parameters": {
+														"object-to-create": "Inventory_Item",
+														"layer": "\"Interfaces\"",
+														"x": "Tilemap2.TileToPositionX(int(tokenat(Functions.Define_Tile_Pos(loopindex(\"Inventory\"), 1), 0, \",\")))",
+														"y": "Tilemap2.TileToPositionY(int(tokenat(Functions.Define_Tile_Pos(loopindex(\"Inventory\"), 1), 1, \",\")))",
+														"create-hierarchy": true,
+														"template-name": "JSON.Get(\"Settings.Config.Glossary.\"&JSON.Get(\"Data.Recipes.\"&Inventory.At(loopindex(\"Inventory\"),0)&\".Result.Item\")&\".Using\")"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Inventory_Item",
+													"sid": 587867409806242,
+													"parameters": {
+														"instance-variable": "PosX",
+														"value": "loopindex(\"Inventory\")"
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "Inventory_Item",
+													"sid": 667669947790935,
+													"parameters": {
+														"animation": "Inventory.At(loopindex(\"Inventory\"),0)",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Inventory_Item",
+													"sid": 319610772994623,
+													"parameters": {
+														"instance-variable": "Type",
+														"value": "Inventory.At(loopindex(\"Inventory\"),0)"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Inventory_Item",
+													"sid": 845467887720418,
+													"parameters": {
+														"instance-variable": "Using",
+														"value": "JSON.Get(\"Settings.Config.Glossary.\"&self.type&\".Using\")"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Inventory_Item",
+													"sid": 381062582220066,
+													"parameters": {
+														"instance-variable": "Count_",
+														"value": "Inventory.At(loopindex(\"Inventory\"),1)"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Inventory_Item",
+													"sid": 438926143977889,
+													"parameters": {
+														"instance-variable": "Global_Pos_X",
+														"value": "Tilemap2.PositionToTileX(Tilemap2.SnapX(Inventory_Item.X))"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Inventory_Item",
+													"sid": 184900834894403,
+													"parameters": {
+														"instance-variable": "Global_Pos_Y",
+														"value": "Tilemap2.PositionToTileY(Tilemap2.SnapY(Inventory_Item.Y))"
+													}
+												},
+												{
+													"id": "move-to-top",
+													"objectClass": "Inventory_Item",
+													"sid": 960809699083337
+												},
+												{
+													"id": "set-size",
+													"objectClass": "Inventory_Item",
+													"sid": 151522928935949,
+													"parameters": {
+														"width": "14",
+														"height": "14"
+													}
+												}
+											],
+											"sid": 434797418274103,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 602813593894267,
+															"parameters": {
+																"first-value": "JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.type&\".Stackable\")",
+																"comparison": 0,
+																"second-value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Inventory_Item",
+															"sid": 613173605187104,
+															"parameters": {
+																"instance-variable": "Stackable",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 781621908271974
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 996161038975793,
+															"parameters": {
+																"first-value": "JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.type&\".Stackable\")",
+																"comparison": 0,
+																"second-value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Inventory_Item",
+															"sid": 291650353668367,
+															"parameters": {
+																"instance-variable": "Stackable",
+																"value": "false"
+															}
+														}
+													],
+													"sid": 610844327192510
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-last-created",
+															"objectClass": "System",
+															"sid": 885585253501072,
+															"parameters": {
+																"object": "Inventory_Item"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "add-child",
+															"objectClass": "InventoryBlank",
+															"sid": 350522762958724,
+															"parameters": {
+																"child": "Inventory_Item",
+																"transform-x": false,
+																"transform-y": true,
+																"transform-w": false,
+																"transform-h": false,
+																"transform-a": false,
+																"transform-z-elevation": false,
+																"destroy-with-parent": false
+															}
+														}
+													],
+													"sid": 772891336610950,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "pick-children",
+																	"objectClass": "Inventory_Item",
+																	"sid": 315797409288116,
+																	"parameters": {
+																		"child": "Text",
+																		"which": "own"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "move-to-top",
+																	"objectClass": "Text",
+																	"sid": 709156844726300
+																},
+																{
+																	"id": "set-text",
+																	"objectClass": "Text",
+																	"sid": 621476501630275,
+																	"parameters": {
+																		"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
+																	}
+																}
+															],
+															"sid": 279245334664668
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 650266914831408,
+											"parameters": {
+												"first-value": "JSON.Get(\"Player.World.Furnace.\"&Current_Link&\".Fuel_Slot.Type\")",
+												"comparison": 1,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 149261037563439,
+											"parameters": {
+												"object-to-create": "Inventory_Item",
+												"layer": "\"Interfaces\"",
+												"x": "Tilemap2.TileToPositionX(7)",
+												"y": "Tilemap2.TileToPositionY(3)",
+												"create-hierarchy": true,
+												"template-name": "JSON.Get(\"Settings.Config.Glossary.\"&JSON.Get(\"Player.World.Furnace.\"&Current_Link&\".Fuel_Slot.Type\")&\".Using\")"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inventory_Item",
+											"sid": 211809422909301,
+											"parameters": {
+												"instance-variable": "Count_",
+												"value": "JSON.Get(\"Player.World.Furnace.\"&Current_Link&\".Fuel_Slot.Count\")"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inventory_Item",
+											"sid": 869837840759052,
+											"parameters": {
+												"instance-variable": "Type",
+												"value": "JSON.Get(\"Player.World.Furnace.\"&Current_Link&\".Fuel_Slot.Type\")"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inventory_Item",
+											"sid": 414791525679353,
+											"parameters": {
+												"instance-variable": "Using",
+												"value": "JSON.Get(\"Settings.Config.Glossary.\"&self.type&\".Using\")"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inventory_Item",
+											"sid": 894472515403438,
+											"parameters": {
+												"instance-variable": "PosX",
+												"value": "-1"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inventory_Item",
+											"sid": 676808017843948,
+											"parameters": {
+												"instance-variable": "Global_Pos_X",
+												"value": "7"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inventory_Item",
+											"sid": 278345465190712,
+											"parameters": {
+												"instance-variable": "Global_Pos_Y",
+												"value": "3"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Inventory_Item",
+											"sid": 276636875960492,
+											"parameters": {
+												"animation": "Inventory_Item.Type",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "Inventory_Item",
+											"sid": 874053292659471,
+											"parameters": {
+												"width": "14",
+												"height": "14"
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "InventoryBlank",
+											"sid": 146196947828103,
+											"parameters": {
+												"child": "Inventory_Item",
+												"transform-x": false,
+												"transform-y": true,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-a": false,
+												"transform-z-elevation": false,
+												"destroy-with-parent": true
+											}
+										}
+									],
+									"sid": 278238641347961,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 921521295017677,
+													"parameters": {
+														"first-value": "JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.type&\".Stackable\")",
+														"comparison": 0,
+														"second-value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Inventory_Item",
+													"sid": 212225060985496,
+													"parameters": {
+														"instance-variable": "Stackable",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 911927698714978
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 580842912104623,
+													"parameters": {
+														"first-value": "JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.type&\".Stackable\")",
+														"comparison": 0,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Inventory_Item",
+													"sid": 796194198797033,
+													"parameters": {
+														"instance-variable": "Stackable",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 102870122822266
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "Inventory_Item",
+													"sid": 758896507167958,
+													"parameters": {
+														"child": "Text",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "Text",
+													"sid": 543965395352403,
+													"parameters": {
+														"text": "Inventory_Item.Count_ > 1 ? Inventory_Item.Count_ : \"\""
+													}
+												}
+											],
+											"sid": 855031604543058
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 909354202659412,
+											"parameters": {
+												"first-value": "JSON.Get(\"Player.World.Furnace.\"&Current_Link&\".ToMelt.Type\")",
+												"comparison": 1,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 662785969073546,
+											"parameters": {
+												"object-to-create": "Inventory_Item",
+												"layer": "\"Interfaces\"",
+												"x": "Tilemap2.TileToPositionX(7)",
+												"y": "Tilemap2.TileToPositionY(1)",
+												"create-hierarchy": true,
+												"template-name": "JSON.Get(\"Settings.Config.Glossary.\"&JSON.Get(\"Player.World.Furnace.\"&Current_Link&\".ToMelt.Type\")&\".Using\")"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inventory_Item",
+											"sid": 451354239910597,
+											"parameters": {
+												"instance-variable": "Count_",
+												"value": "JSON.Get(\"Player.World.Furnace.\"&Current_Link&\".ToMelt.Count\")"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inventory_Item",
+											"sid": 377608287438862,
+											"parameters": {
+												"instance-variable": "Type",
+												"value": "JSON.Get(\"Player.World.Furnace.\"&Current_Link&\".ToMelt.Type\")"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inventory_Item",
+											"sid": 784951660940005,
+											"parameters": {
+												"instance-variable": "Using",
+												"value": "JSON.Get(\"Settings.Config.Glossary.\"&self.type&\".Using\")"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inventory_Item",
+											"sid": 797084193445557,
+											"parameters": {
+												"instance-variable": "PosX",
+												"value": "-1"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inventory_Item",
+											"sid": 680980824978717,
+											"parameters": {
+												"instance-variable": "Global_Pos_X",
+												"value": "7"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inventory_Item",
+											"sid": 204049192362918,
+											"parameters": {
+												"instance-variable": "Global_Pos_Y",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Inventory_Item",
+											"sid": 441066752797014,
+											"parameters": {
+												"animation": "Inventory_Item.Type",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "Inventory_Item",
+											"sid": 791608278279285,
+											"parameters": {
+												"width": "14",
+												"height": "14"
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "InventoryBlank",
+											"sid": 405317780763759,
+											"parameters": {
+												"child": "Inventory_Item",
+												"transform-x": false,
+												"transform-y": true,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-a": false,
+												"transform-z-elevation": false,
+												"destroy-with-parent": true
+											}
+										}
+									],
+									"sid": 243828859874958,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 529185676379915,
+													"parameters": {
+														"first-value": "JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.type&\".Stackable\")",
+														"comparison": 0,
+														"second-value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Inventory_Item",
+													"sid": 882501561904030,
+													"parameters": {
+														"instance-variable": "Stackable",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 479202102590170
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 252871558364787,
+													"parameters": {
+														"first-value": "JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.type&\".Stackable\")",
+														"comparison": 0,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Inventory_Item",
+													"sid": 206381792665790,
+													"parameters": {
+														"instance-variable": "Stackable",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 532427384464341
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "Inventory_Item",
+													"sid": 156942777037087,
+													"parameters": {
+														"child": "Text",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "Text",
+													"sid": 363128153526652,
+													"parameters": {
+														"text": "Inventory_Item.Count_ > 1 ? Inventory_Item.Count_ : \"\""
+													}
+												}
+											],
+											"sid": 285717382356591
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 835487045788954,
+											"parameters": {
+												"first-value": "JSON.Get(\"Player.World.Furnace.\"&Current_Link&\".Result.Type\")",
+												"comparison": 1,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 800780756278283,
+											"parameters": {
+												"object-to-create": "Inventory_Item",
+												"layer": "\"Interfaces\"",
+												"x": "Crafted_Slot.X",
+												"y": "Crafted_Slot.Y",
+												"create-hierarchy": true,
+												"template-name": "JSON.Get(\"Settings.Config.Glossary.\"&JSON.Get(\"Player.World.Furnace.\"&Current_Link&\".Result.Type\")&\".Using\")"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inventory_Item",
+											"sid": 130160919292994,
+											"parameters": {
+												"instance-variable": "Count_",
+												"value": "JSON.Get(\"Player.World.Furnace.\"&Current_Link&\".Result.Count\")"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inventory_Item",
+											"sid": 494605098084461,
+											"parameters": {
+												"instance-variable": "Type",
+												"value": "JSON.Get(\"Player.World.Furnace.\"&Current_Link&\".Result.Type\")"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inventory_Item",
+											"sid": 443341814275161,
+											"parameters": {
+												"instance-variable": "Using",
+												"value": "JSON.Get(\"Settings.Config.Glossary.\"&self.type&\".Using\")"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inventory_Item",
+											"sid": 308461693687762,
+											"parameters": {
+												"instance-variable": "PosX",
+												"value": "-1"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inventory_Item",
+											"sid": 652872076441089,
+											"parameters": {
+												"instance-variable": "Global_Pos_X",
+												"value": "0"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inventory_Item",
+											"sid": 404511404054611,
+											"parameters": {
+												"instance-variable": "Global_Pos_Y",
+												"value": "0"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Inventory_Item",
+											"sid": 726628416218063,
+											"parameters": {
+												"animation": "Inventory_Item.Type",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "Inventory_Item",
+											"sid": 107845174429462,
+											"parameters": {
+												"width": "14",
+												"height": "14"
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "InventoryBlank",
+											"sid": 136631452311028,
+											"parameters": {
+												"child": "Inventory_Item",
+												"transform-x": false,
+												"transform-y": true,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-a": false,
+												"transform-z-elevation": false,
+												"destroy-with-parent": true
+											}
+										}
+									],
+									"sid": 686720574712510,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 904426828050482,
+													"parameters": {
+														"first-value": "JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.type&\".Stackable\")",
+														"comparison": 0,
+														"second-value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Inventory_Item",
+													"sid": 164212319448452,
+													"parameters": {
+														"instance-variable": "Stackable",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 734427673379978
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 122895246408917,
+													"parameters": {
+														"first-value": "JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.type&\".Stackable\")",
+														"comparison": 0,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Inventory_Item",
+													"sid": 942581296992357,
+													"parameters": {
+														"instance-variable": "Stackable",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 324257651120695
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "Inventory_Item",
+													"sid": 617842825942839,
+													"parameters": {
+														"child": "Text",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "Text",
+													"sid": 464830734978656,
+													"parameters": {
+														"text": "Inventory_Item.Count_ > 1 ? Inventory_Item.Count_ : \"\""
+													}
+												}
+											],
+											"sid": 309399388203849
+										}
+									]
 								}
 							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 146880795816351,
-							"parameters": {
-								"variable": "Inv_Full"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 680670425799156,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 833548063007310,
-									"parameters": {
-										"object": "Inventory_Blank",
-										"expression": "Inventory_Blank.Type",
-										"comparison": 0,
-										"value": "\"Div\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "Inventory_Blank",
-									"sid": 120613929535303,
-									"parameters": {
-										"frame-number": "1"
-									}
-								}
-							],
-							"sid": 495043708405115
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 868614687027917,
-									"parameters": {
-										"object": "Inventory_Blank",
-										"expression": "Inventory_Blank.Type",
-										"comparison": 0,
-										"value": "\"ToOne\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "Inventory_Blank",
-									"sid": 833376968129306,
-									"parameters": {
-										"frame-number": "1"
-									}
-								}
-							],
-							"sid": 122883232329899
 						},
 						{
 							"eventType": "block",
 							"conditions": [],
 							"actions": [
 								{
-									"id": "set-function-return-value",
-									"objectClass": "Functions",
-									"sid": 164722909459759,
+									"id": "tween-two-properties",
+									"objectClass": "InventoryBlank",
+									"sid": 883386109408535,
+									"behaviorType": "Tween",
 									"parameters": {
-										"value": "1"
+										"tags": "\"show\"",
+										"property": "position",
+										"end-x": "Self.X",
+										"end-y": "Functions.Get_Center_Y(\"Interfaces\")",
+										"time": "0.3",
+										"ease": "easeinoutcubic",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 869714864549930
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 261720122271685,
+									"parameters": {
+										"group-name": "\"Dragging\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 419777890024720,
+									"parameters": {
+										"group-name": "\"Main\"",
+										"state": "deactivated"
 									}
 								}
 							],
-							"sid": 661416898855427
+							"sid": 608620544568444
 						}
 					]
 				}
@@ -13369,16 +14415,7 @@
 			],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [
-				{
-					"id": "alert",
-					"objectClass": "Browser",
-					"sid": 140953730002468,
-					"parameters": {
-						"message": "\"CHEST UPDATED\""
-					}
-				}
-			],
+			"actions": [],
 			"sid": 990564773354239,
 			"children": [
 				{
@@ -13897,6 +14934,7 @@
 			"conditions": [],
 			"actions": [],
 			"sid": 536269115567387,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -13911,7 +14949,8 @@
 							}
 						}
 					],
-					"sid": 125677204808265
+					"sid": 125677204808265,
+					"disabled": true
 				}
 			]
 		},
@@ -14062,7 +15101,8 @@
 					}
 				}
 			],
-			"sid": 908645335639722
+			"sid": 908645335639722,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -14086,7 +15126,8 @@
 					}
 				}
 			],
-			"sid": 315821016673278
+			"sid": 315821016673278,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -14110,7 +15151,8 @@
 					}
 				}
 			],
-			"sid": 299582751096292
+			"sid": 299582751096292,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -14134,7 +15176,8 @@
 					}
 				}
 			],
-			"sid": 952927719134253
+			"sid": 952927719134253,
+			"disabled": true
 		},
 		{
 			"functionName": "CompareRecipeIngridients",
@@ -14377,6 +15420,493 @@
 						}
 					],
 					"sid": 925858965396490
+				}
+			]
+		},
+		{
+			"functionName": "Check_Inventory_Full",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 274838933001636,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 312484968586955,
+							"parameters": {
+								"variable": "Inv_Full",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 678892011744813
+				},
+				{
+					"eventType": "variable",
+					"name": "Inv_Full",
+					"type": "boolean",
+					"initialValue": "true",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 798718763140094
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 472425994069486,
+							"parameters": {
+								"name": "\"x\"",
+								"start-index": "0",
+								"end-index": "Inventory.Width-1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 180359351891878,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-at-xy",
+									"objectClass": "Inventory",
+									"sid": 218511744418079,
+									"parameters": {
+										"x": "loopindex(\"x\")",
+										"y": "0",
+										"comparison": 1,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 341866074273711
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 255436405533497
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 171078215173216,
+									"parameters": {
+										"variable": "Inv_Full",
+										"value": "false"
+									}
+								},
+								{
+									"id": "stop-loop",
+									"objectClass": "System",
+									"sid": 460529347764222
+								}
+							],
+							"sid": 922408013480408,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 659269103988731,
+											"parameters": {
+												"object": "Inventory_Blank",
+												"expression": "Inventory_Blank.Type",
+												"comparison": 0,
+												"value": "\"Div\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "Inventory_Blank",
+											"sid": 350841797124570,
+											"parameters": {
+												"frame-number": "0"
+											}
+										}
+									],
+									"sid": 800121551706784
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 777405442106284,
+											"parameters": {
+												"object": "Inventory_Blank",
+												"expression": "Inventory_Blank.Type",
+												"comparison": 0,
+												"value": "\"ToOne\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "Inventory_Blank",
+											"sid": 893742551545474,
+											"parameters": {
+												"frame-number": "0"
+											}
+										}
+									],
+									"sid": 388575531624357
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 118714790228869,
+											"parameters": {
+												"value": "0"
+											}
+										}
+									],
+									"sid": 474527944112037
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 432744244382614,
+							"parameters": {
+								"variable": "Inv_Full"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 558300102873165,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 949347248575603,
+									"parameters": {
+										"object": "Inventory_Blank",
+										"expression": "Inventory_Blank.Type",
+										"comparison": 0,
+										"value": "\"Div\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Inventory_Blank",
+									"sid": 944423598121851,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 605762190727588
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 491871490259159,
+									"parameters": {
+										"object": "Inventory_Blank",
+										"expression": "Inventory_Blank.Type",
+										"comparison": 0,
+										"value": "\"ToOne\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Inventory_Blank",
+									"sid": 901337591322755,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 917084143942471
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 334212320055545,
+									"parameters": {
+										"value": "1"
+									}
+								}
+							],
+							"sid": 338262890716669
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "CheckInventoryFullByItem",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Item",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 780966547728204
+				},
+				{
+					"name": "Count",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 189904296447809
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 720830870308103,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "Inv_Full",
+					"type": "boolean",
+					"initialValue": "true",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 291836767951941
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 906495883792309,
+							"parameters": {
+								"variable": "Inv_Full",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 927243167939437,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 243121085977634,
+									"parameters": {
+										"name": "\"x\"",
+										"start-index": "0",
+										"end-index": "Inventory.Width-1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 213440772339257,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-xy",
+											"objectClass": "Inventory",
+											"sid": 844645829514604,
+											"parameters": {
+												"x": "loopindex(\"x\")",
+												"y": "0",
+												"comparison": 0,
+												"value": "Item"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 718094501148353,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "has-key",
+													"objectClass": "JSON",
+													"sid": 369363607729509,
+													"parameters": {
+														"path": "\"Settings.Config.Glossary.\"&Item&\".MaxStack\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 729612438825305,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 235266418592520,
+															"parameters": {
+																"value": "JSON.Get(\"Settings.Config.Glossary.\"&Item&\".MaxStack\") > Inventory.At(loopindex(\"x\"),1)"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "stop-loop",
+															"objectClass": "System",
+															"sid": 733526616242871
+														},
+														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 616872658270540,
+															"parameters": {
+																"variable": "Inv_Full",
+																"value": "false"
+															}
+														},
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 740567168076594,
+															"parameters": {
+																"value": "0"
+															}
+														}
+													],
+													"sid": 791121302132338
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-xy",
+											"objectClass": "Inventory",
+											"sid": 889613299557415,
+											"parameters": {
+												"x": "loopindex(\"x\")",
+												"y": "0",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "stop-loop",
+											"objectClass": "System",
+											"sid": 615122046493151
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 460557525532851,
+											"parameters": {
+												"variable": "Inv_Full",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 133147929561425,
+											"parameters": {
+												"value": "0"
+											}
+										}
+									],
+									"sid": 289053241971114
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 557095721714201,
+									"parameters": {
+										"variable": "Inv_Full"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 181625302567174,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 149625512988007,
+											"parameters": {
+												"value": "1"
+											}
+										}
+									],
+									"sid": 717243286167761
+								}
+							]
+						}
+					]
 				}
 			]
 		}
