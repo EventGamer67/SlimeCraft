@@ -381,7 +381,8 @@
 										"ease": "easeoutelastic",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -455,7 +456,8 @@
 										"ease": "easeinback",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -494,7 +496,8 @@
 										"ease": "easeoutcubic",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								}
 							],
@@ -572,7 +575,8 @@
 														"ease": "easeoutcubic",
 														"destroy-on-complete": "no",
 														"loop": "no",
-														"ping-pong": "no"
+														"ping-pong": "no",
+														"repeat-count": "1"
 													}
 												},
 												{
@@ -593,7 +597,8 @@
 														"ease": "easeinoutsine",
 														"destroy-on-complete": "no",
 														"loop": "no",
-														"ping-pong": "no"
+														"ping-pong": "no",
+														"repeat-count": "1"
 													}
 												}
 											],
@@ -802,10 +807,13 @@
 									]
 								},
 								{
-									"callFunction": "Blackout",
-									"sid": 798324884091242,
+									"callFunction": "BlackoutByTiled",
+									"sid": 850771891708416,
 									"parameters": [
-										true
+										true,
+										"\"UI\"",
+										"0.1",
+										"70"
 									]
 								}
 							],
@@ -867,10 +875,13 @@
 									"sid": 816209685137909
 								},
 								{
-									"callFunction": "Blackout",
-									"sid": 710002619815300,
+									"callFunction": "BlackoutByTiled",
+									"sid": 443162692052703,
 									"parameters": [
-										false
+										false,
+										"\"UI\"",
+										"0.1",
+										"70"
 									]
 								},
 								{
@@ -912,20 +923,6 @@
 									"sid": 661752862984364
 								},
 								{
-									"callFunction": "Blackout",
-									"sid": 391295607656681,
-									"parameters": [
-										false
-									]
-								},
-								{
-									"callFunction": "Pause",
-									"sid": 169776123433326,
-									"parameters": [
-										false
-									]
-								},
-								{
 									"callFunction": "SaveWorld",
 									"sid": 303018233603317
 								},
@@ -936,6 +933,13 @@
 									"parameters": {
 										"tag": "\"saved\""
 									}
+								},
+								{
+									"callFunction": "Pause",
+									"sid": 618452955626777,
+									"parameters": [
+										false
+									]
 								},
 								{
 									"id": "go-to-layout",
@@ -1401,6 +1405,15 @@
 									"parameters": {
 										"visibility": "invisible"
 									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 838491077179317,
+									"parameters": {
+										"variable": "Interface",
+										"value": "\"\""
+									}
 								}
 							],
 							"sid": 818379351135795,
@@ -1849,7 +1862,8 @@
 																"ease": "easeinoutcubic",
 																"destroy-on-complete": "yes",
 																"loop": "no",
-																"ping-pong": "no"
+																"ping-pong": "no",
+																"repeat-count": "1"
 															}
 														},
 														{
@@ -1920,7 +1934,8 @@
 																"ease": "easeinoutcubic",
 																"destroy-on-complete": "no",
 																"loop": "no",
-																"ping-pong": "no"
+																"ping-pong": "no",
+																"repeat-count": "1"
 															}
 														},
 														{
@@ -2991,7 +3006,8 @@
 										"ease": "easeinoutcubic",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								}
 							],
@@ -8308,7 +8324,8 @@
 																		"ease": "easeinback",
 																		"destroy-on-complete": "yes",
 																		"loop": "no",
-																		"ping-pong": "no"
+																		"ping-pong": "no",
+																		"repeat-count": "1"
 																	}
 																},
 																{
@@ -8615,7 +8632,8 @@
 												"ease": "default",
 												"destroy-on-complete": "no",
 												"loop": "no",
-												"ping-pong": "no"
+												"ping-pong": "no",
+												"repeat-count": "1"
 											}
 										}
 									],
@@ -9727,7 +9745,8 @@
 								"ease": "easeinoutcubic",
 								"destroy-on-complete": "no",
 								"loop": "no",
-								"ping-pong": "no"
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						},
 						{
@@ -10869,7 +10888,8 @@
 								"ease": "easeinoutcubic",
 								"destroy-on-complete": "no",
 								"loop": "no",
-								"ping-pong": "no"
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						},
 						{
@@ -12177,7 +12197,8 @@
 										"ease": "easeinoutcubic",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -14291,7 +14312,8 @@
 										"ease": "easeinoutcubic",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -14718,7 +14740,8 @@
 								"ease": "default",
 								"destroy-on-complete": "no",
 								"loop": "no",
-								"ping-pong": "no"
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						}
 					],
@@ -14751,7 +14774,8 @@
 								"ease": "default",
 								"destroy-on-complete": "no",
 								"loop": "no",
-								"ping-pong": "no"
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						},
 						{

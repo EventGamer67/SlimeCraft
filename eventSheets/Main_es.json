@@ -6,6 +6,10 @@
 			"includeSheet": "SceneLoader_es"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "Console"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -50,10 +54,6 @@
 		{
 			"eventType": "include",
 			"includeSheet": "Functions_es"
-		},
-		{
-			"eventType": "include",
-			"includeSheet": "Console"
 		},
 		{
 			"eventType": "block",
@@ -569,7 +569,8 @@
 								"ease": "easeoutcubic",
 								"destroy-on-complete": "no",
 								"loop": "no",
-								"ping-pong": "no"
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						},
 						{
@@ -1293,7 +1294,8 @@
 										"ease": "default",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -1309,7 +1311,8 @@
 										"ease": "default",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -1325,7 +1328,8 @@
 										"ease": "default",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -1341,7 +1345,8 @@
 										"ease": "default",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -1357,7 +1362,8 @@
 										"ease": "default",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -1373,7 +1379,8 @@
 										"ease": "default",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -1389,7 +1396,8 @@
 										"ease": "default",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -2702,7 +2710,8 @@
 																						"ease": "easeinoutbounce",
 																						"destroy-on-complete": "no",
 																						"loop": "no",
-																						"ping-pong": "yes"
+																						"ping-pong": "yes",
+																						"repeat-count": "1"
 																					}
 																				}
 																			],
@@ -2960,7 +2969,8 @@
 																						"ease": "easeinoutbounce",
 																						"destroy-on-complete": "no",
 																						"loop": "no",
-																						"ping-pong": "yes"
+																						"ping-pong": "yes",
+																						"repeat-count": "1"
 																					}
 																				}
 																			],
@@ -3408,7 +3418,8 @@
 																				"ease": "easeinoutbounce",
 																				"destroy-on-complete": "no",
 																				"loop": "no",
-																				"ping-pong": "yes"
+																				"ping-pong": "yes",
+																				"repeat-count": "1"
 																			}
 																		}
 																	],
@@ -3661,12 +3672,12 @@
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 689539800119432,
+											"sid": 636960745633115,
 											"parameters": {
 												"object-to-create": "Message_Text",
 												"layer": "\"UI\"",
 												"x": "Functions.Get_Center_X(\"UI\")",
-												"y": "TiledBackground2.Y-20",
+												"y": "TiledBackground2.Y-35",
 												"create-hierarchy": true,
 												"template-name": "\"DropItemText\""
 											}
@@ -3692,7 +3703,8 @@
 												"ease": "default",
 												"destroy-on-complete": "no",
 												"loop": "no",
-												"ping-pong": "no"
+												"ping-pong": "no",
+												"repeat-count": "1"
 											}
 										},
 										{
@@ -3713,7 +3725,8 @@
 												"ease": "default",
 												"destroy-on-complete": "yes",
 												"loop": "no",
-												"ping-pong": "no"
+												"ping-pong": "no",
+												"repeat-count": "1"
 											}
 										}
 									],
@@ -3774,7 +3787,8 @@
 										"ease": "noease",
 										"destroy-on-complete": "yes",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -10431,7 +10445,8 @@
 												"ease": "default",
 												"destroy-on-complete": "yes",
 												"loop": "no",
-												"ping-pong": "no"
+												"ping-pong": "no",
+												"repeat-count": "1"
 											}
 										},
 										{

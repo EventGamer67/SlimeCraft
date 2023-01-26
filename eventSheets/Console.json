@@ -12,6 +12,14 @@
 			],
 			"actions": [
 				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 851698158983471,
+					"parameters": {
+						"seconds": "0"
+					}
+				},
+				{
 					"id": "register-command",
 					"objectClass": "InGameConsole",
 					"sid": 858974809367981,

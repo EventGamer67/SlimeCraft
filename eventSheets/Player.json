@@ -137,7 +137,8 @@
 								"ease": "default",
 								"destroy-on-complete": "yes",
 								"loop": "no",
-								"ping-pong": "no"
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						},
 						{
@@ -277,7 +278,8 @@
 								"ease": "easeoutbounce",
 								"destroy-on-complete": "no",
 								"loop": "no",
-								"ping-pong": "no"
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						},
 						{
@@ -3092,7 +3094,8 @@
 																								"ease": "default",
 																								"destroy-on-complete": "no",
 																								"loop": "no",
-																								"ping-pong": "yes"
+																								"ping-pong": "yes",
+																								"repeat-count": "1"
 																							}
 																						},
 																						{
@@ -3109,7 +3112,8 @@
 																								"ease": "default",
 																								"destroy-on-complete": "no",
 																								"loop": "yes",
-																								"ping-pong": "yes"
+																								"ping-pong": "yes",
+																								"repeat-count": "1"
 																							}
 																						}
 																					],
@@ -3181,7 +3185,8 @@
 																								"ease": "default",
 																								"destroy-on-complete": "no",
 																								"loop": "no",
-																								"ping-pong": "yes"
+																								"ping-pong": "yes",
+																								"repeat-count": "1"
 																							}
 																						},
 																						{
@@ -3198,7 +3203,8 @@
 																								"ease": "default",
 																								"destroy-on-complete": "no",
 																								"loop": "yes",
-																								"ping-pong": "yes"
+																								"ping-pong": "yes",
+																								"repeat-count": "1"
 																							}
 																						}
 																					],
@@ -3347,7 +3353,8 @@
 																				"ease": "easeoutcubic",
 																				"destroy-on-complete": "no",
 																				"loop": "no",
-																				"ping-pong": "no"
+																				"ping-pong": "no",
+																				"repeat-count": "1"
 																			}
 																		},
 																		{
@@ -3363,7 +3370,8 @@
 																				"ease": "default",
 																				"destroy-on-complete": "no",
 																				"loop": "no",
-																				"ping-pong": "no"
+																				"ping-pong": "no",
+																				"repeat-count": "1"
 																			}
 																		},
 																		{
@@ -3379,7 +3387,8 @@
 																				"ease": "default",
 																				"destroy-on-complete": "no",
 																				"loop": "no",
-																				"ping-pong": "no"
+																				"ping-pong": "no",
+																				"repeat-count": "1"
 																			}
 																		}
 																	],
@@ -3537,7 +3546,8 @@
 																						"ease": "easeoutcubic",
 																						"destroy-on-complete": "no",
 																						"loop": "no",
-																						"ping-pong": "no"
+																						"ping-pong": "no",
+																						"repeat-count": "1"
 																					}
 																				},
 																				{
@@ -4102,7 +4112,8 @@
 																		"ease": "easeoutcubic",
 																		"destroy-on-complete": "no",
 																		"loop": "no",
-																		"ping-pong": "no"
+																		"ping-pong": "no",
+																		"repeat-count": "1"
 																	}
 																},
 																{
@@ -4118,7 +4129,8 @@
 																		"ease": "default",
 																		"destroy-on-complete": "no",
 																		"loop": "no",
-																		"ping-pong": "no"
+																		"ping-pong": "no",
+																		"repeat-count": "1"
 																	}
 																}
 															],
@@ -4876,6 +4888,14 @@
 							"sid": 180306506871024,
 							"parameters": {
 								"object": "FoodBtn"
+							}
+						},
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 112488441591830,
+							"parameters": {
+								"value": "Interface = \"\""
 							}
 						}
 					],
@@ -6585,7 +6605,8 @@
 														"ease": "easeoutsine",
 														"destroy-on-complete": "no",
 														"loop": "no",
-														"ping-pong": "no"
+														"ping-pong": "no",
+														"repeat-count": "1"
 													}
 												},
 												{
@@ -7954,7 +7975,8 @@
 												"ease": "easeinoutcubic",
 												"destroy-on-complete": "no",
 												"loop": "no",
-												"ping-pong": "no"
+												"ping-pong": "no",
+												"repeat-count": "1"
 											}
 										},
 										{
@@ -8252,7 +8274,8 @@
 																		"ease": "easeinoutbounce",
 																		"destroy-on-complete": "no",
 																		"loop": "no",
-																		"ping-pong": "yes"
+																		"ping-pong": "yes",
+																		"repeat-count": "1"
 																	}
 																},
 																{
@@ -8908,7 +8931,8 @@
 										"ease": "easeoutback",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -8938,7 +8962,8 @@
 										"ease": "easeoutback",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								}
 							],
@@ -9064,7 +9089,8 @@
 														"ease": "easeinback",
 														"destroy-on-complete": "yes",
 														"loop": "no",
-														"ping-pong": "no"
+														"ping-pong": "no",
+														"repeat-count": "1"
 													}
 												}
 											],
@@ -9118,7 +9144,8 @@
 														"ease": "easeinback",
 														"destroy-on-complete": "yes",
 														"loop": "no",
-														"ping-pong": "no"
+														"ping-pong": "no",
+														"repeat-count": "1"
 													}
 												}
 											],
@@ -9647,7 +9674,8 @@
 						"ease": "default",
 						"destroy-on-complete": "no",
 						"loop": "no",
-						"ping-pong": "no"
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				},
 				{
@@ -9664,7 +9692,8 @@
 						"ease": "default",
 						"destroy-on-complete": "no",
 						"loop": "no",
-						"ping-pong": "no"
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				},
 				{
@@ -9747,7 +9776,8 @@
 						"ease": "default",
 						"destroy-on-complete": "no",
 						"loop": "no",
-						"ping-pong": "no"
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				},
 				{
@@ -9764,7 +9794,8 @@
 						"ease": "default",
 						"destroy-on-complete": "no",
 						"loop": "no",
-						"ping-pong": "no"
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				},
 				{
@@ -9867,7 +9898,8 @@
 						"ease": "default",
 						"destroy-on-complete": "no",
 						"loop": "no",
-						"ping-pong": "no"
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				}
 			],
