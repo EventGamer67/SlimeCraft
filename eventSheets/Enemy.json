@@ -1,0 +1,1310 @@
+{
+	"name": "Enemy",
+	"events": [
+		{
+			"functionName": "SpawnEnemy",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Enemy",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 717471865391939
+				},
+				{
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 114400309767383
+				},
+				{
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 798719416993107
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 812836712794368,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 442566201164758,
+							"parameters": {
+								"value": "Enemy = \"Zombie\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 706958221782157,
+							"parameters": {
+								"object-to-create": "Zombie",
+								"layer": "\"Layer 1\"",
+								"x": "x",
+								"y": "y",
+								"create-hierarchy": true,
+								"template-name": "\"Zombie\""
+							}
+						}
+					],
+					"sid": 698895970246289
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 596567106320444,
+					"parameters": {
+						"key": 192
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "SpawnEnemy",
+					"sid": 430890065670172,
+					"parameters": [
+						"\"Zombie\"",
+						"Mouse.X",
+						"Mouse.Y"
+					]
+				}
+			],
+			"sid": 935614859340985
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "Enemies",
+					"sid": 335502344118358,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"Seek\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Enemies",
+					"sid": 634019409329235,
+					"parameters": {
+						"instance-variable": "State",
+						"value": "\"Standby\""
+					}
+				}
+			],
+			"sid": 223075501775938
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "Enemies",
+					"sid": 996032773911797,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"Burning\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-timer",
+					"objectClass": "Enemies",
+					"sid": 157327849948118,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"BurnHit\""
+					}
+				}
+			],
+			"sid": 447737752147100,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "Enemies",
+							"sid": 412320015014085,
+							"parameters": {
+								"child": "Fire",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 619674896920360,
+							"parameters": {
+								"seconds": "0"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Fire",
+							"sid": 811111060057684
+						}
+					],
+					"sid": 608139847437748
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "Enemies",
+					"sid": 748561304941749,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"BurnHit\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "HitEnemy",
+					"sid": 739917953895562,
+					"parameters": [
+						"Enemies.UID",
+						"0",
+						false,
+						"1",
+						"0"
+					]
+				}
+			],
+			"sid": 536580726953946
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 660649081079274,
+					"parameters": {
+						"object": "Enemies"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 188688102213244,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-timer-running",
+							"objectClass": "Enemies",
+							"sid": 307990744784201,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Burning\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 683029482978066,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "Enemies",
+									"sid": 218440100029627,
+									"parameters": {
+										"child": "Fire",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 709838777426167
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 524833105684190
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 198184410339815,
+									"parameters": {
+										"object-to-create": "Fire",
+										"layer": "\"Layer 1\"",
+										"x": "Enemies.X",
+										"y": "Enemies.BBoxTop-8",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "Enemies",
+									"sid": 996610957302850,
+									"parameters": {
+										"child": "Fire",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": false,
+										"transform-h": false,
+										"transform-a": false,
+										"transform-z-elevation": true,
+										"destroy-with-parent": true
+									}
+								}
+							],
+							"sid": 570923581230042
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-los-to-object",
+							"objectClass": "Enemies",
+							"sid": 214850644953957,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"object": "Sprite",
+								"image-point": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Enemies",
+							"sid": 617744064324442,
+							"parameters": {
+								"instance-variable": "State",
+								"value": "\"Follow\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Enemies",
+							"sid": 851056351359535,
+							"parameters": {
+								"instance-variable": "TargetX",
+								"value": "Sprite.X"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Enemies",
+							"sid": 515483816347084,
+							"parameters": {
+								"instance-variable": "TargetY",
+								"value": "Sprite.Y"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Enemies",
+							"sid": 803593560422599,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "3",
+								"type": "once",
+								"tag": "\"Seek\""
+							}
+						}
+					],
+					"sid": 676421803197971
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 514593048968581,
+							"parameters": {
+								"value": "Enemies.ObjectTypeName = \"Zombie\""
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "Enemies",
+							"sid": 961755021772678,
+							"parameters": {
+								"child": "Sprite27",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 676689607907657,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "tilex",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 366152299068847
+						},
+						{
+							"eventType": "variable",
+							"name": "tiley",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 672521925835651
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "cast-ray",
+									"objectClass": "Enemies",
+									"sid": 902381218103282,
+									"behaviorType": "LineOfSight",
+									"parameters": {
+										"from-x": "Self.X",
+										"from-y": "Self.BBoxTop",
+										"to-x": "Self.X",
+										"to-y": "0",
+										"use-collision-cells": true
+									}
+								}
+							],
+							"sid": 930247118766369,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "ray-intersected",
+											"objectClass": "Enemies",
+											"sid": 943905199570751,
+											"behaviorType": "LineOfSight",
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "Enemies",
+											"sid": 479504703022143,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "3",
+												"type": "once",
+												"tag": "\"Burning\""
+											}
+										}
+									],
+									"sid": 404722625472685,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-timer-running",
+													"objectClass": "Enemies",
+													"sid": 987609799163666,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"BurnHit\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "start-timer",
+													"objectClass": "Enemies",
+													"sid": 312039828740857,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "1.0",
+														"type": "regular",
+														"tag": "\"BurnHit\""
+													}
+												}
+											],
+											"sid": 167109743977168
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 608642767326383,
+									"parameters": {
+										"value": "Enemies.State = \"Follow\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 553980664854741,
+									"parameters": {
+										"variable": "tilex",
+										"value": "Terrain.PositionToTileX(Enemies.X)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 147901725743534,
+									"parameters": {
+										"variable": "tiley",
+										"value": "Terrain.PositionToTileY(Enemies.Y)"
+									}
+								}
+							],
+							"sid": 939519910775736,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Sprite27",
+											"sid": 887215660047738,
+											"parameters": {
+												"child": "Hand2",
+												"which": "own"
+											}
+										},
+										{
+											"id": "pick-children",
+											"objectClass": "Sprite27",
+											"sid": 178391431578310,
+											"parameters": {
+												"child": "Sprite28",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-angle",
+											"objectClass": "Hand2",
+											"sid": 209042139124808,
+											"parameters": {
+												"angle": "angle(Self.X,Self.Y,Enemies.TargetX,Enemies.TargetY)+(sin(tickcount*3)*15)"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Sprite28",
+											"sid": 933292629706563,
+											"parameters": {
+												"angle": "(sin(Tick*80)*(30*Self.index))"
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "Sprite27",
+											"sid": 839910374536157,
+											"parameters": {
+												"width": "16*sign(Self.Width)",
+												"height": "lerp(Self.Height,16*sign(Self.Height)+(sin(tickcount*2)*1),0.3)"
+											}
+										}
+									],
+									"sid": 808536536462338
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 573598009305915,
+											"parameters": {
+												"value": "Enemies.X > Enemies.TargetX"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "Enemies",
+											"sid": 863769765338964,
+											"behaviorType": "Platform",
+											"parameters": {
+												"control": "left"
+											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "Sprite27",
+											"sid": 299375684884746,
+											"parameters": {
+												"state": "not-mirrored"
+											}
+										}
+									],
+									"sid": 859853175243544,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 291211978403339,
+													"parameters": {
+														"tile-x": "tilex-1",
+														"tile-y": "tiley",
+														"comparison": 1,
+														"tile": "-1"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 634807809352995,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 482880271968580,
+															"parameters": {
+																"value": "Functions.TileHaveCollision(Terrain.TileAt(tilex-1,tiley)) = 0"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 208929281376334,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-on-floor",
+																	"objectClass": "Enemies",
+																	"sid": 747450208927775,
+																	"behaviorType": "Platform"
+																}
+															],
+															"actions": [
+																{
+																	"id": "simulate-control",
+																	"objectClass": "Enemies",
+																	"sid": 352172242546072,
+																	"behaviorType": "Platform",
+																	"parameters": {
+																		"control": "jump"
+																	}
+																}
+															],
+															"sid": 723887885514853
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 981747736088320,
+													"parameters": {
+														"object": "Hand2",
+														"expression": "Hand2.index = 1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "move-to-object",
+													"objectClass": "Hand2",
+													"sid": 544545017374310,
+													"parameters": {
+														"where": "in-front",
+														"object": "Sprite27"
+													}
+												}
+											],
+											"sid": 439037717863591
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 186586803140584,
+													"parameters": {
+														"object": "Hand2",
+														"expression": "Hand2.index = -1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "move-to-object",
+													"objectClass": "Hand2",
+													"sid": 300781447412006,
+													"parameters": {
+														"where": "behind",
+														"object": "Sprite27"
+													}
+												}
+											],
+											"sid": 931325273250302
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 933909253668861,
+											"parameters": {
+												"value": "Enemies.X < Enemies.TargetX"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "Enemies",
+											"sid": 226934739664193,
+											"behaviorType": "Platform",
+											"parameters": {
+												"control": "right"
+											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "Sprite27",
+											"sid": 630069154257399,
+											"parameters": {
+												"state": "mirrored"
+											}
+										}
+									],
+									"sid": 911436108841440,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 206004581570272,
+													"parameters": {
+														"tile-x": "tilex+1",
+														"tile-y": "tiley",
+														"comparison": 1,
+														"tile": "-1"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 730456800736955,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 323858771147095,
+															"parameters": {
+																"value": "Functions.TileHaveCollision(Terrain.TileAt(tilex+1,tiley)) = 0"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 925072787410246,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-on-floor",
+																	"objectClass": "Enemies",
+																	"sid": 605728523726719,
+																	"behaviorType": "Platform"
+																}
+															],
+															"actions": [
+																{
+																	"id": "simulate-control",
+																	"objectClass": "Enemies",
+																	"sid": 160728364879543,
+																	"behaviorType": "Platform",
+																	"parameters": {
+																		"control": "jump"
+																	}
+																}
+															],
+															"sid": 141277102382702
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 977945024007492,
+													"parameters": {
+														"object": "Hand2",
+														"expression": "Hand2.index = 1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "move-to-object",
+													"objectClass": "Hand2",
+													"sid": 697801582342199,
+													"parameters": {
+														"where": "behind",
+														"object": "Sprite27"
+													}
+												}
+											],
+											"sid": 643605154071843
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 162753485679516,
+													"parameters": {
+														"object": "Hand2",
+														"expression": "Hand2.index = -1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "move-to-object",
+													"objectClass": "Hand2",
+													"sid": 193718666481475,
+													"parameters": {
+														"where": "in-front",
+														"object": "Sprite27"
+													}
+												}
+											],
+											"sid": 452880099823452
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 927327686153224,
+									"parameters": {
+										"value": "Enemies.State = \"Standby\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "Sprite27",
+									"sid": 138706047245148,
+									"parameters": {
+										"width": "16*sign(Self.Width)",
+										"height": "lerp(Self.Height,16*sign(Self.Height)+(sin(tickcount*1)*1),0.3)"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "Hand2",
+									"sid": 879861753339056,
+									"parameters": {
+										"angle": "Self.index = 1 ? 135.5 : 45"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "Sprite28",
+									"sid": 820876803443825,
+									"parameters": {
+										"angle": "0"
+									}
+								}
+							],
+							"sid": 104547140510560
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "HitEnemy",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "UID",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 664178854424533
+				},
+				{
+					"name": "Knockback",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 436353467243080
+				},
+				{
+					"name": "Burn",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 709480575121518
+				},
+				{
+					"name": "damage",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 799605384278391
+				},
+				{
+					"name": "AngleAttack",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 466340983709632
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 461435123107267,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 693278210058243,
+							"parameters": {
+								"object": "Enemies",
+								"expression": "Enemies.UID = UID"
+							}
+						},
+						{
+							"id": "collisions-enabled",
+							"objectClass": "Enemies",
+							"sid": 227703939696509
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Enemies",
+							"sid": 111073077586498,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "damage"
+							}
+						},
+						{
+							"id": "set-vector-x",
+							"objectClass": "Enemies",
+							"sid": 745217769176247,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-x": "cos(AngleAttack)*(Knockback*50)"
+							}
+						},
+						{
+							"id": "set-vector-y",
+							"objectClass": "Enemies",
+							"sid": 954021734487443,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-y": "Enemies.Platform.VectorY+sin(AngleAttack)*(Knockback*50)"
+							}
+						}
+					],
+					"sid": 140421347081445,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 821469685584990,
+									"parameters": {
+										"value": "Enemies.Health > 0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 271127076055669,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 178476528497095,
+											"parameters": {
+												"value": "Burn = 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "Enemies",
+											"sid": 674482387918969,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "3",
+												"type": "once",
+												"tag": "\"Burning\""
+											}
+										}
+									],
+									"sid": 641077649211583,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-timer-running",
+													"objectClass": "Enemies",
+													"sid": 656833814306798,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"BurnHit\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "start-timer",
+													"objectClass": "Enemies",
+													"sid": 116665743197846,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "1.0",
+														"type": "regular",
+														"tag": "\"BurnHit\""
+													}
+												}
+											],
+											"sid": 397648472578545
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 155514424301993,
+											"parameters": {
+												"value": "Enemies.ObjectTypeName = \"Zombie\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 656746773451731,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "Enemies",
+													"sid": 959164476510831,
+													"parameters": {
+														"child": "Sprite27",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-default-color",
+													"objectClass": "Sprite27",
+													"sid": 252671676201677,
+													"parameters": {
+														"color": "rgbEx(100, 0, 0)"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 677532143122240,
+													"parameters": {
+														"seconds": "0.2"
+													}
+												},
+												{
+													"id": "set-default-color",
+													"objectClass": "Sprite27",
+													"sid": 491406266495268,
+													"parameters": {
+														"color": "rgbEx(100, 100, 100)"
+													}
+												}
+											],
+											"sid": 661538368304421
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 347260980926610
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Enemies",
+									"sid": 174213220174517,
+									"behaviorType": "Platform",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Enemies",
+									"sid": 409473579498459,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "Enemies",
+									"sid": 121319996448895,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetAngle",
+										"end-value": "random(90,270)",
+										"time": "0.3",
+										"ease": "easeincubic",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 262896738571628
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 688737666786591,
+									"parameters": {
+										"object-to-create": "DeathParticle",
+										"layer": "\"Layer 1\"",
+										"x": "Enemies.X",
+										"y": "Enemies.BBoxBottom",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"callFunction": "EnemyDropItem",
+									"sid": 205707091676274,
+									"parameters": [
+										"Enemies.ObjectTypeName",
+										"Enemies.X",
+										"Enemies.Y"
+									]
+								}
+							],
+							"sid": 544705760956519
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "EnemyDropItem",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Enemy",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 197707687029208
+				},
+				{
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 899404235897296
+				},
+				{
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 213091482084050
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 922683922130853,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-key",
+							"objectClass": "JSON",
+							"sid": 266517012458986,
+							"parameters": {
+								"path": "\"Settings.Config.Entity.\"&Enemy&\".Drop\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 605115941431450,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "JSON",
+									"sid": 446505639020371,
+									"parameters": {
+										"path": "\"Settings.Config.Entity.\"&Enemy&\".Drop\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 246984462058345,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 294080048658944,
+											"parameters": {
+												"value": "random(100) < JSON.Get(\"Settings.Config.Entity.\"&Enemy&\".Drop.\"&JSON.CurrentKey)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Drop_Item",
+											"sid": 468669740672262,
+											"parameters": [
+												"1",
+												"JSON.CurrentKey",
+												"x",
+												"y"
+											]
+										}
+									],
+									"sid": 599532458349326
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 377794395034310
+}

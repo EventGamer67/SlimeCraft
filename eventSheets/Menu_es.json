@@ -44,7 +44,8 @@
 						"ease": "default",
 						"destroy-on-complete": "no",
 						"loop": "no",
-						"ping-pong": "no"
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				}
 			],
@@ -397,7 +398,8 @@
 								"ease": "easeinoutcubic",
 								"destroy-on-complete": "no",
 								"loop": "no",
-								"ping-pong": "yes"
+								"ping-pong": "yes",
+								"repeat-count": "1"
 							}
 						},
 						{
@@ -537,7 +539,26 @@
 					}
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "tween-two-properties",
+					"objectClass": "Sprite24",
+					"sid": 739558808131240,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "size",
+						"end-x": "Self.Width+3",
+						"end-y": "Self.Height+3",
+						"time": "0.1",
+						"ease": "easeoutcubic",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "yes",
+						"repeat-count": "1"
+					}
+				}
+			],
 			"sid": 148725908630896,
 			"children": [
 				{
@@ -656,6 +677,51 @@
 					"isOrBlock": true
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 258680041191923,
+					"parameters": {
+						"object": "Sprite24"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Sprite24",
+					"sid": 857467924333129,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 945045843589605
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 927226864623622
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Sprite24",
+					"sid": 401950577815116,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 560850380716795
 		},
 		{
 			"eventType": "block",
@@ -796,10 +862,10 @@
 				},
 				{
 					"functionName": "ResetScroll",
+					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
-					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -1460,10 +1526,10 @@
 		},
 		{
 			"functionName": "ShowCreateNewWorldTable",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1511,7 +1577,8 @@
 								"ease": "easeoutcubic",
 								"destroy-on-complete": "no",
 								"loop": "no",
-								"ping-pong": "no"
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						},
 						{
@@ -1564,10 +1631,10 @@
 		},
 		{
 			"functionName": "ShowWorlds",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1613,7 +1680,8 @@
 						"ease": "easeoutcubic",
 						"destroy-on-complete": "no",
 						"loop": "no",
-						"ping-pong": "no"
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				},
 				{
@@ -1751,7 +1819,8 @@
 										"ease": "easeoutcubic",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -1837,14 +1906,11 @@
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "compare-value",
+															"id": "has-key",
 															"objectClass": "JSON",
-															"sid": 274939035487391,
-															"disabled": true,
+															"sid": 872679680139824,
 															"parameters": {
-																"path": "\"Worlds.\"&iteration&\".Image\"",
-																"cmp": 0,
-																"value": "\"None\""
+																"path": "\"Worlds.\"&JSON.CurrentKey&\".Image\""
 															}
 														}
 													],
@@ -1852,7 +1918,7 @@
 														{
 															"id": "set-animation-frame",
 															"objectClass": "Sprite23",
-															"sid": 497153150443020,
+															"sid": 937822992782315,
 															"parameters": {
 																"frame-number": "iteration+1"
 															}
@@ -1860,7 +1926,7 @@
 														{
 															"id": "set-from-base64",
 															"objectClass": "BinaryData",
-															"sid": 420943767734656,
+															"sid": 985871524998547,
 															"parameters": {
 																"value": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Image\")"
 															}
@@ -1868,16 +1934,16 @@
 														{
 															"id": "set-size",
 															"objectClass": "Sprite23",
-															"sid": 180875296734578,
+															"sid": 783914069682014,
 															"parameters": {
-																"width": "38",
-																"height": "23"
+																"width": "21",
+																"height": "21"
 															}
 														},
 														{
 															"id": "load-image-from-url",
 															"objectClass": "Sprite23",
-															"sid": 260513222582078,
+															"sid": 510930249291610,
 															"parameters": {
 																"uri": "BinaryData.GetURL",
 																"size": "keep-current-size",
@@ -1887,18 +1953,18 @@
 														{
 															"id": "wait-for-previous-actions",
 															"objectClass": "System",
-															"sid": 580820860223260
+															"sid": 332982060965842
 														},
 														{
 															"id": "set-visible",
 															"objectClass": "Sprite23",
-															"sid": 451915391646052,
+															"sid": 440339565183452,
 															"parameters": {
 																"visibility": "visible"
 															}
 														}
 													],
-													"sid": 488178705073600
+													"sid": 667595125529897
 												},
 												{
 													"eventType": "block",
@@ -1906,11 +1972,37 @@
 														{
 															"id": "else",
 															"objectClass": "System",
-															"sid": 973655294471278
+															"sid": 975235459402112
 														}
 													],
-													"actions": [],
-													"sid": 560813167351257
+													"actions": [
+														{
+															"id": "set-animation-frame",
+															"objectClass": "Sprite23",
+															"sid": 649844708702128,
+															"parameters": {
+																"frame-number": "0"
+															}
+														},
+														{
+															"id": "set-size",
+															"objectClass": "Sprite23",
+															"sid": 394867227552480,
+															"parameters": {
+																"width": "21",
+																"height": "21"
+															}
+														},
+														{
+															"id": "set-visible",
+															"objectClass": "Sprite23",
+															"sid": 752382043285823,
+															"parameters": {
+																"visibility": "visible"
+															}
+														}
+													],
+													"sid": 807681671849952
 												},
 												{
 													"eventType": "block",
@@ -2018,10 +2110,10 @@
 		},
 		{
 			"functionName": "BlackoutByTiled",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": true,
 			"functionParameters": [
 				{
@@ -2120,7 +2212,8 @@
 										"ease": "default",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -2175,7 +2268,8 @@
 										"ease": "default",
 										"destroy-on-complete": "yes",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -2231,10 +2325,10 @@
 		},
 		{
 			"functionName": "CloseTable",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": true,
 			"functionParameters": [
 				{
@@ -2277,7 +2371,8 @@
 								"ease": "easeincubic",
 								"destroy-on-complete": "yes",
 								"loop": "no",
-								"ping-pong": "no"
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						},
 						{
@@ -2292,10 +2387,10 @@
 		},
 		{
 			"functionName": "CreateNewWorld",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": true,
 			"functionParameters": [
 				{
@@ -2342,26 +2437,6 @@
 								"path": "\"Worlds.\"&WorldIndex&\".Name\"",
 								"value": "Name"
 							}
-						},
-						{
-							"callFunction": "SnapShot",
-							"sid": 579961064408520,
-							"parameters": [
-								"\"Worlds.\"&WorldIndex&\".Image\""
-							]
-						},
-						{
-							"id": "wait-for-signal",
-							"objectClass": "System",
-							"sid": 592604004186049,
-							"parameters": {
-								"tag": "\"1\""
-							}
-						},
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 164541057056409
 						}
 					],
 					"sid": 982877255747836
@@ -2408,10 +2483,10 @@
 				},
 				{
 					"functionName": "GetWorldCount",
+					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "number",
-					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -2476,10 +2551,10 @@
 		},
 		{
 			"functionName": "UpdateWorldsList",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": true,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -2685,57 +2760,112 @@
 																	}
 																}
 															],
-															"actions": [
+															"actions": [],
+															"sid": 482462878617428,
+															"children": [
 																{
-																	"id": "set-animation-frame",
-																	"objectClass": "Sprite23",
-																	"sid": 604955157165363,
-																	"parameters": {
-																		"frame-number": "iteration+1"
-																	}
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "has-key",
+																			"objectClass": "JSON",
+																			"sid": 198699278591783,
+																			"parameters": {
+																				"path": "\"Worlds.\"&JSON.CurrentKey&\".Image\""
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-animation-frame",
+																			"objectClass": "Sprite23",
+																			"sid": 626108881749782,
+																			"parameters": {
+																				"frame-number": "iteration+1"
+																			}
+																		},
+																		{
+																			"id": "set-from-base64",
+																			"objectClass": "BinaryData",
+																			"sid": 502400031295473,
+																			"parameters": {
+																				"value": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Image\")"
+																			}
+																		},
+																		{
+																			"id": "set-size",
+																			"objectClass": "Sprite23",
+																			"sid": 424886444301847,
+																			"parameters": {
+																				"width": "21",
+																				"height": "21"
+																			}
+																		},
+																		{
+																			"id": "load-image-from-url",
+																			"objectClass": "Sprite23",
+																			"sid": 311969978925145,
+																			"parameters": {
+																				"uri": "BinaryData.GetURL",
+																				"size": "keep-current-size",
+																				"cross-origin": "anonymous"
+																			}
+																		},
+																		{
+																			"id": "wait-for-previous-actions",
+																			"objectClass": "System",
+																			"sid": 539851279478084
+																		},
+																		{
+																			"id": "set-visible",
+																			"objectClass": "Sprite23",
+																			"sid": 640990654790085,
+																			"parameters": {
+																				"visibility": "visible"
+																			}
+																		}
+																	],
+																	"sid": 265599800187023
 																},
 																{
-																	"id": "set-from-base64",
-																	"objectClass": "BinaryData",
-																	"sid": 302362261263791,
-																	"parameters": {
-																		"value": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Image\")"
-																	}
-																},
-																{
-																	"id": "set-size",
-																	"objectClass": "Sprite23",
-																	"sid": 320815264724117,
-																	"parameters": {
-																		"width": "38",
-																		"height": "23"
-																	}
-																},
-																{
-																	"id": "load-image-from-url",
-																	"objectClass": "Sprite23",
-																	"sid": 928669591708586,
-																	"parameters": {
-																		"uri": "BinaryData.GetURL",
-																		"size": "keep-current-size",
-																		"cross-origin": "anonymous"
-																	}
-																},
-																{
-																	"id": "wait-for-previous-actions",
-																	"objectClass": "System",
-																	"sid": 571768211023177
-																},
-																{
-																	"id": "set-visible",
-																	"objectClass": "Sprite23",
-																	"sid": 814763857451768,
-																	"parameters": {
-																		"visibility": "visible"
-																	}
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "else",
+																			"objectClass": "System",
+																			"sid": 303340309489471
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-animation-frame",
+																			"objectClass": "Sprite23",
+																			"sid": 745580929658804,
+																			"parameters": {
+																				"frame-number": "0"
+																			}
+																		},
+																		{
+																			"id": "set-size",
+																			"objectClass": "Sprite23",
+																			"sid": 486660299387788,
+																			"parameters": {
+																				"width": "21",
+																				"height": "21"
+																			}
+																		},
+																		{
+																			"id": "set-visible",
+																			"objectClass": "Sprite23",
+																			"sid": 693701653873308,
+																			"parameters": {
+																				"visibility": "visible"
+																			}
+																		}
+																	],
+																	"sid": 736701163889591
 																}
-															],
-															"sid": 482462878617428
+															]
 														},
 														{
 															"eventType": "block",
@@ -2830,116 +2960,11 @@
 			]
 		},
 		{
-			"functionName": "SnapShot",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "Path",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 844825172470171
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "snapshot-canvas",
-					"objectClass": "System",
-					"sid": 224737451823843,
-					"disabled": true,
-					"parameters": {
-						"format": "png",
-						"jpeg-quality": "75",
-						"x": "Functions.Get_Center_X(\"UI\")-50",
-						"y": "Functions.Get_Center_Y(\"UI\")-50",
-						"width": "100",
-						"height": "100"
-					}
-				},
-				{
-					"type": "comment",
-					"text": ""
-				},
-				{
-					"id": "snapshot-canvas",
-					"objectClass": "System",
-					"sid": 219533800824215,
-					"parameters": {
-						"format": "png",
-						"jpeg-quality": "75",
-						"x": "0",
-						"y": "0",
-						"width": "0",
-						"height": "0"
-					}
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 986497198852874
-				},
-				{
-					"id": "set-value",
-					"objectClass": "JSON",
-					"sid": 108034110759541,
-					"parameters": {
-						"path": "Path",
-						"value": "BinaryData.GetBase64"
-					}
-				},
-				{
-					"id": "signal",
-					"objectClass": "System",
-					"sid": 520781520757548,
-					"parameters": {
-						"tag": "\"1\""
-					}
-				}
-			],
-			"sid": 738698443004573
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-canvas-snapshot",
-					"objectClass": "System",
-					"sid": 846735340005267
-				}
-			],
-			"actions": [
-				{
-					"id": "set-response-binary",
-					"objectClass": "AJAX",
-					"sid": 382476930544167,
-					"parameters": {
-						"destination": "BinaryData"
-					}
-				},
-				{
-					"id": "request-url",
-					"objectClass": "AJAX",
-					"sid": 482344828103806,
-					"parameters": {
-						"tag": "\"\"",
-						"url": "CanvasSnapshot"
-					}
-				}
-			],
-			"sid": 213294833707957
-		},
-		{
 			"functionName": "MessageBox",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "string",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -3200,7 +3225,8 @@
 												"ease": "easeoutcubic",
 												"destroy-on-complete": "no",
 												"loop": "no",
-												"ping-pong": "no"
+												"ping-pong": "no",
+												"repeat-count": "1"
 											}
 										},
 										{
@@ -3310,7 +3336,8 @@
 								"ease": "easeoutcubic",
 								"destroy-on-complete": "no",
 								"loop": "no",
-								"ping-pong": "yes"
+								"ping-pong": "yes",
+								"repeat-count": "1"
 							}
 						}
 					],
@@ -3614,10 +3641,10 @@
 				},
 				{
 					"functionName": "Result",
+					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "string",
-					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -3636,10 +3663,10 @@
 				},
 				{
 					"functionName": "SeekAnswer",
+					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
-					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -3683,10 +3710,10 @@
 				},
 				{
 					"functionName": "DeleteWorld",
+					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
-					"functionCopyPicked": false,
 					"functionIsAsync": true,
 					"functionParameters": [
 						{
@@ -3853,10 +3880,10 @@
 				},
 				{
 					"functionName": "StartGame",
+					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
-					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -3913,9 +3940,9 @@
 								{
 									"id": "set-value",
 									"objectClass": "JSON",
-									"sid": 814235399054820,
+									"sid": 979794738226510,
 									"parameters": {
-										"path": "\"World.ID\"",
+										"path": "\"ID\"",
 										"value": "World"
 									}
 								},
@@ -3943,7 +3970,8 @@
 										"ease": "default",
 										"destroy-on-complete": "no",
 										"loop": "no",
-										"ping-pong": "no"
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								},
 								{
@@ -3969,10 +3997,10 @@
 		},
 		{
 			"functionName": "SaveSlots",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": true,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -4149,7 +4177,54 @@
 									}
 								}
 							],
-							"sid": 420955510155104
+							"sid": 420955510155104,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-key",
+											"objectClass": "JSON",
+											"sid": 356730132230477,
+											"parameters": {
+												"path": "\"ID\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 564718638630371,
+											"parameters": {
+												"path": "\"Worlds.\"&JSON.Get(\"ID\")&\".Image\"",
+												"value": "JSON.Get(\"Screen\")"
+											}
+										},
+										{
+											"id": "delete-key",
+											"objectClass": "JSON",
+											"sid": 614626343360000,
+											"parameters": {
+												"path": "\"Screen\""
+											}
+										},
+										{
+											"id": "delete-key",
+											"objectClass": "JSON",
+											"sid": 531515443931343,
+											"parameters": {
+												"path": "\"ID\""
+											}
+										},
+										{
+											"callFunction": "SaveSlots",
+											"sid": 981586190020956
+										}
+									],
+									"sid": 802053534651676
+								}
+							]
 						}
 					]
 				}

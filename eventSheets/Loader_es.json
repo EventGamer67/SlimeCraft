@@ -156,21 +156,21 @@
 						{
 							"id": "map-function",
 							"objectClass": "Functions",
-							"sid": 600073251931899,
+							"sid": 709155244461008,
 							"parameters": {
 								"name": "\"Interfaces\"",
 								"string": "\"Furnace\"",
-								"function": "Show_Furnace"
+								"function": "ShowFurnaceNew"
 							}
 						},
 						{
 							"id": "map-function",
 							"objectClass": "Functions",
-							"sid": 745102038909414,
+							"sid": 826874872401430,
 							"parameters": {
 								"name": "\"Interfaces\"",
 								"string": "\"WorkBench\"",
-								"function": "Show_WorkBench"
+								"function": "ShowWorkBenchNew"
 							}
 						},
 						{
@@ -405,10 +405,10 @@
 			"children": [
 				{
 					"functionName": "defineInput",
+					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
-					"functionCopyPicked": false,
 					"functionIsAsync": true,
 					"functionParameters": [],
 					"eventType": "function-block",

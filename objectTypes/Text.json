@@ -15,14 +15,14 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
-		"width": 1024,
-		"height": 4096,
+		"width": 512,
+		"height": 2048,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 3557655,
+		"imageSpriteId": 1319427,
 		"useCollisionPoly": true
 	}
 }

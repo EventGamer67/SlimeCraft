@@ -6,9 +6,6 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"Drop_Item",
-		"Cam",
-		"Hand",
-		"Sprite6"
+		"Drop_Item"
 	]
 }

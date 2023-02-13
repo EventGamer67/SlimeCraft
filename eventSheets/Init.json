@@ -123,11 +123,11 @@
 						{
 							"id": "map-function",
 							"objectClass": "Functions",
-							"sid": 417992768677714,
+							"sid": 731424628877788,
 							"parameters": {
 								"name": "\"Interfaces\"",
 								"string": "\"WorkBench\"",
-								"function": "Show_WorkBench"
+								"function": "ShowWorkBenchNew"
 							}
 						},
 						{

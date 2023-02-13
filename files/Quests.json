@@ -1,0 +1,7 @@
+{
+	"Chop-Chop":{
+		"Description":"Chop-Chop",
+		"Requirements":["Oak_Log,3","Oak_Planks,6"],
+		"Reward":["Coin,100","Dirt,5"]
+	}
+}

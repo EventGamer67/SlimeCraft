@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 32700,
+	"savedWithRelease": 32900,
 	"name": "Arrow_Rain",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -340,11 +340,10 @@
 			"Date",
 			"Lupa",
 			"TiledBackground4",
-			"Sprite16",
 			"JoyStick",
 			"JoyStickBlank",
 			"PlayerDigRay",
-			"Sprite6",
+			"Hat",
 			"Sprite17",
 			"Hand",
 			"BlockBlackout",
@@ -376,7 +375,20 @@
 			"Player_Light_Terrain",
 			"Torch_Light_Terrain",
 			"WeatherParticle",
-			"Sprite26"
+			"Sprite26",
+			"Sprite6",
+			"SPAWNPOINT",
+			"PlayerFace",
+			"MessageBlank",
+			"SoundBtn",
+			"QuestElementBlank",
+			"TiledBackground5",
+			"Zombie",
+			"Sprite27",
+			"Sprite28",
+			"Hand2",
+			"Fire",
+			"DeathParticle"
 		],
 		"subfolders": []
 	},
@@ -394,7 +406,10 @@
 		"items": [
 			"Btns",
 			"Family1",
-			"ToSave"
+			"ToSave",
+			"ToLoad",
+			"Enemies",
+			"EnemyPieces"
 		],
 		"subfolders": []
 	},
@@ -417,7 +432,8 @@
 			"Loader_es",
 			"Functions_es",
 			"Console",
-			"SceneLoader_es"
+			"SceneLoader_es",
+			"Enemy"
 		],
 		"subfolders": []
 	},
@@ -1141,6 +1157,14 @@
 					"sid": 779738007427503,
 					"file-info": {
 						"purpose": "stylesheet"
+					}
+				},
+				{
+					"name": "Quests.json",
+					"type": "application/json",
+					"sid": 575251395887109,
+					"file-info": {
+						"purpose": "none"
 					}
 				}
 			],

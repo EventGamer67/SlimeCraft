@@ -3,15 +3,24 @@
 	"events": [
 		{
 			"functionName": "LoadWorld",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": true,
 			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"id": "clear",
+					"objectClass": "Inventory",
+					"sid": 287227527751897,
+					"parameters": {
+						"value": "0"
+					}
+				}
+			],
 			"sid": 454956768390310,
 			"children": [
 				{
@@ -34,49 +43,166 @@
 							"conditions": [],
 							"actions": [
 								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 815499952068505,
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 564151591690605,
 									"parameters": {
-										"type": "log",
-										"message": "\"Loaded\""
+										"object-to-create": "Sprite",
+										"layer": "\"Layer 1\"",
+										"x": "-300",
+										"y": "-300",
+										"create-hierarchy": true,
+										"template-name": "\"Default\""
 									}
 								},
 								{
 									"id": "load",
 									"objectClass": "Terrain",
-									"sid": 906162446152319,
+									"sid": 751636490102713,
 									"parameters": {
 										"json": "JSON.Get(\"World.Terrain\")"
 									}
 								},
 								{
-									"id": "set-from-json",
-									"objectClass": "Sprite",
-									"sid": 988860170552825,
+									"id": "set-position",
+									"objectClass": "Particles",
+									"sid": 118575032204359,
 									"parameters": {
-										"json": "JSON.Get(\"World.Sprite\")"
+										"x": "Sprite.X",
+										"y": "Sprite.BBoxBottom"
 									}
 								},
 								{
 									"id": "load",
 									"objectClass": "Timers",
-									"sid": 712187681370742,
+									"sid": 286747345288228,
 									"parameters": {
 										"json": "JSON.Get(\"World.Timers\")"
 									}
 								},
 								{
+									"id": "load",
+									"objectClass": "Inventory",
+									"sid": 122159162431138,
+									"parameters": {
+										"json": "JSON.Get(\"World.Inventory\")"
+									}
+								},
+								{
+									"id": "set-from-json",
+									"objectClass": "SPAWNPOINT",
+									"sid": 392995004766279,
+									"parameters": {
+										"json": "JSON.Get(\"World.SpawnPoint\")"
+									}
+								},
+								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 109855746978114,
+									"sid": 532815122375536,
 									"parameters": {
 										"variable": "Tick",
 										"value": "JSON.Get(\"World.Ticks\")"
 									}
 								}
 							],
-							"sid": 211104706587326
+							"sid": 561829132942332
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "JSON",
+									"sid": 475860463935892,
+									"parameters": {
+										"path": "\"World.ToLoad\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 674299942846954,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 456596375788825,
+											"parameters": {
+												"object": "ToLoad",
+												"expression": "JSON.CurrentKey = ToLoad.ObjectTypeName"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-from-json",
+											"objectClass": "ToLoad",
+											"sid": 685722304761600,
+											"parameters": {
+												"json": "JSON.CurrentValue"
+											}
+										}
+									],
+									"sid": 986900795160567
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 166516432510606
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object-by-name",
+											"objectClass": "System",
+											"sid": 153377856707450,
+											"parameters": {
+												"object-name": "JSON.CurrentKey",
+												"layer": "0",
+												"x": "0",
+												"y": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 212778851171337,
+									"disabled": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-last-created",
+													"objectClass": "System",
+													"sid": 454534301239042,
+													"parameters": {
+														"object": "ToLoad"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-from-json",
+													"objectClass": "ToLoad",
+													"sid": 767285491059671,
+													"parameters": {
+														"json": "JSON.CurrentValue"
+													}
+												}
+											],
+											"sid": 628370351001618,
+											"disabled": true
+										}
+									]
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -115,6 +241,50 @@
 								}
 							],
 							"sid": 781547894958555
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 548955758958158,
+									"parameters": {
+										"seconds": "0"
+									}
+								},
+								{
+									"id": "set-from-json",
+									"objectClass": "Sprite",
+									"sid": 455818924102159,
+									"parameters": {
+										"json": "JSON.Get(\"World.Sprite\")"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "Cam",
+									"sid": 217416051151053,
+									"parameters": {
+										"x": "Sprite.X",
+										"y": "Sprite.Y"
+									}
+								},
+								{
+									"callFunction": "ReDrawInventory",
+									"sid": 326644242399894
+								},
+								{
+									"id": "delete-key",
+									"objectClass": "JSON",
+									"sid": 445414235822962,
+									"parameters": {
+										"path": "\"World\""
+									}
+								}
+							],
+							"sid": 955688116515905
 						}
 					]
 				},
@@ -129,24 +299,122 @@
 					],
 					"actions": [
 						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 165646219727434,
+							"parameters": {
+								"object-to-create": "Sprite",
+								"layer": "\"Layer 1\"",
+								"x": "SPAWNPOINT.X",
+								"y": "SPAWNPOINT.Y",
+								"create-hierarchy": true,
+								"template-name": "\"Default\""
+							}
+						},
+						{
 							"callFunction": "ReloadLightMap",
 							"sid": 692512933650350,
 							"parameters": [
 								"0",
 								"LightMap.MapDisplayWidth"
 							]
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Cam",
+							"sid": 742933339106859,
+							"parameters": {
+								"x": "Sprite.X",
+								"y": "Sprite.Y"
+							}
 						}
 					],
 					"sid": 399299460310341
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 655698217952219,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 213758858989964,
+									"parameters": {
+										"object": "Movement_Button",
+										"expression": "Movement_Button.Type = \"Pause\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "Movement_Button",
+									"sid": 101381681829221,
+									"parameters": {
+										"x": "ViewportRight(Movement_Button.LayerName)-(Movement_Button.Width*0.9)",
+										"y": "ViewportTop(Movement_Button.LayerName)+(Movement_Button.Height*0.9)"
+									}
+								}
+							],
+							"sid": 639769771492665
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 511936621520411,
+									"parameters": {
+										"object": "Movement_Button",
+										"expression": "Movement_Button.Type = \"Quest\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "Movement_Button",
+									"sid": 234131876248887,
+									"parameters": {
+										"x": "ViewportLeft(Movement_Button.LayerName)+(Movement_Button.Width*0.7)",
+										"y": "ViewportTop(Movement_Button.LayerName)+(Movement_Button.Height*0.7)"
+									}
+								}
+							],
+							"sid": 849215205602670
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 347326323074653,
+							"parameters": {
+								"type": "log",
+								"message": "Terrain.AsJSON"
+							}
+						}
+					],
+					"sid": 114375716837790
 				}
 			]
 		},
 		{
 			"functionName": "CreateObj",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -221,10 +489,10 @@
 		},
 		{
 			"functionName": "SaveWorld",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -255,6 +523,24 @@
 					"parameters": {
 						"path": "\"World.Timers\"",
 						"value": "Timers.AsJSON"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 342199604922604,
+					"parameters": {
+						"path": "\"World.Inventory\"",
+						"value": "Inventory.AsJSON"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 247119042979366,
+					"parameters": {
+						"path": "\"World.SpawnPoint\"",
+						"value": "SPAWNPOINT.AsJSON"
 					}
 				},
 				{
@@ -331,14 +617,52 @@
 				},
 				{
 					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 538665726345442,
+							"parameters": {
+								"object": "ToLoad"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 990777475441022,
+							"parameters": {
+								"path": "\"World.ToLoad.\"&ToLoad.ObjectTypeName",
+								"value": "ToLoad.AsJSON"
+							}
+						}
+					],
+					"sid": 435445796396328
+				},
+				{
+					"eventType": "block",
 					"conditions": [],
 					"actions": [
 						{
+							"id": "remove-item",
+							"objectClass": "LocalStorage",
+							"sid": 866383487287734,
+							"parameters": {
+								"key": "JSON.Get(\"World.ID\")"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 739778818386055
+						},
+						{
 							"id": "set-item",
 							"objectClass": "LocalStorage",
-							"sid": 736951385459751,
+							"sid": 801053855847065,
 							"parameters": {
-								"key": "JSON.Get(\"World.ID\")",
+								"key": "JSON.Get(\"ID\")",
 								"value": "JSON.GetAsCompactString(\"World\")"
 							}
 						},
@@ -357,6 +681,12 @@
 						}
 					],
 					"sid": 281104103031040
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 364999919480092
 				}
 			]
 		},

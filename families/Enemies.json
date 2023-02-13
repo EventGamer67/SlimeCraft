@@ -1,0 +1,68 @@
+{
+	"name": "Enemies",
+	"plugin-id": "Sprite",
+	"sid": 387809246120371,
+	"instanceVariables": [
+		{
+			"name": "State",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 995548517384532
+		},
+		{
+			"name": "Health",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 978254408662327
+		},
+		{
+			"name": "TargetX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 573061184834488
+		},
+		{
+			"name": "TargetY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 285566479208727
+		},
+		{
+			"name": "Burning",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 868384114474051
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 163808669850376
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 872487727920343
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 206253923624681
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 184641349308122
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"Zombie"
+	]
+}

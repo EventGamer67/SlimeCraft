@@ -13,10 +13,10 @@
 		},
 		{
 			"functionName": "Get_Center_X",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "number",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -43,10 +43,10 @@
 		},
 		{
 			"functionName": "Get_Center_Y",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "number",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -805,6 +805,209 @@
 				}
 			],
 			"sid": 134432844019489
+		},
+		{
+			"functionName": "SnapShot",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Path",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 844825172470171
+				},
+				{
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 946304128126035
+				},
+				{
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 875150924990443
+				},
+				{
+					"name": "sizeX",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 620132679211690
+				},
+				{
+					"name": "sizeY",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 250880264306848
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "snapshot-canvas",
+					"objectClass": "System",
+					"sid": 224737451823843,
+					"disabled": true,
+					"parameters": {
+						"format": "png",
+						"jpeg-quality": "75",
+						"x": "Functions.Get_Center_X(\"UI\")-50",
+						"y": "Functions.Get_Center_Y(\"UI\")-50",
+						"width": "100",
+						"height": "100"
+					}
+				},
+				{
+					"type": "comment",
+					"text": ""
+				},
+				{
+					"id": "snapshot-canvas",
+					"objectClass": "System",
+					"sid": 808322879697874,
+					"parameters": {
+						"format": "jpeg",
+						"jpeg-quality": "40",
+						"x": "x",
+						"y": "y",
+						"width": "sizeX",
+						"height": "sizeY"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 986497198852874
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 108034110759541,
+					"parameters": {
+						"path": "Path",
+						"value": "BinaryData.GetBase64"
+					}
+				},
+				{
+					"id": "signal",
+					"objectClass": "System",
+					"sid": 520781520757548,
+					"parameters": {
+						"tag": "\"1\""
+					}
+				}
+			],
+			"sid": 738698443004573
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-canvas-snapshot",
+					"objectClass": "System",
+					"sid": 846735340005267
+				}
+			],
+			"actions": [
+				{
+					"id": "set-response-binary",
+					"objectClass": "AJAX",
+					"sid": 382476930544167,
+					"parameters": {
+						"destination": "BinaryData"
+					}
+				},
+				{
+					"id": "request-url",
+					"objectClass": "AJAX",
+					"sid": 482344828103806,
+					"parameters": {
+						"tag": "\"\"",
+						"url": "CanvasSnapshot"
+					}
+				}
+			],
+			"sid": 213294833707957
+		},
+		{
+			"functionName": "CreateMessage",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Text",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 264296364784358
+				},
+				{
+					"name": "Icon",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 357867211734154
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 261334608808966,
+					"parameters": {
+						"object-to-create": "MessageBlank",
+						"layer": "\"UI\"",
+						"x": "ViewportRight(\"UI\")",
+						"y": "ViewportTop(\"UI\")",
+						"create-hierarchy": true,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 953669696043267,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "MessageBlank",
+							"sid": 903871467460446,
+							"parameters": {
+								"child": "Message_Text",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "typewriter-text",
+							"objectClass": "Message_Text",
+							"sid": 201383798920434,
+							"parameters": {
+								"text": "Text",
+								"duration": "0.1"
+							}
+						}
+					],
+					"sid": 971860301787014
+				}
+			]
 		}
 	],
 	"sid": 921570436268604

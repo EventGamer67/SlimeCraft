@@ -1,0 +1,13 @@
+{
+	"name": "EnemyPieces",
+	"plugin-id": "Sprite",
+	"sid": 579492709021899,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Sprite27",
+		"Sprite28",
+		"Hand2"
+	]
+}

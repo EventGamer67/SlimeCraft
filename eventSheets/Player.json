@@ -3,10 +3,10 @@
 	"events": [
 		{
 			"functionName": "Player_Message",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": true,
 			"functionParameters": [
 				{
@@ -153,10 +153,10 @@
 		},
 		{
 			"functionName": "Drop_Item",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -1033,10 +1033,10 @@
 						},
 						{
 							"functionName": "Building",
+							"functionCopyPicked": false,
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "none",
-							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -1823,10 +1823,10 @@
 					"children": [
 						{
 							"functionName": "Using",
+							"functionCopyPicked": false,
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "number",
-							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -1889,10 +1889,10 @@
 						},
 						{
 							"functionName": "EnableControl",
+							"functionCopyPicked": false,
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "none",
-							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [],
 							"eventType": "function-block",
@@ -2095,7 +2095,16 @@
 											"sid": 867552879486282
 										}
 									],
-									"actions": [],
+									"actions": [
+										{
+											"id": "set-angle",
+											"objectClass": "Hand",
+											"sid": 308562550209135,
+											"parameters": {
+												"angle": "anglelerp(Self.Angle,angle(Self.X,Self.Y,PlayerFace.X,PlayerFace.Y)-180,0.3)"
+											}
+										}
+									],
 									"sid": 759969044649711,
 									"children": [
 										{
@@ -2554,7 +2563,7 @@
 																				},
 																				{
 																					"id": "set-mirrored",
-																					"objectClass": "Sprite",
+																					"objectClass": "PlayerFace",
 																					"sid": 280748425619326,
 																					"parameters": {
 																						"state": "mirrored"
@@ -2562,14 +2571,68 @@
 																				},
 																				{
 																					"id": "set-width",
-																					"objectClass": "Sprite",
+																					"objectClass": "PlayerFace",
 																					"sid": 181023999247451,
 																					"parameters": {
 																						"width": "-Self.Width"
 																					}
 																				}
 																			],
-																			"sid": 618315876380030
+																			"sid": 618315876380030,
+																			"children": [
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "pick-by-evaluate",
+																							"objectClass": "System",
+																							"sid": 634009958566663,
+																							"parameters": {
+																								"object": "Hand",
+																								"expression": "Hand.index = 1 "
+																							}
+																						}
+																					],
+																					"actions": [
+																						{
+																							"id": "move-to-object",
+																							"objectClass": "Hand",
+																							"sid": 211055318902779,
+																							"parameters": {
+																								"where": "behind",
+																								"object": "PlayerFace"
+																							}
+																						}
+																					],
+																					"sid": 410010425212190
+																				},
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "pick-by-evaluate",
+																							"objectClass": "System",
+																							"sid": 835037312060587,
+																							"parameters": {
+																								"object": "Hand",
+																								"expression": "Hand.index = -1"
+																							}
+																						}
+																					],
+																					"actions": [
+																						{
+																							"id": "move-to-object",
+																							"objectClass": "Hand",
+																							"sid": 161325499989914,
+																							"parameters": {
+																								"where": "in-front",
+																								"object": "PlayerFace"
+																							}
+																						}
+																					],
+																					"sid": 406077943191661
+																				}
+																			]
 																		},
 																		{
 																			"eventType": "block",
@@ -2604,7 +2667,7 @@
 																				},
 																				{
 																					"id": "set-mirrored",
-																					"objectClass": "Sprite",
+																					"objectClass": "PlayerFace",
 																					"sid": 393858069334279,
 																					"parameters": {
 																						"state": "not-mirrored"
@@ -2612,14 +2675,68 @@
 																				},
 																				{
 																					"id": "set-width",
-																					"objectClass": "Sprite",
+																					"objectClass": "PlayerFace",
 																					"sid": 828801424266292,
 																					"parameters": {
 																						"width": "-Self.Width"
 																					}
 																				}
 																			],
-																			"sid": 425519316828225
+																			"sid": 425519316828225,
+																			"children": [
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "pick-by-evaluate",
+																							"objectClass": "System",
+																							"sid": 729283135659159,
+																							"parameters": {
+																								"object": "Hand",
+																								"expression": "Hand.index = 1 "
+																							}
+																						}
+																					],
+																					"actions": [
+																						{
+																							"id": "move-to-object",
+																							"objectClass": "Hand",
+																							"sid": 712983654318552,
+																							"parameters": {
+																								"where": "in-front",
+																								"object": "PlayerFace"
+																							}
+																						}
+																					],
+																					"sid": 291346417678537
+																				},
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "pick-by-evaluate",
+																							"objectClass": "System",
+																							"sid": 424207237312618,
+																							"parameters": {
+																								"object": "Hand",
+																								"expression": "Hand.index = -1"
+																							}
+																						}
+																					],
+																					"actions": [
+																						{
+																							"id": "move-to-object",
+																							"objectClass": "Hand",
+																							"sid": 495362653810102,
+																							"parameters": {
+																								"where": "behind",
+																								"object": "PlayerFace"
+																							}
+																						}
+																					],
+																					"sid": 255454376357952
+																				}
+																			]
 																		},
 																		{
 																			"eventType": "block",
@@ -2703,7 +2820,183 @@
 																					"sid": 496347076511129
 																				}
 																			],
-																			"sid": 502025753732826
+																			"sid": 502025753732826,
+																			"children": [
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "compare-x",
+																							"objectClass": "JoyStick",
+																							"sid": 264023399750021,
+																							"parameters": {
+																								"comparison": 4,
+																								"x-co-ordinate": "JoyStickBlank.X"
+																							}
+																						}
+																					],
+																					"actions": [
+																						{
+																							"id": "set-mirrored",
+																							"objectClass": "PlayerFace",
+																							"sid": 660251116717377,
+																							"parameters": {
+																								"state": "mirrored"
+																							}
+																						},
+																						{
+																							"id": "set-width",
+																							"objectClass": "PlayerFace",
+																							"sid": 463829408011758,
+																							"parameters": {
+																								"width": "-Self.Width"
+																							}
+																						}
+																					],
+																					"sid": 238250346420609,
+																					"children": [
+																						{
+																							"eventType": "block",
+																							"conditions": [
+																								{
+																									"id": "pick-by-evaluate",
+																									"objectClass": "System",
+																									"sid": 589443007354171,
+																									"parameters": {
+																										"object": "Hand",
+																										"expression": "Hand.index = 1 "
+																									}
+																								}
+																							],
+																							"actions": [
+																								{
+																									"id": "move-to-object",
+																									"objectClass": "Hand",
+																									"sid": 368424167202003,
+																									"parameters": {
+																										"where": "behind",
+																										"object": "PlayerFace"
+																									}
+																								}
+																							],
+																							"sid": 239312512211560
+																						},
+																						{
+																							"eventType": "block",
+																							"conditions": [
+																								{
+																									"id": "pick-by-evaluate",
+																									"objectClass": "System",
+																									"sid": 336127220786593,
+																									"parameters": {
+																										"object": "Hand",
+																										"expression": "Hand.index = -1"
+																									}
+																								}
+																							],
+																							"actions": [
+																								{
+																									"id": "move-to-object",
+																									"objectClass": "Hand",
+																									"sid": 302725144924960,
+																									"parameters": {
+																										"where": "in-front",
+																										"object": "PlayerFace"
+																									}
+																								}
+																							],
+																							"sid": 622869902804648
+																						}
+																					]
+																				},
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "compare-x",
+																							"objectClass": "JoyStick",
+																							"sid": 954994986820690,
+																							"parameters": {
+																								"comparison": 2,
+																								"x-co-ordinate": "JoyStickBlank.X"
+																							}
+																						}
+																					],
+																					"actions": [
+																						{
+																							"id": "set-mirrored",
+																							"objectClass": "PlayerFace",
+																							"sid": 578031651068055,
+																							"parameters": {
+																								"state": "not-mirrored"
+																							}
+																						},
+																						{
+																							"id": "set-width",
+																							"objectClass": "PlayerFace",
+																							"sid": 102657253737024,
+																							"parameters": {
+																								"width": "-Self.Width"
+																							}
+																						}
+																					],
+																					"sid": 686697040272867,
+																					"children": [
+																						{
+																							"eventType": "block",
+																							"conditions": [
+																								{
+																									"id": "pick-by-evaluate",
+																									"objectClass": "System",
+																									"sid": 687162494215763,
+																									"parameters": {
+																										"object": "Hand",
+																										"expression": "Hand.index = 1 "
+																									}
+																								}
+																							],
+																							"actions": [
+																								{
+																									"id": "move-to-object",
+																									"objectClass": "Hand",
+																									"sid": 289892491384342,
+																									"parameters": {
+																										"where": "in-front",
+																										"object": "PlayerFace"
+																									}
+																								}
+																							],
+																							"sid": 128188764334098
+																						},
+																						{
+																							"eventType": "block",
+																							"conditions": [
+																								{
+																									"id": "pick-by-evaluate",
+																									"objectClass": "System",
+																									"sid": 902994983977029,
+																									"parameters": {
+																										"object": "Hand",
+																										"expression": "Hand.index = -1"
+																									}
+																								}
+																							],
+																							"actions": [
+																								{
+																									"id": "move-to-object",
+																									"objectClass": "Hand",
+																									"sid": 982572025159007,
+																									"parameters": {
+																										"where": "behind",
+																										"object": "PlayerFace"
+																									}
+																								}
+																							],
+																							"sid": 239126602582142
+																						}
+																					]
+																				}
+																			]
 																		}
 																	]
 																}
@@ -2761,10 +3054,10 @@
 						},
 						{
 							"functionName": "Digging",
+							"functionCopyPicked": false,
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "none",
-							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [],
 							"eventType": "function-block",
@@ -2797,6 +3090,14 @@
 											"sid": 171102670696537,
 											"parameters": {
 												"width": "lerp(Self.Width,clamp(Sprite.LineOfSight.HitDistance,0,40),0.2)\n"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Hand",
+											"sid": 677840108999013,
+											"parameters": {
+												"angle": "anglelerp(Self.Angle,angle(Self.X,Self.Y,Shatter.X,Shatter.Y)+(sin(Tick*80)*30),0.3)"
 											}
 										}
 									],
@@ -3137,6 +3438,7 @@
 																			],
 																			"actions": [],
 																			"sid": 572922835943018,
+																			"disabled": true,
 																			"children": [
 																				{
 																					"eventType": "variable",
@@ -3208,7 +3510,8 @@
 																							}
 																						}
 																					],
-																					"sid": 851695433853990
+																					"sid": 851695433853990,
+																					"disabled": true
 																				}
 																			]
 																		}
@@ -3319,6 +3622,7 @@
 																			"id": "stop-all-tweens",
 																			"objectClass": "Hand",
 																			"sid": 113825739544178,
+																			"disabled": true,
 																			"behaviorType": "Tween"
 																		},
 																		{
@@ -3378,6 +3682,7 @@
 																			"id": "tween-one-property",
 																			"objectClass": "Hand",
 																			"sid": 443028761766186,
+																			"disabled": true,
 																			"behaviorType": "Tween",
 																			"parameters": {
 																				"tags": "\"angleset\"",
@@ -3530,6 +3835,7 @@
 																					"id": "stop-all-tweens",
 																					"objectClass": "Hand",
 																					"sid": 436353958962652,
+																					"disabled": true,
 																					"behaviorType": "Tween"
 																				},
 																				{
@@ -4078,6 +4384,7 @@
 																	"id": "stop-all-tweens",
 																	"objectClass": "Hand",
 																	"sid": 563183097759576,
+																	"disabled": true,
 																	"behaviorType": "Tween"
 																},
 																{
@@ -4184,6 +4491,7 @@
 													"id": "stop-all-tweens",
 													"objectClass": "Hand",
 													"sid": 444532075891068,
+													"disabled": true,
 													"behaviorType": "Tween"
 												},
 												{
@@ -4217,10 +4525,10 @@
 		},
 		{
 			"functionName": "Draw_Item_Durability",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -4290,10 +4598,10 @@
 		},
 		{
 			"functionName": "Is_Best_Tool",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "number",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -4367,10 +4675,10 @@
 		},
 		{
 			"functionName": "Define_Mining_Speed",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "number",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -4542,10 +4850,10 @@
 			"children": [
 				{
 					"functionName": "addHealth",
+					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
-					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -4707,10 +5015,10 @@
 			"children": [
 				{
 					"functionName": "BlockDrop",
+					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
-					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -5027,10 +5335,10 @@
 				{
 					"id": "set-position",
 					"objectClass": "Cam",
-					"sid": 157660974628602,
+					"sid": 428894803226244,
 					"parameters": {
 						"x": "lerp(Self.X,Sprite.X,0.07)",
-						"y": "lerp(Self.Y,Sprite.Y-15,0.07)"
+						"y": "lerp(Self.Y,Sprite.Y,0.07)"
 					}
 				},
 				{
@@ -5083,37 +5391,68 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "set-gravity",
-									"objectClass": "Sprite",
-									"sid": 627564435985130,
-									"behaviorType": "Platform",
-									"parameters": {
-										"gravity": "1500"
-									}
-								},
-								{
-									"id": "set-max-fall-speed",
-									"objectClass": "Sprite",
-									"sid": 601473679954742,
-									"behaviorType": "Platform",
-									"parameters": {
-										"max-fall-speed": "1000"
-									}
-								},
-								{
-									"id": "set-max-speed",
-									"objectClass": "Sprite",
-									"sid": 722586796316267,
-									"behaviorType": "Platform",
-									"parameters": {
-										"max-speed": "120"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 161204615940519,
 							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 289466699127196,
+											"parameters": {
+												"value": "Sprite.Platform.MaxSpeed = 20"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-vector-y",
+											"objectClass": "Sprite",
+											"sid": 422012621896918,
+											"behaviorType": "Platform",
+											"parameters": {
+												"vector-y": "Sprite.Platform.VectorY - 130"
+											}
+										}
+									],
+									"sid": 965859643589151
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-gravity",
+											"objectClass": "Sprite",
+											"sid": 602246241971939,
+											"behaviorType": "Platform",
+											"parameters": {
+												"gravity": "1500"
+											}
+										},
+										{
+											"id": "set-max-fall-speed",
+											"objectClass": "Sprite",
+											"sid": 424844991804812,
+											"behaviorType": "Platform",
+											"parameters": {
+												"max-fall-speed": "900"
+											}
+										},
+										{
+											"id": "set-max-speed",
+											"objectClass": "Sprite",
+											"sid": 558548107807142,
+											"behaviorType": "Platform",
+											"parameters": {
+												"max-speed": "120"
+											}
+										}
+									],
+									"sid": 449691008292490
+								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -5284,6 +5623,125 @@
 								}
 							],
 							"sid": 803786524168166
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 724981881900963,
+									"parameters": {
+										"value": "Ovelap = \"SwimLava\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-max-fall-speed",
+									"objectClass": "Sprite",
+									"sid": 624513511450512,
+									"behaviorType": "Platform",
+									"parameters": {
+										"max-fall-speed": "30"
+									}
+								},
+								{
+									"id": "set-gravity",
+									"objectClass": "Sprite",
+									"sid": 804972559093927,
+									"behaviorType": "Platform",
+									"parameters": {
+										"gravity": "30"
+									}
+								},
+								{
+									"id": "set-max-speed",
+									"objectClass": "Sprite",
+									"sid": 947100729862477,
+									"behaviorType": "Platform",
+									"parameters": {
+										"max-speed": "15"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Sprite",
+									"sid": 484928523002782,
+									"parameters": {
+										"instance-variable": "State",
+										"value": "\"Stand\""
+									}
+								}
+							],
+							"sid": 328992347757262,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 131446073306832,
+											"parameters": {
+												"interval-seconds": "0.7"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "addHealth",
+											"sid": 257017630136732,
+											"parameters": [
+												"-1",
+												true
+											]
+										}
+									],
+									"sid": 944627177003857
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 417220388606481,
+									"parameters": {
+										"value": "Ovelap = \"Smth\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 810844328397991,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 414134541663949,
+											"parameters": {
+												"interval-seconds": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "addHealth",
+											"sid": 535708542981456,
+											"parameters": [
+												"-1",
+												true
+											]
+										}
+									],
+									"sid": 542314634245268
+								}
+							]
 						}
 					]
 				}
@@ -5305,10 +5763,10 @@
 					"children": [
 						{
 							"functionName": "FloorType",
+							"functionCopyPicked": false,
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "string",
-							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [],
 							"eventType": "function-block",
@@ -5473,11 +5931,132 @@
 							]
 						},
 						{
+							"functionName": "TileHaveCollision",
+							"functionCopyPicked": false,
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "number",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "Tile",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 621156231106295
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 547807824029577,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "founded",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 106323704314095
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 938148567768950,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for-each",
+													"objectClass": "JSON",
+													"sid": 760035706069447,
+													"parameters": {
+														"path": "\"Settings.Config.TilesWithoutCollision\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 315832616914051,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 111025735450532,
+															"parameters": {
+																"value": "JSON.CurrentValue = Tile"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "stop-loop",
+															"objectClass": "System",
+															"sid": 250211231947351
+														},
+														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 870637771147849,
+															"parameters": {
+																"variable": "founded",
+																"value": "true"
+															}
+														},
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 585699306807945,
+															"parameters": {
+																"value": "1"
+															}
+														}
+													],
+													"sid": 361072425512080
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 506118508973630,
+											"parameters": {
+												"variable": "founded"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 832257776789793,
+											"parameters": {
+												"value": "0"
+											}
+										}
+									],
+									"sid": 489175943467581
+								}
+							]
+						},
+						{
 							"functionName": "Jump",
+							"functionCopyPicked": false,
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "none",
-							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -5524,6 +6103,31 @@
 										{
 											"id": "evaluate-expression",
 											"objectClass": "System",
+											"sid": 438804326296034,
+											"parameters": {
+												"value": "Overlaping = \"SwimLava\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-vector-y",
+											"objectClass": "Sprite",
+											"sid": 812187465387450,
+											"behaviorType": "Platform",
+											"parameters": {
+												"vector-y": "max(Sprite.Platform.VectorY-30,-90)"
+											}
+										}
+									],
+									"sid": 519663187979190
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
 											"sid": 131678947683927,
 											"parameters": {
 												"value": "Overlaping = \"None\""
@@ -5545,14 +6149,17 @@
 													}
 												},
 												{
-													"id": "compare-tile-at",
-													"objectClass": "Terrain",
-													"sid": 798288694532037,
+													"id": "is-on-floor",
+													"objectClass": "Sprite",
+													"sid": 156258390647245,
+													"behaviorType": "Platform"
+												},
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 328451553657975,
 													"parameters": {
-														"tile-x": "Terrain.PositionToTileX(Sprite.X)",
-														"tile-y": "Terrain.PositionToTileY(Sprite.Y)-1",
-														"comparison": 0,
-														"tile": "-1"
+														"value": "Functions.TileHaveCollision(Terrain.TileAt(Terrain.PositionToTileX(Sprite.X),Terrain.PositionToTileY(Sprite.Y)-1)) = 0"
 													}
 												}
 											],
@@ -5584,10 +6191,10 @@
 						},
 						{
 							"functionName": "OverlappingTile",
+							"functionCopyPicked": false,
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "string",
-							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [],
 							"eventType": "function-block",
@@ -5820,6 +6427,153 @@
 														{
 															"id": "evaluate-expression",
 															"objectClass": "System",
+															"sid": 984365966653592,
+															"parameters": {
+																"value": "Tile = 238"
+															}
+														},
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 759355421481948,
+															"parameters": {
+																"value": "Tile = 237"
+															}
+														},
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 340577231718468,
+															"parameters": {
+																"value": "Tile = 233"
+															}
+														},
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 688072121291553,
+															"parameters": {
+																"value": "Tile = 234"
+															}
+														},
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 581475645859349,
+															"parameters": {
+																"value": "Tile = 235"
+															}
+														},
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 694776236704339,
+															"parameters": {
+																"value": "Tile = 236"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 458285606769387,
+															"parameters": {
+																"variable": "SmthOverl",
+																"value": "true"
+															}
+														},
+														{
+															"id": "set-function-return-value",
+															"objectClass": "Functions",
+															"sid": 691712008833145,
+															"parameters": {
+																"value": "\"SwimLava\""
+															}
+														}
+													],
+													"sid": 231895359604233,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "evaluate-expression",
+																	"objectClass": "System",
+																	"sid": 936828963085964,
+																	"parameters": {
+																		"value": "Tile <> 237 & Tile <> 238"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 526171522269069,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "compare-tile-state-at",
+																			"objectClass": "Terrain",
+																			"sid": 299333468820788,
+																			"parameters": {
+																				"tile-x": "Terrain.PositionToTileX(Sprite.X)",
+																				"tile-y": "Terrain.PositionToTileY(Sprite.Y)",
+																				"state": "normal"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-vector-x",
+																			"objectClass": "Sprite",
+																			"sid": 634135971206935,
+																			"behaviorType": "Platform",
+																			"parameters": {
+																				"vector-x": "Sprite.Platform.VectorY+50"
+																			}
+																		}
+																	],
+																	"sid": 529221815852645
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "compare-tile-state-at",
+																			"objectClass": "Terrain",
+																			"sid": 157621337936882,
+																			"parameters": {
+																				"tile-x": "Terrain.PositionToTileX(Sprite.X)",
+																				"tile-y": "Terrain.PositionToTileY(Sprite.Y)",
+																				"state": "flipped-horizontal"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-vector-x",
+																			"objectClass": "Sprite",
+																			"sid": 918738506865107,
+																			"behaviorType": "Platform",
+																			"parameters": {
+																				"vector-x": "Sprite.Platform.VectorY-50"
+																			}
+																		}
+																	],
+																	"sid": 409645229636504
+																}
+															]
+														}
+													],
+													"isOrBlock": true
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
 															"sid": 516567461342547,
 															"parameters": {
 																"value": "Tile = 83"
@@ -5871,9 +6625,9 @@
 																{
 																	"id": "set-function-return-value",
 																	"objectClass": "Functions",
-																	"sid": 405457293275797,
+																	"sid": 209659085352145,
 																	"parameters": {
-																		"value": "\"None\""
+																		"value": "\"Smth\""
 																	}
 																}
 															],
@@ -5906,6 +6660,14 @@
 									"sid": 951118311037337,
 									"parameters": {
 										"object": "FoodBtn"
+									}
+								},
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 680199921374280,
+									"parameters": {
+										"value": "Interface = \"\""
 									}
 								}
 							],
@@ -6253,10 +7015,10 @@
 					"children": [
 						{
 							"functionName": "addHungry",
+							"functionCopyPicked": false,
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "none",
-							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -6409,7 +7171,7 @@
 								},
 								{
 									"id": "set-mirrored",
-									"objectClass": "Sprite",
+									"objectClass": "PlayerFace",
 									"sid": 495695570958145,
 									"parameters": {
 										"state": "mirrored"
@@ -6417,14 +7179,68 @@
 								},
 								{
 									"id": "set-width",
-									"objectClass": "Sprite",
+									"objectClass": "PlayerFace",
 									"sid": 984915168818349,
 									"parameters": {
 										"width": "-Self.Width"
 									}
 								}
 							],
-							"sid": 798495080140298
+							"sid": 798495080140298,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 568374355280878,
+											"parameters": {
+												"object": "Hand",
+												"expression": "Hand.index = 1 "
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "move-to-object",
+											"objectClass": "Hand",
+											"sid": 671200017071206,
+											"parameters": {
+												"where": "behind",
+												"object": "PlayerFace"
+											}
+										}
+									],
+									"sid": 697673906108666
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 406574015577033,
+											"parameters": {
+												"object": "Hand",
+												"expression": "Hand.index = -1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "move-to-object",
+											"objectClass": "Hand",
+											"sid": 269915479756828,
+											"parameters": {
+												"where": "in-front",
+												"object": "PlayerFace"
+											}
+										}
+									],
+									"sid": 595046800393935
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -6458,7 +7274,7 @@
 								},
 								{
 									"id": "set-mirrored",
-									"objectClass": "Sprite",
+									"objectClass": "PlayerFace",
 									"sid": 229975658122392,
 									"parameters": {
 										"state": "not-mirrored"
@@ -6466,14 +7282,68 @@
 								},
 								{
 									"id": "set-width",
-									"objectClass": "Sprite",
+									"objectClass": "PlayerFace",
 									"sid": 771786911557877,
 									"parameters": {
 										"width": "-Self.Width"
 									}
 								}
 							],
-							"sid": 479229116512745
+							"sid": 479229116512745,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 891539744282928,
+											"parameters": {
+												"object": "Hand",
+												"expression": "Hand.index = 1 "
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "move-to-object",
+											"objectClass": "Hand",
+											"sid": 538805930010507,
+											"parameters": {
+												"where": "in-front",
+												"object": "PlayerFace"
+											}
+										}
+									],
+									"sid": 703009665167167
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 935106244163656,
+											"parameters": {
+												"object": "Hand",
+												"expression": "Hand.index = -1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "move-to-object",
+											"objectClass": "Hand",
+											"sid": 941585864713143,
+											"parameters": {
+												"where": "behind",
+												"object": "PlayerFace"
+											}
+										}
+									],
+									"sid": 493041710421640
+								}
+							]
 						}
 					],
 					"sid": 697022300784563
@@ -6517,7 +7387,16 @@
 											"sid": 645107303554188
 										}
 									],
-									"actions": [],
+									"actions": [
+										{
+											"id": "set-angle",
+											"objectClass": "Sprite6",
+											"sid": 628519350778278,
+											"parameters": {
+												"angle": "0"
+											}
+										}
+									],
 									"sid": 957616966153925,
 									"children": [
 										{
@@ -6593,8 +7472,8 @@
 												},
 												{
 													"id": "tween-two-properties",
-													"objectClass": "Sprite",
-													"sid": 425248500457724,
+													"objectClass": "PlayerFace",
+													"sid": 758285707445898,
 													"behaviorType": "Tween",
 													"parameters": {
 														"tags": "\"Fall\"",
@@ -6842,7 +7721,26 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "Sprite6",
+									"sid": 594974118991556,
+									"parameters": {
+										"angle": "anglelerp(Self.Angle,(sin(Tick*80)*(30*Self.index)),0.3)"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "PlayerFace",
+									"sid": 280658017973678,
+									"disabled": true,
+									"parameters": {
+										"width": "lerp(Self.Width,16*sign(Self.Width),0.8)",
+										"height": "lerp(Self.Height,13+(sin(tickcount*3)*3)*sign(Self.Height),0.3)"
+									}
+								}
+							],
 							"sid": 677377119180046,
 							"children": [
 								{
@@ -6850,7 +7748,7 @@
 									"conditions": [
 										{
 											"id": "is-playing",
-											"objectClass": "Sprite",
+											"objectClass": "PlayerFace",
 											"sid": 415801100438527,
 											"behaviorType": "Tween",
 											"parameters": {
@@ -6862,11 +7760,11 @@
 									"actions": [
 										{
 											"id": "set-size",
-											"objectClass": "Sprite",
-											"sid": 762995330096482,
+											"objectClass": "PlayerFace",
+											"sid": 994306841310309,
 											"parameters": {
 												"width": "lerp(Self.Width,16*sign(Self.Width),0.3)",
-												"height": "lerp(Self.Height,16*sign(Self.Height),0.3)"
+												"height": "lerp(Self.Height,16*sign(Self.Height)+(sin(tickcount*1.5)*2),0.3)"
 											}
 										}
 									],
@@ -6888,7 +7786,16 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "Sprite6",
+									"sid": 253362897286923,
+									"parameters": {
+										"angle": "0"
+									}
+								}
+							],
 							"sid": 285439318029715,
 							"children": [
 								{
@@ -6896,7 +7803,7 @@
 									"conditions": [
 										{
 											"id": "is-playing",
-											"objectClass": "Sprite",
+											"objectClass": "PlayerFace",
 											"sid": 681273032072219,
 											"behaviorType": "Tween",
 											"parameters": {
@@ -6908,11 +7815,11 @@
 									"actions": [
 										{
 											"id": "set-size",
-											"objectClass": "Sprite",
-											"sid": 361077429845221,
+											"objectClass": "PlayerFace",
+											"sid": 859835538551457,
 											"parameters": {
 												"width": "lerp(Self.Width,16*sign(Self.Width),0.3)",
-												"height": "lerp(Self.Height,16*sign(Self.Height),0.3)"
+												"height": "lerp(Self.Height,16*sign(Self.Height)+(sin(tickcount)*2),0.3)"
 											}
 										}
 									],
@@ -6937,11 +7844,11 @@
 							"actions": [
 								{
 									"id": "set-size",
-									"objectClass": "Sprite",
-									"sid": 635205559327655,
+									"objectClass": "PlayerFace",
+									"sid": 135132114220639,
 									"parameters": {
 										"width": "lerp(Self.Width,12*sign(Self.Width),0.3)",
-										"height": "20"
+										"height": "25"
 									}
 								}
 							],
@@ -7037,10 +7944,10 @@
 		},
 		{
 			"functionName": "TradeTable",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -7111,14 +8018,23 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 480810711363004,
+							"sid": 975446357497910,
 							"parameters": {
 								"object-to-create": "InventoryBlank",
 								"layer": "\"Interfaces\"",
-								"x": "104",
-								"y": "-72",
+								"x": "Functions.Get_Center_X(\"Interfaces\")",
+								"y": "Functions.Get_Center_Y(\"Interfaces\")-1000",
 								"create-hierarchy": true,
 								"template-name": "\"Trade\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Tilemap2",
+							"sid": 218039009443647,
+							"parameters": {
+								"x": "InventoryBlank.BBoxLeft-8",
+								"y": "InventoryBlank.BBoxTop-8"
 							}
 						},
 						{
@@ -7964,13 +8880,13 @@
 										{
 											"id": "tween-two-properties",
 											"objectClass": "InventoryBlank",
-											"sid": 381741163746559,
+											"sid": 473188820034301,
 											"behaviorType": "Tween",
 											"parameters": {
 												"tags": "\"show\"",
 												"property": "position",
 												"end-x": "Self.X",
-												"end-y": "ViewportBottom(\"Interfaces\")/2",
+												"end-y": "Functions.Get_Center_Y(\"Interfaces\")",
 												"time": "0.3",
 												"ease": "easeinoutcubic",
 												"destroy-on-complete": "no",
@@ -8020,10 +8936,10 @@
 			"children": [
 				{
 					"functionName": "UpdateOffers",
+					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
-					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -8328,10 +9244,10 @@
 			"children": [
 				{
 					"functionName": "CanPlaceTileOnAnother",
+					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "number",
-					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -8436,10 +9352,10 @@
 				},
 				{
 					"functionName": "CanPlace",
+					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "number",
-					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -8854,10 +9770,10 @@
 				},
 				{
 					"functionName": "OnTilePlaced",
+					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
-					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -8987,11 +9903,279 @@
 					]
 				},
 				{
+					"functionName": "BlockIsWater",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "TileX",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 723297019139169
+						},
+						{
+							"name": "TileY",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 250738696036232
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 500555259738023,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 680607780990814,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "217"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 753849158511958,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "218"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 104894400258965,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "205"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 205619602785835,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "219"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 117113339243249,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "206"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 281631020066561,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "220"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 274915025934355,
+									"parameters": {
+										"value": "1"
+									}
+								}
+							],
+							"sid": 155828505815040,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 154300326630169
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 385202651276890,
+									"parameters": {
+										"value": "0"
+									}
+								}
+							],
+							"sid": 917257589712600
+						}
+					]
+				},
+				{
+					"functionName": "BlockIsLava",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "TileX",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 593862525311123
+						},
+						{
+							"name": "TileY",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 502241993980643
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 943550550157837,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 144115943050409,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "233"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 773504945313219,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "234"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 109034816258973,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "235"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 911324979845101,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "236"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 733191253747717,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "237"
+									}
+								},
+								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 485898838073544,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY",
+										"comparison": 0,
+										"tile": "238"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 893445225186110,
+									"parameters": {
+										"value": "1"
+									}
+								}
+							],
+							"sid": 150144924096215,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 175854848833487
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 854104667025081,
+									"parameters": {
+										"value": "0"
+									}
+								}
+							],
+							"sid": 462732847713672
+						}
+					]
+				},
+				{
 					"functionName": "OnTileDestroyed",
+					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
-					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -9217,371 +10401,291 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
+							"conditions": [],
+							"actions": [],
+							"sid": 972251796390260,
+							"children": [
 								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 199081017284211,
-									"parameters": {
-										"tile-x": "TileX+1",
-										"tile-y": "TileY",
-										"comparison": 0,
-										"tile": "217"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 210350731129996,
+											"parameters": {
+												"value": "Functions.BlockIsWater(TileX+1,TileY) = 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 803968652568865,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"callFunction": "UpdateWater",
+											"sid": 508022261006372,
+											"parameters": [
+												"TileX+1",
+												"TileY",
+												"Terrain.TileAt(TileX+1,TileY)"
+											]
+										}
+									],
+									"sid": 602517049385817,
+									"isOrBlock": true
 								},
 								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 233799668751849,
-									"parameters": {
-										"tile-x": "TileX+1",
-										"tile-y": "TileY",
-										"comparison": 0,
-										"tile": "218"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 108375114329540,
+											"parameters": {
+												"value": "Functions.BlockIsWater(TileX,TileY+1) = 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 994243112834783,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"callFunction": "UpdateWater",
+											"sid": 410979774721235,
+											"parameters": [
+												"TileX",
+												"TileY+1",
+												"Terrain.TileAt(TileX,TileY+1)"
+											]
+										}
+									],
+									"sid": 820564664950827,
+									"isOrBlock": true
 								},
 								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 708213562167251,
-									"parameters": {
-										"tile-x": "TileX+1",
-										"tile-y": "TileY",
-										"comparison": 0,
-										"tile": "205"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 157329617546244,
+											"parameters": {
+												"value": "Functions.BlockIsWater(TileX-1,TileY) = 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 284993099142981,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"callFunction": "UpdateWater",
+											"sid": 367786260622605,
+											"parameters": [
+												"TileX-1",
+												"TileY",
+												"Terrain.TileAt(TileX-1,TileY)"
+											]
+										}
+									],
+									"sid": 940375090347308,
+									"isOrBlock": true
 								},
 								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 860166380870784,
-									"parameters": {
-										"tile-x": "TileX+1",
-										"tile-y": "TileY",
-										"comparison": 0,
-										"tile": "219"
-									}
-								},
-								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 726180547325943,
-									"parameters": {
-										"tile-x": "TileX+1",
-										"tile-y": "TileY",
-										"comparison": 0,
-										"tile": "206"
-									}
-								},
-								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 760145131208374,
-									"parameters": {
-										"tile-x": "TileX+1",
-										"tile-y": "TileY",
-										"comparison": 0,
-										"tile": "220"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 196390169483647,
+											"parameters": {
+												"value": "Functions.BlockIsWater(TileX,TileY-1) = 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 160737277478629,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"callFunction": "UpdateWater",
+											"sid": 776903481338014,
+											"parameters": [
+												"TileX",
+												"TileY-1",
+												"Terrain.TileAt(TileX,TileY-1)"
+											]
+										}
+									],
+									"sid": 496804287020491,
+									"isOrBlock": true
 								}
-							],
-							"actions": [
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 636761375951029,
-									"parameters": {
-										"seconds": "0"
-									}
-								},
-								{
-									"callFunction": "UpdateWater",
-									"sid": 899556941102051,
-									"parameters": [
-										"TileX+1",
-										"TileY",
-										"Terrain.TileAt(TileX+1,TileY)"
-									]
-								}
-							],
-							"sid": 725286239709560,
-							"isOrBlock": true
+							]
 						},
 						{
 							"eventType": "block",
-							"conditions": [
+							"conditions": [],
+							"actions": [],
+							"sid": 906864057235991,
+							"children": [
 								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 779905770275141,
-									"parameters": {
-										"tile-x": "TileX",
-										"tile-y": "TileY+1",
-										"comparison": 0,
-										"tile": "217"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 283843781706280,
+											"parameters": {
+												"value": "Functions.BlockIsLava(TileX+1,TileY) = 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 412594672174590,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"callFunction": "UpdateLava",
+											"sid": 652310954546178,
+											"parameters": [
+												"TileX+1",
+												"TileY",
+												"Terrain.TileAt(TileX+1,TileY)"
+											]
+										}
+									],
+									"sid": 411988506430094,
+									"isOrBlock": true
 								},
 								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 461509025656016,
-									"parameters": {
-										"tile-x": "TileX",
-										"tile-y": "TileY+1",
-										"comparison": 0,
-										"tile": "218"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 824807242504809,
+											"parameters": {
+												"value": "Functions.BlockIsLava(TileX,TileY+1) = 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 768020035112994,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"callFunction": "UpdateLava",
+											"sid": 739481936440740,
+											"parameters": [
+												"TileX",
+												"TileY+1",
+												"Terrain.TileAt(TileX,TileY+1)"
+											]
+										}
+									],
+									"sid": 962220213212507,
+									"isOrBlock": true
 								},
 								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 972010628156717,
-									"parameters": {
-										"tile-x": "TileX",
-										"tile-y": "TileY+1",
-										"comparison": 0,
-										"tile": "205"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 566223529924004,
+											"parameters": {
+												"value": "Functions.BlockIsLava(TileX-1,TileY) = 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 509338400431160,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"callFunction": "UpdateLava",
+											"sid": 555708172498287,
+											"parameters": [
+												"TileX-1",
+												"TileY",
+												"Terrain.TileAt(TileX-1,TileY)"
+											]
+										}
+									],
+									"sid": 684392237550576,
+									"isOrBlock": true
 								},
 								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 119382878636240,
-									"parameters": {
-										"tile-x": "TileX",
-										"tile-y": "TileY+1",
-										"comparison": 0,
-										"tile": "219"
-									}
-								},
-								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 918089274639812,
-									"parameters": {
-										"tile-x": "TileX",
-										"tile-y": "TileY+1",
-										"comparison": 0,
-										"tile": "206"
-									}
-								},
-								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 812709694331075,
-									"parameters": {
-										"tile-x": "TileX",
-										"tile-y": "TileY+1",
-										"comparison": 0,
-										"tile": "220"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 310578618317178,
+											"parameters": {
+												"value": "Functions.BlockIsLava(TileX,TileY-1) = 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 914544559538214,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"callFunction": "UpdateLava",
+											"sid": 253809980545499,
+											"parameters": [
+												"TileX",
+												"TileY-1",
+												"Terrain.TileAt(TileX,TileY-1)"
+											]
+										}
+									],
+									"sid": 742830767436014,
+									"isOrBlock": true
 								}
-							],
-							"actions": [
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 354078581957358,
-									"parameters": {
-										"seconds": "0"
-									}
-								},
-								{
-									"callFunction": "UpdateWater",
-									"sid": 406729954293212,
-									"parameters": [
-										"TileX",
-										"TileY+1",
-										"Terrain.TileAt(TileX,TileY+1)"
-									]
-								}
-							],
-							"sid": 143873284632769,
-							"isOrBlock": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 698124099404802,
-									"parameters": {
-										"tile-x": "TileX-1",
-										"tile-y": "TileY",
-										"comparison": 0,
-										"tile": "217"
-									}
-								},
-								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 308340264536194,
-									"parameters": {
-										"tile-x": "TileX-1",
-										"tile-y": "TileY",
-										"comparison": 0,
-										"tile": "218"
-									}
-								},
-								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 541789161698481,
-									"parameters": {
-										"tile-x": "TileX-1",
-										"tile-y": "TileY",
-										"comparison": 0,
-										"tile": "205"
-									}
-								},
-								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 572387188209265,
-									"parameters": {
-										"tile-x": "TileX-1",
-										"tile-y": "TileY",
-										"comparison": 0,
-										"tile": "219"
-									}
-								},
-								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 547378326930173,
-									"parameters": {
-										"tile-x": "TileX-1",
-										"tile-y": "TileY",
-										"comparison": 0,
-										"tile": "220"
-									}
-								},
-								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 280409380120997,
-									"parameters": {
-										"tile-x": "TileX-1",
-										"tile-y": "TileY",
-										"comparison": 0,
-										"tile": "206"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 325794085281690,
-									"parameters": {
-										"seconds": "0"
-									}
-								},
-								{
-									"callFunction": "UpdateWater",
-									"sid": 963484965877790,
-									"parameters": [
-										"TileX-1",
-										"TileY",
-										"Terrain.TileAt(TileX-1,TileY)"
-									]
-								}
-							],
-							"sid": 821993945086638,
-							"isOrBlock": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 690271421627634,
-									"parameters": {
-										"tile-x": "TileX",
-										"tile-y": "TileY-1",
-										"comparison": 0,
-										"tile": "217"
-									}
-								},
-								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 475001876734452,
-									"parameters": {
-										"tile-x": "TileX",
-										"tile-y": "TileY-1",
-										"comparison": 0,
-										"tile": "218"
-									}
-								},
-								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 428649193560455,
-									"parameters": {
-										"tile-x": "TileX",
-										"tile-y": "TileY-1",
-										"comparison": 0,
-										"tile": "205"
-									}
-								},
-								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 184399403867381,
-									"parameters": {
-										"tile-x": "TileX",
-										"tile-y": "TileY-1",
-										"comparison": 0,
-										"tile": "219"
-									}
-								},
-								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 324719015588320,
-									"parameters": {
-										"tile-x": "TileX",
-										"tile-y": "TileY-1",
-										"comparison": 0,
-										"tile": "206"
-									}
-								},
-								{
-									"id": "compare-tile-at",
-									"objectClass": "Terrain",
-									"sid": 402032224872427,
-									"parameters": {
-										"tile-x": "TileX",
-										"tile-y": "TileY-1",
-										"comparison": 0,
-										"tile": "220"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 235976605834706,
-									"parameters": {
-										"seconds": "0"
-									}
-								},
-								{
-									"callFunction": "UpdateWater",
-									"sid": 322627678617647,
-									"parameters": [
-										"TileX",
-										"TileY-1",
-										"Terrain.TileAt(TileX,TileY-1)"
-									]
-								}
-							],
-							"sid": 377877216677935,
-							"isOrBlock": true
+							]
 						},
 						{
 							"eventType": "block",
@@ -9607,10 +10711,10 @@
 		},
 		{
 			"functionName": "Bed",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -9861,10 +10965,10 @@
 		},
 		{
 			"functionName": "SetTime",
+			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{

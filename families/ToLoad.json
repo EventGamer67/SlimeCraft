@@ -1,0 +1,11 @@
+{
+	"name": "ToLoad",
+	"plugin-id": "Sprite",
+	"sid": 270254799292417,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Cam"
+	]
+}

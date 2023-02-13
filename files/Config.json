@@ -11,7 +11,8 @@
 			"x":1,
 			"y":1
 		},
-		"LightTransparentBlocks":[15,39,12,13,28,29,30,70,55,56,73,79,99,80,52,149],
+		"TilesWithoutCollision":[60],
+		"LightTransparentBlocks":[15,39,12,13,28,29,30,70,55,56,73,79,99,80,52,149,5],
 		"TilesWhatOnCanPlace":[39,205,206,217,218,219,220,-1],
 		"OnlyOnBlocks":[
 			15,39,12,13,28,29,30,70,55,56,73,79,99,80
@@ -19,6 +20,15 @@
 		"CantPlacedBlocks":[
 			15,39,12,13,28,29,30,70,55,56,73,79,99,80,-1
 		],
+		"Entity":{
+				"Zombie":{
+					"Drop":{
+							"RottenFlesh":99,
+							"Iron":1
+						}
+				}
+			
+		},
 		"Glossary":{
 			"Wooden_Pickaxe":{
 				"Type": "Pickaxe",
@@ -57,9 +67,26 @@
 				"Using":"Block",
 				"Stackable":1,
 				"MaxStack":32,
-				"Fuel": 30000
+				"Fuel": 600
+			},
+			"Oak_SlabUp":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32,
+				"Fuel": 400
+			},
+			"Oak_SlabDown":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32,
+				"Fuel": 400
 			},
 			"Stone":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32
+			},
+			"StoneBrick":{
 				"Using":"Block",
 				"Stackable":1,
 				"MaxStack":32
@@ -68,13 +95,23 @@
 				"Using":"Block",
 				"Stackable":1,
 				"MaxStack":32,
-				"Fuel": 50000
+				"Fuel": 600
 			},
 			"Wood_Stick":{
 				"Using":"Material",
 				"Stackable":1,
 				"MaxStack":32,
 				"Fuel": 30
+			},
+			"String":{
+				"Using":"Material",
+				"Stackable":1,
+				"MaxStack":32
+			},
+			"SilkMesh":{
+				"Using":"Material",
+				"Stackable":1,
+				"MaxStack":32
 			},
 			"WorkBench":{
 				"Using":"Block",
@@ -116,6 +153,13 @@
 				"Stackable":1,
 				"MaxStack":16,
 				"FoodPoints":4,
+				"Duration":120
+			},
+			"RottenFlesh":{
+				"Using":"Food",
+				"Stackable":1,
+				"MaxStack":16,
+				"FoodPoints":1,
 				"Duration":120
 			},
 			"Oak_Sampling":{
@@ -210,6 +254,19 @@
 					"Oak_Sampling":20
 				}
 			},
+			"53":{
+				"Dur": 0.1,
+				"Type": "WhiteOakLeaves",
+				"Silk_Drop": "OakLeaves",
+				"Best_Tool": "Scissors",
+				"HitSound":"Hitgravel1",
+				"DestroySound":"grass3",
+				"Drop":{
+					"Apple":20,
+					"Oak_Sampling":20,
+					"String":99.9
+				}
+			},
 			"16":{
 				"Dur": 0.6,
 				"Type": "Cobblestone",
@@ -222,6 +279,16 @@
 				"Type": "Stone",
 				"Silk_Drop": "Stone",
 				"No_Silk_Drop": "Cobblestone",
+				"Best_Tool": "Pickaxe",
+				"HitSound":"Hitgravel1",
+				"DestroySound":"grass1",
+				"MiningTier":1
+			},
+			"54":{
+				"Dur": 1.5,
+				"Type": "StoneBrick",
+				"Silk_Drop": "StoneBrick",
+				"No_Silk_Drop": "StoneBrick",
 				"Best_Tool": "Pickaxe",
 				"HitSound":"Hitgravel1",
 				"DestroySound":"grass1",
@@ -250,6 +317,20 @@
 				"Type": "Oak_Planks",
 				"Silk_Drop": "Oak_Planks",
 				"No_Silk_Drop": "Oak_Planks",
+				"Best_Tool": "Axe"
+			},
+			"5":{
+				"Dur": 2,
+				"Type": "Oak_SlabDown",
+				"Silk_Drop": "Oak_SlabDown",
+				"No_Silk_Drop": "Oak_SlabDown",
+				"Best_Tool": "Axe"
+			},
+			"6":{
+				"Dur": 2,
+				"Type": "Oak_SlabUp",
+				"Silk_Drop": "Oak_SlabUp",
+				"No_Silk_Drop": "Oak_SlabUp",
 				"Best_Tool": "Axe"
 			},
 			"20":{

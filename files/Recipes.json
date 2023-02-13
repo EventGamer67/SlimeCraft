@@ -27,6 +27,32 @@
 				"Count": 4
 			}
 		},
+		"Oak_SlabUp": {
+			"Type": "Crafting_Shapeless",
+			"Pattern": [
+				"AAA"
+			],
+			"Key": {
+				"A": "Oak_Planks"
+			},
+			"Result": {
+				"Item": "Oak_SlabUp",
+				"Count": 3
+			}
+		},
+		"Oak_SlabDown": {
+			"Type": "Crafting_Shapeless",
+			"Pattern": [
+				"AAA"
+			],
+			"Key": {
+				"A": "Oak_SlabUp"
+			},
+			"Result": {
+				"Item": "Oak_SlabDown",
+				"Count": 3
+			}
+		},
 		"Torch": {
 			"Type": "Crafting_Shapeless",
 			"Pattern": [
@@ -68,6 +94,38 @@
 			},
 			"Result": {
 				"Item": "Chest",
+				"Count": 1
+			}
+		},
+		"Sieve": {
+			"Type": "Crafting_Shapeless",
+			"Pattern": [
+				"ABA",
+				"ABA",
+				"C0C"
+			],
+			"Key": {
+				"A": "Oak_Planks",
+				"B": "Wood_Stick",
+				"C": "SilkMesh"
+			},
+			"Result": {
+				"Item": "Sieve",
+				"Count": 1
+			}
+		},
+		"SilkMesh": {
+			"Type": "Crafting_Shapeless",
+			"Pattern": [
+				"AAA",
+				"AAA",
+				"AAA"
+			],
+			"Key": {
+				"A": "String"
+			},
+			"Result": {
+				"Item": "SilkMesh",
 				"Count": 1
 			}
 		},
@@ -251,12 +309,12 @@
 		"Stone": {
 			"Item": "Cobblestone",
 			"Result": "Stone",
-			"CookingTime": 5000
+			"CookingTime": 200
 		},
 		"Iron_Ingot": {
 			"Item": "Iron_Ore",
 			"Result": "Iron_Ingot",
-			"CookingTime": 4000
+			"CookingTime": 200
 		}
 	}
 }
