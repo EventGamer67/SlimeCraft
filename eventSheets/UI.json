@@ -1007,6 +1007,10 @@
 										"0.1",
 										"70"
 									]
+								},
+								{
+									"callFunction": "ShowQuestBook",
+									"sid": 357887710291334
 								}
 							],
 							"sid": 796823528215673
@@ -17214,6 +17218,447 @@
 					]
 				}
 			]
+		},
+		{
+			"functionName": "ShowQuestBook",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 662906022595135,
+					"parameters": {
+						"layer": "\"Interfaces\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 633899063212781,
+					"parameters": {
+						"layer": "\"UI\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 745635274953922,
+					"parameters": {
+						"variable": "Interface",
+						"value": "\"QuestBook\""
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 175667203247913,
+					"parameters": {
+						"group-name": "\"QuestBook\"",
+						"state": "activated"
+					}
+				}
+			],
+			"sid": 410920974406873,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 491982231617862,
+							"parameters": {
+								"object-to-create": "InventoryBlank",
+								"layer": "\"Interfaces\"",
+								"x": "Functions.Get_Center_X(\"Interfaces\")",
+								"y": "Functions.Get_Center_Y(\"Interfaces\")",
+								"create-hierarchy": true,
+								"template-name": "\"Quest\""
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "InventoryBlank",
+							"sid": 832526237726566,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "size",
+								"end-x": "Self.Width",
+								"end-y": "Self.Height",
+								"time": "0.4",
+								"ease": "easeoutcubic",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "InventoryBlank",
+							"sid": 187297240786213,
+							"parameters": {
+								"width": "0",
+								"height": "0"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "InventoryBlank",
+							"sid": 534056223087075,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "InventoryBlank",
+							"sid": 380907946654569,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "0.3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 951284170838583,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-last-created",
+									"objectClass": "System",
+									"sid": 123820302834419,
+									"parameters": {
+										"object": "InventoryBlank"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 195385354842942,
+									"parameters": {
+										"object-to-create": "QuestElementBlank",
+										"layer": "\"Interfaces\"",
+										"x": "Functions.Get_Center_X(\"Interfaces\")",
+										"y": "Functions.Get_Center_Y(\"Interfaces\")",
+										"create-hierarchy": true,
+										"template-name": "\"Main\""
+									}
+								}
+							],
+							"sid": 151632187232045,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 738331327342871,
+											"parameters": {
+												"seconds": "0"
+											}
+										}
+									],
+									"sid": 185413096477703,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 217311688367521,
+													"parameters": {
+														"object": "QuestElementBlank"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "QuestElementBlank",
+													"sid": 477971697009696,
+													"parameters": {
+														"instance-variable": "sX",
+														"value": "Self.X-Functions.Get_Center_X(\"Interfaces\")"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "QuestElementBlank",
+													"sid": 479069517905081,
+													"parameters": {
+														"instance-variable": "sY",
+														"value": "Self.Y-Functions.Get_Center_Y(\"Interfaces\")"
+													}
+												}
+											],
+											"sid": 559868331499759
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "QuestBook",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "Bookscrolling",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 778733337643155
+				},
+				{
+					"eventType": "variable",
+					"name": "xScroll",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 728305471917373
+				},
+				{
+					"eventType": "variable",
+					"name": "yScroll",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 530356278220702
+				},
+				{
+					"eventType": "variable",
+					"name": "StartxScroll",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 720481359298085
+				},
+				{
+					"eventType": "variable",
+					"name": "StartyScroll",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 707891440719353
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 471274019682973,
+							"parameters": {
+								"object": "9patch"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 706599034140089,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 906441759368899,
+									"parameters": {
+										"variable": "Bookscrolling"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 575314963447938,
+									"parameters": {
+										"variable": "Bookscrolling",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 710242756535090,
+									"parameters": {
+										"variable": "StartxScroll",
+										"value": "Touch.X(\"Interfaces\")"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 217532104308609,
+									"parameters": {
+										"variable": "StartyScroll",
+										"value": "Touch.Y(\"Interfaces\")"
+									}
+								}
+							],
+							"sid": 785678109607464,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 610083383292045,
+											"parameters": {
+												"object": "QuestElementBlank"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "QuestElementBlank",
+											"sid": 385380530501186,
+											"parameters": {
+												"instance-variable": "sX",
+												"value": "Self.X"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "QuestElementBlank",
+											"sid": 648640450561630,
+											"parameters": {
+												"instance-variable": "sY",
+												"value": "Self.Y"
+											}
+										}
+									],
+									"sid": 783903370201922,
+									"disabled": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-in-touch",
+							"objectClass": "Touch",
+							"sid": 542223908437731
+						}
+					],
+					"actions": [],
+					"sid": 636027156914029,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 809415980683922,
+									"parameters": {
+										"variable": "Bookscrolling"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 664039906167381,
+									"parameters": {
+										"variable": "xScroll",
+										"value": "(Touch.X(\"Interfaces\")-StartxScroll)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 270757476632766,
+									"parameters": {
+										"variable": "yScroll",
+										"value": "(Touch.Y(\"Interfaces\")-StartyScroll)"
+									}
+								}
+							],
+							"sid": 944058885396967,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 901071088654105,
+											"parameters": {
+												"object": "QuestElementBlank"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "QuestElementBlank",
+											"sid": 539840863162134,
+											"parameters": {
+												"x": "Self.sX+scrollx",
+												"y": "Self.sY+scrolly"
+											}
+										}
+									],
+									"sid": 542642230167743
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 613650572668792
 		}
 	],
 	"sid": 265356654045713

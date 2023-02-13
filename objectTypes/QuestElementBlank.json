@@ -24,6 +24,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 714324622101352
+		},
+		{
+			"name": "sX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 492457328648674
+		},
+		{
+			"name": "sY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 408746138315688
 		}
 	],
 	"behaviorTypes": [],

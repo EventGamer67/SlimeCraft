@@ -1670,13 +1670,13 @@
 				{
 					"id": "tween-one-property",
 					"objectClass": "InventoryBlank",
-					"sid": 731663258596139,
+					"sid": 257543895006692,
 					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "\"Show\"",
 						"property": "offsetY",
 						"end-value": "Functions.Get_Center_Y(\"UI\")",
-						"time": "0.6",
+						"time": "0.3",
 						"ease": "easeoutcubic",
 						"destroy-on-complete": "no",
 						"loop": "no",
