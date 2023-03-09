@@ -45,13 +45,13 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 564151591690605,
+									"sid": 605421218525671,
 									"parameters": {
 										"object-to-create": "Sprite",
 										"layer": "\"Layer 1\"",
 										"x": "-300",
 										"y": "-300",
-										"create-hierarchy": true,
+										"create-hierarchy": false,
 										"template-name": "\"Default\""
 									}
 								},
@@ -94,6 +94,15 @@
 									"sid": 392995004766279,
 									"parameters": {
 										"json": "JSON.Get(\"World.SpawnPoint\")"
+									}
+								},
+								{
+									"id": "set-json",
+									"objectClass": "JSON",
+									"sid": 483152885163664,
+									"parameters": {
+										"path": "\"Player\"",
+										"json": "JSON.Get(\"World.Player\")"
 									}
 								},
 								{
@@ -260,6 +269,15 @@
 									"sid": 455818924102159,
 									"parameters": {
 										"json": "JSON.Get(\"World.Sprite\")"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Sprite",
+									"sid": 397485789161576,
+									"behaviorType": "Platform",
+									"parameters": {
+										"state": "enabled"
 									}
 								},
 								{
@@ -550,6 +568,15 @@
 					"parameters": {
 						"path": "\"World.Ticks\"",
 						"value": "Tick"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 277393917918898,
+					"parameters": {
+						"path": "\"World.Player\"",
+						"value": "JSON.GetAsCompactString(\"Player\")"
 					}
 				}
 			],

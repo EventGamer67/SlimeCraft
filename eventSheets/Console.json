@@ -236,6 +236,54 @@
 					"sid": 161789458700554
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 927015797324994,
+					"parameters": {
+						"key": 49
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "StartWeather",
+					"sid": 320864131560974,
+					"parameters": [
+						"\"Rain\""
+					]
+				}
+			],
+			"sid": 888658513358802,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 647320874823440,
+					"parameters": {
+						"key": 50
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "SendReward",
+					"sid": 383422078793303,
+					"parameters": [
+						"\"Sand,10\"",
+						"Mouse.X(\"Layer 1\")"
+					]
+				}
+			],
+			"sid": 821353253741786
 		}
 	],
 	"sid": 593640233702149

@@ -1440,9 +1440,60 @@
 																									"id": "destroy",
 																									"objectClass": "Inventory_Item",
 																									"sid": 458870162698779
+																								},
+																								{
+																									"callFunction": "SetCurrentSlot",
+																									"sid": 472990917288293,
+																									"parameters": [
+																										"Sprite11.CurrentSlot"
+																									]
 																								}
 																							],
-																							"sid": 920379827427342
+																							"sid": 920379827427342,
+																							"children": [
+																								{
+																									"eventType": "block",
+																									"conditions": [
+																										{
+																											"id": "pick-all",
+																											"objectClass": "System",
+																											"sid": 722983836694023,
+																											"parameters": {
+																												"object": "Inventory_Item"
+																											}
+																										},
+																										{
+																											"id": "pick-by-evaluate",
+																											"objectClass": "System",
+																											"sid": 349647321342617,
+																											"parameters": {
+																												"object": "Inventory_Item",
+																												"expression": "Inventory_Item.Type = \"HandItem\""
+																											}
+																										}
+																									],
+																									"actions": [
+																										{
+																											"id": "set-animation",
+																											"objectClass": "Inventory_Item",
+																											"sid": 420556605092417,
+																											"parameters": {
+																												"animation": "\"None\"",
+																												"from": "beginning"
+																											}
+																										},
+																										{
+																											"id": "set-visible",
+																											"objectClass": "Inventory_Item",
+																											"sid": 360010386541945,
+																											"parameters": {
+																												"visibility": "invisible"
+																											}
+																										}
+																									],
+																									"sid": 237918256099362
+																								}
+																							]
 																						},
 																						{
 																							"eventType": "block",
@@ -1775,6 +1826,51 @@
 							"sid": 148834719595323,
 							"children": [
 								{
+									"eventType": "variable",
+									"name": "TileX",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 218212280094207
+								},
+								{
+									"eventType": "variable",
+									"name": "TileY",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 998590944702183
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 308430416284854,
+											"parameters": {
+												"variable": "TileX",
+												"value": "Terrain.PositionToTileX(Touch.X)"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 965880994085345,
+											"parameters": {
+												"variable": "TileY",
+												"value": "Terrain.PositionToTiley(Touch.Y)"
+											}
+										}
+									],
+									"sid": 159426707149302
+								},
+								{
 									"eventType": "block",
 									"conditions": [
 										{
@@ -1808,6 +1904,678 @@
 										}
 									],
 									"sid": 780992267367728
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 233340158846065
+										}
+									],
+									"actions": [],
+									"sid": 447252607289371,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 832754908652254,
+													"parameters": {
+														"object": "Inventory_Item",
+														"expression": "Inventory_Item.Type = \"HandItem\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 508075818323063,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 581885652110611,
+															"parameters": {
+																"value": "Inventory_Item.AnimationName = \"Worm\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 551621898504693,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-tile-at",
+																	"objectClass": "Terrain",
+																	"sid": 854216167498826,
+																	"parameters": {
+																		"tile-x": "TileX",
+																		"tile-y": "TileY",
+																		"comparison": 0,
+																		"tile": "52"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-tile",
+																	"objectClass": "Terrain",
+																	"sid": 787976488490242,
+																	"parameters": {
+																		"tile-x": "tilex",
+																		"tile-y": "TileY",
+																		"tile": "53",
+																		"state": "normal"
+																	}
+																}
+															],
+															"sid": 288709971891536,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "pick-all",
+																			"objectClass": "System",
+																			"sid": 334821789690116,
+																			"parameters": {
+																				"object": "Inventory_Item"
+																			}
+																		},
+																		{
+																			"id": "pick-by-comparison",
+																			"objectClass": "System",
+																			"sid": 544050026824085,
+																			"parameters": {
+																				"object": "Inventory_Item",
+																				"expression": "Inventory_Item.PosX",
+																				"comparison": 0,
+																				"value": "Sprite11.Selected_Item_Index"
+																			}
+																		},
+																		{
+																			"id": "compare-instance-variable",
+																			"objectClass": "Inventory_Item",
+																			"sid": 244294673083396,
+																			"parameters": {
+																				"instance-variable": "Count_",
+																				"comparison": 4,
+																				"value": "0"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"callFunction": "OnTilePlaced",
+																			"sid": 294242287176306,
+																			"parameters": [
+																				"Terrain.TileAt(TileX,TileY)",
+																				"TileX",
+																				"TileY"
+																			]
+																		},
+																		{
+																			"callFunction": "UpdateNearest",
+																			"sid": 172590107901889,
+																			"parameters": [
+																				"TileX",
+																				"TileY"
+																			]
+																		},
+																		{
+																			"id": "set-at-xy",
+																			"objectClass": "Inventory",
+																			"sid": 506126215149309,
+																			"parameters": {
+																				"x": "Sprite11.Selected_Item_Index",
+																				"y": "1",
+																				"value": "Inventory.At(Sprite11.Selected_Item_Index,1)-1"
+																			}
+																		},
+																		{
+																			"id": "subtract-from-instvar",
+																			"objectClass": "Inventory_Item",
+																			"sid": 412633176395230,
+																			"parameters": {
+																				"instance-variable": "Count_",
+																				"value": "1"
+																			}
+																		},
+																		{
+																			"callFunction": "Add_Timer",
+																			"sid": 408066203358266,
+																			"parameters": [
+																				"str(TileX&\",\"&TileY)",
+																				"60",
+																				"\"LeavesInfected\""
+																			]
+																		}
+																	],
+																	"sid": 658680152584767,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "compare-instance-variable",
+																					"objectClass": "Inventory_Item",
+																					"sid": 144140466365461,
+																					"parameters": {
+																						"instance-variable": "Count_",
+																						"comparison": 3,
+																						"value": "0"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-instvar-value",
+																					"objectClass": "Sprite11",
+																					"sid": 546012438956577,
+																					"parameters": {
+																						"instance-variable": "Selected_Item_Type",
+																						"value": "\"-1\""
+																					}
+																				},
+																				{
+																					"id": "set-at-xy",
+																					"objectClass": "Inventory",
+																					"sid": 298575413532121,
+																					"parameters": {
+																						"x": "Sprite11.Selected_Item_Index",
+																						"y": "0",
+																						"value": "0"
+																					}
+																				},
+																				{
+																					"id": "destroy",
+																					"objectClass": "Inventory_Item",
+																					"sid": 445997035194551
+																				}
+																			],
+																			"sid": 722114140272096,
+																			"children": [
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "pick-all",
+																							"objectClass": "System",
+																							"sid": 582471655114338,
+																							"parameters": {
+																								"object": "Inventory_Item"
+																							}
+																						},
+																						{
+																							"id": "pick-by-comparison",
+																							"objectClass": "System",
+																							"sid": 523564040307656,
+																							"parameters": {
+																								"object": "Inventory_Item",
+																								"expression": "Inventory_Item.Type",
+																								"comparison": 0,
+																								"value": "\"HandItem\""
+																							}
+																						}
+																					],
+																					"actions": [
+																						{
+																							"id": "set-visible",
+																							"objectClass": "Inventory_Item",
+																							"sid": 506254021678638,
+																							"parameters": {
+																								"visibility": "invisible"
+																							}
+																						},
+																						{
+																							"id": "set-animation",
+																							"objectClass": "Inventory_Item",
+																							"sid": 812659417404512,
+																							"parameters": {
+																								"animation": "\"None\"",
+																								"from": "beginning"
+																							}
+																						}
+																					],
+																					"sid": 529395702236628
+																				}
+																			]
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "pick-children",
+																					"objectClass": "Inventory_Item",
+																					"sid": 797140092137944,
+																					"parameters": {
+																						"child": "Text",
+																						"which": "own"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-text",
+																					"objectClass": "Text",
+																					"sid": 344718123476069,
+																					"parameters": {
+																						"text": "Inventory_Item.Count_"
+																					}
+																				}
+																			],
+																			"sid": 270033155760189
+																		}
+																	]
+																}
+															]
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 207277297723314,
+															"parameters": {
+																"value": "Inventory_Item.AnimationName = \"ClayBucket\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 725510285070231,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-tile-at",
+																	"objectClass": "Terrain",
+																	"sid": 104084038983152,
+																	"parameters": {
+																		"tile-x": "TileX",
+																		"tile-y": "TileY",
+																		"comparison": 0,
+																		"tile": "246"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-tile",
+																	"objectClass": "Terrain",
+																	"sid": 799089955986136,
+																	"parameters": {
+																		"tile-x": "tilex",
+																		"tile-y": "TileY",
+																		"tile": "241",
+																		"state": "normal"
+																	}
+																}
+															],
+															"sid": 110010531229319,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "pick-all",
+																			"objectClass": "System",
+																			"sid": 639962441879255,
+																			"parameters": {
+																				"object": "Inventory_Item"
+																			}
+																		},
+																		{
+																			"id": "pick-by-comparison",
+																			"objectClass": "System",
+																			"sid": 563705675783120,
+																			"parameters": {
+																				"object": "Inventory_Item",
+																				"expression": "Inventory_Item.PosX",
+																				"comparison": 0,
+																				"value": "Sprite11.Selected_Item_Index"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-instvar-value",
+																			"objectClass": "Inventory_Item",
+																			"sid": 616529335238774,
+																			"parameters": {
+																				"instance-variable": "Type",
+																				"value": "\"ClayWaterBucket\""
+																			}
+																		},
+																		{
+																			"id": "set-at-xy",
+																			"objectClass": "Inventory",
+																			"sid": 645753641256735,
+																			"parameters": {
+																				"x": "Sprite11.Selected_Item_Index",
+																				"y": "0",
+																				"value": "\"ClayWaterBucket\""
+																			}
+																		},
+																		{
+																			"id": "set-at-xy",
+																			"objectClass": "Inventory",
+																			"sid": 561978172051569,
+																			"parameters": {
+																				"x": "Sprite11.Selected_Item_Index",
+																				"y": "1",
+																				"value": "1"
+																			}
+																		},
+																		{
+																			"id": "set-animation",
+																			"objectClass": "Inventory_Item",
+																			"sid": 679546867652391,
+																			"parameters": {
+																				"animation": "\"ClayWaterBucket\"",
+																				"from": "beginning"
+																			}
+																		},
+																		{
+																			"callFunction": "SetCurrentSlot",
+																			"sid": 384197371389139,
+																			"parameters": [
+																				"Sprite11.CurrentSlot"
+																			]
+																		}
+																	],
+																	"sid": 924904231621734
+																}
+															]
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 588851323193732,
+															"parameters": {
+																"value": "Inventory_Item.AnimationName = \"Sand\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 459203623471993,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-tile-at",
+																	"objectClass": "Terrain",
+																	"sid": 655925985761537,
+																	"parameters": {
+																		"tile-x": "TileX",
+																		"tile-y": "TileY",
+																		"comparison": 0,
+																		"tile": "246"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-tile",
+																	"objectClass": "Terrain",
+																	"sid": 127867976565344,
+																	"parameters": {
+																		"tile-x": "tilex",
+																		"tile-y": "TileY",
+																		"tile": "247",
+																		"state": "normal"
+																	}
+																}
+															],
+															"sid": 341458070230171,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "pick-all",
+																			"objectClass": "System",
+																			"sid": 210239580403288,
+																			"parameters": {
+																				"object": "Inventory_Item"
+																			}
+																		},
+																		{
+																			"id": "pick-by-comparison",
+																			"objectClass": "System",
+																			"sid": 722688495718748,
+																			"parameters": {
+																				"object": "Inventory_Item",
+																				"expression": "Inventory_Item.PosX",
+																				"comparison": 0,
+																				"value": "Sprite11.Selected_Item_Index"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-at-xy",
+																			"objectClass": "Inventory",
+																			"sid": 520787622067452,
+																			"parameters": {
+																				"x": "Sprite11.Selected_Item_Index",
+																				"y": "1",
+																				"value": "Inventory.At(Sprite11.Selected_Item_Index,1)-1"
+																			}
+																		},
+																		{
+																			"id": "subtract-from-instvar",
+																			"objectClass": "Inventory_Item",
+																			"sid": 586088104316032,
+																			"parameters": {
+																				"instance-variable": "Count_",
+																				"value": "1"
+																			}
+																		}
+																	],
+																	"sid": 888700382409446,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "compare-instance-variable",
+																					"objectClass": "Inventory_Item",
+																					"sid": 903512724271935,
+																					"parameters": {
+																						"instance-variable": "Count_",
+																						"comparison": 3,
+																						"value": "0"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-instvar-value",
+																					"objectClass": "Sprite11",
+																					"sid": 157901908975592,
+																					"parameters": {
+																						"instance-variable": "Selected_Item_Type",
+																						"value": "\"-1\""
+																					}
+																				},
+																				{
+																					"id": "set-at-xy",
+																					"objectClass": "Inventory",
+																					"sid": 858095311461661,
+																					"parameters": {
+																						"x": "Sprite11.Selected_Item_Index",
+																						"y": "0",
+																						"value": "0"
+																					}
+																				},
+																				{
+																					"id": "destroy",
+																					"objectClass": "Inventory_Item",
+																					"sid": 870573150637766
+																				},
+																				{
+																					"callFunction": "SetCurrentSlot",
+																					"sid": 790113065587081,
+																					"parameters": [
+																						"Sprite11.CurrentSlot"
+																					]
+																				}
+																			],
+																			"sid": 883444468198648,
+																			"children": [
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "pick-all",
+																							"objectClass": "System",
+																							"sid": 465723347534752,
+																							"parameters": {
+																								"object": "Inventory_Item"
+																							}
+																						},
+																						{
+																							"id": "pick-by-evaluate",
+																							"objectClass": "System",
+																							"sid": 861242554563704,
+																							"parameters": {
+																								"object": "Inventory_Item",
+																								"expression": "Inventory_Item.Type = \"HandItem\""
+																							}
+																						}
+																					],
+																					"actions": [
+																						{
+																							"id": "set-animation",
+																							"objectClass": "Inventory_Item",
+																							"sid": 293452653111159,
+																							"parameters": {
+																								"animation": "\"None\"",
+																								"from": "beginning"
+																							}
+																						},
+																						{
+																							"id": "set-visible",
+																							"objectClass": "Inventory_Item",
+																							"sid": 534584733703510,
+																							"parameters": {
+																								"visibility": "invisible"
+																							}
+																						}
+																					],
+																					"sid": 150150670057301
+																				}
+																			]
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "pick-children",
+																					"objectClass": "Inventory_Item",
+																					"sid": 660965005218277,
+																					"parameters": {
+																						"child": "Text",
+																						"which": "own"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-text",
+																					"objectClass": "Text",
+																					"sid": 370793183753392,
+																					"parameters": {
+																						"text": "Inventory_Item.Count_"
+																					}
+																				}
+																			],
+																			"sid": 253278217015027
+																		}
+																	]
+																}
+															]
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 338509025332187,
+															"disabled": true,
+															"parameters": {
+																"value": "Inventory_Item.AnimationName = \"Sand\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 946543888386093,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-tile-at",
+																	"objectClass": "Terrain",
+																	"sid": 124191452245086,
+																	"parameters": {
+																		"tile-x": "TileX",
+																		"tile-y": "TileY",
+																		"comparison": 0,
+																		"tile": "247"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-tile",
+																	"objectClass": "Terrain",
+																	"sid": 692633700122115,
+																	"parameters": {
+																		"tile-x": "tilex",
+																		"tile-y": "TileY",
+																		"tile": "241",
+																		"state": "normal"
+																	}
+																},
+																{
+																	"callFunction": "Drop_Item",
+																	"sid": 540766008872645,
+																	"parameters": [
+																		"1",
+																		"\"ClayBlock\"",
+																		"Terrain.TileToPositionX(TileX)",
+																		"Terrain.TileToPositionY(TileY-1)"
+																	]
+																}
+															],
+															"sid": 898563807167171
+														}
+													]
+												}
+											]
+										}
+									]
 								}
 							]
 						}
@@ -3798,6 +4566,15 @@
 																						"comparison": 0,
 																						"number": "Shatter.AnimationFrameCount-1"
 																					}
+																				},
+																				{
+																					"id": "pick-by-evaluate",
+																					"objectClass": "System",
+																					"sid": 109812931970707,
+																					"parameters": {
+																						"object": "Inventory_Item",
+																						"expression": "Inventory_Item.Type = \"HandItem\""
+																					}
 																				}
 																			],
 																			"actions": [
@@ -3903,6 +4680,12 @@
 																			"children": [
 																				{
 																					"eventType": "block",
+																					"conditions": [],
+																					"actions": [],
+																					"sid": 521064081220027
+																				},
+																				{
+																					"eventType": "block",
 																					"conditions": [
 																						{
 																							"id": "has-key",
@@ -3931,13 +4714,14 @@
 																							"actions": [
 																								{
 																									"callFunction": "BlockDrop",
-																									"sid": 312839080770478,
+																									"sid": 406196583028936,
 																									"parameters": [
 																										"Terrain.TileAt(Tilex, TileY)",
 																										"Shatter.X",
 																										"Shatter.Y",
 																										"Tilex",
-																										"TileY"
+																										"TileY",
+																										"Inventory_Item.AnimationName"
 																									]
 																								}
 																							],
@@ -4075,58 +4859,158 @@
 																							"sid": 352889129383326
 																						}
 																					],
-																					"actions": [
-																						{
-																							"callFunction": "BlockDrop",
-																							"sid": 344536210307662,
-																							"disabled": true,
-																							"parameters": [
-																								"Terrain.TileAt(Tilex, TileY)",
-																								"Shatter.X",
-																								"Shatter.Y",
-																								"Tilex",
-																								"TileY"
-																							]
-																						},
-																						{
-																							"callFunction": "BlockDrop",
-																							"sid": 469692463875173,
-																							"parameters": [
-																								"Terrain.TileAt(Tilex, TileY)",
-																								"Shatter.X",
-																								"Shatter.Y",
-																								"Tilex",
-																								"TileY"
-																							]
-																						}
-																					],
+																					"actions": [],
 																					"sid": 369631333603392,
 																					"children": [
 																						{
 																							"eventType": "block",
 																							"conditions": [
 																								{
-																									"id": "has-key",
-																									"objectClass": "JSON",
-																									"sid": 270844565043550,
+																									"id": "evaluate-expression",
+																									"objectClass": "System",
+																									"sid": 395464038647973,
 																									"parameters": {
-																										"path": "\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex, TileY)&\".No_Silk_Drop\""
+																										"value": "Sprite.Silk = 1"
 																									}
 																								}
 																							],
 																							"actions": [
 																								{
 																									"callFunction": "Drop_Item",
-																									"sid": 307057892932368,
+																									"sid": 184998915302310,
 																									"parameters": [
 																										"1",
-																										"JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex, TileY)&\".No_Silk_Drop\")",
+																										"JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex, TileY)&\".Silk_Drop\")",
 																										"Shatter.X",
 																										"Shatter.Y"
 																									]
 																								}
 																							],
-																							"sid": 956095680864619
+																							"sid": 644183367726680
+																						},
+																						{
+																							"eventType": "block",
+																							"conditions": [
+																								{
+																									"id": "else",
+																									"objectClass": "System",
+																									"sid": 748675359450854
+																								}
+																							],
+																							"actions": [],
+																							"sid": 497778834801894,
+																							"children": [
+																								{
+																									"eventType": "block",
+																									"conditions": [
+																										{
+																											"id": "has-key",
+																											"objectClass": "JSON",
+																											"sid": 578589120584963,
+																											"parameters": {
+																												"path": "\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex, TileY)&\".SpecialForDrop\""
+																											}
+																										}
+																									],
+																									"actions": [],
+																									"sid": 983443954209189,
+																									"children": [
+																										{
+																											"eventType": "block",
+																											"conditions": [
+																												{
+																													"id": "evaluate-expression",
+																													"objectClass": "System",
+																													"sid": 616235839058191,
+																													"parameters": {
+																														"value": "JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex, TileY)&\".SpecialForDrop\") = Inventory_Item.AnimationName"
+																													}
+																												}
+																											],
+																											"actions": [
+																												{
+																													"callFunction": "BlockDrop",
+																													"sid": 997532565883276,
+																													"parameters": [
+																														"Terrain.TileAt(Tilex, TileY)",
+																														"Shatter.X",
+																														"Shatter.Y",
+																														"Tilex",
+																														"TileY",
+																														"Inventory_Item.AnimationName"
+																													]
+																												}
+																											],
+																											"sid": 625026768581437
+																										}
+																									]
+																								},
+																								{
+																									"eventType": "block",
+																									"conditions": [
+																										{
+																											"id": "else",
+																											"objectClass": "System",
+																											"sid": 112377367288012
+																										}
+																									],
+																									"actions": [],
+																									"sid": 372069262932090,
+																									"children": [
+																										{
+																											"eventType": "block",
+																											"conditions": [
+																												{
+																													"id": "has-key",
+																													"objectClass": "JSON",
+																													"sid": 211199140318251,
+																													"parameters": {
+																														"path": "\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex, TileY)&\".No_Silk_Drop\""
+																													}
+																												}
+																											],
+																											"actions": [
+																												{
+																													"callFunction": "Drop_Item",
+																													"sid": 996004494271246,
+																													"parameters": [
+																														"1",
+																														"JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex, TileY)&\".No_Silk_Drop\")",
+																														"Shatter.X",
+																														"Shatter.Y"
+																													]
+																												}
+																											],
+																											"sid": 304324323150742
+																										},
+																										{
+																											"eventType": "block",
+																											"conditions": [
+																												{
+																													"id": "else",
+																													"objectClass": "System",
+																													"sid": 448638567677088
+																												}
+																											],
+																											"actions": [
+																												{
+																													"callFunction": "BlockDrop",
+																													"sid": 963923779876573,
+																													"parameters": [
+																														"Terrain.TileAt(Tilex, TileY)",
+																														"Shatter.X",
+																														"Shatter.Y",
+																														"Tilex",
+																														"TileY",
+																														"Inventory_Item.AnimationName"
+																													]
+																												}
+																											],
+																											"sid": 527669180984666
+																										}
+																									]
+																								}
+																							]
 																						}
 																					]
 																				},
@@ -5055,6 +5939,13 @@
 							"initialValue": "0",
 							"comment": "",
 							"sid": 739464688928371
+						},
+						{
+							"name": "DestroyedBy",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 742073552412132
 						}
 					],
 					"eventType": "function-block",
@@ -5172,6 +6063,126 @@
 										}
 									],
 									"sid": 708830769922169
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 448889554476078,
+									"parameters": {
+										"value": "Tile = 52"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 204863904997417,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 734350089442959,
+											"parameters": {
+												"value": "DestroyedBy = \"Hook\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 245639142968696,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "has-key",
+													"objectClass": "JSON",
+													"sid": 962028846791037,
+													"parameters": {
+														"path": "\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex, TileY)&\".Drop\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 242965143626449,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "for-each",
+															"objectClass": "JSON",
+															"sid": 305735634529217,
+															"parameters": {
+																"path": "\"Settings.Config.Tiles.\"&Tile&\".Drop\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 214600907273749,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "evaluate-expression",
+																	"objectClass": "System",
+																	"sid": 933952885756752,
+																	"parameters": {
+																		"value": "random(100) < JSON.Get(\"Settings.Config.Tiles.\"&Tile&\".Drop.\"&JSON.CurrentKey)"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "Drop_Item",
+																	"sid": 517293148860381,
+																	"parameters": [
+																		"1",
+																		"JSON.CurrentKey",
+																		"X",
+																		"Y"
+																	]
+																}
+															],
+															"sid": 190661434333388
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 104441196517478,
+													"parameters": {
+														"value": "random(100) < 60"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "Drop_Item",
+													"sid": 266424675498010,
+													"parameters": [
+														"1",
+														"\"Worm\"",
+														"X",
+														"Y"
+													]
+												}
+											],
+											"sid": 137605684449966
+										}
+									]
 								}
 							]
 						}
@@ -6153,14 +7164,6 @@
 													"objectClass": "Sprite",
 													"sid": 156258390647245,
 													"behaviorType": "Platform"
-												},
-												{
-													"id": "evaluate-expression",
-													"objectClass": "System",
-													"sid": 328451553657975,
-													"parameters": {
-														"value": "Functions.TileHaveCollision(Terrain.TileAt(Terrain.PositionToTileX(Sprite.X),Terrain.PositionToTileY(Sprite.Y)-1)) = 0"
-													}
 												}
 											],
 											"actions": [
@@ -6244,9 +7247,9 @@
 												{
 													"id": "evaluate-expression",
 													"objectClass": "System",
-													"sid": 692230857525663,
+													"sid": 459363814187317,
 													"parameters": {
-														"value": "Tile = -1"
+														"value": "Functions.TileHaveCollision(Tile) = 1"
 													}
 												}
 											],
@@ -7634,55 +8637,7 @@
 									]
 								}
 							],
-							"sid": 985081926777900,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Sprite",
-											"sid": 936391594988841,
-											"parameters": {
-												"object": "Ladder"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-y",
-											"objectClass": "Sprite",
-											"sid": 370748577644564,
-											"parameters": {
-												"y": "Self.Y-1"
-											}
-										},
-										{
-											"id": "set-gravity",
-											"objectClass": "Sprite",
-											"sid": 316495348938023,
-											"behaviorType": "Platform",
-											"parameters": {
-												"gravity": "0"
-											}
-										}
-									],
-									"sid": 716186186310459,
-									"disabled": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 325278736368834
-										}
-									],
-									"actions": [],
-									"sid": 220857217569725
-								}
-							]
+							"sid": 985081926777900
 						},
 						{
 							"eventType": "block",
@@ -8320,7 +9275,9 @@
 																		"transform-w": false,
 																		"transform-h": false,
 																		"transform-a": false,
+																		"transform-o": true,
 																		"transform-z-elevation": false,
+																		"transform-visibility": true,
 																		"destroy-with-parent": false
 																	}
 																}
@@ -8520,7 +9477,9 @@
 																"transform-w": false,
 																"transform-h": false,
 																"transform-a": false,
+																"transform-o": true,
 																"transform-z-elevation": false,
+																"transform-visibility": true,
 																"destroy-with-parent": false
 															}
 														}
@@ -8700,7 +9659,9 @@
 																"transform-w": true,
 																"transform-h": true,
 																"transform-a": true,
+																"transform-o": true,
 																"transform-z-elevation": true,
+																"transform-visibility": true,
 																"destroy-with-parent": true
 															}
 														}

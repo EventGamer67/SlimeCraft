@@ -60,6 +60,10 @@
 			"includeSheet": "Enemy"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "AnimatedTriggers"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -1180,36 +1184,7 @@
 													}
 												}
 											],
-											"sid": 284939329716152,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "evaluate-expression",
-															"objectClass": "System",
-															"sid": 961351943647850,
-															"parameters": {
-																"value": "random(100) < 10"
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-tile",
-															"objectClass": "Terrain",
-															"sid": 193957401214544,
-															"parameters": {
-																"tile-x": "loopindex(\"x\")",
-																"tile-y": "loopindex(\"y\")",
-																"tile": "53",
-																"state": "normal"
-															}
-														}
-													],
-													"sid": 302295969872437
-												}
-											]
+											"sid": 284939329716152
 										}
 									]
 								},
@@ -1257,36 +1232,7 @@
 													}
 												}
 											],
-											"sid": 337525907726282,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "evaluate-expression",
-															"objectClass": "System",
-															"sid": 325658404692174,
-															"parameters": {
-																"value": "random(100) < 10"
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-tile",
-															"objectClass": "Terrain",
-															"sid": 935917351230210,
-															"parameters": {
-																"tile-x": "loopindex(\"x\")",
-																"tile-y": "loopindex(\"y\")",
-																"tile": "53",
-																"state": "normal"
-															}
-														}
-													],
-													"sid": 964397930931174
-												}
-											]
+											"sid": 337525907726282
 										}
 									]
 								}
@@ -1911,6 +1857,23 @@
 																"40",
 																"10"
 															]
+														},
+														{
+															"id": "tween-one-property",
+															"objectClass": "StarsBg",
+															"sid": 564883706673058,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"\"",
+																"property": "offsetOpacity",
+																"end-value": "50",
+																"time": "2",
+																"ease": "default",
+																"destroy-on-complete": "no",
+																"loop": "no",
+																"ping-pong": "no",
+																"repeat-count": "1"
+															}
 														}
 													],
 													"sid": 277783179568359
@@ -1957,6 +1920,36 @@
 																"0",
 																"10"
 															]
+														},
+														{
+															"id": "tween-one-property",
+															"objectClass": "StarsBg",
+															"sid": 281081887190848,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"\"",
+																"property": "offsetOpacity",
+																"end-value": "0",
+																"time": "2",
+																"ease": "default",
+																"destroy-on-complete": "no",
+																"loop": "no",
+																"ping-pong": "no",
+																"repeat-count": "1"
+															}
+														},
+														{
+															"id": "wait-for-previous-actions",
+															"objectClass": "System",
+															"sid": 408927232243266
+														},
+														{
+															"id": "set-visible",
+															"objectClass": "StarsBg",
+															"sid": 183118835345537,
+															"parameters": {
+																"visibility": "invisible"
+															}
 														}
 													],
 													"sid": 535208218186873
@@ -2003,6 +1996,31 @@
 																"60",
 																"10"
 															]
+														},
+														{
+															"id": "set-visible",
+															"objectClass": "StarsBg",
+															"sid": 381372799306294,
+															"parameters": {
+																"visibility": "visible"
+															}
+														},
+														{
+															"id": "tween-one-property",
+															"objectClass": "StarsBg",
+															"sid": 520611107308981,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"\"",
+																"property": "offsetOpacity",
+																"end-value": "50",
+																"time": "2",
+																"ease": "default",
+																"destroy-on-complete": "no",
+																"loop": "no",
+																"ping-pong": "no",
+																"repeat-count": "1"
+															}
 														}
 													],
 													"sid": 579162557918494
@@ -2049,6 +2067,23 @@
 																"80",
 																"10"
 															]
+														},
+														{
+															"id": "tween-one-property",
+															"objectClass": "StarsBg",
+															"sid": 351074299264617,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"\"",
+																"property": "offsetOpacity",
+																"end-value": "80",
+																"time": "2",
+																"ease": "default",
+																"destroy-on-complete": "no",
+																"loop": "no",
+																"ping-pong": "no",
+																"repeat-count": "1"
+															}
 														}
 													],
 													"sid": 563435713364300
@@ -4165,6 +4200,14 @@
 								"layer": "\"Interfaces\""
 							},
 							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Drop_Item",
+							"sid": 493622078535275,
+							"parameters": {
+								"instance-variable": "Pickable"
+							}
 						}
 					],
 					"actions": [],
@@ -19067,6 +19110,251 @@
 					"sid": 343682981326412
 				},
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 724134925496723
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "createClouds",
+							"sid": 876623527649433
+						}
+					],
+					"sid": 375525658846347
+				},
+				{
+					"functionName": "createClouds",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 562342208626023,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "density",
+							"type": "number",
+							"initialValue": "8",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 304233644372166
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 203183517699387,
+									"parameters": {
+										"count": "20"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 594196021840370,
+									"parameters": {
+										"object-to-create": "Sprite20",
+										"layer": "\"Clouds\"",
+										"x": "random(0,LayoutWidth)",
+										"y": "random(0,LayoutHeight)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Sprite20",
+									"sid": 873038049353465,
+									"parameters": {
+										"instance-variable": "speed",
+										"value": "random(1,2)"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Sprite20",
+									"sid": 881406403446193,
+									"parameters": {
+										"frame-number": "random(Sprite20.AnimationFrameCount)"
+									}
+								}
+							],
+							"sid": 298266126491862,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 388247800184394,
+									"parameters": {
+										"name": "\"x\"",
+										"start-index": "0",
+										"end-index": "density"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 810727061685589,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 666556864290629,
+											"parameters": {
+												"name": "\"y\"",
+												"start-index": "0",
+												"end-index": "density"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 841125536397020,
+											"parameters": {
+												"object-to-create": "Sprite20",
+												"layer": "\"Clouds\"",
+												"x": "(LayoutWidth/density)*loopindex(\"x\")",
+												"y": "(LayoutHeight/density)*loopindex(\"y\")",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Sprite20",
+											"sid": 832562352102235,
+											"parameters": {
+												"instance-variable": "speed",
+												"value": "random(1,2)"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "Sprite20",
+											"sid": 258414453482206,
+											"parameters": {
+												"frame-number": "random(Sprite20.AnimationFrameCount)"
+											}
+										}
+									],
+									"sid": 375377482355455
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 522862742436934,
+									"parameters": {
+										"count": "20"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 363480146834158,
+									"parameters": {
+										"object-to-create": "Sprite18",
+										"layer": "\"Clouds\"",
+										"x": "random(0,LayoutWidth)",
+										"y": "random(0,LayoutHeight)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Sprite18",
+									"sid": 213177097813062,
+									"parameters": {
+										"frame-number": "random(Sprite18.AnimationFrameCount)"
+									}
+								}
+							],
+							"sid": 330002706377670
+						}
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Clouds",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-x",
+									"objectClass": "Sprite20",
+									"sid": 394426553752105,
+									"parameters": {
+										"x": "Self.X+(Self.speed*dt*60)"
+									}
+								}
+							],
+							"sid": 542052789893041,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-x",
+											"objectClass": "Sprite20",
+											"sid": 424413308473372,
+											"parameters": {
+												"comparison": 2,
+												"x-co-ordinate": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-y",
+											"objectClass": "Sprite20",
+											"sid": 396779899735913,
+											"parameters": {
+												"y": "random(0,LayoutHeight)"
+											}
+										}
+									],
+									"sid": 514126880935402
+								}
+							]
+						}
+					],
+					"sid": 229564027832672
+				},
+				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "Snow",
@@ -19271,11 +19559,277 @@
 				{
 					"eventType": "group",
 					"disabled": false,
-					"title": "Sun",
+					"title": "Rain",
 					"description": "",
 					"isActiveOnStart": false,
-					"children": [],
-					"sid": 896922647284430
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 180818800774039,
+									"parameters": {
+										"interval-seconds": "0.05"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 190992995322617,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 953172039663917,
+											"parameters": {
+												"count": "10"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 546473739197593,
+											"parameters": {
+												"object-to-create": "WeatherParticle",
+												"layer": "\"Layer 1\"",
+												"x": "random(ViewportLeft(\"Layer 1\")-50,ViewportRight(\"Layer 1\")+50)",
+												"y": "ViewportTop(\"Layer 1\")",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "WeatherParticle",
+											"sid": 549449739000430,
+											"parameters": {
+												"instance-variable": "Weight",
+												"value": "random(5,10)"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "WeatherParticle",
+											"sid": 543317850831334,
+											"parameters": {
+												"angle": "90+5"
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "WeatherParticle",
+											"sid": 538097059194743,
+											"parameters": {
+												"width": "Self.Weight/2",
+												"height": "Self.Weight/2"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "WeatherParticle",
+											"sid": 437302285123557,
+											"parameters": {
+												"animation": "\"Animation 2\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 607295114022315
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "move-forward",
+									"objectClass": "WeatherParticle",
+									"sid": 850951989921609,
+									"parameters": {
+										"distance": "Self.Weight"
+									}
+								}
+							],
+							"sid": 288623176880948,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-collision-with-another-object",
+											"objectClass": "WeatherParticle",
+											"sid": 686604757195721,
+											"parameters": {
+												"object": "Terrain"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "WeatherParticle",
+											"sid": 717676582005224
+										}
+									],
+									"sid": 125405083291900,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "tilex",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 610921242855200
+										},
+										{
+											"eventType": "variable",
+											"name": "tiley",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 386168636801159
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 672695650430890,
+													"parameters": {
+														"variable": "tilex",
+														"value": "Terrain.PositionToTileX(WeatherParticle.X)"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 994448700926053,
+													"parameters": {
+														"variable": "tiley",
+														"value": "Terrain.PositionToTileY(WeatherParticle.Y)"
+													}
+												}
+											],
+											"sid": 335296351829395,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-tile-at",
+															"objectClass": "Terrain",
+															"sid": 940239606897322,
+															"parameters": {
+																"tile-x": "tilex",
+																"tile-y": "tiley",
+																"comparison": 0,
+																"tile": "241"
+															}
+														},
+														{
+															"id": "compare-tile-at",
+															"objectClass": "Terrain",
+															"sid": 786902710451576,
+															"parameters": {
+																"tile-x": "tilex",
+																"tile-y": "tiley",
+																"comparison": 0,
+																"tile": "242"
+															}
+														},
+														{
+															"id": "compare-tile-at",
+															"objectClass": "Terrain",
+															"sid": 953060065200766,
+															"parameters": {
+																"tile-x": "tilex",
+																"tile-y": "tiley",
+																"comparison": 0,
+																"tile": "243"
+															}
+														},
+														{
+															"id": "compare-tile-at",
+															"objectClass": "Terrain",
+															"sid": 724531329050524,
+															"parameters": {
+																"tile-x": "tilex",
+																"tile-y": "tiley",
+																"comparison": 0,
+																"tile": "244"
+															}
+														},
+														{
+															"id": "compare-tile-at",
+															"objectClass": "Terrain",
+															"sid": 106734828243610,
+															"parameters": {
+																"tile-x": "tilex",
+																"tile-y": "tiley",
+																"comparison": 0,
+																"tile": "245"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-tile",
+															"objectClass": "Terrain",
+															"sid": 189633526308180,
+															"parameters": {
+																"tile-x": "tilex",
+																"tile-y": "tiley",
+																"tile": "Terrain.TileAt(tilex,tiley)+round(random(1)-0.45)",
+																"state": "normal"
+															}
+														}
+													],
+													"sid": 719045386121616,
+													"isOrBlock": true
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-y",
+											"objectClass": "WeatherParticle",
+											"sid": 187341956386976,
+											"parameters": {
+												"comparison": 4,
+												"y-co-ordinate": "Sprite.Y+100"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "WeatherParticle",
+											"sid": 486608589878161
+										}
+									],
+									"sid": 995228119443150
+								}
+							]
+						}
+					],
+					"sid": 437162522166500
 				}
 			],
 			"sid": 784930409669118

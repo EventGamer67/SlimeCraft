@@ -105,6 +105,29 @@
 				{
 					"id": "request-project-file",
 					"objectClass": "AJAX",
+					"sid": 671366000679877,
+					"parameters": {
+						"tag": "\"\"",
+						"file": "Quests.json"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 850922223844827
+				},
+				{
+					"id": "set-json",
+					"objectClass": "JSON",
+					"sid": 676774604011792,
+					"parameters": {
+						"path": "\"Quests\"",
+						"json": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
 					"sid": 919013437534399,
 					"parameters": {
 						"tag": "\"\"",

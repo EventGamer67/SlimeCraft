@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 32900,
+	"savedWithRelease": 33300,
 	"name": "Arrow_Rain",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -58,10 +58,10 @@
 		{
 			"type": "plugin",
 			"id": "Eponesh_GameScore",
-			"name": "GameScore",
+			"name": "GamePush",
 			"author": "Eponesh",
 			"bundled": false,
-			"version": "1.0.27"
+			"version": "1.0.38"
 		},
 		{
 			"type": "plugin",
@@ -90,7 +90,7 @@
 			"name": "In-Game Console",
 			"author": "Mixon Games",
 			"bundled": false,
-			"version": "1.0.0.0"
+			"version": "1.0.1.0"
 		},
 		{
 			"type": "plugin",
@@ -159,6 +159,13 @@
 			"type": "plugin",
 			"id": "shadowlight",
 			"name": "Shadow light",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -388,7 +395,16 @@
 			"Sprite28",
 			"Hand2",
 			"Fire",
-			"DeathParticle"
+			"DeathParticle",
+			"9patch4",
+			"Sprite16",
+			"9patch5",
+			"RewardBox",
+			"Particles2",
+			"Fantics",
+			"QuestSpawner",
+			"Sun",
+			"StarsBg"
 		],
 		"subfolders": []
 	},
@@ -398,18 +414,19 @@
 			"members": [
 				"PlayerDigRay",
 				"Sprite"
-			],
-			"selectMode": "normal"
+			]
 		}
 	],
 	"families": {
 		"items": [
 			"Btns",
-			"Family1",
+			"TileMaps",
 			"ToSave",
 			"ToLoad",
 			"Enemies",
-			"EnemyPieces"
+			"EnemyPieces",
+			"QuestElement",
+			"AdvBtns"
 		],
 		"subfolders": []
 	},
@@ -433,7 +450,8 @@
 			"Functions_es",
 			"Console",
 			"SceneLoader_es",
-			"Enemy"
+			"Enemy",
+			"AnimatedTriggers"
 		],
 		"subfolders": []
 	},

@@ -3,8 +3,29 @@
 	"plugin-id": "TiledBg",
 	"sid": 457335673305332,
 	"isGlobal": false,
-	"instanceVariables": [],
-	"behaviorTypes": [],
+	"instanceVariables": [
+		{
+			"name": "sx",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 708822369430143
+		},
+		{
+			"name": "sy",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 103482808837275
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 519175630008110
+		}
+	],
 	"effectTypes": [],
 	"image": {
 		"width": 4,

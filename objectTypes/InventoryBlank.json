@@ -24,6 +24,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 450847693024824
+		},
+		{
+			"name": "w",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 814575248574689
+		},
+		{
+			"name": "h",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 910953009661997
 		}
 	],
 	"behaviorTypes": [

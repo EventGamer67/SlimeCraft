@@ -1,0 +1,285 @@
+{
+	"name": "AnimatedTriggers",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-start",
+					"objectClass": "Touch",
+					"sid": 271995956949878
+				}
+			],
+			"actions": [],
+			"sid": 974537096190279,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 680266130754729,
+							"parameters": {
+								"object": "AdvBtns"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "AdvBtns",
+							"sid": 847399034537554,
+							"parameters": {
+								"instance-variable": "active"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 102589240070516,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-topbottom",
+									"objectClass": "AdvBtns",
+									"sid": 874439865416403,
+									"parameters": {
+										"which": "top"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "AdvBtns",
+									"sid": 482869792493945,
+									"parameters": {
+										"instance-variable": "touched"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "AdvBtns",
+									"sid": 661807910313735,
+									"parameters": {
+										"instance-variable": "touched",
+										"value": "true"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "AdvBtns",
+									"sid": 627690188088497,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"minimize\"",
+										"property": "size",
+										"end-x": "Self.w*0.8",
+										"end-y": "Self.h*0.8",
+										"time": "0.1",
+										"ease": "easeoutsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 909780546030675
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-end",
+					"objectClass": "Touch",
+					"sid": 706358388442853
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "AdvBtns",
+					"sid": 373961342947926,
+					"parameters": {
+						"instance-variable": "active"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 735422359320656,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 746073419236510,
+							"parameters": {
+								"object": "AdvBtns",
+								"expression": "AdvBtns.touched = 1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "AdvBtns",
+							"sid": 636965603479780,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"appear\"",
+								"property": "size",
+								"end-x": "Self.w",
+								"end-y": "Self.h",
+								"time": "0.1",
+								"ease": "easeoutback",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 299141025683812
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "AdvBtns",
+							"sid": 554836916576760,
+							"parameters": {
+								"instance-variable": "touched",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 159418511771035
+				}
+			]
+		},
+		{
+			"functionName": "disableOtherBtns",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "CurrentLayer",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 323417168072670
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 268220475926345,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 477309577913138,
+							"parameters": {
+								"object": "AdvBtns",
+								"expression": "AdvBtns.LayerName <> CurrentLayer"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "AdvBtns",
+							"sid": 825067962370471,
+							"parameters": {
+								"instance-variable": "active",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 273546638504370
+				}
+			]
+		},
+		{
+			"functionName": "enableCurBtns",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "CurrentLayer",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 233260445677022
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 486226834699118,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 422493005429531,
+							"parameters": {
+								"name": "\"token\"",
+								"start-index": "0",
+								"end-index": "tokencount(CurrentLayer,\",\") "
+							}
+						}
+					],
+					"actions": [],
+					"sid": 688245148015082,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 618433927920878,
+									"parameters": {
+										"object": "AdvBtns",
+										"expression": "AdvBtns.LayerName = tokenat(CurrentLayer,loopindex(\"token\"),\",\")"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "AdvBtns",
+									"sid": 690020593418229,
+									"parameters": {
+										"instance-variable": "active",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 155586775312501
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 342024419572520
+}

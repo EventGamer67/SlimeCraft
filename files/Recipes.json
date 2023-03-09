@@ -82,6 +82,20 @@
 				"Count": 1
 			}
 		},
+		"WoodenScissors": {
+			"Type": "Crafting_Shapeless",
+			"Pattern": [
+				"A0",
+				"0A"
+			],
+			"Key": {
+				"A": "Oak_Planks"
+			},
+			"Result": {
+				"Item": "WoodenScissors",
+				"Count": 30
+			}
+		},
 		"Chest": {
 			"Type": "Crafting_Shapeless",
 			"Pattern": [
@@ -95,6 +109,36 @@
 			"Result": {
 				"Item": "Chest",
 				"Count": 1
+			}
+		},
+		"Hook": {
+			"Type": "Crafting_Shapeless",
+			"Pattern": [
+				"AA",
+				"A0",
+				"A0"
+			],
+			"Key": {
+				"A": "Wood_Stick"
+			},
+			"Result": {
+				"Item": "Hook",
+				"Count": 30
+			}
+		},
+		"HookB": {
+			"Type": "Crafting_Shapeless",
+			"Pattern": [
+				"AA",
+				"0A",
+				"0A"
+			],
+			"Key": {
+				"A": "Wood_Stick"
+			},
+			"Result": {
+				"Item": "Hook",
+				"Count": 30
 			}
 		},
 		"Sieve": {

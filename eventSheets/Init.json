@@ -84,6 +84,7 @@
 					"id": "request-project-file",
 					"objectClass": "AJAX",
 					"sid": 823427935346625,
+					"disabled": true,
 					"parameters": {
 						"tag": "\"\"",
 						"file": "Player.json"
@@ -92,12 +93,14 @@
 				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
-					"sid": 553998475144603
+					"sid": 553998475144603,
+					"disabled": true
 				},
 				{
 					"id": "set-json",
 					"objectClass": "JSON",
 					"sid": 195510959171604,
+					"disabled": true,
 					"parameters": {
 						"path": "\"Player\"",
 						"json": "AJAX.LastData"

@@ -2,6 +2,10 @@
 	"name": "Menu_es",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "AnimatedTriggers"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -537,26 +541,31 @@
 					"parameters": {
 						"object": "Sprite24"
 					}
+				},
+				{
+					"id": "pick-topbottom",
+					"objectClass": "Sprite24",
+					"sid": 284072152158115,
+					"parameters": {
+						"which": "top"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Sprite24",
+					"sid": 255064180908786,
+					"parameters": {
+						"instance-variable": "active"
+					}
 				}
 			],
 			"actions": [
 				{
-					"id": "tween-two-properties",
-					"objectClass": "Sprite24",
-					"sid": 739558808131240,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "size",
-						"end-x": "Self.Width+3",
-						"end-y": "Self.Height+3",
-						"time": "0.1",
-						"ease": "easeoutcubic",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "yes",
-						"repeat-count": "1"
-					}
+					"callFunction": "disableOtherBtns",
+					"sid": 748065183647528,
+					"parameters": [
+						"\"Window\""
+					]
 				}
 			],
 			"sid": 148725908630896,
@@ -616,6 +625,16 @@
 							"sid": 859844224740851
 						},
 						{
+							"callFunction": "BlackoutByTiled",
+							"sid": 942973712182833,
+							"parameters": [
+								false,
+								"Sprite24.LayerName",
+								"0.2",
+								"0"
+							]
+						},
+						{
 							"callFunction": "CloseTable",
 							"sid": 849543503029823,
 							"parameters": [
@@ -629,16 +648,14 @@
 						{
 							"id": "wait-for-previous-actions",
 							"objectClass": "System",
-							"sid": 606434301763398
+							"sid": 606434301763398,
+							"disabled": true
 						},
 						{
-							"callFunction": "BlackoutByTiled",
-							"sid": 705959877899834,
+							"callFunction": "enableCurBtns",
+							"sid": 759608864163207,
 							"parameters": [
-								false,
-								"Sprite24.LayerName",
-								"0.5",
-								"70"
+								"\"UI\""
 							]
 						}
 					],
@@ -677,51 +694,6 @@
 					"isOrBlock": true
 				}
 			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-touching-object",
-					"objectClass": "Touch",
-					"sid": 258680041191923,
-					"parameters": {
-						"object": "Sprite24"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-animation-frame",
-					"objectClass": "Sprite24",
-					"sid": 857467924333129,
-					"parameters": {
-						"frame-number": "1"
-					}
-				}
-			],
-			"sid": 945045843589605
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "else",
-					"objectClass": "System",
-					"sid": 927226864623622
-				}
-			],
-			"actions": [
-				{
-					"id": "set-animation-frame",
-					"objectClass": "Sprite24",
-					"sid": 401950577815116,
-					"parameters": {
-						"frame-number": "0"
-					}
-				}
-			],
-			"sid": 560850380716795
 		},
 		{
 			"eventType": "block",
@@ -1554,27 +1526,37 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 751473086965257,
+							"sid": 671838675936062,
 							"parameters": {
 								"object-to-create": "InventoryBlank",
 								"layer": "\"Window\"",
 								"x": "Functions.Get_Center_X(\"Window\")",
-								"y": "Functions.Get_Center_Y(\"Window\")-1000",
+								"y": "Functions.Get_Center_Y(\"Window\")",
 								"create-hierarchy": true,
 								"template-name": "\"WorldCreate\""
 							}
 						},
 						{
-							"id": "tween-one-property",
+							"id": "set-size",
 							"objectClass": "InventoryBlank",
-							"sid": 281117626670856,
+							"sid": 419521995924185,
+							"parameters": {
+								"width": "Self.w*0.6",
+								"height": "Self.h*0.6"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "InventoryBlank",
+							"sid": 310049601634651,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"Show\"",
-								"property": "offsetY",
-								"end-value": "Functions.Get_Center_Y(\"Window\")",
-								"time": "0.6",
-								"ease": "easeoutcubic",
+								"property": "size",
+								"end-x": "Self.w",
+								"end-y": "Self.h",
+								"time": "0.2",
+								"ease": "easeoutback",
 								"destroy-on-complete": "no",
 								"loop": "no",
 								"ping-pong": "no",
@@ -1641,6 +1623,24 @@
 			"conditions": [],
 			"actions": [
 				{
+					"id": "tween-one-property",
+					"objectClass": "InventoryBlank",
+					"sid": 402143723892352,
+					"disabled": true,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"Show\"",
+						"property": "offsetY",
+						"end-value": "Functions.Get_Center_Y(\"UI\")",
+						"time": "0.3",
+						"ease": "easeoutcubic",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
 					"callFunction": "ResetScroll",
 					"sid": 720043099066650
 				},
@@ -1657,27 +1657,37 @@
 				{
 					"id": "create-object",
 					"objectClass": "System",
-					"sid": 419835902346634,
+					"sid": 192087004103903,
 					"parameters": {
 						"object-to-create": "InventoryBlank",
 						"layer": "\"UI\"",
 						"x": "Functions.Get_Center_X(\"UI\")",
-						"y": "Functions.Get_Center_Y(\"UI\")-1000",
+						"y": "Functions.Get_Center_Y(\"UI\")",
 						"create-hierarchy": true,
 						"template-name": "\"WorldChooser\""
 					}
 				},
 				{
-					"id": "tween-one-property",
+					"id": "set-size",
 					"objectClass": "InventoryBlank",
-					"sid": 257543895006692,
+					"sid": 440580790678590,
+					"parameters": {
+						"width": "Self.w*0.6",
+						"height": "Self.h*0.6"
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "InventoryBlank",
+					"sid": 493558742559721,
 					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "\"Show\"",
-						"property": "offsetY",
-						"end-value": "Functions.Get_Center_Y(\"UI\")",
-						"time": "0.3",
-						"ease": "easeoutcubic",
+						"property": "size",
+						"end-x": "Self.w",
+						"end-y": "Self.h",
+						"time": "0.2",
+						"ease": "easeoutback",
 						"destroy-on-complete": "no",
 						"loop": "no",
 						"ping-pong": "no",
@@ -1687,7 +1697,7 @@
 				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
-					"sid": 437669161102112
+					"sid": 885525734299543
 				}
 			],
 			"sid": 700984896169943,
@@ -2219,7 +2229,8 @@
 								{
 									"id": "wait-for-previous-actions",
 									"objectClass": "System",
-									"sid": 526596171855795
+									"sid": 526596171855795,
+									"disabled": true
 								}
 							],
 							"sid": 741478766030889
@@ -2275,7 +2286,8 @@
 								{
 									"id": "wait-for-previous-actions",
 									"objectClass": "System",
-									"sid": 644413353412877
+									"sid": 644413353412877,
+									"disabled": true
 								}
 							],
 							"sid": 860467047493747
@@ -2359,16 +2371,17 @@
 					],
 					"actions": [
 						{
-							"id": "tween-one-property",
+							"id": "tween-two-properties",
 							"objectClass": "InventoryBlank",
-							"sid": 616733350492034,
+							"sid": 752043547244085,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"\"",
-								"property": "offsetY",
-								"end-value": "-1000",
-								"time": "0.5",
-								"ease": "easeincubic",
+								"property": "size",
+								"end-x": "Self.w*0.6",
+								"end-y": "Self.h*0.6",
+								"time": "0.2",
+								"ease": "easeinback",
 								"destroy-on-complete": "yes",
 								"loop": "no",
 								"ping-pong": "no",
@@ -3005,14 +3018,23 @@
 				{
 					"id": "create-object",
 					"objectClass": "System",
-					"sid": 567770043249087,
+					"sid": 355543897271960,
 					"parameters": {
 						"object-to-create": "InventoryBlank",
 						"layer": "\"Window\"",
 						"x": "Functions.Get_Center_X(\"Window\")",
-						"y": "-1000",
+						"y": "Functions.Get_Center_Y(\"Window\")",
 						"create-hierarchy": true,
 						"template-name": "\"MessageBox\""
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "InventoryBlank",
+					"sid": 238188670436995,
+					"parameters": {
+						"width": "Self.w*0.6",
+						"height": "Self.h*0.6"
 					}
 				},
 				{
@@ -3213,16 +3235,17 @@
 									"conditions": [],
 									"actions": [
 										{
-											"id": "tween-one-property",
+											"id": "tween-two-properties",
 											"objectClass": "InventoryBlank",
-											"sid": 863508797689316,
+											"sid": 659776778070032,
 											"behaviorType": "Tween",
 											"parameters": {
 												"tags": "\"\"",
-												"property": "offsetY",
-												"end-value": "Functions.Get_Center_Y(\"Window\")",
-												"time": "0.6",
-												"ease": "easeoutcubic",
+												"property": "size",
+												"end-x": "Self.w",
+												"end-y": "Self.h",
+												"time": "0.2",
+												"ease": "easeoutback",
 												"destroy-on-complete": "no",
 												"loop": "no",
 												"ping-pong": "no",
@@ -3259,12 +3282,12 @@
 										},
 										{
 											"callFunction": "BlackoutByTiled",
-											"sid": 213417975161787,
+											"sid": 965861805828049,
 											"parameters": [
 												false,
 												"\"Window\"",
 												"0.5",
-												"70"
+												"0"
 											]
 										},
 										{
@@ -3319,28 +3342,26 @@
 							"parameters": {
 								"object": "Inventory_Blank"
 							}
-						}
-					],
-					"actions": [
+						},
 						{
-							"id": "tween-two-properties",
-							"objectClass": "Inventory_Blank",
-							"sid": 554926563676819,
-							"behaviorType": "Tween",
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 973422661794178,
 							"parameters": {
-								"tags": "\"\"",
-								"property": "size",
-								"end-x": "Self.Width+3",
-								"end-y": "Self.Height+3",
-								"time": "0.1",
-								"ease": "easeoutcubic",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "yes",
-								"repeat-count": "1"
+								"object": "Sprite24"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Inventory_Blank",
+							"sid": 664087133369584,
+							"parameters": {
+								"instance-variable": "active"
 							}
 						}
 					],
+					"actions": [],
 					"sid": 498554750440280,
 					"children": [
 						{
@@ -3355,7 +3376,15 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"callFunction": "disableOtherBtns",
+									"sid": 235383378028635,
+									"parameters": [
+										"\"Window\""
+									]
+								}
+							],
 							"sid": 999557570344170,
 							"children": [
 								{
@@ -3432,6 +3461,13 @@
 												{
 													"callFunction": "UpdateWorldsList",
 													"sid": 809965612594207
+												},
+												{
+													"callFunction": "enableCurBtns",
+													"sid": 439721101429410,
+													"parameters": [
+														"\"UI\""
+													]
 												}
 											],
 											"sid": 628451648839343
@@ -3450,7 +3486,15 @@
 													}
 												}
 											],
-											"actions": [],
+											"actions": [
+												{
+													"callFunction": "enableCurBtns",
+													"sid": 856478081911231,
+													"parameters": [
+														"\"UI,Slots\""
+													]
+												}
+											],
 											"sid": 911101591098009
 										}
 									]

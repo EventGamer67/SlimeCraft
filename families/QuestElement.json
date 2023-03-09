@@ -1,0 +1,47 @@
+{
+	"name": "QuestElement",
+	"plugin-id": "Sprite",
+	"sid": 896518981119187,
+	"instanceVariables": [
+		{
+			"name": "tag",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 762875728208398
+		},
+		{
+			"name": "PreviousElement",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 882818720647780
+		},
+		{
+			"name": "Opened",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 210562707289600
+		},
+		{
+			"name": "Icon",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 452093254280982
+		},
+		{
+			"name": "picked",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 361614139804455
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"QuestElementBlank"
+	]
+}

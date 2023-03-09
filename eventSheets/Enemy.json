@@ -285,7 +285,9 @@
 										"transform-w": false,
 										"transform-h": false,
 										"transform-a": false,
+										"transform-o": true,
 										"transform-z-elevation": true,
+										"transform-visibility": true,
 										"destroy-with-parent": true
 									}
 								}
@@ -1304,6 +1306,70 @@
 					]
 				}
 			]
+		},
+		{
+			"functionName": "SpawnDeathParticle",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 921463627976176
+				},
+				{
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 128264001635935
+				},
+				{
+					"name": "layer",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 803419398511937
+				},
+				{
+					"name": "Color",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 586262796657491
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 997769174690046,
+					"parameters": {
+						"object-to-create": "DeathParticle",
+						"layer": "layer",
+						"x": "x",
+						"y": "y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "DeathParticle",
+					"sid": 290678584801869,
+					"parameters": {
+						"color": "Color"
+					}
+				}
+			],
+			"sid": 552734883803663
 		}
 	],
 	"sid": 377794395034310

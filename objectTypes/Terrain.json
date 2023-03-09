@@ -24,13 +24,13 @@
 	],
 	"image": {
 		"width": 256,
-		"height": 256,
+		"height": 304,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 4563018,
+		"imageSpriteId": 3255511,
 		"useCollisionPoly": true
 	},
 	"tile-collision-polys": {
@@ -808,21 +808,6 @@
 			"useCollisionPoly": false
 		},
 		"71": {
-			"collisionPoly": {
-				"points": [
-					0,
-					0,
-					1,
-					0,
-					1,
-					1,
-					0,
-					1
-				]
-			},
-			"useCollisionPoly": false
-		},
-		"72": {
 			"collisionPoly": {
 				"points": [
 					0,
@@ -3268,96 +3253,6 @@
 			"useCollisionPoly": false
 		},
 		"240": {
-			"collisionPoly": {
-				"points": [
-					0,
-					0,
-					1,
-					0,
-					1,
-					1,
-					0,
-					1
-				]
-			},
-			"useCollisionPoly": false
-		},
-		"241": {
-			"collisionPoly": {
-				"points": [
-					0,
-					0,
-					1,
-					0,
-					1,
-					1,
-					0,
-					1
-				]
-			},
-			"useCollisionPoly": false
-		},
-		"242": {
-			"collisionPoly": {
-				"points": [
-					0,
-					0,
-					1,
-					0,
-					1,
-					1,
-					0,
-					1
-				]
-			},
-			"useCollisionPoly": false
-		},
-		"243": {
-			"collisionPoly": {
-				"points": [
-					0,
-					0,
-					1,
-					0,
-					1,
-					1,
-					0,
-					1
-				]
-			},
-			"useCollisionPoly": false
-		},
-		"244": {
-			"collisionPoly": {
-				"points": [
-					0,
-					0,
-					1,
-					0,
-					1,
-					1,
-					0,
-					1
-				]
-			},
-			"useCollisionPoly": false
-		},
-		"245": {
-			"collisionPoly": {
-				"points": [
-					0,
-					0,
-					1,
-					0,
-					1,
-					1,
-					0,
-					1
-				]
-			},
-			"useCollisionPoly": false
-		},
-		"246": {
 			"collisionPoly": {
 				"points": [
 					0,

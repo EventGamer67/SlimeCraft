@@ -325,6 +325,249 @@
 										{
 											"id": "compare-at-xy",
 											"objectClass": "Timers",
+											"sid": 297463323066210,
+											"parameters": {
+												"x": "0",
+												"y": "2",
+												"comparison": 0,
+												"value": "\"LeavesInfected\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 349076186208542,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "tilex",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 420453304998238
+										},
+										{
+											"eventType": "variable",
+											"name": "tiley",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 957351269090599
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 419615876848713,
+													"parameters": {
+														"variable": "tilex",
+														"value": "tokenat(Timers.At(0,1),0,\",\")"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 253431310106913,
+													"parameters": {
+														"variable": "tiley",
+														"value": "tokenat(Timers.At(0,1),1,\",\")"
+													}
+												}
+											],
+											"sid": 800244211004203,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-tile-at",
+															"objectClass": "Terrain",
+															"sid": 810015908180554,
+															"parameters": {
+																"tile-x": "tilex",
+																"tile-y": "tiley",
+																"comparison": 0,
+																"tile": "53"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 654030857955208,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-tile-at",
+																	"objectClass": "Terrain",
+																	"sid": 636127012867159,
+																	"parameters": {
+																		"tile-x": "tilex+1",
+																		"tile-y": "tiley",
+																		"comparison": 0,
+																		"tile": "52"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-tile",
+																	"objectClass": "Terrain",
+																	"sid": 430201796164503,
+																	"parameters": {
+																		"tile-x": "tilex+1",
+																		"tile-y": "tiley",
+																		"tile": "53",
+																		"state": "normal"
+																	}
+																},
+																{
+																	"callFunction": "Add_Timer",
+																	"sid": 865908042300780,
+																	"parameters": [
+																		"tilex+1&\",\"&tiley",
+																		"100",
+																		"\"LeavesInfected\""
+																	]
+																}
+															],
+															"sid": 469364174707213
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-tile-at",
+																	"objectClass": "Terrain",
+																	"sid": 552666441206173,
+																	"parameters": {
+																		"tile-x": "tilex-1",
+																		"tile-y": "tiley",
+																		"comparison": 0,
+																		"tile": "52"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-tile",
+																	"objectClass": "Terrain",
+																	"sid": 254540896656129,
+																	"parameters": {
+																		"tile-x": "tilex-1",
+																		"tile-y": "tiley",
+																		"tile": "53",
+																		"state": "normal"
+																	}
+																},
+																{
+																	"callFunction": "Add_Timer",
+																	"sid": 912232899993238,
+																	"parameters": [
+																		"tilex-1&\",\"&tiley",
+																		"100",
+																		"\"LeavesInfected\""
+																	]
+																}
+															],
+															"sid": 942729416557119
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-tile-at",
+																	"objectClass": "Terrain",
+																	"sid": 751499119396403,
+																	"parameters": {
+																		"tile-x": "tilex",
+																		"tile-y": "tiley+1",
+																		"comparison": 0,
+																		"tile": "52"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-tile",
+																	"objectClass": "Terrain",
+																	"sid": 958706375419835,
+																	"parameters": {
+																		"tile-x": "tilex",
+																		"tile-y": "tiley+1",
+																		"tile": "53",
+																		"state": "normal"
+																	}
+																},
+																{
+																	"callFunction": "Add_Timer",
+																	"sid": 842310714215576,
+																	"parameters": [
+																		"tilex&\",\"&tiley+1",
+																		"100",
+																		"\"LeavesInfected\""
+																	]
+																}
+															],
+															"sid": 387480836050897
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-tile-at",
+																	"objectClass": "Terrain",
+																	"sid": 910320330608814,
+																	"parameters": {
+																		"tile-x": "tilex",
+																		"tile-y": "tiley-1",
+																		"comparison": 0,
+																		"tile": "52"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-tile",
+																	"objectClass": "Terrain",
+																	"sid": 951428091416979,
+																	"parameters": {
+																		"tile-x": "tilex",
+																		"tile-y": "tiley-1",
+																		"tile": "53",
+																		"state": "normal"
+																	}
+																},
+																{
+																	"callFunction": "Add_Timer",
+																	"sid": 454663906689451,
+																	"parameters": [
+																		"tilex&\",\"&tiley-1",
+																		"100",
+																		"\"LeavesInfected\""
+																	]
+																}
+															],
+															"sid": 799221963746802
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-xy",
+											"objectClass": "Timers",
 											"sid": 756218762885241,
 											"parameters": {
 												"x": "0",
@@ -790,7 +1033,7 @@
 										{
 											"id": "delete",
 											"objectClass": "Timers",
-											"sid": 102155931381582,
+											"sid": 796241507179335,
 											"parameters": {
 												"index": "0",
 												"axis": "x"

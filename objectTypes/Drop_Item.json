@@ -17,6 +17,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 706514769881795
+		},
+		{
+			"name": "Pickable",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 603322156507026
 		}
 	],
 	"behaviorTypes": [
@@ -29,6 +36,11 @@
 			"behaviorId": "Physics",
 			"name": "Physics",
 			"sid": 180305329697321
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 375493435914195
 		}
 	],
 	"effectTypes": [],
@@ -946,6 +958,223 @@
 				],
 				"sid": 202646212053221,
 				"name": "RottenFlesh",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5620847,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 142479268582925,
+				"name": "Hook",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8587465,
+						"collisionPoly": {
+							"points": [
+								0.625,
+								0.4375,
+								0.625,
+								0.53125,
+								0.375,
+								0.53125,
+								0.375,
+								0.4375
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 145239676505344,
+				"name": "Worm",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8011763,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 554889873540304,
+				"name": "WoodenScissors",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2544867,
+						"collisionPoly": {
+							"points": [
+								0.1875,
+								0.1875,
+								0.5,
+								0.125,
+								0.8125,
+								0.1875,
+								0.84375,
+								0.5,
+								0.75,
+								0.75,
+								0.5,
+								0.9375,
+								0.25,
+								0.75,
+								0.15625,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 402266956336573,
+				"name": "ClayBucket",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 17,
+						"height": 17,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2817618,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 552965168445154,
+				"name": "Barrel",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 18,
+						"height": 18,
+						"originX": 0.5277777777777778,
+						"originY": 0.5277777777777778,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5642272,
+						"collisionPoly": {
+							"points": [
+								0.05555555555555555,
+								0.05555555555555555,
+								1,
+								0.05555555555555555,
+								1,
+								1,
+								0.05555555555555555,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 895375124554076,
+				"name": "Sand",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5277777777777778,
+						"originY": 0.5277777777777778,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4596825,
+						"collisionPoly": {
+							"points": [
+								0.05555555555555555,
+								0.05555555555555555,
+								1,
+								0.05555555555555555,
+								1,
+								1,
+								0.05555555555555555,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 250409703160533,
+				"name": "ClayBlock",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

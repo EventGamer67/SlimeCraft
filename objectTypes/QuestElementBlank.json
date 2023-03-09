@@ -5,27 +5,6 @@
 	"isGlobal": false,
 	"instanceVariables": [
 		{
-			"name": "tag",
-			"type": "string",
-			"desc": "",
-			"show": true,
-			"sid": 484003499926859
-		},
-		{
-			"name": "previousElement",
-			"type": "string",
-			"desc": "",
-			"show": true,
-			"sid": 227429403097971
-		},
-		{
-			"name": "opened",
-			"type": "boolean",
-			"desc": "",
-			"show": true,
-			"sid": 714324622101352
-		},
-		{
 			"name": "sX",
 			"type": "number",
 			"desc": "",
@@ -40,41 +19,27 @@
 			"sid": 408746138315688
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 301613896930230
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 38,
-						"height": 38,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 33,
+						"height": 33,
+						"originX": 0.5151515151515151,
+						"originY": 0.5151515151515151,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 899608,
-						"collisionPoly": {
-							"points": [
-								0,
-								0,
-								0,
-								0,
-								0,
-								0,
-								0,
-								0,
-								0,
-								0,
-								0,
-								0,
-								0,
-								0,
-								0,
-								0
-							]
-						},
+						"imageSpriteId": 3055361,
 						"useCollisionPoly": true,
 						"duration": 1
 					}

@@ -1,0 +1,62 @@
+{
+	"name": "AdvBtns",
+	"plugin-id": "Sprite",
+	"sid": 913482854404607,
+	"instanceVariables": [
+		{
+			"name": "touched",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 480337828501716
+		},
+		{
+			"name": "w",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 375036305993355
+		},
+		{
+			"name": "h",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 778334360131917
+		},
+		{
+			"name": "action",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 192081053449624
+		},
+		{
+			"name": "active",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 867940263229159
+		},
+		{
+			"name": "selected",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 749308384651428
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 569130592062834
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"Inventory_Blank",
+		"FoodBtn",
+		"Sprite24"
+	]
+}
