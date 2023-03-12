@@ -406,6 +406,32 @@
 								}
 							],
 							"sid": 849215205602670
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 967814487815408,
+									"parameters": {
+										"object": "Movement_Button",
+										"expression": "Movement_Button.Type = \"Chat\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "Movement_Button",
+									"sid": 467717801605901,
+									"parameters": {
+										"x": "ViewportLeft(Movement_Button.LayerName)+(Movement_Button.Width*0.7)",
+										"y": "ViewportTop(Movement_Button.LayerName)+(Movement_Button.Height*0.7)+26"
+									}
+								}
+							],
+							"sid": 874264264304672
 						}
 					]
 				},

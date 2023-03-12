@@ -167,21 +167,11 @@
 					}
 				},
 				{
-					"id": "is-playing",
-					"objectClass": "Button",
-					"sid": 314000012402085,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "\"Pop\""
-					},
-					"isInverted": true
-				},
-				{
 					"id": "is-boolean-instance-variable-set",
 					"objectClass": "Button",
-					"sid": 779579219008239,
+					"sid": 842538952337674,
 					"parameters": {
-						"instance-variable": "Active"
+						"instance-variable": "active"
 					}
 				}
 			],
@@ -233,6 +223,13 @@
 							]
 						},
 						{
+							"callFunction": "disableOtherBtns",
+							"sid": 664172045217625,
+							"parameters": [
+								"\"UI\""
+							]
+						},
+						{
 							"callFunction": "ShowWorlds",
 							"sid": 501404242529203
 						}
@@ -251,17 +248,7 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "set-boolean-instvar",
-									"objectClass": "Button",
-									"sid": 657877260782014,
-									"parameters": {
-										"instance-variable": "Active",
-										"value": "false"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 905223467920472
 						}
 					]
@@ -388,24 +375,6 @@
 					"eventType": "block",
 					"conditions": [],
 					"actions": [
-						{
-							"id": "tween-two-properties",
-							"objectClass": "Button",
-							"sid": 258387010226958,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"Pop\"",
-								"property": "size",
-								"end-x": "Self.Width+3",
-								"end-y": "Self.Height+6",
-								"time": "0.15",
-								"ease": "easeinoutcubic",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "yes",
-								"repeat-count": "1"
-							}
-						},
 						{
 							"id": "wait-for-previous-actions",
 							"objectClass": "System",
@@ -1280,15 +1249,6 @@
 									"parameters": {
 										"frame-number": "0"
 									}
-								},
-								{
-									"id": "set-boolean-instvar",
-									"objectClass": "Button",
-									"sid": 576932991292439,
-									"parameters": {
-										"instance-variable": "Active",
-										"value": "true"
-									}
 								}
 							],
 							"sid": 564895692288561,
@@ -1361,15 +1321,6 @@
 									"parameters": {
 										"frame-number": "2"
 									}
-								},
-								{
-									"id": "set-boolean-instvar",
-									"objectClass": "Button",
-									"sid": 516924628755841,
-									"parameters": {
-										"instance-variable": "Active",
-										"value": "false"
-									}
 								}
 							],
 							"sid": 874373088161185,
@@ -1423,15 +1374,6 @@
 									"sid": 469994259352814,
 									"parameters": {
 										"frame-number": "0"
-									}
-								},
-								{
-									"id": "set-boolean-instvar",
-									"objectClass": "Button",
-									"sid": 366801546974825,
-									"parameters": {
-										"instance-variable": "Active",
-										"value": "true"
 									}
 								}
 							],
@@ -3644,6 +3586,13 @@
 															"id": "wait-for-previous-actions",
 															"objectClass": "System",
 															"sid": 556657145824388
+														},
+														{
+															"callFunction": "enableCurBtns",
+															"sid": 827910319498170,
+															"parameters": [
+																"\"Layer 0\""
+															]
 														}
 													],
 													"sid": 875161193788821,
@@ -3660,17 +3609,7 @@
 																	}
 																}
 															],
-															"actions": [
-																{
-																	"id": "set-boolean-instvar",
-																	"objectClass": "Button",
-																	"sid": 778663284390467,
-																	"parameters": {
-																		"instance-variable": "Active",
-																		"value": "true"
-																	}
-																}
-															],
+															"actions": [],
 															"sid": 472680455473487
 														}
 													]

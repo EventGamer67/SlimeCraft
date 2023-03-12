@@ -1,0 +1,624 @@
+{
+	"name": "Chat",
+	"events": [
+		{
+			"functionName": "ConnectToChat",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "player-set-name",
+					"objectClass": "GameScore",
+					"sid": 292066566056956,
+					"parameters": {
+						"name": "\"Tester\""
+					}
+				},
+				{
+					"id": "player-sync",
+					"objectClass": "GameScore",
+					"sid": 825076648755495,
+					"parameters": {
+						"override": true
+					}
+				},
+				{
+					"id": "Join",
+					"objectClass": "GamePushChannels",
+					"sid": 889744145217753,
+					"parameters": {
+						"channelId": "174",
+						"password": "\"\""
+					}
+				}
+			],
+			"sid": 326193612265088,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 732661646061975
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 595937082193812
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 725045175035611,
+					"parameters": {
+						"seconds": "0.2"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 405056041287614
+				}
+			],
+			"sid": 219651285533103,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-player-ready",
+							"objectClass": "GameScore",
+							"sid": 916976070095330
+						}
+					],
+					"actions": [],
+					"sid": 165622148764493,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 703395503296332
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "ConnectToChat",
+									"sid": 752657929564919
+								}
+							],
+							"sid": 695132850959795
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Channels",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 414006938998593,
+							"parameters": {
+								"interval-seconds": "1.0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "SendMessage",
+							"objectClass": "GamePushChannels",
+							"sid": 365247142045578,
+							"parameters": {
+								"channelId": "174",
+								"text": "\"жопа\"&Date.Now",
+								"tags": "\"G\""
+							}
+						}
+					],
+					"sid": 499689445897856,
+					"disabled": true
+				}
+			],
+			"sid": 800882582838199
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "OnEventMessage",
+					"objectClass": "GamePushChannels",
+					"sid": 426921581383640
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 345040810498416,
+					"parameters": {
+						"object-to-create": "ChatBlank",
+						"layer": "\"Chat\"",
+						"x": "ViewportLeft(\"Chat\")+10",
+						"y": "ViewportMidY(\"Chat\")+20",
+						"create-hierarchy": true,
+						"template-name": "\"Message\""
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "ChatBlank",
+					"sid": 850360191822574,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "30",
+						"type": "once",
+						"tag": "\"Fade\""
+					}
+				}
+			],
+			"sid": 591382221278594,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "message",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 376587868896424
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 477008174280042,
+							"parameters": {
+								"variable": "message",
+								"value": "\"[color=#ffff00]\"&GamePushChannels.CurPlayerName&\"[/color] \"&GamePushChannels.CurMessageText "
+							}
+						},
+						{
+							"callFunction": "AddMessage",
+							"sid": 142780629009941,
+							"parameters": [
+								"message"
+							]
+						}
+					],
+					"sid": 436515366509167
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "ChatBlank",
+							"sid": 264387183124365,
+							"parameters": {
+								"child": "Message_Text",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Message_Text",
+							"sid": 863740464946169,
+							"parameters": {
+								"text": "message"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Message_Text",
+							"sid": 279705271183239,
+							"parameters": {
+								"width": "Message_Text.TextWidth",
+								"height": "Message_Text.TextHeight"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "ChatBlank",
+							"sid": 868584077689489,
+							"parameters": {
+								"width": "Message_Text.Width",
+								"height": "Message_Text.Height+1"
+							}
+						}
+					],
+					"sid": 734834504130563
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-all",
+							"objectClass": "System",
+							"sid": 820295919445201,
+							"parameters": {
+								"object": "ChatBlank"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "ChatBlank",
+							"sid": 675442557858518,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetY",
+								"end-value": "Self.Y-Self.Height-3",
+								"time": "0.1",
+								"ease": "easeoutcubic",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 523592686444336
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "ChatBlank",
+					"sid": 514576634408092,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"Fade\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "tween-one-property",
+					"objectClass": "ChatBlank",
+					"sid": 255732985971194,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "0",
+						"time": "0.3",
+						"ease": "default",
+						"destroy-on-complete": "yes",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				}
+			],
+			"sid": 631918173499055
+		},
+		{
+			"functionName": "AddMessage",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "text",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 958829796995401
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "push",
+					"objectClass": "Chat",
+					"sid": 624686145032599,
+					"parameters": {
+						"where": "front",
+						"value": "text",
+						"axis": "x"
+					}
+				}
+			],
+			"sid": 666967310091662,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 366925637894865,
+							"parameters": {
+								"object": "Message_Text",
+								"expression": "Message_Text.Type = \"Chat\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Message_Text",
+							"sid": 363808848793952,
+							"parameters": {
+								"text": "\"\""
+							}
+						}
+					],
+					"sid": 688968361819067,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 517255254960409,
+									"parameters": {
+										"name": "\"x\"",
+										"start-index": "Chat.Width-1",
+										"end-index": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Message_Text",
+									"sid": 331529449083365,
+									"parameters": {
+										"text": "Self.Text&newline&Chat.At(loopindex(\"x\"))"
+									}
+								}
+							],
+							"sid": 592457420896109
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-height",
+									"objectClass": "Message_Text",
+									"sid": 254558532331678,
+									"parameters": {
+										"height": "Self.TextHeight"
+									}
+								}
+							],
+							"sid": 477239084435015
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 231826344123639,
+							"parameters": {
+								"value": "Chat.Width > 10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "pop",
+							"objectClass": "Chat",
+							"sid": 966894469853306,
+							"parameters": {
+								"where": "back",
+								"axis": "x"
+							}
+						}
+					],
+					"sid": 211302387147909
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 203104830154775,
+					"parameters": {
+						"object": "9patch"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-focused",
+					"objectClass": "TextInput",
+					"sid": 377345221179063
+				}
+			],
+			"sid": 348836672411314
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 275230857854899,
+					"parameters": {
+						"object": "Message_Text"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Message_Text",
+					"sid": 855329745677728,
+					"parameters": {
+						"instance-variable": "Type",
+						"comparison": 0,
+						"value": "\"ChatInput\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-focused",
+					"objectClass": "TextInput",
+					"sid": 719052260144832
+				}
+			],
+			"sid": 540130007798837
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap",
+					"objectClass": "Touch",
+					"sid": 853222859051841
+				}
+			],
+			"actions": [],
+			"sid": 128899562465939,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-focused",
+							"objectClass": "TextInput",
+							"sid": 927051162788625
+						}
+					],
+					"actions": [
+						{
+							"id": "set-unfocused",
+							"objectClass": "TextInput",
+							"sid": 366155453766656
+						}
+					],
+					"sid": 527034204171207
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-text-changed",
+					"objectClass": "TextInput",
+					"sid": 280056158294991
+				}
+			],
+			"actions": [],
+			"sid": 787127226516046,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 820030806950228,
+							"parameters": {
+								"object": "Message_Text",
+								"expression": "Message_Text.Type = \"ChatInput\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Message_Text",
+							"sid": 352713269021291,
+							"parameters": {
+								"text": "TextInput.Text"
+							}
+						}
+					],
+					"sid": 431201150538896
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 365055620740949,
+					"parameters": {
+						"key": 13
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "SendMessage",
+					"sid": 432286701411090
+				}
+			],
+			"sid": 495309911149601
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "OnEventJoin",
+					"objectClass": "GamePushChannels",
+					"sid": 397851350556231
+				}
+			],
+			"actions": [
+				{
+					"id": "SendMessage",
+					"objectClass": "GamePushChannels",
+					"sid": 897281156374733,
+					"parameters": {
+						"channelId": "174",
+						"text": "\"подключился!\"",
+						"tags": "\"G\""
+					}
+				}
+			],
+			"sid": 327080495463537
+		}
+	],
+	"sid": 102634788547996
+}

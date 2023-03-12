@@ -24,7 +24,7 @@
 				"Zombie":{
 					"Drop":{
 							"RottenFlesh":99,
-							"Iron":1
+							"Iron_Ingot":1
 						}
 				}
 			
@@ -222,6 +222,16 @@
 				"Stackable":1,
 				"MaxStack":32
 			},
+			"Gold_Ingot":{
+				"Using":"Material",
+				"Stackable":1,
+				"MaxStack":32
+			},
+			"Iron_Ingot":{
+				"Using":"Material",
+				"Stackable":1,
+				"MaxStack":32
+			},
 			"Clay":{
 				"Using":"Material",
 				"Stackable":1,
@@ -275,12 +285,12 @@
 			},
 			"ClayBucket":{
 				"Type":"ClayBucket",
-				"Using":"ClayBucket",
+				"Using":"Bucket",
 				"Stackable":0
 			},
 			"ClayWaterBucket":{
 				"Type": "ClayWaterBucket",
-				"Using":"ClayBucket",
+				"Using":"Bucket",
 				"Stackable":0
 			}
 		},

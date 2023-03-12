@@ -99,14 +99,6 @@
 					"id": "on-any-touch-end",
 					"objectClass": "Touch",
 					"sid": 706358388442853
-				},
-				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "AdvBtns",
-					"sid": 373961342947926,
-					"parameters": {
-						"instance-variable": "active"
-					}
 				}
 			],
 			"actions": [],

@@ -1,27 +1,31 @@
 {
-	"name": "Tilemap2",
-	"plugin-id": "Tilemap",
-	"sid": 628687165669707,
+	"name": "ChatBlank",
+	"plugin-id": "TiledBg",
+	"sid": 394340085115490,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Tween",
 			"name": "Tween",
-			"sid": 847487253668927
+			"sid": 434472651207963
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 959726991374556
 		}
 	],
 	"effectTypes": [],
 	"image": {
-		"width": 16,
-		"height": 16,
+		"width": 250,
+		"height": 250,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 6761543,
+		"imageSpriteId": 8576727,
 		"useCollisionPoly": true
-	},
-	"tile-collision-polys": {}
+	}
 }

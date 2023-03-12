@@ -33,6 +33,15 @@
 					}
 				},
 				{
+					"id": "set-layer-scale",
+					"objectClass": "System",
+					"sid": 908349119916815,
+					"parameters": {
+						"layer": "\"Popup\"",
+						"scale": "(1/LayoutScale)*1.5"
+					}
+				},
+				{
 					"callFunction": "EnableControl",
 					"sid": 703525331957865
 				}
@@ -62,6 +71,10 @@
 		{
 			"eventType": "include",
 			"includeSheet": "AnimatedTriggers"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Chat"
 		},
 		{
 			"eventType": "block",
@@ -18864,6 +18877,15 @@
 									"sid": 123330108213064,
 									"parameters": {
 										"layer": "\"Interfaces\"",
+										"scale": "(1/LayoutScale)*1.5"
+									}
+								},
+								{
+									"id": "set-layer-scale",
+									"objectClass": "System",
+									"sid": 798901367095585,
+									"parameters": {
+										"layer": "\"Popup\"",
 										"scale": "(1/LayoutScale)*1.5"
 									}
 								},

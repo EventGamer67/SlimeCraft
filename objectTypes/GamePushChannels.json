@@ -1,0 +1,12 @@
+{
+	"name": "GamePushChannels",
+	"plugin-id": "GamePush_Channels",
+	"sid": 167380546484234,
+	"singleglobal-inst": {
+		"type": "GamePushChannels",
+		"properties": {
+			"enabled": true
+		},
+		"uid": 273
+	}
+}

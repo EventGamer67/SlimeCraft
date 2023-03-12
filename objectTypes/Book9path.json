@@ -1,0 +1,48 @@
+{
+	"name": "Book9path",
+	"plugin-id": "NinePatch",
+	"sid": 689127525713695,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "w",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 340397014472205
+		},
+		{
+			"name": "h",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 474149659561888
+		},
+		{
+			"name": "List",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 687743842550193
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 413128194956958
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 103,
+		"height": 128,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 2170897,
+		"useCollisionPoly": true
+	}
+}

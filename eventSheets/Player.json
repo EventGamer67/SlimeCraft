@@ -8362,13 +8362,50 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "compare-instance-variable",
+									"objectClass": "Sprite",
+									"sid": 153791731936877,
+									"parameters": {
+										"instance-variable": "State",
+										"comparison": 0,
+										"value": "\"Jump\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "PlayerFace",
+									"sid": 954852550807868,
+									"parameters": {
+										"width": "lerp(Self.Width,12*sign(Self.Width),0.3)",
+										"height": "25"
+									}
+								}
+							],
+							"sid": 204637438173037
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "is-on-floor",
 									"objectClass": "Sprite",
 									"sid": 567150398945578,
 									"behaviorType": "Platform"
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "PlayerFace",
+									"sid": 619668388117683,
+									"parameters": {
+										"width": "lerp(Self.Width,16*sign(Self.Width),0.3)",
+										"height": "lerp(Self.Height,16*sign(Self.Height)+(sin(tickcount*1.5)*2),0.3)"
+									}
+								}
+							],
 							"sid": 236394586338081,
 							"children": [
 								{
@@ -8620,6 +8657,28 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 869519336099133
+								}
+							],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "PlayerFace",
+									"sid": 931556429296764,
+									"parameters": {
+										"width": "lerp(Self.Width,16*sign(Self.Width),0.3)",
+										"height": "lerp(Self.Height,16*sign(Self.Height),0.3)"
+									}
+								}
+							],
+							"sid": 985700976378450
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "key-is-down",
 									"objectClass": "Keyboard",
 									"sid": 593287224687155,
@@ -8710,6 +8769,13 @@
 												"tags": "\"Fall\""
 											},
 											"isInverted": true
+										},
+										{
+											"id": "is-falling",
+											"objectClass": "Sprite",
+											"sid": 206666139600910,
+											"behaviorType": "Platform",
+											"isInverted": true
 										}
 									],
 									"actions": [
@@ -8765,6 +8831,13 @@
 												"tags": "\"Fall\""
 											},
 											"isInverted": true
+										},
+										{
+											"id": "is-falling",
+											"objectClass": "Sprite",
+											"sid": 177816467797889,
+											"behaviorType": "Platform",
+											"isInverted": true
 										}
 									],
 									"actions": [
@@ -8784,30 +8857,19 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Sprite",
-									"sid": 582837668889812,
-									"parameters": {
-										"instance-variable": "State",
-										"comparison": 0,
-										"value": "\"Jump\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
-									"id": "set-size",
-									"objectClass": "PlayerFace",
-									"sid": 135132114220639,
+									"id": "set-instvar-value",
+									"objectClass": "Sprite",
+									"sid": 594690166699330,
 									"parameters": {
-										"width": "lerp(Self.Width,12*sign(Self.Width),0.3)",
-										"height": "25"
+										"instance-variable": "State",
+										"value": "Sprite.Platform.Speed > 0 ? \"Run\" : \"Stand\""
 									}
 								}
 							],
-							"sid": 320644189187518
+							"sid": 364017628190713
 						}
 					],
 					"sid": 663941486518013
@@ -8818,80 +8880,7 @@
 					"title": "Ladder",
 					"description": "",
 					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Sprite",
-									"sid": 289280108488259,
-									"parameters": {
-										"object": "Ladder"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-gravity",
-									"objectClass": "Sprite",
-									"sid": 945793302861766,
-									"behaviorType": "Platform",
-									"parameters": {
-										"gravity": "1500"
-									}
-								}
-							],
-							"sid": 351363701276090
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 983370924370751
-								}
-							],
-							"actions": [
-								{
-									"id": "set-gravity",
-									"objectClass": "Sprite",
-									"sid": 608145845496247,
-									"behaviorType": "Platform",
-									"parameters": {
-										"gravity": "100"
-									}
-								}
-							],
-							"sid": 457959657557007,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 233559516238777
-										}
-									],
-									"actions": [
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Sprite",
-											"sid": 689396568380923,
-											"parameters": {
-												"instance-variable": "State",
-												"value": "Sprite.Platform.Speed > 0 ? \"Run\" : \"Stand\""
-											}
-										}
-									],
-									"sid": 819917439620868
-								}
-							]
-						}
-					],
+					"children": [],
 					"sid": 374756496003442
 				}
 			],

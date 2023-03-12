@@ -65,6 +65,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "GamePush_Channels",
+			"name": "GamePush Channels",
+			"author": "GamePush, LLC",
+			"bundled": false,
+			"version": "1.0.37"
+		},
+		{
+			"type": "plugin",
 			"id": "Json",
 			"name": "JSON",
 			"author": "Scirra",
@@ -404,7 +412,16 @@
 			"Fantics",
 			"QuestSpawner",
 			"Sun",
-			"StarsBg"
+			"StarsBg",
+			"GamePushChannels",
+			"ChatBlank",
+			"Sprite29",
+			"Chat",
+			"Sprite30",
+			"Book9path",
+			"TiledBackground6",
+			"Sprite31",
+			"TempList"
 		],
 		"subfolders": []
 	},
@@ -451,7 +468,8 @@
 			"Console",
 			"SceneLoader_es",
 			"Enemy",
-			"AnimatedTriggers"
+			"AnimatedTriggers",
+			"Chat"
 		],
 		"subfolders": []
 	},

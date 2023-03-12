@@ -57,6 +57,9 @@
 	"members": [
 		"Inventory_Blank",
 		"FoodBtn",
-		"Sprite24"
+		"Sprite24",
+		"Movement_Button",
+		"Button",
+		"Sprite31"
 	]
 }

@@ -111,14 +111,14 @@
 			{
 				"frames": [
 					{
-						"width": 265,
-						"height": 265,
+						"width": 16,
+						"height": 16,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2141850,
+						"imageSpriteId": 1326492,
 						"collisionPoly": {
 							"points": [
 								0.004761904761904762,
@@ -136,7 +136,7 @@
 					}
 				],
 				"sid": 125868963588172,
-				"name": "Iron",
+				"name": "Iron_Ingot",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -146,20 +146,20 @@
 			{
 				"frames": [
 					{
-						"width": 160,
-						"height": 160,
+						"width": 16,
+						"height": 16,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2762115,
+						"imageSpriteId": 9571614,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
 				"sid": 995618788176891,
-				"name": "Gold",
+				"name": "Gold_Ingot",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
