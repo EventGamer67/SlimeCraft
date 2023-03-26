@@ -2260,7 +2260,61 @@
 													}
 												}
 											],
-											"actions": [],
+											"actions": [
+												{
+													"id": "set-group-active",
+													"objectClass": "System",
+													"sid": 552955841010506,
+													"parameters": {
+														"group-name": "\"Dragging\"",
+														"state": "activated"
+													}
+												},
+												{
+													"id": "tween-two-properties",
+													"objectClass": "Book9path",
+													"sid": 397485034788135,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "size",
+														"end-x": "Self.w*0.6",
+														"end-y": "Self.h*0.6",
+														"time": "0.2",
+														"ease": "easeinback",
+														"destroy-on-complete": "yes",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												},
+												{
+													"callFunction": "BlackoutByTiled",
+													"sid": 643004653305582,
+													"parameters": [
+														false,
+														"\"Interfaces\"",
+														"0.1",
+														"0"
+													]
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 563394837612471,
+													"parameters": {
+														"variable": "Interface",
+														"value": "\"Inventory\""
+													}
+												},
+												{
+													"callFunction": "enableCurBtns",
+													"sid": 123073770207536,
+													"parameters": [
+														"\"Interfaces\""
+													]
+												}
+											],
 											"sid": 564538965800287
 										}
 									]
@@ -2294,6 +2348,15 @@
 											"eventType": "block",
 											"conditions": [],
 											"actions": [
+												{
+													"id": "set-group-active",
+													"objectClass": "System",
+													"sid": 278771064721861,
+													"parameters": {
+														"group-name": "\"Dragging\"",
+														"state": "deactivated"
+													}
+												},
 												{
 													"callFunction": "BlackoutByTiled",
 													"sid": 814699629501878,
@@ -22465,9 +22528,63 @@
 			"children": [
 				{
 					"eventType": "block",
-					"conditions": [],
-					"actions": [],
-					"sid": 535019812137131
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "Book9path",
+							"sid": 647710463956979,
+							"parameters": {
+								"child": "Sprite8",
+								"which": "own"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "Book9path",
+							"sid": 329661380470373,
+							"parameters": {
+								"child": "Message_Text",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Sprite8",
+							"sid": 576940074207963,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 535019812137131,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 572898052677843,
+									"parameters": {
+										"value": "Message_Text.Type = \"rescount\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Message_Text",
+									"sid": 933124841347444,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 817151671681094
+						}
+					]
 				}
 			]
 		},
@@ -22494,6 +22611,11 @@
 								"object": "Sprite31",
 								"expression": "Sprite31.touched"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "Sprite31",
+							"sid": 790223150548235
 						}
 					],
 					"actions": [
@@ -22696,6 +22818,140 @@
 			],
 			"sid": 204525185395143,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "Book9path",
+							"sid": 191310810332384,
+							"parameters": {
+								"child": "Sprite31",
+								"which": "own"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "Book9path",
+							"sid": 281141737671822,
+							"parameters": {
+								"child": "Sprite8",
+								"which": "own"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "Book9path",
+							"sid": 290115520595789,
+							"parameters": {
+								"child": "TiledBackground6",
+								"which": "own"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "Book9path",
+							"sid": 228311027235950,
+							"parameters": {
+								"child": "Message_Text",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "TiledBackground6",
+							"sid": 406608867084339,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Sprite8",
+							"sid": 637039259956135,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 425853135183022,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 514243842760556,
+									"parameters": {
+										"value": "Sprite31.Type = \"Right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Sprite31",
+									"sid": 806147247678228,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 373145703991552
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 439206460226626,
+									"parameters": {
+										"value": "Sprite31.Type = \"Left\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Sprite31",
+									"sid": 154671058362085,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 671860361273394
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 912738500753603,
+									"parameters": {
+										"value": "Message_Text.Type = \"rescount\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Message_Text",
+									"sid": 422630891657226,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 841600697906472
+						}
+					]
+				},
 				{
 					"eventType": "block",
 					"conditions": [

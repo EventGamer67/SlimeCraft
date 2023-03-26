@@ -7,7 +7,7 @@
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
-			"functionIsAsync": true,
+			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
@@ -45,14 +45,14 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 605421218525671,
+									"sid": 480831792038565,
 									"parameters": {
 										"object-to-create": "Sprite",
 										"layer": "\"Layer 1\"",
-										"x": "-300",
-										"y": "-300",
+										"x": "1",
+										"y": "1",
 										"create-hierarchy": false,
-										"template-name": "\"Default\""
+										"template-name": "\"\""
 									}
 								},
 								{
@@ -61,15 +61,6 @@
 									"sid": 751636490102713,
 									"parameters": {
 										"json": "JSON.Get(\"World.Terrain\")"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "Particles",
-									"sid": 118575032204359,
-									"parameters": {
-										"x": "Sprite.X",
-										"y": "Sprite.BBoxBottom"
 									}
 								},
 								{
@@ -115,7 +106,60 @@
 									}
 								}
 							],
-							"sid": 561829132942332
+							"sid": 561829132942332,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-last-created",
+											"objectClass": "System",
+											"sid": 926790869819262,
+											"parameters": {
+												"object": "Sprite"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-from-json",
+											"objectClass": "Sprite",
+											"sid": 328449718750636,
+											"parameters": {
+												"json": "JSON.Get(\"World.Sprite\")"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Sprite",
+											"sid": 631674278623108,
+											"behaviorType": "Platform",
+											"parameters": {
+												"state": "enabled"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "Particles",
+											"sid": 114193309860655,
+											"parameters": {
+												"x": "Sprite.X",
+												"y": "Sprite.BBoxBottom"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "Cam",
+											"sid": 576877174430878,
+											"parameters": {
+												"x": "Sprite.X",
+												"y": "Sprite.Y"
+											}
+										}
+									],
+									"sid": 812809104568600
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -258,35 +302,9 @@
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 548955758958158,
+									"sid": 571887542751889,
 									"parameters": {
 										"seconds": "0"
-									}
-								},
-								{
-									"id": "set-from-json",
-									"objectClass": "Sprite",
-									"sid": 455818924102159,
-									"parameters": {
-										"json": "JSON.Get(\"World.Sprite\")"
-									}
-								},
-								{
-									"id": "set-enabled",
-									"objectClass": "Sprite",
-									"sid": 397485789161576,
-									"behaviorType": "Platform",
-									"parameters": {
-										"state": "enabled"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "Cam",
-									"sid": 217416051151053,
-									"parameters": {
-										"x": "Sprite.X",
-										"y": "Sprite.Y"
 									}
 								},
 								{
@@ -319,14 +337,14 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 165646219727434,
+							"sid": 383450230012617,
 							"parameters": {
 								"object-to-create": "Sprite",
 								"layer": "\"Layer 1\"",
 								"x": "SPAWNPOINT.X",
 								"y": "SPAWNPOINT.Y",
 								"create-hierarchy": true,
-								"template-name": "\"Default\""
+								"template-name": "\"\""
 							}
 						},
 						{
@@ -434,22 +452,6 @@
 							"sid": 874264264304672
 						}
 					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 347326323074653,
-							"parameters": {
-								"type": "log",
-								"message": "Terrain.AsJSON"
-							}
-						}
-					],
-					"sid": 114375716837790
 				}
 			]
 		},
@@ -604,6 +606,15 @@
 						"path": "\"World.Player\"",
 						"value": "JSON.GetAsCompactString(\"Player\")"
 					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 141618098573227,
+					"parameters": {
+						"path": "\"Ticks\"",
+						"value": "Tick"
+					}
 				}
 			],
 			"sid": 515967922578590,
@@ -627,44 +638,61 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "has-key",
-									"objectClass": "JSON",
-									"sid": 782810850474385,
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "ToSave",
+									"sid": 256223321403383,
 									"parameters": {
-										"path": "\"World.Items.\"&ToSave.ObjectTypeName"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-array",
-									"objectClass": "JSON",
-									"sid": 559782305927473,
-									"parameters": {
-										"path": "\"World.Items.\"&ToSave.ObjectTypeName",
-										"size": "0"
+										"instance-variable": "NeedSave"
 									}
 								}
 							],
-							"sid": 983537751550691
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
+							"actions": [],
+							"sid": 802874526206920,
+							"children": [
 								{
-									"id": "push-value",
-									"objectClass": "JSON",
-									"sid": 544440654930747,
-									"parameters": {
-										"where": "back",
-										"path": "\"World.Items.\"&ToSave.ObjectTypeName",
-										"value": "ToSave.AsJSON"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-key",
+											"objectClass": "JSON",
+											"sid": 140397996698076,
+											"parameters": {
+												"path": "\"World.Items.\"&ToSave.ObjectTypeName"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-array",
+											"objectClass": "JSON",
+											"sid": 744978177505601,
+											"parameters": {
+												"path": "\"World.Items.\"&ToSave.ObjectTypeName",
+												"size": "0"
+											}
+										}
+									],
+									"sid": 998941353945110
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "push-value",
+											"objectClass": "JSON",
+											"sid": 673677344193116,
+											"parameters": {
+												"where": "back",
+												"path": "\"World.Items.\"&ToSave.ObjectTypeName",
+												"value": "ToSave.AsJSON"
+											}
+										}
+									],
+									"sid": 103872842084979
 								}
-							],
-							"sid": 876730546730277
+							]
 						}
 					]
 				},
@@ -777,7 +805,8 @@
 					}
 				}
 			],
-			"sid": 148789803614736
+			"sid": 148789803614736,
+			"disabled": true
 		}
 	],
 	"sid": 290609745636765

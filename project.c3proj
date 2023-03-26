@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 33300,
+	"savedWithRelease": 33500,
 	"name": "Arrow_Rain",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -415,13 +415,15 @@
 			"StarsBg",
 			"GamePushChannels",
 			"ChatBlank",
-			"Sprite29",
 			"Chat",
 			"Sprite30",
 			"Book9path",
 			"TiledBackground6",
 			"Sprite31",
-			"TempList"
+			"TempList",
+			"Sprite29",
+			"Sprite32",
+			"Cam2"
 		],
 		"subfolders": []
 	},
@@ -459,7 +461,7 @@
 	"eventSheets": {
 		"items": [
 			"Main_es",
-			"Player",
+			"Player_es",
 			"UI",
 			"Init",
 			"Menu_es",
@@ -1219,12 +1221,12 @@
 		]
 	},
 	"properties": {
-		"description": "",
+		"description": "npne",
 		"version": "1.0.0.0",
-		"author": "",
-		"authorEmail": "",
-		"authorWebsite": "",
-		"appId": "",
+		"author": "danil",
+		"authorEmail": "islamoffdanil67@gmail.com",
+		"authorWebsite": "none",
+		"appId": "com.company.name",
 		"pixelRounding": false,
 		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,

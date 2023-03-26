@@ -1993,8 +1993,8 @@
 							"world": {
 								"x": 32,
 								"y": 176,
-								"width": 29.999999999999996,
-								"height": 29.999999999999996,
+								"width": 32.72727272727273,
+								"height": 32.72727272727273,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -2038,8 +2038,8 @@
 							"world": {
 								"x": 80,
 								"y": 176,
-								"width": -29.999999999999996,
-								"height": 29.999999999999996,
+								"width": -32.72727272727273,
+								"height": 32.72727272727273,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -2083,8 +2083,8 @@
 							"world": {
 								"x": 336,
 								"y": 176,
-								"width": -29.999999999999996,
-								"height": 29.999999999999996,
+								"width": -32.72727272727273,
+								"height": 32.72727272727273,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -2128,8 +2128,8 @@
 							"world": {
 								"x": 336,
 								"y": 128,
-								"width": 29.999999999999996,
-								"height": 29.999999999999996,
+								"width": 32.72727272727273,
+								"height": 32.72727272727273,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -2326,8 +2326,8 @@
 					"world": {
 						"x": 232,
 						"y": 188,
-						"width": 26,
-						"height": 26,
+						"width": 28.363636363636367,
+						"height": 28.363636363636367,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -2413,8 +2413,8 @@
 					"world": {
 						"x": 361,
 						"y": 10.000000000000002,
-						"width": 18,
-						"height": 18,
+						"width": 19.636363636363637,
+						"height": 19.636363636363637,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -2503,8 +2503,8 @@
 					"world": {
 						"x": 43,
 						"y": 13,
-						"width": 37,
-						"height": 18,
+						"width": 38.68181818181818,
+						"height": 19.636363636363637,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -3038,8 +3038,8 @@
 					"world": {
 						"x": 13,
 						"y": 13,
-						"width": 21.272727272727273,
-						"height": 21.272727272727273,
+						"width": 22.90909090909091,
+						"height": 22.90909090909091,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -3085,6 +3085,51 @@
 						"y": 36,
 						"width": 21,
 						"height": 21,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.5
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Movement_Button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 9,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 321,
+					"instanceVariables": {
+						"touched": false,
+						"w": 18,
+						"h": 18,
+						"action": "",
+						"active": true,
+						"selected": false,
+						"Type": "guide",
+						"So": 50,
+						"What": "guide"
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 340,
+						"y": 10,
+						"width": 19.636364,
+						"height": 19.636364,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

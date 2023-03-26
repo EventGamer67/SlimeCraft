@@ -2,7 +2,15 @@
 	"name": "ToSave",
 	"plugin-id": "Sprite",
 	"sid": 585774940525102,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "NeedSave",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 356554653218370
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [

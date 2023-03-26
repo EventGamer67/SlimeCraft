@@ -1,5 +1,5 @@
 {
-	"name": "Player",
+	"name": "Player_es",
 	"events": [
 		{
 			"functionName": "Player_Message",
@@ -217,6 +217,15 @@
 								"y": "Y",
 								"create-hierarchy": false,
 								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Drop_Item",
+							"sid": 937199373879079,
+							"parameters": {
+								"instance-variable": "NeedSave",
+								"value": "true"
 							}
 						},
 						{

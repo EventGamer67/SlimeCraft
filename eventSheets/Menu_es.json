@@ -1960,13 +1960,12 @@
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "compare-instance-variable",
-															"objectClass": "Message_Text",
-															"sid": 647059684269983,
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 727577090697483,
 															"parameters": {
-																"instance-variable": "Type",
-																"comparison": 0,
-																"value": "\"WorldName\""
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"WorldName\""
 															}
 														}
 													],
@@ -1974,25 +1973,24 @@
 														{
 															"id": "set-text",
 															"objectClass": "Message_Text",
-															"sid": 692675718051010,
+															"sid": 837240192158780,
 															"parameters": {
 																"text": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Name\")"
 															}
 														}
 													],
-													"sid": 166722222669167
+													"sid": 875597552180249
 												},
 												{
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "compare-instance-variable",
-															"objectClass": "Message_Text",
-															"sid": 125243679286055,
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 152844829729470,
 															"parameters": {
-																"instance-variable": "Type",
-																"comparison": 0,
-																"value": "\"PlayTime\""
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"PlayTime\""
 															}
 														}
 													],
@@ -2000,25 +1998,24 @@
 														{
 															"id": "set-text",
 															"objectClass": "Message_Text",
-															"sid": 253751007417512,
+															"sid": 596209161310399,
 															"parameters": {
-																"text": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".PlayTime\")"
+																"text": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Ticks\")"
 															}
 														}
 													],
-													"sid": 453902135049623
+													"sid": 148017261162924
 												},
 												{
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "compare-instance-variable",
-															"objectClass": "Message_Text",
-															"sid": 372480795721631,
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 322884573133734,
 															"parameters": {
-																"instance-variable": "Type",
-																"comparison": 0,
-																"value": "\"Coin\""
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"Coin\""
 															}
 														}
 													],
@@ -2026,13 +2023,13 @@
 														{
 															"id": "set-text",
 															"objectClass": "Message_Text",
-															"sid": 748560124037722,
+															"sid": 123543789260365,
 															"parameters": {
 																"text": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Coin\")"
 															}
 														}
 													],
-													"sid": 856159691444773
+													"sid": 262701364608019
 												}
 											]
 										}
@@ -2838,13 +2835,12 @@
 															"eventType": "block",
 															"conditions": [
 																{
-																	"id": "compare-instance-variable",
-																	"objectClass": "Message_Text",
-																	"sid": 401759411051658,
+																	"id": "pick-by-evaluate",
+																	"objectClass": "System",
+																	"sid": 568998511580506,
 																	"parameters": {
-																		"instance-variable": "Type",
-																		"comparison": 0,
-																		"value": "\"WorldName\""
+																		"object": "Message_Text",
+																		"expression": "Message_Text.Type = \"WorldName\""
 																	}
 																}
 															],
@@ -2852,25 +2848,24 @@
 																{
 																	"id": "set-text",
 																	"objectClass": "Message_Text",
-																	"sid": 315061403034732,
+																	"sid": 295325287206000,
 																	"parameters": {
 																		"text": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Name\")"
 																	}
 																}
 															],
-															"sid": 375609263457520
+															"sid": 542944496710416
 														},
 														{
 															"eventType": "block",
 															"conditions": [
 																{
-																	"id": "compare-instance-variable",
-																	"objectClass": "Message_Text",
-																	"sid": 971482233022214,
+																	"id": "pick-by-evaluate",
+																	"objectClass": "System",
+																	"sid": 561657835843778,
 																	"parameters": {
-																		"instance-variable": "Type",
-																		"comparison": 0,
-																		"value": "\"PlayTime\""
+																		"object": "Message_Text",
+																		"expression": "Message_Text.Type = \"PlayTime\""
 																	}
 																}
 															],
@@ -2878,13 +2873,13 @@
 																{
 																	"id": "set-text",
 																	"objectClass": "Message_Text",
-																	"sid": 724374406469317,
+																	"sid": 282258283416060,
 																	"parameters": {
-																		"text": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".PlayTime\")"
+																		"text": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Ticks\")"
 																	}
 																}
 															],
-															"sid": 615944917797892
+															"sid": 727706872392728
 														}
 													]
 												}
@@ -4182,6 +4177,15 @@
 											"parameters": {
 												"path": "\"Worlds.\"&JSON.Get(\"ID\")&\".Image\"",
 												"value": "JSON.Get(\"Screen\")"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 823771154087172,
+											"parameters": {
+												"path": "\"Worlds.\"&JSON.Get(\"ID\")&\".Ticks\"",
+												"value": "JSON.Get(\"Ticks\")"
 											}
 										},
 										{
