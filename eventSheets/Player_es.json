@@ -12012,6 +12012,53 @@
 				}
 			],
 			"sid": 494528605323831
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 585828075103322,
+					"parameters": {
+						"key": 86
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 749553385426725,
+					"parameters": {
+						"object-to-create": "Sprite33",
+						"layer": "\"Layer 1\"",
+						"x": "Mouse.X(\"Layer 1\")",
+						"y": "0",
+						"create-hierarchy": true,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "Sprite33",
+					"sid": 268709242773391,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "position",
+						"end-x": "Mouse.X",
+						"end-y": "Mouse.Y",
+						"time": "1",
+						"ease": "easeoutcubic",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				}
+			],
+			"sid": 390978777472419
 		}
 	],
 	"sid": 380699106854873

@@ -1,0 +1,58 @@
+{
+	"name": "Sprite33",
+	"plugin-id": "Sprite",
+	"sid": 487541414419743,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 680782982051294
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 294338219369745
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine2",
+			"sid": 681476696249468
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine3",
+			"sid": 736110029170389
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 43,
+						"height": 79,
+						"originX": 0.5,
+						"originY": 0.9746835443037974,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5130716,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 948325465053475,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}
