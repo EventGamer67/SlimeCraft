@@ -214,6 +214,7 @@
 							"id": "set-boolean-instvar",
 							"objectClass": "Movement_Button",
 							"sid": 846707867965242,
+							"disabled": true,
 							"parameters": {
 								"instance-variable": "touched",
 								"value": "false"
@@ -1660,7 +1661,17 @@
 											}
 										}
 									],
-									"actions": [],
+									"actions": [
+										{
+											"id": "set-size",
+											"objectClass": "TextInput",
+											"sid": 730303805562783,
+											"parameters": {
+												"width": "1",
+												"height": "1"
+											}
+										}
+									],
 									"sid": 488982491927995,
 									"children": [
 										{
@@ -22151,6 +22162,15 @@
 					"parameters": {
 						"variable": "Interface",
 						"value": "\"Chat\""
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "TextInput",
+					"sid": 186134780032607,
+					"parameters": {
+						"width": "364",
+						"height": "21"
 					}
 				}
 			],

@@ -1108,6 +1108,28 @@
 												"variable": "Mining"
 											},
 											"isInverted": true
+										},
+										{
+											"id": "pick-overlapping-point",
+											"objectClass": "System",
+											"sid": 861013416672573,
+											"parameters": {
+												"object": "Sprite",
+												"x": "Terrain.TileToPositionX(TileX)",
+												"y": "Terrain.TileToPositionY(TileY)"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "pick-overlapping-point",
+											"objectClass": "System",
+											"sid": 338783571314216,
+											"parameters": {
+												"object": "Hat",
+												"x": "Terrain.TileToPositionX(TileX)",
+												"y": "Terrain.TileToPositionY(TileY)"
+											},
+											"isInverted": true
 										}
 									],
 									"actions": [],
