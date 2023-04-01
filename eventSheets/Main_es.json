@@ -1324,7 +1324,7 @@
 			"eventType": "variable",
 			"name": "coef",
 			"type": "number",
-			"initialValue": "20",
+			"initialValue": "2",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -1738,6 +1738,15 @@
 							"parameters": {
 								"layer": "\"Lights\"",
 								"opacity": "100-(50+Value*20)"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Sun",
+							"sid": 964469076670469,
+							"parameters": {
+								"x": "Functions.Get_Center_X(\"Sun\")+cos( 180*Self.AnimationFrame+ (Tick/coef) )*100",
+								"y": "Functions.Get_Center_Y(\"Sun\")+sin(180*Self.AnimationFrame+(Tick/coef))*100"
 							}
 						}
 					],

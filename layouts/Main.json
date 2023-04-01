@@ -596,6 +596,102 @@
 			"global": false
 		},
 		{
+			"name": "Sun",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "Sun",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 41,
+					"instanceVariables": {
+						"sUN": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 693,
+						"y": 376,
+						"width": 20,
+						"height": 20,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sun",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 1,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 336,
+					"instanceVariables": {
+						"sUN": false
+					},
+					"behaviors": {},
+					"world": {
+						"x": 854,
+						"y": 543,
+						"width": 200,
+						"height": 200,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 299826225673336,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.1607843137254902,
+				0.19215686274509805,
+				0.21176470588235294,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 0.2,
+			"parallaxY": 0.2,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
 			"name": "BG",
 			"overriden": 0,
 			"subLayers": [],
@@ -722,35 +818,6 @@
 						"angle": 0,
 						"zElevation": 0
 					}
-				},
-				{
-					"type": "Sun",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 41,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 929,
-						"y": -86,
-						"width": 113,
-						"height": 113,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
 				}
 			],
 			"sid": 527771331130518,
@@ -850,7 +917,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 796.4675861829149,
-						"y": -2.2902584268000727e-15,
+						"y": -176,
 						"width": 16,
 						"height": 16,
 						"originX": 0,

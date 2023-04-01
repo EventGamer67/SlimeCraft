@@ -22973,33 +22973,42 @@
 								{
 									"id": "evaluate-expression",
 									"objectClass": "System",
-									"sid": 487672922666809,
+									"sid": 656181323986389,
 									"parameters": {
-										"value": "\"Settings.Config.Glossary.\"&JSON.CurrentKey&\".Using\""
-									}
-								},
-								{
-									"id": "has-key",
-									"objectClass": "JSON",
-									"sid": 563792126973080,
-									"parameters": {
-										"path": "\"Data.Recipes.\"&JSON.CurrentKey&\".Pattern\""
+										"value": "JSON.Get(\"Settings.Config.Glossary.\"&JSON.CurrentKey&\".Using\") = seek"
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 589339803925363,
+							"children": [
 								{
-									"id": "push",
-									"objectClass": "TempList",
-									"sid": 334221255143480,
-									"parameters": {
-										"where": "back",
-										"value": "JSON.CurrentKey",
-										"axis": "x"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-key",
+											"objectClass": "JSON",
+											"sid": 952738987861501,
+											"parameters": {
+												"path": "\"Data.Recipes.\"&JSON.CurrentKey&\".Pattern\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "push",
+											"objectClass": "TempList",
+											"sid": 719113938227806,
+											"parameters": {
+												"where": "back",
+												"value": "JSON.CurrentKey",
+												"axis": "x"
+											}
+										}
+									],
+									"sid": 124298748332342
 								}
-							],
-							"sid": 589339803925363
+							]
 						}
 					]
 				},

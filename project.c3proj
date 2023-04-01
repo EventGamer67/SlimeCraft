@@ -425,7 +425,8 @@
 			"Sprite32",
 			"Cam2",
 			"Sprite33",
-			"Particles3"
+			"Particles3",
+			"Sprite34"
 		],
 		"subfolders": []
 	},
