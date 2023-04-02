@@ -356,6 +356,14 @@
 							]
 						},
 						{
+							"callFunction": "addHungry",
+							"sid": 231098124734276,
+							"disabled": true,
+							"parameters": [
+								"10"
+							]
+						},
+						{
 							"id": "set-position",
 							"objectClass": "Cam",
 							"sid": 742933339106859,

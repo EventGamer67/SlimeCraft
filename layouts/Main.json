@@ -2955,8 +2955,8 @@
 					"uid": 43,
 					"instanceVariables": {
 						"touched": false,
-						"w": 0,
-						"h": 0,
+						"w": 22,
+						"h": 22,
 						"action": "",
 						"active": true,
 						"selected": false,
@@ -2991,15 +2991,15 @@
 					"properties": {
 						"initially-visible": false,
 						"initial-animation": "Animation 1",
-						"initial-frame": 0,
+						"initial-frame": 1,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 181,
 					"instanceVariables": {
 						"touched": false,
-						"w": 0,
-						"h": 0,
+						"w": 22,
+						"h": 22,
 						"action": "",
 						"active": true,
 						"selected": false,

@@ -2791,7 +2791,17 @@
 									"children": [
 										{
 											"eventType": "block",
-											"conditions": [],
+											"conditions": [
+												{
+													"id": "is-touching-object",
+													"objectClass": "Touch",
+													"sid": 706406046784174,
+													"parameters": {
+														"object": "FoodBtn"
+													},
+													"isInverted": true
+												}
+											],
 											"actions": [
 												{
 													"id": "set-eventvar-value",
@@ -6251,6 +6261,7 @@
 					],
 					"actions": [],
 					"sid": 170087364357968,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -6266,6 +6277,7 @@
 							],
 							"actions": [],
 							"sid": 166392534884631,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -6290,7 +6302,8 @@
 											]
 										}
 									],
-									"sid": 816328082572327
+									"sid": 816328082572327,
+									"disabled": true
 								}
 							]
 						}
@@ -6310,6 +6323,7 @@
 					],
 					"actions": [],
 					"sid": 503301268327681,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -6326,6 +6340,7 @@
 							],
 							"actions": [],
 							"sid": 699436693755408,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -6346,7 +6361,8 @@
 											}
 										}
 									],
-									"sid": 118516573628954
+									"sid": 118516573628954,
+									"disabled": true
 								}
 							]
 						}
@@ -7815,6 +7831,31 @@
 													],
 													"sid": 433250072779447,
 													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "pick-by-evaluate",
+																	"objectClass": "System",
+																	"sid": 192303499207695,
+																	"parameters": {
+																		"object": "Inventory_Item",
+																		"expression": "Inventory_Item.Type = \"HandItem\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-angle",
+																	"objectClass": "Inventory_Item",
+																	"sid": 602815856471728,
+																	"parameters": {
+																		"angle": "anglelerp(Self.Angle,sin(tickcount*50)*35,0.1)"
+																	}
+																}
+															],
+															"sid": 814160285602344
+														},
 														{
 															"eventType": "block",
 															"conditions": [

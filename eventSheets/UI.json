@@ -8777,14 +8777,6 @@
 											],
 											"actions": [
 												{
-													"id": "set-visible",
-													"objectClass": "FoodBtn",
-													"sid": 646175081543732,
-													"parameters": {
-														"visibility": "visible"
-													}
-												},
-												{
 													"id": "set-instvar-value",
 													"objectClass": "Sprite11",
 													"sid": 510731749552762,
@@ -8794,7 +8786,34 @@
 													}
 												}
 											],
-											"sid": 812797204850563
+											"sid": 812797204850563,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 437504084440424,
+															"parameters": {
+																"object": "FoodBtn",
+																"expression": "FoodBtn.Type = \"Eat\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-visible",
+															"objectClass": "FoodBtn",
+															"sid": 508184271563666,
+															"parameters": {
+																"visibility": "visible"
+															}
+														}
+													],
+													"sid": 325528061612844
+												}
+											]
 										},
 										{
 											"eventType": "block",
@@ -8802,20 +8821,38 @@
 												{
 													"id": "else",
 													"objectClass": "System",
-													"sid": 607473087880757
+													"sid": 466188957153925
 												}
 											],
-											"actions": [
+											"actions": [],
+											"sid": 637425003704860,
+											"children": [
 												{
-													"id": "set-visible",
-													"objectClass": "FoodBtn",
-													"sid": 418663432695453,
-													"parameters": {
-														"visibility": "invisible"
-													}
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 324737084697270,
+															"parameters": {
+																"object": "FoodBtn",
+																"expression": "FoodBtn.Type = \"Eat\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-visible",
+															"objectClass": "FoodBtn",
+															"sid": 839514058579969,
+															"parameters": {
+																"visibility": "invisible"
+															}
+														}
+													],
+													"sid": 567108101206802
 												}
-											],
-											"sid": 814897669243180
+											]
 										}
 									]
 								},
@@ -8845,14 +8882,6 @@
 											"parameters": {
 												"instance-variable": "Item_Type",
 												"value": "\"\""
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "FoodBtn",
-											"sid": 737248347892831,
-											"parameters": {
-												"visibility": "invisible"
 											}
 										},
 										{
