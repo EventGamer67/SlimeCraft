@@ -1,0 +1,385 @@
+{
+	"name": "QuestTracking",
+	"events": [
+		{
+			"functionName": "UpdateTrackingQuest",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "Quest",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 165813584729749,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "Text",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 299312881543502
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 443939907776227,
+							"parameters": {
+								"object": "Inventory_Item",
+								"expression": "Inventory_Item.Type = \"Task\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Inventory_Item",
+							"sid": 534827661909495
+						}
+					],
+					"sid": 271544619869204
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 686477647809421,
+							"parameters": {
+								"object": "Message_Text",
+								"expression": "Message_Text.Type = \"Task\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 289238864958313,
+							"parameters": {
+								"variable": "Text",
+								"value": "\"[color=ffff00][scale=0.07]\"&Functions.Get_LanguageText(JSON.Get(\"Player.TrackingQuest\"))&\"[/scale][/color]\"&newline&Functions.Get_LanguageText(JSON.Get(\"Quests.\"&JSON.Get(\"Player.TrackingQuest\")&\".Description\"))"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Message_Text",
+							"sid": 833558845309403,
+							"parameters": {
+								"text": "Text"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Message_Text",
+							"sid": 640656527639493,
+							"parameters": {
+								"width": "Self.Width",
+								"height": "Self.TextHeight"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Message_Text",
+							"sid": 582781899269939,
+							"disabled": true,
+							"parameters": {
+								"text": "Text"
+							}
+						}
+					],
+					"sid": 475332867401654,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "counter",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 778647746402391
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "JSON",
+									"sid": 505407785807008,
+									"parameters": {
+										"path": "\"Quests.\"&JSON.Get(\"Player.TrackingQuest\")&\".Requirements\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 162984357436381,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 609349937166107,
+											"parameters": {
+												"object-to-create": "Inventory_Item",
+												"layer": "\"UI\"",
+												"x": "Message_Text.BBoxLeft+5",
+												"y": "Message_Text.BBoxBottom+3+(10*counter)",
+												"create-hierarchy": true,
+												"template-name": "\"Task\""
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Inventory_Item",
+											"sid": 151040088990483,
+											"parameters": {
+												"animation": "tokenat(JSON.CurrentValue,0,\",\")",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inventory_Item",
+											"sid": 712099501071044,
+											"parameters": {
+												"instance-variable": "Count_",
+												"value": "int(tokenat(JSON.CurrentValue,1,\",\"))"
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "Inventory_Item",
+											"sid": 538877573448246,
+											"parameters": {
+												"width": "10",
+												"height": "10"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 428083989896149,
+											"disabled": true,
+											"parameters": {
+												"variable": "Text",
+												"value": "Text&newline&\"[offsetY=2]\"&\"    \"&tokenat(JSON.CurrentValue,1,\",\")&\"[/offsetY]\""
+											}
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 534190074168722,
+											"parameters": {
+												"variable": "counter",
+												"value": "1"
+											}
+										},
+										{
+											"id": "append-text",
+											"objectClass": "Message_Text",
+											"sid": 355082498895996,
+											"disabled": true,
+											"parameters": {
+												"text": "newline&\"[offsetY=\"&counter*2&\"]\"&\"    \"&tokenat(JSON.CurrentValue,1,\",\")&\"[/offsetY]\""
+											}
+										}
+									],
+									"sid": 177588266252622
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 380877654165813,
+									"parameters": {
+										"variable": "Text",
+										"value": "Text&\"[/scale]\""
+									}
+								}
+							],
+							"sid": 968989727785847,
+							"disabled": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 273811713247818,
+							"parameters": {
+								"object": "Message_Text",
+								"expression": "Message_Text.Type = \"Task\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Message_Text",
+							"sid": 684946649801282,
+							"parameters": {
+								"text": "Text"
+							}
+						}
+					],
+					"sid": 517390520811986
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "UpdateQuestRequirements",
+							"sid": 855297117394944
+						}
+					],
+					"sid": 107167331498733
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 754391529349785,
+					"parameters": {
+						"key": 52
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "UpdateTrackingQuest",
+					"sid": 448678544052124
+				}
+			],
+			"sid": 122787121891068
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 545817624484321,
+					"parameters": {
+						"key": 53
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "UpdateQuestRequirements",
+					"sid": 277682627921090
+				}
+			],
+			"sid": 959652074515477
+		},
+		{
+			"functionName": "UpdateQuestRequirements",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "Quest",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 460649559450676,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 566524792851707,
+							"parameters": {
+								"object": "Inventory_Item",
+								"expression": "Inventory_Item.Type = \"Task\" "
+							}
+						}
+					],
+					"actions": [],
+					"sid": 274180754108107,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 809270833431912,
+									"parameters": {
+										"object": "Inventory_Item"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 151636500132434,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Inventory_Item",
+											"sid": 561251621483539,
+											"parameters": {
+												"child": "Message_Text",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "Message_Text",
+											"sid": 114102832070243,
+											"parameters": {
+												"text": "Functions.Get_ItemInInventoryCount(Inventory_Item.AnimationName)&\"/\"&Inventory_Item.Count_"
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "Message_Text",
+											"sid": 741811604352011,
+											"parameters": {
+												"color": "Functions.Get_ItemInInventoryCount(Inventory_Item.AnimationName) >= Inventory_Item.Count_ ? rgbEx(50,100,50) : rgbEx(100,100,100)"
+											}
+										}
+									],
+									"sid": 638255565269683
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 649135332529625
+}

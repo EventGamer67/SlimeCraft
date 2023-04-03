@@ -1,7 +1,7 @@
 {
 	"Quest1":{
-		"Description":"Quest1",
-		"Requirements":["Oak_Log,1"],
+		"Description":"DQ1",
+		"Requirements":["Oak_Log,1","Oak_Log,100","Oak_Log,10"],
 		"Reward":["Oak_Sampling,1"]
 	},
 	"Quest2":{

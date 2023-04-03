@@ -10,6 +10,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 880082287130651
+		},
+		{
+			"name": "Translatable",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 676644867524096
 		}
 	],
 	"behaviorTypes": [

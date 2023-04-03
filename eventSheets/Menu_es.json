@@ -6,6 +6,10 @@
 			"includeSheet": "AnimatedTriggers"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "Functions_es"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{

@@ -77,6 +77,10 @@
 			"includeSheet": "Chat"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "QuestTracking"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -1324,11 +1328,31 @@
 			"eventType": "variable",
 			"name": "coef",
 			"type": "number",
-			"initialValue": "2",
+			"initialValue": "20",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 696601401217705
+		},
+		{
+			"eventType": "variable",
+			"name": "DayCycle",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 490378182605775
+		},
+		{
+			"eventType": "variable",
+			"name": "PhaseDayClycle",
+			"type": "string",
+			"initialValue": "Day",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 977266782132366
 		},
 		{
 			"eventType": "group",
@@ -1721,6 +1745,15 @@
 							}
 						},
 						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 547348233324123,
+							"parameters": {
+								"variable": "DayCycle",
+								"value": "Value"
+							}
+						},
+						{
 							"id": "set-layer-background-color",
 							"objectClass": "System",
 							"sid": 970220223392747,
@@ -1972,6 +2005,15 @@
 															"parameters": {
 																"visibility": "invisible"
 															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 702118559192792,
+															"parameters": {
+																"variable": "PhaseDayClycle",
+																"value": "\"Day\""
+															}
 														}
 													],
 													"sid": 535208218186873
@@ -2105,6 +2147,15 @@
 																"loop": "no",
 																"ping-pong": "no",
 																"repeat-count": "1"
+															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 269519613293043,
+															"parameters": {
+																"variable": "PhaseDayClycle",
+																"value": "\"Night\""
 															}
 														}
 													],
@@ -3630,12 +3681,6 @@
 																					]
 																				}
 																			]
-																		},
-																		{
-																			"eventType": "block",
-																			"conditions": [],
-																			"actions": [],
-																			"sid": 202135147231806
 																		}
 																	]
 																}
@@ -4200,6 +4245,17 @@
 									"sid": 994455437741764
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "UpdateQuestRequirements",
+									"sid": 198470243818169
+								}
+							],
+							"sid": 179033026972964
 						}
 					]
 				},

@@ -29,6 +29,13 @@
 					"initialValue": "0",
 					"comment": "",
 					"sid": 798719416993107
+				},
+				{
+					"name": "health",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 809726408170287
 				}
 			],
 			"eventType": "function-block",
@@ -61,6 +68,31 @@
 								"create-hierarchy": true,
 								"template-name": "\"Zombie\""
 							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Zombie",
+							"sid": 302903982822110,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "health"
+							}
+						},
+						{
+							"id": "add-obstacle",
+							"objectClass": "Zombie",
+							"sid": 698154158100667,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"obstacle": "Terrain"
+							}
+						},
+						{
+							"callFunction": "Add_MobRate",
+							"sid": 471884897373097,
+							"parameters": [
+								"Zombie.MobSpawnWeight"
+							]
 						}
 					],
 					"sid": 698895970246289
@@ -73,20 +105,21 @@
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 596567106320444,
+					"sid": 432280653470675,
 					"parameters": {
-						"key": 192
+						"key": 50
 					}
 				}
 			],
 			"actions": [
 				{
 					"callFunction": "SpawnEnemy",
-					"sid": 430890065670172,
+					"sid": 987464348969719,
 					"parameters": [
 						"\"Zombie\"",
 						"Mouse.X",
-						"Mouse.Y"
+						"Mouse.Y",
+						"10"
 					]
 				}
 			],
@@ -264,20 +297,20 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 198184410339815,
+									"sid": 131636322372614,
 									"parameters": {
 										"object-to-create": "Fire",
 										"layer": "\"Layer 1\"",
 										"x": "Enemies.X",
 										"y": "Enemies.BBoxTop-8",
-										"create-hierarchy": false,
-										"template-name": "\"\""
+										"create-hierarchy": true,
+										"template-name": "\"Zombie\""
 									}
 								},
 								{
 									"id": "add-child",
 									"objectClass": "Enemies",
-									"sid": 996610957302850,
+									"sid": 820903971476305,
 									"parameters": {
 										"child": "Fire",
 										"transform-x": true,
@@ -287,7 +320,7 @@
 										"transform-a": false,
 										"transform-o": true,
 										"transform-z-elevation": true,
-										"transform-visibility": true,
+										"transform-visibility": false,
 										"destroy-with-parent": true
 									}
 								}
@@ -398,7 +431,16 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [],
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 343801757653603,
+									"parameters": {
+										"value": "PhaseDayClycle = \"Day\""
+									}
+								}
+							],
 							"actions": [
 								{
 									"id": "cast-ray",
@@ -570,16 +612,22 @@
 											"parameters": {
 												"value": "Enemies.X > Enemies.TargetX"
 											}
+										},
+										{
+											"id": "is-on-floor",
+											"objectClass": "Enemies",
+											"sid": 731313336408368,
+											"behaviorType": "Platform"
 										}
 									],
 									"actions": [
 										{
-											"id": "simulate-control",
+											"id": "set-vector-x",
 											"objectClass": "Enemies",
-											"sid": 863769765338964,
+											"sid": 225706530384534,
 											"behaviorType": "Platform",
 											"parameters": {
-												"control": "left"
+												"vector-x": "-30"
 											}
 										},
 										{
@@ -717,16 +765,22 @@
 											"parameters": {
 												"value": "Enemies.X < Enemies.TargetX"
 											}
+										},
+										{
+											"id": "is-on-floor",
+											"objectClass": "Enemies",
+											"sid": 838021238289065,
+											"behaviorType": "Platform"
 										}
 									],
 									"actions": [
 										{
-											"id": "simulate-control",
+											"id": "set-vector-x",
 											"objectClass": "Enemies",
-											"sid": 226934739664193,
+											"sid": 319479998002175,
 											"behaviorType": "Platform",
 											"parameters": {
-												"control": "right"
+												"vector-x": "30"
 											}
 										},
 										{
@@ -979,21 +1033,84 @@
 							}
 						},
 						{
-							"id": "set-vector-x",
+							"id": "set-vector-y",
 							"objectClass": "Enemies",
-							"sid": 745217769176247,
+							"sid": 991818158348764,
 							"behaviorType": "Platform",
 							"parameters": {
-								"vector-x": "cos(AngleAttack)*(Knockback*50)"
+								"vector-y": "Enemies.Platform.VectorY-(Knockback*10)"
 							}
 						},
 						{
-							"id": "set-vector-y",
+							"id": "set-vector-x",
 							"objectClass": "Enemies",
-							"sid": 954021734487443,
+							"sid": 815913539046524,
 							"behaviorType": "Platform",
 							"parameters": {
-								"vector-y": "Enemies.Platform.VectorY+sin(AngleAttack)*(Knockback*50)"
+								"vector-x": "(cos(AngleAttack)*(Knockback*8))"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "Enemies",
+							"sid": 682274572356749,
+							"parameters": {
+								"color": "rgbEx(100, 50, 50)"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 968381944136174,
+							"parameters": {
+								"object-to-create": "Message_Text",
+								"layer": "Enemies.LayerName",
+								"x": "Enemies.X",
+								"y": "Enemies.BBoxTop",
+								"create-hierarchy": true,
+								"template-name": "\"Hit\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Message_Text",
+							"sid": 213241640342187,
+							"parameters": {
+								"text": "damage"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Message_Text",
+							"sid": 139967293215605,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetY",
+								"end-value": "Self.Y-20",
+								"time": "0.3",
+								"ease": "easeoutsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Message_Text",
+							"sid": 221354862995497,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "0.3",
+								"ease": "default",
+								"destroy-on-complete": "yes",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						}
 					],
@@ -1205,6 +1322,29 @@
 								}
 							],
 							"sid": 544705760956519
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 106140678276183,
+									"parameters": {
+										"seconds": "0.2"
+									}
+								},
+								{
+									"id": "set-default-color",
+									"objectClass": "Enemies",
+									"sid": 102530077265807,
+									"parameters": {
+										"color": "rgbEx(100, 100, 100)"
+									}
+								}
+							],
+							"sid": 930327018086194
 						}
 					]
 				}
@@ -1370,6 +1510,543 @@
 				}
 			],
 			"sid": 552734883803663
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "SpawnLogic",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "SpawnRate",
+					"type": "number",
+					"initialValue": "200",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 499881453588962
+				},
+				{
+					"eventType": "variable",
+					"name": "MaxMobRate",
+					"type": "number",
+					"initialValue": "15",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 638993368479904
+				},
+				{
+					"eventType": "variable",
+					"name": "MobRate",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 203735213081942
+				},
+				{
+					"functionName": "Add_MobRate",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "Value",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 446041595427007
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 776575824280467,
+							"parameters": {
+								"variable": "MobRate",
+								"value": "Value"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 473979125492441,
+							"parameters": {
+								"variable": "MobRate",
+								"value": "Functions.Get_ActiveMobCount"
+							}
+						}
+					],
+					"sid": 345016503059089
+				},
+				{
+					"functionName": "RandomSpawnTile",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 499971974360582,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "tileX",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 486227064240249
+						},
+						{
+							"eventType": "variable",
+							"name": "tileY",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 865793838925577
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 287305525209028,
+									"parameters": {
+										"variable": "tileX",
+										"value": "Terrain.PositionToTileX(random(ViewportLeft(\"Layer 1\")-80,ViewportRight(\"Layer 1\")+80))"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 130144087046310,
+									"parameters": {
+										"variable": "tileY",
+										"value": "Terrain.PositionToTileY(random(ViewportTop(\"Layer 1\")-48,ViewportBottom(\"Layer 1\")+48))"
+									}
+								}
+							],
+							"sid": 157767736005577,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-tile-at",
+											"objectClass": "Terrain",
+											"sid": 709463536277602,
+											"parameters": {
+												"tile-x": "tileX",
+												"tile-y": "tileY",
+												"comparison": 1,
+												"tile": "-1"
+											}
+										},
+										{
+											"id": "is-between-values",
+											"objectClass": "System",
+											"sid": 919182260467629,
+											"parameters": {
+												"value": "Terrain.TileToPositionX(tileX)",
+												"lower-bound": "ViewportLeft(\"Layer 1\")",
+												"upper-bound": "ViewportRight(\"Layer 1\")"
+											}
+										},
+										{
+											"id": "is-between-values",
+											"objectClass": "System",
+											"sid": 372682494602067,
+											"parameters": {
+												"value": "Terrain.TileToPositionY(tileY)",
+												"lower-bound": "ViewportTop(\"Layer 1\")",
+												"upper-bound": "ViewportBottom(\"Layer 1\")"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "RandomSpawnTile",
+											"sid": 644218541929700
+										}
+									],
+									"sid": 725929851359800,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 496775971041512
+										}
+									],
+									"actions": [
+										{
+											"id": "set-tile",
+											"objectClass": "Terrain",
+											"sid": 538565261809116,
+											"parameters": {
+												"tile-x": "tileX",
+												"tile-y": "tileY",
+												"tile": "2",
+												"state": "normal"
+											}
+										}
+									],
+									"sid": 143592735671084,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "while",
+													"objectClass": "System",
+													"sid": 228004512530576
+												}
+											],
+											"actions": [],
+											"sid": 800676373211265,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-tile-at",
+															"objectClass": "Terrain",
+															"sid": 978401599808552,
+															"parameters": {
+																"tile-x": "tileX",
+																"tile-y": "tileY+1",
+																"comparison": 0,
+																"tile": "-1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "stop-loop",
+															"objectClass": "System",
+															"sid": 145868035469933
+														}
+													],
+													"sid": 997792566510470
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 770726861137858
+														}
+													],
+													"actions": [
+														{
+															"id": "add-to-eventvar",
+															"objectClass": "System",
+															"sid": 284262462841729,
+															"parameters": {
+																"variable": "tileY",
+																"value": "1"
+															}
+														}
+													],
+													"sid": 959883017702888
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "subtract-from-eventvar",
+													"objectClass": "System",
+													"sid": 509755753314148,
+													"parameters": {
+														"variable": "tileY",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 954277932451231
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 824935070772111,
+													"parameters": {
+														"tile-x": "tileX",
+														"tile-y": "tileY-1",
+														"comparison": 1,
+														"tile": "-1"
+													}
+												},
+												{
+													"id": "is-between-values",
+													"objectClass": "System",
+													"sid": 903598773100082,
+													"parameters": {
+														"value": "Terrain.TileToPositionX(tileX)",
+														"lower-bound": "ViewportLeft(\"Layer 1\")",
+														"upper-bound": "ViewportRight(\"Layer 1\")"
+													}
+												},
+												{
+													"id": "is-between-values",
+													"objectClass": "System",
+													"sid": 767621475886707,
+													"parameters": {
+														"value": "Terrain.TileToPositionY(tileY)",
+														"lower-bound": "ViewportTop(\"Layer 1\")",
+														"upper-bound": "ViewportBottom(\"Layer 1\")"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "RandomSpawnTile",
+													"sid": 246434974673183
+												}
+											],
+											"sid": 163514027623433,
+											"isOrBlock": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 749052171992489
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "SpawnEnemy",
+													"sid": 690330009680467,
+													"parameters": [
+														"\"Zombie\"",
+														"Terrain.TileToPositionX(tileX)",
+														"Terrain.TileToPositionY(tileY)",
+														"10"
+													]
+												}
+											],
+											"sid": 969153091583849
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "Get_ActiveMobCount",
+					"functionCopyPicked": false,
+					"functionDescription": "",
+					"functionCategory": "EnemySpawn",
+					"functionReturnType": "number",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 425235405590717,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "counter",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 443213377435708
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 141118414016759,
+									"parameters": {
+										"object": "Enemies"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 354276006880640,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-between-values",
+											"objectClass": "System",
+											"sid": 812880472974093,
+											"parameters": {
+												"value": "Enemies.X",
+												"lower-bound": "ViewportLeft(\"Layer 1\")-80",
+												"upper-bound": "ViewportRight(\"Layer 1\")+80"
+											}
+										},
+										{
+											"id": "is-between-values",
+											"objectClass": "System",
+											"sid": 698139197895562,
+											"parameters": {
+												"value": "Enemies.Y",
+												"lower-bound": "ViewportTop(\"Layer 1\")-48",
+												"upper-bound": "ViewportBottom(\"Layer 1\")+48"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 181560349704722,
+											"parameters": {
+												"variable": "counter",
+												"value": "Enemies.MobSpawnWeight"
+											}
+										}
+									],
+									"sid": 459403413327734
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 612937275646727
+										}
+									],
+									"actions": [],
+									"sid": 508659464723637,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 958254140788491
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 977441879138462,
+									"parameters": {
+										"value": "counter"
+									}
+								}
+							],
+							"sid": 585380040036618
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-signal",
+							"objectClass": "System",
+							"sid": 425458455182717,
+							"parameters": {
+								"tag": "\"Tick\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 741309339883485,
+							"parameters": {
+								"type": "log",
+								"message": "Functions.Get_ActiveMobCount"
+							}
+						}
+					],
+					"sid": 662779500071565,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 336342940100485,
+									"parameters": {
+										"value": "PhaseDayClycle = \"Night\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 184829193317986,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 818042637635955,
+											"parameters": {
+												"value": "random(10) > (SpawnRate*(MobRate/MaxMobRate))/20"
+											}
+										}
+									],
+									"actions": [
+										{
+											"type": "comment",
+											"text": "spawn"
+										},
+										{
+											"callFunction": "RandomSpawnTile",
+											"sid": 409838791703317
+										}
+									],
+									"sid": 440968039872692
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 162307444119125
 		}
 	],
 	"sid": 377794395034310

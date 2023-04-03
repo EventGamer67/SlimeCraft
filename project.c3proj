@@ -426,7 +426,9 @@
 			"Cam2",
 			"Sprite33",
 			"Particles3",
-			"Sprite34"
+			"Sprite34",
+			"Rocket",
+			"Particles4"
 		],
 		"subfolders": []
 	},
@@ -474,7 +476,8 @@
 			"SceneLoader_es",
 			"Enemy",
 			"AnimatedTriggers",
-			"Chat"
+			"Chat",
+			"QuestTracking"
 		],
 		"subfolders": []
 	},
@@ -1209,7 +1212,30 @@
 					}
 				}
 			],
-			"subfolders": []
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "en.json",
+							"type": "application/json",
+							"sid": 508103812610560,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "ru.json",
+							"type": "application/json",
+							"sid": 500947038076325,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "Languages"
+				}
+			]
 		}
 	},
 	"timelines": {

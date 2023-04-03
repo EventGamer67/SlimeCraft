@@ -5369,6 +5369,51 @@
 															"sid": 551309880242701
 														}
 													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 743265219079838,
+															"parameters": {
+																"object": "Enemies",
+																"expression": "Enemies.UID = Sprite.LineOfSight.HitUID"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 638673772171075,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 938304439742590,
+																	"parameters": {
+																		"interval-seconds": "0.3"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "HitEnemy",
+																	"sid": 441793522345747,
+																	"parameters": [
+																		"Enemies.UID",
+																		"10",
+																		false,
+																		"1",
+																		"angle(Sprite.X,Sprite.Y+10,Enemies.X,Enemies.Y)"
+																	]
+																}
+															],
+															"sid": 525680102015620
+														}
+													]
 												}
 											]
 										},

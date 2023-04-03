@@ -1,35 +1,29 @@
 {
-	"name": "Zombie",
+	"name": "Rocket",
 	"plugin-id": "Sprite",
-	"sid": 757021374665819,
+	"sid": 292176351501457,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 101356472572123
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 256,
-						"height": 320,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 43,
+						"height": 79,
+						"originX": 0.5348837209302325,
+						"originY": 0.5063291139240507,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1086038,
+						"imageSpriteId": 4626311,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 586159053378522,
+				"sid": 850851475967739,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

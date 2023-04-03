@@ -2083,7 +2083,8 @@
 					},
 					"uid": 118,
 					"instanceVariables": {
-						"Type": "GlobalText"
+						"Type": "GlobalText",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -2957,7 +2958,8 @@
 					},
 					"uid": 145,
 					"instanceVariables": {
-						"Type": "DropItemText"
+						"Type": "DropItemText",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -3045,6 +3047,10 @@
 										"state": [
 											{
 												"iv": "Type",
+												"state": true
+											},
+											{
+												"iv": "Translatable",
 												"state": true
 											}
 										]
@@ -4613,7 +4619,8 @@
 					},
 					"uid": 176,
 					"instanceVariables": {
-						"Type": "Trader"
+						"Type": "Trader",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -4816,7 +4823,8 @@
 					},
 					"uid": 179,
 					"instanceVariables": {
-						"Type": "Price"
+						"Type": "Price",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -4965,7 +4973,8 @@
 					},
 					"uid": 182,
 					"instanceVariables": {
-						"Type": "Count"
+						"Type": "Count",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -5097,7 +5106,8 @@
 					},
 					"uid": 184,
 					"instanceVariables": {
-						"Type": "Coin"
+						"Type": "Coin",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -6391,7 +6401,8 @@
 					},
 					"uid": 197,
 					"instanceVariables": {
-						"Type": "WorldName"
+						"Type": "WorldName",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -6467,7 +6478,8 @@
 					},
 					"uid": 198,
 					"instanceVariables": {
-						"Type": "PlayTime"
+						"Type": "PlayTime",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -6543,7 +6555,8 @@
 					},
 					"uid": 200,
 					"instanceVariables": {
-						"Type": "New"
+						"Type": "New",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -7029,7 +7042,8 @@
 					},
 					"uid": 204,
 					"instanceVariables": {
-						"Type": "Create"
+						"Type": "Create",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -7104,7 +7118,8 @@
 					},
 					"uid": 205,
 					"instanceVariables": {
-						"Type": "New"
+						"Type": "New",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -7240,7 +7255,8 @@
 					},
 					"uid": 207,
 					"instanceVariables": {
-						"Type": "NewWorldName"
+						"Type": "NewWorldName",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -7711,7 +7727,8 @@
 					},
 					"uid": 214,
 					"instanceVariables": {
-						"Type": "Ok"
+						"Type": "Ok",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -7786,7 +7803,8 @@
 					},
 					"uid": 215,
 					"instanceVariables": {
-						"Type": "MessageText"
+						"Type": "MessageText",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -7949,7 +7967,8 @@
 					},
 					"uid": 216,
 					"instanceVariables": {
-						"Type": "Create"
+						"Type": "Create",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -8140,7 +8159,8 @@
 					},
 					"uid": 219,
 					"instanceVariables": {
-						"Type": "Coin"
+						"Type": "Coin",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -8819,7 +8839,8 @@
 					},
 					"uid": 227,
 					"instanceVariables": {
-						"Type": "Trader"
+						"Type": "Trader",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -10148,7 +10169,8 @@
 					},
 					"uid": 238,
 					"instanceVariables": {
-						"Type": "Inventory"
+						"Type": "Inventory",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -10280,7 +10302,8 @@
 					},
 					"uid": 240,
 					"instanceVariables": {
-						"Type": "Coin"
+						"Type": "Coin",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -11347,7 +11370,8 @@
 					},
 					"uid": 251,
 					"instanceVariables": {
-						"Type": "WorkBench"
+						"Type": "WorkBench",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -11479,7 +11503,8 @@
 					},
 					"uid": 253,
 					"instanceVariables": {
-						"Type": "Coin"
+						"Type": "Coin",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -12480,7 +12505,8 @@
 					},
 					"uid": 127,
 					"instanceVariables": {
-						"Type": "Timer"
+						"Type": "Timer",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -12957,7 +12983,7 @@
 				{
 					"type": "Zombie",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -12969,14 +12995,15 @@
 						"Health": 0,
 						"TargetX": 0,
 						"TargetY": 0,
-						"Burning": false
+						"Burning": false,
+						"MobSpawnWeight": 1
 					},
 					"behaviors": {
 						"Platform": {
 							"properties": {
-								"max-speed": 30,
+								"max-speed": 200,
 								"acceleration": 1000,
-								"deceleration": 1500,
+								"deceleration": 100,
 								"jump-strength": 240,
 								"gravity": 1500,
 								"max-fall-speed": 1000,
@@ -12988,7 +13015,7 @@
 						},
 						"LineOfSight": {
 							"properties": {
-								"obstacles": "solids",
+								"obstacles": "custom",
 								"range": 10000,
 								"cone-of-view": 360,
 								"use-collision-cells": true
@@ -13000,6 +13027,12 @@
 						"Tween": {
 							"properties": {
 								"enabled": true
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
 							}
 						}
 					},
@@ -13058,6 +13091,10 @@
 											},
 											{
 												"iv": "Burning",
+												"state": true
+											},
+											{
+												"iv": "MobSpawnWeight",
 												"state": true
 											}
 										]
@@ -13142,6 +13179,19 @@
 										"state": [
 											[
 												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "Solid",
+										"state": [
+											[
+												"enabled",
+												true
+											],
+											[
+												"tags",
 												true
 											]
 										]
@@ -13255,7 +13305,7 @@
 									"h": true,
 									"a": true,
 									"o": true,
-									"v": true,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -13328,7 +13378,7 @@
 							"h": true,
 							"a": false,
 							"o": true,
-							"v": true,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -13387,7 +13437,7 @@
 							"h": true,
 							"a": false,
 							"o": true,
-							"v": true,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -13452,7 +13502,7 @@
 							"h": false,
 							"a": false,
 							"o": true,
-							"v": true,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -13517,7 +13567,7 @@
 							"h": false,
 							"a": false,
 							"o": true,
-							"v": true,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -13583,7 +13633,7 @@
 									"h": true,
 									"a": false,
 									"o": true,
-									"v": true,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -13598,7 +13648,7 @@
 									"h": true,
 									"a": false,
 									"o": true,
-									"v": true,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -13613,7 +13663,7 @@
 									"h": false,
 									"a": false,
 									"o": true,
-									"v": true,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -13628,7 +13678,7 @@
 									"h": false,
 									"a": false,
 									"o": true,
-									"v": true,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -13642,7 +13692,7 @@
 							"h": true,
 							"a": true,
 							"o": true,
-							"v": true,
+							"v": false,
 							"d": true,
 							"sm": "normal"
 						},
@@ -13688,6 +13738,143 @@
 					"uid": 267,
 					"instanceVariables": {},
 					"behaviors": {},
+					"template": {
+						"mode": "template",
+						"templateName": "Zombie",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"initial-animation",
+												true
+											],
+											[
+												"initial-frame",
+												true
+											],
+											[
+												"enable-collisions",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": []
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": []
+							},
+							{
+								"id": "effect",
+								"component": []
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											],
+											[
+												"twpx",
+												true
+											],
+											[
+												"twpy",
+												true
+											],
+											[
+												"twpz",
+												true
+											],
+											[
+												"twpw",
+												true
+											],
+											[
+												"twph",
+												true
+											],
+											[
+												"twpa",
+												true
+											],
+											[
+												"dwp",
+												true
+											],
+											[
+												"ssm",
+												true
+											]
+										]
+									}
+								]
+							}
+						],
+						"replicasUIDs": null
+					},
 					"world": {
 						"x": 351,
 						"y": 687,
@@ -13858,7 +14045,8 @@
 					},
 					"uid": 270,
 					"instanceVariables": {
-						"Type": "QuesstName"
+						"Type": "QuesstName",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -14019,7 +14207,8 @@
 					},
 					"uid": 272,
 					"instanceVariables": {
-						"Type": "QuesstName"
+						"Type": "QuesstName",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -14444,7 +14633,8 @@
 					},
 					"uid": 276,
 					"instanceVariables": {
-						"Type": "Count"
+						"Type": "Count",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -14718,7 +14908,8 @@
 					},
 					"uid": 279,
 					"instanceVariables": {
-						"Type": "Accept"
+						"Type": "Accept",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -14793,7 +14984,8 @@
 					},
 					"uid": 281,
 					"instanceVariables": {
-						"Type": "Complete"
+						"Type": "Complete",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -16277,7 +16469,8 @@
 					},
 					"uid": 285,
 					"instanceVariables": {
-						"Type": "ChatMessage"
+						"Type": "ChatMessage",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -16823,7 +17016,8 @@
 					},
 					"uid": 291,
 					"instanceVariables": {
-						"Type": "Chat"
+						"Type": "Chat",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -16898,7 +17092,8 @@
 					},
 					"uid": 294,
 					"instanceVariables": {
-						"Type": "ChatInput"
+						"Type": "ChatInput",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -17642,7 +17837,8 @@
 					},
 					"uid": 297,
 					"instanceVariables": {
-						"Type": "Name"
+						"Type": "Name",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -17908,7 +18104,8 @@
 					},
 					"uid": 301,
 					"instanceVariables": {
-						"Type": "Desc"
+						"Type": "Desc",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -18196,7 +18393,8 @@
 					},
 					"uid": 305,
 					"instanceVariables": {
-						"Type": "Number"
+						"Type": "Number",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -21104,7 +21302,8 @@
 					},
 					"uid": 320,
 					"instanceVariables": {
-						"Type": "rescount"
+						"Type": "rescount",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -21694,7 +21893,8 @@
 					},
 					"uid": 325,
 					"instanceVariables": {
-						"Type": "Trader"
+						"Type": "Trader",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -22089,7 +22289,8 @@
 					},
 					"uid": 328,
 					"instanceVariables": {
-						"Type": "ControlDefine"
+						"Type": "ControlDefine",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -22136,7 +22337,8 @@
 					},
 					"uid": 331,
 					"instanceVariables": {
-						"Type": "Trader"
+						"Type": "Trader",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -22481,7 +22683,8 @@
 					},
 					"uid": 335,
 					"instanceVariables": {
-						"Type": "Comics"
+						"Type": "Comics",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -22525,6 +22728,712 @@
 						"height": 25,
 						"originX": 0.5,
 						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Message_Text",
+					"properties": {
+						"text": "0",
+						"enable-bbcode": true,
+						"character-width": 58,
+						"character-height": 76,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
+						"spacing-data": "[[18,\" \"],[11,\"i.,;:!|\"],[20,\"l'`\"],[29,\"It\\\"[]°\"],[38,\"fk()*£<>\"],[47,\"ABCDEFGHJKLMNOPQRSTUVWXYZabcdeghjmnopqrsuvwxyz0123456789?-_#&\\\\/+=$€%АБВГДЕЁЗИЙКЛМНОПРСТУФХЧШЪЬЭЯабвгдеёжзийклмнопрстуфхцчшьэя\"],[48,\"Ж\"],[56,\"~@ЦЩЫЮщъыю\"]]",
+						"scale": 0.09,
+						"character-spacing": 1,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "bottom",
+						"read-aloud": false
+					},
+					"uid": 108,
+					"instanceVariables": {
+						"Type": "Hit",
+						"Translatable": false
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"template": {
+						"mode": "template",
+						"templateName": "Hit",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"text",
+												true
+											],
+											[
+												"enable-bbcode",
+												true
+											],
+											[
+												"character-width",
+												true
+											],
+											[
+												"character-height",
+												true
+											],
+											[
+												"character-set",
+												true
+											],
+											[
+												"spacing-data",
+												true
+											],
+											[
+												"scale",
+												true
+											],
+											[
+												"character-spacing",
+												true
+											],
+											[
+												"line-height",
+												true
+											],
+											[
+												"horizontal-alignment",
+												true
+											],
+											[
+												"vertical-alignment",
+												true
+											],
+											[
+												"wrapping",
+												true
+											],
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"origin",
+												true
+											],
+											[
+												"read-aloud",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": [
+											{
+												"iv": "Type",
+												"state": true
+											},
+											{
+												"iv": "Translatable",
+												"state": true
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": [
+									{
+										"key": "Tween",
+										"state": [
+											[
+												"enabled",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "effect",
+								"component": []
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											],
+											[
+												"twpx",
+												true
+											],
+											[
+												"twpy",
+												true
+											],
+											[
+												"twpz",
+												true
+											],
+											[
+												"twpw",
+												true
+											],
+											[
+												"twph",
+												true
+											],
+											[
+												"twpa",
+												true
+											],
+											[
+												"dwp",
+												true
+											],
+											[
+												"ssm",
+												true
+											]
+										]
+									}
+								]
+							}
+						],
+						"replicasUIDs": null
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 108,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": true,
+							"v": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 352,
+						"y": 679,
+						"width": 30,
+						"height": 11,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							0.803921568627451,
+							0.09411764705882353,
+							0.09411764705882353,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Rocket",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 338,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 37,
+						"y": 235,
+						"width": 43,
+						"height": 79,
+						"originX": 0.5348837209302325,
+						"originY": 0.5063291139240507,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Particles4",
+					"properties": {
+						"rate": 3,
+						"spray-cone": 30,
+						"type": "continuous-spray",
+						"object": -1,
+						"initially-visible": true,
+						"live-preview": false,
+						"speed": 200,
+						"size": 8,
+						"opacity": 100,
+						"grow-rate": 0,
+						"x-randomiser": 30,
+						"y-randomiser": 0,
+						"initial-speed-randomiser": 100,
+						"size-randomiser": 12,
+						"grow-rate-randomiser": 0,
+						"acceleration": -150,
+						"gravity": 0,
+						"angle-randomiser": 0,
+						"life-speed-randomiser": 800,
+						"opacity-randomiser": 0,
+						"destroy-mode": "fade-to-invisible",
+						"timeout": 0.5
+					},
+					"uid": 343,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 202,
+						"y": 122,
+						"width": 100,
+						"height": 100,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Inventory_Item",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Barrel",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 347,
+					"instanceVariables": {
+						"Type": "Task",
+						"PosX": -1,
+						"Picked": false,
+						"Global_Pos_X": 0,
+						"Global_Pos_Y": 0,
+						"Count_": 0,
+						"Stackable": false,
+						"Using": "",
+						"Tag": "",
+						"Dragable": false
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"template": {
+						"mode": "template",
+						"templateName": "Task",
+						"sourceTemplateName": "Instrument",
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"initial-animation",
+												true
+											],
+											[
+												"initial-frame",
+												true
+											],
+											[
+												"enable-collisions",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": [
+											{
+												"iv": "Type",
+												"state": true
+											},
+											{
+												"iv": "PosX",
+												"state": true
+											},
+											{
+												"iv": "Picked",
+												"state": true
+											},
+											{
+												"iv": "Global_Pos_X",
+												"state": true
+											},
+											{
+												"iv": "Global_Pos_Y",
+												"state": true
+											},
+											{
+												"iv": "Count_",
+												"state": true
+											},
+											{
+												"iv": "Stackable",
+												"state": true
+											},
+											{
+												"iv": "Using",
+												"state": true
+											},
+											{
+												"iv": "Tag",
+												"state": true
+											},
+											{
+												"iv": "Dragable",
+												"state": true
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": [
+									{
+										"key": "Tween",
+										"state": [
+											[
+												"enabled",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "effect",
+								"component": []
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											],
+											[
+												"twpx",
+												true
+											],
+											[
+												"twpy",
+												true
+											],
+											[
+												"twpz",
+												true
+											],
+											[
+												"twpw",
+												true
+											],
+											[
+												"twph",
+												true
+											],
+											[
+												"twpa",
+												true
+											],
+											[
+												"dwp",
+												true
+											],
+											[
+												"ssm",
+												true
+											]
+										]
+									}
+								]
+							}
+						],
+						"replicasUIDs": null
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 347,
+						"children": [
+							{
+								"uid": 348,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": true,
+									"v": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": true,
+							"v": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 171,
+						"y": 145,
+						"width": 10,
+						"height": 10,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Message_Text",
+					"properties": {
+						"text": "Play",
+						"enable-bbcode": true,
+						"character-width": 58,
+						"character-height": 76,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
+						"spacing-data": "[[18,\" \"],[11,\"i.,;:!|\"],[20,\"l'`\"],[29,\"It\\\"[]°\"],[38,\"fk()*£<>\"],[47,\"ABCDEFGHJKLMNOPQRSTUVWXYZabcdeghjmnopqrsuvwxyz0123456789?-_#&\\\\/+=$€%АБВГДЕЁЗИЙКЛМНОПРСТУФХЧШЪЬЭЯабвгдеёжзийклмнопрстуфхцчшьэя\"],[48,\"Ж\"],[56,\"~@ЦЩЫЮщъыю\"]]",
+						"scale": 0.06,
+						"character-spacing": 0.5,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "left",
+						"read-aloud": false
+					},
+					"uid": 348,
+					"instanceVariables": {
+						"Type": "Play",
+						"Translatable": true
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 347,
+						"uid": 348,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": true,
+							"v": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 177,
+						"y": 146,
+						"width": 65,
+						"height": 14,
+						"originX": 0,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,

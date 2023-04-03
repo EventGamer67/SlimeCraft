@@ -83,6 +83,7 @@
 					"id": "request-project-file",
 					"objectClass": "AJAX",
 					"sid": 438116176700708,
+					"disabled": true,
 					"parameters": {
 						"tag": "\"\"",
 						"file": "Language.json"
@@ -91,14 +92,39 @@
 				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
-					"sid": 147676927566905
+					"sid": 147676927566905,
+					"disabled": true
 				},
 				{
 					"id": "set-json",
 					"objectClass": "JSON",
 					"sid": 767160442911537,
+					"disabled": true,
 					"parameters": {
 						"path": "\"Languages\"",
+						"json": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "request-url",
+					"objectClass": "AJAX",
+					"sid": 986590374952340,
+					"parameters": {
+						"tag": "\"\"",
+						"url": "\"Languages/\"&lowercase(GameScore.Language)&\".json\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 896762460025498
+				},
+				{
+					"id": "set-json",
+					"objectClass": "JSON",
+					"sid": 354830370761055,
+					"parameters": {
+						"path": "\"Language\"",
 						"json": "AJAX.LastData"
 					}
 				},
@@ -215,10 +241,10 @@
 								{
 									"id": "pick-by-evaluate",
 									"objectClass": "System",
-									"sid": 311913300008690,
+									"sid": 402663615034036,
 									"parameters": {
 										"object": "Message_Text",
-										"expression": "Message_Text.Type = \"ControlDefine\""
+										"expression": "Message_Text.Type = \"defineinput\""
 									}
 								}
 							],
@@ -226,9 +252,9 @@
 								{
 									"id": "typewriter-text",
 									"objectClass": "Message_Text",
-									"sid": 696699543592358,
+									"sid": 272620181950611,
 									"parameters": {
-										"text": "\"Press any key to start\"",
+										"text": "Functions.Get_LanguageText(\"defineinput\")",
 										"duration": "0.5"
 									}
 								}

@@ -99,6 +99,14 @@
 								"variable": "Tick",
 								"value": "1"
 							}
+						},
+						{
+							"id": "signal",
+							"objectClass": "System",
+							"sid": 589943820485849,
+							"parameters": {
+								"tag": "\"Tick\""
+							}
 						}
 					],
 					"sid": 857247020783574,
@@ -1249,6 +1257,74 @@
 						}
 					],
 					"sid": 971860301787014
+				}
+			]
+		},
+		{
+			"functionName": "Get_LanguageText",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "Language",
+			"functionReturnType": "string",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "textTag",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 271075663201524
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-function-return-value",
+					"objectClass": "Functions",
+					"sid": 570550105504782,
+					"parameters": {
+						"value": "JSON.Get(\"Language.\"&TextTag)"
+					}
+				}
+			],
+			"sid": 356924595079729
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Message_Text",
+					"sid": 695192171669026
+				}
+			],
+			"actions": [],
+			"sid": 884269191183159,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Message_Text",
+							"sid": 353229543633207,
+							"parameters": {
+								"instance-variable": "Translatable"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Message_Text",
+							"sid": 535616371811658,
+							"parameters": {
+								"text": "Functions.Get_LanguageText(Self.Type)"
+							}
+						}
+					],
+					"sid": 373052519019693
 				}
 			]
 		}

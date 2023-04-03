@@ -471,7 +471,8 @@
 									}
 								}
 							],
-							"sid": 874264264304672
+							"sid": 874264264304672,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -961,6 +962,56 @@
 							"sid": 118901288561101,
 							"parameters": {
 								"frame-number": "1"
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "Message_Text",
+							"sid": 639020958965006,
+							"parameters": {
+								"text": "\"летели летели летели\"",
+								"duration": "1"
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 882756100012655,
+							"parameters": {
+								"tag": "\"ComicsNext\""
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Sprite34",
+							"sid": 250870450142458,
+							"parameters": {
+								"frame-number": "2"
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "Message_Text",
+							"sid": 466829392859313,
+							"parameters": {
+								"text": "\"летели летели летели\"",
+								"duration": "1"
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 199764267058324,
+							"parameters": {
+								"tag": "\"ComicsNext\""
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Sprite34",
+							"sid": 976073507313163,
+							"parameters": {
+								"frame-number": "3"
 							}
 						}
 					],

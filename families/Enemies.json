@@ -37,6 +37,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 868384114474051
+		},
+		{
+			"name": "MobSpawnWeight",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 870073268604288
 		}
 	],
 	"behaviorTypes": [
