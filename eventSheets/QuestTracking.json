@@ -275,7 +275,8 @@
 					"sid": 448678544052124
 				}
 			],
-			"sid": 122787121891068
+			"sid": 122787121891068,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -295,7 +296,8 @@
 					"sid": 277682627921090
 				}
 			],
-			"sid": 959652074515477
+			"sid": 959652074515477,
+			"disabled": true
 		},
 		{
 			"functionName": "UpdateQuestRequirements",

@@ -11,7 +11,7 @@
 			"x":1,
 			"y":1
 		},
-		"TilesWithoutCollision":[60,-1],
+		"TilesWithoutCollision":[60,-1,39,12],
 		"LightTransparentBlocks":[15,39,12,13,28,29,30,70,55,56,73,79,99,80,52,149,5,53],
 		"TilesWhatOnCanPlace":[39,205,206,217,218,219,220,-1],
 		"OnlyOnBlocks":[
@@ -29,25 +29,40 @@
 				}
 			
 		},
+		"SieveDrop":{
+			"Dirt":{
+				"Pebble":{
+					"Chance":80,
+					"Amount":{
+						"2":30,
+						"3":25,
+						"4":20,
+						"5":15,
+						"6":10	
+					}
+				},
+				"WheatSeeds":{
+					"Chance":10,
+					"Amount":{
+						"1":30,
+						"2":25
+					}
+				}
+			
+			},
+			"Sand":{
+			
+			},
+			"Grave":{
+			
+			},
+			"Dust":{
+			
+			}
+		},
 		"Glossary":{
 			"Wooden_Pickaxe":{
 				"Type": "Pickaxe",
-				"Using":"Instrument",
-				"Stackable":0,
-				"Durability":59,
-				"Mining_Speed":2,
-				"MiningTier":1
-			},
-			"Hook":{
-				"Type": "Hook",
-				"Using":"Instrument",
-				"Stackable":0,
-				"Durability":59,
-				"Mining_Speed":2,
-				"MiningTier":1
-			},
-			"WoodenScissors":{
-				"Type": "Scissors",
 				"Using":"Instrument",
 				"Stackable":0,
 				"Durability":59,
@@ -79,6 +94,62 @@
 				"Durability":1561,
 				"Mining_Speed":8
 			},
+			"Oak_Hammer":{
+				"Type": "Hammer",
+				"Using":"Instrument",
+				"Stackable":0,
+				"Durability":64,
+				"Mining_Speed":2,
+				"MiningTier":1
+			},
+			"Stone_Hammer":{
+				"Type": "Hammer",
+				"Using":"Instrument",
+				"Stackable":0,
+				"Durability":128,
+				"Mining_Speed":2,
+				"MiningTier":1
+			},
+			"Iron_Hammer":{
+				"Type": "Hammer",
+				"Using":"Instrument",
+				"Stackable":0,
+				"Durability":512,
+				"Mining_Speed":2,
+				"MiningTier":1
+			},
+			"Gold_Hammer":{
+				"Type": "Hammer",
+				"Using":"Instrument",
+				"Stackable":0,
+				"Durability":64,
+				"Mining_Speed":2,
+				"MiningTier":1
+			},
+			"Diamond_Hammer":{
+				"Type": "Hammer",
+				"Using":"Instrument",
+				"Stackable":0,
+				"Durability":4096,
+				"Mining_Speed":2,
+				"MiningTier":1
+			},
+			"Hook":{
+				"Type": "Hook",
+				"Using":"Instrument",
+				"Stackable":0,
+				"Durability":59,
+				"Mining_Speed":2,
+				"MiningTier":1
+			},
+			"WoodenScissors":{
+				"Type": "Scissors",
+				"Using":"Instrument",
+				"Stackable":0,
+				"Durability":59,
+				"Mining_Speed":2,
+				"MiningTier":1
+			},
 			"Oak_Planks":{
 				"Using":"Block",
 				"Stackable":1,
@@ -107,6 +178,16 @@
 				"Stackable":1,
 				"MaxStack":32
 			},
+			"Dust":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32
+			},
+			"Grave":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32
+			},
 			"StoneBrick":{
 				"Using":"Block",
 				"Stackable":1,
@@ -123,6 +204,11 @@
 				"Stackable":1,
 				"MaxStack":32,
 				"Fuel": 30
+			},
+			"Сrucible":{
+				"Using":"Material",
+				"Stackable":1,
+				"MaxStack":32
 			},
 			"Worm":{
 				"Using":"Material",
@@ -141,6 +227,16 @@
 				"MaxStack":32
 			},
 			"WorkBench":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32
+			},
+			"Sieve":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32
+			},
+			"MeltedСrucible":{
 				"Using":"Block",
 				"Stackable":1,
 				"MaxStack":32
@@ -302,7 +398,11 @@
 				"No_Silk_Drop": "Dirt",
 				"Best_Tool": "Shovel",
 				"HitSound":"Hitgrass4",
-				"DestroySound":"grass3"
+				"DestroySound":"grass3",
+				"SpecialForDrop":"Hammer",
+				"Drop":{
+					"Sand":100
+				}
 			},
 			"52":{
 				"Dur": 0.1,
@@ -345,14 +445,40 @@
 				"Type": "Cobblestone",
 				"Silk_Drop": "Cobblestone",
 				"No_Silk_Drop": "Cobblestone",
-				"Best_Tool": "Pickaxe"
+				"Best_Tool": "Pickaxe",
+				"SpecialForDrop":"Hammer",
+				"Drop":{
+					"Grave":100
+				}
 			},
 			"18":{
 				"Dur": 0.6,
 				"Type": "Sand",
 				"Silk_Drop": "Sand",
 				"No_Silk_Drop": "Sand",
+				"Best_Tool": "Shovel",
+				"SpecialForDrop":"Hammer",
+				"Drop":{
+					"Dust":100
+				}
+			},
+			"21":{
+				"Dur": 0.6,
+				"Type": "Dust",
+				"Silk_Drop": "Dust",
+				"No_Silk_Drop": "Dust",
 				"Best_Tool": "Shovel"
+			},
+			"19":{
+				"Dur": 0.6,
+				"Type": "Grave",
+				"Silk_Drop": "Grave",
+				"No_Silk_Drop": "Grave",
+				"Best_Tool": "Shovel",
+				"SpecialForDrop":"Hammer",
+				"Drop":{
+					"Sand":100
+				}
 			},
 			"1":{
 				"Dur": 1.5,
@@ -381,7 +507,11 @@
 				"No_Silk_Drop": "Dirt",
 				"Best_Tool": "Shovel",
 				"HitSound":"Hitgravel1",
-				"DestroySound":"Hitgravel3"
+				"DestroySound":"Hitgravel3",
+				"SpecialForDrop":"Hammer",
+				"Drop":{
+					"Sand":100
+				}
 			},
 			"71":{
 				"Dur": 0.6,
@@ -429,6 +559,34 @@
 				"Best_Tool": "Axe",
 				"Interface":"WorkBench"
 				
+			},
+			"289":{
+				"Dur": 2.5,
+				"Type": "Sieve",
+				"Silk_Drop": "Sieve",
+				"No_Silk_Drop": "Sieve",
+				"Best_Tool": "Axe"
+			},
+			"297":{
+				"Dur": 2.5,
+				"Type": "MeltedСrucible",
+				"Silk_Drop": "MeltedСrucible",
+				"No_Silk_Drop": "MeltedСrucible",
+				"Best_Tool": "Pickaxe"
+			},
+			"298":{
+				"Dur": 2.5,
+				"Type": "MeltedСrucible1",
+				"Silk_Drop": "MeltedСrucible",
+				"No_Silk_Drop": "MeltedСrucible",
+				"Best_Tool": "Pickaxe"
+			},
+			"299":{
+				"Dur": 2.5,
+				"Type": "MeltedСrucible2",
+				"Silk_Drop": "MeltedСrucible",
+				"No_Silk_Drop": "MeltedСrucible",
+				"Best_Tool": "Pickaxe"
 			},
 			"15":{
 				"Dur": 1,

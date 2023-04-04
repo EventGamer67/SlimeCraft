@@ -123,7 +123,8 @@
 					]
 				}
 			],
-			"sid": 935614859340985
+			"sid": 935614859340985,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -1789,6 +1790,7 @@
 											"id": "set-tile",
 											"objectClass": "Terrain",
 											"sid": 538565261809116,
+											"disabled": true,
 											"parameters": {
 												"tile-x": "tileX",
 												"tile-y": "tileY",
@@ -2074,17 +2076,7 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 741309339883485,
-							"parameters": {
-								"type": "log",
-								"message": "Functions.Get_ActiveMobCount"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 662779500071565,
 					"children": [
 						{

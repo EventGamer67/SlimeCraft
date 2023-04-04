@@ -1491,22 +1491,6 @@
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 3543419,
-						"collisionPoly": {
-							"points": [
-								0,
-								0,
-								0.5,
-								0,
-								0.5,
-								0.25,
-								0.5,
-								0.5,
-								0,
-								0.5,
-								0,
-								0.25
-							]
-						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -1758,6 +1742,400 @@
 				],
 				"sid": 403165649747421,
 				"name": "ClayBlock",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9258857,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.8333333333333334,
+								0,
+								0.8333333333333334,
+								0.8333333333333334,
+								0,
+								0.8333333333333334
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 649113541569092,
+				"name": "Pebble",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1650400,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 423192842439842,
+				"name": "MeltedСrucible",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1708663,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 283799090197929,
+				"name": "Сrucible",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7796434,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 739157033748625,
+				"name": "Diamond_Hammer",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7693986,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 199112996102304,
+				"name": "Gold_Hammer",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6828036,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 700189810083035,
+				"name": "Iron_Hammer",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3757989,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 652623699432601,
+				"name": "Stone_Hammer",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7772280,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 980027364183538,
+				"name": "Oak_Hammer",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 160,
+						"height": 160,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 874792,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 410263302317381,
+				"name": "Grave",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 300,
+						"height": 300,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1452432,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.8333333333333334,
+								0,
+								0.8333333333333334,
+								0.8333333333333334,
+								0,
+								0.8333333333333334
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 701997475427379,
+				"name": "Dust",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4489708,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.8333333333333334,
+								0,
+								0.8333333333333334,
+								0.8333333333333334,
+								0,
+								0.8333333333333334
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 304543956417356,
+				"name": "IronOrePiece",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7294001,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.8333333333333334,
+								0,
+								0.8333333333333334,
+								0.8333333333333334,
+								0,
+								0.8333333333333334
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 342362804725510,
+				"name": "GoldOrePiece",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7371026,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.8333333333333334,
+								0,
+								0.8333333333333334,
+								0.8333333333333334,
+								0,
+								0.8333333333333334
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 506318969440718,
+				"name": "GoldGrave",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8654591,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.8333333333333334,
+								0,
+								0.8333333333333334,
+								0.8333333333333334,
+								0,
+								0.8333333333333334
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 520833649500739,
+				"name": "IronGrave",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

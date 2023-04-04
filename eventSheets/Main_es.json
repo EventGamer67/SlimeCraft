@@ -2556,6 +2556,54 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "compare-tile-at",
+									"objectClass": "Terrain",
+									"sid": 945492961916755,
+									"parameters": {
+										"tile-x": "TileX",
+										"tile-y": "TileY-1",
+										"comparison": 0,
+										"tile": "298"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 251995680740803,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-tile-at",
+											"objectClass": "Terrain",
+											"sid": 259077136927516,
+											"parameters": {
+												"tile-x": "TileX",
+												"tile-y": "TileY",
+												"comparison": 0,
+												"tile": "80"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Add_Timer",
+											"sid": 157549404143220,
+											"parameters": [
+												"TileX&\",\"&TileY",
+												"200",
+												"\"CobblestoneСrucible\""
+											]
+										}
+									],
+									"sid": 961733596984080
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "for-each",
 									"objectClass": "JSON",
 									"sid": 542360158070641,
@@ -2619,7 +2667,8 @@
 														"Terrain.TileAt(TileX,TileY-1)",
 														"TileX",
 														"TileX-1",
-														"1"
+														"1",
+														"\"\""
 													]
 												},
 												{
@@ -2871,7 +2920,8 @@
 						"Terrain.TileAt(Terrain.PositionToTileX(Mouse.X),Terrain.PositionToTileY(Mouse.y))",
 						"Terrain.PositionToTileX(Mouse.X)",
 						"Terrain.PositionToTileY(Mouse.Y)",
-						"0"
+						"0",
+						"\"\""
 					]
 				},
 				{

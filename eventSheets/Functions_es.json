@@ -576,6 +576,82 @@
 										{
 											"id": "compare-at-xy",
 											"objectClass": "Timers",
+											"sid": 950674712208258,
+											"parameters": {
+												"x": "0",
+												"y": "2",
+												"comparison": 0,
+												"value": "\"CobblestoneСrucible\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 462349725599230,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "tilex",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 345303667163828
+										},
+										{
+											"eventType": "variable",
+											"name": "tiley",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 370324643973601
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 906441089370203,
+													"parameters": {
+														"variable": "tilex",
+														"value": "tokenat(Timers.At(0,1),0,\",\")"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 662082292964149,
+													"parameters": {
+														"variable": "tiley",
+														"value": "tokenat(Timers.At(0,1),1,\",\")"
+													}
+												},
+												{
+													"id": "set-tile",
+													"objectClass": "Terrain",
+													"sid": 354573772572573,
+													"parameters": {
+														"tile-x": "tilex",
+														"tile-y": "tiley-1",
+														"tile": "299",
+														"state": "normal"
+													}
+												}
+											],
+											"sid": 930854732672704
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-xy",
+											"objectClass": "Timers",
 											"sid": 756218762885241,
 											"parameters": {
 												"x": "0",

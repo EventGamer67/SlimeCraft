@@ -82,6 +82,35 @@
 				"Count": 1
 			}
 		},
+		"Сrucible": {
+			"Type": "Crafting_Shapeless",
+			"Pattern": [
+				"A0A",
+				"A0A",
+				"AAA"
+			],
+			"Key": {
+				"A": "Clay"
+			},
+			"Result": {
+				"Item": "Сrucible",
+				"Count": 1
+			}
+		},
+		"Cobblestone": {
+			"Type": "Crafting_Shapeless",
+			"Pattern": [
+				"AA",
+				"AA"
+			],
+			"Key": {
+				"A": "Pebble"
+			},
+			"Result": {
+				"Item": "Cobblestone",
+				"Count": 1
+			}
+		},
 		"WoodenScissors": {
 			"Type": "Crafting_Shapeless",
 			"Pattern": [
@@ -358,6 +387,11 @@
 		"Iron_Ingot": {
 			"Item": "Iron_Ore",
 			"Result": "Iron_Ingot",
+			"CookingTime": 200
+		},
+		"MeltedСrucible": {
+			"Item": "Сrucible",
+			"Result": "MeltedСrucible",
 			"CookingTime": 200
 		}
 	}
