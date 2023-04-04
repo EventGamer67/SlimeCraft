@@ -5819,6 +5819,91 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Sprite",
+							"sid": 556331488143719,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"BurnHit\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "addHealth",
+							"sid": 927663018044660,
+							"parameters": [
+								"-1",
+								"0",
+								true,
+								"0",
+								false
+							]
+						}
+					],
+					"sid": 345400833127452
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Sprite",
+							"sid": 990310755355723,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Burning\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 218359988627699,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "Sprite",
+									"sid": 835565500970533,
+									"parameters": {
+										"child": "Fire",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-timer",
+									"objectClass": "Sprite",
+									"sid": 612775997280844,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"BurnHit\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 569492546253185,
+									"parameters": {
+										"seconds": "0"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Fire",
+									"sid": 206452177975558
+								}
+							],
+							"sid": 534261683898915
+						}
+					]
+				},
+				{
 					"functionName": "addHealth",
 					"functionCopyPicked": false,
 					"functionDescription": "",
@@ -5834,11 +5919,32 @@
 							"sid": 530270770406208
 						},
 						{
+							"name": "KnockBack",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 993420339248633
+						},
+						{
 							"name": "Killable",
 							"type": "boolean",
 							"initialValue": "true",
 							"comment": "",
 							"sid": 912258594358621
+						},
+						{
+							"name": "AngleAttack",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 731621964981463
+						},
+						{
+							"name": "Burnable",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 224459381072545
 						}
 					],
 					"eventType": "function-block",
@@ -5856,6 +5962,103 @@
 					],
 					"sid": 410689551703180,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 681738504863082,
+									"parameters": {
+										"variable": "Burnable"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "start-timer",
+									"objectClass": "Sprite",
+									"sid": 492020034150960,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "3.0",
+										"type": "once",
+										"tag": "\"Burning\""
+									}
+								}
+							],
+							"sid": 312378713629816,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-timer-running",
+											"objectClass": "Sprite",
+											"sid": 569613161065447,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"BurnHit\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "Sprite",
+											"sid": 421807156243860,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "1.0",
+												"type": "regular",
+												"tag": "\"BurnHit\""
+											}
+										}
+									],
+									"sid": 620758062318838,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 721784237165559,
+													"parameters": {
+														"object-to-create": "Fire",
+														"layer": "\"Layer 1\"",
+														"x": "Sprite.X",
+														"y": "Sprite.BBoxTop-8",
+														"create-hierarchy": true,
+														"template-name": "\"Zombie\""
+													}
+												},
+												{
+													"id": "add-child",
+													"objectClass": "Sprite",
+													"sid": 219582874207050,
+													"parameters": {
+														"child": "Fire",
+														"transform-x": true,
+														"transform-y": true,
+														"transform-w": false,
+														"transform-h": false,
+														"transform-a": false,
+														"transform-o": true,
+														"transform-z-elevation": true,
+														"transform-visibility": false,
+														"destroy-with-parent": true
+													}
+												}
+											],
+											"sid": 601777947413936
+										}
+									]
+								}
+							]
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -5899,9 +6102,275 @@
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [],
+									"conditions": [
+										{
+											"id": "is-enabled",
+											"objectClass": "Sprite",
+											"sid": 862543507929579,
+											"behaviorType": "Platform"
+										}
+									],
 									"actions": [],
-									"sid": 984604408456545
+									"sid": 984604408456545,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "Sprite",
+													"sid": 710305227523083,
+													"parameters": {
+														"child": "Fire",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "Fire",
+													"sid": 925433351940819
+												}
+											],
+											"sid": 270984078123764,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "stop-timer",
+															"objectClass": "Sprite",
+															"sid": 806656301284394,
+															"behaviorType": "Timer",
+															"parameters": {
+																"tag": "\"Burning\""
+															}
+														},
+														{
+															"id": "stop-timer",
+															"objectClass": "Sprite",
+															"sid": 754708195644182,
+															"behaviorType": "Timer",
+															"parameters": {
+																"tag": "\"BurnHit\""
+															}
+														}
+													],
+													"sid": 643925880072983
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-group-active",
+													"objectClass": "System",
+													"sid": 449277871166043,
+													"parameters": {
+														"group-name": "\"Main\"",
+														"state": "deactivated"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "Cam",
+													"sid": 998174740463664,
+													"behaviorType": "ScrollTo",
+													"parameters": {
+														"state": "disabled"
+													}
+												},
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 951127495889040,
+													"parameters": {
+														"object-to-create": "DeathParticle",
+														"layer": "\"Layer 1\"",
+														"x": "Sprite.X",
+														"y": "Sprite.BBoxBottom",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 603059048684106,
+													"parameters": {
+														"object-to-create": "DeathParticle",
+														"layer": "\"Layer 1\"",
+														"x": "Sprite.X",
+														"y": "Sprite.BBoxBottom",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 853901331852984,
+													"parameters": {
+														"object-to-create": "DeathParticle",
+														"layer": "\"Layer 1\"",
+														"x": "Sprite.X",
+														"y": "Sprite.y",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "Sprite",
+													"sid": 480220873979723,
+													"behaviorType": "Platform",
+													"parameters": {
+														"state": "disabled"
+													}
+												},
+												{
+													"id": "set-collisions-enabled",
+													"objectClass": "Sprite",
+													"sid": 973211159078999,
+													"parameters": {
+														"collisions": "disabled"
+													}
+												},
+												{
+													"id": "tween-one-property",
+													"objectClass": "Sprite",
+													"sid": 908573101831398,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "offsetAngle",
+														"end-value": "random(90,270)",
+														"time": "0.3",
+														"ease": "easeincubic",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "PlayerFace",
+													"sid": 616142411916223,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "Hand",
+													"sid": 430225950859746,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "Sprite6",
+													"sid": 382154973760656,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "Hat",
+													"sid": 964246584926457,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "Particles",
+													"sid": 250629956113497,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "wait-for-previous-actions",
+													"objectClass": "System",
+													"sid": 928170069653753
+												},
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 333799744478058,
+													"parameters": {
+														"object-to-create": "DeathParticle",
+														"layer": "\"Layer 1\"",
+														"x": "Sprite.X",
+														"y": "Sprite.BBoxBottom",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 876389709114613,
+													"parameters": {
+														"object-to-create": "TiledBackground3",
+														"layer": "\"UI\"",
+														"x": "ViewportLeft(\"UI\")",
+														"y": "ViewportTop(\"UI\")",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-size",
+													"objectClass": "TiledBackground3",
+													"sid": 644693635112885,
+													"parameters": {
+														"width": "abs(ViewportLeft(\"UI\"))+ViewportRight(\"UI\")",
+														"height": "ViewportBottom(\"UI\")+10"
+													}
+												},
+												{
+													"id": "tween-one-property",
+													"objectClass": "TiledBackground3",
+													"sid": 364789420044953,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "offsetOpacity",
+														"end-value": "70",
+														"time": "0.3",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												},
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 262547470797304,
+													"parameters": {
+														"object-to-create": "Message_Text",
+														"layer": "\"UI\"",
+														"x": "Functions.Get_Center_X(\"UI\")",
+														"y": "Functions.Get_Center_Y(\"UI\")",
+														"create-hierarchy": true,
+														"template-name": "\"Died\""
+													}
+												}
+											],
+											"sid": 522010041046649
+										}
+									]
 								}
 							]
 						},
@@ -5916,11 +6385,11 @@
 							],
 							"actions": [
 								{
-									"id": "set-animation-frame",
-									"objectClass": "Sprite",
-									"sid": 701836277926814,
+									"id": "set-default-color",
+									"objectClass": "PlayerFace",
+									"sid": 903489703226571,
 									"parameters": {
-										"frame-number": "1"
+										"color": "rgbEx(100, 50, 50)"
 									}
 								},
 								{
@@ -5961,11 +6430,11 @@
 									}
 								},
 								{
-									"id": "set-animation-frame",
-									"objectClass": "Sprite",
-									"sid": 824023149788428,
+									"id": "set-default-color",
+									"objectClass": "PlayerFace",
+									"sid": 916531169412773,
 									"parameters": {
-										"frame-number": "0"
+										"color": "rgbEx(100, 100, 100)"
 									}
 								}
 							],
@@ -6797,7 +7266,10 @@
 											"sid": 257017630136732,
 											"parameters": [
 												"-1",
-												true
+												"0",
+												true,
+												"0",
+												false
 											]
 										}
 									],
@@ -6838,7 +7310,10 @@
 											"sid": 535708542981456,
 											"parameters": [
 												"-1",
-												true
+												"0",
+												true,
+												"0",
+												false
 											]
 										}
 									],
@@ -8217,6 +8692,9 @@
 											"sid": 544815491536472,
 											"parameters": [
 												"-1",
+												"0",
+												false,
+												"0",
 												false
 											]
 										}
@@ -8791,6 +9269,66 @@
 								}
 							],
 							"sid": 985700976378450
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-falling",
+									"objectClass": "Sprite",
+									"sid": 694569793922088,
+									"behaviorType": "Platform"
+								}
+							],
+							"actions": [],
+							"sid": 537541039533622,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 562535362045903,
+											"parameters": {
+												"interval-seconds": "0.3"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 219304791183618,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-y",
+													"objectClass": "Sprite",
+													"sid": 352609518911936,
+													"parameters": {
+														"comparison": 4,
+														"y-co-ordinate": "LayoutHeight"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "addHealth",
+													"sid": 647719746234377,
+													"parameters": [
+														"-1",
+														"0",
+														true,
+														"0",
+														false
+													]
+												}
+											],
+											"sid": 497233096227730
+										}
+									]
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -11786,240 +12324,248 @@
 			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [
+			"actions": [],
+			"sid": 376929383112814,
+			"children": [
 				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 484748138296873,
-					"parameters": {
-						"group-name": "\"Animation\"",
-						"state": "deactivated"
-					}
-				},
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 693160090712806,
-					"parameters": {
-						"group-name": "\"Control\"",
-						"state": "deactivated"
-					}
-				},
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 193674600199235,
-					"parameters": {
-						"group-name": "\"KeyBoard\"",
-						"state": "deactivated"
-					}
-				},
-				{
-					"id": "set-collisions-enabled",
-					"objectClass": "Sprite",
-					"sid": 912527910097307,
-					"parameters": {
-						"collisions": "disabled"
-					}
-				},
-				{
-					"id": "set-enabled",
-					"objectClass": "Sprite",
-					"sid": 691083927957775,
-					"behaviorType": "Platform",
-					"parameters": {
-						"state": "disabled"
-					}
-				},
-				{
-					"id": "tween-two-properties",
-					"objectClass": "Sprite",
-					"sid": 833114426707551,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "position",
-						"end-x": "Terrain.TileToPositionX(Terrain.PositionToTileX(Touch.X(\"Layer 1\")))",
-						"end-y": "Terrain.TileToPositionY(Terrain.PositionToTileY(Touch.Y(\"Layer 1\")))-8",
-						"time": "0.4",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
-				{
-					"id": "tween-two-properties",
-					"objectClass": "Sprite",
-					"sid": 210356526014260,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "size",
-						"end-x": "12",
-						"end-y": "12",
-						"time": "0.4",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 903957200251523
-				},
-				{
-					"callFunction": "BlackoutByTiled",
-					"sid": 121826653433634,
-					"parameters": [
-						true,
-						"\"UI\"",
-						"4",
-						"100"
-					]
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 773357248488188
-				},
-				{
-					"id": "set-time-scale",
-					"objectClass": "System",
-					"sid": 985139320472672,
-					"parameters": {
-						"time-scale": "2"
-					}
-				},
-				{
-					"callFunction": "Player_Message",
-					"sid": 344334256448647,
-					"parameters": [
-						"\"Zzz...\"",
-						"4",
-						"\"UI\"",
-						"Functions.Get_Center_X(\"UI\")",
-						"Functions.Get_Center_Y(\"UI\")"
-					]
-				},
-				{
-					"id": "wait-for-signal",
-					"objectClass": "System",
-					"sid": 566608068822504,
-					"parameters": {
-						"tag": "\"SunRise\""
-					}
-				},
-				{
-					"id": "set-time-scale",
-					"objectClass": "System",
-					"sid": 233763945248584,
-					"parameters": {
-						"time-scale": "1"
-					}
-				},
-				{
-					"callFunction": "BlackoutByTiled",
-					"sid": 222431875993634,
-					"parameters": [
-						false,
-						"\"UI\"",
-						"2",
-						"0"
-					]
-				},
-				{
-					"id": "tween-two-properties",
-					"objectClass": "Sprite",
-					"sid": 594071476866432,
-					"disabled": true,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "position",
-						"end-x": "Sprite.X",
-						"end-y": "Sprite.Y+4",
-						"time": "0.2",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
-				{
-					"id": "tween-two-properties",
-					"objectClass": "Sprite",
-					"sid": 921975557450407,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "size",
-						"end-x": "16",
-						"end-y": "16",
-						"time": "0.2",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 471754059038307
-				},
-				{
-					"id": "set-enabled",
-					"objectClass": "Sprite",
-					"sid": 817475313967240,
-					"behaviorType": "Platform",
-					"parameters": {
-						"state": "enabled"
-					}
-				},
-				{
-					"id": "set-collisions-enabled",
-					"objectClass": "Sprite",
-					"sid": 619595341868219,
-					"parameters": {
-						"collisions": "enabled"
-					}
-				},
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 236698039601451,
-					"parameters": {
-						"group-name": "\"KeyBoard\"",
-						"state": "activated"
-					}
-				},
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 170263755335461,
-					"parameters": {
-						"group-name": "\"Control\"",
-						"state": "activated"
-					}
-				},
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 842182146601931,
-					"parameters": {
-						"group-name": "\"Animation\"",
-						"state": "activated"
-					}
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 564209111475837,
+							"parameters": {
+								"group-name": "\"Animation\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 566845111399578,
+							"parameters": {
+								"group-name": "\"Control\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 625158680498575,
+							"parameters": {
+								"group-name": "\"KeyBoard\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Sprite",
+							"sid": 506267170515133,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Sprite",
+							"sid": 990475670159870,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "Sprite",
+							"sid": 118945168586673,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "Terrain.TileToPositionX(Terrain.PositionToTileX(Touch.X(\"Layer 1\")))",
+								"end-y": "Terrain.TileToPositionY(Terrain.PositionToTileY(Touch.Y(\"Layer 1\")))-8",
+								"time": "0.4",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "Sprite",
+							"sid": 945166955061295,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "size",
+								"end-x": "12",
+								"end-y": "12",
+								"time": "0.4",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 997912550011431
+						},
+						{
+							"callFunction": "BlackoutByTiled",
+							"sid": 268116419692386,
+							"parameters": [
+								true,
+								"\"UI\"",
+								"4",
+								"100"
+							]
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 186163657312870
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 580356676602540,
+							"parameters": {
+								"time-scale": "2"
+							}
+						},
+						{
+							"callFunction": "Player_Message",
+							"sid": 633711573655592,
+							"parameters": [
+								"\"Zzz...\"",
+								"4",
+								"\"UI\"",
+								"Functions.Get_Center_X(\"UI\")",
+								"Functions.Get_Center_Y(\"UI\")"
+							]
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 450454609235606,
+							"parameters": {
+								"tag": "\"SunRise\""
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 962269967763795,
+							"parameters": {
+								"time-scale": "1"
+							}
+						},
+						{
+							"callFunction": "BlackoutByTiled",
+							"sid": 776984047852156,
+							"parameters": [
+								false,
+								"\"UI\"",
+								"2",
+								"0"
+							]
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "Sprite",
+							"sid": 824363995119461,
+							"disabled": true,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "Sprite.X",
+								"end-y": "Sprite.Y+4",
+								"time": "0.2",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "Sprite",
+							"sid": 902369960016642,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "size",
+								"end-x": "16",
+								"end-y": "16",
+								"time": "0.2",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 537283989809683
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Sprite",
+							"sid": 165637147666780,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Sprite",
+							"sid": 928372792558882,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 778934206886279,
+							"parameters": {
+								"group-name": "\"KeyBoard\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 998123143703904,
+							"parameters": {
+								"group-name": "\"Control\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 100782960208898,
+							"parameters": {
+								"group-name": "\"Animation\"",
+								"state": "activated"
+							}
+						}
+					],
+					"sid": 467609069793076
 				}
-			],
-			"sid": 376929383112814
+			]
 		},
 		{
 			"eventType": "group",
@@ -12167,6 +12713,81 @@
 				}
 			],
 			"sid": 390978777472419
+		},
+		{
+			"functionName": "DropInventoryItems",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "Player",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 856770090479427
+				},
+				{
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 446231128183655
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 514576066833690,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 978469123952295,
+							"parameters": {
+								"name": "\"x\"",
+								"start-index": "0",
+								"end-index": "Inventory.Width-1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 224530174867586,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 225557079704422,
+									"parameters": {
+										"count": "Inventory.At(loopindex(\"x\"),1)"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Drop_Item",
+									"sid": 683093751408986,
+									"parameters": [
+										"1",
+										"Inventory.At(loopindex(\"x\"),0)",
+										"x",
+										"y"
+									]
+								}
+							],
+							"sid": 851565968357885
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 380699106854873

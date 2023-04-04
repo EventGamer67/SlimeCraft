@@ -501,6 +501,29 @@
 							"sid": 171878366820442
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "UpdateTrackingQuest",
+							"sid": 982500154298818
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 834227240737097,
+							"parameters": {
+								"seconds": "0"
+							}
+						},
+						{
+							"callFunction": "UpdateQuestRequirements",
+							"sid": 116732049876913
+						}
+					],
+					"sid": 390439384811570
 				}
 			]
 		},

@@ -68,11 +68,6 @@
 			"sid": 127322259992768
 		},
 		{
-			"behaviorId": "wrap",
-			"name": "Wrap",
-			"sid": 868013704450332
-		},
-		{
 			"behaviorId": "Tween",
 			"name": "Tween",
 			"sid": 684251968512752
@@ -81,6 +76,11 @@
 			"behaviorId": "LOS",
 			"name": "LineOfSight",
 			"sid": 446279441744758
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 970386011102994
 		}
 	],
 	"effectTypes": [],

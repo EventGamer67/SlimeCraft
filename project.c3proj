@@ -428,7 +428,8 @@
 			"Particles3",
 			"Sprite34",
 			"Rocket",
-			"Particles4"
+			"Particles4",
+			"WorldBottom"
 		],
 		"subfolders": []
 	},
@@ -477,7 +478,8 @@
 			"Enemy",
 			"AnimatedTriggers",
 			"Chat",
-			"QuestTracking"
+			"QuestTracking",
+			"GameScore"
 		],
 		"subfolders": []
 	},

@@ -404,6 +404,24 @@
 								"child": "Sprite27",
 								"which": "own"
 							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "Sprite27",
+							"sid": 113909239687857,
+							"parameters": {
+								"child": "Hand2",
+								"which": "own"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "Sprite27",
+							"sid": 649791341522832,
+							"parameters": {
+								"child": "Sprite28",
+								"which": "own"
+							}
 						}
 					],
 					"actions": [],
@@ -553,26 +571,7 @@
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-children",
-											"objectClass": "Sprite27",
-											"sid": 887215660047738,
-											"parameters": {
-												"child": "Hand2",
-												"which": "own"
-											}
-										},
-										{
-											"id": "pick-children",
-											"objectClass": "Sprite27",
-											"sid": 178391431578310,
-											"parameters": {
-												"child": "Sprite28",
-												"which": "own"
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [
 										{
 											"id": "set-angle",
@@ -905,6 +904,92 @@
 												}
 											],
 											"sid": 452880099823452
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 140980920861792,
+											"parameters": {
+												"value": "distance(Sprite.X,Sprite.Y,Enemies.X,Enemies.Y) < 15"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 352669254698656,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 313745630110399,
+													"parameters": {
+														"interval-seconds": "0.4"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 120350418095073,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-timer-running",
+															"objectClass": "Enemies",
+															"sid": 346391791672495,
+															"behaviorType": "Timer",
+															"parameters": {
+																"tag": "\"Burning\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "addHealth",
+															"sid": 716366010161526,
+															"parameters": [
+																"-1",
+																"10",
+																true,
+																"angle(Enemies.X,Enemies.Y,Sprite.X,Sprite.Y)",
+																true
+															]
+														}
+													],
+													"sid": 956054124752563
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 680696621929834
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "addHealth",
+															"sid": 510561919972356,
+															"parameters": [
+																"-1",
+																"10",
+																true,
+																"angle(Enemies.X,Enemies.Y,Sprite.X,Sprite.Y)",
+																false
+															]
+														}
+													],
+													"sid": 506597831597914
+												}
+											]
 										}
 									]
 								}
@@ -2047,6 +2132,33 @@
 				}
 			],
 			"sid": 162307444119125
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Enemies",
+					"sid": 394406594495282,
+					"parameters": {
+						"object": "WorldBottom"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "HitEnemy",
+					"sid": 164815945607206,
+					"parameters": [
+						"Enemies.UID",
+						"0",
+						false,
+						"5",
+						"0"
+					]
+				}
+			],
+			"sid": 552081244737121
 		}
 	],
 	"sid": 377794395034310

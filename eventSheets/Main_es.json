@@ -81,6 +81,10 @@
 			"includeSheet": "QuestTracking"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "GameScore"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -777,6 +781,28 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 134387521624772,
+							"parameters": {
+								"object": "Inventory_Item",
+								"expression": "Inventory_Item.Tag = \"Inventory\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Inventory_Item",
+							"sid": 655801412099195
+						}
+					],
+					"sid": 133077596800768
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "for",
 							"objectClass": "System",
 							"sid": 883935168881052,
@@ -862,6 +888,15 @@
 									"parameters": {
 										"instance-variable": "PosX",
 										"value": "loopindex(\"x\")"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Inventory_Item",
+									"sid": 199985824099063,
+									"parameters": {
+										"instance-variable": "Tag",
+										"value": "\"Inventory\""
 									}
 								},
 								{
@@ -3445,6 +3480,15 @@
 																				"instance-variable": "Using",
 																				"value": "JSON.Get(\"Settings.Config.Glossary.\"&Item&\".Using\")"
 																			}
+																		},
+																		{
+																			"id": "set-instvar-value",
+																			"objectClass": "Inventory_Item",
+																			"sid": 356630571234215,
+																			"parameters": {
+																				"instance-variable": "Tag",
+																				"value": "\"Inventory\""
+																			}
 																		}
 																	],
 																	"sid": 117908586616506,
@@ -3887,6 +3931,15 @@
 																	"parameters": {
 																		"instance-variable": "Using",
 																		"value": "JSON.Get(\"Settings.Config.Glossary.\"&Item&\".Using\")"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "Inventory_Item",
+																	"sid": 561695026822488,
+																	"parameters": {
+																		"instance-variable": "Tag",
+																		"value": "\"Inventory\""
 																	}
 																}
 															],
@@ -4340,6 +4393,27 @@
 							"sid": 810151159019112
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Drop_Item",
+							"sid": 489398248321268,
+							"parameters": {
+								"object": "WorldBottom"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Drop_Item",
+							"sid": 906857324501409
+						}
+					],
+					"sid": 850197297169134
 				}
 			],
 			"sid": 125010619764147

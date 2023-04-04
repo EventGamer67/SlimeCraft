@@ -1197,6 +1197,515 @@
 			]
 		},
 		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [],
+			"sid": 882224006260536
+		},
+		{
+			"functionName": "ButtonAction",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Type",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 196640164526765
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 938881858427975,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 311115253057682,
+							"parameters": {
+								"value": "Type = \"RespawnReturn\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 229947374375258,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 922502775479968,
+									"parameters": {
+										"value": "Functions.ShowRewardedVideo = 1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 141085178036975,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 433946975189566,
+											"parameters": {
+												"object": "Button",
+												"expression": "Button.Type = \"RespawnReturn\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "ReDrawInventory",
+											"sid": 812928001022212,
+											"disabled": true
+										},
+										{
+											"id": "stop-timer",
+											"objectClass": "Sprite",
+											"sid": 442100167176976,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"Burning\""
+											}
+										},
+										{
+											"id": "stop-timer",
+											"objectClass": "Sprite",
+											"sid": 676639265260565,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"BurnHit\""
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "Sprite",
+											"sid": 280584743451337,
+											"parameters": {
+												"x": "SPAWNPOINT.X",
+												"y": "SPAWNPOINT.Y"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Cam",
+											"sid": 988970854800373,
+											"behaviorType": "ScrollTo",
+											"parameters": {
+												"state": "enabled"
+											}
+										},
+										{
+											"callFunction": "addHealth",
+											"sid": 912016069911667,
+											"parameters": [
+												"(Heart.Count*2)-Sprite.Health",
+												"0",
+												false,
+												"0",
+												false
+											]
+										},
+										{
+											"id": "set-collisions-enabled",
+											"objectClass": "Sprite",
+											"sid": 857374228011820,
+											"parameters": {
+												"collisions": "enabled"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Sprite",
+											"sid": 250731740763104,
+											"parameters": {
+												"angle": "0"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "PlayerFace",
+											"sid": 719545460862489,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "Hand",
+											"sid": 490487459477079,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "Sprite6",
+											"sid": 121681840150357,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Sprite",
+											"sid": 583915049839860,
+											"behaviorType": "Platform",
+											"parameters": {
+												"state": "enabled"
+											}
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 142012699560107,
+											"parameters": {
+												"group-name": "\"Main\"",
+												"state": "activated"
+											}
+										},
+										{
+											"id": "tween-one-property",
+											"objectClass": "TiledBackground3",
+											"sid": 302168787411453,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "offsetOpacity",
+												"end-value": "0",
+												"time": "0.3",
+												"ease": "default",
+												"destroy-on-complete": "yes",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										},
+										{
+											"callFunction": "SetCurrentSlot",
+											"sid": 667976454431581,
+											"parameters": [
+												"Sprite11.CurrentSlot"
+											]
+										}
+									],
+									"sid": 754351570091834,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "Sprite",
+													"sid": 469940815248940,
+													"parameters": {
+														"child": "Fire",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "Fire",
+													"sid": 848239342264242
+												}
+											],
+											"sid": 344197010626740
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 880200612008228,
+													"parameters": {
+														"object": "Message_Text",
+														"expression": "Message_Text.Type = \"YouDied\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "Message_Text",
+													"sid": 428551081986774
+												}
+											],
+											"sid": 211405577144115
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 882938594657908
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "ButtonAction",
+									"sid": 226895843436994,
+									"parameters": [
+										"\"Respawn\""
+									]
+								}
+							],
+							"sid": 282011104500878
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 207161491944242,
+							"parameters": {
+								"value": "Type = \"Respawn\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 372540658359877,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 268339988845443,
+									"parameters": {
+										"object": "Button",
+										"expression": "Button.Type = \"Respawn\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "DropInventoryItems",
+									"sid": 779538181046379,
+									"parameters": [
+										"Sprite.X",
+										"Sprite.Y"
+									]
+								},
+								{
+									"id": "clear",
+									"objectClass": "Inventory",
+									"sid": 281179576510973,
+									"parameters": {
+										"value": "0"
+									}
+								},
+								{
+									"callFunction": "ReDrawInventory",
+									"sid": 778965723318514
+								},
+								{
+									"id": "stop-timer",
+									"objectClass": "Sprite",
+									"sid": 546938337873306,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"Burning\""
+									}
+								},
+								{
+									"id": "stop-timer",
+									"objectClass": "Sprite",
+									"sid": 131005053850894,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"BurnHit\""
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "Sprite",
+									"sid": 539272592940255,
+									"parameters": {
+										"x": "SPAWNPOINT.X",
+										"y": "SPAWNPOINT.Y"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Cam",
+									"sid": 340808145818806,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"callFunction": "addHealth",
+									"sid": 106958460109972,
+									"parameters": [
+										"(Heart.Count*2)-Sprite.Health",
+										"0",
+										false,
+										"0",
+										false
+									]
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Sprite",
+									"sid": 639610975720350,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "Sprite",
+									"sid": 287564239661797,
+									"parameters": {
+										"angle": "0"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "PlayerFace",
+									"sid": 764615987352910,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Hand",
+									"sid": 255602659795485,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Sprite6",
+									"sid": 394898442147176,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Sprite",
+									"sid": 463741049034358,
+									"behaviorType": "Platform",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 746233531107331,
+									"parameters": {
+										"group-name": "\"Main\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "TiledBackground3",
+									"sid": 653206003633424,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetOpacity",
+										"end-value": "0",
+										"time": "0.3",
+										"ease": "default",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"callFunction": "SetCurrentSlot",
+									"sid": 153931601843355,
+									"parameters": [
+										"Sprite11.CurrentSlot"
+									]
+								}
+							],
+							"sid": 378181454537186,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Sprite",
+											"sid": 997103615824488,
+											"parameters": {
+												"child": "Fire",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "Fire",
+											"sid": 398170260014659
+										}
+									],
+									"sid": 537244855610164
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 656535520703856,
+											"parameters": {
+												"object": "Message_Text",
+												"expression": "Message_Text.Type = \"YouDied\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "Message_Text",
+											"sid": 160541346690128
+										}
+									],
+									"sid": 187477993934422
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"eventType": "group",
 			"disabled": true,
 			"title": "Instrument",
