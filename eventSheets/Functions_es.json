@@ -1403,6 +1403,347 @@
 					"sid": 373052519019693
 				}
 			]
+		},
+		{
+			"functionName": "Message",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Icon",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 145299504329008
+				},
+				{
+					"name": "TagedText",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 826924284735291
+				},
+				{
+					"name": "Type",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 852878180100214
+				},
+				{
+					"name": "Layer",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 428711311327227
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 831623564763505,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 441503584953136,
+							"parameters": {
+								"object-to-create": "ChatBlank",
+								"layer": "Layer",
+								"x": "Functions.Get_Center_X(Layer)",
+								"y": "ViewportTop(Layer)+3",
+								"create-hierarchy": true,
+								"template-name": "\"Alert\""
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "ChatBlank",
+							"sid": 291918475931714,
+							"parameters": {
+								"width": "Self.Width*0.6",
+								"height": "Self.Height*0.6"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "ChatBlank",
+							"sid": 398159724475492,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "size",
+								"end-x": "100",
+								"end-y": "20",
+								"time": "0.3",
+								"ease": "easeoutback",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 698028433483424,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 914123148834948,
+									"parameters": {
+										"value": "Type = \"Ads\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "start-timer",
+									"objectClass": "Message_Text",
+									"sid": 100020203540085,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "5",
+										"type": "once",
+										"tag": "\"Ads\""
+									}
+								}
+							],
+							"sid": 578616314987014,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "ChatBlank",
+											"sid": 125352673733020,
+											"parameters": {
+												"child": "Message_Text",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 810229939923465
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 404587231948900
+								}
+							],
+							"actions": [
+								{
+									"id": "start-timer",
+									"objectClass": "Message_Text",
+									"sid": 660986282925560,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "3",
+										"type": "once",
+										"tag": "\"Hide\""
+									}
+								}
+							],
+							"sid": 475045454695976
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "ChatBlank",
+									"sid": 502392216165390,
+									"parameters": {
+										"child": "Message_Text",
+										"which": "own"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "ChatBlank",
+									"sid": 706444716530112,
+									"parameters": {
+										"child": "Inventory_Item",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Message_Text",
+									"sid": 856462887646694,
+									"parameters": {
+										"text": "Functions.Get_LanguageText(TagedText)"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Inventory_Item",
+									"sid": 232166796006783,
+									"parameters": {
+										"animation": "Icon",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 555020248788270
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "Message_Text",
+					"sid": 375410509381970,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"Ads\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ShowFullScreen",
+					"sid": 999049701004482
+				}
+			],
+			"sid": 753335954335629,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-parent",
+							"objectClass": "Message_Text",
+							"sid": 130046153917957,
+							"parameters": {
+								"parent": "ChatBlank",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "ChatBlank",
+							"sid": 879666018033703,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "size",
+								"end-x": "Self.Width*0.6",
+								"end-y": "Self.Height*0.6",
+								"time": "0.3",
+								"ease": "easeinback",
+								"destroy-on-complete": "yes",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 641375129380664
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "Message_Text",
+					"sid": 232515714622363,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"Hide\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 793116932565954,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-parent",
+							"objectClass": "Message_Text",
+							"sid": 481440582364520,
+							"parameters": {
+								"parent": "ChatBlank",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "ChatBlank",
+							"sid": 831130091890156,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "size",
+								"end-x": "Self.Width*0.6",
+								"end-y": "Self.Height*0.6",
+								"time": "0.3",
+								"ease": "easeinback",
+								"destroy-on-complete": "yes",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 869723844239442
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-timer-running",
+					"objectClass": "Message_Text",
+					"sid": 426894839021328,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"Ads\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "Message_Text",
+					"sid": 101212053598935,
+					"parameters": {
+						"text": "replace(Functions.Get_LanguageText(\"Ads\"), \"/s\" ,str(floor(Message_Text.Timer.Duration(\"Ads\")-Message_Text.Timer.CurrentTime(\"Ads\") )) )"
+					}
+				}
+			],
+			"sid": 874245816671296
 		}
 	],
 	"sid": 921570436268604

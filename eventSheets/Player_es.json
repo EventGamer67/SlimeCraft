@@ -13143,6 +13143,7 @@
 							"id": "tween-two-properties",
 							"objectClass": "Sprite",
 							"sid": 945166955061295,
+							"disabled": true,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"\"",
@@ -13181,6 +13182,7 @@
 							"id": "set-time-scale",
 							"objectClass": "System",
 							"sid": 580356676602540,
+							"disabled": true,
 							"parameters": {
 								"time-scale": "2"
 							}
@@ -13197,17 +13199,56 @@
 							]
 						},
 						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 372566163342661,
+							"parameters": {
+								"seconds": "4"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 673468780960137,
+							"parameters": {
+								"variable": "Tick",
+								"value": "((floor(Tick/7200)+1)*7200)-Tick"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Sprite",
+							"sid": 733224450398999,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Sprite",
+							"sid": 199767905084319,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						},
+						{
+							"callFunction": "SaveWorld",
+							"sid": 867069235966458
+						},
+						{
 							"id": "wait-for-signal",
 							"objectClass": "System",
-							"sid": 450454609235606,
+							"sid": 811925663683619,
 							"parameters": {
-								"tag": "\"SunRise\""
+								"tag": "\"saved\""
 							}
 						},
 						{
 							"id": "set-time-scale",
 							"objectClass": "System",
 							"sid": 962269967763795,
+							"disabled": true,
 							"parameters": {
 								"time-scale": "1"
 							}
@@ -13223,10 +13264,24 @@
 							]
 						},
 						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 995740010240062
+						},
+						{
+							"callFunction": "Message",
+							"sid": 225606936732995,
+							"parameters": [
+								"\"File\"",
+								"\"WorldSaved\"",
+								"\"WorldSaved\"",
+								"\"UI\""
+							]
+						},
+						{
 							"id": "tween-two-properties",
 							"objectClass": "Sprite",
 							"sid": 824363995119461,
-							"disabled": true,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"\"",
@@ -13245,6 +13300,7 @@
 							"id": "tween-two-properties",
 							"objectClass": "Sprite",
 							"sid": 902369960016642,
+							"disabled": true,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"\"",
@@ -13263,23 +13319,6 @@
 							"id": "wait-for-previous-actions",
 							"objectClass": "System",
 							"sid": 537283989809683
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "Sprite",
-							"sid": 165637147666780,
-							"behaviorType": "Platform",
-							"parameters": {
-								"state": "enabled"
-							}
-						},
-						{
-							"id": "set-collisions-enabled",
-							"objectClass": "Sprite",
-							"sid": 928372792558882,
-							"parameters": {
-								"collisions": "enabled"
-							}
 						},
 						{
 							"id": "set-group-active",

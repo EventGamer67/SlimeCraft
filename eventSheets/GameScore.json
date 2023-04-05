@@ -103,6 +103,125 @@
 					"sid": 681726114036078
 				}
 			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ADS",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "FullScreenADS",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 714415340367725,
+									"parameters": {
+										"interval-seconds": "120"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Message",
+									"sid": 999232545448238,
+									"parameters": [
+										"\"Apple\"",
+										"\"Apple\"",
+										"\"Ads\"",
+										"\"UI\""
+									]
+								}
+							],
+							"sid": 361663257905864
+						},
+						{
+							"functionName": "ShowFullScreen",
+							"functionCopyPicked": false,
+							"functionDescription": "",
+							"functionCategory": "ADS",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 594733949642406
+								}
+							],
+							"sid": 614863541653292,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-ads-fullscreen-available",
+											"objectClass": "GameScore",
+											"sid": 277814777352205
+										}
+									],
+									"actions": [
+										{
+											"id": "ads-show-fullscreen",
+											"objectClass": "GameScore",
+											"sid": 566381726281269
+										},
+										{
+											"id": "wait-for-previous-actions",
+											"objectClass": "System",
+											"sid": 789165949946509
+										},
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 417944670704939,
+											"parameters": {
+												"value": "1"
+											}
+										}
+									],
+									"sid": 527877336277205
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 812368836717847
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 581725555218655,
+											"parameters": {
+												"value": "0"
+											}
+										}
+									],
+									"sid": 590391490742128
+								}
+							]
+						}
+					],
+					"sid": 456077748583171
+				}
+			],
+			"sid": 220841350385631
 		}
 	],
 	"sid": 881504395585234
