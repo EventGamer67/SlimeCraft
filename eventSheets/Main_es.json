@@ -20044,6 +20044,328 @@
 				}
 			],
 			"sid": 784930409669118
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Rocket",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Sprite",
+							"sid": 880828037163481,
+							"parameters": {
+								"object": "Rocket"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 482279364964886,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 932343031921655
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 341108785846530,
+									"parameters": {
+										"object-to-create": "Message_Text",
+										"layer": "\"Layer 1\"",
+										"x": "Sprite.X",
+										"y": "Sprite.BBoxTop+2",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "Message_Text",
+									"sid": 972152790569558,
+									"parameters": {
+										"scale": "0.05"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Message_Text",
+									"sid": 872000618625876,
+									"parameters": {
+										"instance-variable": "Type",
+										"value": "\"Require\""
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "Message_Text",
+									"sid": 469300171437488,
+									"parameters": {
+										"text": "\"Require\""
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "Sprite",
+									"sid": 284609822221192,
+									"parameters": {
+										"child": "Message_Text",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": true,
+										"transform-h": true,
+										"transform-a": true,
+										"transform-o": false,
+										"transform-z-elevation": true,
+										"transform-visibility": false,
+										"destroy-with-parent": false
+									}
+								}
+							],
+							"sid": 549864762233499,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "counter",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 168561500970734
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "JSON",
+											"sid": 373122787602525,
+											"parameters": {
+												"path": "\"Settings.Config.Rocket.\"&JSON.Get(\"Player.RocketLevel\")"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 234494254444173,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 697669335233263,
+													"parameters": {
+														"object-to-create": "Inventory_Item",
+														"layer": "\"Layer 1\"",
+														"x": "Sprite.X",
+														"y": "Sprite.Y-(20+(counter*10))",
+														"create-hierarchy": true,
+														"template-name": "\"Task\""
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "Inventory_Item",
+													"sid": 204596783548274,
+													"parameters": {
+														"animation": "JSON.CurrentKey",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Inventory_Item",
+													"sid": 354574433190731,
+													"parameters": {
+														"instance-variable": "Count_",
+														"value": "JSON.Get(\"Settings.Config.Rocket.\"&JSON.Get(\"Player.RocketLevel\")&\".\"&JSON.CurrentKey&\".Count\")"
+													}
+												},
+												{
+													"id": "set-size",
+													"objectClass": "Inventory_Item",
+													"sid": 531272824991540,
+													"parameters": {
+														"width": "10",
+														"height": "10"
+													}
+												},
+												{
+													"id": "add-child",
+													"objectClass": "Sprite",
+													"sid": 960737930758940,
+													"parameters": {
+														"child": "Inventory_Item",
+														"transform-x": true,
+														"transform-y": true,
+														"transform-w": true,
+														"transform-h": true,
+														"transform-a": true,
+														"transform-o": false,
+														"transform-z-elevation": true,
+														"transform-visibility": false,
+														"destroy-with-parent": false
+													}
+												},
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 830528450361348,
+													"parameters": {
+														"variable": "counter",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 242295325823001
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 920007673287146,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"callFunction": "UpdateQuestRequirements",
+											"sid": 828682063856172
+										}
+									],
+									"sid": 218114329704911
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 906836995888422
+						}
+					],
+					"actions": [],
+					"sid": 260738290413265,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 751368581062786
+								}
+							],
+							"actions": [],
+							"sid": 489918328906013,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Sprite",
+											"sid": 829935183024767,
+											"parameters": {
+												"child": "Inventory_Item",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 172605444581787,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 413150796245619,
+													"parameters": {
+														"value": "Inventory_Item.TemplateName = \"Task\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "Inventory_Item",
+													"sid": 718271325913191
+												}
+											],
+											"sid": 278369353393260
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Sprite",
+											"sid": 724008876193140,
+											"parameters": {
+												"child": "Message_Text",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 688166000400848,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 748215587998329,
+													"parameters": {
+														"value": "Message_Text.Type = \"Require\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "Message_Text",
+													"sid": 619780063130578
+												}
+											],
+											"sid": 165013029441609
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 157508223874790
 		}
 	],
 	"sid": 270941678251427

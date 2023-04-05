@@ -23489,7 +23489,7 @@
 				{
 					"type": "Message_Text",
 					"properties": {
-						"text": "Play",
+						"text": "",
 						"enable-bbcode": true,
 						"character-width": 58,
 						"character-height": 76,
@@ -23508,7 +23508,7 @@
 					"uid": 348,
 					"instanceVariables": {
 						"Type": "Play",
-						"Translatable": true
+						"Translatable": false
 					},
 					"behaviors": {
 						"Tween": {

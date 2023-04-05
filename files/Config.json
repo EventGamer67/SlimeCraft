@@ -29,6 +29,20 @@
 				}
 			
 		},
+		"Rocket":{
+			"1":{
+				"WaterBucket":{	
+					"Count":1,
+					"Return":"Bucket"
+				}
+			},
+			"2":{
+				"WireCutter":{	
+					"Count":1,
+					"Return":"WireCutter"
+				}
+			}
+		},
 		"SieveDrop":{
 			"Dirt":{
 				"Pebble":{
