@@ -11,7 +11,7 @@
 			"x":1,
 			"y":1
 		},
-		"TilesWithoutCollision":[60,-1,39,12,149],
+		"TilesWithoutCollision":[60,-1,39,12,149,88,89,90,91,92,93,94,95,80,16,63,79,200,201,202,203],
 		"LightTransparentBlocks":[15,39,12,13,28,29,30,70,55,56,73,79,99,80,52,149,5,53],
 		"TilesWhatOnCanPlace":[39,205,206,217,218,219,220,-1],
 		"OnlyOnBlocks":[
@@ -61,8 +61,31 @@
 						"1":30,
 						"2":25
 					}
+				},
+				"GrassSeed":{
+					"Chance":7,
+					"Amount":{
+						"1":100
+					}
+				},
+				"CarrotSeed":{
+					"Chance":2,
+					"Amount":{
+						"1":100
+					}
+				},
+				"BirchSeed":{
+					"Chance":1,
+					"Amount":{
+						"1":100
+					}
+				},
+				"SpruceSeed":{
+					"Chance":1,
+					"Amount":{
+						"1":100
+					}
 				}
-			
 			},
 			"Sand":{
 			
@@ -166,6 +189,7 @@
 			},
 			"Oak_Planks":{
 				"Using":"Block",
+				"BackBuild":1,
 				"Stackable":1,
 				"MaxStack":32,
 				"Fuel": 600
@@ -210,6 +234,7 @@
 			"Oak_Log":{
 				"Using":"Block",
 				"Stackable":1,
+				"BackBuild":1,
 				"MaxStack":32,
 				"Fuel": 600
 			},
@@ -402,6 +427,32 @@
 				"Type": "ClayWaterBucket",
 				"Using":"Bucket",
 				"Stackable":0
+			},
+			"GrassSeed":{
+				"Using":"Material",
+				"Stackable":1,
+				"MaxStack":32,
+				"Fuel": 300
+			},
+			"CarrotSeed":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32,
+				"OnlyOn":[71]
+			},
+			"BirchSeed":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32,
+				"OnlyOn":[3],
+				"Fuel": 300
+			},
+			"SpruceSeed":{
+				"Using":"Block",
+				"Stackable":1,
+				"MaxStack":32,
+				"OnlyOn":[3],
+				"Fuel": 300
 			}
 		},
 		"Tiles":{
@@ -609,6 +660,27 @@
 				"No_Silk_Drop": "Oak_Sampling",
 				"Best_Tool": "Scissors"
 			},
+			"200":{
+				"Dur": 1,
+				"Type": "CarrotSeed",
+				"Silk_Drop": "CarrotSeed",
+				"No_Silk_Drop": "CarrotSeed",
+				"Best_Tool": "Scissors"
+			},
+			"88":{
+				"Dur": 1,
+				"Type": "WheatSeeds",
+				"Silk_Drop": "WheatSeeds",
+				"No_Silk_Drop": "WheatSeeds",
+				"Best_Tool": "Scissors"
+			},
+			"63":{
+				"Dur": 1,
+				"Type": "SpruceSeed",
+				"Silk_Drop": "SpruceSeed",
+				"No_Silk_Drop": "SpruceSeed",
+				"Best_Tool": "Scissors"
+			},
 			"44":{
 				"Dur": 2.5,
 				"Type": "Furnace",
@@ -747,7 +819,7 @@
 			"39":{
 				"Dur": 0.1,
 				"Type": "Trava",
-				"No_Silk_Drop": "Trava"
+				"Silk_Drop": "Trava"
 			},
 			"29":{
 				"Dur": 0.1,

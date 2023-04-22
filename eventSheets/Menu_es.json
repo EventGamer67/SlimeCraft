@@ -28,18 +28,6 @@
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 364964027294502,
-					"parameters": {
-						"audio-file": "MusicBackground01",
-						"loop": "looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"Back\""
-					}
-				},
-				{
 					"id": "tween-value",
 					"objectClass": "GameManager",
 					"sid": 175058075470532,
@@ -807,10 +795,10 @@
 				},
 				{
 					"functionName": "ResetScroll",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -1444,10 +1432,10 @@
 		},
 		{
 			"functionName": "ShowCreateNewWorldTable",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -1559,10 +1547,10 @@
 		},
 		{
 			"functionName": "ShowWorlds",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -2002,9 +1990,9 @@
 														{
 															"id": "set-text",
 															"objectClass": "Message_Text",
-															"sid": 596209161310399,
+															"sid": 651329626902410,
 															"parameters": {
-																"text": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Ticks\")"
+																"text": "floor(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Ticks\")/7200)&\" \"&Functions.Get_LanguageText(\"Day\")"
 															}
 														}
 													],
@@ -2027,9 +2015,9 @@
 														{
 															"id": "set-text",
 															"objectClass": "Message_Text",
-															"sid": 123543789260365,
+															"sid": 915207186898439,
 															"parameters": {
-																"text": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Coin\")"
+																"text": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Coin\")&\" \"&Functions.Get_LanguageText(\"Coins\")"
 															}
 														}
 													],
@@ -2063,10 +2051,10 @@
 		},
 		{
 			"functionName": "BlackoutByTiled",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": true,
 			"functionParameters": [
 				{
@@ -2280,10 +2268,10 @@
 		},
 		{
 			"functionName": "CloseTable",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": true,
 			"functionParameters": [
 				{
@@ -2343,10 +2331,10 @@
 		},
 		{
 			"functionName": "CreateNewWorld",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": true,
 			"functionParameters": [
 				{
@@ -2439,10 +2427,10 @@
 				},
 				{
 					"functionName": "GetWorldCount",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "number",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -2507,10 +2495,10 @@
 		},
 		{
 			"functionName": "UpdateWorldsList",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": true,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -2915,10 +2903,10 @@
 		},
 		{
 			"functionName": "MessageBox",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "string",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -3623,10 +3611,10 @@
 				},
 				{
 					"functionName": "Result",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "string",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -3645,10 +3633,10 @@
 				},
 				{
 					"functionName": "SeekAnswer",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -3692,10 +3680,10 @@
 				},
 				{
 					"functionName": "DeleteWorld",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": true,
 					"functionParameters": [
 						{
@@ -3780,6 +3768,16 @@
 					"sid": 376024072846440
 				},
 				{
+					"eventType": "variable",
+					"name": "New",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 826477159235648
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -3850,6 +3848,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 940385790816848,
+							"parameters": {
+								"variable": "New",
+								"value": "true"
+							}
+						},
+						{
 							"id": "signal",
 							"objectClass": "System",
 							"sid": 505836664206377,
@@ -3862,10 +3869,10 @@
 				},
 				{
 					"functionName": "StartGame",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -3960,17 +3967,56 @@
 									"id": "wait-for-previous-actions",
 									"objectClass": "System",
 									"sid": 952672425029264
-								},
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 632342394420274,
-									"parameters": {
-										"layout": "Main"
-									}
 								}
 							],
-							"sid": 888009901134585
+							"sid": 888009901134585,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 370356096756952,
+											"parameters": {
+												"variable": "New"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 993742266083122,
+											"parameters": {
+												"layout": "Comics"
+											}
+										}
+									],
+									"sid": 406088970738977
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 101025659577684
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 763828604505282,
+											"parameters": {
+												"layout": "Main"
+											}
+										}
+									],
+									"sid": 447503403182404
+								}
+							]
 						}
 					]
 				}
@@ -3979,10 +4025,10 @@
 		},
 		{
 			"functionName": "SaveSlots",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": true,
 			"functionParameters": [],
 			"eventType": "function-block",

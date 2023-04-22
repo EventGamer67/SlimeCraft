@@ -193,6 +193,201 @@
 									"sid": 480418452418796
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 903467338895105,
+									"parameters": {
+										"value": "AdvBtns.ObjectTypeName = \"Sprite36\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 576003202201825,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 107308978952989,
+											"parameters": {
+												"object": "Sprite36",
+												"expression": "Sprite36.UID = AdvBtns.UID"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 277531095990853,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Sprite36",
+													"sid": 922094681938723,
+													"parameters": {
+														"instance-variable": "Type",
+														"comparison": 0,
+														"value": "\"Complete\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "CompleteQuest",
+													"sid": 203977175649826
+												}
+											],
+											"sid": 447753637016879
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 332769184313075,
+									"parameters": {
+										"value": "AdvBtns.ObjectTypeName = \"Movement_Button\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 845567647855033,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 190241921557024,
+											"parameters": {
+												"object": "Movement_Button",
+												"expression": "Movement_Button.UID = AdvBtns.UID"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 241462724052832,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "Movement_Button",
+													"sid": 531938159022353,
+													"parameters": {
+														"comparison": 0,
+														"number": "9"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ShowLeaderBoard",
+													"sid": 123752641612701
+												}
+											],
+											"sid": 819405277762672
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 671833102483060,
+									"parameters": {
+										"value": "AdvBtns.ObjectTypeName = \"FoodBtn\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 108502070593848,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 571434423066332,
+											"parameters": {
+												"object": "FoodBtn",
+												"expression": "FoodBtn.UID = AdvBtns.UID"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 656652565696673,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "FoodBtn",
+													"sid": 905581468290929,
+													"parameters": {
+														"instance-variable": "Type",
+														"comparison": 0,
+														"value": "\"Repair\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ClickOnFoodBtn",
+													"sid": 552757058788794
+												}
+											],
+											"sid": 188485995797050
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "FoodBtn",
+													"sid": 430662751912939,
+													"parameters": {
+														"instance-variable": "Type",
+														"comparison": 0,
+														"value": "\"ConstructMode\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "SwitchBuildMode",
+													"sid": 336657324622496,
+													"parameters": [
+														"BuildMode = \"Main\" ? \"Back\" : \"Main\""
+													]
+												}
+											],
+											"sid": 507812060380544
+										}
+									]
+								}
+							]
 						}
 					]
 				}
@@ -200,10 +395,10 @@
 		},
 		{
 			"functionName": "disableOtherBtns",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -249,10 +444,10 @@
 		},
 		{
 			"functionName": "enableCurBtns",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{

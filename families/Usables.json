@@ -1,0 +1,25 @@
+{
+	"name": "Usables",
+	"plugin-id": "Sprite",
+	"sid": 245548551302557,
+	"instanceVariables": [
+		{
+			"name": "overlaped",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 294444655140183
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "skymen_BetterOutline",
+			"name": "BetterOutline"
+		}
+	],
+	"members": [
+		"Rocket",
+		"WorkBenchTrigger"
+	]
+}

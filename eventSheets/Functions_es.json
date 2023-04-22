@@ -13,10 +13,10 @@
 		},
 		{
 			"functionName": "Get_Center_X",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "number",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -43,10 +43,10 @@
 		},
 		{
 			"functionName": "Get_Center_Y",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "number",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -324,6 +324,438 @@
 												}
 											],
 											"sid": 425189917225744
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-xy",
+											"objectClass": "Timers",
+											"sid": 248539774940315,
+											"parameters": {
+												"x": "0",
+												"y": "2",
+												"comparison": 0,
+												"value": "\"Grow63\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 611502340494549,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "GrowPlant",
+													"sid": 359612823147011,
+													"parameters": [
+														"int(tokenat(Timers.At(0,1),0,\",\"))",
+														"int(tokenat(Timers.At(0,1),1,\",\"))",
+														"\"Grow63\""
+													]
+												}
+											],
+											"sid": 590528830004730
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-xy",
+											"objectClass": "Timers",
+											"sid": 116746319469484,
+											"parameters": {
+												"x": "0",
+												"y": "2",
+												"comparison": 0,
+												"value": "\"Grow79\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 504779854744626,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "GrowPlant",
+													"sid": 471886367587724,
+													"parameters": [
+														"int(tokenat(Timers.At(0,1),0,\",\"))",
+														"int(tokenat(Timers.At(0,1),1,\",\"))",
+														"\"Grow79\""
+													]
+												}
+											],
+											"sid": 289849354835828
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-xy",
+											"objectClass": "Timers",
+											"sid": 994363089185362,
+											"parameters": {
+												"x": "0",
+												"y": "2",
+												"comparison": 0,
+												"value": "\"Grow200\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 350886478061657,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "GrowPlant",
+													"sid": 607815165834825,
+													"parameters": [
+														"int(tokenat(Timers.At(0,1),0,\",\"))",
+														"int(tokenat(Timers.At(0,1),1,\",\"))",
+														"\"Grow200\""
+													]
+												}
+											],
+											"sid": 380457330912817
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-xy",
+											"objectClass": "Timers",
+											"sid": 939330121687915,
+											"parameters": {
+												"x": "0",
+												"y": "2",
+												"comparison": 0,
+												"value": "\"Grow201\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 859271447377926,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "GrowPlant",
+													"sid": 159908567741047,
+													"parameters": [
+														"int(tokenat(Timers.At(0,1),0,\",\"))",
+														"int(tokenat(Timers.At(0,1),1,\",\"))",
+														"\"Grow201\""
+													]
+												}
+											],
+											"sid": 800197376832217
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-xy",
+											"objectClass": "Timers",
+											"sid": 460445998257817,
+											"parameters": {
+												"x": "0",
+												"y": "2",
+												"comparison": 0,
+												"value": "\"Grow202\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 373648101521599,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "GrowPlant",
+													"sid": 444287499188603,
+													"parameters": [
+														"int(tokenat(Timers.At(0,1),0,\",\"))",
+														"int(tokenat(Timers.At(0,1),1,\",\"))",
+														"\"Grow202\""
+													]
+												}
+											],
+											"sid": 920273178686131
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-xy",
+											"objectClass": "Timers",
+											"sid": 389611076587368,
+											"parameters": {
+												"x": "0",
+												"y": "2",
+												"comparison": 0,
+												"value": "\"Grow88\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 213420091321900,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "GrowPlant",
+													"sid": 625942908216798,
+													"parameters": [
+														"int(tokenat(Timers.At(0,1),0,\",\"))",
+														"int(tokenat(Timers.At(0,1),1,\",\"))",
+														"\"Grow88\""
+													]
+												}
+											],
+											"sid": 854067870594566
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-xy",
+											"objectClass": "Timers",
+											"sid": 724769607403326,
+											"parameters": {
+												"x": "0",
+												"y": "2",
+												"comparison": 0,
+												"value": "\"Grow89\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 687753504943661,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "GrowPlant",
+													"sid": 335377736612273,
+													"parameters": [
+														"int(tokenat(Timers.At(0,1),0,\",\"))",
+														"int(tokenat(Timers.At(0,1),1,\",\"))",
+														"\"Grow89\""
+													]
+												}
+											],
+											"sid": 217654456998320
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-xy",
+											"objectClass": "Timers",
+											"sid": 690665228840551,
+											"parameters": {
+												"x": "0",
+												"y": "2",
+												"comparison": 0,
+												"value": "\"Grow90\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 996020245518819,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "GrowPlant",
+													"sid": 556780297680234,
+													"parameters": [
+														"int(tokenat(Timers.At(0,1),0,\",\"))",
+														"int(tokenat(Timers.At(0,1),1,\",\"))",
+														"\"Grow90\""
+													]
+												}
+											],
+											"sid": 692378010388580
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-xy",
+											"objectClass": "Timers",
+											"sid": 795821832269416,
+											"parameters": {
+												"x": "0",
+												"y": "2",
+												"comparison": 0,
+												"value": "\"Grow91\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 145367763672407,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "GrowPlant",
+													"sid": 212233772797524,
+													"parameters": [
+														"int(tokenat(Timers.At(0,1),0,\",\"))",
+														"int(tokenat(Timers.At(0,1),1,\",\"))",
+														"\"Grow91\""
+													]
+												}
+											],
+											"sid": 704816252349553
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-xy",
+											"objectClass": "Timers",
+											"sid": 861408437173336,
+											"parameters": {
+												"x": "0",
+												"y": "2",
+												"comparison": 0,
+												"value": "\"Grow92\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 575606157246893,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "GrowPlant",
+													"sid": 373065878759112,
+													"parameters": [
+														"int(tokenat(Timers.At(0,1),0,\",\"))",
+														"int(tokenat(Timers.At(0,1),1,\",\"))",
+														"\"Grow92\""
+													]
+												}
+											],
+											"sid": 395495476657185
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-xy",
+											"objectClass": "Timers",
+											"sid": 349130675915937,
+											"parameters": {
+												"x": "0",
+												"y": "2",
+												"comparison": 0,
+												"value": "\"Grow93\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 688138748259646,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "GrowPlant",
+													"sid": 867185754828859,
+													"parameters": [
+														"int(tokenat(Timers.At(0,1),0,\",\"))",
+														"int(tokenat(Timers.At(0,1),1,\",\"))",
+														"\"Grow93\""
+													]
+												}
+											],
+											"sid": 808938192414888
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-at-xy",
+											"objectClass": "Timers",
+											"sid": 428709121402082,
+											"parameters": {
+												"x": "0",
+												"y": "2",
+												"comparison": 0,
+												"value": "\"Grow94\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 687841859743285,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "GrowPlant",
+													"sid": 309932815603318,
+													"parameters": [
+														"int(tokenat(Timers.At(0,1),0,\",\"))",
+														"int(tokenat(Timers.At(0,1),1,\",\"))",
+														"\"Grow94\""
+													]
+												}
+											],
+											"sid": 134262821796982
 										}
 									]
 								},
@@ -1135,10 +1567,10 @@
 		},
 		{
 			"functionName": "SnapShot",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -1268,10 +1700,10 @@
 		},
 		{
 			"functionName": "CreateMessage",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -1338,10 +1770,10 @@
 		},
 		{
 			"functionName": "Get_LanguageText",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "Language",
 			"functionReturnType": "string",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -1406,10 +1838,10 @@
 		},
 		{
 			"functionName": "Message",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -1439,6 +1871,13 @@
 					"initialValue": "",
 					"comment": "",
 					"sid": 428711311327227
+				},
+				{
+					"name": "Sound",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 965306505402583
 				}
 			],
 			"eventType": "function-block",
@@ -1462,33 +1901,6 @@
 								"create-hierarchy": true,
 								"template-name": "\"Alert\""
 							}
-						},
-						{
-							"id": "set-size",
-							"objectClass": "ChatBlank",
-							"sid": 291918475931714,
-							"parameters": {
-								"width": "Self.Width*0.6",
-								"height": "Self.Height*0.6"
-							}
-						},
-						{
-							"id": "tween-two-properties",
-							"objectClass": "ChatBlank",
-							"sid": 398159724475492,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "size",
-								"end-x": "100",
-								"end-y": "20",
-								"time": "0.3",
-								"ease": "easeoutback",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
 						}
 					],
 					"sid": 698028433483424,
@@ -1497,28 +1909,16 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "evaluate-expression",
+									"id": "pick-last-created",
 									"objectClass": "System",
-									"sid": 914123148834948,
+									"sid": 750905400775054,
 									"parameters": {
-										"value": "Type = \"Ads\""
+										"object": "ChatBlank"
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "start-timer",
-									"objectClass": "Message_Text",
-									"sid": 100020203540085,
-									"behaviorType": "Timer",
-									"parameters": {
-										"duration": "5",
-										"type": "once",
-										"tag": "\"Ads\""
-									}
-								}
-							],
-							"sid": 578616314987014,
+							"actions": [],
+							"sid": 794775993373761,
 							"children": [
 								{
 									"eventType": "block",
@@ -1526,84 +1926,177 @@
 										{
 											"id": "pick-children",
 											"objectClass": "ChatBlank",
-											"sid": 125352673733020,
+											"sid": 253286731881199,
 											"parameters": {
 												"child": "Message_Text",
 												"which": "own"
 											}
+										},
+										{
+											"id": "pick-children",
+											"objectClass": "ChatBlank",
+											"sid": 260091065599321,
+											"parameters": {
+												"child": "Inventory_Item",
+												"which": "own"
+											}
 										}
 									],
-									"actions": [],
-									"sid": 810229939923465
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "Message_Text",
+											"sid": 911299505864155,
+											"parameters": {
+												"text": "Functions.Get_LanguageText(TagedText)"
+											}
+										},
+										{
+											"callFunction": "TrimSF",
+											"sid": 612545978459514,
+											"parameters": [
+												"0.001"
+											]
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Inventory_Item",
+											"sid": 557663549441979,
+											"parameters": {
+												"animation": "Icon",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "Inventory_Item",
+											"sid": 528169188688077,
+											"parameters": {
+												"width": "12",
+												"height": "12"
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "ChatBlank",
+											"sid": 206860737283293,
+											"parameters": {
+												"width": "Self.Width*0.6",
+												"height": "Self.Height*0.6"
+											}
+										},
+										{
+											"id": "tween-two-properties",
+											"objectClass": "ChatBlank",
+											"sid": 279471322369236,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "size",
+												"end-x": "100",
+												"end-y": "20",
+												"time": "0.3",
+												"ease": "easeoutback",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 694780203767876,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 933412899752118,
+													"parameters": {
+														"value": "Sound <> \"\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 560900911241488,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 607215764537770,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "Sound",
+																"loop": "not-looping",
+																"volume": "0",
+																"stereo-pan": "0",
+																"tag-optional": "\"Sound\""
+															}
+														}
+													],
+													"sid": 237889304652213
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 462851737321298,
+													"parameters": {
+														"value": "Type = \"Ads\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "start-timer",
+													"objectClass": "Message_Text",
+													"sid": 185224250842426,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "5",
+														"type": "once",
+														"tag": "\"Ads\""
+													}
+												}
+											],
+											"sid": 891304358762552
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 264552233023917
+												}
+											],
+											"actions": [
+												{
+													"id": "start-timer",
+													"objectClass": "Message_Text",
+													"sid": 290608319069072,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "3",
+														"type": "once",
+														"tag": "\"Hide\""
+													}
+												}
+											],
+											"sid": 801439742940981
+										}
+									]
 								}
 							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 404587231948900
-								}
-							],
-							"actions": [
-								{
-									"id": "start-timer",
-									"objectClass": "Message_Text",
-									"sid": 660986282925560,
-									"behaviorType": "Timer",
-									"parameters": {
-										"duration": "3",
-										"type": "once",
-										"tag": "\"Hide\""
-									}
-								}
-							],
-							"sid": 475045454695976
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-children",
-									"objectClass": "ChatBlank",
-									"sid": 502392216165390,
-									"parameters": {
-										"child": "Message_Text",
-										"which": "own"
-									}
-								},
-								{
-									"id": "pick-children",
-									"objectClass": "ChatBlank",
-									"sid": 706444716530112,
-									"parameters": {
-										"child": "Inventory_Item",
-										"which": "own"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "Message_Text",
-									"sid": 856462887646694,
-									"parameters": {
-										"text": "Functions.Get_LanguageText(TagedText)"
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Inventory_Item",
-									"sid": 232166796006783,
-									"parameters": {
-										"animation": "Icon",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 555020248788270
 						}
 					]
 				}
@@ -1744,6 +2237,94 @@
 				}
 			],
 			"sid": 874245816671296
+		},
+		{
+			"functionName": "TrimSF",
+			"functionDescription": "",
+			"functionCategory": "Tools",
+			"functionReturnType": "none",
+			"functionCopyPicked": true,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Accuracity",
+					"type": "number",
+					"initialValue": "0.001",
+					"comment": "",
+					"sid": 421096090467203
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 441731649737796,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "while",
+							"objectClass": "System",
+							"sid": 761903564657209
+						}
+					],
+					"actions": [],
+					"sid": 894333693229522,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 396180225480991,
+									"parameters": {
+										"value": "Message_Text.TextHeight > Message_Text.Height"
+									}
+								},
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 652259021596305,
+									"parameters": {
+										"value": "Message_Text.TextWidth > Message_Text.Width"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-scale",
+									"objectClass": "Message_Text",
+									"sid": 102539637827567,
+									"parameters": {
+										"scale": "Self.CharacterScale-Accuracity"
+									}
+								}
+							],
+							"sid": 208372551836495,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 181524263118333
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-loop",
+									"objectClass": "System",
+									"sid": 818200576500459
+								}
+							],
+							"sid": 662401454076467
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 921570436268604

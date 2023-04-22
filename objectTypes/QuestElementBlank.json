@@ -24,6 +24,11 @@
 			"behaviorId": "Tween",
 			"name": "Tween",
 			"sid": 301613896930230
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 700981644300810
 		}
 	],
 	"effectTypes": [],
@@ -33,13 +38,37 @@
 				"frames": [
 					{
 						"width": 33,
-						"height": 33,
+						"height": 38,
+						"originX": 0.5151515151515151,
+						"originY": 0.5015948963317384,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2298215,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								1,
+								0,
+								1,
+								0.9736842105263158,
+								0,
+								0.9736842105263158
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 33,
+						"height": 37,
 						"originX": 0.5151515151515151,
 						"originY": 0.5151515151515151,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3055361,
+						"imageSpriteId": 5119,
 						"useCollisionPoly": true,
 						"duration": 1
 					}

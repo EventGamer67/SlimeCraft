@@ -655,57 +655,12 @@
 											"children": [
 												{
 													"eventType": "block",
-													"conditions": [
-														{
-															"id": "pick-nearestfurthest",
-															"objectClass": "Tree",
-															"sid": 723953167657645,
-															"parameters": {
-																"which": "nearest",
-																"x": "Sprite.X",
-																"y": "Sprite.Y"
-															}
-														}
-													],
+													"conditions": [],
 													"actions": [
-														{
-															"id": "tween-one-property",
-															"objectClass": "Tree",
-															"sid": 546597321646327,
-															"behaviorType": "Tween",
-															"parameters": {
-																"tags": "\"\"",
-																"property": "offsetAngle",
-																"end-value": "random(-5,5)",
-																"time": "0.1",
-																"ease": "easeoutcubic",
-																"destroy-on-complete": "no",
-																"loop": "no",
-																"ping-pong": "no",
-																"repeat-count": "1"
-															}
-														},
 														{
 															"id": "wait-for-previous-actions",
 															"objectClass": "System",
 															"sid": 238445048496628
-														},
-														{
-															"id": "tween-one-property",
-															"objectClass": "Tree",
-															"sid": 887234463243671,
-															"behaviorType": "Tween",
-															"parameters": {
-																"tags": "\"\"",
-																"property": "offsetAngle",
-																"end-value": "0",
-																"time": "0.1",
-																"ease": "easeinoutsine",
-																"destroy-on-complete": "no",
-																"loop": "no",
-																"ping-pong": "no",
-																"repeat-count": "1"
-															}
 														}
 													],
 													"sid": 718844714558699,
@@ -982,10 +937,10 @@
 									"actions": [
 										{
 											"callFunction": "BlackoutByTiled",
-											"sid": 607910093566638,
+											"sid": 965993563691360,
 											"parameters": [
 												true,
-												"\"Interfaces\"",
+												"\"Shadow\"",
 												"0.1",
 												"70"
 											]
@@ -1197,17 +1152,11 @@
 			]
 		},
 		{
-			"eventType": "block",
-			"conditions": [],
-			"actions": [],
-			"sid": 882224006260536
-		},
-		{
 			"functionName": "ButtonAction",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -1355,6 +1304,14 @@
 											"id": "set-visible",
 											"objectClass": "Sprite6",
 											"sid": 121681840150357,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "Hat",
+											"sid": 886946974865246,
 											"parameters": {
 												"visibility": "visible"
 											}
@@ -1714,16 +1671,7 @@
 			"children": [
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Sprite",
-							"sid": 613052328047416,
-							"parameters": {
-								"object": "Tree"
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [],
 					"sid": 674407909203292,
 					"disabled": true,
@@ -1969,15 +1917,6 @@
 									"id": "else",
 									"objectClass": "System",
 									"sid": 553380581497251
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Sprite",
-									"sid": 237613396260566,
-									"parameters": {
-										"object": "Tree"
-									},
-									"isInverted": true
 								}
 							],
 							"actions": [],
@@ -3303,10 +3242,10 @@
 		},
 		{
 			"functionName": "Trim",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "string",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -3330,10 +3269,10 @@
 		},
 		{
 			"functionName": "Get_Pattern1",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -4472,10 +4411,10 @@
 		},
 		{
 			"functionName": "Clear_Sections",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -4744,10 +4683,10 @@
 		},
 		{
 			"functionName": "Create_Item_Inventory",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -5239,10 +5178,10 @@
 		},
 		{
 			"functionName": "Define_Inventory_Pos",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "number",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -5413,10 +5352,10 @@
 		},
 		{
 			"functionName": "Define_Tile_Pos",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "string",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -5657,10 +5596,10 @@
 		},
 		{
 			"functionName": "Add_Item",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -5856,6 +5795,24 @@
 															"parameters": {
 																"instance-variable": "Count_",
 																"value": "clamp(Self.Count_+count,0,JSON.Get(\"Settings.Config.Glossary.\"&What&\".MaxStack\"))"
+															}
+														},
+														{
+															"id": "tween-two-properties",
+															"objectClass": "Inventory_Item",
+															"sid": 779276643929365,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"\"",
+																"property": "size",
+																"end-x": "Self.Width*1.1",
+																"end-y": "Self.Height*0.9",
+																"time": "0.05",
+																"ease": "easeinoutback",
+																"destroy-on-complete": "no",
+																"loop": "no",
+																"ping-pong": "yes",
+																"repeat-count": "1"
 															}
 														}
 													],
@@ -6147,6 +6104,24 @@
 													"id": "stop-loop",
 													"objectClass": "System",
 													"sid": 586456652568723
+												},
+												{
+													"id": "tween-two-properties",
+													"objectClass": "Inventory_Item",
+													"sid": 889072062439904,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "size",
+														"end-x": "Self.Width*1.1",
+														"end-y": "Self.Height*0.9",
+														"time": "0.05",
+														"ease": "easeinoutback",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "yes",
+														"repeat-count": "1"
+													}
 												}
 											],
 											"sid": 431528562462138,
@@ -6308,10 +6283,10 @@
 		},
 		{
 			"functionName": "Compare_Array",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "number",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -6364,10 +6339,10 @@
 		},
 		{
 			"functionName": "Check_and_Remove_Border",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -7145,13 +7120,11 @@
 							],
 							"actions": [
 								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 538348710182212,
-									"parameters": {
-										"type": "log",
-										"message": "\"123\""
-									}
+									"callFunction": "OnItemCrafted",
+									"sid": 521730565341813,
+									"parameters": [
+										"Inventory_Item.Type"
+									]
 								}
 							],
 							"sid": 453010800784320,
@@ -7699,7 +7672,7 @@
 							"type": "boolean",
 							"initialValue": "false",
 							"comment": "",
-							"isStatic": true,
+							"isStatic": false,
 							"isConstant": false,
 							"sid": 950752034838651
 						},
@@ -7709,7 +7682,7 @@
 							"type": "number",
 							"initialValue": "0",
 							"comment": "",
-							"isStatic": true,
+							"isStatic": false,
 							"isConstant": false,
 							"sid": 621799316755366
 						},
@@ -7759,6 +7732,70 @@
 							],
 							"sid": 260509415419404,
 							"children": [
+								{
+									"eventType": "variable",
+									"name": "DragedItemInventoryX",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 387947566161520
+								},
+								{
+									"eventType": "variable",
+									"name": "DragedItemInventoryY",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 174380924084271
+								},
+								{
+									"eventType": "variable",
+									"name": "DragedItemInventoryPos",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 567206425667266
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 130237895513641,
+											"parameters": {
+												"variable": "DragedItemInventoryX",
+												"value": "Inventory_Item.Global_Pos_X"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 696150307376182,
+											"parameters": {
+												"variable": "DragedItemInventoryY",
+												"value": "Inventory_Item.Global_Pos_Y"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 179076841987618,
+											"parameters": {
+												"variable": "DragedItemInventoryPos",
+												"value": "Inventory_Item.PosX"
+											}
+										}
+									],
+									"sid": 505970283335561
+								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -7866,38 +7903,6 @@
 																				{
 																					"id": "pick-all",
 																					"objectClass": "System",
-																					"sid": 141593975304987,
-																					"parameters": {
-																						"object": "Inventory_Item"
-																					}
-																				},
-																				{
-																					"id": "pick-by-comparison",
-																					"objectClass": "System",
-																					"sid": 696964969422976,
-																					"parameters": {
-																						"object": "Inventory_Item",
-																						"expression": "Inventory_Item.UID",
-																						"comparison": 0,
-																						"value": "PickedUID"
-																					}
-																				}
-																			],
-																			"actions": [
-																				{
-																					"id": "destroy",
-																					"objectClass": "Inventory_Item",
-																					"sid": 438057869949757
-																				}
-																			],
-																			"sid": 592411996786383
-																		},
-																		{
-																			"eventType": "block",
-																			"conditions": [
-																				{
-																					"id": "pick-all",
-																					"objectClass": "System",
 																					"sid": 384306261392002,
 																					"parameters": {
 																						"object": "Inventory_Item"
@@ -7920,118 +7925,463 @@
 																					"sid": 704233971517159
 																				}
 																			],
-																			"actions": [
-																				{
-																					"id": "set-boolean-instvar",
-																					"objectClass": "Inventory_Item",
-																					"sid": 499058315706089,
-																					"parameters": {
-																						"instance-variable": "Picked",
-																						"value": "false"
-																					}
-																				},
-																				{
-																					"id": "set-boolean-eventvar",
-																					"objectClass": "System",
-																					"sid": 324523614712864,
-																					"parameters": {
-																						"variable": "Found",
-																						"value": "true"
-																					}
-																				},
-																				{
-																					"id": "set-instvar-value",
-																					"objectClass": "Inventory_Item",
-																					"sid": 870893108536506,
-																					"parameters": {
-																						"instance-variable": "Count_",
-																						"value": "clamp(Self.Count_+Count,0,JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.Type&\".MaxStack\")) "
-																					}
-																				},
-																				{
-																					"id": "set-at-xy",
-																					"objectClass": "Inventory",
-																					"sid": 756774239543894,
-																					"parameters": {
-																						"x": "Inventory_Item.PosX",
-																						"y": "1",
-																						"value": "Inventory.At(Inventory_Item.PosX,1)+Count"
-																					}
-																				},
-																				{
-																					"id": "set-eventvar-value",
-																					"objectClass": "System",
-																					"sid": 137783804722634,
-																					"parameters": {
-																						"variable": "Count",
-																						"value": "0"
-																					}
-																				}
-																			],
+																			"actions": [],
 																			"sid": 368931996074218,
 																			"children": [
 																				{
 																					"eventType": "block",
 																					"conditions": [
 																						{
-																							"id": "pick-children",
-																							"objectClass": "Inventory_Item",
-																							"sid": 782573667315624,
+																							"id": "pick-all",
+																							"objectClass": "System",
+																							"sid": 657613855750486,
 																							"parameters": {
-																								"child": "Text",
-																								"which": "own"
+																								"object": "Inventory_Item"
+																							}
+																						},
+																						{
+																							"id": "pick-by-comparison",
+																							"objectClass": "System",
+																							"sid": 300919495763390,
+																							"parameters": {
+																								"object": "Inventory_Item",
+																								"expression": "Inventory_Item.UID",
+																								"comparison": 0,
+																								"value": "UnUsed_UID"
 																							}
 																						}
 																					],
-																					"actions": [
+																					"actions": [],
+																					"sid": 627742876718748,
+																					"children": [
 																						{
-																							"id": "set-text",
-																							"objectClass": "Text",
-																							"sid": 509091436055027,
-																							"parameters": {
-																								"text": "Inventory_Item.Count_"
-																							}
-																						}
-																					],
-																					"sid": 463593703853330
-																				},
-																				{
-																					"eventType": "block",
-																					"conditions": [
-																						{
-																							"id": "compare-at-xy",
-																							"objectClass": "Inventory",
-																							"sid": 560159980209144,
-																							"parameters": {
-																								"x": "Inventory_Item.PosX",
-																								"y": "1",
-																								"comparison": 4,
-																								"value": "JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.Type&\".MaxStack\")"
-																							}
-																						}
-																					],
-																					"actions": [
-																						{
-																							"callFunction": "Add_Item",
-																							"sid": 904141591619408,
-																							"parameters": [
-																								"Inventory.At(Inventory_Item.PosX,1)-JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.Type&\".MaxStack\")",
-																								"Inventory_Item.Type",
-																								true
+																							"eventType": "block",
+																							"conditions": [
+																								{
+																									"id": "evaluate-expression",
+																									"objectClass": "System",
+																									"sid": 447360554980529,
+																									"parameters": {
+																										"value": "Inventory_Item.Count_ >= JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.Type&\".MaxStack\") "
+																									}
+																								}
+																							],
+																							"actions": [
+																								{
+																									"id": "set-boolean-eventvar",
+																									"objectClass": "System",
+																									"sid": 204537569311781,
+																									"parameters": {
+																										"variable": "Found",
+																										"value": "true"
+																									}
+																								}
+																							],
+																							"sid": 695707668728856,
+																							"children": [
+																								{
+																									"eventType": "block",
+																									"conditions": [
+																										{
+																											"id": "pick-all",
+																											"objectClass": "System",
+																											"sid": 566740864445398,
+																											"parameters": {
+																												"object": "Inventory_Item"
+																											}
+																										},
+																										{
+																											"id": "pick-by-comparison",
+																											"objectClass": "System",
+																											"sid": 581657564739856,
+																											"parameters": {
+																												"object": "Inventory_Item",
+																												"expression": "Inventory_Item.UID",
+																												"comparison": 0,
+																												"value": "UnUsed_UID"
+																											}
+																										}
+																									],
+																									"actions": [
+																										{
+																											"id": "set-boolean-instvar",
+																											"objectClass": "Inventory_Item",
+																											"sid": 194195580281408,
+																											"parameters": {
+																												"instance-variable": "Picked",
+																												"value": "false"
+																											}
+																										},
+																										{
+																											"id": "set-instvar-value",
+																											"objectClass": "Inventory_Item",
+																											"sid": 990803509927236,
+																											"parameters": {
+																												"instance-variable": "Global_Pos_X",
+																												"value": "DragedItemInventoryX"
+																											}
+																										},
+																										{
+																											"id": "set-instvar-value",
+																											"objectClass": "Inventory_Item",
+																											"sid": 715773728820395,
+																											"parameters": {
+																												"instance-variable": "Global_Pos_Y",
+																												"value": "DragedItemInventoryY"
+																											}
+																										},
+																										{
+																											"id": "set-instvar-value",
+																											"objectClass": "Inventory_Item",
+																											"sid": 929713690090133,
+																											"parameters": {
+																												"instance-variable": "PosX",
+																												"value": "DragedItemInventoryPos"
+																											}
+																										},
+																										{
+																											"id": "set-position",
+																											"objectClass": "Inventory_Item",
+																											"sid": 679548411780289,
+																											"parameters": {
+																												"x": "Tilemap2.TileToPositionX(Self.Global_Pos_X)",
+																												"y": "Tilemap2.TileToPositionY(Self.Global_Pos_Y)"
+																											}
+																										},
+																										{
+																											"id": "tween-two-properties",
+																											"objectClass": "Inventory_Item",
+																											"sid": 311351773385264,
+																											"behaviorType": "Tween",
+																											"parameters": {
+																												"tags": "\"\"",
+																												"property": "size",
+																												"end-x": "Self.Width*1.1",
+																												"end-y": "Self.Height*0.9",
+																												"time": "0.05",
+																												"ease": "easeinoutback",
+																												"destroy-on-complete": "no",
+																												"loop": "no",
+																												"ping-pong": "yes",
+																												"repeat-count": "1"
+																											}
+																										},
+																										{
+																											"id": "set-at-xy",
+																											"objectClass": "Inventory",
+																											"sid": 945028454780081,
+																											"parameters": {
+																												"x": "Inventory_Item.PosX",
+																												"y": "0",
+																												"value": "Inventory_Item.Type"
+																											}
+																										},
+																										{
+																											"id": "set-at-xy",
+																											"objectClass": "Inventory",
+																											"sid": 897202657663206,
+																											"parameters": {
+																												"x": "Inventory_Item.PosX",
+																												"y": "1",
+																												"value": "Inventory_Item.Count_"
+																											}
+																										}
+																									],
+																									"sid": 479139257091092
+																								},
+																								{
+																									"eventType": "block",
+																									"conditions": [
+																										{
+																											"id": "pick-all",
+																											"objectClass": "System",
+																											"sid": 695492241370730,
+																											"parameters": {
+																												"object": "Inventory_Item"
+																											}
+																										},
+																										{
+																											"id": "pick-by-comparison",
+																											"objectClass": "System",
+																											"sid": 798377135450867,
+																											"parameters": {
+																												"object": "Inventory_Item",
+																												"expression": "Inventory_Item.UID",
+																												"comparison": 0,
+																												"value": "PickedUID"
+																											}
+																										}
+																									],
+																									"actions": [
+																										{
+																											"id": "set-boolean-instvar",
+																											"objectClass": "Inventory_Item",
+																											"sid": 487107065653937,
+																											"parameters": {
+																												"instance-variable": "Picked",
+																												"value": "false"
+																											}
+																										},
+																										{
+																											"id": "set-instvar-value",
+																											"objectClass": "Inventory_Item",
+																											"sid": 677240871415363,
+																											"parameters": {
+																												"instance-variable": "Global_Pos_X",
+																												"value": "Tilemap2.PositionToTileX(Tilemap2.SnapX(Sprite10.X))"
+																											}
+																										},
+																										{
+																											"id": "set-instvar-value",
+																											"objectClass": "Inventory_Item",
+																											"sid": 741522331172341,
+																											"parameters": {
+																												"instance-variable": "Global_Pos_Y",
+																												"value": "Tilemap2.PositionToTileY(Tilemap2.SnapY(Sprite10.Y))"
+																											}
+																										},
+																										{
+																											"id": "set-instvar-value",
+																											"objectClass": "Inventory_Item",
+																											"sid": 737448468241805,
+																											"parameters": {
+																												"instance-variable": "PosX",
+																												"value": "Functions.Define_Inventory_Pos(Inventory_Item.Global_Pos_X,Inventory_Item.Global_Pos_Y)-1"
+																											}
+																										},
+																										{
+																											"id": "set-instvar-value",
+																											"objectClass": "Inventory_Item",
+																											"sid": 558041395454732,
+																											"disabled": true,
+																											"parameters": {
+																												"instance-variable": "PosX",
+																												"value": "Functions.Define_Inventory_Pos(Self.Global_Pos_X,Self.Global_Pos_Y)"
+																											}
+																										},
+																										{
+																											"id": "set-position",
+																											"objectClass": "Inventory_Item",
+																											"sid": 724836657260270,
+																											"parameters": {
+																												"x": "Tilemap2.TileToPositionX(Self.Global_Pos_X)",
+																												"y": "Tilemap2.TileToPositionY(Self.Global_Pos_Y)"
+																											}
+																										},
+																										{
+																											"id": "tween-two-properties",
+																											"objectClass": "Inventory_Item",
+																											"sid": 256542314152727,
+																											"behaviorType": "Tween",
+																											"parameters": {
+																												"tags": "\"\"",
+																												"property": "size",
+																												"end-x": "Self.Width*1.1",
+																												"end-y": "Self.Height*0.9",
+																												"time": "0.05",
+																												"ease": "easeinoutback",
+																												"destroy-on-complete": "no",
+																												"loop": "no",
+																												"ping-pong": "yes",
+																												"repeat-count": "1"
+																											}
+																										},
+																										{
+																											"id": "set-at-xy",
+																											"objectClass": "Inventory",
+																											"sid": 746346299205254,
+																											"parameters": {
+																												"x": "Inventory_Item.PosX",
+																												"y": "0",
+																												"value": "Inventory_Item.Type"
+																											}
+																										},
+																										{
+																											"id": "set-at-xy",
+																											"objectClass": "Inventory",
+																											"sid": 353081342568539,
+																											"parameters": {
+																												"x": "Inventory_Item.PosX",
+																												"y": "1",
+																												"value": "Inventory_Item.Count_"
+																											}
+																										}
+																									],
+																									"sid": 475144740770041
+																								}
 																							]
 																						},
 																						{
-																							"id": "set-at-xy",
-																							"objectClass": "Inventory",
-																							"sid": 980472030933578,
-																							"parameters": {
-																								"x": "Inventory_Item.PosX",
-																								"y": "1",
-																								"value": "clamp(Inventory.At(Inventory_Item.PosX,1),0,JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.Type&\".MaxStack\"))"
-																							}
+																							"eventType": "block",
+																							"conditions": [
+																								{
+																									"id": "else",
+																									"objectClass": "System",
+																									"sid": 544720782508628
+																								}
+																							],
+																							"actions": [],
+																							"sid": 191456472436403,
+																							"children": [
+																								{
+																									"eventType": "block",
+																									"conditions": [
+																										{
+																											"id": "pick-all",
+																											"objectClass": "System",
+																											"sid": 110690411309424,
+																											"parameters": {
+																												"object": "Inventory_Item"
+																											}
+																										},
+																										{
+																											"id": "pick-by-comparison",
+																											"objectClass": "System",
+																											"sid": 676688156328602,
+																											"parameters": {
+																												"object": "Inventory_Item",
+																												"expression": "Inventory_Item.UID",
+																												"comparison": 0,
+																												"value": "PickedUID"
+																											}
+																										}
+																									],
+																									"actions": [
+																										{
+																											"id": "destroy",
+																											"objectClass": "Inventory_Item",
+																											"sid": 951041701164337
+																										}
+																									],
+																									"sid": 930988489579993
+																								},
+																								{
+																									"eventType": "block",
+																									"conditions": [],
+																									"actions": [
+																										{
+																											"id": "set-boolean-eventvar",
+																											"objectClass": "System",
+																											"sid": 242811949312053,
+																											"parameters": {
+																												"variable": "Found",
+																												"value": "true"
+																											}
+																										},
+																										{
+																											"id": "set-boolean-instvar",
+																											"objectClass": "Inventory_Item",
+																											"sid": 675373054838231,
+																											"parameters": {
+																												"instance-variable": "Picked",
+																												"value": "false"
+																											}
+																										},
+																										{
+																											"id": "set-instvar-value",
+																											"objectClass": "Inventory_Item",
+																											"sid": 976219712400368,
+																											"parameters": {
+																												"instance-variable": "Count_",
+																												"value": "Self.Count_+Count"
+																											}
+																										},
+																										{
+																											"id": "set-at-xy",
+																											"objectClass": "Inventory",
+																											"sid": 184199283229640,
+																											"parameters": {
+																												"x": "Inventory_Item.PosX",
+																												"y": "1",
+																												"value": "Inventory.At(Inventory_Item.PosX,1)+Count"
+																											}
+																										},
+																										{
+																											"id": "set-eventvar-value",
+																											"objectClass": "System",
+																											"sid": 139627532867406,
+																											"parameters": {
+																												"variable": "Count",
+																												"value": "0"
+																											}
+																										}
+																									],
+																									"sid": 400892894124625
+																								},
+																								{
+																									"eventType": "block",
+																									"conditions": [
+																										{
+																											"id": "evaluate-expression",
+																											"objectClass": "System",
+																											"sid": 218240216322617,
+																											"parameters": {
+																												"value": "Inventory_Item.Count_ >= JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.Type&\".MaxStack\") "
+																											}
+																										}
+																									],
+																									"actions": [
+																										{
+																											"callFunction": "Add_Item",
+																											"sid": 605694245581784,
+																											"parameters": [
+																												"Inventory_Item.Count_-JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.Type&\".MaxStack\")",
+																												"Inventory_Item.Type",
+																												true
+																											]
+																										},
+																										{
+																											"id": "set-instvar-value",
+																											"objectClass": "Inventory_Item",
+																											"sid": 350587534456958,
+																											"parameters": {
+																												"instance-variable": "Count_",
+																												"value": "clamp(Self.Count_+Count,0, JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.Type&\".MaxStack\") )"
+																											}
+																										},
+																										{
+																											"id": "set-at-xy",
+																											"objectClass": "Inventory",
+																											"sid": 442661649355126,
+																											"parameters": {
+																												"x": "Inventory_Item.PosX",
+																												"y": "1",
+																												"value": "clamp(Inventory.At(Inventory_Item.PosX,1),0,JSON.Get(\"Settings.Config.Glossary.\"&Inventory_Item.Type&\".MaxStack\"))"
+																											}
+																										}
+																									],
+																									"sid": 457959829847442,
+																									"children": [
+																										{
+																											"eventType": "block",
+																											"conditions": [
+																												{
+																													"id": "pick-children",
+																													"objectClass": "Inventory_Item",
+																													"sid": 554238771193110,
+																													"parameters": {
+																														"child": "Text",
+																														"which": "own"
+																													}
+																												}
+																											],
+																											"actions": [
+																												{
+																													"id": "set-text",
+																													"objectClass": "Text",
+																													"sid": 964189858881155,
+																													"parameters": {
+																														"text": "Inventory_Item.Count_"
+																													}
+																												}
+																											],
+																											"sid": 837908255323248
+																										}
+																									]
+																								}
+																							]
 																						}
-																					],
-																					"sid": 159008545976672
+																					]
 																				}
 																			]
 																		},
@@ -8102,10 +8452,121 @@
 																				"y": "1",
 																				"value": "Inventory_Item.Count_"
 																			}
+																		},
+																		{
+																			"id": "set-boolean-eventvar",
+																			"objectClass": "System",
+																			"sid": 926380793052036,
+																			"parameters": {
+																				"variable": "Found",
+																				"value": "true"
+																			}
 																		}
 																	],
 																	"sid": 386641023449553,
 																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "pick-by-comparison",
+																					"objectClass": "System",
+																					"sid": 938944728101903,
+																					"parameters": {
+																						"object": "Inventory_Item",
+																						"expression": "Inventory_Item.UID",
+																						"comparison": 0,
+																						"value": "UnUsed_UID"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-boolean-instvar",
+																					"objectClass": "Inventory_Item",
+																					"sid": 140777324336746,
+																					"parameters": {
+																						"instance-variable": "Picked",
+																						"value": "false"
+																					}
+																				},
+																				{
+																					"id": "set-instvar-value",
+																					"objectClass": "Inventory_Item",
+																					"sid": 196958974604455,
+																					"parameters": {
+																						"instance-variable": "Global_Pos_X",
+																						"value": "DragedItemInventoryX"
+																					}
+																				},
+																				{
+																					"id": "set-instvar-value",
+																					"objectClass": "Inventory_Item",
+																					"sid": 931183005849405,
+																					"parameters": {
+																						"instance-variable": "Global_Pos_Y",
+																						"value": "DragedItemInventoryY"
+																					}
+																				},
+																				{
+																					"id": "set-instvar-value",
+																					"objectClass": "Inventory_Item",
+																					"sid": 248464516308856,
+																					"parameters": {
+																						"instance-variable": "PosX",
+																						"value": "DragedItemInventoryPos"
+																					}
+																				},
+																				{
+																					"id": "set-position",
+																					"objectClass": "Inventory_Item",
+																					"sid": 761786791219250,
+																					"parameters": {
+																						"x": "Tilemap2.TileToPositionX(Self.Global_Pos_X)",
+																						"y": "Tilemap2.TileToPositionY(Self.Global_Pos_Y)"
+																					}
+																				},
+																				{
+																					"id": "tween-two-properties",
+																					"objectClass": "Inventory_Item",
+																					"sid": 296457273167888,
+																					"behaviorType": "Tween",
+																					"parameters": {
+																						"tags": "\"\"",
+																						"property": "size",
+																						"end-x": "Self.Width*1.1",
+																						"end-y": "Self.Height*0.9",
+																						"time": "0.05",
+																						"ease": "easeinoutback",
+																						"destroy-on-complete": "no",
+																						"loop": "no",
+																						"ping-pong": "yes",
+																						"repeat-count": "1"
+																					}
+																				},
+																				{
+																					"id": "set-at-xy",
+																					"objectClass": "Inventory",
+																					"sid": 546318540828255,
+																					"parameters": {
+																						"x": "Inventory_Item.PosX",
+																						"y": "0",
+																						"value": "Inventory_Item.Type"
+																					}
+																				},
+																				{
+																					"id": "set-at-xy",
+																					"objectClass": "Inventory",
+																					"sid": 312450682238796,
+																					"parameters": {
+																						"x": "Inventory_Item.PosX",
+																						"y": "1",
+																						"value": "Inventory_Item.Count_"
+																					}
+																				}
+																			],
+																			"sid": 412616725337367
+																		},
 																		{
 																			"eventType": "block",
 																			"conditions": [
@@ -8129,6 +8590,43 @@
 																					"parameters": {
 																						"instance-variable": "Picked",
 																						"value": "false"
+																					}
+																				},
+																				{
+																					"id": "set-instvar-value",
+																					"objectClass": "Inventory_Item",
+																					"sid": 905502476519659,
+																					"parameters": {
+																						"instance-variable": "Global_Pos_X",
+																						"value": "Tilemap2.PositionToTileX(Tilemap2.SnapX(Sprite10.X))"
+																					}
+																				},
+																				{
+																					"id": "set-instvar-value",
+																					"objectClass": "Inventory_Item",
+																					"sid": 586167269421548,
+																					"parameters": {
+																						"instance-variable": "Global_Pos_Y",
+																						"value": "Tilemap2.PositionToTileY(Tilemap2.SnapY(Sprite10.Y))"
+																					}
+																				},
+																				{
+																					"id": "set-instvar-value",
+																					"objectClass": "Inventory_Item",
+																					"sid": 920189828154587,
+																					"parameters": {
+																						"instance-variable": "PosX",
+																						"value": "Functions.Define_Inventory_Pos(Inventory_Item.Global_Pos_X,Inventory_Item.Global_Pos_Y)-1"
+																					}
+																				},
+																				{
+																					"id": "set-instvar-value",
+																					"objectClass": "Inventory_Item",
+																					"sid": 638511602305611,
+																					"disabled": true,
+																					"parameters": {
+																						"instance-variable": "PosX",
+																						"value": "Functions.Define_Inventory_Pos(Self.Global_Pos_X,Self.Global_Pos_Y)"
 																					}
 																				},
 																				{
@@ -8176,15 +8674,6 @@
 																						"x": "Inventory_Item.PosX",
 																						"y": "1",
 																						"value": "Inventory_Item.Count_"
-																					}
-																				},
-																				{
-																					"id": "set-boolean-eventvar",
-																					"objectClass": "System",
-																					"sid": 290177070111557,
-																					"parameters": {
-																						"variable": "Found",
-																						"value": "true"
 																					}
 																				}
 																			],
@@ -8859,10 +9348,10 @@
 				},
 				{
 					"functionName": "SetCurrentSlot",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -9444,6 +9933,31 @@
 												}
 											],
 											"sid": 441126464153715
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 798248749937270,
+													"parameters": {
+														"object": "FoodBtn",
+														"expression": "FoodBtn.Type = \"Eat\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "FoodBtn",
+													"sid": 219212104744781,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 182391959691067
 										}
 									]
 								}
@@ -9731,10 +10245,10 @@
 		},
 		{
 			"functionName": "Furnace_Get_Pattern",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -10753,10 +11267,10 @@
 		},
 		{
 			"functionName": "Chest",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -11713,10 +12227,10 @@
 		},
 		{
 			"functionName": "Define_Inv_To_Tile",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "string",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -11779,10 +12293,10 @@
 		},
 		{
 			"functionName": "Save_Chest",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -11954,10 +12468,10 @@
 		},
 		{
 			"functionName": "Add_Timer",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -12038,10 +12552,10 @@
 		},
 		{
 			"functionName": "Start_Burning_Furnace",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -12051,10 +12565,10 @@
 		},
 		{
 			"functionName": "Blackout",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": true,
 			"functionParameters": [
 				{
@@ -12190,10 +12704,10 @@
 		},
 		{
 			"functionName": "Pause",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -12357,10 +12871,10 @@
 		},
 		{
 			"functionName": "DeleteTimer",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -12476,10 +12990,10 @@
 		},
 		{
 			"functionName": "CompareRecipeIngridients",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "number",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -12680,10 +13194,10 @@
 		},
 		{
 			"functionName": "UpdateCoinValue",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -12720,10 +13234,10 @@
 		},
 		{
 			"functionName": "Check_Inventory_Full",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "number",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -12982,10 +13496,10 @@
 		},
 		{
 			"functionName": "CheckInventoryFullByItem",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "number",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -13207,10 +13721,10 @@
 		},
 		{
 			"functionName": "Show_WorkBench",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -13908,10 +14422,10 @@
 		},
 		{
 			"functionName": "Show_Furnace",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -15030,10 +15544,10 @@
 		},
 		{
 			"functionName": "ShowFurnaceNew",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -16354,10 +16868,10 @@
 		},
 		{
 			"functionName": "ShowMyInventory",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -17076,10 +17590,10 @@
 		},
 		{
 			"functionName": "ShowMyInventoryNew",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -17848,10 +18362,10 @@
 		},
 		{
 			"functionName": "ShowWorkBenchNew",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -18629,10 +19143,10 @@
 			"children": [
 				{
 					"functionName": "ShowQuestBook",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -18807,9 +19321,135 @@
 														"group-name": "\"QuestBook\"",
 														"state": "activated"
 													}
+												},
+												{
+													"id": "set-group-active",
+													"objectClass": "System",
+													"sid": 945618081494361,
+													"parameters": {
+														"group-name": "\"Scrolling\"",
+														"state": "activated"
+													}
+												},
+												{
+													"callFunction": "pickTrackingQuest",
+													"sid": 635892485146049
 												}
 											],
 											"sid": 338080319540108
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "InventoryBlank",
+													"sid": 724873921753373,
+													"parameters": {
+														"child": "9patch4",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 536615690462201,
+													"parameters": {
+														"seconds": "0"
+													}
+												},
+												{
+													"id": "move-to-top",
+													"objectClass": "9patch4",
+													"sid": 511567032967677
+												}
+											],
+											"sid": 405427498880477
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "InventoryBlank",
+													"sid": 268287592729481,
+													"parameters": {
+														"child": "Sprite35",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "move-to-layer",
+													"objectClass": "Sprite35",
+													"sid": 614445998978161,
+													"parameters": {
+														"layer": "\"Shadow\""
+													}
+												}
+											],
+											"sid": 966982045039928,
+											"disabled": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "InventoryBlank",
+													"sid": 199637255933294,
+													"parameters": {
+														"child": "Message_Text",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 337814520137042,
+													"parameters": {
+														"seconds": "0"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 816158796880071,
+													"parameters": {
+														"seconds": "0"
+													}
+												}
+											],
+											"sid": 113704666191858,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 868956575566759,
+															"parameters": {
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"QuesstName\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "move-to-top",
+															"objectClass": "Message_Text",
+															"sid": 454170080588484
+														}
+													],
+													"sid": 854094193362132
+												}
+											]
 										}
 									]
 								}
@@ -18849,132 +19489,11 @@
 					"sid": 359664448116786
 				},
 				{
-					"functionName": "CheckQuestOpened",
-					"functionCopyPicked": false,
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "number",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "tag",
-							"type": "string",
-							"initialValue": "",
-							"comment": "",
-							"sid": 262260788967286
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 935215403760900,
-					"children": [
-						{
-							"eventType": "variable",
-							"name": "Found",
-							"type": "boolean",
-							"initialValue": "false",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": false,
-							"sid": 535669074416976
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 626798430310554,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "for-each",
-											"objectClass": "JSON",
-											"sid": 138649958813258,
-											"parameters": {
-												"path": "\"Player.QuestsOpened\""
-											}
-										}
-									],
-									"actions": [],
-									"sid": 994620499982621,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "evaluate-expression",
-													"objectClass": "System",
-													"sid": 649394548429717,
-													"parameters": {
-														"value": "JSON.CurrentValue = tag"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 690423644847649,
-													"parameters": {
-														"variable": "Found",
-														"value": "true"
-													}
-												},
-												{
-													"id": "stop-loop",
-													"objectClass": "System",
-													"sid": 982817743210501
-												},
-												{
-													"id": "set-function-return-value",
-													"objectClass": "Functions",
-													"sid": 415267721736072,
-													"parameters": {
-														"value": "1"
-													}
-												}
-											],
-											"sid": 766188132808304
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 593818634691916,
-											"parameters": {
-												"variable": "Found"
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [
-										{
-											"id": "set-function-return-value",
-											"objectClass": "Functions",
-											"sid": 535709410094788,
-											"parameters": {
-												"value": "0"
-											}
-										}
-									],
-									"sid": 861412819379465
-								}
-							]
-						}
-					]
-				},
-				{
 					"functionName": "ReCheckOpenedQuests",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": true,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -19205,6 +19724,23 @@
 															"parameters": {
 																"color": "rgbEx(100, 100, 100)"
 															}
+														},
+														{
+															"id": "add-child",
+															"objectClass": "QuestElementBlank",
+															"sid": 907049957343830,
+															"parameters": {
+																"child": "TiledBackground5",
+																"transform-x": true,
+																"transform-y": true,
+																"transform-w": true,
+																"transform-h": true,
+																"transform-a": true,
+																"transform-o": false,
+																"transform-z-elevation": true,
+																"transform-visibility": false,
+																"destroy-with-parent": false
+															}
 														}
 													],
 													"sid": 976260043440560
@@ -19366,6 +19902,23 @@
 																	"parameters": {
 																		"instance-variable": "sy",
 																		"value": "Self.Y"
+																	}
+																},
+																{
+																	"id": "add-child",
+																	"objectClass": "QuestElementBlank",
+																	"sid": 956127377970400,
+																	"parameters": {
+																		"child": "TiledBackground5",
+																		"transform-x": true,
+																		"transform-y": true,
+																		"transform-w": true,
+																		"transform-h": true,
+																		"transform-a": true,
+																		"transform-o": false,
+																		"transform-z-elevation": true,
+																		"transform-visibility": false,
+																		"destroy-with-parent": false
 																	}
 																},
 																{
@@ -19551,12 +20104,398 @@
 					]
 				},
 				{
+					"functionName": "CheckQuestOpened",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "tag",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 262260788967286
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 407251469945766,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "Found",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 579953153921795
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 614649688772830,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "JSON",
+											"sid": 459585385127512,
+											"parameters": {
+												"path": "\"Player.QuestsOpened\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 962276282201461,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 563336870610548,
+													"parameters": {
+														"value": "JSON.CurrentValue = tag"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 321321129160974,
+													"parameters": {
+														"variable": "Found",
+														"value": "true"
+													}
+												},
+												{
+													"id": "stop-loop",
+													"objectClass": "System",
+													"sid": 713587627993603,
+													"disabled": true
+												},
+												{
+													"id": "set-function-return-value",
+													"objectClass": "Functions",
+													"sid": 787496614428992,
+													"parameters": {
+														"value": "1"
+													}
+												}
+											],
+											"sid": 835537106823560
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 281339827532290,
+											"parameters": {
+												"variable": "Found"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 313844758726955,
+											"parameters": {
+												"value": "0"
+											}
+										}
+									],
+									"sid": 872407426658004
+								}
+							]
+						}
+					]
+				},
+				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "QuestBook",
 					"description": "",
 					"isActiveOnStart": false,
 					"children": [
+						{
+							"functionName": "ReDrawQuestTree",
+							"functionDescription": "",
+							"functionCategory": "Quest",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 154940301592266,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 312348773091375,
+											"parameters": {
+												"object": "QuestElementBlank"
+											}
+										},
+										{
+											"id": "pick-children",
+											"objectClass": "QuestElementBlank",
+											"sid": 545172433140268,
+											"parameters": {
+												"child": "Inventory_Item",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 933205829757922,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 252922049190960,
+													"parameters": {
+														"value": "Functions.CheckQuestOpened(QuestElementBlank.tag) = 1 "
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "QuestElementBlank",
+													"sid": 270401531017150,
+													"parameters": {
+														"instance-variable": "Opened",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-default-color",
+													"objectClass": "QuestElementBlank",
+													"sid": 127785831436826,
+													"parameters": {
+														"color": "rgbEx(100, 100, 100)"
+													}
+												},
+												{
+													"id": "set-default-color",
+													"objectClass": "Inventory_Item",
+													"sid": 215818035435137,
+													"parameters": {
+														"color": "rgbEx(100, 100, 100)"
+													}
+												}
+											],
+											"sid": 948916160531647
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 472704872726815
+												}
+											],
+											"actions": [],
+											"sid": 454336782466759,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 788620852403144,
+															"parameters": {
+																"value": "QuestElementBlank.PreviousElement = \"\""
+															}
+														},
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 830804676750574,
+															"parameters": {
+																"value": "Functions.CheckQuestOpened(QuestElementBlank.PreviousElement) = 1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-default-color",
+															"objectClass": "QuestElementBlank",
+															"sid": 266256097251593,
+															"parameters": {
+																"color": "rgbEx(70, 70, 70)"
+															}
+														},
+														{
+															"id": "set-default-color",
+															"objectClass": "Inventory_Item",
+															"sid": 522189244354098,
+															"parameters": {
+																"color": "rgbEx(70, 70, 70)"
+															}
+														}
+													],
+													"sid": 805922164604266,
+													"isOrBlock": true
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"functionName": "CompleteQuest",
+							"functionDescription": "",
+							"functionCategory": "Quest",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 455074867267314,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "JSON",
+											"sid": 170490662861066,
+											"parameters": {
+												"path": "\"Quests.\"&JSON.Get(\"Player.TrackingQuest\")&\".Reward\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 605281676852526,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "Drop_Item",
+													"sid": 312546671905087,
+													"parameters": [
+														"int(tokenat(JSON.CurrentValue,1,\",\"))",
+														"tokenat(JSON.CurrentValue,0,\",\")",
+														"Sprite.X",
+														"Sprite.BBoxTop"
+													]
+												},
+												{
+													"callFunction": "HidePage",
+													"sid": 910475507657765
+												}
+											],
+											"sid": 566983234932072
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "push-value",
+											"objectClass": "JSON",
+											"sid": 435173121326850,
+											"parameters": {
+												"where": "back",
+												"path": "\"Player.QuestsOpened\"",
+												"value": "JSON.Get(\"Player.TrackingQuest\")"
+											}
+										}
+									],
+									"sid": 981072140916765
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 749663601591445,
+											"parameters": {
+												"object": "QuestElementBlank",
+												"expression": "QuestElementBlank.PreviousElement = JSON.Get(\"Player.TrackingQuest\")"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 929004840304351,
+											"parameters": {
+												"path": "\"Player.TrackingQuest\"",
+												"value": "QuestElementBlank.tag"
+											}
+										},
+										{
+											"callFunction": "pickTrackingQuest",
+											"sid": 399406171160127
+										}
+									],
+									"sid": 453645441636698
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 682772137543590,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"callFunction": "ReDrawQuestTree",
+											"sid": 406372776528270
+										},
+										{
+											"callFunction": "UpdateTrackingQuest",
+											"sid": 454427337186912
+										},
+										{
+											"callFunction": "UpdateQuestRequirements",
+											"sid": 693975612987545
+										}
+									],
+									"sid": 240945858869219
+								}
+							]
+						},
 						{
 							"eventType": "variable",
 							"name": "xScroll",
@@ -19628,11 +20567,121 @@
 							"sid": 772041793822381
 						},
 						{
-							"functionName": "ShowQuestName",
+							"functionName": "pickTrackingQuest",
+							"functionDescription": "",
+							"functionCategory": "Quest",
+							"functionReturnType": "none",
 							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 825780501539749,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 129155345858983,
+											"parameters": {
+												"object": "QuestElementBlank",
+												"expression": "QuestElementBlank.tag = JSON.Get(\"Player.TrackingQuest\")"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "QuestElementBlank",
+											"sid": 338334648067690,
+											"parameters": {
+												"frame-number": "1"
+											}
+										},
+										{
+											"id": "set-period",
+											"objectClass": "QuestElementBlank",
+											"sid": 942066306533336,
+											"behaviorType": "Sine",
+											"parameters": {
+												"period": "1"
+											}
+										},
+										{
+											"id": "set-magnitude",
+											"objectClass": "QuestElementBlank",
+											"sid": 948566829938271,
+											"behaviorType": "Sine",
+											"parameters": {
+												"magnitude": "3"
+											}
+										},
+										{
+											"id": "set-movement",
+											"objectClass": "QuestElementBlank",
+											"sid": 764031834884974,
+											"behaviorType": "Sine",
+											"parameters": {
+												"movement": "size"
+											}
+										},
+										{
+											"id": "set-active",
+											"objectClass": "QuestElementBlank",
+											"sid": 546402335021063,
+											"behaviorType": "Sine",
+											"parameters": {
+												"state": "active"
+											}
+										}
+									],
+									"sid": 704753731241261
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 842517130249454,
+											"parameters": {
+												"object": "QuestElementBlank",
+												"expression": "QuestElementBlank.tag <> JSON.Get(\"Player.TrackingQuest\")"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "QuestElementBlank",
+											"sid": 236312047166394,
+											"parameters": {
+												"frame-number": "0"
+											}
+										},
+										{
+											"id": "set-active",
+											"objectClass": "QuestElementBlank",
+											"sid": 641706162306459,
+											"behaviorType": "Sine",
+											"parameters": {
+												"state": "inactive"
+											}
+										}
+									],
+									"sid": 336308534647501
+								}
+							]
+						},
+						{
+							"functionName": "ShowQuestName",
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -19740,21 +20789,11 @@
 									}
 								},
 								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 397140671630559,
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "QuestElementBlank",
+									"sid": 775188410954549,
 									"parameters": {
-										"object": "9patch4",
-										"expression": "9patch4.Type = \"Desc\""
-									}
-								},
-								{
-									"id": "pick-children",
-									"objectClass": "9patch4",
-									"sid": 271973560807940,
-									"parameters": {
-										"child": "Message_Text",
-										"which": "own"
+										"instance-variable": "Clickable"
 									}
 								}
 							],
@@ -19796,6 +20835,7 @@
 								{
 									"callFunction": "HideQuest",
 									"sid": 232975458483837,
+									"disabled": true,
 									"parameters": [
 										false
 									]
@@ -19803,6 +20843,7 @@
 								{
 									"callFunction": "ShowQuestName",
 									"sid": 580836385513175,
+									"disabled": true,
 									"parameters": [
 										"QuestElementBlank.tag"
 									]
@@ -19814,111 +20855,42 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "pick-by-evaluate",
-											"objectClass": "System",
-											"sid": 879217386205006,
-											"parameters": {
-												"object": "QuestElementBlank",
-												"expression": "QuestElementBlank.picked = 1"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "QuestElementBlank",
-											"sid": 979364776063858,
-											"parameters": {
-												"instance-variable": "picked",
-												"value": "false"
-											}
-										}
-									],
-									"sid": 803566351186056
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
 											"id": "evaluate-expression",
 											"objectClass": "System",
-											"sid": 609465604508303,
+											"sid": 967216537618709,
 											"parameters": {
-												"value": "QuestElementBlank.PreviousElement = \"\""
+												"value": "Functions.CheckQuestOpened(QuestElementBlank.tag) = 0"
 											}
 										}
 									],
-									"actions": [
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "QuestElementBlank",
-											"sid": 172805863861816,
-											"parameters": {
-												"instance-variable": "picked",
-												"value": "true"
-											}
-										}
-									],
-									"sid": 119143513563259,
+									"actions": [],
+									"sid": 976407715120024,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "evaluate-expression",
+													"id": "pick-by-evaluate",
 													"objectClass": "System",
-													"sid": 799792348375165,
+													"sid": 852510930415243,
 													"parameters": {
-														"value": "Functions.CheckQuestOpened(QuestElementBlank.tag) = 0"
+														"object": "QuestElementBlank",
+														"expression": "QuestElementBlank.picked = 1"
 													}
 												}
 											],
 											"actions": [
 												{
-													"id": "set-text",
-													"objectClass": "Message_Text",
-													"sid": 422536087422067,
+													"id": "set-boolean-instvar",
+													"objectClass": "QuestElementBlank",
+													"sid": 712443513797857,
 													"parameters": {
-														"text": "Functions.GetReqForQuest(QuestElementBlank.tag)"
-													}
-												},
-												{
-													"id": "tween-two-properties",
-													"objectClass": "9patch4",
-													"sid": 211610765164249,
-													"behaviorType": "Tween",
-													"parameters": {
-														"tags": "\"\"",
-														"property": "size",
-														"end-x": "max(Message_Text.TextWidth,8,(JSON.ArraySize(\"Quests.\"&QuestElementBlank.tag&\".Requirements\"))*(16+3))+10",
-														"end-y": "max(Message_Text.TextHeight+23,12)",
-														"time": "0.3",
-														"ease": "easeoutcubic",
-														"destroy-on-complete": "no",
-														"loop": "no",
-														"ping-pong": "no",
-														"repeat-count": "1"
-													}
-												},
-												{
-													"id": "tween-one-property",
-													"objectClass": "9patch4",
-													"sid": 294968539744530,
-													"behaviorType": "Tween",
-													"parameters": {
-														"tags": "\"\"",
-														"property": "offsetOpacity",
-														"end-value": "100",
-														"time": "0.1",
-														"ease": "default",
-														"destroy-on-complete": "no",
-														"loop": "no",
-														"ping-pong": "no",
-														"repeat-count": "1"
+														"instance-variable": "picked",
+														"value": "false"
 													}
 												}
 											],
-											"sid": 211669809844067
+											"sid": 153597191082965
 										},
 										{
 											"eventType": "block",
@@ -19926,58 +20898,41 @@
 												{
 													"id": "evaluate-expression",
 													"objectClass": "System",
-													"sid": 485177918922093,
+													"sid": 480988500016674,
 													"parameters": {
-														"value": "Functions.CheckQuestOpened(QuestElementBlank.tag) = 0"
-													}
-												},
-												{
-													"id": "evaluate-expression",
-													"objectClass": "System",
-													"sid": 121773120325977,
-													"parameters": {
-														"value": "Functions.CheckCanDoQuest(QuestElementBlank.tag) = 1"
-													}
-												},
-												{
-													"id": "pick-all",
-													"objectClass": "System",
-													"sid": 876336799902484,
-													"parameters": {
-														"object": "9patch4"
-													}
-												},
-												{
-													"id": "pick-all",
-													"objectClass": "System",
-													"sid": 724175819486142,
-													"parameters": {
-														"object": "Message_Text"
+														"value": "QuestElementBlank.PreviousElement = \"\""
 													}
 												}
 											],
-											"actions": [],
-											"sid": 229282545107809,
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "QuestElementBlank",
+													"sid": 638715438499161,
+													"parameters": {
+														"instance-variable": "picked",
+														"value": "true"
+													}
+												},
+												{
+													"callFunction": "ShowPage",
+													"sid": 522191017582662,
+													"parameters": [
+														"QuestElementBlank.tag"
+													]
+												}
+											],
+											"sid": 926386357502129,
 											"children": [
 												{
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "pick-by-evaluate",
+															"id": "evaluate-expression",
 															"objectClass": "System",
-															"sid": 532281673144708,
+															"sid": 578954174251570,
 															"parameters": {
-																"object": "9patch4",
-																"expression": "9patch4.Type = \"Reward\""
-															}
-														},
-														{
-															"id": "pick-children",
-															"objectClass": "9patch4",
-															"sid": 569769452362167,
-															"parameters": {
-																"child": "Message_Text",
-																"which": "own"
+																"value": "Functions.CheckQuestOpened(QuestElementBlank.tag) = 0"
 															}
 														}
 													],
@@ -19985,56 +20940,22 @@
 														{
 															"id": "set-text",
 															"objectClass": "Message_Text",
-															"sid": 657571556969498,
+															"sid": 568507735812347,
+															"disabled": true,
 															"parameters": {
-																"text": "Functions.GetQuestRewardIcons(QuestElementBlank.tag)"
-															}
-														},
-														{
-															"id": "tween-one-property",
-															"objectClass": "9patch5",
-															"sid": 155168847565511,
-															"behaviorType": "Tween",
-															"parameters": {
-																"tags": "\"\"",
-																"property": "offsetOpacity",
-																"end-value": "100",
-																"time": "0.1",
-																"ease": "default",
-																"destroy-on-complete": "no",
-																"loop": "no",
-																"ping-pong": "no",
-																"repeat-count": "1"
-															}
-														},
-														{
-															"id": "tween-two-properties",
-															"objectClass": "9patch5",
-															"sid": 523052625137191,
-															"behaviorType": "Tween",
-															"parameters": {
-																"tags": "\"\"",
-																"property": "size",
-																"end-x": "48",
-																"end-y": "15",
-																"time": "0.1",
-																"ease": "easeoutcubic",
-																"destroy-on-complete": "no",
-																"loop": "no",
-																"ping-pong": "no",
-																"repeat-count": "1"
+																"text": "Functions.GetReqForQuest(QuestElementBlank.tag)"
 															}
 														},
 														{
 															"id": "tween-two-properties",
 															"objectClass": "9patch4",
-															"sid": 779901714338554,
+															"sid": 400205782729486,
 															"behaviorType": "Tween",
 															"parameters": {
 																"tags": "\"\"",
 																"property": "size",
-																"end-x": "max(Message_Text.TextWidth,9patch5.Width,(JSON.ArraySize(\"Quests.\"&QuestElementBlank.tag&\".Reward\"))*(16+3))+10",
-																"end-y": "max(Message_Text.TextHeight+40,12)",
+																"end-x": "max(Message_Text.TextWidth,8,(JSON.ArraySize(\"Quests.\"&QuestElementBlank.tag&\".Requirements\"))*(16+3))+10",
+																"end-y": "max(Message_Text.TextHeight+23,12)",
 																"time": "0.3",
 																"ease": "easeoutcubic",
 																"destroy-on-complete": "no",
@@ -20046,7 +20967,7 @@
 														{
 															"id": "tween-one-property",
 															"objectClass": "9patch4",
-															"sid": 396692511493406,
+															"sid": 611513913266402,
 															"behaviorType": "Tween",
 															"parameters": {
 																"tags": "\"\"",
@@ -20059,116 +20980,126 @@
 																"ping-pong": "no",
 																"repeat-count": "1"
 															}
-														},
-														{
-															"id": "alert",
-															"objectClass": "Browser",
-															"sid": 943432759592928,
-															"disabled": true,
-															"parameters": {
-																"message": "\"1\""
-															}
 														}
 													],
-													"sid": 416055724976552
-												}
-											]
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 381606796760225
-										}
-									],
-									"actions": [],
-									"sid": 874951032638490,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-by-evaluate",
-													"objectClass": "System",
-													"sid": 936303254539144,
-													"parameters": {
-														"object": "QuestElement",
-														"expression": "QuestElement.tag = QuestElementBlank.PreviousElement"
-													}
-												}
-											],
-											"actions": [],
-											"sid": 243382245863322,
-											"children": [
+													"sid": 632869955468151,
+													"disabled": true
+												},
 												{
 													"eventType": "block",
 													"conditions": [
 														{
 															"id": "evaluate-expression",
 															"objectClass": "System",
-															"sid": 138960092715937,
+															"sid": 803231929653128,
 															"parameters": {
 																"value": "Functions.CheckQuestOpened(QuestElementBlank.tag) = 0"
+															}
+														},
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 950696081785209,
+															"parameters": {
+																"value": "Functions.CheckCanDoQuest(QuestElementBlank.tag) = 1"
+															}
+														},
+														{
+															"id": "pick-all",
+															"objectClass": "System",
+															"sid": 939572653353723,
+															"parameters": {
+																"object": "9patch4"
+															}
+														},
+														{
+															"id": "pick-all",
+															"objectClass": "System",
+															"sid": 566382005493888,
+															"parameters": {
+																"object": "Message_Text"
 															}
 														}
 													],
 													"actions": [],
-													"sid": 852736982001292,
+													"sid": 451441833756438,
 													"children": [
 														{
 															"eventType": "block",
 															"conditions": [
 																{
-																	"id": "is-boolean-instance-variable-set",
-																	"objectClass": "QuestElement",
-																	"sid": 769394791740227,
+																	"id": "pick-by-evaluate",
+																	"objectClass": "System",
+																	"sid": 669365693997932,
 																	"parameters": {
-																		"instance-variable": "Opened"
+																		"object": "9patch4",
+																		"expression": "9patch4.Type = \"Reward\""
+																	}
+																},
+																{
+																	"id": "pick-children",
+																	"objectClass": "9patch4",
+																	"sid": 475170591046608,
+																	"parameters": {
+																		"child": "Message_Text",
+																		"which": "own"
 																	}
 																}
 															],
 															"actions": [
 																{
-																	"id": "set-boolean-instvar",
-																	"objectClass": "QuestElementBlank",
-																	"sid": 582803965963999,
-																	"disabled": true,
-																	"parameters": {
-																		"instance-variable": "Opened",
-																		"value": "false"
-																	}
-																},
-																{
-																	"id": "set-boolean-instvar",
-																	"objectClass": "QuestElementBlank",
-																	"sid": 171967058069836,
-																	"parameters": {
-																		"instance-variable": "picked",
-																		"value": "true"
-																	}
-																},
-																{
 																	"id": "set-text",
 																	"objectClass": "Message_Text",
-																	"sid": 587578146326918,
+																	"sid": 335202608803629,
 																	"parameters": {
-																		"text": "Functions.GetReqForQuest(QuestElementBlank.tag)"
+																		"text": "Functions.GetQuestRewardIcons(QuestElementBlank.tag)"
+																	}
+																},
+																{
+																	"id": "tween-one-property",
+																	"objectClass": "9patch5",
+																	"sid": 669621037933922,
+																	"behaviorType": "Tween",
+																	"parameters": {
+																		"tags": "\"\"",
+																		"property": "offsetOpacity",
+																		"end-value": "100",
+																		"time": "0.1",
+																		"ease": "default",
+																		"destroy-on-complete": "no",
+																		"loop": "no",
+																		"ping-pong": "no",
+																		"repeat-count": "1"
+																	}
+																},
+																{
+																	"id": "tween-two-properties",
+																	"objectClass": "9patch5",
+																	"sid": 212321798687093,
+																	"behaviorType": "Tween",
+																	"parameters": {
+																		"tags": "\"\"",
+																		"property": "size",
+																		"end-x": "48",
+																		"end-y": "15",
+																		"time": "0.1",
+																		"ease": "easeoutcubic",
+																		"destroy-on-complete": "no",
+																		"loop": "no",
+																		"ping-pong": "no",
+																		"repeat-count": "1"
 																	}
 																},
 																{
 																	"id": "tween-two-properties",
 																	"objectClass": "9patch4",
-																	"sid": 231339385924972,
+																	"sid": 332481949233078,
 																	"behaviorType": "Tween",
 																	"parameters": {
 																		"tags": "\"\"",
 																		"property": "size",
-																		"end-x": "max(Message_Text.TextWidth,8,(JSON.ArraySize(\"Quests.\"&QuestElementBlank.tag&\".Requirements\"))*(16+3))+10",
-																		"end-y": "max(Message_Text.TextHeight+23,12)",
+																		"end-x": "max(Message_Text.TextWidth,9patch5.Width,(JSON.ArraySize(\"Quests.\"&QuestElementBlank.tag&\".Reward\"))*(16+3))+10",
+																		"end-y": "max(Message_Text.TextHeight+40,12)",
 																		"time": "0.3",
 																		"ease": "easeoutcubic",
 																		"destroy-on-complete": "no",
@@ -20180,7 +21111,7 @@
 																{
 																	"id": "tween-one-property",
 																	"objectClass": "9patch4",
-																	"sid": 280748410318597,
+																	"sid": 619196133955807,
 																	"behaviorType": "Tween",
 																	"parameters": {
 																		"tags": "\"\"",
@@ -20197,155 +21128,361 @@
 																{
 																	"id": "alert",
 																	"objectClass": "Browser",
-																	"sid": 823827166929788,
+																	"sid": 145942045143193,
 																	"disabled": true,
 																	"parameters": {
-																		"message": "Functions.CheckCanDoQuest(QuestElementBlank.tag)"
+																		"message": "\"1\""
 																	}
 																}
 															],
-															"sid": 358654847957726,
+															"sid": 888136539398758,
+															"disabled": true
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 816803214757188
+												}
+											],
+											"actions": [],
+											"sid": 692326311616082,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 817551437464066,
+															"parameters": {
+																"object": "QuestElement",
+																"expression": "QuestElement.tag = QuestElementBlank.PreviousElement"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 603737962369869,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "evaluate-expression",
+																	"objectClass": "System",
+																	"sid": 614095903064983,
+																	"parameters": {
+																		"value": "Functions.CheckQuestOpened(QuestElement.tag) = 0"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 154629528477406,
 															"children": [
 																{
 																	"eventType": "block",
 																	"conditions": [
 																		{
-																			"id": "pick-all",
-																			"objectClass": "System",
-																			"sid": 471162414815981,
+																			"id": "is-boolean-instance-variable-set",
+																			"objectClass": "QuestElement",
+																			"sid": 119044973138463,
 																			"parameters": {
-																				"object": "9patch4"
-																			}
-																		},
-																		{
-																			"id": "pick-all",
-																			"objectClass": "System",
-																			"sid": 979661770868457,
-																			"parameters": {
-																				"object": "Message_Text"
+																				"instance-variable": "Opened"
 																			}
 																		}
 																	],
-																	"actions": [],
-																	"sid": 509412019179253,
+																	"actions": [
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "QuestElementBlank",
+																			"sid": 162378952784829,
+																			"disabled": true,
+																			"parameters": {
+																				"instance-variable": "Opened",
+																				"value": "false"
+																			}
+																		},
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "QuestElementBlank",
+																			"sid": 387760797680513,
+																			"parameters": {
+																				"instance-variable": "picked",
+																				"value": "true"
+																			}
+																		},
+																		{
+																			"id": "set-text",
+																			"objectClass": "Message_Text",
+																			"sid": 683675488451824,
+																			"disabled": true,
+																			"parameters": {
+																				"text": "Functions.GetReqForQuest(QuestElementBlank.tag)"
+																			}
+																		},
+																		{
+																			"id": "tween-two-properties",
+																			"objectClass": "9patch4",
+																			"sid": 526306299693181,
+																			"behaviorType": "Tween",
+																			"parameters": {
+																				"tags": "\"\"",
+																				"property": "size",
+																				"end-x": "max(Message_Text.TextWidth,8,(JSON.ArraySize(\"Quests.\"&QuestElementBlank.tag&\".Requirements\"))*(16+3))+10",
+																				"end-y": "max(Message_Text.TextHeight+23,12)",
+																				"time": "0.3",
+																				"ease": "easeoutcubic",
+																				"destroy-on-complete": "no",
+																				"loop": "no",
+																				"ping-pong": "no",
+																				"repeat-count": "1"
+																			}
+																		},
+																		{
+																			"id": "tween-one-property",
+																			"objectClass": "9patch4",
+																			"sid": 319661683050431,
+																			"behaviorType": "Tween",
+																			"parameters": {
+																				"tags": "\"\"",
+																				"property": "offsetOpacity",
+																				"end-value": "100",
+																				"time": "0.1",
+																				"ease": "default",
+																				"destroy-on-complete": "no",
+																				"loop": "no",
+																				"ping-pong": "no",
+																				"repeat-count": "1"
+																			}
+																		},
+																		{
+																			"id": "alert",
+																			"objectClass": "Browser",
+																			"sid": 846481854412684,
+																			"disabled": true,
+																			"parameters": {
+																				"message": "Functions.CheckCanDoQuest(QuestElementBlank.tag)"
+																			}
+																		},
+																		{
+																			"callFunction": "ShowPage",
+																			"sid": 776600699043812,
+																			"parameters": [
+																				"QuestElementBlank.tag"
+																			]
+																		}
+																	],
+																	"sid": 175356059586727,
+																	"disabled": true,
 																	"children": [
 																		{
 																			"eventType": "block",
 																			"conditions": [
 																				{
-																					"id": "pick-by-evaluate",
+																					"id": "pick-all",
 																					"objectClass": "System",
-																					"sid": 530728451659530,
+																					"sid": 789468498999264,
 																					"parameters": {
-																						"object": "9patch4",
-																						"expression": "9patch4.Type = \"Reward\""
+																						"object": "9patch4"
 																					}
 																				},
 																				{
-																					"id": "pick-children",
-																					"objectClass": "9patch4",
-																					"sid": 946327714476585,
+																					"id": "pick-all",
+																					"objectClass": "System",
+																					"sid": 346415857874542,
 																					"parameters": {
-																						"child": "Message_Text",
-																						"which": "own"
+																						"object": "Message_Text"
 																					}
 																				}
 																			],
-																			"actions": [
+																			"actions": [],
+																			"sid": 664355262909603,
+																			"disabled": true,
+																			"children": [
 																				{
-																					"id": "set-text",
-																					"objectClass": "Message_Text",
-																					"sid": 866805029224972,
-																					"parameters": {
-																						"text": "Functions.GetQuestRewardIcons(QuestElementBlank.tag)"
-																					}
-																				},
-																				{
-																					"id": "tween-one-property",
-																					"objectClass": "9patch5",
-																					"sid": 458288925820629,
-																					"behaviorType": "Tween",
-																					"parameters": {
-																						"tags": "\"\"",
-																						"property": "offsetOpacity",
-																						"end-value": "100",
-																						"time": "0.1",
-																						"ease": "default",
-																						"destroy-on-complete": "no",
-																						"loop": "no",
-																						"ping-pong": "no",
-																						"repeat-count": "1"
-																					}
-																				},
-																				{
-																					"id": "tween-two-properties",
-																					"objectClass": "9patch5",
-																					"sid": 682759746731857,
-																					"behaviorType": "Tween",
-																					"parameters": {
-																						"tags": "\"\"",
-																						"property": "size",
-																						"end-x": "48",
-																						"end-y": "15",
-																						"time": "0.1",
-																						"ease": "easeoutcubic",
-																						"destroy-on-complete": "no",
-																						"loop": "no",
-																						"ping-pong": "no",
-																						"repeat-count": "1"
-																					}
-																				},
-																				{
-																					"id": "tween-two-properties",
-																					"objectClass": "9patch4",
-																					"sid": 704429301316006,
-																					"behaviorType": "Tween",
-																					"parameters": {
-																						"tags": "\"\"",
-																						"property": "size",
-																						"end-x": "max(Message_Text.TextWidth,9patch5.Width,(JSON.ArraySize(\"Quests.\"&QuestElementBlank.tag&\".Reward\"))*(16+3))+10",
-																						"end-y": "max(Message_Text.TextHeight+40,12)",
-																						"time": "0.3",
-																						"ease": "easeoutcubic",
-																						"destroy-on-complete": "no",
-																						"loop": "no",
-																						"ping-pong": "no",
-																						"repeat-count": "1"
-																					}
-																				},
-																				{
-																					"id": "tween-one-property",
-																					"objectClass": "9patch4",
-																					"sid": 615189358666391,
-																					"behaviorType": "Tween",
-																					"parameters": {
-																						"tags": "\"\"",
-																						"property": "offsetOpacity",
-																						"end-value": "100",
-																						"time": "0.1",
-																						"ease": "default",
-																						"destroy-on-complete": "no",
-																						"loop": "no",
-																						"ping-pong": "no",
-																						"repeat-count": "1"
-																					}
-																				},
-																				{
-																					"id": "alert",
-																					"objectClass": "Browser",
-																					"sid": 329321721923310,
-																					"disabled": true,
-																					"parameters": {
-																						"message": "\"1\""
-																					}
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "pick-by-evaluate",
+																							"objectClass": "System",
+																							"sid": 178745501214298,
+																							"parameters": {
+																								"object": "9patch4",
+																								"expression": "9patch4.Type = \"Reward\""
+																							}
+																						},
+																						{
+																							"id": "pick-children",
+																							"objectClass": "9patch4",
+																							"sid": 756396782826371,
+																							"parameters": {
+																								"child": "Message_Text",
+																								"which": "own"
+																							}
+																						}
+																					],
+																					"actions": [
+																						{
+																							"id": "set-text",
+																							"objectClass": "Message_Text",
+																							"sid": 247631353867173,
+																							"parameters": {
+																								"text": "Functions.GetQuestRewardIcons(QuestElementBlank.tag)"
+																							}
+																						},
+																						{
+																							"id": "tween-one-property",
+																							"objectClass": "9patch5",
+																							"sid": 376983583004964,
+																							"behaviorType": "Tween",
+																							"parameters": {
+																								"tags": "\"\"",
+																								"property": "offsetOpacity",
+																								"end-value": "100",
+																								"time": "0.1",
+																								"ease": "default",
+																								"destroy-on-complete": "no",
+																								"loop": "no",
+																								"ping-pong": "no",
+																								"repeat-count": "1"
+																							}
+																						},
+																						{
+																							"id": "tween-two-properties",
+																							"objectClass": "9patch5",
+																							"sid": 410512490996843,
+																							"behaviorType": "Tween",
+																							"parameters": {
+																								"tags": "\"\"",
+																								"property": "size",
+																								"end-x": "48",
+																								"end-y": "15",
+																								"time": "0.1",
+																								"ease": "easeoutcubic",
+																								"destroy-on-complete": "no",
+																								"loop": "no",
+																								"ping-pong": "no",
+																								"repeat-count": "1"
+																							}
+																						},
+																						{
+																							"id": "tween-two-properties",
+																							"objectClass": "9patch4",
+																							"sid": 463890720471393,
+																							"behaviorType": "Tween",
+																							"parameters": {
+																								"tags": "\"\"",
+																								"property": "size",
+																								"end-x": "max(Message_Text.TextWidth,9patch5.Width,(JSON.ArraySize(\"Quests.\"&QuestElementBlank.tag&\".Reward\"))*(16+3))+10",
+																								"end-y": "max(Message_Text.TextHeight+40,12)",
+																								"time": "0.3",
+																								"ease": "easeoutcubic",
+																								"destroy-on-complete": "no",
+																								"loop": "no",
+																								"ping-pong": "no",
+																								"repeat-count": "1"
+																							}
+																						},
+																						{
+																							"id": "tween-one-property",
+																							"objectClass": "9patch4",
+																							"sid": 502712726597909,
+																							"behaviorType": "Tween",
+																							"parameters": {
+																								"tags": "\"\"",
+																								"property": "offsetOpacity",
+																								"end-value": "100",
+																								"time": "0.1",
+																								"ease": "default",
+																								"destroy-on-complete": "no",
+																								"loop": "no",
+																								"ping-pong": "no",
+																								"repeat-count": "1"
+																							}
+																						},
+																						{
+																							"id": "alert",
+																							"objectClass": "Browser",
+																							"sid": 688448746565361,
+																							"disabled": true,
+																							"parameters": {
+																								"message": "\"1\""
+																							}
+																						}
+																					],
+																					"sid": 902964741793018,
+																					"disabled": true
 																				}
-																			],
-																			"sid": 631031726440401
+																			]
 																		}
-																	]
+																	],
+																	"isOrBlock": true
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "else",
+																			"objectClass": "System",
+																			"sid": 666098886234651
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-text",
+																			"objectClass": "Message_Text",
+																			"sid": 731123750006673,
+																			"disabled": true,
+																			"parameters": {
+																				"text": "\"UnlockPreviousFirst\""
+																			}
+																		},
+																		{
+																			"id": "tween-two-properties",
+																			"objectClass": "9patch4",
+																			"sid": 909578859205292,
+																			"behaviorType": "Tween",
+																			"parameters": {
+																				"tags": "\"\"",
+																				"property": "size",
+																				"end-x": "max(Message_Text.TextWidth,8)+10",
+																				"end-y": "max(Message_Text.TextHeight,12)",
+																				"time": "0.3",
+																				"ease": "easeoutcubic",
+																				"destroy-on-complete": "no",
+																				"loop": "no",
+																				"ping-pong": "no",
+																				"repeat-count": "1"
+																			}
+																		},
+																		{
+																			"id": "tween-one-property",
+																			"objectClass": "9patch4",
+																			"sid": 512234399625735,
+																			"behaviorType": "Tween",
+																			"parameters": {
+																				"tags": "\"\"",
+																				"property": "offsetOpacity",
+																				"end-value": "100",
+																				"time": "0.1",
+																				"ease": "default",
+																				"destroy-on-complete": "no",
+																				"loop": "no",
+																				"ping-pong": "no",
+																				"repeat-count": "1"
+																			}
+																		}
+																	],
+																	"sid": 206979412523391,
+																	"disabled": true
 																}
-															],
-															"isOrBlock": true
+															]
 														},
 														{
 															"eventType": "block",
@@ -20353,83 +21490,56 @@
 																{
 																	"id": "else",
 																	"objectClass": "System",
-																	"sid": 978055007115115
+																	"sid": 925144583375673
 																}
 															],
 															"actions": [
 																{
-																	"id": "set-text",
-																	"objectClass": "Message_Text",
-																	"sid": 299699582917257,
+																	"id": "set-boolean-instvar",
+																	"objectClass": "QuestElementBlank",
+																	"sid": 360972560005898,
 																	"parameters": {
-																		"text": "\"UnlockPreviousFirst\""
+																		"instance-variable": "picked",
+																		"value": "true"
 																	}
 																},
 																{
-																	"id": "tween-two-properties",
-																	"objectClass": "9patch4",
-																	"sid": 382028056697163,
-																	"behaviorType": "Tween",
-																	"parameters": {
-																		"tags": "\"\"",
-																		"property": "size",
-																		"end-x": "max(Message_Text.TextWidth,8)+10",
-																		"end-y": "max(Message_Text.TextHeight,12)",
-																		"time": "0.3",
-																		"ease": "easeoutcubic",
-																		"destroy-on-complete": "no",
-																		"loop": "no",
-																		"ping-pong": "no",
-																		"repeat-count": "1"
-																	}
-																},
-																{
-																	"id": "tween-one-property",
-																	"objectClass": "9patch4",
-																	"sid": 517784193205576,
-																	"behaviorType": "Tween",
-																	"parameters": {
-																		"tags": "\"\"",
-																		"property": "offsetOpacity",
-																		"end-value": "100",
-																		"time": "0.1",
-																		"ease": "default",
-																		"destroy-on-complete": "no",
-																		"loop": "no",
-																		"ping-pong": "no",
-																		"repeat-count": "1"
-																	}
+																	"callFunction": "ShowPage",
+																	"sid": 469218909810080,
+																	"parameters": [
+																		"QuestElementBlank.tag"
+																	]
 																}
 															],
-															"sid": 166369314464176
+															"sid": 788828099034551
 														}
 													]
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "else",
-															"objectClass": "System",
-															"sid": 240134752828409
-														}
-													],
-													"actions": [
-														{
-															"id": "set-boolean-instvar",
-															"objectClass": "QuestElementBlank",
-															"sid": 362223626286000,
-															"parameters": {
-																"instance-variable": "picked",
-																"value": "true"
-															}
-														}
-													],
-													"sid": 783467421812248
 												}
 											]
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 152876396374120
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "QuestElementBlank",
+											"sid": 387640934272687,
+											"parameters": {
+												"instance-variable": "picked",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 688985322981426
 								}
 							]
 						},
@@ -20496,92 +21606,668 @@
 							"sid": 678996336794678
 						},
 						{
-							"eventType": "block",
-							"conditions": [
+							"functionName": "HidePage",
+							"functionDescription": "",
+							"functionCategory": "Quest",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
 								{
-									"id": "is-touching-object",
-									"objectClass": "Touch",
-									"sid": 608584086556471,
-									"parameters": {
-										"object": "9patch"
-									}
-								},
-								{
-									"id": "trigger-once-while-true",
+									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 885686747537434
+									"sid": 686882184915197,
+									"parameters": {
+										"group-name": "\"Scrolling\"",
+										"state": "activated"
+									}
 								}
 							],
-							"actions": [],
-							"sid": 632897800160820,
+							"sid": 911314670593276,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-boolean-eventvar",
+											"id": "pick-by-evaluate",
 											"objectClass": "System",
-											"sid": 178232310917997,
+											"sid": 313253454530486,
 											"parameters": {
-												"variable": "Bookscrolling"
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-touching-object",
-											"objectClass": "Touch",
-											"sid": 667643795312366,
-											"parameters": {
-												"object": "9patch5"
-											},
-											"isInverted": true
+												"object": "InventoryBlank",
+												"expression": "InventoryBlank.Type = \"Quest\""
+											}
 										}
 									],
-									"actions": [
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 625782197213133,
-											"parameters": {
-												"variable": "Bookscrolling",
-												"value": "true"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 240290163758025,
-											"parameters": {
-												"variable": "StartxScroll",
-												"value": "Touch.X(\"Interfaces\")-xScrollOld"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 391053371232322,
-											"parameters": {
-												"variable": "StartyScroll",
-												"value": "Touch.Y(\"Interfaces\")-yScrollOld"
-											}
-										},
-										{
-											"callFunction": "HideQuest",
-											"sid": 561913195009105,
-											"parameters": [
-												false
-											]
-										}
-									],
-									"sid": 777370125503067,
+									"actions": [],
+									"sid": 395950483337413,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "for-each",
+													"id": "pick-children",
+													"objectClass": "InventoryBlank",
+													"sid": 340631182467247,
+													"parameters": {
+														"child": "Sprite31",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "Sprite31",
+													"sid": 518815594485628,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Sprite31",
+													"sid": 716978133835685,
+													"parameters": {
+														"instance-variable": "active",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 499432640083601
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "InventoryBlank",
+													"sid": 631908952982791,
+													"parameters": {
+														"child": "QuestSpacer",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "QuestSpacer",
+													"sid": 179329224078456,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 746136884538944
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "InventoryBlank",
+													"sid": 286930042259447,
+													"parameters": {
+														"child": "Message_Text",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 696819751641679,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 180613596244457,
+															"parameters": {
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"QuestName\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "Message_Text",
+															"sid": 982433751169469,
+															"parameters": {
+																"text": "\"\""
+															}
+														}
+													],
+													"sid": 637184096593437
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 969917010185593,
+															"parameters": {
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"Rewards\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "Message_Text",
+															"sid": 258792174089858,
+															"parameters": {
+																"text": "\"\""
+															}
+														}
+													],
+													"sid": 769393303392780
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 324029226997098,
+															"parameters": {
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"Progress\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "Message_Text",
+															"sid": 992483389505006,
+															"parameters": {
+																"text": "\"\""
+															}
+														}
+													],
+													"sid": 566868087168745
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 583706372417241,
+															"parameters": {
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"QuestReq\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "Message_Text",
+															"sid": 174835055326710,
+															"parameters": {
+																"text": "\"\""
+															}
+														}
+													],
+													"sid": 715703749596703
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 340578012694200,
+															"parameters": {
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"QuestDesc\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "Message_Text",
+															"sid": 639169762737225,
+															"parameters": {
+																"text": "\"\""
+															}
+														}
+													],
+													"sid": 133837630862825
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 468041014962330,
+															"parameters": {
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"QuestTree\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "typewriter-text",
+															"objectClass": "Message_Text",
+															"sid": 615367704862444,
+															"parameters": {
+																"text": "Functions.Get_LanguageText(\"QuestTree\")",
+																"duration": "0.2"
+															}
+														}
+													],
+													"sid": 516324551808241
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "InventoryBlank",
+													"sid": 586925428988833,
+													"parameters": {
+														"child": "Sprite36",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "Sprite36",
+													"sid": 646916673931145,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Sprite36",
+													"sid": 448460106598472,
+													"parameters": {
+														"instance-variable": "active",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 420665260981202
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 948979780210749,
+											"parameters": {
+												"object": "TiledBackground5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "TiledBackground5",
+											"sid": 382351720468304,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 155807532029682
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 456700890661914,
+											"parameters": {
+												"object": "QuestElementBlank"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "QuestElementBlank",
+											"sid": 645769002655376,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "QuestElementBlank",
+											"sid": 596186873833428,
+											"parameters": {
+												"instance-variable": "Clickable",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 178947528945908
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 967845230758074,
+											"parameters": {
+												"object": "QuestItemBlank"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-two-properties",
+											"objectClass": "QuestItemBlank",
+											"sid": 537900855220707,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "size",
+												"end-x": "Self.Width*0.6",
+												"end-y": "Self.Height*0.6",
+												"time": "0.1",
+												"ease": "easeinback",
+												"destroy-on-complete": "yes",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 643389638047074
+								}
+							]
+						},
+						{
+							"functionName": "ShowPage",
+							"functionDescription": "",
+							"functionCategory": "Quest",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "Quest",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 836361100326555
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 647706458348011,
+									"parameters": {
+										"group-name": "\"Scrolling\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 107201988506778,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 614778816756452,
+											"parameters": {
+												"object": "InventoryBlank",
+												"expression": "InventoryBlank.Type = \"Quest\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 856811683364976,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "InventoryBlank",
+													"sid": 441491709464733,
+													"parameters": {
+														"child": "Sprite31",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "Sprite31",
+													"sid": 778061598045837,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Sprite31",
+													"sid": 892776153760660,
+													"parameters": {
+														"instance-variable": "active",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 274045478535670
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "InventoryBlank",
+													"sid": 862298399058448,
+													"parameters": {
+														"child": "Sprite36",
+														"which": "own"
+													}
+												},
+												{
+													"id": "pick-children",
+													"objectClass": "Sprite36",
+													"sid": 174665870625793,
+													"parameters": {
+														"child": "Message_Text",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 177164222023170,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 959169441323199,
+															"parameters": {
+																"value": "JSON.Get(\"Player.TrackingQuest\") <> Quest"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 598910600065173,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-visible",
+																	"objectClass": "Sprite36",
+																	"sid": 156473549465222,
+																	"parameters": {
+																		"visibility": "visible"
+																	}
+																},
+																{
+																	"id": "set-boolean-instvar",
+																	"objectClass": "Sprite36",
+																	"sid": 795809463517987,
+																	"parameters": {
+																		"instance-variable": "active",
+																		"value": "true"
+																	}
+																},
+																{
+																	"id": "set-text",
+																	"objectClass": "Message_Text",
+																	"sid": 223507603940420,
+																	"parameters": {
+																		"text": "\"Track\""
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "Sprite36",
+																	"sid": 578745882903654,
+																	"parameters": {
+																		"instance-variable": "Type",
+																		"value": "\"Track\""
+																	}
+																}
+															],
+															"sid": 689805793830404
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 709060322224116
+														}
+													],
+													"actions": [],
+													"sid": 237462689221478,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "evaluate-expression",
+																	"objectClass": "System",
+																	"sid": 471337853391970,
+																	"parameters": {
+																		"value": "Functions.CheckCanDoQuest(Quest) = 1"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-visible",
+																	"objectClass": "Sprite36",
+																	"sid": 899419155421449,
+																	"parameters": {
+																		"visibility": "visible"
+																	}
+																},
+																{
+																	"id": "set-boolean-instvar",
+																	"objectClass": "Sprite36",
+																	"sid": 343956648495840,
+																	"parameters": {
+																		"instance-variable": "active",
+																		"value": "true"
+																	}
+																},
+																{
+																	"id": "set-text",
+																	"objectClass": "Message_Text",
+																	"sid": 251160492620907,
+																	"parameters": {
+																		"text": "\"Complete\""
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "Sprite36",
+																	"sid": 920757113403583,
+																	"parameters": {
+																		"instance-variable": "Type",
+																		"value": "\"Complete\""
+																	}
+																}
+															],
+															"sid": 304615880007484
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 129457990255875
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-visible",
+																	"objectClass": "Sprite36",
+																	"sid": 611677995926441,
+																	"parameters": {
+																		"visibility": "invisible"
+																	}
+																},
+																{
+																	"id": "set-boolean-instvar",
+																	"objectClass": "Sprite36",
+																	"sid": 556013906418438,
+																	"parameters": {
+																		"instance-variable": "active",
+																		"value": "false"
+																	}
+																}
+															],
+															"sid": 471754168446372
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-all",
 													"objectClass": "System",
-													"sid": 197129200533987,
+													"sid": 578660566544974,
 													"parameters": {
 														"object": "QuestElementBlank"
 													}
@@ -20589,190 +22275,844 @@
 											],
 											"actions": [
 												{
+													"id": "set-visible",
+													"objectClass": "QuestElementBlank",
+													"sid": 360348677029414,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
 													"id": "set-boolean-instvar",
 													"objectClass": "QuestElementBlank",
-													"sid": 839426237521900,
+													"sid": 232206887379813,
 													"parameters": {
-														"instance-variable": "picked",
+														"instance-variable": "Clickable",
 														"value": "false"
 													}
 												}
 											],
-											"sid": 787506587817453
+											"sid": 781180073573317
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-all",
+													"objectClass": "System",
+													"sid": 726053725012067,
+													"parameters": {
+														"object": "TiledBackground5"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "TiledBackground5",
+													"sid": 911294752878073,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 957144785609158
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "InventoryBlank",
+													"sid": 929220904786253,
+													"parameters": {
+														"child": "Message_Text",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 605951387795257,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 851980351879894,
+															"parameters": {
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"QuestName\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "typewriter-text",
+															"objectClass": "Message_Text",
+															"sid": 297008555300828,
+															"parameters": {
+																"text": "Quest",
+																"duration": "0.2"
+															}
+														}
+													],
+													"sid": 614959530815901
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 380327128463397,
+															"parameters": {
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"QuestDesc\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "typewriter-text",
+															"objectClass": "Message_Text",
+															"sid": 738072576267433,
+															"parameters": {
+																"text": "Functions.Get_LanguageText(JSON.Get(\"Quests.\"&Quest&\".Description\"))",
+																"duration": "0.2"
+															}
+														}
+													],
+													"sid": 412393542485604
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 788610614665516,
+															"parameters": {
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"QuestReq\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "typewriter-text",
+															"objectClass": "Message_Text",
+															"sid": 414435388258188,
+															"parameters": {
+																"text": "JSON.Get(\"Quests.\"&Quest&\".Req\")",
+																"duration": "0.2"
+															}
+														}
+													],
+													"sid": 351780445095103
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 296762472733170,
+															"parameters": {
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"Progress\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "typewriter-text",
+															"objectClass": "Message_Text",
+															"sid": 555346212991026,
+															"parameters": {
+																"text": "Functions.Get_LanguageText(\"Progress\")",
+																"duration": "0.2"
+															}
+														}
+													],
+													"sid": 792852680940712
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 282035002146462,
+															"parameters": {
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"Rewards\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "typewriter-text",
+															"objectClass": "Message_Text",
+															"sid": 366613933385973,
+															"parameters": {
+																"text": "Functions.Get_LanguageText(\"Rewards\")",
+																"duration": "0.2"
+															}
+														}
+													],
+													"sid": 636287942914026
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 338729897292667,
+															"parameters": {
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"QuestTree\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "typewriter-text",
+															"objectClass": "Message_Text",
+															"sid": 546795603912712,
+															"parameters": {
+																"text": "\"\"",
+																"duration": "0.2"
+															}
+														}
+													],
+													"sid": 816199152235139
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "InventoryBlank",
+													"sid": 864905074828505,
+													"parameters": {
+														"child": "QuestSpacer",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "QuestSpacer",
+													"sid": 134902258877053,
+													"parameters": {
+														"visibility": "visible"
+													}
+												}
+											],
+											"sid": 473337320744316,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 504407937721180,
+															"parameters": {
+																"object": "QuestSpacer",
+																"expression": "QuestSpacer.Type = \"Rewards\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 219023905657593,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [],
+															"sid": 101814485390128
+														},
+														{
+															"eventType": "variable",
+															"name": "loopindexAdv",
+															"type": "number",
+															"initialValue": "0",
+															"comment": "",
+															"isStatic": false,
+															"isConstant": false,
+															"sid": 848177946157569
+														},
+														{
+															"eventType": "variable",
+															"name": "NumberOfRequ",
+															"type": "number",
+															"initialValue": "0",
+															"comment": "",
+															"isStatic": false,
+															"isConstant": false,
+															"sid": 523780622728602
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 148803831659562,
+																	"parameters": {
+																		"variable": "NumberOfRequ",
+																		"value": "JSON.ArraySize(\"Quests.\"&Quest&\".Reward\")-1"
+																	}
+																}
+															],
+															"sid": 571674539281535
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "for-each",
+																	"objectClass": "JSON",
+																	"sid": 954473231682493,
+																	"parameters": {
+																		"path": "\"Quests.\"&Quest&\".Reward\""
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 866330325755596,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [
+																		{
+																			"id": "create-object",
+																			"objectClass": "System",
+																			"sid": 612428255803535,
+																			"parameters": {
+																				"object-to-create": "QuestItemBlank",
+																				"layer": "\"Interfaces\"",
+																				"x": "QuestSpacer.BBoxLeft+10+(loopindexAdv%5)*15",
+																				"y": "QuestSpacer.BBoxBottom+10+(floor(loopindexAdv/5)*20)",
+																				"create-hierarchy": true,
+																				"template-name": "\"\""
+																			}
+																		},
+																		{
+																			"id": "add-child",
+																			"objectClass": "InventoryBlank",
+																			"sid": 940774376604354,
+																			"parameters": {
+																				"child": "QuestItemBlank",
+																				"transform-x": true,
+																				"transform-y": true,
+																				"transform-w": true,
+																				"transform-h": true,
+																				"transform-a": true,
+																				"transform-o": false,
+																				"transform-z-elevation": true,
+																				"transform-visibility": false,
+																				"destroy-with-parent": true
+																			}
+																		}
+																	],
+																	"sid": 965969803863070,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "pick-last-created",
+																					"objectClass": "System",
+																					"sid": 882997383515265,
+																					"parameters": {
+																						"object": "QuestItemBlank"
+																					}
+																				},
+																				{
+																					"id": "pick-children",
+																					"objectClass": "QuestItemBlank",
+																					"sid": 101056025488599,
+																					"parameters": {
+																						"child": "Inventory_Item",
+																						"which": "own"
+																					}
+																				},
+																				{
+																					"id": "pick-children",
+																					"objectClass": "QuestItemBlank",
+																					"sid": 403846324727056,
+																					"parameters": {
+																						"child": "Message_Text",
+																						"which": "own"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-default-color",
+																					"objectClass": "Inventory_Item",
+																					"sid": 404856923534223,
+																					"disabled": true,
+																					"parameters": {
+																						"color": "Functions.CheckItemIsInInventory(tokenat(JSON.CurrentValue,0,\",\"),int(tokenat(JSON.CurrentValue,1,\",\"))) = 1 ? rgbEx(100,100,100) : rgbEx(70,70,70)"
+																					}
+																				},
+																				{
+																					"id": "set-animation",
+																					"objectClass": "Inventory_Item",
+																					"sid": 728622154612925,
+																					"parameters": {
+																						"animation": "tokenat(JSON.CurrentValue,0,\",\")",
+																						"from": "beginning"
+																					}
+																				},
+																				{
+																					"id": "set-size",
+																					"objectClass": "Inventory_Item",
+																					"sid": 347185431685023,
+																					"parameters": {
+																						"width": "10",
+																						"height": "10"
+																					}
+																				},
+																				{
+																					"id": "set-text",
+																					"objectClass": "Message_Text",
+																					"sid": 199213544258825,
+																					"disabled": true,
+																					"parameters": {
+																						"text": "Functions.Get_ItemInInventoryCount(tokenat(JSON.CurrentValue,0,\",\"))&\"/\"&tokenat(JSON.CurrentValue,1,\",\")"
+																					}
+																				},
+																				{
+																					"id": "set-text",
+																					"objectClass": "Message_Text",
+																					"sid": 605033315561624,
+																					"parameters": {
+																						"text": "tokenat(JSON.CurrentValue,1,\",\")&\"x\""
+																					}
+																				},
+																				{
+																					"id": "set-default-color",
+																					"objectClass": "Message_Text",
+																					"sid": 170107458393415,
+																					"disabled": true,
+																					"parameters": {
+																						"color": "Functions.CheckItemIsInInventory(tokenat(JSON.CurrentValue,0,\",\"),int(tokenat(JSON.CurrentValue,1,\",\"))) = 1 ? rgbEx(20,100,20) : rgbEx(100,20,20)"
+																					}
+																				}
+																			],
+																			"sid": 936858893061674
+																		}
+																	]
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [
+																		{
+																			"id": "add-to-eventvar",
+																			"objectClass": "System",
+																			"sid": 657619608676361,
+																			"parameters": {
+																				"variable": "loopindexAdv",
+																				"value": "1"
+																			}
+																		}
+																	],
+																	"sid": 748615890308487
+																}
+															]
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 424212069983831,
+															"parameters": {
+																"object": "QuestSpacer",
+																"expression": "QuestSpacer.Type = \"Progress\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 506055209697151,
+													"children": [
+														{
+															"eventType": "variable",
+															"name": "loopindexAdv",
+															"type": "number",
+															"initialValue": "0",
+															"comment": "",
+															"isStatic": false,
+															"isConstant": false,
+															"sid": 696186693341773
+														},
+														{
+															"eventType": "variable",
+															"name": "NumberOfRequ",
+															"type": "number",
+															"initialValue": "0",
+															"comment": "",
+															"isStatic": false,
+															"isConstant": false,
+															"sid": 448202293916762
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 320477969650919,
+																	"parameters": {
+																		"variable": "NumberOfRequ",
+																		"value": "JSON.ArraySize(\"Quests.\"&Quest&\".Requirements\")-1"
+																	}
+																}
+															],
+															"sid": 828915163217621
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "for-each",
+																	"objectClass": "JSON",
+																	"sid": 860925909261692,
+																	"parameters": {
+																		"path": "\"Quests.\"&Quest&\".Requirements\""
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 301251810104215,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [
+																		{
+																			"id": "create-object",
+																			"objectClass": "System",
+																			"sid": 187162301558742,
+																			"parameters": {
+																				"object-to-create": "QuestItemBlank",
+																				"layer": "\"Interfaces\"",
+																				"x": "QuestSpacer.BBoxLeft+10+(loopindexAdv%5)*15",
+																				"y": "QuestSpacer.BBoxBottom+10+(floor(loopindexAdv/5)*20)",
+																				"create-hierarchy": true,
+																				"template-name": "\"\""
+																			}
+																		},
+																		{
+																			"id": "add-child",
+																			"objectClass": "InventoryBlank",
+																			"sid": 434738057072675,
+																			"parameters": {
+																				"child": "QuestItemBlank",
+																				"transform-x": true,
+																				"transform-y": true,
+																				"transform-w": true,
+																				"transform-h": true,
+																				"transform-a": true,
+																				"transform-o": false,
+																				"transform-z-elevation": true,
+																				"transform-visibility": false,
+																				"destroy-with-parent": true
+																			}
+																		}
+																	],
+																	"sid": 850015333169020,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "pick-last-created",
+																					"objectClass": "System",
+																					"sid": 837216220086553,
+																					"parameters": {
+																						"object": "QuestItemBlank"
+																					}
+																				},
+																				{
+																					"id": "pick-children",
+																					"objectClass": "QuestItemBlank",
+																					"sid": 299271076107928,
+																					"parameters": {
+																						"child": "Inventory_Item",
+																						"which": "own"
+																					}
+																				},
+																				{
+																					"id": "pick-children",
+																					"objectClass": "QuestItemBlank",
+																					"sid": 297500532997529,
+																					"parameters": {
+																						"child": "Message_Text",
+																						"which": "own"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-default-color",
+																					"objectClass": "Inventory_Item",
+																					"sid": 685887928714422,
+																					"parameters": {
+																						"color": "Functions.CheckItemIsInInventory(tokenat(JSON.CurrentValue,0,\",\"),int(tokenat(JSON.CurrentValue,1,\",\"))) = 1 ? rgbEx(100,100,100) : rgbEx(70,70,70)"
+																					}
+																				},
+																				{
+																					"id": "set-animation",
+																					"objectClass": "Inventory_Item",
+																					"sid": 781589782205849,
+																					"parameters": {
+																						"animation": "tokenat(JSON.CurrentValue,0,\",\")",
+																						"from": "beginning"
+																					}
+																				},
+																				{
+																					"id": "set-size",
+																					"objectClass": "Inventory_Item",
+																					"sid": 706107228284957,
+																					"parameters": {
+																						"width": "10",
+																						"height": "10"
+																					}
+																				},
+																				{
+																					"id": "set-text",
+																					"objectClass": "Message_Text",
+																					"sid": 556395228375269,
+																					"parameters": {
+																						"text": "Functions.Get_ItemInInventoryCount(tokenat(JSON.CurrentValue,0,\",\"))&\"/\"&tokenat(JSON.CurrentValue,1,\",\")"
+																					}
+																				},
+																				{
+																					"id": "set-default-color",
+																					"objectClass": "Message_Text",
+																					"sid": 824823209338136,
+																					"parameters": {
+																						"color": "Functions.CheckItemIsInInventory(tokenat(JSON.CurrentValue,0,\",\"),int(tokenat(JSON.CurrentValue,1,\",\"))) = 1 ? rgbEx(20,100,20) : rgbEx(100,20,20)"
+																					}
+																				}
+																			],
+																			"sid": 320906802859875
+																		}
+																	]
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [
+																		{
+																			"id": "add-to-eventvar",
+																			"objectClass": "System",
+																			"sid": 926476153017403,
+																			"parameters": {
+																				"variable": "loopindexAdv",
+																				"value": "1"
+																			}
+																		}
+																	],
+																	"sid": 248482558728468
+																}
+															]
+														}
+													]
+												}
+											]
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 575320608869319
 								}
 							]
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-in-touch",
-									"objectClass": "Touch",
-									"sid": 333403754956726
-								}
-							],
-							"actions": [],
-							"sid": 182699427523021,
+							"eventType": "group",
+							"disabled": false,
+							"title": "Scrolling",
+							"description": "",
+							"isActiveOnStart": true,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 773552792197392,
+											"id": "is-touching-object",
+											"objectClass": "Touch",
+											"sid": 397611380547409,
 											"parameters": {
-												"variable": "Bookscrolling"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 251471322340277,
-											"parameters": {
-												"variable": "xScroll",
-												"value": "(Touch.X(\"Interfaces\")-StartxScroll)"
+												"object": "9patch"
 											}
 										},
 										{
-											"id": "set-eventvar-value",
+											"id": "trigger-once-while-true",
 											"objectClass": "System",
-											"sid": 396236795912441,
-											"parameters": {
-												"variable": "yScroll",
-												"value": "(Touch.Y(\"Interfaces\")-StartyScroll)"
-											}
+											"sid": 337712928150464
 										}
 									],
-									"sid": 282308503944249
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 610011583211549
-								}
-							],
-							"actions": [],
-							"sid": 409700371499547,
-							"children": [
+									"actions": [],
+									"sid": 451182498892825,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 199545570732246,
+													"parameters": {
+														"variable": "Bookscrolling"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-touching-object",
+													"objectClass": "Touch",
+													"sid": 168189284535988,
+													"parameters": {
+														"object": "9patch5"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 806339685983117,
+													"parameters": {
+														"variable": "Bookscrolling",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 722392785082333,
+													"parameters": {
+														"variable": "StartxScroll",
+														"value": "Touch.X(\"Interfaces\")-xScrollOld"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 604077080444013,
+													"parameters": {
+														"variable": "StartyScroll",
+														"value": "Touch.Y(\"Interfaces\")-yScrollOld"
+													}
+												},
+												{
+													"callFunction": "HideQuest",
+													"sid": 996171221387824,
+													"parameters": [
+														false
+													]
+												}
+											],
+											"sid": 162472169505735,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "for-each",
+															"objectClass": "System",
+															"sid": 239405418971844,
+															"parameters": {
+																"object": "QuestElementBlank"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "QuestElementBlank",
+															"sid": 646332619410199,
+															"parameters": {
+																"instance-variable": "picked",
+																"value": "false"
+															}
+														}
+													],
+													"sid": 309780576048180
+												}
+											]
+										}
+									]
+								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 948394434588058,
-											"parameters": {
-												"variable": "Bookscrolling"
-											}
+											"id": "is-in-touch",
+											"objectClass": "Touch",
+											"sid": 959427661230375
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 532542160845854,
+									"children": [
 										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 200024934058516,
-											"parameters": {
-												"variable": "Bookscrolling",
-												"value": "false"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 415504697129468,
-											"parameters": {
-												"variable": "xScrollOld",
-												"value": "xScroll"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 668811832747538,
-											"parameters": {
-												"variable": "yScrollOld",
-												"value": "yScroll"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 326157607035385,
+													"parameters": {
+														"variable": "Bookscrolling"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 686796316982499,
+													"parameters": {
+														"variable": "xScroll",
+														"value": "(Touch.X(\"Interfaces\")-StartxScroll)"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 309435026393398,
+													"parameters": {
+														"variable": "yScroll",
+														"value": "(Touch.Y(\"Interfaces\")-StartyScroll)"
+													}
+												}
+											],
+											"sid": 828496174930068
 										}
-									],
-									"sid": 826024656002906
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "for-each",
-									"objectClass": "System",
-									"sid": 521704055849746,
-									"parameters": {
-										"object": "QuestElementBlank"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "QuestElementBlank",
-									"sid": 626733399220715,
-									"parameters": {
-										"x": "Self.sX+xScroll",
-										"y": "Self.sY+yScroll"
-									}
-								}
-							],
-							"sid": 412627248198449,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-between-values",
-											"objectClass": "System",
-											"sid": 482532438807906,
-											"parameters": {
-												"value": "QuestElementBlank.X",
-												"lower-bound": "9patch.BBoxLeft",
-												"upper-bound": "9patch.BBoxRight"
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-between-values",
-											"objectClass": "System",
-											"sid": 394735791691440,
-											"parameters": {
-												"value": "QuestElementBlank.Y",
-												"lower-bound": "9patch.BBoxTop",
-												"upper-bound": "9patch.BBoxBottom"
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [
-										{
-											"id": "set-size",
-											"objectClass": "QuestElementBlank",
-											"sid": 872740149463572,
-											"parameters": {
-												"width": "lerp(Self.Width,1,0.4)",
-												"height": "lerp(Self.Height,1,0.4)"
-											}
-										}
-									],
-									"sid": 780665881138460,
-									"isOrBlock": true
+									]
 								},
 								{
 									"eventType": "block",
@@ -20780,60 +23120,176 @@
 										{
 											"id": "else",
 											"objectClass": "System",
-											"sid": 455315300573343
+											"sid": 910894022133770
+										}
+									],
+									"actions": [],
+									"sid": 491525586465117,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 537781620233131,
+													"parameters": {
+														"variable": "Bookscrolling"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 115081075275818,
+													"parameters": {
+														"variable": "Bookscrolling",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 564078373119691,
+													"parameters": {
+														"variable": "xScrollOld",
+														"value": "xScroll"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 509502718589985,
+													"parameters": {
+														"variable": "yScrollOld",
+														"value": "yScroll"
+													}
+												}
+											],
+											"sid": 840072621667925
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 824056468736125,
+											"parameters": {
+												"object": "QuestElementBlank"
+											}
 										}
 									],
 									"actions": [
 										{
-											"id": "set-size",
+											"id": "set-position",
 											"objectClass": "QuestElementBlank",
-											"sid": 393925830019179,
+											"sid": 239608953876501,
 											"parameters": {
-												"width": "lerp(Self.Width,20+(QuestElementBlank.picked*5),0.4)",
-												"height": "lerp(Self.Height,20+(QuestElementBlank.picked*5),0.4)"
+												"x": "Self.sX+xScroll",
+												"y": "Self.sY+yScroll"
 											}
 										}
 									],
-									"sid": 804283543078557
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
+									"sid": 336055655666564,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-between-values",
+													"objectClass": "System",
+													"sid": 829809190854945,
+													"parameters": {
+														"value": "QuestElementBlank.X",
+														"lower-bound": "9patch.BBoxLeft",
+														"upper-bound": "9patch.BBoxRight"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-between-values",
+													"objectClass": "System",
+													"sid": 978865326730590,
+													"parameters": {
+														"value": "QuestElementBlank.Y",
+														"lower-bound": "9patch.BBoxTop",
+														"upper-bound": "9patch.BBoxBottom"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-size",
+													"objectClass": "QuestElementBlank",
+													"sid": 865336556244178,
+													"parameters": {
+														"width": "lerp(Self.Width,0,0.4)",
+														"height": "lerp(Self.Height,0,0.4)"
+													}
+												}
+											],
+											"sid": 344203942010105,
+											"isOrBlock": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 629883510648747
+												}
+											],
+											"actions": [
+												{
+													"id": "set-size",
+													"objectClass": "QuestElementBlank",
+													"sid": 460680467927149,
+													"parameters": {
+														"width": "lerp(Self.Width,20+(QuestElementBlank.picked*5),0.4)",
+														"height": "lerp(Self.Height,23+(QuestElementBlank.picked*5),0.4)"
+													}
+												}
+											],
+											"sid": 656809710621859
+										}
+									]
+								},
 								{
-									"id": "for-each",
-									"objectClass": "System",
-									"sid": 916279269004117,
-									"parameters": {
-										"object": "TiledBackground5"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 664108500142769,
+											"parameters": {
+												"object": "TiledBackground5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "TiledBackground5",
+											"sid": 344587203131525,
+											"parameters": {
+												"x": "Self.sX+xScroll",
+												"y": "Self.sY+yScroll"
+											}
+										}
+									],
+									"sid": 408845661571762
 								}
 							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "TiledBackground5",
-									"sid": 721552971181212,
-									"parameters": {
-										"x": "Self.sX+xScroll",
-										"y": "Self.sY+yScroll"
-									}
-								}
-							],
-							"sid": 991690664246698
+							"sid": 892861552544045
 						}
 					],
 					"sid": 978185308984160
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "Scrolling",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [],
-					"sid": 838837216045376
 				},
 				{
 					"eventType": "group",
@@ -20844,10 +23300,10 @@
 					"children": [
 						{
 							"functionName": "GetReqForQuest",
-							"functionCopyPicked": true,
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "string",
+							"functionCopyPicked": true,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -21076,10 +23532,10 @@
 						},
 						{
 							"functionName": "CheckCanDoQuest",
-							"functionCopyPicked": false,
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "number",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -21204,10 +23660,10 @@
 						},
 						{
 							"functionName": "CheckItemIsInInventory",
-							"functionCopyPicked": false,
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "number",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -21337,10 +23793,10 @@
 						},
 						{
 							"functionName": "GetQuestRewardIcons",
-							"functionCopyPicked": true,
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "string",
+							"functionCopyPicked": true,
 							"functionIsAsync": false,
 							"functionParameters": [
 								{
@@ -21766,10 +24222,10 @@
 		},
 		{
 			"functionName": "HideQuest",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -22389,10 +24845,10 @@
 		},
 		{
 			"functionName": "SendReward",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -22654,10 +25110,10 @@
 		},
 		{
 			"functionName": "ShowChat",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -22920,10 +25376,10 @@
 		},
 		{
 			"functionName": "SendMessage",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -22995,27 +25451,11 @@
 			]
 		},
 		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "CraftingBook",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [],
-					"sid": 136840050635831
-				}
-			],
-			"sid": 650903883496498
-		},
-		{
 			"functionName": "ShowCraftingBook",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -23335,6 +25775,26 @@
 								}
 							],
 							"sid": 300546916233415
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 909218542707013,
+									"parameters": {
+										"value": "Sprite31.Type = \"Back\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "HidePage",
+									"sid": 560677988932752
+								}
+							],
+							"sid": 689403412185802
 						}
 					]
 				}
@@ -23342,10 +25802,10 @@
 		},
 		{
 			"functionName": "FillList",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -23610,10 +26070,10 @@
 		},
 		{
 			"functionName": "SortBook",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -24076,10 +26536,10 @@
 		},
 		{
 			"functionName": "Get_ItemInInventoryCount",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "Inventory",
 			"functionReturnType": "number",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -24163,6 +26623,139 @@
 						}
 					],
 					"sid": 173594477257773
+				}
+			]
+		},
+		{
+			"functionName": "OnItemCrafted",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Item",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 513849378448812
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 753442022462130,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 412670174746414,
+							"parameters": {
+								"value": "Item = \"WorkBench\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "UnlockAchievment",
+							"sid": 479396471127432,
+							"parameters": [
+								"\"WorkBench\""
+							]
+						}
+					],
+					"sid": 299188434490005
+				}
+			]
+		},
+		{
+			"functionName": "ClickOnFoodBtn",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": true,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 476482796955705,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "FoodBtn",
+							"sid": 293667581240126,
+							"parameters": {
+								"comparison": 0,
+								"number": "3"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 432794455910168,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-nearestfurthest",
+									"objectClass": "AdditionalBlockInterfaces",
+									"sid": 745716545563799,
+									"parameters": {
+										"which": "nearest",
+										"x": "Sprite.X",
+										"y": "Sprite.Y"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 376541494911342,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-key",
+											"objectClass": "JSON",
+											"sid": 805234129130943,
+											"parameters": {
+												"path": "\"Settings.Config.Tiles.\"&Terrain.TileAt(AdditionalBlockInterfaces.Tilex,AdditionalBlockInterfaces.Tiley)&\".Interface\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 403307340104511,
+											"parameters": {
+												"variable": "Current_Link",
+												"value": "AdditionalBlockInterfaces.Tilex&\",\"&AdditionalBlockInterfaces.Tiley"
+											}
+										},
+										{
+											"id": "call-mapped-function",
+											"objectClass": "Functions",
+											"sid": 421595431515530,
+											"parameters": {
+												"name": "\"Interfaces\"",
+												"string": "JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(AdditionalBlockInterfaces.Tilex,AdditionalBlockInterfaces.Tiley)&\".Interface\")",
+												"forward-params": "0"
+											}
+										}
+									],
+									"sid": 467771250570860
+								}
+							]
+						}
+					]
 				}
 			]
 		}

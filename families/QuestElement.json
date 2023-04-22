@@ -37,6 +37,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 361614139804455
+		},
+		{
+			"name": "Clickable",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 780362435688797
 		}
 	],
 	"behaviorTypes": [],

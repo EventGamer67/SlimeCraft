@@ -1,56 +1,56 @@
 {
 	"Quest1":{
 		"Description":"DQ1",
-		"Requirements":["Oak_Log,1","Oak_Log,100","Oak_Log,10"],
+		"Requirements":["Oak_Log,6"],
 		"Reward":["Oak_Sampling,1"]
 	},
 	"Quest2":{
-		"Description":"Quest2",
-		"Requirements":["Dirt,1"],
+		"Description":"DQ2",
+		"Requirements":["Hook,1"],
 		"Reward":["Dirt,1"]
 	},
 	"Quest3":{
-		"Description":"Quest3",
-		"Requirements":["WoodenScissors,1"],
-		"Reward":["BoneHook,1"]
+		"Description":"DQ3",
+		"Requirements":["WoodenScissors,1","Wooden_Axe,1"],
+		"Reward":["Hook,1"]
 	},
 	"Quest4":{
-		"Description":"Quest4",
+		"Description":"DQ4",
 		"Requirements":["Worm,1"],
-		"Reward":["CobblePiece,5"]
+		"Reward":["Pebble,5"]
 	},
 	"Quest5":{
-		"Description":"Quest5",
+		"Description":"DQ2",
 		"Requirements":["String,64"],
-		"Reward":["CobblePiece,5","Dirt,3"]
+		"Reward":["Pebble,5","Dirt,3"]
 	},
 	"Quest6":{
-		"Description":"Quest6",
+		"Description":"DQ3",
 		"Requirements":["Sieve,1"],
-		"Reward":["CobblePiece,2"]
+		"Reward":["Pebble,2"]
 	},
 	"Quest7":{
-		"Description":"Quest7",
+		"Description":"DQ1",
 		"Requirements":["Oak_Log,32"],
-		"Reward":["CobblePiece,4","Dirt,1"]
+		"Reward":["Pebble,4","Dirt,1"]
 	},
 	"Quest8":{
-		"Description":"Quest8",
+		"Description":"DQ1",
 		"Requirements":["Apple,12"],
 		"Reward":["Dirt,1"]
 	},
 	"Quest9":{
-		"Description":"Quest9",
+		"Description":"DQ1",
 		"Requirements":["GrassSeed,3"],
 		"Reward":["BoneMeal,6"]
 	},
 	"Quest10":{
-		"Description":"Quest10",
-		"Requirements":["CobblePiece,32"],
+		"Description":"DQ1",
+		"Requirements":["Pebble,32"],
 		"Reward":["Dirt,3"]
 	},
 	"Quest11":{
-		"Description":"Quest11",
+		"Description":"DQ1",
 		"Requirements":["Oak_Log,64"],
 		"Reward":["Oak_Log,16"]
 	}

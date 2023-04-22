@@ -3,10 +3,10 @@
 	"events": [
 		{
 			"functionName": "SpawnEnemy",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -1043,10 +1043,10 @@
 		},
 		{
 			"functionName": "HitEnemy",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -1438,10 +1438,10 @@
 		},
 		{
 			"functionName": "EnemyDropItem",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -1535,10 +1535,10 @@
 		},
 		{
 			"functionName": "SpawnDeathParticle",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -1636,10 +1636,10 @@
 				},
 				{
 					"functionName": "Add_MobRate",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -1676,10 +1676,10 @@
 				},
 				{
 					"functionName": "RandomSpawnTile",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -1952,10 +1952,10 @@
 				},
 				{
 					"functionName": "Get_ActiveMobCount",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "EnemySpawn",
 					"functionReturnType": "number",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -2088,6 +2088,14 @@
 									"sid": 336342940100485,
 									"parameters": {
 										"value": "PhaseDayClycle = \"Night\""
+									}
+								},
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 345170377288277,
+									"parameters": {
+										"value": "Enemies.Count < 15"
 									}
 								}
 							],

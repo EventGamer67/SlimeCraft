@@ -3,10 +3,10 @@
 	"events": [
 		{
 			"functionName": "LoadWorld",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -61,6 +61,14 @@
 									"sid": 751636490102713,
 									"parameters": {
 										"json": "JSON.Get(\"World.Terrain\")"
+									}
+								},
+								{
+									"id": "load",
+									"objectClass": "Tilemap_Back",
+									"sid": 901418826805894,
+									"parameters": {
+										"json": "JSON.Get(\"World.Back\")"
 									}
 								},
 								{
@@ -392,115 +400,13 @@
 				{
 					"eventType": "block",
 					"conditions": [],
-					"actions": [],
-					"sid": 655698217952219,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 213758858989964,
-									"parameters": {
-										"object": "Movement_Button",
-										"expression": "Movement_Button.Type = \"Pause\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "Movement_Button",
-									"sid": 101381681829221,
-									"parameters": {
-										"x": "ViewportRight(Movement_Button.LayerName)-(Movement_Button.Width*0.9)",
-										"y": "ViewportTop(Movement_Button.LayerName)+(Movement_Button.Height*0.9)"
-									}
-								}
-							],
-							"sid": 639769771492665
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 511936621520411,
-									"parameters": {
-										"object": "Movement_Button",
-										"expression": "Movement_Button.Type = \"Quest\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "Movement_Button",
-									"sid": 234131876248887,
-									"parameters": {
-										"x": "ViewportLeft(Movement_Button.LayerName)+(Movement_Button.Width*0.7)",
-										"y": "ViewportTop(Movement_Button.LayerName)+(Movement_Button.Height*0.7)"
-									}
-								}
-							],
-							"sid": 849215205602670
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 967814487815408,
-									"parameters": {
-										"object": "Movement_Button",
-										"expression": "Movement_Button.Type = \"Chat\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "Movement_Button",
-									"sid": 467717801605901,
-									"parameters": {
-										"x": "ViewportLeft(Movement_Button.LayerName)+(Movement_Button.Width*0.7)",
-										"y": "ViewportTop(Movement_Button.LayerName)+(Movement_Button.Height*0.7)+26"
-									}
-								}
-							],
-							"sid": 874264264304672,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 832287327065298,
-									"parameters": {
-										"object": "Movement_Button",
-										"expression": "Movement_Button.Type = \"guide\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "Movement_Button",
-									"sid": 444348708614724,
-									"parameters": {
-										"x": "ViewportRight(Movement_Button.LayerName)-(Movement_Button.Width*0.9)-(Movement_Button.w*1.2)",
-										"y": "ViewportTop(Movement_Button.LayerName)+(Movement_Button.Height*0.9)"
-									}
-								}
-							],
-							"sid": 171878366820442
+							"callFunction": "RePositionUI",
+							"sid": 524871835076827
 						}
-					]
+					],
+					"sid": 655698217952219
 				},
 				{
 					"eventType": "block",
@@ -529,10 +435,10 @@
 		},
 		{
 			"functionName": "CreateObj",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -607,10 +513,10 @@
 		},
 		{
 			"functionName": "SaveWorld",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -623,6 +529,15 @@
 					"parameters": {
 						"path": "\"World.Terrain\"",
 						"value": "Terrain.TilesJSON"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 264074000079053,
+					"parameters": {
+						"path": "\"World.Back\"",
+						"value": "Tilemap_Back.TilesJSON"
 					}
 				},
 				{
@@ -842,286 +757,6 @@
 					"sid": 364999919480092
 				}
 			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 703396765134185,
-					"parameters": {
-						"key": 53
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "SaveWorld",
-					"sid": 484938426989389
-				},
-				{
-					"id": "wait-for-signal",
-					"objectClass": "System",
-					"sid": 581555014139218,
-					"parameters": {
-						"tag": "\"saved\""
-					}
-				},
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 486436758908458,
-					"parameters": {
-						"layout": "Menu"
-					}
-				}
-			],
-			"sid": 148789803614736,
-			"disabled": true
-		},
-		{
-			"functionName": "ShowComics",
-			"functionCopyPicked": false,
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 215356831243536,
-					"parameters": {
-						"group-name": "\"Comics\"",
-						"state": "activated"
-					}
-				},
-				{
-					"callFunction": "BlackoutByTiled",
-					"sid": 486529067143879,
-					"parameters": [
-						true,
-						"\"TopUI\"",
-						"0.01",
-						"100"
-					]
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 108970841918201
-				},
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 607035048016269,
-					"parameters": {
-						"object-to-create": "Sprite34",
-						"layer": "\"TopUI\"",
-						"x": "Functions.Get_Center_X(\"TopUI\")",
-						"y": "Functions.Get_Center_Y(\"TopUI\")",
-						"create-hierarchy": true,
-						"template-name": "\"\""
-					}
-				}
-			],
-			"sid": 718724682255775,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 898932426351224,
-							"parameters": {
-								"object": "Message_Text",
-								"expression": "Message_Text.Type = \"Comics\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "typewriter-text",
-							"objectClass": "Message_Text",
-							"sid": 872748979322841,
-							"parameters": {
-								"text": "\"когда-то давным давно\"",
-								"duration": "1"
-							}
-						},
-						{
-							"id": "wait-for-signal",
-							"objectClass": "System",
-							"sid": 721830313894377,
-							"parameters": {
-								"tag": "\"ComicsNext\""
-							}
-						},
-						{
-							"id": "typewriter-text",
-							"objectClass": "Message_Text",
-							"sid": 185633765287619,
-							"parameters": {
-								"text": "\"летели летели летели\"",
-								"duration": "1"
-							}
-						},
-						{
-							"id": "wait-for-signal",
-							"objectClass": "System",
-							"sid": 716472993310094,
-							"parameters": {
-								"tag": "\"ComicsNext\""
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "Sprite34",
-							"sid": 118901288561101,
-							"parameters": {
-								"frame-number": "1"
-							}
-						},
-						{
-							"id": "typewriter-text",
-							"objectClass": "Message_Text",
-							"sid": 639020958965006,
-							"parameters": {
-								"text": "\"летели летели летели\"",
-								"duration": "1"
-							}
-						},
-						{
-							"id": "wait-for-signal",
-							"objectClass": "System",
-							"sid": 882756100012655,
-							"parameters": {
-								"tag": "\"ComicsNext\""
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "Sprite34",
-							"sid": 250870450142458,
-							"parameters": {
-								"frame-number": "2"
-							}
-						},
-						{
-							"id": "typewriter-text",
-							"objectClass": "Message_Text",
-							"sid": 466829392859313,
-							"parameters": {
-								"text": "\"летели летели летели\"",
-								"duration": "1"
-							}
-						},
-						{
-							"id": "wait-for-signal",
-							"objectClass": "System",
-							"sid": 199764267058324,
-							"parameters": {
-								"tag": "\"ComicsNext\""
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "Sprite34",
-							"sid": 976073507313163,
-							"parameters": {
-								"frame-number": "3"
-							}
-						}
-					],
-					"sid": 829507494675766
-				}
-			]
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Comics",
-			"description": "",
-			"isActiveOnStart": false,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-tap",
-							"objectClass": "Touch",
-							"sid": 366935060459948
-						}
-					],
-					"actions": [],
-					"sid": 963298815036911,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 694444433920684,
-									"parameters": {
-										"object": "Message_Text",
-										"expression": "Message_Text.Type = \"Comics\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 206014298831999,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-running-typewriter-text",
-											"objectClass": "Message_Text",
-											"sid": 655722899875269
-										}
-									],
-									"actions": [
-										{
-											"id": "typewriter-finish",
-											"objectClass": "Message_Text",
-											"sid": 819346863254507
-										}
-									],
-									"sid": 793302602477164
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 438864793672912
-										}
-									],
-									"actions": [
-										{
-											"id": "signal",
-											"objectClass": "System",
-											"sid": 512216803474430,
-											"parameters": {
-												"tag": "\"ComicsNext\""
-											}
-										}
-									],
-									"sid": 764806694859771
-								}
-							]
-						}
-					]
-				}
-			],
-			"sid": 346784001181076
 		}
 	],
 	"sid": 290609745636765

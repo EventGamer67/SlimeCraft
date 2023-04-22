@@ -3,10 +3,10 @@
 	"events": [
 		{
 			"functionName": "ConnectToChat",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -16,6 +16,7 @@
 					"id": "player-set-name",
 					"objectClass": "GameScore",
 					"sid": 292066566056956,
+					"disabled": true,
 					"parameters": {
 						"name": "\"Tester\""
 					}
@@ -328,10 +329,10 @@
 		},
 		{
 			"functionName": "AddMessage",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{

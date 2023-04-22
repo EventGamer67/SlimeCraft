@@ -33,14 +33,14 @@
 	],
 	"effectTypes": [],
 	"image": {
-		"width": 512,
+		"width": 2048,
 		"height": 2048,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 7937243,
+		"imageSpriteId": 4590432,
 		"useCollisionPoly": true
 	}
 }

@@ -3,10 +3,10 @@
 	"events": [
 		{
 			"functionName": "ShowRewardedVideo",
-			"functionCopyPicked": false,
 			"functionDescription": "",
-			"functionCategory": "",
+			"functionCategory": "ADS",
 			"functionReturnType": "number",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -133,12 +133,13 @@
 							"actions": [
 								{
 									"callFunction": "Message",
-									"sid": 999232545448238,
+									"sid": 354970166932901,
 									"parameters": [
-										"\"Apple\"",
-										"\"Apple\"",
+										"\"Warning\"",
+										"\"Warning\"",
 										"\"Ads\"",
-										"\"UI\""
+										"\"UI\"",
+										"\"\""
 									]
 								}
 							],
@@ -146,10 +147,10 @@
 						},
 						{
 							"functionName": "ShowFullScreen",
-							"functionCopyPicked": false,
 							"functionDescription": "",
 							"functionCategory": "ADS",
 							"functionReturnType": "none",
+							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [],
 							"eventType": "function-block",
@@ -222,6 +223,118 @@
 				}
 			],
 			"sid": 220841350385631
+		},
+		{
+			"functionName": "UnlockAchievment",
+			"functionDescription": "",
+			"functionCategory": "GameScore",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Tag",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 269969392950804
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 943835862751687,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "achievements-is-unlocked",
+							"objectClass": "GameScore",
+							"sid": 153718862385223,
+							"parameters": {
+								"id-or-tag": "Tag"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "achievements-unlock",
+							"objectClass": "GameScore",
+							"sid": 511197383170578,
+							"parameters": {
+								"id-or-tag": "Tag"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 592457004466824
+						}
+					],
+					"sid": 713976646780329
+				}
+			]
+		},
+		{
+			"functionName": "ShowLeaderBoard",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "leaderboard-scoped-open",
+					"objectClass": "GameScore",
+					"sid": 519864280062456,
+					"parameters": {
+						"id-or-tag": "\"Experience\"",
+						"variant": "\"Experience\"",
+						"order": "desc",
+						"limit": "10",
+						"with-me": "no",
+						"include-fields": "\"Experience\"",
+						"display-fields": "\"Experience\""
+					}
+				}
+			],
+			"sid": 831661245306802
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Experience",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "addExperience",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "value",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 324033829103901
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 652303495174726
+				}
+			],
+			"sid": 375208126462906
 		}
 	],
 	"sid": 881504395585234

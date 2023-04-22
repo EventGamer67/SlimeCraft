@@ -1,0 +1,1131 @@
+{
+	"name": "Comics_es",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "AnimatedTriggers"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Functions_es"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 630579279602049
+				}
+			],
+			"actions": [
+				{
+					"id": "set-image-offset-x",
+					"objectClass": "TiledBackground7",
+					"sid": 230962819772173,
+					"parameters": {
+						"offset-x": "Self.ImageOffsetX-1"
+					}
+				},
+				{
+					"id": "set-image-offset-y",
+					"objectClass": "TiledBackground7",
+					"sid": 897706772616017,
+					"parameters": {
+						"offset-y": "Self.ImageOffsetY-0.5"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "Sun",
+					"sid": 848583225710537,
+					"parameters": {
+						"x": "326+sin(tickcount)*5",
+						"y": "40+sin(tickcount*1.12)*8"
+					}
+				}
+			],
+			"sid": 452801576131036
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 835626336422137,
+					"parameters": {
+						"interval-seconds": "random(0.3,1)"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 135216804546904,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 226382464279630,
+							"parameters": {
+								"object-to-create": "Asteroid",
+								"layer": "\"Layer 1\"",
+								"x": "Sprite33.X-cos(Sprite33.Angle+90)*500",
+								"y": "Sprite33.Y-sin(Sprite33.Angle+90)*500",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "move-at-angle",
+							"objectClass": "Asteroid",
+							"sid": 567736601252424,
+							"parameters": {
+								"angle": "Sprite33.Angle",
+								"distance": "random(-100,100)"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Asteroid",
+							"sid": 311074327612280,
+							"parameters": {
+								"scale": "random(0.4,1.2)"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "Asteroid",
+							"sid": 888158868934397,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "Self.X+cos(Sprite33.Angle+90)*1000",
+								"end-y": "Self.Y+sin(Sprite33.Angle+90)*1000",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "yes",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Asteroid",
+							"sid": 697499299341626,
+							"parameters": {
+								"angle": "random(360)"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Asteroid",
+							"sid": 643296905356459,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetAngle",
+								"end-value": "random(360)",
+								"time": "random(1,5)",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 350319765812647
+				}
+			]
+		},
+		{
+			"functionName": "ShowComics",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 215356831243536,
+					"parameters": {
+						"group-name": "\"Comics\"",
+						"state": "activated"
+					}
+				},
+				{
+					"callFunction": "BlackoutByTiled",
+					"sid": 486529067143879,
+					"parameters": [
+						true,
+						"\"TopUI\"",
+						"0.01",
+						"100"
+					]
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 108970841918201
+				}
+			],
+			"sid": 718724682255775,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 898932426351224,
+							"parameters": {
+								"object": "Message_Text",
+								"expression": "Message_Text.Type = \"Comics\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "typewriter-text",
+							"objectClass": "Message_Text",
+							"sid": 485352792756107,
+							"parameters": {
+								"text": "\"когда-то давным давно... в квадратном космосе\"",
+								"duration": "1"
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 721830313894377,
+							"parameters": {
+								"tag": "\"ComicsNext\""
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "Message_Text",
+							"sid": 279798664475395,
+							"parameters": {
+								"text": "\"летел квадратный человечик\"",
+								"duration": "1"
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 716472993310094,
+							"parameters": {
+								"tag": "\"ComicsNext\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 872716552672287,
+							"parameters": {
+								"object-to-create": "InventoryBlank",
+								"layer": "\"Text\"",
+								"x": "Functions.Get_Center_X(\"Text\")",
+								"y": "Functions.Get_Center_Y(\"Text\")",
+								"create-hierarchy": true,
+								"template-name": "\"ChooseName\""
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "InventoryBlank",
+							"sid": 311307343163856,
+							"parameters": {
+								"width": "Self.w*0.6",
+								"height": "Self.h*0.6"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "InventoryBlank",
+							"sid": 257486876812814,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "size",
+								"end-x": "InventoryBlank.w",
+								"end-y": "InventoryBlank.h",
+								"time": "0.3",
+								"ease": "easeoutback",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 578675067334913,
+							"parameters": {
+								"tag": "\"Ok\""
+							}
+						}
+					],
+					"sid": 829507494675766,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-all",
+									"objectClass": "System",
+									"sid": 924607601159657,
+									"parameters": {
+										"object": "Message_Text"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 627688738754186,
+									"parameters": {
+										"object": "Message_Text",
+										"expression": "Message_Text.Type = \"Comics\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "typewriter-text",
+									"objectClass": "Message_Text",
+									"sid": 234435889982105,
+									"parameters": {
+										"text": "\"летел он по специальной миссии\"",
+										"duration": "1"
+									}
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 128083268253498,
+									"parameters": {
+										"tag": "\"ComicsNext\""
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Message_Text",
+									"sid": 748941640375321,
+									"parameters": {
+										"text": "\"но вдруг...\"",
+										"duration": "1"
+									}
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 417457999488175,
+									"parameters": {
+										"tag": "\"ComicsNext\""
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 578302426717215,
+									"parameters": {
+										"object-to-create": "Asteroid",
+										"layer": "\"Layer 1\"",
+										"x": "Sprite33.X-cos(Sprite33.Angle+90)*500",
+										"y": "Sprite33.Y-sin(Sprite33.Angle+90)*500",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "Asteroid",
+									"sid": 340971822807648,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "position",
+										"end-x": "Sprite33.X",
+										"end-y": "Sprite33.Y",
+										"time": "1",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 812997020630576
+								},
+								{
+									"id": "tween-value",
+									"objectClass": "GameManager",
+									"sid": 102166014131000,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"Blackout\"",
+										"start-value": "0",
+										"end-value": "100",
+										"time": "0.01",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "typewriter-text",
+									"objectClass": "Message_Text",
+									"sid": 860414735502356,
+									"parameters": {
+										"text": "\"Через пару часов\"",
+										"duration": "3"
+									}
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 888580428798328,
+									"parameters": {
+										"tag": "\"ComicsNext\""
+									}
+								}
+							],
+							"sid": 987347288919488,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "achievements-is-unlocked",
+											"objectClass": "GameScore",
+											"sid": 979858701726282,
+											"parameters": {
+												"id-or-tag": "\"Crush\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 268024694337571,
+											"parameters": {
+												"layout": "Main"
+											}
+										}
+									],
+									"sid": 654867143206692
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 656871064413655
+										}
+									],
+									"actions": [
+										{
+											"id": "achievements-unlock",
+											"objectClass": "GameScore",
+											"sid": 753277416564346,
+											"parameters": {
+												"id-or-tag": "\"Crush\""
+											}
+										},
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 891567111818314,
+											"parameters": {
+												"layout": "Main"
+											}
+										}
+									],
+									"sid": 240095481436727
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Comics",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap",
+							"objectClass": "Touch",
+							"sid": 366935060459948
+						}
+					],
+					"actions": [],
+					"sid": 963298815036911,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 694444433920684,
+									"parameters": {
+										"object": "Message_Text",
+										"expression": "Message_Text.Type = \"Comics\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 206014298831999,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-running-typewriter-text",
+											"objectClass": "Message_Text",
+											"sid": 655722899875269
+										}
+									],
+									"actions": [
+										{
+											"id": "typewriter-finish",
+											"objectClass": "Message_Text",
+											"sid": 819346863254507
+										}
+									],
+									"sid": 793302602477164
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 438864793672912
+										}
+									],
+									"actions": [
+										{
+											"id": "signal",
+											"objectClass": "System",
+											"sid": 512216803474430,
+											"parameters": {
+												"tag": "\"ComicsNext\""
+											}
+										}
+									],
+									"sid": 764806694859771
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 346784001181076
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 474883506708830
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "TiledBackground7",
+					"sid": 297907593696890,
+					"parameters": {
+						"x": "ViewportLeft(\"Layer 1\")",
+						"y": "ViewportTop(\"Layer 1\")"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "TiledBackground7",
+					"sid": 931201907577612,
+					"parameters": {
+						"width": "abs(ViewportLeft(\"Layer 1\"))+ViewportRight(\"Layer 1\")",
+						"height": "abs(ViewportTop(\"Layer 1\"))+ViewportBottom(\"Layer 1\")"
+					}
+				},
+				{
+					"id": "tween-value",
+					"objectClass": "GameManager",
+					"sid": 192348931796547,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"Blackout\"",
+						"start-value": "100",
+						"end-value": "0",
+						"time": "0.3",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 914361523396027
+				},
+				{
+					"callFunction": "ShowComics",
+					"sid": 736743810382730
+				}
+			],
+			"sid": 121830582436915
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-playing",
+					"objectClass": "GameManager",
+					"sid": 276913333548244,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"Blackout\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-opacity",
+					"objectClass": "System",
+					"sid": 499974229910158,
+					"parameters": {
+						"layer": "\"Blackout\"",
+						"opacity": "GameManager.Tween.Value(\"Blackout\")"
+					}
+				}
+			],
+			"sid": 779354347507812
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-focused",
+					"objectClass": "TextInput",
+					"sid": 669209828419677
+				}
+			],
+			"actions": [],
+			"sid": 394390446658686,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 560725195533141,
+							"parameters": {
+								"object": "Message_Text",
+								"expression": "Message_Text.Type = \"NewName\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Message_Text",
+							"sid": 971845681650899,
+							"parameters": {
+								"text": "TextInput.Text"
+							}
+						}
+					],
+					"sid": 837977701438458
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 605470100956377,
+							"parameters": {
+								"object": "Message_Text",
+								"expression": "Message_Text.Type = \"NameLen\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Message_Text",
+							"sid": 813121646046647,
+							"parameters": {
+								"text": "len(TextInput.Text)&\"/8\""
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "Message_Text",
+							"sid": 878146908529941,
+							"parameters": {
+								"color": "len(TextInput.Text) > 8 ? rgbEx(100,50,50) : rgbEx(100,100,100)"
+							}
+						}
+					],
+					"sid": 818544238107669
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-end",
+					"objectClass": "Touch",
+					"sid": 351322932858028
+				}
+			],
+			"actions": [],
+			"sid": 217475208441875,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 534252417391301,
+							"parameters": {
+								"object": "AdvBtns",
+								"expression": "AdvBtns.touched = 1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 975253949787359,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 941861234728561,
+									"parameters": {
+										"value": "Functions.CheckCensoredText(TextInput.Text) = 0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 293419753885055,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 782320564274643,
+											"parameters": {
+												"value": "len(TextInput.Text) > 8"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "player-set-name",
+											"objectClass": "GameScore",
+											"sid": 215222988967519,
+											"parameters": {
+												"name": "TextInput.Text"
+											}
+										}
+									],
+									"sid": 174155557595559,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 169268977567305,
+													"parameters": {
+														"value": "len(TextInput.Text) > 2"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 675741356136255,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-parent",
+															"objectClass": "AdvBtns",
+															"sid": 607591408387538,
+															"parameters": {
+																"parent": "InventoryBlank",
+																"which": "own"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "tween-two-properties",
+															"objectClass": "InventoryBlank",
+															"sid": 794507430890193,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"\"",
+																"property": "size",
+																"end-x": "Self.w*0.6",
+																"end-y": "Self.h*0.6",
+																"time": "0.2",
+																"ease": "easeinback",
+																"destroy-on-complete": "yes",
+																"loop": "no",
+																"ping-pong": "no",
+																"repeat-count": "1"
+															}
+														},
+														{
+															"id": "set-unfocused",
+															"objectClass": "TextInput",
+															"sid": 175933742595245
+														},
+														{
+															"id": "signal",
+															"objectClass": "System",
+															"sid": 696719861910130,
+															"parameters": {
+																"tag": "\"Ok\""
+															}
+														}
+													],
+													"sid": 593232287071871
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 121151720717290
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "Message",
+													"sid": 432720554837819,
+													"parameters": [
+														"\"Warning\"",
+														"\"ToLowSymb\"",
+														"\"ToLowSymb\"",
+														"\"Text\"",
+														"\"\""
+													]
+												}
+											],
+											"sid": 837886049761793
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 324074245116451
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Message",
+											"sid": 554512289420897,
+											"parameters": [
+												"\"Warning\"",
+												"\"ToMuchSymb\"",
+												"\"ToMuchSymb\"",
+												"\"Text\"",
+												"\"\""
+											]
+										}
+									],
+									"sid": 769448104672559
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 683103911916697
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Message",
+									"sid": 697728216687275,
+									"parameters": [
+										"\"Warning\"",
+										"\"Censored\"",
+										"\"Censored\"",
+										"\"Text\"",
+										"\"\""
+									]
+								}
+							],
+							"sid": 191152297930784
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Message_Text",
+					"sid": 382521454081309
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Message_Text",
+					"sid": 468194802065546,
+					"parameters": {
+						"instance-variable": "Translatable"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "Message_Text",
+					"sid": 707429269183373,
+					"parameters": {
+						"text": "Functions.Get_LanguageText(Self.Type)"
+					}
+				}
+			],
+			"sid": 874292997667232,
+			"disabled": true
+		},
+		{
+			"functionName": "CheckCensoredText",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "text",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 472276720594105
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 829333086772890,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "found",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 576637965821966
+				},
+				{
+					"eventType": "variable",
+					"name": "temp",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 446531812089330
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 631561031202634,
+							"parameters": {
+								"variable": "temp",
+								"value": "lowercase(trim(text))"
+							}
+						}
+					],
+					"sid": 821683747271725,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "JSON",
+									"sid": 377124405270432,
+									"parameters": {
+										"path": "\"Censored\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 584597381869217,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 107201153556884,
+											"parameters": {
+												"value": "RegexMatchCount(temp,JSON.CurrentValue,\"\") > 0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 482771948851700,
+											"parameters": {
+												"variable": "found",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 560621577918258
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 904973477209660,
+									"parameters": {
+										"variable": "found"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 536151003686239,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "JSON",
+											"sid": 332172184352055,
+											"parameters": {
+												"path": "\"Censored2\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 831506389297228,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 765204423926903,
+													"parameters": {
+														"value": "RegexMatchCount(temp,JSON.CurrentValue,\"\") > 0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 234898453907147,
+													"parameters": {
+														"variable": "found",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 878896287811120
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 676013430009077,
+									"parameters": {
+										"value": "found"
+									}
+								}
+							],
+							"sid": 895736353206729
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 199728914360955
+}

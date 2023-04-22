@@ -194,6 +194,19 @@
 					"parameters": {
 						"tag": "\"WorldsLoaded\""
 					}
+				},
+				{
+					"id": "set-json",
+					"objectClass": "JSON",
+					"sid": 436825470314987,
+					"parameters": {
+						"path": "\"Censored\"",
+						"json": "GameScore.VariablesCurValue"
+					}
+				},
+				{
+					"callFunction": "LoadGlobalVars",
+					"sid": 445619398854996
 				}
 			],
 			"sid": 815301384338360,
@@ -454,10 +467,10 @@
 			"children": [
 				{
 					"functionName": "defineInput",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": true,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -578,6 +591,85 @@
 				}
 			],
 			"sid": 556380002151223
+		},
+		{
+			"functionName": "LoadGlobalVars",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 716437898463544,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "variables-each-variable",
+							"objectClass": "GameScore",
+							"sid": 371121721499188
+						}
+					],
+					"actions": [],
+					"sid": 917849392876461,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 590158211780258,
+									"parameters": {
+										"value": "GameScore.VariablesCurKey = \"Censored\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-json",
+									"objectClass": "JSON",
+									"sid": 928824315053428,
+									"parameters": {
+										"path": "\"Censored\"",
+										"json": "GameScore.VariablesCurValue"
+									}
+								}
+							],
+							"sid": 934711713652026
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 665001460051960,
+									"parameters": {
+										"value": "GameScore.VariablesCurKey = \"Censored2\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-json",
+									"objectClass": "JSON",
+									"sid": 670115184918751,
+									"parameters": {
+										"path": "\"Censored2\"",
+										"json": "GameScore.VariablesCurValue"
+									}
+								}
+							],
+							"sid": 708230994370196
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 472532338784313

@@ -1,0 +1,26 @@
+{
+	"name": "AdditionalBlockInterfaces",
+	"plugin-id": "Sprite",
+	"sid": 131360218506509,
+	"instanceVariables": [
+		{
+			"name": "Tilex",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 772417339283196
+		},
+		{
+			"name": "Tiley",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 904824145131095
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"WorkBenchTrigger"
+	]
+}
