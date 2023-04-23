@@ -3,7 +3,7 @@
 	"savedWithRelease": 33800,
 	"name": "Arrow_Rain",
 	"runtime": "c3",
-	"useWorker": "auto",
+	"useWorker": "dom",
 	"bundleAddons": false,
 	"usedAddons": [
 		{
@@ -308,8 +308,6 @@
 			"Movement_Button",
 			"Sprite2",
 			"TiledBackground3",
-			"Slider",
-			"Slider_Point",
 			"Sprite7",
 			"Obstacle",
 			"Ladder",

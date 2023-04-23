@@ -386,28 +386,36 @@
 								},
 								{
 									"eventType": "block",
-									"conditions": [
+									"conditions": [],
+									"actions": [],
+									"sid": 532156758674408,
+									"children": [
 										{
-											"id": "pick-children",
-											"objectClass": "Inventory_Item",
-											"sid": 548438768808170,
-											"parameters": {
-												"child": "Text",
-												"which": "own"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "Inventory_Item",
+													"sid": 184471641214158,
+													"parameters": {
+														"child": "Message_Text",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "Message_Text",
+													"sid": 943712242138426,
+													"parameters": {
+														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
+													}
+												}
+											],
+											"sid": 371952532575187
 										}
-									],
-									"actions": [
-										{
-											"id": "set-text",
-											"objectClass": "Text",
-											"sid": 762031225886944,
-											"parameters": {
-												"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
-											}
-										}
-									],
-									"sid": 810974984798942
+									]
 								}
 							]
 						}
@@ -3072,7 +3080,16 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 790090506122457,
+							"parameters": {
+								"seconds": "0"
+							}
+						}
+					],
 					"sid": 342364189506100,
 					"children": [
 						{
@@ -3335,101 +3352,118 @@
 																},
 																{
 																	"eventType": "block",
-																	"conditions": [
-																		{
-																			"id": "pick-by-comparison",
-																			"objectClass": "System",
-																			"sid": 200881515980258,
-																			"parameters": {
-																				"object": "Inventory_Item",
-																				"expression": "Inventory_Item.PosX",
-																				"comparison": 0,
-																				"value": "loopindex"
-																			}
-																		}
-																	],
+																	"conditions": [],
 																	"actions": [
 																		{
-																			"id": "set-instvar-value",
-																			"objectClass": "Inventory_Item",
-																			"sid": 108717437858566,
+																			"id": "wait",
+																			"objectClass": "System",
+																			"sid": 710764301333308,
 																			"parameters": {
-																				"instance-variable": "Count_",
-																				"value": "Inventory.At(loopindex,1)"
+																				"seconds": "0"
 																			}
 																		}
 																	],
-																	"sid": 864295793775506,
+																	"sid": 426429436867711,
 																	"children": [
 																		{
 																			"eventType": "block",
 																			"conditions": [
 																				{
-																					"id": "is-playing",
-																					"objectClass": "Inventory_Item",
-																					"sid": 603834925220434,
-																					"behaviorType": "Tween",
+																					"id": "pick-by-comparison",
+																					"objectClass": "System",
+																					"sid": 125633266312030,
 																					"parameters": {
-																						"tags": "\"1\""
-																					},
-																					"isInverted": true
+																						"object": "Inventory_Item",
+																						"expression": "Inventory_Item.PosX",
+																						"comparison": 0,
+																						"value": "loopindex"
+																					}
 																				}
 																			],
 																			"actions": [
 																				{
-																					"id": "stop-tweens",
+																					"id": "set-instvar-value",
 																					"objectClass": "Inventory_Item",
-																					"sid": 129788729040509,
-																					"behaviorType": "Tween",
+																					"sid": 408341591870786,
 																					"parameters": {
-																						"tags": "\"1\""
+																						"instance-variable": "Count_",
+																						"value": "Inventory.At(loopindex,1)"
 																					}
+																				}
+																			],
+																			"sid": 128657366230431,
+																			"children": [
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "pick-children",
+																							"objectClass": "Inventory_Item",
+																							"sid": 676177183045815,
+																							"parameters": {
+																								"child": "Message_Text",
+																								"which": "own"
+																							}
+																						}
+																					],
+																					"actions": [
+																						{
+																							"id": "set-text",
+																							"objectClass": "Message_Text",
+																							"sid": 390754177374244,
+																							"parameters": {
+																								"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
+																							}
+																						}
+																					],
+																					"sid": 817499783410423
 																				},
 																				{
-																					"id": "tween-two-properties",
-																					"objectClass": "Inventory_Item",
-																					"sid": 373335639838123,
-																					"behaviorType": "Tween",
-																					"parameters": {
-																						"tags": "\"1\"",
-																						"property": "size",
-																						"end-x": "20",
-																						"end-y": "20",
-																						"time": "0.1",
-																						"ease": "easeinoutbounce",
-																						"destroy-on-complete": "no",
-																						"loop": "no",
-																						"ping-pong": "yes",
-																						"repeat-count": "1"
-																					}
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "is-playing",
+																							"objectClass": "Inventory_Item",
+																							"sid": 553928318918805,
+																							"behaviorType": "Tween",
+																							"parameters": {
+																								"tags": "\"1\""
+																							},
+																							"isInverted": true
+																						}
+																					],
+																					"actions": [
+																						{
+																							"id": "stop-tweens",
+																							"objectClass": "Inventory_Item",
+																							"sid": 448446730394148,
+																							"behaviorType": "Tween",
+																							"parameters": {
+																								"tags": "\"1\""
+																							}
+																						},
+																						{
+																							"id": "tween-two-properties",
+																							"objectClass": "Inventory_Item",
+																							"sid": 168586503455773,
+																							"behaviorType": "Tween",
+																							"parameters": {
+																								"tags": "\"1\"",
+																								"property": "size",
+																								"end-x": "20",
+																								"end-y": "20",
+																								"time": "0.1",
+																								"ease": "easeinoutbounce",
+																								"destroy-on-complete": "no",
+																								"loop": "no",
+																								"ping-pong": "yes",
+																								"repeat-count": "1"
+																							}
+																						}
+																					],
+																					"sid": 934734383169578
 																				}
-																			],
-																			"sid": 862517896024263
-																		},
-																		{
-																			"eventType": "block",
-																			"conditions": [
-																				{
-																					"id": "pick-children",
-																					"objectClass": "Inventory_Item",
-																					"sid": 411048191286657,
-																					"parameters": {
-																						"child": "Text",
-																						"which": "own"
-																					}
-																				}
-																			],
-																			"actions": [
-																				{
-																					"id": "set-text",
-																					"objectClass": "Text",
-																					"sid": 751968182545424,
-																					"parameters": {
-																						"text": "Inventory_Item.Count_"
-																					}
-																				}
-																			],
-																			"sid": 406282815925172
+																			]
 																		}
 																	]
 																}
@@ -3542,12 +3576,12 @@
 																		},
 																		{
 																			"id": "move-to-top",
-																			"objectClass": "Text",
+																			"objectClass": "Message_Text",
 																			"sid": 467182785615180
 																		},
 																		{
 																			"id": "set-instvar-value",
-																			"objectClass": "Text",
+																			"objectClass": "Message_Text",
 																			"sid": 969553452180516,
 																			"parameters": {
 																				"instance-variable": "Type",
@@ -3633,6 +3667,53 @@
 																			"eventType": "block",
 																			"conditions": [
 																				{
+																					"id": "has-key",
+																					"objectClass": "JSON",
+																					"sid": 328140541684967,
+																					"parameters": {
+																						"path": "\"Settings.Config.Glossary.\"&Item&\".MaxStack\""
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-boolean-instvar",
+																					"objectClass": "Inventory_Item",
+																					"sid": 219578652237583,
+																					"parameters": {
+																						"instance-variable": "Stackable",
+																						"value": "true"
+																					}
+																				}
+																			],
+																			"sid": 607538414910081
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "else",
+																					"objectClass": "System",
+																					"sid": 625703930117184
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-boolean-instvar",
+																					"objectClass": "Inventory_Item",
+																					"sid": 999872360644094,
+																					"parameters": {
+																						"instance-variable": "Stackable",
+																						"value": "false"
+																					}
+																				}
+																			],
+																			"sid": 845452927661326
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
 																					"id": "is-playing",
 																					"objectClass": "Inventory_Item",
 																					"sid": 877378893092888,
@@ -3678,58 +3759,11 @@
 																			"eventType": "block",
 																			"conditions": [
 																				{
-																					"id": "has-key",
-																					"objectClass": "JSON",
-																					"sid": 759117369037787,
-																					"parameters": {
-																						"path": "\"Settings.Config.Glossary.\"&Item&\".MaxStack\""
-																					}
-																				}
-																			],
-																			"actions": [
-																				{
-																					"id": "set-boolean-instvar",
-																					"objectClass": "Inventory_Item",
-																					"sid": 206541359457434,
-																					"parameters": {
-																						"instance-variable": "Stackable",
-																						"value": "true"
-																					}
-																				}
-																			],
-																			"sid": 704369104998130
-																		},
-																		{
-																			"eventType": "block",
-																			"conditions": [
-																				{
-																					"id": "else",
-																					"objectClass": "System",
-																					"sid": 188935903019624
-																				}
-																			],
-																			"actions": [
-																				{
-																					"id": "set-boolean-instvar",
-																					"objectClass": "Inventory_Item",
-																					"sid": 171944510878432,
-																					"parameters": {
-																						"instance-variable": "Stackable",
-																						"value": "false"
-																					}
-																				}
-																			],
-																			"sid": 941313277433849
-																		},
-																		{
-																			"eventType": "block",
-																			"conditions": [
-																				{
 																					"id": "pick-children",
 																					"objectClass": "Inventory_Item",
 																					"sid": 115642146883264,
 																					"parameters": {
-																						"child": "Text",
+																						"child": "Message_Text",
 																						"which": "own"
 																					}
 																				}
@@ -3737,10 +3771,10 @@
 																			"actions": [
 																				{
 																					"id": "set-text",
-																					"objectClass": "Text",
-																					"sid": 730230821309611,
+																					"objectClass": "Message_Text",
+																					"sid": 410805371816250,
 																					"parameters": {
-																						"text": "Inventory_Item.Count_"
+																						"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
 																					}
 																				}
 																			],
@@ -3759,14 +3793,6 @@
 																				}
 																			],
 																			"actions": [
-																				{
-																					"id": "wait",
-																					"objectClass": "System",
-																					"sid": 410867437093174,
-																					"parameters": {
-																						"seconds": "0"
-																					}
-																				},
 																				{
 																					"callFunction": "SetCurrentSlot",
 																					"sid": 470775082166578,
@@ -3994,12 +4020,12 @@
 																},
 																{
 																	"id": "move-to-top",
-																	"objectClass": "Text",
+																	"objectClass": "Message_Text",
 																	"sid": 904882497377362
 																},
 																{
 																	"id": "set-instvar-value",
-																	"objectClass": "Text",
+																	"objectClass": "Message_Text",
 																	"sid": 869655004264079,
 																	"parameters": {
 																		"instance-variable": "Type",
@@ -4181,7 +4207,7 @@
 																			"objectClass": "Inventory_Item",
 																			"sid": 525628515714390,
 																			"parameters": {
-																				"child": "Text",
+																				"child": "Message_Text",
 																				"which": "own"
 																			}
 																		}
@@ -4189,10 +4215,10 @@
 																	"actions": [
 																		{
 																			"id": "set-text",
-																			"objectClass": "Text",
-																			"sid": 152247573517652,
+																			"objectClass": "Message_Text",
+																			"sid": 318772677243494,
 																			"parameters": {
-																				"text": "Inventory_Item.Count_"
+																				"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
 																			}
 																		}
 																	],
@@ -4467,14 +4493,6 @@
 								"layer": "\"Interfaces\""
 							},
 							"isInverted": true
-						},
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "Drop_Item",
-							"sid": 493622078535275,
-							"parameters": {
-								"instance-variable": "Pickable"
-							}
 						}
 					],
 					"actions": [],
@@ -4484,49 +4502,66 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "evaluate-expression",
-									"objectClass": "System",
-									"sid": 201903249489270,
-									"parameters": {
-										"value": "Functions.CheckInventoryFullByItem(Drop_Item.Type,Drop_Item.Count_) = 0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "tween-two-properties",
+									"id": "is-boolean-instance-variable-set",
 									"objectClass": "Drop_Item",
-									"sid": 932513308539611,
-									"behaviorType": "Tween",
+									"sid": 640026348421320,
 									"parameters": {
-										"tags": "\"\"",
-										"property": "position",
-										"end-x": "Sprite.x",
-										"end-y": "Sprite.y",
-										"time": "0.1+random(0.01)",
-										"ease": "noease",
-										"destroy-on-complete": "yes",
-										"loop": "no",
-										"ping-pong": "no",
-										"repeat-count": "1"
+										"instance-variable": "Pickable"
 									}
-								},
-								{
-									"id": "wait-for-previous-actions",
-									"objectClass": "System",
-									"sid": 388881100865259
-								},
-								{
-									"callFunction": "Get_Item",
-									"sid": 369182735009398,
-									"parameters": [
-										"Drop_Item.Type",
-										"Drop_Item.Count_",
-										true
-									]
 								}
 							],
-							"sid": 810151159019112
+							"actions": [],
+							"sid": 117413515879019,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 597838076833393,
+											"parameters": {
+												"value": "Functions.CheckInventoryFullByItem(Drop_Item.Type,Drop_Item.Count_) = 0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-two-properties",
+											"objectClass": "Drop_Item",
+											"sid": 611716373789917,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "position",
+												"end-x": "Sprite.x",
+												"end-y": "Sprite.y",
+												"time": "0.1+random(0.01)",
+												"ease": "noease",
+												"destroy-on-complete": "yes",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										},
+										{
+											"id": "wait-for-previous-actions",
+											"objectClass": "System",
+											"sid": 812041142935246
+										},
+										{
+											"callFunction": "Get_Item",
+											"sid": 615167836684012,
+											"parameters": [
+												"Drop_Item.Type",
+												"Drop_Item.Count_",
+												true
+											]
+										}
+									],
+									"sid": 552111247530451
+								}
+							]
 						}
 					]
 				},
@@ -21086,6 +21121,44 @@
 				}
 			],
 			"sid": 221461576871684
+		},
+		{
+			"functionName": "GetTileName",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "string",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Tile",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 107569448228980
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 384066718149073,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 533785288689820,
+							"parameters": {
+								"value": "JSON.Get(\"Settings.Config.Tiles.\"&Tile&\".Type\")"
+							}
+						}
+					],
+					"sid": 722627023167681
+				}
+			]
 		}
 	],
 	"sid": 270941678251427

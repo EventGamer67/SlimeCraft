@@ -233,6 +233,54 @@
 				"Count": 59
 			}
 		},
+		"Wooden_Axe": {
+			"Type": "Crafting_Shapeless",
+			"Pattern": [
+				"0AA",
+				"0BA",
+				"0B0"
+			],
+			"Key": {
+				"A": "Oak_Planks",
+				"B": "Wood_Stick"
+			},
+			"Result": {
+				"Item": "Wooden_Axe",
+				"Count": 59
+			}
+		},
+		"Stone_Axe": {
+			"Type": "Crafting_Shapeless",
+			"Pattern": [
+				"0AA",
+				"0BA",
+				"0B0"
+			],
+			"Key": {
+				"A": "Cobblestone",
+				"B": "Wood_Stick"
+			},
+			"Result": {
+				"Item": "Stone_Axe",
+				"Count": 59
+			}
+		},
+		"Crusher": {
+			"Type": "Crafting_Shapeless",
+			"Pattern": [
+				"AAA",
+				"ABA",
+				"0B0"
+			],
+			"Key": {
+				"A": "Oak_Planks",
+				"B": "Wood_Stick"
+			},
+			"Result": {
+				"Item": "Crusher",
+				"Count": 59
+			}
+		},
 		"Stone_Pickaxe": {
 			"Type": "Crafting_Shapeless",
 			"Pattern": [

@@ -539,115 +539,27 @@
 												"comparison": 0,
 												"value": "\"Axe\""
 											}
-										},
-										{
-											"id": "is-any-playing",
-											"objectClass": "Slider_Point",
-											"sid": 690173029445548,
-											"behaviorType": "Tween",
-											"isInverted": true
 										}
 									],
 									"actions": [
 										{
-											"id": "tween-one-property",
-											"objectClass": "Slider_Point",
-											"sid": 670245496047628,
-											"behaviorType": "Tween",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "offsetAngle",
-												"end-value": "290",
-												"time": "0.2",
-												"ease": "easeinback",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
-											}
-										},
-										{
-											"id": "set-active",
-											"objectClass": "Slider_Point",
-											"sid": 412269117885537,
-											"behaviorType": "Sine",
-											"parameters": {
-												"state": "inactive"
-											}
-										},
-										{
 											"id": "wait-for-previous-actions",
 											"objectClass": "System",
 											"sid": 681235823715550
-										},
-										{
-											"id": "set-active",
-											"objectClass": "Slider_Point",
-											"sid": 437178720958212,
-											"behaviorType": "Sine",
-											"parameters": {
-												"state": "active"
-											}
-										},
-										{
-											"id": "tween-one-property",
-											"objectClass": "Slider_Point",
-											"sid": 788572420463503,
-											"behaviorType": "Tween",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "offsetAngle",
-												"end-value": "0",
-												"time": "0.2",
-												"ease": "easeoutcubic",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
-											}
 										}
 									],
 									"sid": 907334264460637,
 									"children": [
 										{
 											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-between-values",
-													"objectClass": "System",
-													"sid": 252162600756961,
-													"parameters": {
-														"value": "Slider_Point.Y",
-														"lower-bound": "Sprite7.BBoxTop",
-														"upper-bound": "Sprite7.BBoxBottom"
-													}
-												}
-											],
+											"conditions": [],
 											"actions": [
-												{
-													"id": "set-period",
-													"objectClass": "Slider_Point",
-													"sid": 212121032902091,
-													"behaviorType": "Sine",
-													"parameters": {
-														"period": "random(2,8)"
-													}
-												},
 												{
 													"id": "set-height",
 													"objectClass": "Sprite7",
 													"sid": 532476964698361,
 													"parameters": {
 														"height": "random(4,10)"
-													}
-												},
-												{
-													"id": "set-position",
-													"objectClass": "Sprite7",
-													"sid": 333543031826858,
-													"parameters": {
-														"x": "Self.X",
-														"y": "random(Slider.BBoxTop+Self.Height/2,Slider.BBoxBottom-Self.Height/2)"
 													}
 												}
 											],
@@ -705,29 +617,11 @@
 											],
 											"actions": [
 												{
-													"id": "set-period",
-													"objectClass": "Slider_Point",
-													"sid": 245983547572665,
-													"behaviorType": "Sine",
-													"parameters": {
-														"period": "random(2,8)"
-													}
-												},
-												{
 													"id": "set-height",
 													"objectClass": "Sprite7",
 													"sid": 940312684577173,
 													"parameters": {
 														"height": "random(4,10)"
-													}
-												},
-												{
-													"id": "set-position",
-													"objectClass": "Sprite7",
-													"sid": 766528150095619,
-													"parameters": {
-														"x": "Self.X",
-														"y": "random(Slider.BBoxTop+Self.Height/2,Slider.BBoxBottom-Self.Height/2)"
 													}
 												}
 											],
@@ -1694,15 +1588,6 @@
 										"layer": "\"Instrument\"",
 										"visibility": "visible"
 									}
-								},
-								{
-									"id": "set-active",
-									"objectClass": "Slider_Point",
-									"sid": 737928478821718,
-									"behaviorType": "Sine",
-									"parameters": {
-										"state": "active"
-									}
 								}
 							],
 							"sid": 553743101759225,
@@ -1779,15 +1664,6 @@
 									"parameters": {
 										"layer": "\"Instrument\"",
 										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-active",
-									"objectClass": "Slider_Point",
-									"sid": 288992696641417,
-									"behaviorType": "Sine",
-									"parameters": {
-										"state": "inactive"
 									}
 								}
 							],
@@ -3002,7 +2878,7 @@
 															"objectClass": "Inventory_Item",
 															"sid": 419257464891364,
 															"parameters": {
-																"child": "Text",
+																"child": "Message_Text",
 																"which": "own"
 															}
 														}
@@ -3010,7 +2886,7 @@
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Text",
+															"objectClass": "Message_Text",
 															"sid": 830584480497383,
 															"parameters": {
 																"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -3170,7 +3046,7 @@
 															"objectClass": "Inventory_Item",
 															"sid": 868418739672831,
 															"parameters": {
-																"child": "Text",
+																"child": "Message_Text",
 																"which": "own"
 															}
 														}
@@ -3178,7 +3054,7 @@
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Text",
+															"objectClass": "Message_Text",
 															"sid": 400051998338277,
 															"parameters": {
 																"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -4043,7 +3919,7 @@
 																			"objectClass": "Inventory_Item",
 																			"sid": 679740456507944,
 																			"parameters": {
-																				"child": "Text",
+																				"child": "Message_Text",
 																				"which": "own"
 																			}
 																		}
@@ -4051,10 +3927,10 @@
 																	"actions": [
 																		{
 																			"id": "set-text",
-																			"objectClass": "Text",
-																			"sid": 480812507588061,
+																			"objectClass": "Message_Text",
+																			"sid": 722408220183982,
 																			"parameters": {
-																				"text": "Inventory_Item.Count_"
+																				"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
 																			}
 																		}
 																	],
@@ -4654,7 +4530,7 @@
 															"objectClass": "Inventory_Item",
 															"sid": 702918898140051,
 															"parameters": {
-																"child": "Text",
+																"child": "Message_Text",
 																"which": "own"
 															}
 														}
@@ -4662,10 +4538,10 @@
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Text",
-															"sid": 591156617159316,
+															"objectClass": "Message_Text",
+															"sid": 499019007450279,
 															"parameters": {
-																"text": "Inventory_Item.Count_"
+																"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
 															}
 														}
 													],
@@ -4887,7 +4763,7 @@
 													"objectClass": "Inventory_Item",
 													"sid": 879514970256545,
 													"parameters": {
-														"child": "Text",
+														"child": "Message_Text",
 														"which": "own"
 													}
 												}
@@ -4895,15 +4771,15 @@
 											"actions": [
 												{
 													"id": "move-to-top",
-													"objectClass": "Text",
+													"objectClass": "Message_Text",
 													"sid": 942143152857359
 												},
 												{
 													"id": "set-text",
-													"objectClass": "Text",
-													"sid": 897864028960839,
+													"objectClass": "Message_Text",
+													"sid": 892805772790305,
 													"parameters": {
-														"text": "Inventory_Item.Count_"
+														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
 													}
 												}
 											],
@@ -5132,7 +5008,7 @@
 															"objectClass": "Inventory_Item",
 															"sid": 528529916405335,
 															"parameters": {
-																"child": "Text",
+																"child": "Message_Text",
 																"which": "own"
 															}
 														}
@@ -5140,15 +5016,15 @@
 													"actions": [
 														{
 															"id": "move-to-top",
-															"objectClass": "Text",
+															"objectClass": "Message_Text",
 															"sid": 905116952466488
 														},
 														{
 															"id": "set-text",
-															"objectClass": "Text",
-															"sid": 985270118116097,
+															"objectClass": "Message_Text",
+															"sid": 635596926338994,
 															"parameters": {
-																"text": "Inventory_Item.Count_"
+																"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
 															}
 														}
 													],
@@ -5826,7 +5702,7 @@
 																	"objectClass": "Inventory_Item",
 																	"sid": 620489319709319,
 																	"parameters": {
-																		"child": "Text",
+																		"child": "Message_Text",
 																		"which": "own"
 																	}
 																}
@@ -5834,7 +5710,7 @@
 															"actions": [
 																{
 																	"id": "set-text",
-																	"objectClass": "Text",
+																	"objectClass": "Message_Text",
 																	"sid": 490219712300200,
 																	"parameters": {
 																		"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -6188,7 +6064,7 @@
 															"objectClass": "Inventory_Item",
 															"sid": 438267129102268,
 															"parameters": {
-																"child": "Text",
+																"child": "Message_Text",
 																"which": "own"
 															}
 														}
@@ -6196,7 +6072,7 @@
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Text",
+															"objectClass": "Message_Text",
 															"sid": 784009347637888,
 															"parameters": {
 																"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -8306,7 +8182,34 @@
 																											}
 																										}
 																									],
-																									"sid": 400892894124625
+																									"sid": 400892894124625,
+																									"children": [
+																										{
+																											"eventType": "block",
+																											"conditions": [
+																												{
+																													"id": "pick-children",
+																													"objectClass": "Inventory_Item",
+																													"sid": 194468409354018,
+																													"parameters": {
+																														"child": "Message_Text",
+																														"which": "own"
+																													}
+																												}
+																											],
+																											"actions": [
+																												{
+																													"id": "set-text",
+																													"objectClass": "Message_Text",
+																													"sid": 464604811008239,
+																													"parameters": {
+																														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
+																													}
+																												}
+																											],
+																											"sid": 778465412039730
+																										}
+																									]
 																								},
 																								{
 																									"eventType": "block",
@@ -8360,7 +8263,7 @@
 																													"objectClass": "Inventory_Item",
 																													"sid": 554238771193110,
 																													"parameters": {
-																														"child": "Text",
+																														"child": "Message_Text",
 																														"which": "own"
 																													}
 																												}
@@ -8368,10 +8271,10 @@
 																											"actions": [
 																												{
 																													"id": "set-text",
-																													"objectClass": "Text",
-																													"sid": 964189858881155,
+																													"objectClass": "Message_Text",
+																													"sid": 962851115154872,
 																													"parameters": {
-																														"text": "Inventory_Item.Count_"
+																														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
 																													}
 																												}
 																											],
@@ -11013,7 +10916,7 @@
 																							"objectClass": "Inventory_Item",
 																							"sid": 701435750845744,
 																							"parameters": {
-																								"child": "Text",
+																								"child": "Message_Text",
 																								"which": "own"
 																							}
 																						}
@@ -11021,10 +10924,10 @@
 																					"actions": [
 																						{
 																							"id": "set-text",
-																							"objectClass": "Text",
-																							"sid": 467521829704114,
+																							"objectClass": "Message_Text",
+																							"sid": 780990617660819,
 																							"parameters": {
-																								"text": "Inventory_Item.Count_ > 1 ? Inventory_Item.Count_ : \"\""
+																								"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
 																							}
 																						}
 																					],
@@ -11232,7 +11135,7 @@
 																					"objectClass": "Inventory_Item",
 																					"sid": 805511021695752,
 																					"parameters": {
-																						"child": "Text",
+																						"child": "Message_Text",
 																						"which": "own"
 																					}
 																				}
@@ -11240,10 +11143,10 @@
 																			"actions": [
 																				{
 																					"id": "set-text",
-																					"objectClass": "Text",
-																					"sid": 166674386401006,
+																					"objectClass": "Message_Text",
+																					"sid": 992246751564845,
 																					"parameters": {
-																						"text": "Inventory_Item.Count_ > 1 ? Inventory_Item.Count_ : \"\""
+																						"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
 																					}
 																				}
 																			],
@@ -11660,7 +11563,7 @@
 															"objectClass": "Inventory_Item",
 															"sid": 987377364148711,
 															"parameters": {
-																"child": "Text",
+																"child": "Message_Text",
 																"which": "own"
 															}
 														}
@@ -11668,12 +11571,12 @@
 													"actions": [
 														{
 															"id": "move-to-top",
-															"objectClass": "Text",
+															"objectClass": "Message_Text",
 															"sid": 926692629517311
 														},
 														{
 															"id": "set-text",
-															"objectClass": "Text",
+															"objectClass": "Message_Text",
 															"sid": 554341560516342,
 															"parameters": {
 																"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -11893,7 +11796,7 @@
 													"objectClass": "Inventory_Item",
 													"sid": 346805163545158,
 													"parameters": {
-														"child": "Text",
+														"child": "Message_Text",
 														"which": "own"
 													}
 												}
@@ -11901,12 +11804,12 @@
 											"actions": [
 												{
 													"id": "move-to-top",
-													"objectClass": "Text",
+													"objectClass": "Message_Text",
 													"sid": 521526919701122
 												},
 												{
 													"id": "set-text",
-													"objectClass": "Text",
+													"objectClass": "Message_Text",
 													"sid": 291981844376359,
 													"parameters": {
 														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -12139,7 +12042,7 @@
 															"objectClass": "Inventory_Item",
 															"sid": 630174048631136,
 															"parameters": {
-																"child": "Text",
+																"child": "Message_Text",
 																"which": "own"
 															}
 														}
@@ -12147,12 +12050,12 @@
 													"actions": [
 														{
 															"id": "move-to-top",
-															"objectClass": "Text",
+															"objectClass": "Message_Text",
 															"sid": 796841524959046
 														},
 														{
 															"id": "set-text",
-															"objectClass": "Text",
+															"objectClass": "Message_Text",
 															"sid": 484416387916572,
 															"parameters": {
 																"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -14105,7 +14008,7 @@
 													"objectClass": "Inventory_Item",
 													"sid": 773457322806265,
 													"parameters": {
-														"child": "Text",
+														"child": "Message_Text",
 														"which": "own"
 													}
 												}
@@ -14113,12 +14016,12 @@
 											"actions": [
 												{
 													"id": "move-to-top",
-													"objectClass": "Text",
+													"objectClass": "Message_Text",
 													"sid": 261539893332437
 												},
 												{
 													"id": "set-text",
-													"objectClass": "Text",
+													"objectClass": "Message_Text",
 													"sid": 666361433830459,
 													"parameters": {
 														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -14338,7 +14241,7 @@
 											"objectClass": "Inventory_Item",
 											"sid": 473034203116168,
 											"parameters": {
-												"child": "Text",
+												"child": "Message_Text",
 												"which": "own"
 											}
 										}
@@ -14346,12 +14249,12 @@
 									"actions": [
 										{
 											"id": "move-to-top",
-											"objectClass": "Text",
+											"objectClass": "Message_Text",
 											"sid": 799424249349900
 										},
 										{
 											"id": "set-text",
-											"objectClass": "Text",
+											"objectClass": "Message_Text",
 											"sid": 255995620768172,
 											"parameters": {
 												"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -14808,7 +14711,7 @@
 													"objectClass": "Inventory_Item",
 													"sid": 181863162960091,
 													"parameters": {
-														"child": "Text",
+														"child": "Message_Text",
 														"which": "own"
 													}
 												}
@@ -14816,12 +14719,12 @@
 											"actions": [
 												{
 													"id": "move-to-top",
-													"objectClass": "Text",
+													"objectClass": "Message_Text",
 													"sid": 179040959587625
 												},
 												{
 													"id": "set-text",
-													"objectClass": "Text",
+													"objectClass": "Message_Text",
 													"sid": 831450044680294,
 													"parameters": {
 														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -15046,7 +14949,7 @@
 											"objectClass": "Inventory_Item",
 											"sid": 276171521600156,
 											"parameters": {
-												"child": "Text",
+												"child": "Message_Text",
 												"which": "own"
 											}
 										}
@@ -15054,12 +14957,12 @@
 									"actions": [
 										{
 											"id": "move-to-top",
-											"objectClass": "Text",
+											"objectClass": "Message_Text",
 											"sid": 432972490127313
 										},
 										{
 											"id": "set-text",
-											"objectClass": "Text",
+											"objectClass": "Message_Text",
 											"sid": 380964609891157,
 											"parameters": {
 												"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -15191,7 +15094,7 @@
 									"objectClass": "Inventory_Item",
 									"sid": 175122036082809,
 									"parameters": {
-										"child": "Text",
+										"child": "Message_Text",
 										"which": "own"
 									}
 								}
@@ -15199,10 +15102,10 @@
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "Text",
-									"sid": 140430644280821,
+									"objectClass": "Message_Text",
+									"sid": 784240158994905,
 									"parameters": {
-										"text": "Inventory_Item.Count_ > 1 ? Inventory_Item.Count_ : \"\""
+										"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
 									}
 								}
 							],
@@ -15329,7 +15232,7 @@
 									"objectClass": "Inventory_Item",
 									"sid": 792943160724209,
 									"parameters": {
-										"child": "Text",
+										"child": "Message_Text",
 										"which": "own"
 									}
 								}
@@ -15337,10 +15240,10 @@
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "Text",
-									"sid": 396388480174076,
+									"objectClass": "Message_Text",
+									"sid": 277521587866942,
 									"parameters": {
-										"text": "Inventory_Item.Count_ > 1 ? Inventory_Item.Count_ : \"\""
+										"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
 									}
 								}
 							],
@@ -15467,7 +15370,7 @@
 									"objectClass": "Inventory_Item",
 									"sid": 265205656664701,
 									"parameters": {
-										"child": "Text",
+										"child": "Message_Text",
 										"which": "own"
 									}
 								}
@@ -15475,10 +15378,10 @@
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "Text",
-									"sid": 559652317634685,
+									"objectClass": "Message_Text",
+									"sid": 639440174209377,
 									"parameters": {
-										"text": "Inventory_Item.Count_ > 1 ? Inventory_Item.Count_ : \"\""
+										"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
 									}
 								}
 							],
@@ -15932,7 +15835,7 @@
 																	"objectClass": "Inventory_Item",
 																	"sid": 456533239091808,
 																	"parameters": {
-																		"child": "Text",
+																		"child": "Message_Text",
 																		"which": "own"
 																	}
 																}
@@ -15940,12 +15843,12 @@
 															"actions": [
 																{
 																	"id": "move-to-top",
-																	"objectClass": "Text",
+																	"objectClass": "Message_Text",
 																	"sid": 402106809940154
 																},
 																{
 																	"id": "set-text",
-																	"objectClass": "Text",
+																	"objectClass": "Message_Text",
 																	"sid": 565904602290712,
 																	"parameters": {
 																		"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -16181,7 +16084,7 @@
 																	"objectClass": "Inventory_Item",
 																	"sid": 924951997803157,
 																	"parameters": {
-																		"child": "Text",
+																		"child": "Message_Text",
 																		"which": "own"
 																	}
 																}
@@ -16189,12 +16092,12 @@
 															"actions": [
 																{
 																	"id": "move-to-top",
-																	"objectClass": "Text",
+																	"objectClass": "Message_Text",
 																	"sid": 233578276327239
 																},
 																{
 																	"id": "set-text",
-																	"objectClass": "Text",
+																	"objectClass": "Message_Text",
 																	"sid": 652899499030983,
 																	"parameters": {
 																		"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -16391,7 +16294,7 @@
 													"objectClass": "Inventory_Item",
 													"sid": 564303803255858,
 													"parameters": {
-														"child": "Text",
+														"child": "Message_Text",
 														"which": "own"
 													}
 												}
@@ -16399,10 +16302,10 @@
 											"actions": [
 												{
 													"id": "set-text",
-													"objectClass": "Text",
-													"sid": 115215006824214,
+													"objectClass": "Message_Text",
+													"sid": 503672603854229,
 													"parameters": {
-														"text": "Inventory_Item.Count_ > 1 ? Inventory_Item.Count_ : \"\""
+														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
 													}
 												}
 											],
@@ -16592,7 +16495,7 @@
 													"objectClass": "Inventory_Item",
 													"sid": 125351740537769,
 													"parameters": {
-														"child": "Text",
+														"child": "Message_Text",
 														"which": "own"
 													}
 												}
@@ -16600,10 +16503,10 @@
 											"actions": [
 												{
 													"id": "set-text",
-													"objectClass": "Text",
-													"sid": 372464631385984,
+													"objectClass": "Message_Text",
+													"sid": 794130565968222,
 													"parameters": {
-														"text": "Inventory_Item.Count_ > 1 ? Inventory_Item.Count_ : \"\""
+														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
 													}
 												}
 											],
@@ -16793,7 +16696,7 @@
 													"objectClass": "Inventory_Item",
 													"sid": 622003532391212,
 													"parameters": {
-														"child": "Text",
+														"child": "Message_Text",
 														"which": "own"
 													}
 												}
@@ -16801,10 +16704,10 @@
 											"actions": [
 												{
 													"id": "set-text",
-													"objectClass": "Text",
-													"sid": 809872402216310,
+													"objectClass": "Message_Text",
+													"sid": 343456713948773,
 													"parameters": {
-														"text": "Inventory_Item.Count_ > 1 ? Inventory_Item.Count_ : \"\""
+														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
 													}
 												}
 											],
@@ -17233,7 +17136,7 @@
 													"objectClass": "Inventory_Item",
 													"sid": 597170764503505,
 													"parameters": {
-														"child": "Text",
+														"child": "Message_Text",
 														"which": "own"
 													}
 												}
@@ -17241,12 +17144,12 @@
 											"actions": [
 												{
 													"id": "move-to-top",
-													"objectClass": "Text",
+													"objectClass": "Message_Text",
 													"sid": 203022353353495
 												},
 												{
 													"id": "set-text",
-													"objectClass": "Text",
+													"objectClass": "Message_Text",
 													"sid": 877711139307219,
 													"parameters": {
 														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -17489,7 +17392,7 @@
 											"objectClass": "Inventory_Item",
 											"sid": 250025976012007,
 											"parameters": {
-												"child": "Text",
+												"child": "Message_Text",
 												"which": "own"
 											}
 										}
@@ -17497,12 +17400,12 @@
 									"actions": [
 										{
 											"id": "move-to-top",
-											"objectClass": "Text",
+											"objectClass": "Message_Text",
 											"sid": 185734517868948
 										},
 										{
 											"id": "set-text",
-											"objectClass": "Text",
+											"objectClass": "Message_Text",
 											"sid": 902443994448582,
 											"parameters": {
 												"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -18001,7 +17904,7 @@
 																	"objectClass": "Inventory_Item",
 																	"sid": 423995434625758,
 																	"parameters": {
-																		"child": "Text",
+																		"child": "Message_Text",
 																		"which": "own"
 																	}
 																}
@@ -18009,12 +17912,12 @@
 															"actions": [
 																{
 																	"id": "move-to-top",
-																	"objectClass": "Text",
+																	"objectClass": "Message_Text",
 																	"sid": 952134269841783
 																},
 																{
 																	"id": "set-text",
-																	"objectClass": "Text",
+																	"objectClass": "Message_Text",
 																	"sid": 492905349696397,
 																	"parameters": {
 																		"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -18257,7 +18160,7 @@
 															"objectClass": "Inventory_Item",
 															"sid": 354501717459879,
 															"parameters": {
-																"child": "Text",
+																"child": "Message_Text",
 																"which": "own"
 															}
 														}
@@ -18265,12 +18168,12 @@
 													"actions": [
 														{
 															"id": "move-to-top",
-															"objectClass": "Text",
+															"objectClass": "Message_Text",
 															"sid": 925056958703205
 														},
 														{
 															"id": "set-text",
-															"objectClass": "Text",
+															"objectClass": "Message_Text",
 															"sid": 790899008743027,
 															"parameters": {
 																"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -18775,7 +18678,7 @@
 																	"objectClass": "Inventory_Item",
 																	"sid": 915312156782093,
 																	"parameters": {
-																		"child": "Text",
+																		"child": "Message_Text",
 																		"which": "own"
 																	}
 																}
@@ -18783,12 +18686,12 @@
 															"actions": [
 																{
 																	"id": "move-to-top",
-																	"objectClass": "Text",
+																	"objectClass": "Message_Text",
 																	"sid": 821979699346021
 																},
 																{
 																	"id": "set-text",
-																	"objectClass": "Text",
+																	"objectClass": "Message_Text",
 																	"sid": 554592895398722,
 																	"parameters": {
 																		"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -19031,7 +18934,7 @@
 															"objectClass": "Inventory_Item",
 															"sid": 837088880229419,
 															"parameters": {
-																"child": "Text",
+																"child": "Message_Text",
 																"which": "own"
 															}
 														}
@@ -19039,12 +18942,12 @@
 													"actions": [
 														{
 															"id": "move-to-top",
-															"objectClass": "Text",
+															"objectClass": "Message_Text",
 															"sid": 652947967730226
 														},
 														{
 															"id": "set-text",
-															"objectClass": "Text",
+															"objectClass": "Message_Text",
 															"sid": 217271162125106,
 															"parameters": {
 																"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -22403,9 +22306,9 @@
 														{
 															"id": "typewriter-text",
 															"objectClass": "Message_Text",
-															"sid": 414435388258188,
+															"sid": 177586616684249,
 															"parameters": {
-																"text": "JSON.Get(\"Quests.\"&Quest&\".Req\")",
+																"text": "Functions.Get_LanguageText(JSON.Get(\"Quests.\"&Quest&\".Req\"))",
 																"duration": "0.2"
 															}
 														}

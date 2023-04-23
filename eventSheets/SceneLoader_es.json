@@ -427,6 +427,29 @@
 						{
 							"callFunction": "UpdateQuestRequirements",
 							"sid": 116732049876913
+						},
+						{
+							"callFunction": "SaveWorld",
+							"sid": 879681964980060
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 255423400337157,
+							"parameters": {
+								"tag": "\"saved\""
+							}
+						},
+						{
+							"callFunction": "Message",
+							"sid": 670226135918676,
+							"parameters": [
+								"\"File\"",
+								"\"WorldSaved\"",
+								"\"WorldSaved\"",
+								"\"UI\"",
+								"\"\""
+							]
 						}
 					],
 					"sid": 390439384811570
@@ -749,12 +772,6 @@
 						}
 					],
 					"sid": 281104103031040
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [],
-					"sid": 364999919480092
 				}
 			]
 		}

@@ -1,6 +1,7 @@
 {
 	"Quest1":{
 		"Description":"DQ1",
+		"Req":"Req1",
 		"Requirements":["Oak_Log,6"],
 		"Reward":["Oak_Sampling,1"]
 	},

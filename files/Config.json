@@ -98,6 +98,48 @@
 			}
 		},
 		"Glossary":{
+			"Crusher":{
+				"Type": "Crusher",
+				"Using":"Instrument",
+				"Stackable":0,
+				"Durability":59,
+				"Mining_Speed":2,
+				"MiningTier":1,
+				"BackBuild":1
+			},
+			"Wooden_Axe":{
+				"Type": "Axe",
+				"Using":"Instrument",
+				"Stackable":0,
+				"Durability":59,
+				"Mining_Speed":2,
+				"MiningTier":1
+			},
+			"Stone_Axe":{
+				"Type": "Axe",
+				"Using":"Instrument",
+				"Stackable":0,
+				"Durability":131,
+				"Mining_Speed":4
+			},
+			"Gold_Axe":{
+				"Using":"Instrument",
+				"Stackable":0,
+				"Durability":32,
+				"Mining_Speed":12
+			},
+			"Diamond_Axe":{
+				"Using":"Instrument",
+				"Stackable":0,
+				"Durability":1561,
+				"Mining_Speed":8
+			},
+			"Iron_Axe":{
+				"Using":"Instrument",
+				"Stackable":0,
+				"Durability":250,
+				"Mining_Speed":6
+			},
 			"Wooden_Pickaxe":{
 				"Type": "Pickaxe",
 				"Using":"Instrument",

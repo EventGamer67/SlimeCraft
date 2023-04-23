@@ -1278,7 +1278,7 @@
 																			"objectClass": "Inventory_Item",
 																			"sid": 594776049621359,
 																			"parameters": {
-																				"child": "Text",
+																				"child": "Message_Text",
 																				"which": "own"
 																			}
 																		}
@@ -1286,10 +1286,10 @@
 																	"actions": [
 																		{
 																			"id": "set-text",
-																			"objectClass": "Text",
-																			"sid": 792432078210750,
+																			"objectClass": "Message_Text",
+																			"sid": 994273271587155,
 																			"parameters": {
-																				"text": "Inventory_Item.Count_ > 1 ? Inventory_Item.Count_ : \"\""
+																				"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
 																			}
 																		}
 																	],
@@ -1400,7 +1400,7 @@
 																			"objectClass": "Inventory_Item",
 																			"sid": 582936061046528,
 																			"parameters": {
-																				"child": "Text",
+																				"child": "Message_Text",
 																				"which": "own"
 																			}
 																		}
@@ -1408,10 +1408,10 @@
 																	"actions": [
 																		{
 																			"id": "set-text",
-																			"objectClass": "Text",
-																			"sid": 239962733037981,
+																			"objectClass": "Message_Text",
+																			"sid": 191877487820178,
 																			"parameters": {
-																				"text": "Inventory_Item.Count_ > 1 ? Inventory_Item.Count_ : \"\""
+																				"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
 																			}
 																		}
 																	],
@@ -2230,10 +2230,17 @@
 				{
 					"id": "set-text",
 					"objectClass": "Message_Text",
-					"sid": 101212053598935,
+					"sid": 983013263419680,
 					"parameters": {
-						"text": "replace(Functions.Get_LanguageText(\"Ads\"), \"/s\" ,str(floor(Message_Text.Timer.Duration(\"Ads\")-Message_Text.Timer.CurrentTime(\"Ads\") )) )"
+						"text": "replace(Functions.Get_LanguageText(\"Ads\"), \"/s\" ,str(max(0,floor(Message_Text.Timer.Duration(\"Ads\")-Message_Text.Timer.CurrentTime(\"Ads\") )) ))"
 					}
+				},
+				{
+					"callFunction": "TrimSF",
+					"sid": 962368228904846,
+					"parameters": [
+						"0.001"
+					]
 				}
 			],
 			"sid": 874245816671296
@@ -2323,6 +2330,54 @@
 							"sid": 662401454076467
 						}
 					]
+				}
+			]
+		},
+		{
+			"functionName": "debug",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "text",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 756541577956766
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 634942031153980,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 520615963143918,
+							"parameters": {
+								"object": "Message_Text",
+								"expression": "Message_Text.Type = \"debug\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Message_Text",
+							"sid": 103364640488742,
+							"parameters": {
+								"text": "text"
+							}
+						}
+					],
+					"sid": 633249498080699
 				}
 			]
 		}

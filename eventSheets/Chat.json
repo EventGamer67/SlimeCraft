@@ -466,14 +466,50 @@
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 348836672411314,
+			"children": [
 				{
-					"id": "set-focused",
-					"objectClass": "TextInput",
-					"sid": 377345221179063
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-parent",
+							"objectClass": "9patch",
+							"sid": 920183372994615,
+							"parameters": {
+								"parent": "InventoryBlank",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 465949939420026,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 176583515771359,
+									"parameters": {
+										"value": "InventoryBlank.TemplateName = \"Quest\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-focused",
+									"objectClass": "TextInput",
+									"sid": 794294003944398
+								}
+							],
+							"sid": 194757167436427
+						}
+					]
 				}
-			],
-			"sid": 348836672411314
+			]
 		},
 		{
 			"eventType": "block",
