@@ -21,6 +21,7 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"WorkBenchTrigger"
+		"WorkBenchTrigger",
+		"FurnaceTrigger"
 	]
 }

@@ -3,55 +3,66 @@
 		"Description":"DQ1",
 		"Req":"Req1",
 		"Requirements":["Oak_Log,6"],
-		"Reward":["Oak_Sampling,1"]
+		"Reward":["Oak_Sampling,1"],
+		"Experience":10
 	},
 	"Quest2":{
 		"Description":"DQ2",
+		"Req":"Req2",
 		"Requirements":["Hook,1"],
 		"Reward":["Dirt,1"]
 	},
 	"Quest3":{
 		"Description":"DQ3",
+		"Req":"Req3",
 		"Requirements":["WoodenScissors,1","Wooden_Axe,1"],
 		"Reward":["Hook,1"]
 	},
 	"Quest4":{
 		"Description":"DQ4",
+		"Req":"Req4",
 		"Requirements":["Worm,1"],
 		"Reward":["Pebble,5"]
 	},
 	"Quest5":{
 		"Description":"DQ2",
+		"Req":"Req5",
 		"Requirements":["String,64"],
 		"Reward":["Pebble,5","Dirt,3"]
 	},
 	"Quest6":{
 		"Description":"DQ3",
+		"Req":"Req6",
 		"Requirements":["Sieve,1"],
 		"Reward":["Pebble,2"]
 	},
 	"Quest7":{
 		"Description":"DQ1",
+		"Req":"Req7",
 		"Requirements":["Oak_Log,32"],
 		"Reward":["Pebble,4","Dirt,1"]
 	},
 	"Quest8":{
 		"Description":"DQ1",
+		"Req":"Req8",
 		"Requirements":["Apple,12"],
 		"Reward":["Dirt,1"]
 	},
 	"Quest9":{
 		"Description":"DQ1",
+		"Req":"Req9",
 		"Requirements":["GrassSeed,3"],
 		"Reward":["BoneMeal,6"]
 	},
 	"Quest10":{
 		"Description":"DQ1",
+		"Req":"Req10",
 		"Requirements":["Pebble,32"],
 		"Reward":["Dirt,3"]
 	},
 	"Quest11":{
 		"Description":"DQ1",
+		"Req":"Req11",
 		"Requirements":["Oak_Log,64"],
 		"Reward":["Oak_Log,16"]
 	}

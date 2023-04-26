@@ -754,6 +754,15 @@
 									"parameters": [
 										"\"TopUI\""
 									]
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 871879603642406,
+									"parameters": {
+										"group-name": "\"Main\"",
+										"state": "deactivated"
+									}
 								}
 							],
 							"sid": 373710270175313,
@@ -842,6 +851,22 @@
 										{
 											"callFunction": "ShowQuestBook",
 											"sid": 470447736846407
+										},
+										{
+											"callFunction": "disableOtherBtns",
+											"sid": 429395441082378,
+											"parameters": [
+												"\"Interfaces\""
+											]
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 808011675550234,
+											"parameters": {
+												"group-name": "\"Main\"",
+												"state": "deactivated"
+											}
 										}
 									],
 									"sid": 554447625668795
@@ -945,15 +970,15 @@
 									"objectClass": "System",
 									"sid": 398836259160463,
 									"parameters": {
-										"object": "Text",
-										"expression": "Text.TemplateName = \"Pause\""
+										"object": "Message_Text",
+										"expression": "Message_Text.TemplateName = \"Pause\""
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "destroy",
-									"objectClass": "Text",
+									"objectClass": "Message_Text",
 									"sid": 816209685137909
 								},
 								{
@@ -965,6 +990,15 @@
 										"0.1",
 										"70"
 									]
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 138257571056593,
+									"parameters": {
+										"group-name": "\"Main\"",
+										"state": "activated"
+									}
 								},
 								{
 									"callFunction": "Pause",
@@ -1008,7 +1042,7 @@
 							"actions": [
 								{
 									"id": "destroy",
-									"objectClass": "Text",
+									"objectClass": "Message_Text",
 									"sid": 661752862984364
 								},
 								{
@@ -1021,6 +1055,15 @@
 									"sid": 619126295331676,
 									"parameters": {
 										"tag": "\"saved\""
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 684337476201333,
+									"parameters": {
+										"group-name": "\"Main\"",
+										"state": "activated"
 									}
 								},
 								{
@@ -2600,6 +2643,15 @@
 													"sid": 552955841010506,
 													"parameters": {
 														"group-name": "\"Dragging\"",
+														"state": "activated"
+													}
+												},
+												{
+													"id": "set-group-active",
+													"objectClass": "System",
+													"sid": 729327285971400,
+													"parameters": {
+														"group-name": "\"Main\"",
 														"state": "activated"
 													}
 												},
@@ -12660,9 +12712,9 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 367340370700454,
+							"sid": 144173085571170,
 							"parameters": {
-								"object-to-create": "Text",
+								"object-to-create": "Message_Text",
 								"layer": "\"TopUI\"",
 								"x": "Functions.Get_Center_X(\"TopUI\")",
 								"y": "Functions.Get_Center_Y(\"TopUI\")",
@@ -12678,6 +12730,14 @@
 							"parameters": {
 								"state": "disabled"
 							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 868701308985707,
+							"parameters": {
+								"seconds": "0"
+							}
 						}
 					],
 					"sid": 236207313279593,
@@ -12686,11 +12746,12 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "pick-last-created",
+									"id": "pick-by-evaluate",
 									"objectClass": "System",
-									"sid": 609234630652379,
+									"sid": 703237247170343,
 									"parameters": {
-										"object": "Text"
+										"object": "Message_Text",
+										"expression": "Message_Text.TemplateName = \"Pause\""
 									}
 								}
 							],
@@ -12702,7 +12763,7 @@
 									"conditions": [
 										{
 											"id": "pick-children",
-											"objectClass": "Text",
+											"objectClass": "Message_Text",
 											"sid": 942173336277240,
 											"parameters": {
 												"child": "SoundBtn",
@@ -12721,6 +12782,71 @@
 										}
 									],
 									"sid": 802973580373786
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 303823622539118,
+											"parameters": {
+												"object": "Message_Text"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 860699743013632,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 829736280272699,
+													"parameters": {
+														"object": "Message_Text",
+														"expression": "Message_Text.Type = \"Resume\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "TrimSF",
+													"sid": 996315400538033,
+													"parameters": [
+														"0.001"
+													]
+												}
+											],
+											"sid": 493521477421231
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 829359623464397,
+													"parameters": {
+														"object": "Message_Text",
+														"expression": "Message_Text.Type = \"SaveExit\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "TrimSF",
+													"sid": 164587309751144,
+													"parameters": [
+														"0.001"
+													]
+												}
+											],
+											"sid": 662932319922722
+										}
+									]
 								}
 							]
 						}
@@ -20328,6 +20454,20 @@
 									"conditions": [],
 									"actions": [
 										{
+											"callFunction": "addExperience",
+											"sid": 905661257784584,
+											"parameters": [
+												"JSON.Get(\"Quests.\"&JSON.Get(\"Player.TrackingQuest\")&\".Experience\")"
+											]
+										},
+										{
+											"callFunction": "UnlockAchievment",
+											"sid": 625646854882025,
+											"parameters": [
+												"JSON.Get(\"Player.TrackingQuest\")"
+											]
+										},
+										{
 											"id": "push-value",
 											"objectClass": "JSON",
 											"sid": 435173121326850,
@@ -22252,13 +22392,19 @@
 													],
 													"actions": [
 														{
-															"id": "typewriter-text",
+															"id": "set-text",
 															"objectClass": "Message_Text",
-															"sid": 297008555300828,
+															"sid": 220368925896152,
 															"parameters": {
-																"text": "Quest",
-																"duration": "0.2"
+																"text": "Functions.Get_LanguageText(Quest)"
 															}
+														},
+														{
+															"callFunction": "TrimSF",
+															"sid": 956796700358543,
+															"parameters": [
+																"0.001"
+															]
 														}
 													],
 													"sid": 614959530815901
@@ -26373,6 +26519,13 @@
 									"parameters": {
 										"text": "TempList.At(Book9path.List)"
 									}
+								},
+								{
+									"callFunction": "TrimSF",
+									"sid": 647452852118485,
+									"parameters": [
+										"0.001"
+									]
 								}
 							],
 							"sid": 194814811432871
@@ -26655,6 +26808,78 @@
 										}
 									],
 									"sid": 467771250570860
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "FoodBtn",
+							"sid": 820241771573712,
+							"parameters": {
+								"comparison": 0,
+								"number": "3"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 729744346182217,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-nearestfurthest",
+									"objectClass": "AdditionalBlockInterfaces",
+									"sid": 102129131610472,
+									"parameters": {
+										"which": "nearest",
+										"x": "Sprite.X",
+										"y": "Sprite.Y"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 770064914206723,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-key",
+											"objectClass": "JSON",
+											"sid": 136938449700538,
+											"parameters": {
+												"path": "\"Settings.Config.Tiles.\"&Terrain.TileAt(AdditionalBlockInterfaces.Tilex,AdditionalBlockInterfaces.Tiley)&\".Interface\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 718391867511609,
+											"parameters": {
+												"variable": "Current_Link",
+												"value": "AdditionalBlockInterfaces.Tilex&\",\"&AdditionalBlockInterfaces.Tiley"
+											}
+										},
+										{
+											"id": "call-mapped-function",
+											"objectClass": "Functions",
+											"sid": 363403907071622,
+											"parameters": {
+												"name": "\"Interfaces\"",
+												"string": "JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(AdditionalBlockInterfaces.Tilex,AdditionalBlockInterfaces.Tiley)&\".Interface\")",
+												"forward-params": "0"
+											}
+										}
+									],
+									"sid": 612628339165345
 								}
 							]
 						}

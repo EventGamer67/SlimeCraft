@@ -41,6 +41,11 @@
 			"behaviorId": "Timer",
 			"name": "Timer",
 			"sid": 375493435914195
+		},
+		{
+			"behaviorId": "destroy",
+			"name": "DestroyOutsideLayout",
+			"sid": 115427997878807
 		}
 	],
 	"effectTypes": [],
@@ -1672,6 +1677,98 @@
 				],
 				"sid": 812454742539667,
 				"name": "Crusher",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 160,
+						"height": 160,
+						"originX": 0.5423728813559322,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6542408,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 618961454624420,
+				"name": "Diamond_Axe",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 160,
+						"height": 160,
+						"originX": 0.5423728813559322,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7428098,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 548567414116401,
+				"name": "Iron_Axe",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 160,
+						"height": 160,
+						"originX": 0.5423728813559322,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8571690,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 295273716329036,
+				"name": "Stone_Axe",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 160,
+						"height": 160,
+						"originX": 0.5423728813559322,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3427474,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 275733381920566,
+				"name": "Wooden_Axe",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

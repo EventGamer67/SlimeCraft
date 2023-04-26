@@ -2147,6 +2147,13 @@
 													],
 													"actions": [
 														{
+															"callFunction": "StartWeather",
+															"sid": 101893748888238,
+															"parameters": [
+																"choose(\"Sun\",\"Rain\",\"Sun\")"
+															]
+														},
+														{
 															"id": "signal",
 															"objectClass": "System",
 															"sid": 521866379253345,
@@ -3358,6 +3365,7 @@
 																			"id": "wait",
 																			"objectClass": "System",
 																			"sid": 710764301333308,
+																			"disabled": true,
 																			"parameters": {
 																				"seconds": "0"
 																			}
@@ -4527,16 +4535,33 @@
 									],
 									"actions": [
 										{
+											"id": "set-collisions-enabled",
+											"objectClass": "Drop_Item",
+											"sid": 114664388516922,
+											"parameters": {
+												"collisions": "disabled"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Drop_Item",
+											"sid": 997630178666097,
+											"parameters": {
+												"instance-variable": "Pickable",
+												"value": "false"
+											}
+										},
+										{
 											"id": "tween-two-properties",
 											"objectClass": "Drop_Item",
-											"sid": 611716373789917,
+											"sid": 191641985976249,
 											"behaviorType": "Tween",
 											"parameters": {
 												"tags": "\"\"",
 												"property": "position",
 												"end-x": "Sprite.x",
 												"end-y": "Sprite.y",
-												"time": "0.1+random(0.01)",
+												"time": "0.001+random(0.02)",
 												"ease": "noease",
 												"destroy-on-complete": "yes",
 												"loop": "no",
@@ -19432,6 +19457,15 @@
 						{
 							"id": "set-group-active",
 							"objectClass": "System",
+							"sid": 947868355521550,
+							"parameters": {
+								"group-name": "\"Rain\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
 							"sid": 399963218380964,
 							"parameters": {
 								"group-name": "Weather",
@@ -20429,281 +20463,311 @@
 															"eventType": "block",
 															"conditions": [
 																{
-																	"id": "trigger-once-while-true",
+																	"id": "pick-by-evaluate",
 																	"objectClass": "System",
-																	"sid": 573668162999338
-																}
-															],
-															"actions": [
-																{
-																	"id": "create-object",
-																	"objectClass": "System",
-																	"sid": 285752657002919,
+																	"sid": 986405704510164,
 																	"parameters": {
-																		"object-to-create": "Message_Text",
-																		"layer": "\"Layer 1\"",
-																		"x": "Sprite.X",
-																		"y": "Sprite.BBoxTop+2",
-																		"create-hierarchy": false,
-																		"template-name": "\"\""
-																	}
-																},
-																{
-																	"id": "set-character-spacing",
-																	"objectClass": "Message_Text",
-																	"sid": 590503921621057,
-																	"parameters": {
-																		"character-spacing": "0"
-																	}
-																},
-																{
-																	"id": "set-scale",
-																	"objectClass": "Message_Text",
-																	"sid": 453060278580641,
-																	"disabled": true,
-																	"parameters": {
-																		"scale": "0.05"
-																	}
-																},
-																{
-																	"id": "set-instvar-value",
-																	"objectClass": "Message_Text",
-																	"sid": 812391765933244,
-																	"parameters": {
-																		"instance-variable": "Type",
-																		"value": "\"Require\""
-																	}
-																},
-																{
-																	"id": "set-text",
-																	"objectClass": "Message_Text",
-																	"sid": 959142905821798,
-																	"parameters": {
-																		"text": "Functions.Get_LanguageText(\"Require\")"
-																	}
-																},
-																{
-																	"callFunction": "TrimSF",
-																	"sid": 926246282354551,
-																	"parameters": [
-																		"0.001"
-																	]
-																},
-																{
-																	"id": "add-child",
-																	"objectClass": "Sprite",
-																	"sid": 592174909196193,
-																	"parameters": {
-																		"child": "Message_Text",
-																		"transform-x": true,
-																		"transform-y": true,
-																		"transform-w": true,
-																		"transform-h": true,
-																		"transform-a": true,
-																		"transform-o": false,
-																		"transform-z-elevation": true,
-																		"transform-visibility": false,
-																		"destroy-with-parent": false
+																		"object": "Message_Text",
+																		"expression": "Message_Text.Type = \"Require\""
 																	}
 																}
 															],
-															"sid": 306271043226709,
+															"actions": [],
+															"sid": 640407649499781
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 118602936027304
+																}
+															],
+															"actions": [],
+															"sid": 208701795987866,
 															"children": [
-																{
-																	"eventType": "variable",
-																	"name": "counter",
-																	"type": "number",
-																	"initialValue": "0",
-																	"comment": "",
-																	"isStatic": false,
-																	"isConstant": false,
-																	"sid": 906898203412333
-																},
 																{
 																	"eventType": "block",
 																	"conditions": [
 																		{
-																			"id": "for-each",
-																			"objectClass": "JSON",
-																			"sid": 320247661757294,
+																			"id": "trigger-once-while-true",
+																			"objectClass": "System",
+																			"sid": 407156604965353
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "create-object",
+																			"objectClass": "System",
+																			"sid": 770206203950027,
 																			"parameters": {
-																				"path": "\"Settings.Config.Rocket.\"&JSON.Get(\"Player.RocketLevel\")"
+																				"object-to-create": "Message_Text",
+																				"layer": "\"Layer 1\"",
+																				"x": "Sprite.X",
+																				"y": "Sprite.BBoxTop+2",
+																				"create-hierarchy": false,
+																				"template-name": "\"\""
+																			}
+																		},
+																		{
+																			"id": "set-character-spacing",
+																			"objectClass": "Message_Text",
+																			"sid": 791914402289446,
+																			"parameters": {
+																				"character-spacing": "0"
+																			}
+																		},
+																		{
+																			"id": "set-scale",
+																			"objectClass": "Message_Text",
+																			"sid": 303441153388394,
+																			"disabled": true,
+																			"parameters": {
+																				"scale": "0.05"
+																			}
+																		},
+																		{
+																			"id": "set-instvar-value",
+																			"objectClass": "Message_Text",
+																			"sid": 688232644820591,
+																			"parameters": {
+																				"instance-variable": "Type",
+																				"value": "\"Require\""
+																			}
+																		},
+																		{
+																			"id": "set-text",
+																			"objectClass": "Message_Text",
+																			"sid": 636985092820867,
+																			"parameters": {
+																				"text": "Functions.Get_LanguageText(\"Require\")"
+																			}
+																		},
+																		{
+																			"callFunction": "TrimSF",
+																			"sid": 325746173145385,
+																			"parameters": [
+																				"0.001"
+																			]
+																		},
+																		{
+																			"id": "add-child",
+																			"objectClass": "Sprite",
+																			"sid": 157044312145232,
+																			"parameters": {
+																				"child": "Message_Text",
+																				"transform-x": true,
+																				"transform-y": true,
+																				"transform-w": true,
+																				"transform-h": true,
+																				"transform-a": true,
+																				"transform-o": false,
+																				"transform-z-elevation": true,
+																				"transform-visibility": false,
+																				"destroy-with-parent": false
 																			}
 																		}
 																	],
-																	"actions": [],
-																	"sid": 896947776059756,
+																	"sid": 514957660102687,
 																	"children": [
+																		{
+																			"eventType": "variable",
+																			"name": "counter",
+																			"type": "number",
+																			"initialValue": "0",
+																			"comment": "",
+																			"isStatic": false,
+																			"isConstant": false,
+																			"sid": 626565340030609
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "for-each",
+																					"objectClass": "JSON",
+																					"sid": 233325364114645,
+																					"parameters": {
+																						"path": "\"Settings.Config.Rocket.\"&JSON.Get(\"Player.RocketLevel\")"
+																					}
+																				}
+																			],
+																			"actions": [],
+																			"sid": 242018830502115,
+																			"children": [
+																				{
+																					"eventType": "block",
+																					"conditions": [],
+																					"actions": [
+																						{
+																							"id": "create-object",
+																							"objectClass": "System",
+																							"sid": 304056752911532,
+																							"parameters": {
+																								"object-to-create": "Inventory_Item",
+																								"layer": "\"Layer 1\"",
+																								"x": "Sprite.X",
+																								"y": "Sprite.Y-(20+(counter*10))",
+																								"create-hierarchy": true,
+																								"template-name": "\"Task\""
+																							}
+																						},
+																						{
+																							"id": "set-animation",
+																							"objectClass": "Inventory_Item",
+																							"sid": 683223759382242,
+																							"parameters": {
+																								"animation": "JSON.CurrentKey",
+																								"from": "beginning"
+																							}
+																						},
+																						{
+																							"id": "set-instvar-value",
+																							"objectClass": "Inventory_Item",
+																							"sid": 243877711434271,
+																							"parameters": {
+																								"instance-variable": "Count_",
+																								"value": "JSON.Get(\"Settings.Config.Rocket.\"&JSON.Get(\"Player.RocketLevel\")&\".\"&JSON.CurrentKey&\".Count\")"
+																							}
+																						},
+																						{
+																							"id": "set-size",
+																							"objectClass": "Inventory_Item",
+																							"sid": 306816514572762,
+																							"parameters": {
+																								"width": "10",
+																								"height": "10"
+																							}
+																						},
+																						{
+																							"id": "add-child",
+																							"objectClass": "Sprite",
+																							"sid": 601428340735880,
+																							"parameters": {
+																								"child": "Inventory_Item",
+																								"transform-x": true,
+																								"transform-y": true,
+																								"transform-w": true,
+																								"transform-h": true,
+																								"transform-a": true,
+																								"transform-o": false,
+																								"transform-z-elevation": true,
+																								"transform-visibility": false,
+																								"destroy-with-parent": false
+																							}
+																						},
+																						{
+																							"id": "add-to-eventvar",
+																							"objectClass": "System",
+																							"sid": 376130256296449,
+																							"parameters": {
+																								"variable": "counter",
+																								"value": "1"
+																							}
+																						}
+																					],
+																					"sid": 793273012856796
+																				}
+																			]
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "evaluate-expression",
+																					"objectClass": "System",
+																					"sid": 485797715858487,
+																					"parameters": {
+																						"value": "Functions.CheckCanRepairRocket = 1"
+																					}
+																				}
+																			],
+																			"actions": [],
+																			"sid": 805447839349166,
+																			"children": [
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "pick-by-evaluate",
+																							"objectClass": "System",
+																							"sid": 458937672615841,
+																							"parameters": {
+																								"object": "FoodBtn",
+																								"expression": "FoodBtn.Type = \"Repair\""
+																							}
+																						}
+																					],
+																					"actions": [
+																						{
+																							"id": "set-size",
+																							"objectClass": "FoodBtn",
+																							"sid": 686542321969467,
+																							"parameters": {
+																								"width": "Self.w*0.6",
+																								"height": "Self.h*0.6"
+																							}
+																						},
+																						{
+																							"id": "set-visible",
+																							"objectClass": "FoodBtn",
+																							"sid": 605430325838014,
+																							"parameters": {
+																								"visibility": "visible"
+																							}
+																						},
+																						{
+																							"id": "tween-two-properties",
+																							"objectClass": "FoodBtn",
+																							"sid": 377246130722094,
+																							"behaviorType": "Tween",
+																							"parameters": {
+																								"tags": "\"\"",
+																								"property": "size",
+																								"end-x": "22",
+																								"end-y": "22",
+																								"time": "0.2",
+																								"ease": "easeoutback",
+																								"destroy-on-complete": "no",
+																								"loop": "no",
+																								"ping-pong": "no",
+																								"repeat-count": "1"
+																							}
+																						},
+																						{
+																							"id": "set-animation-frame",
+																							"objectClass": "FoodBtn",
+																							"sid": 524125600170268,
+																							"parameters": {
+																								"frame-number": "2"
+																							}
+																						}
+																					],
+																					"sid": 817991123981632
+																				}
+																			]
+																		},
 																		{
 																			"eventType": "block",
 																			"conditions": [],
 																			"actions": [
 																				{
-																					"id": "create-object",
+																					"id": "wait",
 																					"objectClass": "System",
-																					"sid": 764937962420979,
+																					"sid": 262813037882097,
 																					"parameters": {
-																						"object-to-create": "Inventory_Item",
-																						"layer": "\"Layer 1\"",
-																						"x": "Sprite.X",
-																						"y": "Sprite.Y-(20+(counter*10))",
-																						"create-hierarchy": true,
-																						"template-name": "\"Task\""
+																						"seconds": "0"
 																					}
 																				},
 																				{
-																					"id": "set-animation",
-																					"objectClass": "Inventory_Item",
-																					"sid": 116486042706943,
-																					"parameters": {
-																						"animation": "JSON.CurrentKey",
-																						"from": "beginning"
-																					}
-																				},
-																				{
-																					"id": "set-instvar-value",
-																					"objectClass": "Inventory_Item",
-																					"sid": 603668026759161,
-																					"parameters": {
-																						"instance-variable": "Count_",
-																						"value": "JSON.Get(\"Settings.Config.Rocket.\"&JSON.Get(\"Player.RocketLevel\")&\".\"&JSON.CurrentKey&\".Count\")"
-																					}
-																				},
-																				{
-																					"id": "set-size",
-																					"objectClass": "Inventory_Item",
-																					"sid": 556005777912554,
-																					"parameters": {
-																						"width": "10",
-																						"height": "10"
-																					}
-																				},
-																				{
-																					"id": "add-child",
-																					"objectClass": "Sprite",
-																					"sid": 323802826988666,
-																					"parameters": {
-																						"child": "Inventory_Item",
-																						"transform-x": true,
-																						"transform-y": true,
-																						"transform-w": true,
-																						"transform-h": true,
-																						"transform-a": true,
-																						"transform-o": false,
-																						"transform-z-elevation": true,
-																						"transform-visibility": false,
-																						"destroy-with-parent": false
-																					}
-																				},
-																				{
-																					"id": "add-to-eventvar",
-																					"objectClass": "System",
-																					"sid": 110512000292118,
-																					"parameters": {
-																						"variable": "counter",
-																						"value": "1"
-																					}
+																					"callFunction": "UpdateQuestRequirements",
+																					"sid": 481282173989442
 																				}
 																			],
-																			"sid": 212018403617107
+																			"sid": 493996493741373
 																		}
 																	]
-																},
-																{
-																	"eventType": "block",
-																	"conditions": [
-																		{
-																			"id": "evaluate-expression",
-																			"objectClass": "System",
-																			"sid": 732837619635717,
-																			"parameters": {
-																				"value": "Functions.CheckCanRepairRocket = 1"
-																			}
-																		}
-																	],
-																	"actions": [],
-																	"sid": 486102063520205,
-																	"children": [
-																		{
-																			"eventType": "block",
-																			"conditions": [
-																				{
-																					"id": "pick-by-evaluate",
-																					"objectClass": "System",
-																					"sid": 723795669538524,
-																					"parameters": {
-																						"object": "FoodBtn",
-																						"expression": "FoodBtn.Type = \"Repair\""
-																					}
-																				}
-																			],
-																			"actions": [
-																				{
-																					"id": "set-size",
-																					"objectClass": "FoodBtn",
-																					"sid": 576522776330601,
-																					"parameters": {
-																						"width": "Self.w*0.6",
-																						"height": "Self.h*0.6"
-																					}
-																				},
-																				{
-																					"id": "set-visible",
-																					"objectClass": "FoodBtn",
-																					"sid": 761189457545366,
-																					"parameters": {
-																						"visibility": "visible"
-																					}
-																				},
-																				{
-																					"id": "tween-two-properties",
-																					"objectClass": "FoodBtn",
-																					"sid": 615766600036525,
-																					"behaviorType": "Tween",
-																					"parameters": {
-																						"tags": "\"\"",
-																						"property": "size",
-																						"end-x": "22",
-																						"end-y": "22",
-																						"time": "0.2",
-																						"ease": "easeoutback",
-																						"destroy-on-complete": "no",
-																						"loop": "no",
-																						"ping-pong": "no",
-																						"repeat-count": "1"
-																					}
-																				},
-																				{
-																					"id": "set-animation-frame",
-																					"objectClass": "FoodBtn",
-																					"sid": 636119759191462,
-																					"parameters": {
-																						"frame-number": "2"
-																					}
-																				}
-																			],
-																			"sid": 404950684267189
-																		}
-																	]
-																},
-																{
-																	"eventType": "block",
-																	"conditions": [],
-																	"actions": [
-																		{
-																			"id": "wait",
-																			"objectClass": "System",
-																			"sid": 559687959153872,
-																			"parameters": {
-																				"seconds": "0"
-																			}
-																		},
-																		{
-																			"callFunction": "UpdateQuestRequirements",
-																			"sid": 401072288356548
-																		}
-																	],
-																	"sid": 290803843198038
 																}
 															]
 														}
@@ -20773,6 +20837,73 @@
 																}
 															],
 															"sid": 972709664920054
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 810170194555040,
+															"parameters": {
+																"value": "Usables.ObjectTypeName = \"FurnaceTrigger\""
+															}
+														}
+													],
+													"actions": [],
+													"sid": 980273163407788,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-animation-frame",
+																	"objectClass": "FoodBtn",
+																	"sid": 826299637492387,
+																	"parameters": {
+																		"frame-number": "3"
+																	}
+																},
+																{
+																	"id": "set-size",
+																	"objectClass": "FoodBtn",
+																	"sid": 641585014518917,
+																	"parameters": {
+																		"width": "Self.w*0.6",
+																		"height": "Self.h*0.6"
+																	}
+																},
+																{
+																	"id": "tween-two-properties",
+																	"objectClass": "FoodBtn",
+																	"sid": 937141870346683,
+																	"behaviorType": "Tween",
+																	"parameters": {
+																		"tags": "\"Open\"",
+																		"property": "size",
+																		"end-x": "22",
+																		"end-y": "22",
+																		"time": "0.2",
+																		"ease": "easeoutback",
+																		"destroy-on-complete": "no",
+																		"loop": "no",
+																		"ping-pong": "no",
+																		"repeat-count": "1"
+																	}
+																},
+																{
+																	"id": "set-visible",
+																	"objectClass": "FoodBtn",
+																	"sid": 272133438974908,
+																	"parameters": {
+																		"visibility": "visible"
+																	}
+																}
+															],
+															"sid": 552465478188561
 														}
 													]
 												}
@@ -20887,9 +21018,9 @@
 										{
 											"id": "evaluate-expression",
 											"objectClass": "System",
-											"sid": 774062473369321,
+											"sid": 131352569929541,
 											"parameters": {
-												"value": "Functions.CheckItemIsInInventory(JSON.CurrentKey,JSON.Get(\"Settings.Config.Rocket.\"&JSON.Get(\"Player.RocketLevel\")&JSON.CurrentKey&\".Count\"))"
+												"value": "Functions.CheckItemIsInInventory(JSON.CurrentKey, JSON.Get(\"Settings.Config.Rocket.\"&JSON.Get(\"Player.RocketLevel\")&\".\"&JSON.CurrentKey&\".Count\")) "
 											},
 											"isInverted": true
 										}

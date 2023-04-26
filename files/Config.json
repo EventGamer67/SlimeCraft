@@ -22,6 +22,7 @@
 		],
 		"Entity":{
 				"Zombie":{
+					"Experience":2,
 					"Drop":{
 							"RottenFlesh":99,
 							"Iron_Ingot":1
@@ -31,9 +32,9 @@
 		},
 		"Rocket":{
 			"1":{
-				"WaterBucket":{	
-					"Count":1,
-					"Return":"Bucket"
+				"Wood_Stick":{	
+					"Count":16,
+					"Return":"Wood_Stick"
 				}
 			},
 			"2":{

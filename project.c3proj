@@ -235,6 +235,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "destroy",
+			"name": "Destroy outside layout",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "scrollto",
 			"name": "Scroll To",
 			"author": "Scirra",
@@ -430,7 +437,10 @@
 			"Asteroid",
 			"Sprite3",
 			"9patch7",
-			"9patch8"
+			"9patch8",
+			"ExperienceOrb",
+			"Sprite5",
+			"FurnaceTrigger"
 		],
 		"subfolders": []
 	},
@@ -439,7 +449,8 @@
 		{
 			"members": [
 				"PlayerDigRay",
-				"Sprite"
+				"Sprite",
+				"Sprite5"
 			]
 		}
 	],
@@ -1271,7 +1282,7 @@
 	},
 	"properties": {
 		"description": "npne",
-		"version": "1.0.0.0",
+		"version": "1.0.0.1",
 		"author": "danil",
 		"authorEmail": "islamoffdanil67@gmail.com",
 		"authorWebsite": "none",

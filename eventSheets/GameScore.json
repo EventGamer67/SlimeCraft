@@ -313,6 +313,72 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"functionName": "CreateExperienceOrb",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "Value",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 631754813577566
+						},
+						{
+							"name": "x",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 642607134670482
+						},
+						{
+							"name": "y",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 497186903003840
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 627786526772871,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 683230132157893,
+									"parameters": {
+										"object-to-create": "ExperienceOrb",
+										"layer": "\"Layer 1\"",
+										"x": "x",
+										"y": "y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "ExperienceOrb",
+									"sid": 479733150359428,
+									"parameters": {
+										"instance-variable": "Experience",
+										"value": "Value"
+									}
+								}
+							],
+							"sid": 846077936964124
+						}
+					]
+				},
+				{
 					"functionName": "addExperience",
 					"functionDescription": "",
 					"functionCategory": "",
@@ -330,11 +396,363 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
+					"actions": [
+						{
+							"id": "add-to",
+							"objectClass": "JSON",
+							"sid": 144198725902089,
+							"parameters": {
+								"path": "\"Player.Experience\"",
+								"value": "value"
+							}
+						}
+					],
+					"sid": 652303495174726,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 786884596075928,
+									"parameters": {
+										"value": "JSON.Get(\"Player.Experience\")-Functions.GetLevelExperienceTotal(JSON.Get(\"Player.Level\")) > Functions.GetLevelExperienceReq(JSON.Get(\"Player.Level\"))"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to",
+									"objectClass": "JSON",
+									"sid": 517442408360352,
+									"parameters": {
+										"path": "\"Player.Level\"",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 487514148266736
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "tween-one-property",
+									"objectClass": "9patch8",
+									"sid": 298949889848919,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetWidth",
+										"end-value": "(JSON.Get(\"Player.Experience\") - Functions.GetLevelExperienceTotal(JSON.Get(\"Player.Level\")) ) / Functions.GetLevelExperienceReq(JSON.Get(\"Player.Level\")) * 100",
+										"time": "0.2",
+										"ease": "easeinoutsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"callFunction": "debug",
+									"sid": 186439026107678,
+									"disabled": true,
+									"parameters": [
+										"\"Exp:\"&JSON.Get(\"Player.Experience\")&newline&\"LVL:\"&JSON.Get(\"Player.Level\")&newline&\"Req:\"&Functions.GetLevelExperienceReq(JSON.Get(\"Player.Level\"))&newline&\"ToT:\"&Functions.GetLevelExperienceTotal(JSON.Get(\"Player.Level\"))"
+									]
+								}
+							],
+							"sid": 120431512576292,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 176379084152508,
+											"parameters": {
+												"object": "Message_Text",
+												"expression": "Message_Text.Type = \"Level\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "Message_Text",
+											"sid": 535199255673755,
+											"parameters": {
+												"text": "Functions.Get_LanguageText(\"Level\")&\" \"&JSON.Get(\"Player.Level\")"
+											}
+										}
+									],
+									"sid": 820896763182334
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-playing",
+											"objectClass": "9patch8",
+											"sid": 659526247164067,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"1\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-one-property",
+											"objectClass": "9patch8",
+											"sid": 715478996981506,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"1\"",
+												"property": "offsetHeight",
+												"end-value": "14",
+												"time": "0.2",
+												"ease": "easeinoutquad",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "yes",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 496726631271206
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "GetLevelExperienceReq",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "level",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 156302397697765
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
 					"actions": [],
-					"sid": 652303495174726
+					"sid": 412101163669140,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-values",
+									"objectClass": "System",
+									"sid": 240021042352560,
+									"parameters": {
+										"value": "level",
+										"lower-bound": "0",
+										"upper-bound": "15"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 288098547316518,
+									"parameters": {
+										"value": "2*level+7"
+									}
+								}
+							],
+							"sid": 584747599998118
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-values",
+									"objectClass": "System",
+									"sid": 185211172134845,
+									"parameters": {
+										"value": "level",
+										"lower-bound": "16",
+										"upper-bound": "30"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 269043164145302,
+									"parameters": {
+										"value": "5*level-38"
+									}
+								}
+							],
+							"sid": 348490048005952
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 940627417563283,
+									"parameters": {
+										"value": "level >= 31"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 494195540904738,
+									"parameters": {
+										"value": "9*level-158"
+									}
+								}
+							],
+							"sid": 724823965829903
+						}
+					]
+				},
+				{
+					"functionName": "GetLevelExperienceTotal",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "level",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 915110606045109
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 879636866724638,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-values",
+									"objectClass": "System",
+									"sid": 792188854927283,
+									"parameters": {
+										"value": "level",
+										"lower-bound": "0",
+										"upper-bound": "15"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 201684640335971,
+									"parameters": {
+										"value": "(level^2)+6*level"
+									}
+								}
+							],
+							"sid": 472663989873383
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-values",
+									"objectClass": "System",
+									"sid": 500832057985653,
+									"parameters": {
+										"value": "level",
+										"lower-bound": "16",
+										"upper-bound": "30"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 510743870061234,
+									"parameters": {
+										"value": "2.5*(level^2)-40.5*level+360"
+									}
+								}
+							],
+							"sid": 742735091994841
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 972107303557394,
+									"parameters": {
+										"value": "level >= 31"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 423916863666644,
+									"parameters": {
+										"value": "4.5*(level^2)-162.5*level+2220"
+									}
+								}
+							],
+							"sid": 697520999141836
+						}
+					]
 				}
 			],
 			"sid": 375208126462906
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 330026835793978,
+					"parameters": {
+						"key": 84
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "addExperience",
+					"sid": 463040292193110,
+					"parameters": [
+						"2"
+					]
+				}
+			],
+			"sid": 680484999374894
 		}
 	],
 	"sid": 881504395585234

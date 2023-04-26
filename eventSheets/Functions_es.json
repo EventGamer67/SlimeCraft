@@ -2380,6 +2380,36 @@
 					"sid": 633249498080699
 				}
 			]
+		},
+		{
+			"functionName": "CheckActualVersion",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "version",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 341065680376707
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-function-return-value",
+					"objectClass": "Functions",
+					"sid": 294540463678533,
+					"parameters": {
+						"value": "int(replace(version,\".\",\"\")) < int(replace(projectversion,\".\",\"\")) ? 0 : 1"
+					}
+				}
+			],
+			"sid": 903213682855274
 		}
 	],
 	"sid": 921570436268604

@@ -1965,13 +1965,69 @@
 														{
 															"id": "set-text",
 															"objectClass": "Message_Text",
-															"sid": 837240192158780,
+															"sid": 865881857954251,
 															"parameters": {
 																"text": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Name\")"
 															}
 														}
 													],
-													"sid": 875597552180249
+													"sid": 875597552180249,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "evaluate-expression",
+																	"objectClass": "System",
+																	"sid": 497734921996908,
+																	"parameters": {
+																		"value": "Functions.CheckActualVersion(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Version\")) <> 1"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-default-color",
+																	"objectClass": "Message_Text",
+																	"sid": 243184328142634,
+																	"parameters": {
+																		"color": "Functions.CheckActualVersion(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Version\")) = 1 ? rgbEx(100,100,100) : rgbEx(100,50,50)"
+																	}
+																},
+																{
+																	"id": "set-text",
+																	"objectClass": "Message_Text",
+																	"sid": 791065398196404,
+																	"parameters": {
+																		"text": "Functions.CheckActualVersion(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Version\")) = 1 ? Self.Text : Self.Text&\" \"&Functions.Get_LanguageText(\"OutDated\")"
+																	}
+																}
+															],
+															"sid": 990285731432475
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 544818403009575,
+																	"parameters": {
+																		"seconds": "0.3"
+																	}
+																},
+																{
+																	"callFunction": "TrimSF",
+																	"sid": 817108816658737,
+																	"parameters": [
+																		"0.001"
+																	]
+																}
+															],
+															"sid": 680988534425211
+														}
+													]
 												},
 												{
 													"eventType": "block",
@@ -2380,6 +2436,15 @@
 							"parameters": {
 								"path": "\"Worlds.\"&WorldIndex&\".Name\"",
 								"value": "Name"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 269041583203258,
+							"parameters": {
+								"path": "\"Worlds.\"&WorldIndex&\".Version\"",
+								"value": "projectversion"
 							}
 						}
 					],
@@ -2846,7 +2911,63 @@
 																	}
 																}
 															],
-															"sid": 542944496710416
+															"sid": 542944496710416,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "evaluate-expression",
+																			"objectClass": "System",
+																			"sid": 339033189985956,
+																			"parameters": {
+																				"value": "Functions.CheckActualVersion(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Version\")) <> 1"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-default-color",
+																			"objectClass": "Message_Text",
+																			"sid": 668455602693713,
+																			"parameters": {
+																				"color": "Functions.CheckActualVersion(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Version\")) = 1 ? rgbEx(100,100,100) : rgbEx(100,50,50)"
+																			}
+																		},
+																		{
+																			"id": "set-text",
+																			"objectClass": "Message_Text",
+																			"sid": 286000141368458,
+																			"parameters": {
+																				"text": "Functions.CheckActualVersion(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Version\")) = 1 ? Self.Text : Self.Text&\" \"&Functions.Get_LanguageText(\"OutDated\")"
+																			}
+																		}
+																	],
+																	"sid": 905854052179651
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [
+																		{
+																			"id": "wait",
+																			"objectClass": "System",
+																			"sid": 964179226144688,
+																			"parameters": {
+																				"seconds": "0.3"
+																			}
+																		},
+																		{
+																			"callFunction": "TrimSF",
+																			"sid": 269378015393997,
+																			"parameters": [
+																				"0.001"
+																			]
+																		}
+																	],
+																	"sid": 505951877413276
+																}
+															]
 														},
 														{
 															"eventType": "block",
@@ -3458,16 +3579,72 @@
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 571277410845237,
+									"children": [
 										{
-											"callFunction": "StartGame",
-											"sid": 223851029314854,
-											"parameters": [
-												"InventoryBlank.SubType"
-											]
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 686420342307541,
+													"parameters": {
+														"value": "Functions.CheckActualVersion(JSON.Get(\"Worlds.\"&InventoryBlank.SubType&\".Version\")) <> 1 "
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "Message",
+													"sid": 887027804971560,
+													"parameters": [
+														"\"Warning\"",
+														"\"OldWorld\"",
+														"\"OldWorld\"",
+														"InventoryBlank.LayerName",
+														"\"\""
+													]
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 323836307928929,
+													"parameters": {
+														"seconds": "1"
+													}
+												},
+												{
+													"callFunction": "StartGame",
+													"sid": 373231133684398,
+													"parameters": [
+														"InventoryBlank.SubType"
+													]
+												}
+											],
+											"sid": 397997922804551
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 755432936614721
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "StartGame",
+													"sid": 502871286071379,
+													"parameters": [
+														"InventoryBlank.SubType"
+													]
+												}
+											],
+											"sid": 962416966786673
 										}
-									],
-									"sid": 571277410845237
+									]
 								}
 							]
 						},
@@ -4267,27 +4444,6 @@
 				}
 			],
 			"sid": 231138591852343
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 163769799333149,
-					"parameters": {
-						"key": 54
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "clear-storage",
-					"objectClass": "LocalStorage",
-					"sid": 859499057643895
-				}
-			],
-			"sid": 919200737704228
 		}
 	],
 	"sid": 743666173854903

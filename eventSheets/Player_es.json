@@ -4126,7 +4126,24 @@
 														{
 															"id": "set-angle",
 															"objectClass": "PlayerDigRay",
-															"sid": 931446142017432,
+															"sid": 693546015340092,
+															"parameters": {
+																"angle": "TouchAngle"
+															}
+														},
+														{
+															"id": "set-position",
+															"objectClass": "Sprite5",
+															"sid": 756100480368337,
+															"parameters": {
+																"x": "Sprite.X",
+																"y": "Sprite.Y"
+															}
+														},
+														{
+															"id": "set-angle",
+															"objectClass": "Sprite5",
+															"sid": 887911926379268,
 															"parameters": {
 																"angle": "TouchAngle"
 															}
@@ -4155,6 +4172,60 @@
 													],
 													"sid": 693293852741649,
 													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-overlapping-another-object",
+																	"objectClass": "Sprite5",
+																	"sid": 258531915542029,
+																	"parameters": {
+																		"object": "Enemies"
+																	}
+																},
+																{
+																	"id": "pick-nearestfurthest",
+																	"objectClass": "Enemies",
+																	"sid": 386071634973164,
+																	"parameters": {
+																		"which": "nearest",
+																		"x": "Sprite5.X",
+																		"y": "Sprite5.Y"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 242174690505670,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "every-x-seconds",
+																			"objectClass": "System",
+																			"sid": 857699441102737,
+																			"parameters": {
+																				"interval-seconds": "0.3"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"callFunction": "HitEnemy",
+																			"sid": 728849120691414,
+																			"parameters": [
+																				"Enemies.UID",
+																				"10",
+																				false,
+																				"1",
+																				"angle(Sprite.X,Sprite.Y+10,Enemies.X,Enemies.Y)"
+																			]
+																		}
+																	],
+																	"sid": 383120027720470
+																}
+															]
+														},
 														{
 															"eventType": "block",
 															"conditions": [
@@ -5089,6 +5160,23 @@
 																							}
 																						},
 																						{
+																							"id": "set-position",
+																							"objectClass": "Sprite5",
+																							"sid": 346391694073800,
+																							"parameters": {
+																								"x": "Sprite.X",
+																								"y": "Sprite.Y"
+																							}
+																						},
+																						{
+																							"id": "set-angle",
+																							"objectClass": "Sprite5",
+																							"sid": 952237025137827,
+																							"parameters": {
+																								"angle": "TouchAngle"
+																							}
+																						},
+																						{
 																							"id": "cast-ray",
 																							"objectClass": "Sprite",
 																							"sid": 612437170655954,
@@ -5108,6 +5196,60 @@
 																					],
 																					"sid": 617496085155590,
 																					"children": [
+																						{
+																							"eventType": "block",
+																							"conditions": [
+																								{
+																									"id": "is-overlapping-another-object",
+																									"objectClass": "Sprite5",
+																									"sid": 240110328413540,
+																									"parameters": {
+																										"object": "Enemies"
+																									}
+																								},
+																								{
+																									"id": "pick-nearestfurthest",
+																									"objectClass": "Enemies",
+																									"sid": 278161841811158,
+																									"parameters": {
+																										"which": "nearest",
+																										"x": "Sprite5.X",
+																										"y": "Sprite5.Y"
+																									}
+																								}
+																							],
+																							"actions": [],
+																							"sid": 622691015276132,
+																							"children": [
+																								{
+																									"eventType": "block",
+																									"conditions": [
+																										{
+																											"id": "every-x-seconds",
+																											"objectClass": "System",
+																											"sid": 516528647657795,
+																											"parameters": {
+																												"interval-seconds": "0.3"
+																											}
+																										}
+																									],
+																									"actions": [
+																										{
+																											"callFunction": "HitEnemy",
+																											"sid": 201127596438612,
+																											"parameters": [
+																												"Enemies.UID",
+																												"10",
+																												false,
+																												"1",
+																												"angle(Sprite.X,Sprite.Y+10,Enemies.X,Enemies.Y)"
+																											]
+																										}
+																									],
+																									"sid": 614035627564449
+																								}
+																							]
+																						},
 																						{
 																							"eventType": "block",
 																							"conditions": [
@@ -5889,6 +6031,14 @@
 											"sid": 171102670696537,
 											"parameters": {
 												"width": "lerp(Self.Width,clamp(Sprite.LineOfSight.HitDistance,0,40),0.2)\n"
+											}
+										},
+										{
+											"id": "set-width",
+											"objectClass": "Sprite5",
+											"sid": 997539100655483,
+											"parameters": {
+												"width": "40"
 											}
 										},
 										{
@@ -7637,51 +7787,6 @@
 																}
 															],
 															"sid": 551309880242701
-														}
-													]
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "pick-by-evaluate",
-															"objectClass": "System",
-															"sid": 743265219079838,
-															"parameters": {
-																"object": "Enemies",
-																"expression": "Enemies.UID = Sprite.LineOfSight.HitUID"
-															}
-														}
-													],
-													"actions": [],
-													"sid": 638673772171075,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "every-x-seconds",
-																	"objectClass": "System",
-																	"sid": 938304439742590,
-																	"parameters": {
-																		"interval-seconds": "0.3"
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"callFunction": "HitEnemy",
-																	"sid": 441793522345747,
-																	"parameters": [
-																		"Enemies.UID",
-																		"10",
-																		false,
-																		"1",
-																		"angle(Sprite.X,Sprite.Y+10,Enemies.X,Enemies.Y)"
-																	]
-																}
-															],
-															"sid": 525680102015620
 														}
 													]
 												}
@@ -13706,6 +13811,15 @@
 									}
 								},
 								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Torch_Light",
+									"sid": 578241612457661,
+									"parameters": {
+										"instance-variable": "NeedSave",
+										"value": "true"
+									}
+								},
+								{
 									"id": "create-object",
 									"objectClass": "System",
 									"sid": 112783014506013,
@@ -13734,6 +13848,15 @@
 										"loop": "no",
 										"ping-pong": "no",
 										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Torch_Light_Terrain",
+									"sid": 669116620704489,
+									"parameters": {
+										"instance-variable": "NeedSave",
+										"value": "true"
 									}
 								}
 							],
@@ -13785,6 +13908,53 @@
 								}
 							],
 							"sid": 731552352432242
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 486180534254814,
+									"parameters": {
+										"value": "Tile = 44"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 531688359404907,
+									"parameters": {
+										"object-to-create": "FurnaceTrigger",
+										"layer": "\"Layer 1\"",
+										"x": "Terrain.TileToPositionX(TileX)",
+										"y": "Terrain.TileToPositionY(TileY)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "FurnaceTrigger",
+									"sid": 395439076821357,
+									"parameters": {
+										"instance-variable": "Tilex",
+										"value": "TileX"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "FurnaceTrigger",
+									"sid": 692490744292365,
+									"parameters": {
+										"instance-variable": "Tiley",
+										"value": "TileY"
+									}
+								}
+							],
+							"sid": 308537175407889
 						},
 						{
 							"eventType": "block",
@@ -15584,6 +15754,87 @@
 					]
 				}
 			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ExperienceSys",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Sprite",
+							"sid": 272085319237590,
+							"parameters": {
+								"object": "ExperienceOrb"
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 434017120376948,
+							"parameters": {
+								"layer": "\"Interfaces\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 773145566358447,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "ExperienceOrb",
+									"sid": 383076965527049,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "ExperienceOrb",
+									"sid": 476574255651645,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "position",
+										"end-x": "Sprite.X",
+										"end-y": "Sprite.Y",
+										"time": "0.2+random(0.2)",
+										"ease": "easeinsine",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 748307555305384
+								},
+								{
+									"callFunction": "addExperience",
+									"sid": 797332543274530,
+									"parameters": [
+										"ExperienceOrb.Experience"
+									]
+								}
+							],
+							"sid": 409402340987648
+						}
+					]
+				}
+			],
+			"sid": 436134980444878
 		}
 	],
 	"sid": 380699106854873

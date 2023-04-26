@@ -20,6 +20,7 @@
 	],
 	"members": [
 		"Rocket",
-		"WorkBenchTrigger"
+		"WorkBenchTrigger",
+		"FurnaceTrigger"
 	]
 }

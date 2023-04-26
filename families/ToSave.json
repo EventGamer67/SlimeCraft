@@ -15,6 +15,9 @@
 	"effectTypes": [],
 	"members": [
 		"Drop_Item",
-		"WorkBenchTrigger"
+		"WorkBenchTrigger",
+		"Torch_Light",
+		"Torch_Light_Terrain",
+		"FurnaceTrigger"
 	]
 }

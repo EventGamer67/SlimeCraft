@@ -450,6 +450,13 @@
 								"\"UI\"",
 								"\"\""
 							]
+						},
+						{
+							"callFunction": "addExperience",
+							"sid": 968969927298296,
+							"parameters": [
+								"0"
+							]
 						}
 					],
 					"sid": 390439384811570
@@ -629,6 +636,21 @@
 			],
 			"sid": 515967922578590,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "delete-key",
+							"objectClass": "JSON",
+							"sid": 677637337332611,
+							"parameters": {
+								"path": "\"World.Items\""
+							}
+						}
+					],
+					"sid": 381461107306425
+				},
 				{
 					"eventType": "block",
 					"conditions": [
