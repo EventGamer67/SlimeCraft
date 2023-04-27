@@ -18,6 +18,7 @@
 		"WorkBenchTrigger",
 		"Torch_Light",
 		"Torch_Light_Terrain",
-		"FurnaceTrigger"
+		"FurnaceTrigger",
+		"Torch_Light_Colored"
 	]
 }

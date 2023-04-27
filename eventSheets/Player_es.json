@@ -2335,15 +2335,20 @@
 											}
 										}
 									],
-									"sid": 780992267367728
+									"sid": 780992267367728,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 233340158846065
+											"id": "has-key",
+											"objectClass": "JSON",
+											"sid": 614762947671517,
+											"parameters": {
+												"path": "\"Settings.Config.Tiles.\"&Terrain.TileAt(Terrain.PositionToTileX(Touch.X),Terrain.PositionToTileY(Touch.Y))&\".Interface\""
+											},
+											"isInverted": true
 										}
 									],
 									"actions": [],
@@ -13858,6 +13863,62 @@
 										"instance-variable": "NeedSave",
 										"value": "true"
 									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 470564714923245,
+									"parameters": {
+										"object-to-create": "Torch_Light_Colored",
+										"layer": "\"TerrainLight\"",
+										"x": "Terrain.TileToPositionX(TileX)",
+										"y": "Terrain.TileToPositionY(TileY)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "Torch_Light_Colored",
+									"sid": 891622261490772,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"IN\"",
+										"property": "size",
+										"end-x": "150",
+										"end-y": "150",
+										"time": "0.6",
+										"ease": "easeoutback",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Torch_Light_Colored",
+									"sid": 895177544676944,
+									"parameters": {
+										"instance-variable": "NeedSave",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-default-color",
+									"objectClass": "Torch_Light_Colored",
+									"sid": 478959583879755,
+									"parameters": {
+										"color": "rgb(255, 170, 0)"
+									}
+								},
+								{
+									"id": "move-to-layer",
+									"objectClass": "Torch_Light_Colored",
+									"sid": 589301411291775,
+									"parameters": {
+										"layer": "\"Lights\""
+									}
 								}
 							],
 							"sid": 846365724505140
@@ -14412,6 +14473,61 @@
 												}
 											],
 											"sid": 345110933584422
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-playing",
+											"objectClass": "Torch_Light_Colored",
+											"sid": 565638181484785,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"OUT\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 199524088026899,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-nearestfurthest",
+													"objectClass": "Torch_Light_Colored",
+													"sid": 360334185641539,
+													"parameters": {
+														"which": "nearest",
+														"x": "Terrain.TileToPositionX(TileX)",
+														"y": "Terrain.TileToPositionY(TileY)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "tween-two-properties",
+													"objectClass": "Torch_Light_Colored",
+													"sid": 967240868675908,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"OUT\"",
+														"property": "size",
+														"end-x": "0",
+														"end-y": "0",
+														"time": "0.1",
+														"ease": "easeinback",
+														"destroy-on-complete": "yes",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												}
+											],
+											"sid": 471959329120704
 										}
 									]
 								}

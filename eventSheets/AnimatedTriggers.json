@@ -48,6 +48,11 @@
 									}
 								},
 								{
+									"id": "is-visible",
+									"objectClass": "AdvBtns",
+									"sid": 902846770949352
+								},
+								{
 									"id": "is-boolean-instance-variable-set",
 									"objectClass": "AdvBtns",
 									"sid": 482869792493945,

@@ -440,7 +440,8 @@
 			"9patch8",
 			"ExperienceOrb",
 			"Sprite5",
-			"FurnaceTrigger"
+			"FurnaceTrigger",
+			"Torch_Light_Colored"
 		],
 		"subfolders": []
 	},

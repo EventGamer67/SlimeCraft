@@ -1,0 +1,43 @@
+{
+	"name": "Torch_Light_Colored",
+	"plugin-id": "Sprite",
+	"sid": 517202781523393,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 336806068919379
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 199,
+						"height": 199,
+						"originX": 0.4824120603015075,
+						"originY": 0.5226130653266332,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6085126,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 239914547174395,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

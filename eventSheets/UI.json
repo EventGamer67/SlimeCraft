@@ -14486,6 +14486,31 @@
 						"variable": "Interface",
 						"value": "\"Furnace\""
 					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Tilemap2",
+					"sid": 603516011940575,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Tilemap2",
+					"sid": 815333568595104,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "100",
+						"time": "0.2",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
 				}
 			],
 			"sid": 211749282634498,
@@ -15607,6 +15632,40 @@
 					"parameters": {
 						"variable": "Interface",
 						"value": "\"Furnace\""
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 937900932516526,
+					"parameters": {
+						"group-name": "\"Main\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Tilemap2",
+					"sid": 927014937992283,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Tilemap2",
+					"sid": 889867626099198,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "100",
+						"time": "0.2",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
 					}
 				}
 			],
@@ -16882,7 +16941,7 @@
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 335661763593557,
+									"sid": 117304211701519,
 									"parameters": {
 										"group-name": "\"Main\"",
 										"state": "deactivated"
@@ -26788,6 +26847,49 @@
 									],
 									"actions": [
 										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 342662728174703,
+											"parameters": {
+												"layer": "\"Interfaces\"",
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 201796356582918,
+											"parameters": {
+												"layer": "\"UI\"",
+												"visibility": "invisible"
+											}
+										},
+										{
+											"callFunction": "disableOtherBtns",
+											"sid": 635440458132952,
+											"parameters": [
+												"\"Interfaces\""
+											]
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 599471799128008,
+											"parameters": {
+												"group-name": "\"Dragging\"",
+												"state": "activated"
+											}
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 523831184593198,
+											"parameters": {
+												"group-name": "\"Main\"",
+												"state": "deactivated"
+											}
+										},
+										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
 											"sid": 403307340104511,
@@ -26808,78 +26910,6 @@
 										}
 									],
 									"sid": 467771250570860
-								}
-							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-animation-frame",
-							"objectClass": "FoodBtn",
-							"sid": 820241771573712,
-							"parameters": {
-								"comparison": 0,
-								"number": "3"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 729744346182217,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-nearestfurthest",
-									"objectClass": "AdditionalBlockInterfaces",
-									"sid": 102129131610472,
-									"parameters": {
-										"which": "nearest",
-										"x": "Sprite.X",
-										"y": "Sprite.Y"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 770064914206723,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "has-key",
-											"objectClass": "JSON",
-											"sid": 136938449700538,
-											"parameters": {
-												"path": "\"Settings.Config.Tiles.\"&Terrain.TileAt(AdditionalBlockInterfaces.Tilex,AdditionalBlockInterfaces.Tiley)&\".Interface\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 718391867511609,
-											"parameters": {
-												"variable": "Current_Link",
-												"value": "AdditionalBlockInterfaces.Tilex&\",\"&AdditionalBlockInterfaces.Tiley"
-											}
-										},
-										{
-											"id": "call-mapped-function",
-											"objectClass": "Functions",
-											"sid": 363403907071622,
-											"parameters": {
-												"name": "\"Interfaces\"",
-												"string": "JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(AdditionalBlockInterfaces.Tilex,AdditionalBlockInterfaces.Tiley)&\".Interface\")",
-												"forward-params": "0"
-											}
-										}
-									],
-									"sid": 612628339165345
 								}
 							]
 						}
