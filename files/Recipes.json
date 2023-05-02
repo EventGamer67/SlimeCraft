@@ -236,9 +236,25 @@
 		"Wooden_Axe": {
 			"Type": "Crafting_Shapeless",
 			"Pattern": [
-				"0AA",
-				"0BA",
-				"0B0"
+				"AA",
+				"BA",
+				"B0"
+			],
+			"Key": {
+				"A": "Oak_Planks",
+				"B": "Wood_Stick"
+			},
+			"Result": {
+				"Item": "Wooden_Axe",
+				"Count": 59
+			}
+		},
+		"Wooden_Axe1": {
+			"Type": "Crafting_Shapeless",
+			"Pattern": [
+				"AA",
+				"AB",
+				"0B"
 			],
 			"Key": {
 				"A": "Oak_Planks",

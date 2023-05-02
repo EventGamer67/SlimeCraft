@@ -2172,7 +2172,6 @@
 									"id": "evaluate-expression",
 									"objectClass": "System",
 									"sid": 336342940100485,
-									"disabled": true,
 									"parameters": {
 										"value": "PhaseDayClycle = \"Night\""
 									}

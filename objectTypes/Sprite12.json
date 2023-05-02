@@ -22,17 +22,17 @@
 			{
 				"frames": [
 					{
-						"width": 913,
-						"height": 172,
+						"width": 1611,
+						"height": 608,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8802229,
+						"imageSpriteId": 3356628,
 						"collisionPoly": {
 							"points": [
-								0.24028787618203004,
+								0.16719597906238218,
 								0,
 								1,
 								0,
@@ -40,7 +40,7 @@
 								1,
 								1,
 								1,
-								0.27857537332265164,
+								0.212827260570758,
 								1,
 								0,
 								1
@@ -51,7 +51,46 @@
 					}
 				],
 				"sid": 956651066837332,
-				"name": "Animation 1",
+				"name": "Ru",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 1249,
+						"height": 593,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4745290,
+						"collisionPoly": {
+							"points": [
+								0.019228406565071073,
+								0,
+								1,
+								0,
+								1,
+								1,
+								1,
+								1,
+								0.08937417157394341,
+								1,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 420196295184932,
+				"name": "En",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

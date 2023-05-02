@@ -34,6 +34,15 @@
 			],
 			"actions": [
 				{
+					"id": "set-animation",
+					"objectClass": "Sprite12",
+					"sid": 170144745854636,
+					"parameters": {
+						"animation": "GameScore.Language",
+						"from": "beginning"
+					}
+				},
+				{
 					"id": "request-project-file",
 					"objectClass": "AJAX",
 					"sid": 725251096419333,

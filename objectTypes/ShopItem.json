@@ -1,0 +1,55 @@
+{
+	"name": "ShopItem",
+	"plugin-id": "NinePatch",
+	"sid": 170280400388909,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Item",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 574532520020376
+		},
+		{
+			"name": "Cost",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 545562011895023
+		},
+		{
+			"name": "CostType",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 749655327939309
+		},
+		{
+			"name": "Value",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 698616509570635
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 497803678676133
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 32,
+		"height": 32,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 5420109,
+		"useCollisionPoly": true
+	}
+}

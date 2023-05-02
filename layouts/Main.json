@@ -751,26 +751,8 @@
 						"live-preview": false
 					},
 					"uid": 339,
-					"instanceVariables": {
-						"overlaped": false
-					},
+					"instanceVariables": {},
 					"behaviors": {},
-					"effects": {
-						"BetterOutline": {
-							"isEnabled": false,
-							"parameters": {
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"width": 1,
-								"precision-step": 1,
-								"samples": 8
-							}
-						}
-					},
 					"world": {
 						"x": 933,
 						"y": 447,
@@ -3870,9 +3852,9 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Chat",
+						"Type": "Shop",
 						"So": 50,
-						"What": "Chat"
+						"What": "Shop"
 					},
 					"behaviors": {
 						"Tween": {
@@ -4387,7 +4369,7 @@
 			"parallaxX": 0,
 			"parallaxY": 0,
 			"scaleRate": 1,
-			"forceOwnTexture": false,
+			"forceOwnTexture": true,
 			"renderingMode": "3d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,

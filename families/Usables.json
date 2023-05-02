@@ -19,8 +19,8 @@
 		}
 	],
 	"members": [
-		"Rocket",
 		"WorkBenchTrigger",
-		"FurnaceTrigger"
+		"FurnaceTrigger",
+		"ChestTrigger"
 	]
 }

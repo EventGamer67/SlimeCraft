@@ -441,7 +441,9 @@
 			"ExperienceOrb",
 			"Sprite5",
 			"FurnaceTrigger",
-			"Torch_Light_Colored"
+			"Torch_Light_Colored",
+			"ChestTrigger",
+			"ShopItem"
 		],
 		"subfolders": []
 	},

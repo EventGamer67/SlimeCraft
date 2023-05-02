@@ -19,6 +19,7 @@
 		"Torch_Light",
 		"Torch_Light_Terrain",
 		"FurnaceTrigger",
-		"Torch_Light_Colored"
+		"Torch_Light_Colored",
+		"ChestTrigger"
 	]
 }

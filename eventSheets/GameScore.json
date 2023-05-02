@@ -130,20 +130,34 @@
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 361663257905864,
+							"children": [
 								{
-									"callFunction": "Message",
-									"sid": 354970166932901,
-									"parameters": [
-										"\"Warning\"",
-										"\"Warning\"",
-										"\"Ads\"",
-										"\"UI\"",
-										"\"\""
-									]
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-ads-fullscreen-available",
+											"objectClass": "GameScore",
+											"sid": 972191419281456
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Message",
+											"sid": 870988010553033,
+											"parameters": [
+												"\"Warning\"",
+												"\"Warning\"",
+												"\"Ads\"",
+												"\"UI\"",
+												"\"\""
+											]
+										}
+									],
+									"sid": 810028478096168
 								}
-							],
-							"sid": 361663257905864
+							]
 						},
 						{
 							"functionName": "ShowFullScreen",

@@ -10,7 +10,7 @@
 					"type": "Sprite12",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "Ru",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -48,10 +48,10 @@
 						}
 					},
 					"world": {
-						"x": 187.70282704847847,
-						"y": 93.75574577045168,
-						"width": 304.6816570123266,
-						"height": 57.39895400451279,
+						"x": 189.71015189420154,
+						"y": 77.222343160241,
+						"width": 273.30081280319735,
+						"height": 103.1451857134351,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

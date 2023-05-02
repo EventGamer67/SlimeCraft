@@ -152,6 +152,16 @@
 					"id": "OnEventMessage",
 					"objectClass": "GamePushChannels",
 					"sid": 426921581383640
+				},
+				{
+					"id": "compare-value",
+					"objectClass": "JSON",
+					"sid": 719918663484214,
+					"parameters": {
+						"path": "\"Player.Chat\"",
+						"cmp": 0,
+						"value": "1"
+					}
 				}
 			],
 			"actions": [

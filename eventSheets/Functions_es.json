@@ -1786,17 +1786,55 @@
 			],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [
+			"actions": [],
+			"sid": 356924595079729,
+			"children": [
 				{
-					"id": "set-function-return-value",
-					"objectClass": "Functions",
-					"sid": 570550105504782,
-					"parameters": {
-						"value": "JSON.Get(\"Language.\"&TextTag)"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-key",
+							"objectClass": "JSON",
+							"sid": 518628254901299,
+							"parameters": {
+								"path": "\"Language.\"&TextTag"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 126164073422003,
+							"parameters": {
+								"value": "JSON.Get(\"Language.\"&TextTag)"
+							}
+						}
+					],
+					"sid": 293467723113173
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 273616484289249
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 324496331941157,
+							"parameters": {
+								"value": "textTag&\"(err)\""
+							}
+						}
+					],
+					"sid": 691886857819278
 				}
-			],
-			"sid": 356924595079729
+			]
 		},
 		{
 			"eventType": "block",

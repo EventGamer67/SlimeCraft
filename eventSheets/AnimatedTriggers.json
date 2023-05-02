@@ -73,6 +73,12 @@
 									}
 								},
 								{
+									"id": "stop-all-tweens",
+									"objectClass": "AdvBtns",
+									"sid": 672806772901543,
+									"behaviorType": "Tween"
+								},
+								{
 									"id": "tween-two-properties",
 									"objectClass": "AdvBtns",
 									"sid": 627690188088497,
@@ -123,6 +129,12 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "stop-all-tweens",
+							"objectClass": "AdvBtns",
+							"sid": 898456388631106,
+							"behaviorType": "Tween"
+						},
 						{
 							"id": "tween-two-properties",
 							"objectClass": "AdvBtns",
@@ -307,6 +319,27 @@
 												}
 											],
 											"sid": 819405277762672
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "Movement_Button",
+													"sid": 102291465494152,
+													"parameters": {
+														"comparison": 0,
+														"number": "11"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ShowShop",
+													"sid": 278689100919741
+												}
+											],
+											"sid": 865826951727284
 										}
 									]
 								}
@@ -510,6 +543,234 @@
 								}
 							],
 							"sid": 155586775312501
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 488838311655090,
+					"parameters": {
+						"object": "AdvBtns"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 106156602265041,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 734025597043485,
+							"parameters": {
+								"object": "AdvBtns"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 861765602632112,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "AdvBtns",
+									"sid": 938169759915902,
+									"parameters": {
+										"instance-variable": "active"
+									}
+								},
+								{
+									"id": "pick-topbottom",
+									"objectClass": "AdvBtns",
+									"sid": 693258363530559,
+									"parameters": {
+										"which": "top"
+									}
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "AdvBtns",
+									"sid": 725688384796301
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "AdvBtns",
+									"sid": 731422974182815,
+									"parameters": {
+										"instance-variable": "touched"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 191762071144310,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-playing",
+											"objectClass": "AdvBtns",
+											"sid": 637085084779957,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"minimize\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-playing",
+											"objectClass": "AdvBtns",
+											"sid": 413684983512851,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"Close\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-playing",
+											"objectClass": "AdvBtns",
+											"sid": 347046902555274,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"Open\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-playing",
+											"objectClass": "AdvBtns",
+											"sid": 218306507138880,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"appear\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-two-properties",
+											"objectClass": "AdvBtns",
+											"sid": 548169761618389,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"hover\"",
+												"property": "size",
+												"end-x": "Self.w*1.1",
+												"end-y": "Self.h*1.1",
+												"time": "0.1",
+												"ease": "easeoutquad",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 130450110664301
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 953606091461341
+						}
+					],
+					"actions": [],
+					"sid": 700493966754999,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "AdvBtns",
+									"sid": 342707490098146,
+									"parameters": {
+										"instance-variable": "touched"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-playing",
+									"objectClass": "AdvBtns",
+									"sid": 606538606812460,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"minimize\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-playing",
+									"objectClass": "AdvBtns",
+									"sid": 563195648404702,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"appear\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-playing",
+									"objectClass": "AdvBtns",
+									"sid": 240035107799829,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"Close\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-playing",
+									"objectClass": "AdvBtns",
+									"sid": 555776628150543,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"Open\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "AdvBtns",
+									"sid": 168104816291830,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"standart\"",
+										"property": "size",
+										"end-x": "Self.w",
+										"end-y": "Self.h",
+										"time": "0.1",
+										"ease": "easeoutquad",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 589778853484220
 						}
 					]
 				}

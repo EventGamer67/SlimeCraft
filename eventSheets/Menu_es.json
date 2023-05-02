@@ -11,6 +11,21 @@
 		},
 		{
 			"eventType": "block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "Sprite20",
+					"sid": 106903994123171,
+					"parameters": {
+						"x": "Self.X+(Self.speed*dt*60)"
+					}
+				}
+			],
+			"sid": 972207217063667
+		},
+		{
+			"eventType": "block",
 			"conditions": [
 				{
 					"id": "on-start-of-layout",
@@ -25,6 +40,15 @@
 					"sid": 252386912874940,
 					"parameters": {
 						"scale": "0.85"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Sprite12",
+					"sid": 350284952591163,
+					"parameters": {
+						"animation": "GameScore.Language",
+						"from": "beginning"
 					}
 				},
 				{
@@ -144,6 +168,47 @@
 						}
 					],
 					"sid": 463059321691034
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 369714199186066,
+							"parameters": {
+								"object": "Sprite20"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 330135341113263,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Sprite20",
+									"sid": 787457053129871,
+									"parameters": {
+										"instance-variable": "speed",
+										"value": "random(0.02,0.5)"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Sprite20",
+									"sid": 978416759788758,
+									"parameters": {
+										"frame-number": "round(random(Sprite20.AnimationFrameCount))"
+									}
+								}
+							],
+							"sid": 153751528771327
+						}
+					]
 				}
 			]
 		},
