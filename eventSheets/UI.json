@@ -27655,6 +27655,13 @@
 								"ping-pong": "no",
 								"repeat-count": "1"
 							}
+						},
+						{
+							"callFunction": "disableOtherBtns",
+							"sid": 643703741338092,
+							"parameters": [
+								"\"Intrfaces\""
+							]
 						}
 					],
 					"sid": 729942130264617,
@@ -28322,6 +28329,11 @@
 													"parameters": {
 														"mode": "not-silent"
 													}
+												},
+												{
+													"id": "gameplay-start",
+													"objectClass": "GameScore",
+													"sid": 384550608105458
 												}
 											],
 											"sid": 647470499659972,
