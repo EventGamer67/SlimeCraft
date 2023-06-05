@@ -320,6 +320,13 @@
 									"sid": 326644242399894
 								},
 								{
+									"callFunction": "SetCurrentSlot",
+									"sid": 133878051322006,
+									"parameters": [
+										"0"
+									]
+								},
+								{
 									"id": "delete-key",
 									"objectClass": "JSON",
 									"sid": 445414235822962,

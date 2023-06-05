@@ -1,9 +1,17 @@
 {
-	"name": "9patch",
+	"name": "scrollZone",
 	"plugin-id": "NinePatch",
 	"sid": 997013206387342,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "input",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 442254611792682
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {

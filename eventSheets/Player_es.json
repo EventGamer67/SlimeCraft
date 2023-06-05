@@ -678,6 +678,11 @@
 									}
 								},
 								{
+									"id": "is-visible",
+									"objectClass": "Shatter",
+									"sid": 822420559019823
+								},
+								{
 									"id": "compare-tile-at",
 									"objectClass": "Terrain",
 									"sid": 164121092832957,
@@ -719,6 +724,7 @@
 								}
 							],
 							"sid": 427957457417562,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -747,7 +753,8 @@
 											}
 										}
 									],
-									"sid": 895446952226619
+									"sid": 895446952226619,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -773,7 +780,8 @@
 											}
 										}
 									],
-									"sid": 627378878803744
+									"sid": 627378878803744,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -789,7 +797,8 @@
 											}
 										}
 									],
-									"sid": 293882403086635
+									"sid": 293882403086635,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -807,6 +816,7 @@
 									],
 									"actions": [],
 									"sid": 876461013718616,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -851,7 +861,8 @@
 													]
 												}
 											],
-											"sid": 360405535060298
+											"sid": 360405535060298,
+											"disabled": true
 										}
 									]
 								}
@@ -888,6 +899,7 @@
 							],
 							"actions": [],
 							"sid": 951695219295966,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -976,7 +988,8 @@
 											}
 										}
 									],
-									"sid": 488452195866976
+									"sid": 488452195866976,
+									"disabled": true
 								}
 							]
 						},
@@ -1442,6 +1455,19 @@
 																							"eventType": "block",
 																							"conditions": [],
 																							"actions": [
+																								{
+																									"id": "play-by-name",
+																									"objectClass": "Audio",
+																									"sid": 360463322840881,
+																									"parameters": {
+																										"folder": "sounds",
+																										"audio-file-name": "choose(\"place1\",\"place2\")",
+																										"loop": "not-looping",
+																										"volume": "0",
+																										"stereo-pan": "0",
+																										"tag-optional": "\"Sound\""
+																									}
+																								},
 																								{
 																									"callFunction": "OnTilePlaced",
 																									"sid": 739668263527810,
@@ -4102,6 +4128,24 @@
 														"object": "FoodBtn"
 													},
 													"isInverted": true
+												},
+												{
+													"id": "is-touching-object",
+													"objectClass": "Touch",
+													"sid": 408533090367344,
+													"parameters": {
+														"object": "TiledBackground2"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-touching-object",
+													"objectClass": "Touch",
+													"sid": 784891872580926,
+													"parameters": {
+														"object": "Movement_Button"
+													},
+													"isInverted": true
 												}
 											],
 											"actions": [
@@ -4400,9 +4444,79 @@
 										},
 										{
 											"eventType": "block",
-											"conditions": [],
-											"actions": [],
-											"sid": 727251578831247
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 142583364825035
+												}
+											],
+											"actions": [
+												{
+													"id": "set-rate",
+													"objectClass": "ShatterEffect",
+													"sid": 698091661069160,
+													"parameters": {
+														"rate": "0"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "Shatter",
+													"sid": 369620797813639,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "Shatter",
+													"sid": 726195016531903,
+													"parameters": {
+														"frame-number": "0"
+													}
+												},
+												{
+													"id": "stop-all-tweens",
+													"objectClass": "BlockDestroyingFx",
+													"sid": 444351881289195,
+													"behaviorType": "Tween"
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "BlockDestroyingFx",
+													"sid": 510304985668661,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-size",
+													"objectClass": "BlockDestroyingFx",
+													"sid": 916042419889443,
+													"parameters": {
+														"width": "0",
+														"height": "0"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "BlockBlackout",
+													"sid": 900820310622159,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-animation-speed",
+													"objectClass": "Shatter",
+													"sid": 366945406775569,
+													"parameters": {
+														"speed": "0"
+													}
+												}
+											],
+											"sid": 483591713287113
 										}
 									]
 								},
@@ -8480,6 +8594,35 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 704636354963646,
+									"parameters": {
+										"value": "value < 0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 557120588388262,
+									"parameters": {
+										"folder": "sounds",
+										"audio-file-name": "choose(\"hit1\",\"hit2\",\"hit3\")",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"Sound\""
+									}
+								}
+							],
+							"sid": 332000973580801
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 681738504863082,
@@ -12271,7 +12414,7 @@
 											"sid": 165630513265002,
 											"disabled": true,
 											"parameters": {
-												"child": "9patch",
+												"child": "scrollZone",
 												"which": "own"
 											}
 										}

@@ -199,9 +199,9 @@
 						{
 							"id": "typewriter-text",
 							"objectClass": "Message_Text",
-							"sid": 485352792756107,
+							"sid": 616836359131147,
 							"parameters": {
-								"text": "\"когда-то давным давно... в квадратном космосе\"",
+								"text": "Functions.Get_LanguageText(\"Comics1\")",
 								"duration": "1"
 							}
 						},
@@ -216,9 +216,9 @@
 						{
 							"id": "typewriter-text",
 							"objectClass": "Message_Text",
-							"sid": 279798664475395,
+							"sid": 229264856729003,
 							"parameters": {
-								"text": "\"летел квадратный человечик\"",
+								"text": "Functions.Get_LanguageText(\"Comics2\")",
 								"duration": "1"
 							}
 						},
@@ -306,9 +306,9 @@
 								{
 									"id": "typewriter-text",
 									"objectClass": "Message_Text",
-									"sid": 234435889982105,
+									"sid": 856538001578880,
 									"parameters": {
-										"text": "\"летел он по специальной миссии\"",
+										"text": "Functions.Get_LanguageText(\"Comics3\")",
 										"duration": "1"
 									}
 								},
@@ -323,9 +323,9 @@
 								{
 									"id": "typewriter-text",
 									"objectClass": "Message_Text",
-									"sid": 748941640375321,
+									"sid": 437441897385659,
 									"parameters": {
-										"text": "\"но вдруг...\"",
+										"text": "Functions.Get_LanguageText(\"Comics4\")",
 										"duration": "1"
 									}
 								},

@@ -11,8 +11,8 @@
 			"x":1,
 			"y":1
 		},
-		"TilesWithoutCollision":[60,-1,39,12,149,88,89,90,91,92,93,94,95,80,16,63,79,200,201,202,203,8,80],
-		"LightTransparentBlocks":[15,39,12,13,28,29,30,70,55,56,73,79,99,80,52,149,5,53],
+		"TilesWithoutCollision":[60,-1,39,12,149,88,89,90,91,92,93,94,95,80,16,63,79,200,201,202,203,8,80,15,44,61],
+		"LightTransparentBlocks":[15,39,12,13,28,29,30,70,55,56,73,79,99,80,52,149,5,53,52],
 		"TilesWhatOnCanPlace":[39,205,206,217,218,219,220,-1],
 		"OnlyOnBlocks":[
 			15,39,12,13,28,29,30,70,55,56,73,79,99,80
@@ -892,37 +892,37 @@
 			"Test":{
 				"Offers":{
 					"Apple":{
-						"Cost":-10,
+						"Cost":100,
 						"CostType":"Coin",
-						"Count":1
-					},
-					"Dirt":{
-						"Cost":10,
-						"CostType":"Coin",
-						"Count":1
-					},
-					"Diamond":{
-						"Cost":10,
-						"CostType":"Coin",
-						"Count":1
-					},
-					"Cobblestone":{
-						"Cost":10,
-						"CostType":"Coin",
-						"Count":1
+						"Count":6
 					},
 					"Grass":{
-						"Cost":-10,
+						"Cost":120,
+						"CostType":"Coin",
+						"Count":16
+					},
+					"Oak_Log":{
+						"Cost":80,
+						"CostType":"Coin",
+						"Count":2
+					},
+					"Oak_Sampling":{
+						"Cost":70,
 						"CostType":"Coin",
 						"Count":1
 					},
+					"Coal":{
+						"Cost":160,
+						"CostType":"Coin",
+						"Count":8
+					},
 					"Chest":{
-						"Cost":10,
+						"Cost":300,
 						"CostType":"Coin",
 						"Count":1
 					},
 					"Furnace":{
-						"Cost":10,
+						"Cost":330,
 						"CostType":"Coin",
 						"Count":1
 					}

@@ -64,7 +64,31 @@
 					}
 				}
 			],
-			"sid": 659873891636185
+			"sid": 659873891636185,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-in-preview",
+							"objectClass": "System",
+							"sid": 617941092740731
+						}
+					],
+					"actions": [
+						{
+							"id": "change-key",
+							"objectClass": "InGameConsole",
+							"sid": 640854489797170,
+							"disabled": true,
+							"parameters": {
+								"key": 221
+							}
+						}
+					],
+					"sid": 975414589408632
+				}
+			]
 		},
 		{
 			"eventType": "block",

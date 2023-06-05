@@ -250,16 +250,16 @@
 						{
 							"id": "set-size",
 							"objectClass": "Message_Text",
-							"sid": 279705271183239,
+							"sid": 634208800040558,
 							"parameters": {
-								"width": "Message_Text.TextWidth",
+								"width": "Message_Text.TextWidth+3",
 								"height": "Message_Text.TextHeight"
 							}
 						},
 						{
 							"id": "set-size",
 							"objectClass": "ChatBlank",
-							"sid": 868584077689489,
+							"sid": 743406177420207,
 							"parameters": {
 								"width": "Message_Text.Width",
 								"height": "Message_Text.Height+1"
@@ -472,7 +472,7 @@
 					"objectClass": "Touch",
 					"sid": 203104830154775,
 					"parameters": {
-						"object": "9patch"
+						"object": "scrollZone"
 					}
 				}
 			],
@@ -484,11 +484,19 @@
 					"conditions": [
 						{
 							"id": "pick-parent",
-							"objectClass": "9patch",
+							"objectClass": "scrollZone",
 							"sid": 920183372994615,
 							"parameters": {
 								"parent": "InventoryBlank",
 								"which": "own"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "scrollZone",
+							"sid": 111282254834315,
+							"parameters": {
+								"instance-variable": "input"
 							}
 						}
 					],
@@ -656,10 +664,10 @@
 				{
 					"id": "SendMessage",
 					"objectClass": "GamePushChannels",
-					"sid": 897281156374733,
+					"sid": 292205409100450,
 					"parameters": {
 						"channelId": "174",
-						"text": "\"подключился!\"",
+						"text": "Functions.Get_LanguageText(\"Connected\")",
 						"tags": "\"G\""
 					}
 				}

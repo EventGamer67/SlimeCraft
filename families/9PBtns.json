@@ -1,0 +1,46 @@
+{
+	"name": "9PBtns",
+	"plugin-id": "NinePatch",
+	"sid": 488920883134354,
+	"instanceVariables": [
+		{
+			"name": "Touched",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 218963214504003
+		},
+		{
+			"name": "Clickables",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 889796987015980
+		},
+		{
+			"name": "w",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 160004019576767
+		},
+		{
+			"name": "h",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 744655912867085
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 425282558881481
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"ShopItem"
+	]
+}

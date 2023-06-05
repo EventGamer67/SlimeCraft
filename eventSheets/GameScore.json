@@ -2,109 +2,6 @@
 	"name": "GameScore",
 	"events": [
 		{
-			"functionName": "ShowRewardedVideo",
-			"functionDescription": "",
-			"functionCategory": "ADS",
-			"functionReturnType": "number",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 981902226295974,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-ads-rewarded-available",
-							"objectClass": "GameScore",
-							"sid": 975104825039189
-						}
-					],
-					"actions": [
-						{
-							"id": "ads-show-rewarded",
-							"objectClass": "GameScore",
-							"sid": 192832876217541
-						},
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 303211143880102
-						}
-					],
-					"sid": 660916308023012,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-ads-last-ad-success",
-									"objectClass": "GameScore",
-									"sid": 245928216764526
-								}
-							],
-							"actions": [
-								{
-									"id": "set-function-return-value",
-									"objectClass": "Functions",
-									"sid": 124031248469420,
-									"parameters": {
-										"value": "1"
-									}
-								}
-							],
-							"sid": 469833619584417
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 292814659845086
-								}
-							],
-							"actions": [
-								{
-									"id": "set-function-return-value",
-									"objectClass": "Functions",
-									"sid": 457869126776706,
-									"parameters": {
-										"value": "0"
-									}
-								}
-							],
-							"sid": 866995445581983
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 891673632557842
-						}
-					],
-					"actions": [
-						{
-							"id": "set-function-return-value",
-							"objectClass": "Functions",
-							"sid": 901103001938771,
-							"parameters": {
-								"value": "0"
-							}
-						}
-					],
-					"sid": 681726114036078
-				}
-			]
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "ADS",
@@ -189,6 +86,14 @@
 									],
 									"actions": [
 										{
+											"id": "set-silent",
+											"objectClass": "Audio",
+											"sid": 388027490666843,
+											"parameters": {
+												"mode": "silent"
+											}
+										},
+										{
 											"id": "ads-show-fullscreen",
 											"objectClass": "GameScore",
 											"sid": 566381726281269
@@ -197,6 +102,14 @@
 											"id": "wait-for-previous-actions",
 											"objectClass": "System",
 											"sid": 789165949946509
+										},
+										{
+											"id": "set-silent",
+											"objectClass": "Audio",
+											"sid": 420839430549766,
+											"parameters": {
+												"mode": "not-silent"
+											}
 										},
 										{
 											"id": "set-function-return-value",

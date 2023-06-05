@@ -1954,7 +1954,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 874792,
+						"imageSpriteId": 5849935,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -2736,6 +2736,29 @@
 				],
 				"sid": 797979683188688,
 				"name": "Crusher",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 28,
+						"height": 27,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6864527,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 705468326780508,
+				"name": "Video",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

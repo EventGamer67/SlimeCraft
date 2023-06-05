@@ -15,18 +15,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-loader-layout-complete",
-					"objectClass": "System",
-					"sid": 384338266311405
-				}
-			],
-			"actions": [],
-			"sid": 711261742818397
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
 					"sid": 319072669569402
@@ -530,70 +518,116 @@
 					"isActiveOnStart": false,
 					"children": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-any-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 757662134952004
-								},
-								{
-									"id": "on-any-click",
-									"objectClass": "Mouse",
-									"sid": 276539336267493
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 987228276267224,
-									"parameters": {
-										"variable": "deviceType",
-										"value": "\"PC\""
-									}
-								},
-								{
-									"id": "signal",
-									"objectClass": "System",
-									"sid": 782014510563862,
-									"parameters": {
-										"tag": "\"Defined\""
-									}
-								}
-							],
-							"sid": 899882770313619,
-							"isOrBlock": true
+							"eventType": "variable",
+							"name": "defined",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 222605075990844
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-any-touch-start",
-									"objectClass": "Touch",
-									"sid": 407954052903387
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 464786274396864,
+									"parameters": {
+										"variable": "defined"
+									},
+									"isInverted": true
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 664915344736150,
+							"children": [
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 876305901851044,
-									"parameters": {
-										"variable": "deviceType",
-										"value": "\"Mobile\""
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-any-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 477845652242742
+										},
+										{
+											"id": "on-any-click",
+											"objectClass": "Mouse",
+											"sid": 433873597838904
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 276916476618654,
+											"parameters": {
+												"variable": "deviceType",
+												"value": "\"PC\""
+											}
+										},
+										{
+											"id": "signal",
+											"objectClass": "System",
+											"sid": 132516386528149,
+											"parameters": {
+												"tag": "\"Defined\""
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 451411239605774,
+											"parameters": {
+												"variable": "defined",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 521598912956338,
+									"isOrBlock": true
 								},
 								{
-									"id": "signal",
-									"objectClass": "System",
-									"sid": 723180862471329,
-									"parameters": {
-										"tag": "\"Defined\""
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-any-touch-start",
+											"objectClass": "Touch",
+											"sid": 790152250536255
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 962488260323153,
+											"parameters": {
+												"variable": "deviceType",
+												"value": "\"Mobile\""
+											}
+										},
+										{
+											"id": "signal",
+											"objectClass": "System",
+											"sid": 158204533736001,
+											"parameters": {
+												"tag": "\"Defined\""
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 261050330021982,
+											"parameters": {
+												"variable": "defined",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 867022979450154
 								}
-							],
-							"sid": 778164574517985
+							]
 						}
 					],
 					"sid": 182850259673895

@@ -1132,16 +1132,7 @@
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "evaluate-expression",
-									"objectClass": "System",
-									"sid": 922502775479968,
-									"parameters": {
-										"value": "Functions.ShowRewardedVideo = 1"
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [],
 							"sid": 141085178036975,
 							"children": [
@@ -1149,228 +1140,303 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "pick-by-evaluate",
-											"objectClass": "System",
-											"sid": 433946975189566,
-											"parameters": {
-												"object": "Button",
-												"expression": "Button.Type = \"RespawnReturn\""
-											}
+											"id": "is-ads-rewarded-available",
+											"objectClass": "GameScore",
+											"sid": 793431443483305
 										}
 									],
 									"actions": [
 										{
-											"callFunction": "ReDrawInventory",
-											"sid": 812928001022212,
-											"disabled": true
-										},
-										{
-											"id": "stop-timer",
-											"objectClass": "Sprite",
-											"sid": 442100167176976,
-											"behaviorType": "Timer",
+											"id": "set-silent",
+											"objectClass": "Audio",
+											"sid": 319194225677163,
 											"parameters": {
-												"tag": "\"Burning\""
+												"mode": "silent"
 											}
 										},
 										{
-											"id": "stop-timer",
-											"objectClass": "Sprite",
-											"sid": 676639265260565,
-											"behaviorType": "Timer",
-											"parameters": {
-												"tag": "\"BurnHit\""
-											}
+											"id": "ads-show-rewarded",
+											"objectClass": "GameScore",
+											"sid": 539337247417357
 										},
 										{
-											"id": "set-position",
-											"objectClass": "Sprite",
-											"sid": 280584743451337,
-											"parameters": {
-												"x": "SPAWNPOINT.X",
-												"y": "SPAWNPOINT.Y"
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "Cam",
-											"sid": 988970854800373,
-											"behaviorType": "ScrollTo",
-											"parameters": {
-												"state": "enabled"
-											}
-										},
-										{
-											"callFunction": "addHealth",
-											"sid": 912016069911667,
-											"parameters": [
-												"(Heart.Count*2)-Sprite.Health",
-												"0",
-												false,
-												"0",
-												false
-											]
-										},
-										{
-											"id": "set-collisions-enabled",
-											"objectClass": "Sprite",
-											"sid": 857374228011820,
-											"parameters": {
-												"collisions": "enabled"
-											}
-										},
-										{
-											"id": "set-angle",
-											"objectClass": "Sprite",
-											"sid": 250731740763104,
-											"parameters": {
-												"angle": "0"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "PlayerFace",
-											"sid": 719545460862489,
-											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "Hand",
-											"sid": 490487459477079,
-											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "Sprite6",
-											"sid": 121681840150357,
-											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "Hat",
-											"sid": 886946974865246,
-											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "Sprite",
-											"sid": 583915049839860,
-											"behaviorType": "Platform",
-											"parameters": {
-												"state": "enabled"
-											}
-										},
-										{
-											"id": "set-group-active",
+											"id": "wait-for-previous-actions",
 											"objectClass": "System",
-											"sid": 142012699560107,
-											"parameters": {
-												"group-name": "\"Main\"",
-												"state": "activated"
-											}
+											"sid": 998019223321737
 										},
 										{
-											"id": "tween-one-property",
-											"objectClass": "TiledBackground3",
-											"sid": 302168787411453,
-											"behaviorType": "Tween",
+											"id": "set-silent",
+											"objectClass": "Audio",
+											"sid": 259882301414739,
 											"parameters": {
-												"tags": "\"\"",
-												"property": "offsetOpacity",
-												"end-value": "0",
-												"time": "0.3",
-												"ease": "default",
-												"destroy-on-complete": "yes",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
+												"mode": "not-silent"
 											}
-										},
-										{
-											"callFunction": "SetCurrentSlot",
-											"sid": 667976454431581,
-											"parameters": [
-												"Sprite11.CurrentSlot"
-											]
 										}
 									],
-									"sid": 754351570091834,
+									"sid": 609776576938412,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "pick-children",
-													"objectClass": "Sprite",
-													"sid": 469940815248940,
-													"parameters": {
-														"child": "Fire",
-														"which": "own"
-													}
+													"id": "is-ads-last-ad-success",
+													"objectClass": "GameScore",
+													"sid": 724996639015422
 												}
 											],
-											"actions": [
+											"actions": [],
+											"sid": 611597331008566,
+											"children": [
 												{
-													"id": "destroy",
-													"objectClass": "Fire",
-													"sid": 848239342264242
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 536926887110400,
+															"parameters": {
+																"object": "Button",
+																"expression": "Button.Type = \"RespawnReturn\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "ReDrawInventory",
+															"sid": 270949948863647,
+															"disabled": true
+														},
+														{
+															"id": "stop-timer",
+															"objectClass": "Sprite",
+															"sid": 943129396397874,
+															"behaviorType": "Timer",
+															"parameters": {
+																"tag": "\"Burning\""
+															}
+														},
+														{
+															"id": "stop-timer",
+															"objectClass": "Sprite",
+															"sid": 863843326244525,
+															"behaviorType": "Timer",
+															"parameters": {
+																"tag": "\"BurnHit\""
+															}
+														},
+														{
+															"id": "set-position",
+															"objectClass": "Sprite",
+															"sid": 367908005014707,
+															"parameters": {
+																"x": "SPAWNPOINT.X",
+																"y": "SPAWNPOINT.Y"
+															}
+														},
+														{
+															"id": "set-enabled",
+															"objectClass": "Cam",
+															"sid": 600535739383869,
+															"behaviorType": "ScrollTo",
+															"parameters": {
+																"state": "enabled"
+															}
+														},
+														{
+															"callFunction": "addHealth",
+															"sid": 237702792007364,
+															"parameters": [
+																"(Heart.Count*2)-Sprite.Health",
+																"0",
+																false,
+																"0",
+																false
+															]
+														},
+														{
+															"id": "set-collisions-enabled",
+															"objectClass": "Sprite",
+															"sid": 874150833625836,
+															"parameters": {
+																"collisions": "enabled"
+															}
+														},
+														{
+															"id": "set-angle",
+															"objectClass": "Sprite",
+															"sid": 456693058965895,
+															"parameters": {
+																"angle": "0"
+															}
+														},
+														{
+															"id": "set-visible",
+															"objectClass": "PlayerFace",
+															"sid": 209699867247276,
+															"parameters": {
+																"visibility": "visible"
+															}
+														},
+														{
+															"id": "set-visible",
+															"objectClass": "Hand",
+															"sid": 763721814191318,
+															"parameters": {
+																"visibility": "visible"
+															}
+														},
+														{
+															"id": "set-visible",
+															"objectClass": "Sprite6",
+															"sid": 448931210881164,
+															"parameters": {
+																"visibility": "visible"
+															}
+														},
+														{
+															"id": "set-visible",
+															"objectClass": "Hat",
+															"sid": 961961577234586,
+															"parameters": {
+																"visibility": "visible"
+															}
+														},
+														{
+															"id": "set-enabled",
+															"objectClass": "Sprite",
+															"sid": 747834497552653,
+															"behaviorType": "Platform",
+															"parameters": {
+																"state": "enabled"
+															}
+														},
+														{
+															"id": "set-group-active",
+															"objectClass": "System",
+															"sid": 949366467784265,
+															"parameters": {
+																"group-name": "\"Main\"",
+																"state": "activated"
+															}
+														},
+														{
+															"id": "tween-one-property",
+															"objectClass": "TiledBackground3",
+															"sid": 958014782843574,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"\"",
+																"property": "offsetOpacity",
+																"end-value": "0",
+																"time": "0.3",
+																"ease": "default",
+																"destroy-on-complete": "yes",
+																"loop": "no",
+																"ping-pong": "no",
+																"repeat-count": "1"
+															}
+														},
+														{
+															"callFunction": "SetCurrentSlot",
+															"sid": 729683499065299,
+															"parameters": [
+																"Sprite11.CurrentSlot"
+															]
+														}
+													],
+													"sid": 588118135998847,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "pick-children",
+																	"objectClass": "Sprite",
+																	"sid": 969185052201235,
+																	"parameters": {
+																		"child": "Fire",
+																		"which": "own"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "destroy",
+																	"objectClass": "Fire",
+																	"sid": 786745268105258
+																}
+															],
+															"sid": 216235224163177
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "pick-by-evaluate",
+																	"objectClass": "System",
+																	"sid": 962295542252679,
+																	"parameters": {
+																		"object": "Message_Text",
+																		"expression": "Message_Text.Type = \"YouDied\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "destroy",
+																	"objectClass": "Message_Text",
+																	"sid": 317993404625650
+																}
+															],
+															"sid": 357810196680344
+														}
+													]
 												}
-											],
-											"sid": 344197010626740
+											]
 										},
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "pick-by-evaluate",
+													"id": "else",
 													"objectClass": "System",
-													"sid": 880200612008228,
-													"parameters": {
-														"object": "Message_Text",
-														"expression": "Message_Text.Type = \"YouDied\""
-													}
+													"sid": 190757304003521
 												}
 											],
 											"actions": [
 												{
-													"id": "destroy",
-													"objectClass": "Message_Text",
-													"sid": 428551081986774
+													"callFunction": "ButtonAction",
+													"sid": 590288075751859,
+													"parameters": [
+														"\"Respawn\""
+													]
 												}
 											],
-											"sid": 211405577144115
+											"sid": 445846253225884
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 235040066810505
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "ButtonAction",
+											"sid": 743829406879265,
+											"parameters": [
+												"\"Respawn\""
+											]
+										}
+									],
+									"sid": 488156712337549
 								}
 							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 882938594657908
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "ButtonAction",
-									"sid": 226895843436994,
-									"parameters": [
-										"\"Respawn\""
-									]
-								}
-							],
-							"sid": 282011104500878
 						}
 					]
 				},
@@ -9127,6 +9193,10 @@
 																		"Sprite.X+Sprite.Width",
 																		"Sprite.Y-10"
 																	]
+																},
+																{
+																	"callFunction": "UpdateQuestRequirements",
+																	"sid": 810391111566778
 																}
 															],
 															"sid": 805847672139209
@@ -9344,6 +9414,52 @@
 						}
 					],
 					"sid": 419250426242374
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 163217751181811,
+							"parameters": {
+								"key": 52
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "SetCurrentSlot",
+							"sid": 578034801081016,
+							"parameters": [
+								"3"
+							]
+						}
+					],
+					"sid": 105634365747136
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 910511570302193,
+							"parameters": {
+								"key": 53
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "SetCurrentSlot",
+							"sid": 483056193266930,
+							"parameters": [
+								"4"
+							]
+						}
+					],
+					"sid": 240912464250068
 				},
 				{
 					"functionName": "SetCurrentSlot",
@@ -9995,11 +10111,11 @@
 								{
 									"id": "for",
 									"objectClass": "System",
-									"sid": 266686317063161,
+									"sid": 904726324040060,
 									"parameters": {
 										"name": "\"x\"",
 										"start-index": "0",
-										"end-index": "2"
+										"end-index": "4"
 									}
 								}
 							],
@@ -13169,7 +13285,118 @@
 			"title": "Pause",
 			"description": "",
 			"isActiveOnStart": true,
-			"children": [],
+			"children": [
+				{
+					"functionName": "Freeze",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "Freeze",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 449657769015805
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 617784135594338,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 473424829129618,
+									"parameters": {
+										"variable": "Freeze"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 982059261077252,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 459707314265749,
+									"parameters": {
+										"group-name": "\"Ticks\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Sprite",
+									"sid": 192090823059430,
+									"behaviorType": "Platform",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 653225407122137
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 810451610173973,
+									"parameters": {
+										"variable": "Freeze"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 317202362714528,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 707875135236152,
+									"parameters": {
+										"group-name": "\"Ticks\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Sprite",
+									"sid": 755458395810052,
+									"behaviorType": "Platform",
+									"parameters": {
+										"state": "enabled"
+									}
+								}
+							],
+							"sid": 234238738314861
+						}
+					]
+				}
+			],
 			"sid": 947495610595999
 		},
 		{
@@ -18548,6 +18775,17 @@
 											]
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "UpdateCoinValue",
+											"sid": 474163804968498
+										}
+									],
+									"sid": 431154461861668
 								}
 							]
 						},
@@ -19643,7 +19881,7 @@
 												{
 													"id": "pick-children",
 													"objectClass": "InventoryBlank",
-													"sid": 199637255933294,
+													"sid": 186305265815520,
 													"parameters": {
 														"child": "Message_Text",
 														"which": "own"
@@ -19654,7 +19892,7 @@
 												{
 													"id": "wait",
 													"objectClass": "System",
-													"sid": 337814520137042,
+													"sid": 760827543821107,
 													"parameters": {
 														"seconds": "0"
 													}
@@ -19662,13 +19900,17 @@
 												{
 													"id": "wait",
 													"objectClass": "System",
-													"sid": 816158796880071,
+													"sid": 846120766931094,
 													"parameters": {
 														"seconds": "0"
 													}
+												},
+												{
+													"callFunction": "HidePage",
+													"sid": 643873500804764
 												}
 											],
-											"sid": 113704666191858,
+											"sid": 116585163098135,
 											"children": [
 												{
 													"eventType": "block",
@@ -19676,21 +19918,154 @@
 														{
 															"id": "pick-by-evaluate",
 															"objectClass": "System",
-															"sid": 868956575566759,
+															"sid": 646853785725585,
 															"parameters": {
 																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"QuesstName\""
+																"expression": "Message_Text.Type = \"QuestName\""
 															}
 														}
 													],
 													"actions": [
 														{
+															"id": "set-text",
+															"objectClass": "Message_Text",
+															"sid": 720484180668513,
+															"parameters": {
+																"text": "\"\""
+															}
+														},
+														{
 															"id": "move-to-top",
 															"objectClass": "Message_Text",
-															"sid": 454170080588484
+															"sid": 558579445594623
 														}
 													],
-													"sid": 854094193362132
+													"sid": 376843826603334
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 300578127441696,
+															"parameters": {
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"Rewards\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "Message_Text",
+															"sid": 748312916408119,
+															"parameters": {
+																"text": "\"\""
+															}
+														}
+													],
+													"sid": 401681062638679
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 146595644246593,
+															"parameters": {
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"Progress\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "Message_Text",
+															"sid": 451656794136199,
+															"parameters": {
+																"text": "\"\""
+															}
+														}
+													],
+													"sid": 112908695920896
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 614005640307510,
+															"parameters": {
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"QuestReq\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "Message_Text",
+															"sid": 545848285388588,
+															"parameters": {
+																"text": "\"\""
+															}
+														}
+													],
+													"sid": 455187254031313
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 923683179816734,
+															"parameters": {
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"QuestDesc\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "Message_Text",
+															"sid": 330243062439762,
+															"parameters": {
+																"text": "\"\""
+															}
+														}
+													],
+													"sid": 928607603799689
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 273811404225156,
+															"parameters": {
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"QuestTree\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "Message_Text",
+															"sid": 983065033384459,
+															"parameters": {
+																"text": "Functions.Get_LanguageText(\"QuestTree\")"
+															}
+														}
+													],
+													"sid": 386518814990625
 												}
 											]
 										}
@@ -19939,7 +20314,7 @@
 															"sid": 709453306921120,
 															"parameters": {
 																"where": "in-front",
-																"object": "9patch"
+																"object": "scrollZone"
 															}
 														},
 														{
@@ -20126,7 +20501,7 @@
 																	"sid": 236221579672239,
 																	"parameters": {
 																		"where": "in-front",
-																		"object": "9patch"
+																		"object": "scrollZone"
 																	}
 																},
 																{
@@ -22116,12 +22491,11 @@
 													],
 													"actions": [
 														{
-															"id": "typewriter-text",
+															"id": "set-text",
 															"objectClass": "Message_Text",
-															"sid": 615367704862444,
+															"sid": 804682599873176,
 															"parameters": {
-																"text": "Functions.Get_LanguageText(\"QuestTree\")",
-																"duration": "0.2"
+																"text": "Functions.Get_LanguageText(\"QuestTree\")"
 															}
 														}
 													],
@@ -23228,7 +23602,7 @@
 											"objectClass": "Touch",
 											"sid": 397611380547409,
 											"parameters": {
-												"object": "9patch"
+												"object": "scrollZone"
 											}
 										},
 										{
@@ -23468,8 +23842,8 @@
 													"sid": 829809190854945,
 													"parameters": {
 														"value": "QuestElementBlank.X",
-														"lower-bound": "9patch.BBoxLeft",
-														"upper-bound": "9patch.BBoxRight"
+														"lower-bound": "scrollZone.BBoxLeft",
+														"upper-bound": "scrollZone.BBoxRight"
 													},
 													"isInverted": true
 												},
@@ -23479,8 +23853,8 @@
 													"sid": 978865326730590,
 													"parameters": {
 														"value": "QuestElementBlank.Y",
-														"lower-bound": "9patch.BBoxTop",
-														"upper-bound": "9patch.BBoxBottom"
+														"lower-bound": "scrollZone.BBoxTop",
+														"upper-bound": "scrollZone.BBoxBottom"
 													},
 													"isInverted": true
 												}
@@ -25892,6 +26266,38 @@
 								}
 							],
 							"sid": 817151671681094
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 791581798476863,
+									"parameters": {
+										"object": "Message_Text",
+										"expression": "Message_Text.Type = \"Desc\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Message_Text",
+									"sid": 916768707194887,
+									"parameters": {
+										"text": "Functions.Get_LanguageText(\"ChooseCategory\")"
+									}
+								},
+								{
+									"callFunction": "TrimSF",
+									"sid": 794906517986409,
+									"parameters": [
+										"0.001"
+									]
+								}
+							],
+							"sid": 637664274753326
 						}
 					]
 				}
@@ -26278,6 +26684,31 @@
 								}
 							],
 							"sid": 841600697906472
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 378797744558957,
+									"parameters": {
+										"object": "Message_Text",
+										"expression": "Message_Text.Type = \"Desc\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Message_Text",
+									"sid": 921312608538870,
+									"parameters": {
+										"text": "\"\""
+									}
+								}
+							],
+							"sid": 783299172816703
 						}
 					]
 				},
@@ -27281,36 +27712,65 @@
 												"object": "InventoryBlank",
 												"expression": "InventoryBlank.TemplateName = \"Trade\""
 											}
+										},
+										{
+											"id": "pick-children",
+											"objectClass": "InventoryBlank",
+											"sid": 768092004529764,
+											"parameters": {
+												"child": "scrollZone",
+												"which": "own"
+											}
+										},
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 278079791595784,
+											"parameters": {
+												"object": "scrollZone",
+												"expression": "scrollZone.Type = \"Items\""
+											}
+										},
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 879546534712415,
+											"parameters": {
+												"object": "spriteScroll",
+												"expression": "spriteScroll.type = scrollZone.Type"
+											}
 										}
 									],
-									"actions": [],
+									"actions": [
+										{
+											"id": "move-to-layer",
+											"objectClass": "scrollZone",
+											"sid": 804011073808265,
+											"parameters": {
+												"layer": "\"Popup\""
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spriteScroll",
+											"sid": 253460842359887,
+											"parameters": {
+												"instance-variable": "minY",
+												"value": "40"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spriteScroll",
+											"sid": 559776547419533,
+											"parameters": {
+												"instance-variable": "maxY",
+												"value": "scrollZone.BBoxTop+4 "
+											}
+										}
+									],
 									"sid": 783882428213613,
 									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-children",
-													"objectClass": "InventoryBlank",
-													"sid": 987908551671931,
-													"parameters": {
-														"child": "9patch",
-														"which": "own"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "move-to-layer",
-													"objectClass": "9patch",
-													"sid": 347595926638636,
-													"parameters": {
-														"layer": "\"Popup\""
-													}
-												}
-											],
-											"sid": 303667661648276
-										},
 										{
 											"eventType": "variable",
 											"name": "index",
@@ -27345,6 +27805,23 @@
 														"y": "InventoryBlank.BBoxTop+23+(36*floor(index/3))",
 														"create-hierarchy": true,
 														"template-name": "\"Item\""
+													}
+												},
+												{
+													"id": "add-child",
+													"objectClass": "spriteScroll",
+													"sid": 341355484860008,
+													"parameters": {
+														"child": "ShopItem",
+														"transform-x": true,
+														"transform-y": true,
+														"transform-w": false,
+														"transform-h": false,
+														"transform-a": true,
+														"transform-o": false,
+														"transform-z-elevation": true,
+														"transform-visibility": false,
+														"destroy-with-parent": true
 													}
 												}
 											],
@@ -27667,9 +28144,46 @@
 														"ping-pong": "no",
 														"repeat-count": "1"
 													}
+												},
+												{
+													"callFunction": "UpdateCoinValue",
+													"sid": 404083401769359
+												},
+												{
+													"id": "wait-for-previous-actions",
+													"objectClass": "System",
+													"sid": 770755740705787
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "spriteScroll",
+													"sid": 962060439852937,
+													"parameters": {
+														"instance-variable": "enabled",
+														"value": "true"
+													}
 												}
 											],
-											"sid": 493843756207374
+											"sid": 493843756207374,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-nearestfurthest",
+															"objectClass": "ShopItem",
+															"sid": 727144228986792,
+															"parameters": {
+																"which": "furthest",
+																"x": "spriteScroll.x",
+																"y": "spriteScroll.Y"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 495912433823829
+												}
+											]
 										}
 									]
 								},
@@ -27706,9 +28220,1339 @@
 							]
 						}
 					]
+				},
+				{
+					"functionName": "PurchaseItem",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "type",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 385591526109027
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "alert",
+							"objectClass": "Browser",
+							"sid": 309902565501705,
+							"disabled": true,
+							"parameters": {
+								"message": "\"1\""
+							}
+						}
+					],
+					"sid": 949454423378550,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 101810741730048,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 270011220383195,
+											"parameters": {
+												"value": "type = \"Coins\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 131860350868188,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-ads-rewarded-available",
+													"objectClass": "GameScore",
+													"sid": 118743915828807
+												}
+											],
+											"actions": [
+												{
+													"id": "set-silent",
+													"objectClass": "Audio",
+													"sid": 205178050552563,
+													"parameters": {
+														"mode": "silent"
+													}
+												},
+												{
+													"id": "ads-show-rewarded",
+													"objectClass": "GameScore",
+													"sid": 514310645943825
+												},
+												{
+													"callFunction": "Freeze",
+													"sid": 115585316223808,
+													"parameters": [
+														true
+													]
+												},
+												{
+													"id": "wait-for-previous-actions",
+													"objectClass": "System",
+													"sid": 616670310042815
+												},
+												{
+													"callFunction": "Freeze",
+													"sid": 442552291532613,
+													"parameters": [
+														false
+													]
+												},
+												{
+													"id": "set-silent",
+													"objectClass": "Audio",
+													"sid": 911318752806578,
+													"parameters": {
+														"mode": "not-silent"
+													}
+												}
+											],
+											"sid": 647470499659972,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-ads-last-ad-success",
+															"objectClass": "GameScore",
+															"sid": 883002550641000
+														}
+													],
+													"actions": [
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 457603601379154,
+															"parameters": {
+																"audio-file": "Buying-Sound-Effect",
+																"loop": "not-looping",
+																"volume": "0",
+																"stereo-pan": "0",
+																"tag-optional": "\"Sound\""
+															}
+														},
+														{
+															"id": "add-to",
+															"objectClass": "JSON",
+															"sid": 700217691199632,
+															"parameters": {
+																"path": "\"Player.Coins\"",
+																"value": "300"
+															}
+														},
+														{
+															"callFunction": "UpdateCoinValue",
+															"sid": 526238229707749
+														}
+													],
+													"sid": 102591931721921
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 310419940444224
+														}
+													],
+													"actions": [],
+													"sid": 260777582979744,
+													"disabled": true
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 796757237365503
+										}
+									],
+									"actions": [],
+									"sid": 850863308492403,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 997147742190412,
+													"parameters": {
+														"value": "JSON.Get(\"Settings.Config.Traders.\"&\"Test\"&\".Offers.\"&type&\".Cost\") <= JSON.Get(\"Player.Coins\")"
+													}
+												},
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 143567020856019,
+													"parameters": {
+														"value": "Functions.Check_Inventory_Full = 0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 768956077190128,
+													"parameters": {
+														"audio-file": "Buying-Sound-Effect",
+														"loop": "not-looping",
+														"volume": "0",
+														"stereo-pan": "0",
+														"tag-optional": "\"Sound\""
+													}
+												},
+												{
+													"id": "subtract-from",
+													"objectClass": "JSON",
+													"sid": 868453048795374,
+													"parameters": {
+														"path": "\"Player.Coins\"",
+														"value": "JSON.Get(\"Settings.Config.Traders.\"&\"Test\"&\".Offers.\"&type&\".Cost\") "
+													}
+												},
+												{
+													"callFunction": "UpdateCoinValue",
+													"sid": 150198576659052
+												},
+												{
+													"callFunction": "Get_Item",
+													"sid": 777484433713855,
+													"parameters": [
+														"type",
+														"JSON.Get(\"Settings.Config.Traders.\"&\"Test\"&\".Offers.\"&type&\".Count\")",
+														false
+													]
+												}
+											],
+											"sid": 677694421412253
+										}
+									]
+								}
+							]
+						}
+					]
 				}
 			],
 			"sid": 281227300180979
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ScrollViews",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "lastTouchXScroll",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "Начальные координаты тача",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 290428476352367
+				},
+				{
+					"eventType": "variable",
+					"name": "lastTouchYScroll",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "Начальные координаты тача",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 876812113996443
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-start",
+							"objectClass": "Touch",
+							"sid": 413168766917401
+						}
+					],
+					"actions": [],
+					"sid": 616785092314393,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 712436597245070,
+									"parameters": {
+										"object": "scrollZone"
+									}
+								},
+								{
+									"id": "pick-topbottom",
+									"objectClass": "scrollZone",
+									"sid": 588645626316690,
+									"parameters": {
+										"which": "top"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 904658178644499,
+									"parameters": {
+										"variable": "lastTouchXScroll",
+										"value": "Touch.X"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 569339230420441,
+									"parameters": {
+										"variable": "lastTouchYScroll",
+										"value": "Touch.Y"
+									}
+								}
+							],
+							"sid": 428837422219579,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 946029344475897,
+											"parameters": {
+												"object": "spriteScroll",
+												"expression": "spriteScroll.type = scrollZone.Type & spriteScroll.enabled = 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spriteScroll",
+											"sid": 139775414026148,
+											"parameters": {
+												"instance-variable": "speedScroll",
+												"value": "0"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spriteScroll",
+											"sid": 286938855366013,
+											"parameters": {
+												"instance-variable": "dragScroll",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 146893742337354
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 383664084987017
+						}
+					],
+					"actions": [],
+					"sid": 516044802496684,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "spriteScroll",
+									"sid": 701312626223304,
+									"parameters": {
+										"instance-variable": "dragScroll",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 461962238307325,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "spriteScroll",
+											"sid": 858324899330244,
+											"parameters": {
+												"instance-variable": "scrollX"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spriteScroll",
+											"sid": 678000646106384,
+											"parameters": {
+												"instance-variable": "speedScroll",
+												"value": "abs(Self.X-Self.InertXScroll)/10"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spriteScroll",
+											"sid": 626926988493840,
+											"parameters": {
+												"instance-variable": "dragScroll",
+												"value": "2"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spriteScroll",
+											"sid": 855338710426649,
+											"parameters": {
+												"instance-variable": "signScroll",
+												"value": "(Self.InertXScroll-Self.X < 0 ? -1 : 1)"
+											}
+										}
+									],
+									"sid": 155883182140618
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "spriteScroll",
+											"sid": 376180006427729,
+											"parameters": {
+												"instance-variable": "scrollY"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spriteScroll",
+											"sid": 448954246678550,
+											"parameters": {
+												"instance-variable": "speedScroll",
+												"value": "abs(Self.Y-Self.InertYScroll)/10"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spriteScroll",
+											"sid": 109090133782985,
+											"parameters": {
+												"instance-variable": "dragScroll",
+												"value": "2"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spriteScroll",
+											"sid": 398695996653491,
+											"parameters": {
+												"instance-variable": "signScroll",
+												"value": "(Self.InertYScroll-Self.Y < 0 ? -1 : 1)"
+											}
+										}
+									],
+									"sid": 698605460468419
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 257699475600349,
+							"parameters": {
+								"object": "spriteScroll"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 407655664508340,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "spriteScroll",
+									"sid": 459084280589277,
+									"parameters": {
+										"instance-variable": "enabled"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 292701796172932,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "spriteScroll",
+											"sid": 170241714983328,
+											"parameters": {
+												"instance-variable": "dragScroll",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 980765813065146,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "тут оффай кнопку если во время скролла она была зажата"
+										},
+										{
+											"eventType": "comment",
+											"text": "в идеале добавить зависимость от того какой вид скролла (x или y) и сравнивать скорость соответственно"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-between-values",
+													"objectClass": "System",
+													"sid": 570527908572737,
+													"parameters": {
+														"value": "Touch.SpeedAt(0)",
+														"lower-bound": "0",
+														"upper-bound": "50"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [],
+											"sid": 905714449273736
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "spriteScroll",
+													"sid": 494676882109085,
+													"parameters": {
+														"instance-variable": "scrollX"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 355237135694501,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 713388953252563,
+															"parameters": {
+																"value": "spriteScroll.X >= spriteScroll.minX & spriteScroll.X <= spriteScroll.maxX"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-x",
+															"objectClass": "spriteScroll",
+															"sid": 186465628821566,
+															"parameters": {
+																"x": "Self.X + (Touch.X - lastTouchXScroll)"
+															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 423322011385225,
+															"parameters": {
+																"variable": "lastTouchXScroll",
+																"value": "Touch.X"
+															}
+														}
+													],
+													"sid": 408365304439602
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 300194368649146
+														}
+													],
+													"actions": [],
+													"sid": 226739867903070,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "evaluate-expression",
+																	"objectClass": "System",
+																	"sid": 654936219805616,
+																	"parameters": {
+																		"value": "spriteScroll.X < spriteScroll.minX | spriteScroll.X > spriteScroll.maxX"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-x",
+																	"objectClass": "spriteScroll",
+																	"sid": 306215007306810,
+																	"parameters": {
+																		"x": "Self.X + (Touch.X - lastTouchXScroll)/2.5"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 295401598867776,
+																	"parameters": {
+																		"variable": "lastTouchXScroll",
+																		"value": "Touch.X"
+																	}
+																}
+															],
+															"sid": 150032930940787
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 584365124143737,
+															"parameters": {
+																"interval-seconds": "0.2"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "spriteScroll",
+															"sid": 922492101346492,
+															"parameters": {
+																"instance-variable": "InertXScroll",
+																"value": "Self.X"
+															}
+														}
+													],
+													"sid": 916006844644476
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "spriteScroll",
+													"sid": 509626762998445,
+													"parameters": {
+														"instance-variable": "scrollY"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 175769960196938,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 976505090732955,
+															"parameters": {
+																"value": "spriteScroll.Y >= spriteScroll.minY & spriteScroll.Y <= spriteScroll.maxY"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-y",
+															"objectClass": "spriteScroll",
+															"sid": 195746567914268,
+															"parameters": {
+																"y": "Self.Y + (Touch.Y - lastTouchYScroll)"
+															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 334364687067850,
+															"parameters": {
+																"variable": "lastTouchYScroll",
+																"value": "Touch.Y"
+															}
+														}
+													],
+													"sid": 825335443656870
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 649197815038241
+														}
+													],
+													"actions": [],
+													"sid": 853865644081756,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "evaluate-expression",
+																	"objectClass": "System",
+																	"sid": 401738156335942,
+																	"parameters": {
+																		"value": "spriteScroll.Y < spriteScroll.minY | spriteScroll.Y > spriteScroll.maxY"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-y",
+																	"objectClass": "spriteScroll",
+																	"sid": 998777967374109,
+																	"parameters": {
+																		"y": "Self.Y + (Touch.Y - lastTouchYScroll)/2.5"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 657027154421977,
+																	"parameters": {
+																		"variable": "lastTouchYScroll",
+																		"value": "Touch.Y"
+																	}
+																}
+															],
+															"sid": 867354837897358
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 448319674522046,
+															"parameters": {
+																"interval-seconds": "0.2"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "spriteScroll",
+															"sid": 933217123541007,
+															"parameters": {
+																"instance-variable": "InertYScroll",
+																"value": "Self.Y"
+															}
+														}
+													],
+													"sid": 620800985102195
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "spriteScroll",
+											"sid": 692200025000481,
+											"parameters": {
+												"instance-variable": "dragScroll",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 280573964660489,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "spriteScroll",
+													"sid": 580604500305790,
+													"parameters": {
+														"instance-variable": "scrollX"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 466401418943617,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 142625534478114,
+															"parameters": {
+																"value": "spriteScroll.X > spriteScroll.minX | spriteScroll.X < spriteScroll.maxX"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-x",
+															"objectClass": "spriteScroll",
+															"sid": 654950974557907,
+															"parameters": {
+																"x": "Self.X-(Self.speedScroll*Self.signScroll)*dt*60"
+															}
+														},
+														{
+															"id": "subtract-from-instvar",
+															"objectClass": "spriteScroll",
+															"sid": 510623522388246,
+															"parameters": {
+																"instance-variable": "speedScroll",
+																"value": "max(0.1,round(Self.speedScroll)/50)*dt*60"
+															}
+														}
+													],
+													"sid": 339663157911956,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "spriteScroll",
+																	"sid": 209901611596543,
+																	"parameters": {
+																		"instance-variable": "speedScroll",
+																		"comparison": 3,
+																		"value": "0"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "spriteScroll",
+																	"sid": 472041144906871,
+																	"parameters": {
+																		"instance-variable": "dragScroll",
+																		"value": "0"
+																	}
+																}
+															],
+															"sid": 545767990467282
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "spriteScroll",
+													"sid": 888418949889919,
+													"parameters": {
+														"instance-variable": "scrollY"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 474719912790510,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 938278911770052,
+															"parameters": {
+																"value": "spriteScroll.Y > spriteScroll.minY | spriteScroll.Y < spriteScroll.maxY"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-y",
+															"objectClass": "spriteScroll",
+															"sid": 446442772063784,
+															"parameters": {
+																"y": "Self.Y-(Self.speedScroll*Self.signScroll)*dt*60"
+															}
+														},
+														{
+															"id": "subtract-from-instvar",
+															"objectClass": "spriteScroll",
+															"sid": 202949079139331,
+															"parameters": {
+																"instance-variable": "speedScroll",
+																"value": "max(0.1,round(Self.speedScroll)/50)*dt*60"
+															}
+														}
+													],
+													"sid": 411292541750859,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "spriteScroll",
+																	"sid": 630260333442621,
+																	"parameters": {
+																		"instance-variable": "speedScroll",
+																		"comparison": 3,
+																		"value": "0"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "spriteScroll",
+																	"sid": 933531941358261,
+																	"parameters": {
+																		"instance-variable": "dragScroll",
+																		"value": "0"
+																	}
+																}
+															],
+															"sid": 114794360008885
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-in-touch",
+											"objectClass": "Touch",
+											"sid": 328152799192992,
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 622884419202318,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "spriteScroll",
+													"sid": 520942011894025,
+													"parameters": {
+														"instance-variable": "scrollX"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 560451551337962,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-x",
+															"objectClass": "spriteScroll",
+															"sid": 974251859692988,
+															"parameters": {
+																"comparison": 2,
+																"x-co-ordinate": "Self.minX"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "spriteScroll",
+															"sid": 631577914149019,
+															"parameters": {
+																"instance-variable": "dragScroll",
+																"value": "0"
+															}
+														},
+														{
+															"id": "set-x",
+															"objectClass": "spriteScroll",
+															"sid": 863523234305676,
+															"parameters": {
+																"x": "lerp(Self.X, Self.minX, 0.2*60*dt)"
+															}
+														}
+													],
+													"sid": 837169705022219
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-x",
+															"objectClass": "spriteScroll",
+															"sid": 356278079021101,
+															"parameters": {
+																"comparison": 4,
+																"x-co-ordinate": "Self.maxX"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "spriteScroll",
+															"sid": 656143924568445,
+															"parameters": {
+																"instance-variable": "dragScroll",
+																"value": "0"
+															}
+														},
+														{
+															"id": "set-x",
+															"objectClass": "spriteScroll",
+															"sid": 742058417929553,
+															"parameters": {
+																"x": "lerp(Self.X, Self.maxX, 0.2*60*dt)"
+															}
+														}
+													],
+													"sid": 239627494359250
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "spriteScroll",
+													"sid": 380254544414001,
+													"parameters": {
+														"instance-variable": "scrollY"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 969559574423434,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-y",
+															"objectClass": "spriteScroll",
+															"sid": 101825930228328,
+															"parameters": {
+																"comparison": 2,
+																"y-co-ordinate": "Self.minY"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "spriteScroll",
+															"sid": 746275977041532,
+															"parameters": {
+																"instance-variable": "dragScroll",
+																"value": "0"
+															}
+														},
+														{
+															"id": "set-y",
+															"objectClass": "spriteScroll",
+															"sid": 512843568513199,
+															"parameters": {
+																"y": "lerp(Self.Y, Self.minY, 0.2*60*dt)"
+															}
+														}
+													],
+													"sid": 959896490322027
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-y",
+															"objectClass": "spriteScroll",
+															"sid": 249235946546101,
+															"parameters": {
+																"comparison": 4,
+																"y-co-ordinate": "Self.maxY"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "spriteScroll",
+															"sid": 824384279948246,
+															"parameters": {
+																"instance-variable": "dragScroll",
+																"value": "0"
+															}
+														},
+														{
+															"id": "set-y",
+															"objectClass": "spriteScroll",
+															"sid": 182324042977773,
+															"parameters": {
+																"y": "lerp(Self.Y, Self.maxY, 0.2*60*dt)"
+															}
+														}
+													],
+													"sid": 389566421700059
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 780727766945187,
+							"parameters": {
+								"object": "scrollZone"
+							}
+						},
+						{
+							"id": "pick-topbottom",
+							"objectClass": "scrollZone",
+							"sid": 548862342118810,
+							"parameters": {
+								"which": "top"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 489257548886852,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "t",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 189293612677949
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 702148767073831,
+									"parameters": {
+										"object": "spriteScroll",
+										"expression": "spriteScroll.type = scrollZone.Type"
+									}
+								},
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 831986395663640,
+									"parameters": {
+										"value": "time-t > 0.25"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 501984173310546,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-mouse-wheel",
+											"objectClass": "Mouse",
+											"sid": 774480045931962,
+											"parameters": {
+												"direction": "up"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 265543978708938,
+											"parameters": {
+												"variable": "t",
+												"value": "time"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spriteScroll",
+											"sid": 261329143301427,
+											"parameters": {
+												"instance-variable": "speedScroll",
+												"value": "20"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spriteScroll",
+											"sid": 624931461454273,
+											"parameters": {
+												"instance-variable": "dragScroll",
+												"value": "2"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spriteScroll",
+											"sid": 345956663496902,
+											"parameters": {
+												"instance-variable": "signScroll",
+												"value": "-1"
+											}
+										}
+									],
+									"sid": 424855718182595,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-mouse-wheel",
+											"objectClass": "Mouse",
+											"sid": 420720039865771,
+											"parameters": {
+												"direction": "down"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 787080269187961,
+											"parameters": {
+												"variable": "t",
+												"value": "time"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spriteScroll",
+											"sid": 637046135898366,
+											"parameters": {
+												"instance-variable": "speedScroll",
+												"value": "20"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spriteScroll",
+											"sid": 127652193121890,
+											"parameters": {
+												"instance-variable": "dragScroll",
+												"value": "2"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spriteScroll",
+											"sid": 398641067314489,
+											"parameters": {
+												"instance-variable": "signScroll",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 764957921907935,
+									"isOrBlock": true
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 384651617035669
 		}
 	],
 	"sid": 265356654045713

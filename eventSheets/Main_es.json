@@ -20,6 +20,11 @@
 			],
 			"actions": [
 				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 748232996853460
+				},
+				{
 					"callFunction": "LoadWorld",
 					"sid": 494520672822737
 				},
@@ -70,6 +75,18 @@
 						"loop": "no",
 						"ping-pong": "no",
 						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 227979495715312,
+					"parameters": {
+						"audio-file": "Ludum Dare 38 - Track 3",
+						"loop": "looping",
+						"volume": "-25",
+						"stereo-pan": "0",
+						"tag-optional": "\"Music\""
 					}
 				}
 			],
@@ -193,11 +210,11 @@
 						{
 							"id": "for",
 							"objectClass": "System",
-							"sid": 883935168881052,
+							"sid": 166438438725266,
 							"parameters": {
 								"name": "\"x\"",
 								"start-index": "0",
-								"end-index": "2"
+								"end-index": "4"
 							}
 						}
 					],
@@ -3555,11 +3572,11 @@
 																		{
 																			"id": "is-between-values",
 																			"objectClass": "System",
-																			"sid": 471718076914168,
+																			"sid": 286668504790681,
 																			"parameters": {
 																				"value": "loopindex",
 																				"lower-bound": "0",
-																				"upper-bound": "2"
+																				"upper-bound": "4"
 																			}
 																		}
 																	],
@@ -3999,11 +4016,11 @@
 																{
 																	"id": "is-between-values",
 																	"objectClass": "System",
-																	"sid": 946082967979121,
+																	"sid": 804005455307925,
 																	"parameters": {
 																		"value": "loopindex",
 																		"lower-bound": "0",
-																		"upper-bound": "2"
+																		"upper-bound": "4"
 																	}
 																}
 															],
@@ -19669,6 +19686,24 @@
 									"sid": 213177097813062,
 									"parameters": {
 										"frame-number": "random(Sprite18.AnimationFrameCount)"
+									}
+								},
+								{
+									"id": "set-magnitude",
+									"objectClass": "Sprite18",
+									"sid": 973940093013978,
+									"behaviorType": "Sine",
+									"parameters": {
+										"magnitude": "random(1,5)"
+									}
+								},
+								{
+									"id": "set-movement",
+									"objectClass": "Sprite18",
+									"sid": 857262518454741,
+									"behaviorType": "Sine",
+									"parameters": {
+										"movement": "vertical"
 									}
 								}
 							],

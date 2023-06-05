@@ -1,0 +1,19 @@
+{
+	"name": "ScrollView",
+	"plugin-id": "NinePatch",
+	"sid": 783958958245182,
+	"instanceVariables": [
+		{
+			"name": "Type",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 334228064253920
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"scrollZone"
+	]
+}

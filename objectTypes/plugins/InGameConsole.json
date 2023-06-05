@@ -5,7 +5,7 @@
 	"singleglobal-inst": {
 		"type": "InGameConsole",
 		"properties": {
-			"enable": true,
+			"enable": false,
 			"background-color": [
 				0,
 				0,

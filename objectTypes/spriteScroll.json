@@ -1,0 +1,154 @@
+{
+	"name": "spriteScroll",
+	"plugin-id": "Sprite",
+	"sid": 926612470887249,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "signScroll",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 107625542155871
+		},
+		{
+			"name": "speedScroll",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 469675749858723
+		},
+		{
+			"name": "dragScroll",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 471814185188418
+		},
+		{
+			"name": "InertXScroll",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 931532145041848
+		},
+		{
+			"name": "InertYScroll",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 693914714909566
+		},
+		{
+			"name": "enabled",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 804549397838364
+		},
+		{
+			"name": "scrollX",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 773433240364989
+		},
+		{
+			"name": "scrollY",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 479002008414340
+		},
+		{
+			"name": "minX",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 157885952506358
+		},
+		{
+			"name": "maxX",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 873424768772630
+		},
+		{
+			"name": "minY",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 308534904246266
+		},
+		{
+			"name": "maxY",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 481021317632906
+		},
+		{
+			"name": "case",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 331548447117528
+		},
+		{
+			"name": "type",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 895089134987099
+		},
+		{
+			"name": "popupDisable",
+			"type": "boolean",
+			"desc": "",
+			"show": false,
+			"sid": 157463072990161
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 606089135757086
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 346665833555247
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1,
+						"height": 1,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9118491,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 460386406334029,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

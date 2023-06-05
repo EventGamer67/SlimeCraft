@@ -209,6 +209,103 @@
 							"sid": 153751528771327
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 440018671974098,
+							"parameters": {
+								"object": "Message_Text",
+								"expression": "Message_Text.Type = \"Version\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Message_Text",
+							"sid": 388408096030106,
+							"parameters": {
+								"x": "ViewportLeft(\"UI\")",
+								"y": "ViewportBottom(\"UI\")"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Message_Text",
+							"sid": 756463141506506,
+							"parameters": {
+								"text": "projectversion"
+							}
+						}
+					],
+					"sid": 911666027626395
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "repeat",
+							"objectClass": "System",
+							"sid": 242711844992474,
+							"parameters": {
+								"count": "20"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 358364920443427,
+							"parameters": {
+								"object-to-create": "Sprite18",
+								"layer": "\"Layer 2\"",
+								"x": "random(0,LayoutWidth)",
+								"y": "random(0,LayoutHeight)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Sprite18",
+							"sid": 615018630383897,
+							"parameters": {
+								"frame-number": "random(Sprite18.AnimationFrameCount)"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Sprite18",
+							"sid": 647739982407076,
+							"parameters": {
+								"scale": "random(0.1,0.3)"
+							}
+						},
+						{
+							"id": "set-magnitude",
+							"objectClass": "Sprite18",
+							"sid": 396604703368111,
+							"behaviorType": "Sine",
+							"parameters": {
+								"magnitude": "random(1,5)"
+							}
+						},
+						{
+							"id": "set-movement",
+							"objectClass": "Sprite18",
+							"sid": 136348653320235,
+							"behaviorType": "Sine",
+							"parameters": {
+								"movement": "vertical"
+							}
+						}
+					],
+					"sid": 694382300657658
 				}
 			]
 		},
@@ -419,9 +516,9 @@
 						{
 							"id": "go-to-url",
 							"objectClass": "Browser",
-							"sid": 579431465474422,
+							"sid": 827512679237095,
 							"parameters": {
-								"url": "\"https://yandex.ru/games/developer?name=CerberusDev\"",
+								"url": "\"https://yandex.\"&str( lowercase(GameScore.Language) = \"ru\" ? \"ru\" : \"com\" )&\"/games/developer?name=CerberusDev\"",
 								"target": "top"
 							}
 						}
@@ -984,7 +1081,7 @@
 											"objectClass": "Touch",
 											"sid": 547019275969717,
 											"parameters": {
-												"object": "9patch"
+												"object": "scrollZone"
 											}
 										}
 									],
@@ -1525,12 +1622,12 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 671838675936062,
+							"sid": 813938015428001,
 							"parameters": {
 								"object-to-create": "InventoryBlank",
 								"layer": "\"Window\"",
 								"x": "Functions.Get_Center_X(\"Window\")",
-								"y": "Functions.Get_Center_Y(\"Window\")",
+								"y": "Functions.Get_Center_Y(\"Window\")-10",
 								"create-hierarchy": true,
 								"template-name": "\"WorldCreate\""
 							}
@@ -1565,9 +1662,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "TextInput",
-							"sid": 218888416152421,
+							"sid": 853384301538510,
 							"parameters": {
-								"text": "\"New Island\""
+								"text": "Functions.Get_LanguageText(\"NewWorldName\")"
 							}
 						},
 						{
@@ -1755,7 +1852,7 @@
 									"objectClass": "InventoryBlank",
 									"sid": 931822528290313,
 									"parameters": {
-										"child": "9patch",
+										"child": "scrollZone",
 										"which": "own"
 									}
 								}
@@ -1763,7 +1860,7 @@
 							"actions": [
 								{
 									"id": "move-to-layer",
-									"objectClass": "9patch",
+									"objectClass": "scrollZone",
 									"sid": 506540617970325,
 									"parameters": {
 										"layer": "\"Slots\""
@@ -3231,9 +3328,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "Message_Text",
-											"sid": 991930584934542,
+											"sid": 147343703916552,
 											"parameters": {
-												"text": "Question"
+												"text": "Functions.Get_LanguageText(Question)\n"
 											}
 										}
 									],
@@ -3273,9 +3370,9 @@
 												{
 													"id": "set-text",
 													"objectClass": "Message_Text",
-													"sid": 338353043124413,
+													"sid": 929443964078992,
 													"parameters": {
-														"text": "DeclineText"
+														"text": "Functions.Get_LanguageText(DeclineText)"
 													}
 												}
 											],
@@ -3317,9 +3414,9 @@
 												{
 													"id": "set-text",
 													"objectClass": "Message_Text",
-													"sid": 854834712824183,
+													"sid": 157116370238312,
 													"parameters": {
-														"text": "AcceptText"
+														"text": "Functions.Get_LanguageText(AcceptText)"
 													}
 												}
 											],

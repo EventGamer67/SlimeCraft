@@ -775,6 +775,345 @@
 					]
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-start",
+					"objectClass": "Touch",
+					"sid": 421190875147988
+				}
+			],
+			"actions": [],
+			"sid": 479054571242596,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 907134494259016,
+							"parameters": {
+								"object": "9PBtns"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 519953074669195,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-topbottom",
+									"objectClass": "9PBtns",
+									"sid": 661798809250026,
+									"parameters": {
+										"which": "top"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "9PBtns",
+									"sid": 567536066945726,
+									"parameters": {
+										"instance-variable": "Touched"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-all-tweens",
+									"objectClass": "9PBtns",
+									"sid": 392953131017234,
+									"behaviorType": "Tween"
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "9PBtns",
+									"sid": 280620855720660,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"minimize\"",
+										"property": "size",
+										"end-x": "Self.w*0.9",
+										"end-y": "Self.h*0.9",
+										"time": "0.1",
+										"ease": "easeoutsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "9PBtns",
+									"sid": 811211552044432,
+									"parameters": {
+										"instance-variable": "Touched",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 799028481801280
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-end",
+					"objectClass": "Touch",
+					"sid": 938075779191951
+				}
+			],
+			"actions": [],
+			"sid": 777805184136903,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 713340233185612,
+							"parameters": {
+								"object": "9PBtns",
+								"expression": "9PBtns.touched = 1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "9PBtns",
+							"sid": 683896709643715,
+							"parameters": {
+								"instance-variable": "Touched",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 298628162861974,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 538967115095905,
+									"parameters": {
+										"value": "9PBtns.ObjectTypeName = \"ShopItem\""
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 690546654159722,
+									"parameters": {
+										"object": "ShopItem",
+										"expression": "ShopItem.UID = 9PBtns.UID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "PurchaseItem",
+									"sid": 917013256616849,
+									"parameters": [
+										"ShopItem.Item"
+									]
+								}
+							],
+							"sid": 219396348887149
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 952655681729580,
+					"parameters": {
+						"object": "9PBtns"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 707426477730278,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "9PBtns",
+							"sid": 103516032679613,
+							"parameters": {
+								"instance-variable": "Clickables"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "9PBtns",
+							"sid": 672712665570960,
+							"parameters": {
+								"instance-variable": "Touched"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing",
+							"objectClass": "9PBtns",
+							"sid": 878956974780280,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"minimize\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing",
+							"objectClass": "9PBtns",
+							"sid": 801711502271307,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"standart\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing",
+							"objectClass": "9PBtns",
+							"sid": 248847699055860,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"hover\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing",
+							"objectClass": "9PBtns",
+							"sid": 319166375829435,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"appear\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 233348904056679,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 757498382950882,
+									"parameters": {
+										"object": "9PBtns"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 356812801593469,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "stop-all-tweens",
+											"objectClass": "9PBtns",
+											"sid": 568082946406252,
+											"behaviorType": "Tween"
+										},
+										{
+											"id": "tween-two-properties",
+											"objectClass": "9PBtns",
+											"sid": 134607195621018,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"hover\"",
+												"property": "size",
+												"end-x": "Self.w*1.1",
+												"end-y": "Self.h*1.1",
+												"time": "0.1",
+												"ease": "easeoutquart",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 716115813604785
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 588858895145224
+								}
+							],
+							"actions": [],
+							"sid": 173064169972002,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "stop-all-tweens",
+											"objectClass": "9PBtns",
+											"sid": 588922459414375,
+											"behaviorType": "Tween"
+										},
+										{
+											"id": "tween-two-properties",
+											"objectClass": "9PBtns",
+											"sid": 185035343987309,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"standart\"",
+												"property": "size",
+												"end-x": "Self.w",
+												"end-y": "Self.h",
+												"time": "0.1",
+												"ease": "easeoutquart",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 114910865391095
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 342024419572520
