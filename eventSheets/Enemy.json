@@ -1904,16 +1904,6 @@
 													],
 													"actions": [
 														{
-															"id": "log",
-															"objectClass": "Browser",
-															"sid": 671785326509892,
-															"disabled": true,
-															"parameters": {
-																"type": "log",
-																"message": "\"try spawn\"&newline&Terrain.Height%16"
-															}
-														},
-														{
 															"callFunction": "RandomSpawnTile",
 															"sid": 961551310788213,
 															"disabled": true

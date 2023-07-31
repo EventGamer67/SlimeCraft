@@ -1458,12 +1458,12 @@
 																								{
 																									"id": "play-by-name",
 																									"objectClass": "Audio",
-																									"sid": 360463322840881,
+																									"sid": 446131837024243,
 																									"parameters": {
 																										"folder": "sounds",
 																										"audio-file-name": "choose(\"place1\",\"place2\")",
 																										"loop": "not-looping",
-																										"volume": "0",
+																										"volume": "JSON.Get(\"Save.Sound\") = 1 ? 0 : -Infinity",
 																										"stereo-pan": "0",
 																										"tag-optional": "\"Sound\""
 																									}
@@ -4308,15 +4308,6 @@
 																{
 																	"callFunction": "Digging",
 																	"sid": 672378548373501
-																},
-																{
-																	"id": "log",
-																	"objectClass": "Browser",
-																	"sid": 703002555064570,
-																	"parameters": {
-																		"type": "log",
-																		"message": "\"digging\""
-																	}
 																}
 															],
 															"sid": 883646330542342
@@ -7029,9 +7020,9 @@
 																				{
 																					"id": "is-tag-playing",
 																					"objectClass": "Audio",
-																					"sid": 988939354943047,
+																					"sid": 536290890262522,
 																					"parameters": {
-																						"tag": "\"Hit\""
+																						"tag": "\"Sound\""
 																					},
 																					"isInverted": true
 																				}
@@ -7055,14 +7046,14 @@
 																						{
 																							"id": "play-by-name",
 																							"objectClass": "Audio",
-																							"sid": 652759366911925,
+																							"sid": 295694280890120,
 																							"parameters": {
 																								"folder": "sounds",
 																								"audio-file-name": "JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex,TileY)&\".HitSound\")",
 																								"loop": "not-looping",
-																								"volume": "0",
+																								"volume": "JSON.Get(\"Save.Sound\") = 1 ? 0 : -Infinity",
 																								"stereo-pan": "0",
-																								"tag-optional": "\"Hit\""
+																								"tag-optional": "\"Sound\""
 																							}
 																						}
 																					],
@@ -7081,14 +7072,14 @@
 																						{
 																							"id": "play-by-name",
 																							"objectClass": "Audio",
-																							"sid": 587284729567480,
+																							"sid": 538567844356882,
 																							"parameters": {
 																								"folder": "sounds",
 																								"audio-file-name": "\"Hitstone2\"",
 																								"loop": "not-looping",
-																								"volume": "0",
+																								"volume": "JSON.Get(\"Save.Sound\") = 1 ? 0 : -Infinity",
 																								"stereo-pan": "0",
-																								"tag-optional": "\"Hit\""
+																								"tag-optional": "\"Sound\""
 																							}
 																						}
 																					],
@@ -7330,14 +7321,6 @@
 																														"TileY",
 																														"Inventory_Item.AnimationName"
 																													]
-																												},
-																												{
-																													"id": "alert",
-																													"objectClass": "Browser",
-																													"sid": 261589544056316,
-																													"parameters": {
-																														"message": "\"1\""
-																													}
 																												}
 																											],
 																											"sid": 504811441346154,
@@ -7544,17 +7527,7 @@
 																											}
 																										}
 																									],
-																									"actions": [
-																										{
-																											"id": "alert",
-																											"objectClass": "Browser",
-																											"sid": 875236676875658,
-																											"disabled": true,
-																											"parameters": {
-																												"message": "\"1\""
-																											}
-																										}
-																									],
+																									"actions": [],
 																									"sid": 983443954209189,
 																									"children": [
 																										{
@@ -7704,14 +7677,14 @@
 																						{
 																							"id": "play-by-name",
 																							"objectClass": "Audio",
-																							"sid": 204539753240178,
+																							"sid": 744797747236611,
 																							"parameters": {
 																								"folder": "sounds",
 																								"audio-file-name": "JSON.Get(\"Settings.Config.Tiles.\"&Terrain.TileAt(Tilex,TileY)&\".DestroySound\")",
 																								"loop": "not-looping",
-																								"volume": "0",
+																								"volume": "JSON.Get(\"Save.Sound\") = 1 ? 0 : -Infinity",
 																								"stereo-pan": "0",
-																								"tag-optional": "\"\""
+																								"tag-optional": "\"Sound\""
 																							}
 																						}
 																					],
@@ -7730,14 +7703,14 @@
 																						{
 																							"id": "play-by-name",
 																							"objectClass": "Audio",
-																							"sid": 926271536994283,
+																							"sid": 762910168018721,
 																							"parameters": {
 																								"folder": "sounds",
 																								"audio-file-name": "\"stone1\"",
 																								"loop": "not-looping",
-																								"volume": "0",
+																								"volume": "JSON.Get(\"Save.Sound\") = 1 ? 0 : -Infinity",
 																								"stereo-pan": "0",
-																								"tag-optional": "\"\""
+																								"tag-optional": "\"Sound\""
 																							}
 																						}
 																					],
@@ -8600,18 +8573,26 @@
 									"parameters": {
 										"value": "value < 0"
 									}
+								},
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 977066258376504,
+									"parameters": {
+										"value": "Sprite.Health > 0"
+									}
 								}
 							],
 							"actions": [
 								{
 									"id": "play-by-name",
 									"objectClass": "Audio",
-									"sid": 557120588388262,
+									"sid": 794179123657603,
 									"parameters": {
 										"folder": "sounds",
 										"audio-file-name": "choose(\"hit1\",\"hit2\",\"hit3\")",
 										"loop": "not-looping",
-										"volume": "0",
+										"volume": "JSON.Get(\"Save.Sound\") = 1 ? 0 : -Infinity",
 										"stereo-pan": "0",
 										"tag-optional": "\"Sound\""
 									}
@@ -8824,6 +8805,10 @@
 											"conditions": [],
 											"actions": [
 												{
+													"callFunction": "CloseTables",
+													"sid": 795525693952034
+												},
+												{
 													"id": "set-group-active",
 													"objectClass": "System",
 													"sid": 449277871166043,
@@ -8898,6 +8883,13 @@
 													}
 												},
 												{
+													"callFunction": "disableOtherBtns",
+													"sid": 342869533705847,
+													"parameters": [
+														"\"TopUI\""
+													]
+												},
+												{
 													"id": "tween-one-property",
 													"objectClass": "Sprite",
 													"sid": 908573101831398,
@@ -8957,7 +8949,8 @@
 												{
 													"id": "wait-for-previous-actions",
 													"objectClass": "System",
-													"sid": 928170069653753
+													"sid": 928170069653753,
+													"disabled": true
 												},
 												{
 													"id": "create-object",
@@ -9023,10 +9016,10 @@
 												{
 													"id": "create-object",
 													"objectClass": "System",
-													"sid": 262547470797304,
+													"sid": 978815802600096,
 													"parameters": {
 														"object-to-create": "Message_Text",
-														"layer": "\"UI\"",
+														"layer": "\"TopUI\"",
 														"x": "Functions.Get_Center_X(\"UI\")",
 														"y": "Functions.Get_Center_Y(\"UI\")",
 														"create-hierarchy": true,
@@ -10933,6 +10926,11 @@
 									"parameters": {
 										"value": "Interface = \"\""
 									}
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "FoodBtn",
+									"sid": 526391438226289
 								}
 							],
 							"actions": [],
@@ -13340,9 +13338,9 @@
 										{
 											"id": "evaluate-expression",
 											"objectClass": "System",
-											"sid": 731259382531452,
+											"sid": 592267453660036,
 											"parameters": {
-												"value": "JSON.Get(\"Settings.Config.Traders.\"&InventoryBlank.SubType&\".Offers.\"&SellSlot.Offer&\".Cost\") < JSON.Get(\"Player.Coins\")"
+												"value": "JSON.Get(\"Settings.Config.Traders.\"&InventoryBlank.SubType&\".Offers.\"&SellSlot.Offer&\".Cost\") <= JSON.Get(\"Player.Coins\")"
 											}
 										},
 										{
@@ -13425,11 +13423,11 @@
 														{
 															"id": "play",
 															"objectClass": "Audio",
-															"sid": 862576122454062,
+															"sid": 322797826024114,
 															"parameters": {
 																"audio-file": "Buying-Sound-Effect",
 																"loop": "not-looping",
-																"volume": "0",
+																"volume": "JSON.Get(\"Save.Sound\") = 1 ? 0 : -Infinity",
 																"stereo-pan": "0",
 																"tag-optional": "\"Sound\""
 															}
@@ -16346,6 +16344,151 @@
 				}
 			],
 			"sid": 436134980444878
+		},
+		{
+			"functionName": "CloseTables",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 522662965094676,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-all",
+							"objectClass": "System",
+							"sid": 776795473046514,
+							"parameters": {
+								"object": "InventoryBlank"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "InventoryBlank",
+							"sid": 655207275809555
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Sprite10",
+							"sid": 104263820924986,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Tilemap2",
+							"sid": 981458523687314,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 578770223947436,
+							"parameters": {
+								"layer": "\"UI\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 711079102369671,
+							"parameters": {
+								"variable": "Interface",
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 578056835157553,
+							"parameters": {
+								"group-name": "\"Dragging\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"callFunction": "BlackoutByTiled",
+							"sid": 897792151582194,
+							"parameters": [
+								false,
+								"\"Interfaces\"",
+								"0",
+								"0"
+							]
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 647503400060166,
+							"parameters": {
+								"group-name": "\"QuestBook\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Book9path",
+							"sid": 169845805375804
+						}
+					],
+					"sid": 139533207352173,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 955017887662127,
+									"parameters": {
+										"object": "Inventory_Item",
+										"expression": "Inventory_Item.Type <> \"HandItem\" & Inventory_Item.Type <> \"Task\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 995056914887870,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 154635254713849,
+											"parameters": {
+												"object": "Inventory_Item",
+												"expression": "Inventory_Item.LayerName = \"Interfaces\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "Inventory_Item",
+											"sid": 690108205392994
+										}
+									],
+									"sid": 518042501770285
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 380699106854873

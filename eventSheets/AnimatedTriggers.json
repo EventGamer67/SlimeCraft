@@ -915,6 +915,22 @@
 									}
 								},
 								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 882831320749551,
+									"parameters": {
+										"object": "9PBtns"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "9PBtns",
+									"sid": 355264583076874,
+									"parameters": {
+										"instance-variable": "Clickables"
+									}
+								},
+								{
 									"id": "pick-by-evaluate",
 									"objectClass": "System",
 									"sid": 690546654159722,

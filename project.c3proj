@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 34400,
+	"savedWithRelease": 35000,
 	"name": "Arrow_Rain",
 	"runtime": "c3",
 	"useWorker": "dom",
@@ -66,9 +66,9 @@
 			"type": "plugin",
 			"id": "Eponesh_GameScore",
 			"name": "GamePush",
-			"author": "Eponesh",
+			"author": "GamePush, FZCO",
 			"bundled": false,
-			"version": "1.0.38"
+			"version": "1.0.47"
 		},
 		{
 			"type": "plugin",
@@ -346,14 +346,16 @@
 			"Sprite3",
 			"Sprite5",
 			"Torch_Light_Colored",
-			"spriteScroll"
+			"spriteScroll",
+			"QuestCompleteIndicator",
+			"CanPlaceTileMask"
 		],
 		"subfolders": [
 			{
 				"items": [
 					"9patch4",
 					"9patch2",
-					"9patch3",
+					"DropItemZone",
 					"9patch5",
 					"9patch7",
 					"9patch8",
@@ -1332,6 +1334,14 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "Save.json",
+					"type": "application/json",
+					"sid": 200044156509354,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": [
@@ -1422,7 +1432,8 @@
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
 		"autoReloadScriptsOnPreview": false,
-		"exportFileStructure": "folders"
+		"exportFileStructure": "folders",
+		"uidAllocationMode": "increment"
 	},
 	"viewportWidth": 371,
 	"viewportHeight": 208,

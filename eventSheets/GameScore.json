@@ -94,14 +94,28 @@
 											}
 										},
 										{
+											"callFunction": "Freeze",
+											"sid": 871171050625862,
+											"parameters": [
+												true
+											]
+										},
+										{
 											"id": "ads-show-fullscreen",
 											"objectClass": "GameScore",
-											"sid": 566381726281269
+											"sid": 305041391318686
 										},
 										{
 											"id": "wait-for-previous-actions",
 											"objectClass": "System",
 											"sid": 789165949946509
+										},
+										{
+											"callFunction": "Freeze",
+											"sid": 295839763566104,
+											"parameters": [
+												false
+											]
 										},
 										{
 											"id": "set-silent",

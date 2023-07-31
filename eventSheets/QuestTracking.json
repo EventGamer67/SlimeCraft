@@ -120,6 +120,14 @@
 							],
 							"actions": [
 								{
+									"id": "set-default-color",
+									"objectClass": "Message_Text",
+									"sid": 655839467029006,
+									"parameters": {
+										"color": "rgbEx(100, 100,100)"
+									}
+								},
+								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
 									"sid": 260129694394711,
@@ -301,9 +309,53 @@
 										"text": "Text",
 										"duration": "2"
 									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 956817651355203,
+									"parameters": {
+										"seconds": "0"
+									}
 								}
 							],
-							"sid": 422533072993757
+							"sid": 422533072993757,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 646634518680528,
+											"parameters": {
+												"object": "Inventory_Item",
+												"expression": "Inventory_Item.Type = \"Task\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-child",
+											"objectClass": "Message_Text",
+											"sid": 352136095335481,
+											"parameters": {
+												"child": "Inventory_Item",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-a": true,
+												"transform-o": false,
+												"transform-z-elevation": true,
+												"transform-visibility": false,
+												"destroy-with-parent": false
+											}
+										}
+									],
+									"sid": 435971369193581
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -403,6 +455,14 @@
 														"variable": "enought",
 														"value": "false"
 													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "QuestCompleteIndicator",
+													"sid": 427906634036431,
+													"parameters": {
+														"visibility": "invisible"
+													}
 												}
 											],
 											"sid": 628989100439719,
@@ -428,6 +488,22 @@
 																"variable": "AlreadyQuestCompleteShowed",
 																"value": "false"
 															}
+														},
+														{
+															"callFunction": "UpdateTrackingQuest",
+															"sid": 913916579264039
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 514850150164167,
+															"parameters": {
+																"seconds": "0.1"
+															}
+														},
+														{
+															"callFunction": "UpdateQuestRequirements",
+															"sid": 181838731762147
 														}
 													],
 													"sid": 262436218732952
@@ -510,6 +586,14 @@
 													]
 												},
 												{
+													"id": "set-visible",
+													"objectClass": "QuestCompleteIndicator",
+													"sid": 902134869286404,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
 													"id": "set-boolean-eventvar",
 													"objectClass": "System",
 													"sid": 343304296606699,
@@ -519,7 +603,65 @@
 													}
 												}
 											],
-											"sid": 545251951086338
+											"sid": 545251951086338,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 518587176310327,
+															"parameters": {
+																"object": "Message_Text",
+																"expression": "Message_Text.Type = \"Task\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "Message_Text",
+															"sid": 816582423868092,
+															"parameters": {
+																"text": "Functions.Get_LanguageText(\"QuestComplete\")"
+															}
+														},
+														{
+															"id": "set-default-color",
+															"objectClass": "Message_Text",
+															"sid": 208790944681625,
+															"parameters": {
+																"color": "rgbEx(50, 100, 50)"
+															}
+														}
+													],
+													"sid": 534294118317433
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 178102827683403,
+															"parameters": {
+																"object": "Inventory_Item",
+																"expression": "Inventory_Item.Type = \"Task\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "destroy",
+															"objectClass": "Inventory_Item",
+															"sid": 986578869786222
+														}
+													],
+													"sid": 352069603974729,
+													"disabled": true
+												}
+											]
 										}
 									]
 								}

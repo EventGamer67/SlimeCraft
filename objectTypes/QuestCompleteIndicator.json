@@ -1,24 +1,9 @@
 {
-	"name": "QuestSpawner",
+	"name": "QuestCompleteIndicator",
 	"plugin-id": "Sprite",
-	"sid": 831553682738781,
+	"sid": 782794217443170,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "sX",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 672228915453775
-		},
-		{
-			"name": "sY",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 354661645508958
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -26,19 +11,19 @@
 			{
 				"frames": [
 					{
-						"width": 1,
-						"height": 1,
+						"width": 8,
+						"height": 30,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4560477,
+						"imageSpriteId": 6960740,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 640405478095140,
+				"sid": 864981144829384,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

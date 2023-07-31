@@ -35,6 +35,11 @@
 			],
 			"actions": [
 				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 154929210840960
+				},
+				{
 					"id": "set-layout-scale",
 					"objectClass": "System",
 					"sid": 252386912874940,
@@ -287,21 +292,12 @@
 							}
 						},
 						{
-							"id": "set-magnitude",
+							"id": "set-active",
 							"objectClass": "Sprite18",
-							"sid": 396604703368111,
+							"sid": 507801924706078,
 							"behaviorType": "Sine",
 							"parameters": {
-								"magnitude": "random(1,5)"
-							}
-						},
-						{
-							"id": "set-movement",
-							"objectClass": "Sprite18",
-							"sid": 136348653320235,
-							"behaviorType": "Sine",
-							"parameters": {
-								"movement": "vertical"
+								"state": "inactive"
 							}
 						}
 					],
@@ -341,13 +337,13 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 270676617872038,
+					"sid": 893080009925557,
 					"parameters": {
 						"audio-file": "FX_Shoot01",
 						"loop": "not-looping",
-						"volume": "0",
+						"volume": "JSON.Get(\"Save.Sound\") = 1 ? 0 : -Infinity",
 						"stereo-pan": "0",
-						"tag-optional": "\"Click\""
+						"tag-optional": "\"Sound\""
 					}
 				}
 			],
@@ -514,13 +510,8 @@
 					],
 					"actions": [
 						{
-							"id": "go-to-url",
-							"objectClass": "Browser",
-							"sid": 827512679237095,
-							"parameters": {
-								"url": "\"https://yandex.\"&str( lowercase(GameScore.Language) = \"ru\" ? \"ru\" : \"com\" )&\"/games/developer?name=CerberusDev\"",
-								"target": "top"
-							}
+							"type": "script",
+							"script": "const ysdk = runtime.GamePush.platform.getNativeSDK();\n\nysdk.environment.i18n.tld;\n\nconsole.log(ysdk.environment.i18n.tld);\nconsole.log(ysdk.environment.i18n.lang);\n\nwindow.open(\"https://yandex.\"+ysdk.environment.i18n.tld+\"/games/developer?name=CerberusDev\");"
 						}
 					],
 					"sid": 764006271156795
@@ -598,13 +589,13 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 935660563549149,
+					"sid": 819642251144369,
 					"parameters": {
 						"audio-file": "FX_Shoot01",
 						"loop": "not-looping",
-						"volume": "0",
+						"volume": "JSON.Get(\"Save.Sound\") = 1 ? 0 : -Infinity",
 						"stereo-pan": "0",
-						"tag-optional": "\"Click\""
+						"tag-optional": "\"Sound\""
 					}
 				}
 			],
@@ -700,6 +691,7 @@
 							"id": "evaluate-expression",
 							"objectClass": "System",
 							"sid": 457997280461961,
+							"disabled": true,
 							"parameters": {
 								"value": "Sprite24.Type = \"CreateNewWorld\""
 							}
@@ -708,7 +700,8 @@
 					"actions": [
 						{
 							"callFunction": "ShowCreateNewWorldTable",
-							"sid": 318102162491955
+							"sid": 318102162491955,
+							"disabled": true
 						}
 					],
 					"sid": 927498249933177
@@ -720,17 +713,26 @@
 							"id": "evaluate-expression",
 							"objectClass": "System",
 							"sid": 778829108104175,
+							"disabled": true,
 							"parameters": {
 								"value": "Sprite24.Type = \"Create\""
+							}
+						},
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 516261784861648,
+							"parameters": {
+								"value": "Sprite24.Type = \"CreateNewWorld\""
 							}
 						}
 					],
 					"actions": [
 						{
 							"callFunction": "CreateNewWorld",
-							"sid": 674467563385692,
+							"sid": 543703842160652,
 							"parameters": [
-								"TextInput.Text"
+								"Functions.getRandomName"
 							]
 						},
 						{
@@ -3886,11 +3888,12 @@
 															}
 														},
 														{
-															"id": "evaluate-expression",
+															"id": "pick-by-evaluate",
 															"objectClass": "System",
-															"sid": 164739824344038,
+															"sid": 759954791157005,
 															"parameters": {
-																"value": "InventoryBlank.Type = \"WorldSlot\""
+																"object": "InventoryBlank",
+																"expression": "InventoryBlank.Type = \"WorldSlot\""
 															}
 														}
 													],
@@ -3901,8 +3904,7 @@
 															"sid": 315061111138987
 														}
 													],
-													"sid": 719204201509413,
-													"disabled": true
+													"sid": 719204201509413
 												},
 												{
 													"eventType": "block",
@@ -4163,6 +4165,15 @@
 							}
 						},
 						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 922876161656053,
+							"parameters": {
+								"variable": "New",
+								"value": "false"
+							}
+						},
+						{
 							"id": "signal",
 							"objectClass": "System",
 							"sid": 534388042857797,
@@ -4288,13 +4299,13 @@
 								{
 									"id": "tween-value",
 									"objectClass": "GameManager",
-									"sid": 868441944393182,
+									"sid": 142894779877826,
 									"behaviorType": "Tween",
 									"parameters": {
 										"tags": "\"Fade\"",
 										"start-value": "0",
 										"end-value": "100",
-										"time": "1",
+										"time": "0.5",
 										"ease": "default",
 										"destroy-on-complete": "no",
 										"loop": "no",
@@ -4338,9 +4349,13 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "else",
+											"id": "compare-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 101025659577684
+											"sid": 843635689978174,
+											"parameters": {
+												"variable": "New"
+											},
+											"isInverted": true
 										}
 									],
 									"actions": [
@@ -4601,6 +4616,36 @@
 									"sid": 802053534651676
 								}
 							]
+						}
+					]
+				},
+				{
+					"functionName": "getRandomName",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "string",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 686290741430810,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 106000367623979,
+									"parameters": {
+										"value": "Functions.Get_LanguageText(\"Island\")&\": \"&Date.ToLocaleDateString(Date.Now)"
+									}
+								}
+							],
+							"sid": 687955583580727
 						}
 					]
 				}

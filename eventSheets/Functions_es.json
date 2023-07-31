@@ -2066,12 +2066,12 @@
 														{
 															"id": "play-by-name",
 															"objectClass": "Audio",
-															"sid": 607215764537770,
+															"sid": 306066717433926,
 															"parameters": {
 																"folder": "sounds",
 																"audio-file-name": "Sound",
 																"loop": "not-looping",
-																"volume": "0",
+																"volume": "JSON.Get(\"Save.Sound\") = 1 ? 0 : -Infinity",
 																"stereo-pan": "0",
 																"tag-optional": "\"Sound\""
 															}
@@ -2448,6 +2448,376 @@
 				}
 			],
 			"sid": 903213682855274
+		},
+		{
+			"functionName": "ToggleSoundandMusic",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Music",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 795231526647364
+				},
+				{
+					"name": "Sound",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 466230427815135
+				},
+				{
+					"name": "MusicForceOn",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 460204300734722
+				},
+				{
+					"name": "SoundForceOn",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 316791484368663
+				},
+				{
+					"name": "SoundForceOff",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 329007390251497
+				},
+				{
+					"name": "MusicForceOff",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 414835423472058
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 241363485188940,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 386494269491691,
+							"parameters": {
+								"variable": "Music"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 497856621174412,
+							"parameters": {
+								"path": "\"Save.Music\"",
+								"value": "MusicForceOn = 1 ? 1 :  MusicForceOff = 1 ? 0 : 1-JSON.Get(\"Save.Music\")"
+							}
+						}
+					],
+					"sid": 665325145429619,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 625110670824907,
+									"parameters": {
+										"value": "JSON.Get(\"Save.Music\") = 1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-muted",
+									"objectClass": "Audio",
+									"sid": 994121711836769,
+									"parameters": {
+										"tag": "\"Music\"",
+										"state": "unmuted"
+									}
+								},
+								{
+									"id": "set-volume",
+									"objectClass": "Audio",
+									"sid": 966760447262063,
+									"parameters": {
+										"tag": "\"Music\"",
+										"db": "0"
+									}
+								}
+							],
+							"sid": 961609296632191
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 749700553682873
+								}
+							],
+							"actions": [
+								{
+									"id": "set-muted",
+									"objectClass": "Audio",
+									"sid": 278132666371101,
+									"parameters": {
+										"tag": "\"Music\"",
+										"state": "muted"
+									}
+								},
+								{
+									"id": "set-volume",
+									"objectClass": "Audio",
+									"sid": 982645194505862,
+									"parameters": {
+										"tag": "\"Music\"",
+										"db": "-Infinity"
+									}
+								}
+							],
+							"sid": 378106271906270
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 909143034951278,
+							"parameters": {
+								"variable": "Sound"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 851446451206412,
+							"parameters": {
+								"path": "\"Save.Sound\"",
+								"value": "SoundForceOn = 1 ? 1 :  SoundForceOff = 1 ? 0 : 1-JSON.Get(\"Save.Sound\")"
+							}
+						}
+					],
+					"sid": 341737394845911,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 875884567129828,
+									"parameters": {
+										"value": "JSON.Get(\"Save.Sound\") = 1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-muted",
+									"objectClass": "Audio",
+									"sid": 961232738262398,
+									"parameters": {
+										"tag": "\"Sound\"",
+										"state": "unmuted"
+									}
+								},
+								{
+									"id": "set-volume",
+									"objectClass": "Audio",
+									"sid": 342840140583408,
+									"parameters": {
+										"tag": "\"Sound\"",
+										"db": "0"
+									}
+								}
+							],
+							"sid": 327742275004393
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 549473185968940
+								}
+							],
+							"actions": [
+								{
+									"id": "set-muted",
+									"objectClass": "Audio",
+									"sid": 725689353379805,
+									"parameters": {
+										"tag": "\"Sound\"",
+										"state": "muted"
+									}
+								},
+								{
+									"id": "set-volume",
+									"objectClass": "Audio",
+									"sid": 797896049946380,
+									"parameters": {
+										"tag": "\"Sound\"",
+										"db": "-Infinity"
+									}
+								}
+							],
+							"sid": 492578989067146
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-tag-playing",
+					"objectClass": "Audio",
+					"sid": 466808678751389,
+					"parameters": {
+						"tag": "\"Sound\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 544530450699302,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 409920470829928,
+							"parameters": {
+								"value": "JSON.Get(\"Save.Sound\") = 1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-muted",
+							"objectClass": "Audio",
+							"sid": 199520708177619,
+							"parameters": {
+								"tag": "\"Sound\"",
+								"state": "unmuted"
+							}
+						}
+					],
+					"sid": 771731778482473
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 551968147045824
+						}
+					],
+					"actions": [
+						{
+							"id": "set-muted",
+							"objectClass": "Audio",
+							"sid": 956668725443350,
+							"parameters": {
+								"tag": "\"Sound\"",
+								"state": "muted"
+							}
+						}
+					],
+					"sid": 766206475523986
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-tag-playing",
+					"objectClass": "Audio",
+					"sid": 627668274586297,
+					"parameters": {
+						"tag": "\"Music\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 420260370065676,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 739087197459845,
+							"parameters": {
+								"value": "JSON.Get(\"Save.Music\") = 1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-muted",
+							"objectClass": "Audio",
+							"sid": 181256604628881,
+							"parameters": {
+								"tag": "\"Music\"",
+								"state": "unmuted"
+							}
+						}
+					],
+					"sid": 736122806507367
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 479835988709053
+						}
+					],
+					"actions": [
+						{
+							"id": "set-muted",
+							"objectClass": "Audio",
+							"sid": 177196868578183,
+							"parameters": {
+								"tag": "\"Music\"",
+								"state": "muted"
+							}
+						}
+					],
+					"sid": 170155958563775
+				}
+			]
 		}
 	],
 	"sid": 921570436268604

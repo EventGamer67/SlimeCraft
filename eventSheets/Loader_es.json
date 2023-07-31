@@ -103,6 +103,10 @@
 					}
 				},
 				{
+					"type": "comment",
+					"text": ""
+				},
+				{
 					"id": "request-url",
 					"objectClass": "AJAX",
 					"sid": 986590374952340,
@@ -124,6 +128,10 @@
 						"path": "\"Language\"",
 						"json": "AJAX.LastData"
 					}
+				},
+				{
+					"type": "comment",
+					"text": ""
 				},
 				{
 					"id": "request-project-file",
@@ -149,6 +157,10 @@
 					}
 				},
 				{
+					"type": "comment",
+					"text": ""
+				},
+				{
 					"id": "request-project-file",
 					"objectClass": "AJAX",
 					"sid": 919013437534399,
@@ -172,9 +184,8 @@
 					}
 				},
 				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 969306414927983
+					"type": "comment",
+					"text": ""
 				},
 				{
 					"id": "check-item-exists",
@@ -191,6 +202,30 @@
 					"parameters": {
 						"tag": "\"WorldsLoaded\""
 					}
+				},
+				{
+					"type": "comment",
+					"text": ""
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 180764081878426,
+					"parameters": {
+						"key": "\"Save\""
+					}
+				},
+				{
+					"id": "wait-for-signal",
+					"objectClass": "System",
+					"sid": 355745917822732,
+					"parameters": {
+						"tag": "\"SaveLoaded\""
+					}
+				},
+				{
+					"type": "comment",
+					"text": ""
 				},
 				{
 					"id": "set-json",
@@ -713,6 +748,120 @@
 					]
 				}
 			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Save",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 583000314880613,
+							"parameters": {
+								"key": "\"Save\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "LocalStorage",
+							"sid": 727897045487327,
+							"parameters": {
+								"key": "\"Save\""
+							}
+						}
+					],
+					"sid": 806241518976384
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-missing",
+							"objectClass": "LocalStorage",
+							"sid": 941157289741782,
+							"parameters": {
+								"key": "\"Save\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 140925986278012,
+							"parameters": {
+								"tag": "\"\"",
+								"file": "Save.json"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 199188965260260
+						},
+						{
+							"id": "set-json",
+							"objectClass": "JSON",
+							"sid": 535605946827582,
+							"parameters": {
+								"path": "\"Save\"",
+								"json": "AJAX.LastData"
+							}
+						},
+						{
+							"id": "signal",
+							"objectClass": "System",
+							"sid": 395586104217812,
+							"parameters": {
+								"tag": "\"SaveLoaded\""
+							}
+						}
+					],
+					"sid": 431764617212029
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "LocalStorage",
+							"sid": 916736811106353,
+							"parameters": {
+								"key": "\"Save\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-json",
+							"objectClass": "JSON",
+							"sid": 766944566518899,
+							"parameters": {
+								"path": "\"Save\"",
+								"json": "LocalStorage.ItemValue"
+							}
+						},
+						{
+							"id": "signal",
+							"objectClass": "System",
+							"sid": 535586239100715,
+							"parameters": {
+								"tag": "\"SaveLoaded\""
+							}
+						}
+					],
+					"sid": 599557761373932
+				}
+			],
+			"sid": 991333747878784
 		}
 	],
 	"sid": 472532338784313

@@ -1,20 +1,26 @@
 {
-	"name": "9patch3",
+	"name": "CanPlaceTileMask",
 	"plugin-id": "NinePatch",
-	"sid": 250427455509761,
+	"sid": 866934396145700,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 716191614498017
+		}
+	],
 	"effectTypes": [],
 	"image": {
-		"width": 18,
-		"height": 18,
+		"width": 16,
+		"height": 16,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 3519470,
+		"imageSpriteId": 5746480,
 		"useCollisionPoly": true
 	}
 }

@@ -5434,7 +5434,7 @@
 					}
 				},
 				{
-					"type": "9patch3",
+					"type": "DropItemZone",
 					"properties": {
 						"left-margin": 5,
 						"right-margin": 6,
@@ -6010,9 +6010,9 @@
 					},
 					"world": {
 						"x": 281.33898770690246,
-						"y": 437.14414064945356,
+						"y": 439.14414064945356,
 						"width": 296.0595161016698,
-						"height": 128.92179303222508,
+						"height": 124,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -7309,7 +7309,7 @@
 					"world": {
 						"x": 672.94936085745,
 						"y": 448.1533192967501,
-						"width": 54.949057104857786,
+						"width": 96.77695191279173,
 						"height": 15.2638143382473,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -8944,7 +8944,7 @@
 					}
 				},
 				{
-					"type": "9patch3",
+					"type": "DropItemZone",
 					"properties": {
 						"left-margin": 5,
 						"right-margin": 6,
@@ -10316,7 +10316,7 @@
 					}
 				},
 				{
-					"type": "9patch3",
+					"type": "DropItemZone",
 					"properties": {
 						"left-margin": 5,
 						"right-margin": 6,
@@ -11526,7 +11526,7 @@
 					}
 				},
 				{
-					"type": "9patch3",
+					"type": "DropItemZone",
 					"properties": {
 						"left-margin": 5,
 						"right-margin": 6,
@@ -23253,7 +23253,7 @@
 						"line-height": 0,
 						"horizontal-alignment": "left",
 						"vertical-alignment": "top",
-						"wrapping": "character",
+						"wrapping": "word",
 						"initially-visible": true,
 						"origin": "bottom",
 						"read-aloud": false
@@ -23529,7 +23529,7 @@
 						"line-height": 0,
 						"horizontal-alignment": "left",
 						"vertical-alignment": "top",
-						"wrapping": "character",
+						"wrapping": "word",
 						"initially-visible": true,
 						"origin": "bottom",
 						"read-aloud": false
@@ -27549,7 +27549,7 @@
 					}
 				},
 				{
-					"type": "9patch3",
+					"type": "DropItemZone",
 					"properties": {
 						"left-margin": 5,
 						"right-margin": 6,
@@ -29461,7 +29461,10 @@
 						"live-preview": false
 					},
 					"uid": 32,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sX": 0,
+						"sY": 0
+					},
 					"behaviors": {},
 					"template": {
 						"mode": "template",
@@ -29499,7 +29502,16 @@
 								"component": [
 									{
 										"key": "instance-variable",
-										"state": []
+										"state": [
+											{
+												"iv": "sX",
+												"state": true
+											},
+											{
+												"iv": "sY",
+												"state": true
+											}
+										]
 									}
 								]
 							},
@@ -34446,7 +34458,7 @@
 					"world": {
 						"x": 790,
 						"y": 571,
-						"width": 54.949057104857786,
+						"width": 97.90247121068961,
 						"height": 15.2638143382473,
 						"originX": 0.5,
 						"originY": 0.5,

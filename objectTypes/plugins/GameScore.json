@@ -7,7 +7,7 @@
 		"properties": {
 			"project-id": 3197,
 			"token": "qco6LN2DpOAP48p4LYAd6B3A0p8PTDMj",
-			"show-preloader": false,
+			"show-preloader": true,
 			"should-wait-player": true,
 			"enabled": true
 		},

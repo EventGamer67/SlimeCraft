@@ -233,12 +233,13 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 872716552672287,
+							"sid": 889051574032371,
+							"disabled": true,
 							"parameters": {
 								"object-to-create": "InventoryBlank",
 								"layer": "\"Text\"",
 								"x": "Functions.Get_Center_X(\"Text\")",
-								"y": "Functions.Get_Center_Y(\"Text\")",
+								"y": "Functions.Get_Center_Y(\"Text\")-30",
 								"create-hierarchy": true,
 								"template-name": "\"ChooseName\""
 							}
@@ -247,6 +248,7 @@
 							"id": "set-size",
 							"objectClass": "InventoryBlank",
 							"sid": 311307343163856,
+							"disabled": true,
 							"parameters": {
 								"width": "Self.w*0.6",
 								"height": "Self.h*0.6"
@@ -256,6 +258,7 @@
 							"id": "tween-two-properties",
 							"objectClass": "InventoryBlank",
 							"sid": 257486876812814,
+							"disabled": true,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"\"",
@@ -274,6 +277,7 @@
 							"id": "wait-for-signal",
 							"objectClass": "System",
 							"sid": 578675067334913,
+							"disabled": true,
 							"parameters": {
 								"tag": "\"Ok\""
 							}
@@ -393,9 +397,9 @@
 								{
 									"id": "typewriter-text",
 									"objectClass": "Message_Text",
-									"sid": 860414735502356,
+									"sid": 993224229438800,
 									"parameters": {
-										"text": "\"Через пару часов\"",
+										"text": "Functions.Get_LanguageText(\"Comics5\")",
 										"duration": "3"
 									}
 								},
@@ -432,7 +436,8 @@
 											}
 										}
 									],
-									"sid": 654867143206692
+									"sid": 654867143206692,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -448,6 +453,7 @@
 											"id": "achievements-unlock",
 											"objectClass": "GameScore",
 											"sid": 753277416564346,
+											"disabled": true,
 											"parameters": {
 												"id-or-tag": "\"Crush\""
 											}

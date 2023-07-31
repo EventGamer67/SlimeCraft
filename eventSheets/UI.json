@@ -96,16 +96,6 @@
 			]
 		},
 		{
-			"eventType": "variable",
-			"name": "SoundOff",
-			"type": "boolean",
-			"initialValue": "false",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 468004219056129
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -118,14 +108,6 @@
 				}
 			],
 			"actions": [
-				{
-					"id": "set-silent",
-					"objectClass": "Audio",
-					"sid": 340065801263592,
-					"parameters": {
-						"mode": "toggle-silent"
-					}
-				},
 				{
 					"id": "set-animation-frame",
 					"objectClass": "SoundBtn",
@@ -151,17 +133,30 @@
 						"ping-pong": "yes",
 						"repeat-count": "1"
 					}
-				},
-				{
-					"id": "toggle-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 704093773102361,
-					"parameters": {
-						"variable": "SoundOff"
-					}
 				}
 			],
-			"sid": 936540925181908
+			"sid": 936540925181908,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "ToggleSoundandMusic",
+							"sid": 460732842310236,
+							"parameters": [
+								true,
+								true,
+								false,
+								false,
+								false,
+								false
+							]
+						}
+					],
+					"sid": 132303066654062
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -1470,6 +1465,13 @@
 							],
 							"actions": [
 								{
+									"callFunction": "enableCurBtns",
+									"sid": 411817802124356,
+									"parameters": [
+										"\"UI\""
+									]
+								},
+								{
 									"callFunction": "DropInventoryItems",
 									"sid": 779538181046379,
 									"parameters": [
@@ -1572,6 +1574,14 @@
 									"id": "set-visible",
 									"objectClass": "Sprite6",
 									"sid": 394898442147176,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Hat",
+									"sid": 993102663369652,
 									"parameters": {
 										"visibility": "visible"
 									}
@@ -2684,14 +2694,61 @@
 															}
 														},
 														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 111766530863104,
+															"parameters": {
+																"seconds": "0.3"
+															}
+														},
+														{
+															"id": "wait-for-previous-actions",
+															"objectClass": "System",
+															"sid": 376657911686843
+														},
+														{
 															"callFunction": "enableCurBtns",
-															"sid": 947091852412951,
+															"sid": 742653268193185,
 															"parameters": [
 																"\"UI\""
 															]
 														}
 													],
 													"sid": 221951080468995
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-all",
+															"objectClass": "System",
+															"sid": 593018308408173,
+															"parameters": {
+																"object": "Inventory_Blank"
+															}
+														},
+														{
+															"id": "pick-children",
+															"objectClass": "InventoryBlank",
+															"sid": 266570993566756,
+															"parameters": {
+																"child": "Inventory_Blank",
+																"which": "own"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Inventory_Blank",
+															"sid": 365411053750150,
+															"parameters": {
+																"instance-variable": "active",
+																"value": "false"
+															}
+														}
+													],
+													"sid": 863926103919987
 												}
 											]
 										},
@@ -3301,7 +3358,7 @@
 			"children": [
 				{
 					"eventType": "script",
-					"script": "function is_zero(x, y)\n{\n\treturn obj[y][x] === \"0\";\n}\n\nfunction is_top(width)\n{\n\tfor (let x = 0; x < width; x++) if (!is_zero(x, 0)) return false;\n\treturn true;\n}\n\nfunction is_bottom(width, height)\n{\n\tfor (let x = 0; x < width; x++) if (!is_zero(x, height - 1)) return false;\n\treturn true;\n}\n\nfunction is_left(height)\n{\n\tfor (let y = 0; y < height; y++) if (!is_zero(0, y)) return false;\n\treturn true;\n}\n\nfunction is_right(width, height)\n{\n\tfor (let y = 0; y < height; y++) if (!is_zero(width - 1, y)) return false;\n\treturn true;\n}\n\nconst data = JSON.parse(localVars.data_);\nconst obj = [];\ndata.forEach(line => obj.push(line.split(\"\")));\n\nwhile (true)\n{\n\tconst width = obj[0].length;\n\tconst height = obj.length;\n\t\n\tif (is_top(width))\n\t{\n\t\tobj.shift();\n\t\tcontinue;\n\t}\n\t\n\tif (is_bottom(width, height))\n\t{\n\t\tobj.pop();\n\t\tcontinue;\n\t}\n\t\n\tif (is_left(height))\n\t{\n\t\tfor (let y = 0; y < height; y++) obj[y].shift();\n\t\tcontinue;\n\t}\n\t\n\tif (is_right(width, height))\n\t{\n\t\tfor (let y = 0; y < height; y++) obj[y].pop();\n\t\tcontinue;\n\t}\n\t\n\tbreak;\n}\n\nconst result = [];\nobj.forEach(line => result.push(line.join()));\nruntime.alert(result);\nruntime.setReturnValue(JSON.stringify(result));"
+					"script": "function is_zero(x, y)\n{\n\treturn obj[y][x] === \"0\";\n}\n\nfunction is_top(width)\n{\n\tfor (let x = 0; x < width; x++) if (!is_zero(x, 0)) return false;\n\treturn true;\n}\n\nfunction is_bottom(width, height)\n{\n\tfor (let x = 0; x < width; x++) if (!is_zero(x, height - 1)) return false;\n\treturn true;\n}\n\nfunction is_left(height)\n{\n\tfor (let y = 0; y < height; y++) if (!is_zero(0, y)) return false;\n\treturn true;\n}\n\nfunction is_right(width, height)\n{\n\tfor (let y = 0; y < height; y++) if (!is_zero(width - 1, y)) return false;\n\treturn true;\n}\n\nconst data = JSON.parse(localVars.data_);\nconst obj = [];\ndata.forEach(line => obj.push(line.split(\"\")));\n\nwhile (true)\n{\n\tconst width = obj[0].length;\n\tconst height = obj.length;\n\t\n\tif (is_top(width))\n\t{\n\t\tobj.shift();\n\t\tcontinue;\n\t}\n\t\n\tif (is_bottom(width, height))\n\t{\n\t\tobj.pop();\n\t\tcontinue;\n\t}\n\t\n\tif (is_left(height))\n\t{\n\t\tfor (let y = 0; y < height; y++) obj[y].shift();\n\t\tcontinue;\n\t}\n\t\n\tif (is_right(width, height))\n\t{\n\t\tfor (let y = 0; y < height; y++) obj[y].pop();\n\t\tcontinue;\n\t}\n\t\n\tbreak;\n}\n\nconst result = [];\nobj.forEach(line => result.push(line.join()));\nruntime.setReturnValue(JSON.stringify(result));"
 				}
 			]
 		},
@@ -4160,17 +4217,7 @@
 																			}
 																		}
 																	],
-																	"actions": [
-																		{
-																			"id": "log",
-																			"objectClass": "Browser",
-																			"sid": 742846436692405,
-																			"parameters": {
-																				"type": "log",
-																				"message": "\"equal\""
-																			}
-																		}
-																	],
+																	"actions": [],
 																	"sid": 678584957353524,
 																	"disabled": true
 																},
@@ -4184,15 +4231,6 @@
 																		}
 																	],
 																	"actions": [
-																		{
-																			"id": "log",
-																			"objectClass": "Browser",
-																			"sid": 138442852126428,
-																			"parameters": {
-																				"type": "log",
-																				"message": "\"not equal\""
-																			}
-																		},
 																		{
 																			"id": "stop-loop",
 																			"objectClass": "System",
@@ -7261,17 +7299,7 @@
 									"sid": 262977027059341
 								}
 							],
-							"actions": [
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 849228276747069,
-									"parameters": {
-										"type": "log",
-										"message": "\"else 123\""
-									}
-								}
-							],
+							"actions": [],
 							"sid": 559233847941535,
 							"children": [
 								{
@@ -7608,7 +7636,7 @@
 													"objectClass": "System",
 													"sid": 827044316888478,
 													"parameters": {
-														"object": "9patch3"
+														"object": "DropItemZone"
 													}
 												}
 											],
@@ -7623,16 +7651,16 @@
 															"objectClass": "System",
 															"sid": 909923870669947,
 															"parameters": {
-																"first-value": "distance(Inventory_Item.X,Inventory_Item.Y,9patch3.X,9patch3.Y)",
+																"first-value": "distance(Inventory_Item.X,Inventory_Item.Y,DropItemZone.X,DropItemZone.Y)",
 																"comparison": 2,
-																"second-value": "9patch3.Width*1.5"
+																"second-value": "DropItemZone.Width*1.5"
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-opacity",
-															"objectClass": "9patch3",
+															"objectClass": "DropItemZone",
 															"sid": 925655838212678,
 															"parameters": {
 																"opacity": "100"
@@ -7653,7 +7681,7 @@
 													"actions": [
 														{
 															"id": "set-opacity",
-															"objectClass": "9patch3",
+															"objectClass": "DropItemZone",
 															"sid": 545490962244273,
 															"parameters": {
 																"opacity": "60"
@@ -9104,7 +9132,7 @@
 													"objectClass": "System",
 													"sid": 449306523634584,
 													"parameters": {
-														"object": "9patch3"
+														"object": "DropItemZone"
 													}
 												}
 											],
@@ -9119,16 +9147,16 @@
 															"objectClass": "System",
 															"sid": 308258483178875,
 															"parameters": {
-																"first-value": "distance(Inventory_Item.X,Inventory_Item.Y,9patch3.X,9patch3.Y)",
+																"first-value": "distance(Inventory_Item.X,Inventory_Item.Y,DropItemZone.X,DropItemZone.Y)",
 																"comparison": 2,
-																"second-value": "9patch3.Width*1.5"
+																"second-value": "DropItemZone.Width*1.5"
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-opacity",
-															"objectClass": "9patch3",
+															"objectClass": "DropItemZone",
 															"sid": 916477640557452,
 															"parameters": {
 																"opacity": "100"
@@ -13046,9 +13074,9 @@
 										{
 											"id": "set-animation-frame",
 											"objectClass": "SoundBtn",
-											"sid": 606095518499655,
+											"sid": 767653231638215,
 											"parameters": {
-												"frame-number": "SoundOff"
+												"frame-number": "JSON.Get(\"Save.Music\")"
 											}
 										}
 									],
@@ -13465,28 +13493,7 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 459039772050207,
-							"disabled": true,
-							"parameters": {
-								"type": "log",
-								"message": "\"Current:\"&Recipe_Current.CurrentKey&\":\"&Recipe_Current.CurrentValue"
-							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 252164760352330,
-							"disabled": true,
-							"parameters": {
-								"type": "log",
-								"message": "\"Current:\"&Recipe_Current.CurrentKey&\":\"&Recipe_Current.CurrentValue"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 605689474742381,
 					"children": [
 						{
@@ -13517,16 +13524,6 @@
 										}
 									],
 									"actions": [
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 492072569908344,
-											"disabled": true,
-											"parameters": {
-												"type": "log",
-												"message": "\"not equal\""
-											}
-										},
 										{
 											"id": "stop-loop",
 											"objectClass": "System",
@@ -13570,26 +13567,6 @@
 						}
 					],
 					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 998581756304220,
-							"disabled": true,
-							"parameters": {
-								"type": "log",
-								"message": "\"equal\""
-							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 816948927617370,
-							"disabled": true,
-							"parameters": {
-								"type": "log",
-								"message": "path_recipe"
-							}
-						},
 						{
 							"id": "set-function-return-value",
 							"objectClass": "Functions",
@@ -19623,6 +19600,116 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "variable",
+					"name": "xScroll",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 547906936950114
+				},
+				{
+					"eventType": "variable",
+					"name": "yScroll",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 473627093079992
+				},
+				{
+					"eventType": "variable",
+					"name": "xScrollOld",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 277640993801676
+				},
+				{
+					"eventType": "variable",
+					"name": "yScrollOld",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 964414356190045
+				},
+				{
+					"eventType": "variable",
+					"name": "StartxScroll",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 994157163030184
+				},
+				{
+					"eventType": "variable",
+					"name": "StartyScroll",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 243299023281069
+				},
+				{
+					"eventType": "variable",
+					"name": "Bookscrolling",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 742848403510774
+				},
+				{
+					"eventType": "variable",
+					"name": "scrollLeftBorder",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 940516581465123
+				},
+				{
+					"eventType": "variable",
+					"name": "scrollRightBorder",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 770691997493651
+				},
+				{
+					"eventType": "variable",
+					"name": "scrollTopBorder",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 538314400869921
+				},
+				{
+					"eventType": "variable",
+					"name": "scrollBottomBorder",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 553612196210067
+				},
+				{
 					"functionName": "ShowQuestBook",
 					"functionDescription": "",
 					"functionCategory": "",
@@ -19673,9 +19760,28 @@
 					"sid": 256017447521025,
 					"children": [
 						{
+							"eventType": "variable",
+							"name": "TrackingQuest",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 731730932534143
+						},
+						{
 							"eventType": "block",
 							"conditions": [],
 							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 830872920547425,
+									"parameters": {
+										"variable": "TrackingQuest",
+										"value": "JSON.Get(\"Player.TrackingQuest\")"
+									}
+								},
 								{
 									"id": "create-object",
 									"objectClass": "System",
@@ -19768,6 +19874,24 @@
 												"y": "Functions.Get_Center_Y(\"Interfaces\")",
 												"create-hierarchy": true,
 												"template-name": "\"Main\""
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "QuestSpawner",
+											"sid": 172153642869393,
+											"parameters": {
+												"instance-variable": "sX",
+												"value": "Self.X"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "QuestSpawner",
+											"sid": 442512599173947,
+											"parameters": {
+												"instance-variable": "sY",
+												"value": "Self.Y"
 											}
 										}
 									],
@@ -20068,6 +20192,201 @@
 													"sid": 386518814990625
 												}
 											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 336135774632215,
+													"parameters": {
+														"object": "QuestElementBlank",
+														"expression": "QuestElementBlank.tag = TrackingQuest"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "tween-value",
+													"objectClass": "GameManager",
+													"sid": 765954790087449,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"questScrollX\"",
+														"start-value": "xScroll",
+														"end-value": "(QuestElementBlank.X-QuestSpawner.X)",
+														"time": "0.15",
+														"ease": "easeoutcubic",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												},
+												{
+													"id": "tween-value",
+													"objectClass": "GameManager",
+													"sid": 841792777830661,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"questScrollY\"",
+														"start-value": "yScroll",
+														"end-value": "(QuestElementBlank.Y-QuestSpawner.Y)",
+														"time": "0.15",
+														"ease": "easeoutcubic",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 781685038195884,
+													"parameters": {
+														"variable": "xScrollOld",
+														"value": "(QuestElementBlank.X-QuestSpawner.X)"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 277928017502246,
+													"parameters": {
+														"variable": "yScrollOld",
+														"value": "(QuestElementBlank.Y-QuestSpawner.Y)"
+													}
+												}
+											],
+											"sid": 706111141914939
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-highestlowest",
+													"objectClass": "QuestElementBlank",
+													"sid": 103946125153009,
+													"parameters": {
+														"which": "highest",
+														"instance-variable": "sX"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 684289582489059,
+													"parameters": {
+														"variable": "scrollLeftBorder",
+														"value": "QuestSpawner.X-QuestElementBlank.X"
+													}
+												}
+											],
+											"sid": 577858341640118
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-highestlowest",
+													"objectClass": "QuestElementBlank",
+													"sid": 127129530700832,
+													"parameters": {
+														"which": "lowest",
+														"instance-variable": "sX"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 564992560077201,
+													"parameters": {
+														"variable": "scrollRightBorder",
+														"value": "abs(QuestSpawner.X-QuestElementBlank.X)"
+													}
+												}
+											],
+											"sid": 535969650781086
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-highestlowest",
+													"objectClass": "QuestElementBlank",
+													"sid": 640482831018218,
+													"parameters": {
+														"which": "lowest",
+														"instance-variable": "sY"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 514542585516811,
+													"parameters": {
+														"variable": "scrollBottomBorder",
+														"value": "QuestSpawner.Y-QuestElementBlank.Y"
+													}
+												}
+											],
+											"sid": 566707392885872
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-highestlowest",
+													"objectClass": "QuestElementBlank",
+													"sid": 656276325088643,
+													"parameters": {
+														"which": "highest",
+														"instance-variable": "sY"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 583292463218013,
+													"parameters": {
+														"variable": "scrollTopBorder",
+														"value": "QuestSpawner.Y-QuestElementBlank.Y"
+													}
+												}
+											],
+											"sid": 783399949334590
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 153664839570878,
+													"parameters": {
+														"object": "Message_Text",
+														"expression": "Message_Text.Type = \"QuestTree\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "move-to-top",
+													"objectClass": "Message_Text",
+													"sid": 991076202207400
+												}
+											],
+											"sid": 776680056900486
 										}
 									]
 								}
@@ -20105,6 +20424,136 @@
 						}
 					],
 					"sid": 359664448116786
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 297812956378071,
+							"parameters": {
+								"key": 84
+							}
+						}
+					],
+					"actions": [],
+					"sid": 235653008201015,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 563810360948160,
+									"parameters": {
+										"object": "QuestElementBlank",
+										"expression": "QuestElementBlank.tag = JSON.Get(\"Player.TrackingQuest\")"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-value",
+									"objectClass": "GameManager",
+									"sid": 458171218525848,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"questScrollX\"",
+										"start-value": "xScroll",
+										"end-value": "(QuestElementBlank.X-QuestSpawner.X)",
+										"time": "0.15",
+										"ease": "easeoutcubic",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "tween-value",
+									"objectClass": "GameManager",
+									"sid": 162468298646035,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"questScrollY\"",
+										"start-value": "yScroll",
+										"end-value": "(QuestElementBlank.Y-QuestSpawner.Y)",
+										"time": "0.15",
+										"ease": "easeoutcubic",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 457937508204185,
+									"parameters": {
+										"variable": "xScrollOld",
+										"value": "(QuestElementBlank.X-QuestSpawner.X)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 208391800477736,
+									"parameters": {
+										"variable": "yScrollOld",
+										"value": "(QuestElementBlank.Y-QuestSpawner.Y)"
+									}
+								}
+							],
+							"sid": 710862713290826
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "GameManager",
+							"sid": 753897416663250,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"questScrollX\""
+							}
+						},
+						{
+							"id": "is-playing",
+							"objectClass": "GameManager",
+							"sid": 985999287264656,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"questScrollY\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 452455363213791,
+							"parameters": {
+								"variable": "xScroll",
+								"value": "GameManager.Tween.Value(\"questScrollX\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 292330091123269,
+							"parameters": {
+								"variable": "yScroll",
+								"value": "GameManager.Tween.Value(\"questScrollY\")"
+							}
+						}
+					],
+					"sid": 131671338815321
 				},
 				{
 					"functionName": "ReCheckOpenedQuests",
@@ -21052,6 +21501,7 @@
 										{
 											"callFunction": "UnlockAchievment",
 											"sid": 625646854882025,
+											"disabled": true,
 											"parameters": [
 												"JSON.Get(\"Player.TrackingQuest\")"
 											]
@@ -21127,76 +21577,6 @@
 									"sid": 240945858869219
 								}
 							]
-						},
-						{
-							"eventType": "variable",
-							"name": "xScroll",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"isStatic": true,
-							"isConstant": false,
-							"sid": 930587606740992
-						},
-						{
-							"eventType": "variable",
-							"name": "yScroll",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"isStatic": true,
-							"isConstant": false,
-							"sid": 782130834009060
-						},
-						{
-							"eventType": "variable",
-							"name": "xScrollOld",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"isStatic": true,
-							"isConstant": false,
-							"sid": 759894099897818
-						},
-						{
-							"eventType": "variable",
-							"name": "yScrollOld",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"isStatic": true,
-							"isConstant": false,
-							"sid": 283227152138408
-						},
-						{
-							"eventType": "variable",
-							"name": "StartxScroll",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"isStatic": true,
-							"isConstant": false,
-							"sid": 268082238767851
-						},
-						{
-							"eventType": "variable",
-							"name": "StartyScroll",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"isStatic": true,
-							"isConstant": false,
-							"sid": 783008066679750
-						},
-						{
-							"eventType": "variable",
-							"name": "Bookscrolling",
-							"type": "boolean",
-							"initialValue": "false",
-							"comment": "",
-							"isStatic": true,
-							"isConstant": false,
-							"sid": 772041793822381
 						},
 						{
 							"functionName": "pickTrackingQuest",
@@ -21756,15 +22136,6 @@
 																		"ping-pong": "no",
 																		"repeat-count": "1"
 																	}
-																},
-																{
-																	"id": "alert",
-																	"objectClass": "Browser",
-																	"sid": 145942045143193,
-																	"disabled": true,
-																	"parameters": {
-																		"message": "\"1\""
-																	}
 																}
 															],
 															"sid": 888136539398758,
@@ -21891,15 +22262,6 @@
 																				"loop": "no",
 																				"ping-pong": "no",
 																				"repeat-count": "1"
-																			}
-																		},
-																		{
-																			"id": "alert",
-																			"objectClass": "Browser",
-																			"sid": 846481854412684,
-																			"disabled": true,
-																			"parameters": {
-																				"message": "Functions.CheckCanDoQuest(QuestElementBlank.tag)"
 																			}
 																		},
 																		{
@@ -22036,15 +22398,6 @@
 																								"loop": "no",
 																								"ping-pong": "no",
 																								"repeat-count": "1"
-																							}
-																						},
-																						{
-																							"id": "alert",
-																							"objectClass": "Browser",
-																							"sid": 688448746565361,
-																							"disabled": true,
-																							"parameters": {
-																								"message": "\"1\""
 																							}
 																						}
 																					],
@@ -23535,14 +23888,6 @@
 																					}
 																				},
 																				{
-																					"id": "set-text",
-																					"objectClass": "Message_Text",
-																					"sid": 556395228375269,
-																					"parameters": {
-																						"text": "Functions.Get_ItemInInventoryCount(tokenat(JSON.CurrentValue,0,\",\"))&\"/\"&tokenat(JSON.CurrentValue,1,\",\")"
-																					}
-																				},
-																				{
 																					"id": "set-default-color",
 																					"objectClass": "Message_Text",
 																					"sid": 824823209338136,
@@ -23551,7 +23896,54 @@
 																					}
 																				}
 																			],
-																			"sid": 320906802859875
+																			"sid": 320906802859875,
+																			"children": [
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "evaluate-expression",
+																							"objectClass": "System",
+																							"sid": 545243757415732,
+																							"parameters": {
+																								"value": "JSON.Get(\"Settings.Config.Glossary.\"&JSON.CurrentValue&\".Using\") = \"Instrument\""
+																							}
+																						}
+																					],
+																					"actions": [
+																						{
+																							"id": "set-text",
+																							"objectClass": "Message_Text",
+																							"sid": 981176347225532,
+																							"parameters": {
+																								"text": "(Functions.Get_ItemInInventoryCount(tokenat(JSON.CurrentValue,0,\",\")) > 0 ? \"+\" : 0) &\"/\"&tokenat(JSON.CurrentValue,1,\",\")"
+																							}
+																						}
+																					],
+																					"sid": 140070894393007
+																				},
+																				{
+																					"eventType": "block",
+																					"conditions": [
+																						{
+																							"id": "else",
+																							"objectClass": "System",
+																							"sid": 350679269982217
+																						}
+																					],
+																					"actions": [
+																						{
+																							"id": "set-text",
+																							"objectClass": "Message_Text",
+																							"sid": 240196435597015,
+																							"parameters": {
+																								"text": "Functions.Get_ItemInInventoryCount(tokenat(JSON.CurrentValue,0,\",\"))&\"/\"&tokenat(JSON.CurrentValue,1,\",\")"
+																							}
+																						}
+																					],
+																					"sid": 694421973384053
+																				}
+																			]
 																		}
 																	]
 																},
@@ -23731,19 +24123,19 @@
 												{
 													"id": "set-eventvar-value",
 													"objectClass": "System",
-													"sid": 686796316982499,
+													"sid": 474084538139504,
 													"parameters": {
 														"variable": "xScroll",
-														"value": "(Touch.X(\"Interfaces\")-StartxScroll)"
+														"value": "clamp( (Touch.X(\"Interfaces\")-StartxScroll)  ,scrollLeftBorder,scrollRightBorder)"
 													}
 												},
 												{
 													"id": "set-eventvar-value",
 													"objectClass": "System",
-													"sid": 309435026393398,
+													"sid": 217251255335056,
 													"parameters": {
 														"variable": "yScroll",
-														"value": "(Touch.Y(\"Interfaces\")-StartyScroll)"
+														"value": "clamp((Touch.Y(\"Interfaces\")-StartyScroll),scrollTopBorder,scrollBottomBorder)"
 													}
 												}
 											],
@@ -23825,6 +24217,7 @@
 											"id": "set-position",
 											"objectClass": "QuestElementBlank",
 											"sid": 239608953876501,
+											"disabled": true,
 											"parameters": {
 												"x": "Self.sX+xScroll",
 												"y": "Self.sY+yScroll"
@@ -23896,6 +24289,22 @@
 											"sid": 656809710621859
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "QuestSpawner",
+											"sid": 394257814888146,
+											"parameters": {
+												"x": "Self.sX+xScroll",
+												"y": "Self.sY+yScroll"
+											}
+										}
+									],
+									"sid": 582433761235835
 								},
 								{
 									"eventType": "block",
@@ -24875,17 +25284,7 @@
 			],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 407335377594076,
-					"parameters": {
-						"type": "log",
-						"message": "\"hidded\""
-					}
-				}
-			],
+			"actions": [],
 			"sid": 303336626978743,
 			"children": [
 				{
@@ -25620,15 +26019,6 @@
 						}
 					],
 					"actions": [
-						{
-							"id": "alert",
-							"objectClass": "Browser",
-							"sid": 547464481299396,
-							"disabled": true,
-							"parameters": {
-								"message": "tokenat(RewardBox.RewardList,loopindex,\"|\")"
-							}
-						},
 						{
 							"callFunction": "Drop_Item",
 							"sid": 503867906232515,
@@ -27423,7 +27813,8 @@
 							]
 						}
 					],
-					"sid": 299188434490005
+					"sid": 299188434490005,
+					"disabled": true
 				}
 			]
 		},
@@ -28135,6 +28526,10 @@
 													}
 												},
 												{
+													"callFunction": "UpdateCoinValue",
+													"sid": 473900591694872
+												},
+												{
 													"id": "tween-two-properties",
 													"objectClass": "InventoryBlank",
 													"sid": 254507682481892,
@@ -28153,13 +28548,13 @@
 													}
 												},
 												{
-													"callFunction": "UpdateCoinValue",
-													"sid": 404083401769359
-												},
-												{
 													"id": "wait-for-previous-actions",
 													"objectClass": "System",
 													"sid": 770755740705787
+												},
+												{
+													"callFunction": "UpdateCoinValue",
+													"sid": 143621725021842
 												},
 												{
 													"id": "set-boolean-instvar",
@@ -28204,6 +28599,10 @@
 											"sid": 294545619015923
 										},
 										{
+											"callFunction": "UpdateCoinValue",
+											"sid": 909301059754653
+										},
+										{
 											"id": "set-group-active",
 											"objectClass": "System",
 											"sid": 745231317267499,
@@ -28246,22 +28645,21 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
-						{
-							"id": "alert",
-							"objectClass": "Browser",
-							"sid": 309902565501705,
-							"disabled": true,
-							"parameters": {
-								"message": "\"1\""
-							}
-						}
-					],
+					"actions": [],
 					"sid": 949454423378550,
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [],
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 568081397946149,
+									"parameters": {
+										"value": "Touch.SpeedAt(0) < 50"
+									}
+								}
+							],
 							"actions": [],
 							"sid": 101810741730048,
 							"children": [
@@ -28299,16 +28697,16 @@
 													}
 												},
 												{
-													"id": "ads-show-rewarded",
-													"objectClass": "GameScore",
-													"sid": 514310645943825
-												},
-												{
 													"callFunction": "Freeze",
 													"sid": 115585316223808,
 													"parameters": [
 														true
 													]
+												},
+												{
+													"id": "ads-show-rewarded",
+													"objectClass": "GameScore",
+													"sid": 137286447937812
 												},
 												{
 													"id": "wait-for-previous-actions",
@@ -28351,11 +28749,11 @@
 														{
 															"id": "play",
 															"objectClass": "Audio",
-															"sid": 457603601379154,
+															"sid": 708901960617934,
 															"parameters": {
 																"audio-file": "Buying-Sound-Effect",
 																"loop": "not-looping",
-																"volume": "0",
+																"volume": "JSON.Get(\"Save.Sound\") = 1 ? 0 : -Infinity",
 																"stereo-pan": "0",
 																"tag-optional": "\"Sound\""
 															}
@@ -28429,11 +28827,11 @@
 												{
 													"id": "play",
 													"objectClass": "Audio",
-													"sid": 768956077190128,
+													"sid": 460120354518378,
 													"parameters": {
 														"audio-file": "Buying-Sound-Effect",
 														"loop": "not-looping",
-														"volume": "0",
+														"volume": "JSON.Get(\"Save.Sound\") = 1 ? 0 : -Infinity",
 														"stereo-pan": "0",
 														"tag-optional": "\"Sound\""
 													}
@@ -29565,6 +29963,365 @@
 				}
 			],
 			"sid": 384651617035669
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "PlaceTileMask",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-movement",
+							"objectClass": "Mouse",
+							"sid": 799097790830606
+						}
+					],
+					"actions": [],
+					"sid": 394095916899709,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Sprite11",
+									"sid": 661324506017063,
+									"parameters": {
+										"instance-variable": "Item_Type",
+										"comparison": 0,
+										"value": "\"Block\""
+									}
+								},
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 360425088661183,
+									"parameters": {
+										"value": "Inventory.At(Sprite11.CurrentSlot,1) > 0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 613918260326181,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "tilex",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 795193437461500
+								},
+								{
+									"eventType": "variable",
+									"name": "tiley",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 258700819302569
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-tile-at",
+											"objectClass": "Terrain",
+											"sid": 760167041263473,
+											"parameters": {
+												"tile-x": "Terrain.PositionToTileX(Terrain.SnapX(Mouse.X))",
+												"tile-y": "Terrain.PositionToTiley(Terrain.Snapy(Mouse.Y))",
+												"comparison": 0,
+												"tile": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 273846535341573,
+											"parameters": {
+												"variable": "tilex",
+												"value": "Terrain.PositionToTileX(Terrain.SnapX(Mouse.X))"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 109786725139333,
+											"parameters": {
+												"variable": "tiley",
+												"value": "Terrain.PositionToTileY(Terrain.SnapY(Mouse.Y))"
+											}
+										}
+									],
+									"sid": 208191915121988,
+									"disabled": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 226317408059190,
+													"parameters": {
+														"tile-x": "TileX-1",
+														"tile-y": "TileY-1",
+														"comparison": 1,
+														"tile": "-1"
+													}
+												},
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 488285127640297,
+													"parameters": {
+														"tile-x": "TileX",
+														"tile-y": "TileY-1",
+														"comparison": 1,
+														"tile": "-1"
+													}
+												},
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 257192377804996,
+													"parameters": {
+														"tile-x": "TileX+1",
+														"tile-y": "TileY-1",
+														"comparison": 1,
+														"tile": "-1"
+													}
+												},
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 525699600304158,
+													"parameters": {
+														"tile-x": "TileX-1",
+														"tile-y": "TileY",
+														"comparison": 1,
+														"tile": "-1"
+													}
+												},
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 448064326980591,
+													"parameters": {
+														"tile-x": "TileX+1",
+														"tile-y": "TileY",
+														"comparison": 1,
+														"tile": "-1"
+													}
+												},
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 309581161899282,
+													"parameters": {
+														"tile-x": "TileX-1",
+														"tile-y": "TileY+1",
+														"comparison": 1,
+														"tile": "-1"
+													}
+												},
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 848761023530172,
+													"parameters": {
+														"tile-x": "TileX",
+														"tile-y": "TileY+1",
+														"comparison": 1,
+														"tile": "-1"
+													}
+												},
+												{
+													"id": "compare-tile-at",
+													"objectClass": "Terrain",
+													"sid": 803692773576890,
+													"parameters": {
+														"tile-x": "TileX+1",
+														"tile-y": "TileY+1",
+														"comparison": 1,
+														"tile": "-1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "tween-two-properties",
+													"objectClass": "CanPlaceTileMask",
+													"sid": 505673173975540,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "position",
+														"end-x": "Terrain.TileToPositionX(Terrain.PositionToTileX(Terrain.SnapX(Mouse.X)))",
+														"end-y": "Terrain.TileToPositionX(Terrain.PositionToTileY(Terrain.SnapY(Mouse.Y)))",
+														"time": "0.15",
+														"ease": "easeoutquart",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "CanPlaceTileMask",
+													"sid": 611262547436575,
+													"parameters": {
+														"visibility": "visible"
+													}
+												}
+											],
+											"sid": 105746039984505,
+											"disabled": true,
+											"isOrBlock": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 154342895654242
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "CanPlaceTileMask",
+													"sid": 101635231994950,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 911574741099381,
+											"disabled": true
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 448166509699316
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "CanPlaceTileMask",
+											"sid": 422188957552933,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 708388978980492,
+									"disabled": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 567312070898076
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "CanPlaceTileMask",
+									"sid": 434247408480414,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 927104241752209,
+							"disabled": true
+						}
+					]
+				}
+			],
+			"sid": 177589325604601
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "BarScrolling",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-mouse-wheel",
+							"objectClass": "Mouse",
+							"sid": 989778148325686,
+							"parameters": {
+								"direction": "down"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "SetCurrentSlot",
+							"sid": 198906846505475,
+							"parameters": [
+								"(Sprite11.CurrentSlot+1)%5"
+							]
+						}
+					],
+					"sid": 494465519554213
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-mouse-wheel",
+							"objectClass": "Mouse",
+							"sid": 666861959839935,
+							"parameters": {
+								"direction": "up"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "SetCurrentSlot",
+							"sid": 423741914233968,
+							"parameters": [
+								"Sprite11.CurrentSlot = 0 ? 4 : Sprite11.CurrentSlot-1"
+							]
+						}
+					],
+					"sid": 520380029066879
+				}
+			],
+			"sid": 878661725844870
 		}
 	],
 	"sid": 265356654045713

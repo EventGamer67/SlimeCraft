@@ -40,12 +40,14 @@
 				}
 			],
 			"sid": 326193612265088,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [],
 					"actions": [],
-					"sid": 732661646061975
+					"sid": 732661646061975,
+					"disabled": true
 				}
 			]
 		},
@@ -74,6 +76,7 @@
 				}
 			],
 			"sid": 219651285533103,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -86,6 +89,7 @@
 					],
 					"actions": [],
 					"sid": 165622148764493,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -102,7 +106,8 @@
 									"sid": 752657929564919
 								}
 							],
-							"sid": 695132850959795
+							"sid": 695132850959795,
+							"disabled": true
 						}
 					]
 				}
@@ -110,39 +115,11 @@
 		},
 		{
 			"eventType": "group",
-			"disabled": false,
+			"disabled": true,
 			"title": "Channels",
 			"description": "",
 			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-x-seconds",
-							"objectClass": "System",
-							"sid": 414006938998593,
-							"parameters": {
-								"interval-seconds": "1.0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "SendMessage",
-							"objectClass": "GamePushChannels",
-							"sid": 365247142045578,
-							"parameters": {
-								"channelId": "174",
-								"text": "\"жопа\"&Date.Now",
-								"tags": "\"G\""
-							}
-						}
-					],
-					"sid": 499689445897856,
-					"disabled": true
-				}
-			],
+			"children": [],
 			"sid": 800882582838199
 		},
 		{
@@ -191,6 +168,7 @@
 				}
 			],
 			"sid": 591382221278594,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "variable",
@@ -223,7 +201,8 @@
 							]
 						}
 					],
-					"sid": 436515366509167
+					"sid": 436515366509167,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -266,7 +245,8 @@
 							}
 						}
 					],
-					"sid": 734834504130563
+					"sid": 734834504130563,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -299,7 +279,8 @@
 							}
 						}
 					],
-					"sid": 523592686444336
+					"sid": 523592686444336,
+					"disabled": true
 				}
 			]
 		},
@@ -335,7 +316,8 @@
 					}
 				}
 			],
-			"sid": 631918173499055
+			"sid": 631918173499055,
+			"disabled": true
 		},
 		{
 			"functionName": "AddMessage",
@@ -368,6 +350,7 @@
 				}
 			],
 			"sid": 666967310091662,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -393,6 +376,7 @@
 						}
 					],
 					"sid": 688968361819067,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -418,7 +402,8 @@
 									}
 								}
 							],
-							"sid": 592457420896109
+							"sid": 592457420896109,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -433,7 +418,8 @@
 									}
 								}
 							],
-							"sid": 477239084435015
+							"sid": 477239084435015,
+							"disabled": true
 						}
 					]
 				},
@@ -460,7 +446,8 @@
 							}
 						}
 					],
-					"sid": 211302387147909
+					"sid": 211302387147909,
+					"disabled": true
 				}
 			]
 		},
@@ -478,6 +465,7 @@
 			],
 			"actions": [],
 			"sid": 348836672411314,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -502,6 +490,7 @@
 					],
 					"actions": [],
 					"sid": 465949939420026,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -523,7 +512,8 @@
 									"sid": 794294003944398
 								}
 							],
-							"sid": 194757167436427
+							"sid": 194757167436427,
+							"disabled": true
 						}
 					]
 				}
@@ -558,7 +548,8 @@
 					"sid": 719052260144832
 				}
 			],
-			"sid": 540130007798837
+			"sid": 540130007798837,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -571,6 +562,7 @@
 			],
 			"actions": [],
 			"sid": 128899562465939,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -588,7 +580,8 @@
 							"sid": 366155453766656
 						}
 					],
-					"sid": 527034204171207
+					"sid": 527034204171207,
+					"disabled": true
 				}
 			]
 		},
@@ -603,6 +596,7 @@
 			],
 			"actions": [],
 			"sid": 787127226516046,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -627,7 +621,8 @@
 							}
 						}
 					],
-					"sid": 431201150538896
+					"sid": 431201150538896,
+					"disabled": true
 				}
 			]
 		},
@@ -649,7 +644,8 @@
 					"sid": 432286701411090
 				}
 			],
-			"sid": 495309911149601
+			"sid": 495309911149601,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -672,7 +668,8 @@
 					}
 				}
 			],
-			"sid": 327080495463537
+			"sid": 327080495463537,
+			"disabled": true
 		}
 	],
 	"sid": 102634788547996

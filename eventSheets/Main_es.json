@@ -80,11 +80,11 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 227979495715312,
+					"sid": 235656641009012,
 					"parameters": {
 						"audio-file": "Ludum Dare 38 - Track 3",
 						"loop": "looping",
-						"volume": "-25",
+						"volume": "JSON.Get(\"Save.Music\") = 1 ? 0 : -Infinity",
 						"stereo-pan": "0",
 						"tag-optional": "\"Music\""
 					}
@@ -3142,11 +3142,11 @@
 								{
 									"id": "play",
 									"objectClass": "Audio",
-									"sid": 520317201218580,
+									"sid": 780840980158544,
 									"parameters": {
 										"audio-file": "pop",
 										"loop": "not-looping",
-										"volume": "0",
+										"volume": "JSON.Get(\"Save.Sound\") = 1 ? 0 : -Infinity",
 										"stereo-pan": "0",
 										"tag-optional": "\"Sound\""
 									}
@@ -19470,6 +19470,11 @@
 								"group-name": "\"Sun\"",
 								"state": "deactivated"
 							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "WeatherParticle",
+							"sid": 348529451564141
 						},
 						{
 							"id": "set-group-active",
