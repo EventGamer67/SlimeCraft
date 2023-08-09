@@ -24261,6 +24261,14 @@
 														"width": "lerp(Self.Width,0,0.4)",
 														"height": "lerp(Self.Height,0,0.4)"
 													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "QuestElementBlank",
+													"sid": 421698338579946,
+													"parameters": {
+														"visibility": "invisible"
+													}
 												}
 											],
 											"sid": 344203942010105,
@@ -24283,6 +24291,14 @@
 													"parameters": {
 														"width": "lerp(Self.Width,20+(QuestElementBlank.picked*5),0.4)",
 														"height": "lerp(Self.Height,23+(QuestElementBlank.picked*5),0.4)"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "QuestElementBlank",
+													"sid": 184507515769216,
+													"parameters": {
+														"visibility": "visible"
 													}
 												}
 											],

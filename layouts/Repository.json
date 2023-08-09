@@ -24348,8 +24348,8 @@
 					},
 					"uid": 374,
 					"instanceVariables": {
-						"Type": "Progress",
-						"Translatable": false
+						"Type": "Complete",
+						"Translatable": true
 					},
 					"behaviors": {
 						"Tween": {
