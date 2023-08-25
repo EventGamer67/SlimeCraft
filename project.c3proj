@@ -4,7 +4,7 @@
 	"name": "Arrow_Rain",
 	"runtime": "c3",
 	"useWorker": "dom",
-	"bundleAddons": false,
+	"bundleAddons": true,
 	"usedAddons": [
 		{
 			"type": "plugin",
@@ -67,7 +67,7 @@
 			"id": "Eponesh_GameScore",
 			"name": "GamePush",
 			"author": "GamePush, FZCO",
-			"bundled": false,
+			"bundled": true,
 			"version": "1.0.47"
 		},
 		{
@@ -75,7 +75,7 @@
 			"id": "GamePush_Channels",
 			"name": "GamePush Channels",
 			"author": "GamePush, LLC",
-			"bundled": false,
+			"bundled": true,
 			"version": "1.0.37"
 		},
 		{
@@ -266,7 +266,7 @@
 			"id": "Richard Lems_GaussianBlur",
 			"name": "GuassianBlur",
 			"author": "Richard Lems",
-			"bundled": false,
+			"bundled": true,
 			"version": "1.1.1"
 		},
 		{
@@ -274,7 +274,7 @@
 			"id": "lineargradient",
 			"name": "Linear Gradient",
 			"author": "Ludonaut",
-			"bundled": false,
+			"bundled": true,
 			"version": "0.1"
 		},
 		{
@@ -289,7 +289,7 @@
 			"id": "skymen_BetterOutline",
 			"name": "BetterOutline",
 			"author": "skymen",
-			"bundled": false,
+			"bundled": true,
 			"version": "1.4.0.3"
 		}
 	],
