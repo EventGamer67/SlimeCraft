@@ -1,16 +1,9 @@
 {
-	"name": "Movement_Button",
+	"name": "SPBtn",
 	"plugin-id": "Sprite",
 	"sid": 585672172373331,
 	"isGlobal": false,
 	"instanceVariables": [
-		{
-			"name": "Type",
-			"type": "string",
-			"desc": "",
-			"show": true,
-			"sid": 256294432403885
-		},
 		{
 			"name": "So",
 			"type": "number",

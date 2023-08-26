@@ -1,0 +1,645 @@
+{
+	"name": "Popup_es",
+	"events": [
+		{
+			"functionName": "CheckAnyPopupActive",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-function-return-value",
+					"objectClass": "Functions",
+					"sid": 126246625793382,
+					"parameters": {
+						"value": "PopupW.Count > 0 ? 1 : 0 "
+					}
+				}
+			],
+			"sid": 154784457091102
+		},
+		{
+			"functionName": "CloseCurrentPopup",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "signal",
+					"objectClass": "System",
+					"sid": 969645702677620,
+					"parameters": {
+						"tag": "\"got\""
+					}
+				}
+			],
+			"sid": 800666656804746,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-last-created",
+							"objectClass": "System",
+							"sid": 668205753736032,
+							"parameters": {
+								"object": "PopupW"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "const popup = runtime.objects.PopupW.getFirstInstance();\nconst childrens = popup.allChildren();\nfor(const child of childrens)\n{\n\ttry\n\t{\n\t\tchild.instVars.active = false;\n\t\tchild.instVars.Enable = false;\n\t}\n\tcatch{\n\t\tcontinue\n\t}\n}\nconst tween = popup.behaviors.Tween.startTween(\"size\", [popup.width*0.6, popup.height*0.6], 0.3, \"in-back\", { destroyOnComplete: true});\nawait tween.finished;\nawait runtime.callFunction(\"Check Popup\")"
+						}
+					],
+					"sid": 540170037675052
+				}
+			]
+		},
+		{
+			"functionName": "Close Popup",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "uid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 476092657670103
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "signal",
+					"objectClass": "System",
+					"sid": 385609714260747,
+					"parameters": {
+						"tag": "\"got\""
+					}
+				}
+			],
+			"sid": 696290080753569,
+			"children": [
+				{
+					"eventType": "script",
+					"script": "const button = runtime.getInstanceByUid(localVars.uid);\nconst popup = button.getParent();\nconst childrens = popup.allChildren();\nfor(const child of childrens)\n{\n\ttry\n\t{\n\t\tchild.instVars.active = false;\n\t\tchild.instVars.Enable = false;\n\t}\n\tcatch{\n\t\tcontinue\n\t}\n}\nconst tween = popup.behaviors.Tween.startTween(\"size\", [popup.width*0.6, popup.height*0.6], 0.3, \"in-back\", { destroyOnComplete: true});\nawait tween.finished;\nawait runtime.callFunction(\"Check Popup\")"
+				}
+			]
+		},
+		{
+			"functionName": "onPopupCreated",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "tag",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 164570514388365
+				},
+				{
+					"name": "UID",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 139407123917762
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 342746602102041,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 808622768847283,
+							"parameters": {
+								"object": "PopupW",
+								"expression": "PopupW.UID = UID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "signal",
+							"objectClass": "System",
+							"sid": 855728090506331,
+							"parameters": {
+								"tag": "\"on\"&tag&\"Show\""
+							}
+						}
+					],
+					"sid": 431501664172224
+				}
+			]
+		},
+		{
+			"functionName": "Popup Go Stack",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 449074327289459,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 860347387869492,
+							"parameters": {
+								"object": "PopupW"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-layer",
+							"objectClass": "PopupW",
+							"sid": 651025363838662,
+							"parameters": {
+								"layer": "\"Popup Stack\""
+							}
+						}
+					],
+					"sid": 525552583233033,
+					"children": [
+						{
+							"eventType": "script",
+							"script": "const parent = runtime.objects.PopupW.getFirstPickedInstance();\nconst childrens = [...parent.allChildren()];\nchildrens.sort((a,b) => a.zIndex - b.zIndex)\nfor(const child of childrens){\n\tchild.moveToLayer(runtime.layout.getLayer(\"Popup Stack\"));\n} "
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "PopupActionsWrapper",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": true,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Type",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 336923711339928
+				},
+				{
+					"name": "BtnUID",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 416073010063719
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 861926908155403,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 854349075939412,
+							"parameters": {
+								"value": "Type = \"CloseTable\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Close Popup",
+							"sid": 824993689421874,
+							"parameters": [
+								"BtnUID"
+							]
+						}
+					],
+					"sid": 685487701522792
+				}
+			]
+		},
+		{
+			"functionName": "Disable Btns due to Popup",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 839152801273019,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 205692852442046,
+							"parameters": {
+								"object": "AdvBtns",
+								"expression": "AdvBtns.LayerName",
+								"comparison": 1,
+								"value": "\"Popup\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "AdvBtns",
+							"sid": 743902285436672,
+							"parameters": {
+								"instance-variable": "active",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 738038905706286
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 943200292508251,
+							"parameters": {
+								"object": "9PBtns",
+								"expression": "9PBtns.LayerName",
+								"comparison": 1,
+								"value": "\"Popup\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "9PBtns",
+							"sid": 810659282282984,
+							"parameters": {
+								"instance-variable": "active",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 137966000782576
+				}
+			]
+		},
+		{
+			"functionName": "Popup back from Stack",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 756772745303479,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-last-created",
+							"objectClass": "System",
+							"sid": 421863010612062,
+							"parameters": {
+								"object": "PopupW"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-layer",
+							"objectClass": "PopupW",
+							"sid": 949459042020418,
+							"parameters": {
+								"layer": "\"Popup\""
+							}
+						}
+					],
+					"sid": 974870442449198,
+					"children": [
+						{
+							"eventType": "script",
+							"script": "const parent = runtime.objects.PopupW.getFirstPickedInstance();\nconst childrens = [...parent.allChildren()];\nchildrens.sort((a,b) => a.zIndex - b.zIndex)\nfor(const child of childrens)\n{\n\tchild.moveToLayer(runtime.layout.getLayer(\"Popup\"));\n\ttry\n\t{\n\t\tif(child.instVars.Enabled == 1 || typeof(child.instVars.Enabled) == \"undefined\" ){\n\t\t\tchild.instVars.active = true;\n\t\t}\n\t\telse{\n\t\t\tchild.instVars.active = false;\n\t\t}\n\t}\n\tcatch{\n\t\tcontinue\n\t}\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "Check Popup",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 722314335227132,
+					"parameters": {
+						"seconds": "0"
+					}
+				}
+			],
+			"sid": 721249941902162,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 359084995624124,
+							"parameters": {
+								"first-value": "PopupW.Count",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 426648811205103,
+							"parameters": {
+								"layer": "\"Popup\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 807741712433074,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 388160384256646,
+									"parameters": {
+										"object": "AdvBtns",
+										"expression": "AdvBtns.LayerName",
+										"comparison": 1,
+										"value": "\"Popup\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "AdvBtns",
+									"sid": 877122896932622,
+									"parameters": {
+										"instance-variable": "active",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 382708267123856
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 454891777967266,
+									"parameters": {
+										"object": "9PBtns",
+										"expression": "9PBtns.LayerName",
+										"comparison": 1,
+										"value": "\"Popup\""
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "9PBtns",
+									"sid": 943953373179567,
+									"parameters": {
+										"instance-variable": "Enabled"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "9PBtns",
+									"sid": 144486063103982,
+									"parameters": {
+										"instance-variable": "active",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 779873004850258
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 384815196971023
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Popup back from Stack",
+							"sid": 362127850292597
+						}
+					],
+					"sid": 219505524535552
+				}
+			]
+		},
+		{
+			"functionName": "CreatePupup",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Popup",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 630451966882875
+				},
+				{
+					"name": "FirstParam",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 394504600712904
+				},
+				{
+					"name": "SecondParam",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 212956284156300
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 617484683799546,
+					"parameters": {
+						"layer": "\"Popup\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"callFunction": "Popup Go Stack",
+					"sid": 445377954634184
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 945146804464308,
+					"parameters": {
+						"object-to-create": "PopupW",
+						"layer": "\"Popup\"",
+						"x": "Functions.Get_Center_X(\"UI\")",
+						"y": "Functions.Get_Center_Y(\"UI\")",
+						"create-hierarchy": true,
+						"template-name": "Popup"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 387097678351903,
+					"parameters": {
+						"seconds": "0"
+					}
+				}
+			],
+			"sid": 429934586041965,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-last-created",
+							"objectClass": "System",
+							"sid": 672070203204798,
+							"parameters": {
+								"object": "PopupW"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "onPopupCreated",
+							"sid": 933808185028977,
+							"parameters": [
+								"Popup",
+								"PopupW.UID"
+							]
+						},
+						{
+							"id": "set-size",
+							"objectClass": "PopupW",
+							"sid": 412013579921677,
+							"parameters": {
+								"width": "Self.w*0.6",
+								"height": "Self.h*0.6"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "PopupW",
+							"sid": 530341798071618,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "size",
+								"end-x": "Self.w",
+								"end-y": "Self.h",
+								"time": "0.3",
+								"ease": "easeoutback",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 625266581620563
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "Disable Btns due to Popup",
+							"sid": 679319103754643
+						}
+					],
+					"sid": 577494667980047
+				}
+			]
+		}
+	],
+	"sid": 111708277954955
+}

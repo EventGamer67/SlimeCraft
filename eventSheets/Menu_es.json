@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"eventType": "include",
-			"includeSheet": "AnimatedTriggers"
+			"includeSheet": "AnimatedTriggers_es"
 		},
 		{
 			"eventType": "include",
@@ -223,15 +223,15 @@
 							"objectClass": "System",
 							"sid": 440018671974098,
 							"parameters": {
-								"object": "Message_Text",
-								"expression": "Message_Text.Type = \"Version\""
+								"object": "SFtext",
+								"expression": "SFtext.Type = \"Version\""
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-position",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 388408096030106,
 							"parameters": {
 								"x": "ViewportLeft(\"UI\")",
@@ -240,7 +240,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 756463141506506,
 							"parameters": {
 								"text": "projectversion"
@@ -351,18 +351,7 @@
 			"children": [
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Button",
-							"sid": 731470762245795,
-							"parameters": {
-								"instance-variable": "Type",
-								"comparison": 0,
-								"value": "\"Play\""
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [
 						{
 							"callFunction": "StartGame",
@@ -405,18 +394,7 @@
 				},
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Button",
-							"sid": 884017548577863,
-							"parameters": {
-								"instance-variable": "Type",
-								"comparison": 0,
-								"value": "\"CreateNewWorld\""
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [
 						{
 							"callFunction": "StartGame",
@@ -430,18 +408,7 @@
 				},
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Button",
-							"sid": 405397056398599,
-							"parameters": {
-								"instance-variable": "Type",
-								"comparison": 0,
-								"value": "\"Language\""
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [],
 					"sid": 287221285405611,
 					"children": [
@@ -496,18 +463,7 @@
 				},
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Button",
-							"sid": 811313858094293,
-							"parameters": {
-								"instance-variable": "Type",
-								"comparison": 0,
-								"value": "\"OtherGames\""
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [
 						{
 							"type": "script",
@@ -686,17 +642,7 @@
 			"children": [
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "evaluate-expression",
-							"objectClass": "System",
-							"sid": 457997280461961,
-							"disabled": true,
-							"parameters": {
-								"value": "Sprite24.Type = \"CreateNewWorld\""
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [
 						{
 							"callFunction": "ShowCreateNewWorldTable",
@@ -708,25 +654,7 @@
 				},
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "evaluate-expression",
-							"objectClass": "System",
-							"sid": 778829108104175,
-							"disabled": true,
-							"parameters": {
-								"value": "Sprite24.Type = \"Create\""
-							}
-						},
-						{
-							"id": "evaluate-expression",
-							"objectClass": "System",
-							"sid": 516261784861648,
-							"parameters": {
-								"value": "Sprite24.Type = \"CreateNewWorld\""
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [
 						{
 							"callFunction": "CreateNewWorld",
@@ -785,38 +713,6 @@
 						}
 					],
 					"sid": 712050917606238
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "evaluate-expression",
-							"objectClass": "System",
-							"sid": 579530780563350,
-							"parameters": {
-								"value": "Sprite24.Type = \"Yes\""
-							}
-						},
-						{
-							"id": "evaluate-expression",
-							"objectClass": "System",
-							"sid": 570104513776121,
-							"parameters": {
-								"value": "Sprite24.Type = \"No\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "SeekAnswer",
-							"sid": 966462300703020,
-							"parameters": [
-								"Sprite24.Type"
-							]
-						}
-					],
-					"sid": 888125470951651,
-					"isOrBlock": true
 				}
 			]
 		},
@@ -860,7 +756,7 @@
 					"objectClass": "Touch",
 					"sid": 759244904898785,
 					"parameters": {
-						"object": "Message_Text"
+						"object": "SFtext"
 					}
 				}
 			],
@@ -875,7 +771,7 @@
 							"objectClass": "System",
 							"sid": 194054255022389,
 							"parameters": {
-								"value": "Message_Text.Type = \"NewWorldName\""
+								"value": "SFtext.Type = \"NewWorldName\""
 							}
 						}
 					],
@@ -1386,17 +1282,7 @@
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 180490120250102,
-									"parameters": {
-										"object": "Button",
-										"expression": "Button.Type = \"CreateNewWorld\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"id": "set-animation-frame",
@@ -1458,17 +1344,7 @@
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 943628289235234,
-									"parameters": {
-										"object": "Button",
-										"expression": "Button.Type = \"Play\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"id": "set-animation-frame",
@@ -1512,17 +1388,7 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 356402281068763,
-									"parameters": {
-										"object": "Button",
-										"expression": "Button.Type = \"CreateNewWorld\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"id": "set-animation-frame",
@@ -1688,15 +1554,15 @@
 									"objectClass": "System",
 									"sid": 109981400532615,
 									"parameters": {
-										"object": "Message_Text",
-										"expression": "Message_Text.Type = \"NewWorldName\""
+										"object": "SFtext",
+										"expression": "SFtext.Type = \"NewWorldName\""
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 217090304533546,
 									"parameters": {
 										"text": "TextInput.Text"
@@ -2002,7 +1868,7 @@
 													"objectClass": "InventoryBlank",
 													"sid": 695803271172341,
 													"parameters": {
-														"child": "Message_Text",
+														"child": "SFtext",
 														"which": "own"
 													}
 												}
@@ -2120,15 +1986,15 @@
 															"objectClass": "System",
 															"sid": 727577090697483,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"WorldName\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"WorldName\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 865881857954251,
 															"parameters": {
 																"text": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Name\")"
@@ -2152,7 +2018,7 @@
 															"actions": [
 																{
 																	"id": "set-default-color",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 243184328142634,
 																	"parameters": {
 																		"color": "Functions.CheckActualVersion(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Version\")) = 1 ? rgbEx(100,100,100) : rgbEx(100,50,50)"
@@ -2160,7 +2026,7 @@
 																},
 																{
 																	"id": "set-text",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 791065398196404,
 																	"parameters": {
 																		"text": "Functions.CheckActualVersion(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Version\")) = 1 ? Self.Text : Self.Text&\" \"&Functions.Get_LanguageText(\"OutDated\")"
@@ -2201,15 +2067,15 @@
 															"objectClass": "System",
 															"sid": 152844829729470,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"PlayTime\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"PlayTime\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 651329626902410,
 															"parameters": {
 																"text": "floor(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Ticks\")/7200)&\" \"&Functions.Get_LanguageText(\"Day\")"
@@ -2226,15 +2092,15 @@
 															"objectClass": "System",
 															"sid": 322884573133734,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"Coin\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"Coin\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 915207186898439,
 															"parameters": {
 																"text": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Coin\")&\" \"&Functions.Get_LanguageText(\"Coins\")"
@@ -2467,15 +2333,15 @@
 							"objectClass": "System",
 							"sid": 582862734234500,
 							"parameters": {
-								"object": "Message_Text",
-								"expression": "Message_Text.Type = \"NewWorldName\""
+								"object": "SFtext",
+								"expression": "SFtext.Type = \"NewWorldName\""
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-text",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 547849568973822,
 							"parameters": {
 								"text": "TextInput.Text"
@@ -2910,7 +2776,7 @@
 															"objectClass": "InventoryBlank",
 															"sid": 501847736232348,
 															"parameters": {
-																"child": "Message_Text",
+																"child": "SFtext",
 																"which": "own"
 															}
 														}
@@ -3060,15 +2926,15 @@
 																	"objectClass": "System",
 																	"sid": 568998511580506,
 																	"parameters": {
-																		"object": "Message_Text",
-																		"expression": "Message_Text.Type = \"WorldName\""
+																		"object": "SFtext",
+																		"expression": "SFtext.Type = \"WorldName\""
 																	}
 																}
 															],
 															"actions": [
 																{
 																	"id": "set-text",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 295325287206000,
 																	"parameters": {
 																		"text": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Name\")"
@@ -3092,7 +2958,7 @@
 																	"actions": [
 																		{
 																			"id": "set-default-color",
-																			"objectClass": "Message_Text",
+																			"objectClass": "SFtext",
 																			"sid": 668455602693713,
 																			"parameters": {
 																				"color": "Functions.CheckActualVersion(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Version\")) = 1 ? rgbEx(100,100,100) : rgbEx(100,50,50)"
@@ -3100,7 +2966,7 @@
 																		},
 																		{
 																			"id": "set-text",
-																			"objectClass": "Message_Text",
+																			"objectClass": "SFtext",
 																			"sid": 286000141368458,
 																			"parameters": {
 																				"text": "Functions.CheckActualVersion(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Version\")) = 1 ? Self.Text : Self.Text&\" \"&Functions.Get_LanguageText(\"OutDated\")"
@@ -3141,15 +3007,15 @@
 																	"objectClass": "System",
 																	"sid": 561657835843778,
 																	"parameters": {
-																		"object": "Message_Text",
-																		"expression": "Message_Text.Type = \"PlayTime\""
+																		"object": "SFtext",
+																		"expression": "SFtext.Type = \"PlayTime\""
 																	}
 																}
 															],
 															"actions": [
 																{
 																	"id": "set-text",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 282258283416060,
 																	"parameters": {
 																		"text": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Ticks\")"
@@ -3286,7 +3152,7 @@
 									"objectClass": "InventoryBlank",
 									"sid": 161661303039137,
 									"parameters": {
-										"child": "Message_Text",
+										"child": "SFtext",
 										"which": "own"
 									}
 								},
@@ -3317,7 +3183,7 @@
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "Message_Text",
+											"objectClass": "SFtext",
 											"sid": 158441753928074,
 											"parameters": {
 												"instance-variable": "Type",
@@ -3329,7 +3195,7 @@
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "Message_Text",
+											"objectClass": "SFtext",
 											"sid": 147343703916552,
 											"parameters": {
 												"text": "Functions.Get_LanguageText(Question)\n"
@@ -3340,18 +3206,7 @@
 								},
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Sprite24",
-											"sid": 742214793115662,
-											"parameters": {
-												"instance-variable": "Type",
-												"comparison": 0,
-												"value": "\"No\""
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [],
 									"sid": 455430907808289,
 									"children": [
@@ -3363,7 +3218,7 @@
 													"objectClass": "Sprite24",
 													"sid": 473943004147649,
 													"parameters": {
-														"child": "Message_Text",
+														"child": "SFtext",
 														"which": "own"
 													}
 												}
@@ -3371,7 +3226,7 @@
 											"actions": [
 												{
 													"id": "set-text",
-													"objectClass": "Message_Text",
+													"objectClass": "SFtext",
 													"sid": 929443964078992,
 													"parameters": {
 														"text": "Functions.Get_LanguageText(DeclineText)"
@@ -3384,18 +3239,7 @@
 								},
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Sprite24",
-											"sid": 192920970410791,
-											"parameters": {
-												"instance-variable": "Type",
-												"comparison": 0,
-												"value": "\"Yes\""
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [],
 									"sid": 767123176052684,
 									"children": [
@@ -3407,7 +3251,7 @@
 													"objectClass": "Sprite24",
 													"sid": 893395343400968,
 													"parameters": {
-														"child": "Message_Text",
+														"child": "SFtext",
 														"which": "own"
 													}
 												}
@@ -3415,7 +3259,7 @@
 											"actions": [
 												{
 													"id": "set-text",
-													"objectClass": "Message_Text",
+													"objectClass": "SFtext",
 													"sid": 157116370238312,
 													"parameters": {
 														"text": "Functions.Get_LanguageText(AcceptText)"
@@ -3580,16 +3424,7 @@
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "evaluate-expression",
-									"objectClass": "System",
-									"sid": 824362040259740,
-									"parameters": {
-										"value": "Inventory_Blank.Type = \"Delete\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"callFunction": "disableOtherBtns",
@@ -3717,16 +3552,7 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "evaluate-expression",
-									"objectClass": "System",
-									"sid": 688336432638003,
-									"parameters": {
-										"value": "Inventory_Blank.Type = \"Play\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [],
 							"sid": 498424610093659,
 							"children": [
@@ -3814,16 +3640,7 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "evaluate-expression",
-									"objectClass": "System",
-									"sid": 451033214567437,
-									"parameters": {
-										"value": "Inventory_Blank.Type = \"Close\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [],
 							"sid": 679641475140928,
 							"children": [

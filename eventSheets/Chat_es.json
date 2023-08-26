@@ -1,5 +1,5 @@
 {
-	"name": "Chat",
+	"name": "Chat_es",
 	"events": [
 		{
 			"functionName": "ConnectToChat",
@@ -212,7 +212,7 @@
 							"objectClass": "ChatBlank",
 							"sid": 264387183124365,
 							"parameters": {
-								"child": "Message_Text",
+								"child": "SFtext",
 								"which": "own"
 							}
 						}
@@ -220,7 +220,7 @@
 					"actions": [
 						{
 							"id": "set-text",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 863740464946169,
 							"parameters": {
 								"text": "message"
@@ -228,11 +228,11 @@
 						},
 						{
 							"id": "set-size",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 634208800040558,
 							"parameters": {
-								"width": "Message_Text.TextWidth+3",
-								"height": "Message_Text.TextHeight"
+								"width": "SFtext.TextWidth+3",
+								"height": "SFtext.TextHeight"
 							}
 						},
 						{
@@ -240,8 +240,8 @@
 							"objectClass": "ChatBlank",
 							"sid": 743406177420207,
 							"parameters": {
-								"width": "Message_Text.Width",
-								"height": "Message_Text.Height+1"
+								"width": "SFtext.Width",
+								"height": "SFtext.Height+1"
 							}
 						}
 					],
@@ -360,15 +360,15 @@
 							"objectClass": "System",
 							"sid": 366925637894865,
 							"parameters": {
-								"object": "Message_Text",
-								"expression": "Message_Text.Type = \"Chat\""
+								"object": "SFtext",
+								"expression": "SFtext.Type = \"Chat\""
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-text",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 363808848793952,
 							"parameters": {
 								"text": "\"\""
@@ -395,7 +395,7 @@
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 331529449083365,
 									"parameters": {
 										"text": "Self.Text&newline&Chat.At(loopindex(\"x\"))"
@@ -411,7 +411,7 @@
 							"actions": [
 								{
 									"id": "set-height",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 254558532331678,
 									"parameters": {
 										"height": "Self.TextHeight"
@@ -527,12 +527,12 @@
 					"objectClass": "Touch",
 					"sid": 275230857854899,
 					"parameters": {
-						"object": "Message_Text"
+						"object": "SFtext"
 					}
 				},
 				{
 					"id": "compare-instance-variable",
-					"objectClass": "Message_Text",
+					"objectClass": "SFtext",
 					"sid": 855329745677728,
 					"parameters": {
 						"instance-variable": "Type",
@@ -606,15 +606,15 @@
 							"objectClass": "System",
 							"sid": 820030806950228,
 							"parameters": {
-								"object": "Message_Text",
-								"expression": "Message_Text.Type = \"ChatInput\""
+								"object": "SFtext",
+								"expression": "SFtext.Type = \"ChatInput\""
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-text",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 352713269021291,
 							"parameters": {
 								"text": "TextInput.Text"

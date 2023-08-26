@@ -1,0 +1,40 @@
+{
+	"name": "Toggles",
+	"plugin-id": "NinePatch",
+	"sid": 515178874732560,
+	"instanceVariables": [
+		{
+			"name": "Tag",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 552855812228406
+		},
+		{
+			"name": "State",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 413355326583567
+		},
+		{
+			"name": "DragX",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 413032591387620
+		},
+		{
+			"name": "DragY",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 618776838990422
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"9patch4"
+	]
+}

@@ -1,0 +1,26 @@
+{
+	"name": "WindowBlank",
+	"plugin-id": "NinePatch",
+	"sid": 679979393805394,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 846895938598779
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 13,
+		"height": 13,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 2976917,
+		"useCollisionPoly": true
+	}
+}

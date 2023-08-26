@@ -2273,7 +2273,7 @@
 					"subLayers": [],
 					"instances": [
 						{
-							"type": "Movement_Button",
+							"type": "SPBtn",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -2289,7 +2289,11 @@
 								"action": "",
 								"active": true,
 								"selected": false,
-								"Type": "Left",
+								"SwitchFramesOnClick": false,
+								"wA": 0,
+								"hA": 0,
+								"MainTag": "",
+								"Type": "",
 								"So": 0,
 								"What": "Axe"
 							},
@@ -2318,7 +2322,7 @@
 							}
 						},
 						{
-							"type": "Movement_Button",
+							"type": "SPBtn",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -2334,7 +2338,11 @@
 								"action": "",
 								"active": true,
 								"selected": false,
-								"Type": "Right",
+								"SwitchFramesOnClick": false,
+								"wA": 0,
+								"hA": 0,
+								"MainTag": "",
+								"Type": "",
 								"So": 0,
 								"What": "Axe"
 							},
@@ -2363,7 +2371,7 @@
 							}
 						},
 						{
-							"type": "Movement_Button",
+							"type": "SPBtn",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -2379,7 +2387,11 @@
 								"action": "",
 								"active": true,
 								"selected": false,
-								"Type": "Jump",
+								"SwitchFramesOnClick": false,
+								"wA": 0,
+								"hA": 0,
+								"MainTag": "",
+								"Type": "",
 								"So": 0,
 								"What": "Axe"
 							},
@@ -2408,7 +2420,7 @@
 							}
 						},
 						{
-							"type": "Movement_Button",
+							"type": "SPBtn",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -2424,7 +2436,11 @@
 								"action": "",
 								"active": true,
 								"selected": false,
-								"Type": "Instrument",
+								"SwitchFramesOnClick": false,
+								"wA": 0,
+								"hA": 0,
+								"MainTag": "",
+								"Type": "",
 								"So": 0,
 								"What": "Axe"
 							},
@@ -2695,7 +2711,7 @@
 					}
 				},
 				{
-					"type": "Movement_Button",
+					"type": "SPBtn",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -2711,7 +2727,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Inventory",
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": "",
 						"So": 0,
 						"What": "Inventory"
 					},
@@ -2782,7 +2802,7 @@
 					}
 				},
 				{
-					"type": "Movement_Button",
+					"type": "SPBtn",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -2798,7 +2818,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Pause",
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": "",
 						"So": 50,
 						"What": "Pause"
 					},
@@ -2902,7 +2926,7 @@
 					}
 				},
 				{
-					"type": "Movement_Button",
+					"type": "SPBtn",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -2918,7 +2942,11 @@
 						"action": "",
 						"active": false,
 						"selected": false,
-						"Type": "Clock",
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": "",
 						"So": 50,
 						"What": "Clock"
 					},
@@ -2992,7 +3020,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "10:10",
 						"enable-bbcode": true,
@@ -3371,7 +3399,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Eat"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -3414,7 +3446,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Trade"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -3441,7 +3477,7 @@
 					}
 				},
 				{
-					"type": "Movement_Button",
+					"type": "SPBtn",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -3457,7 +3493,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Quest",
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": "",
 						"So": 80,
 						"What": "Quest"
 					},
@@ -3606,7 +3646,7 @@
 					}
 				},
 				{
-					"type": "Movement_Button",
+					"type": "SPBtn",
 					"properties": {
 						"initially-visible": false,
 						"initial-animation": "Animation 1",
@@ -3622,7 +3662,11 @@
 						"action": "",
 						"active": false,
 						"selected": false,
-						"Type": "Chat",
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": "",
 						"So": 50,
 						"What": "Chat"
 					},
@@ -3679,7 +3723,7 @@
 					}
 				},
 				{
-					"type": "Movement_Button",
+					"type": "SPBtn",
 					"properties": {
 						"initially-visible": false,
 						"initial-animation": "Animation 1",
@@ -3695,7 +3739,11 @@
 						"action": "",
 						"active": false,
 						"selected": false,
-						"Type": "LeaderBoard",
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": "",
 						"So": 50,
 						"What": "LeaderBoard"
 					},
@@ -3752,7 +3800,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Wood 5/5",
 						"enable-bbcode": true,
@@ -3876,7 +3924,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Repair"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -3919,7 +3971,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "ConstructMode"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -3946,7 +4002,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "10:10",
 						"enable-bbcode": true,
@@ -4025,7 +4081,7 @@
 					}
 				},
 				{
-					"type": "Movement_Button",
+					"type": "SPBtn",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -4041,7 +4097,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Shop",
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": "",
 						"So": 50,
 						"What": "Shop"
 					},
@@ -4098,7 +4158,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "0",
 						"enable-bbcode": true,
@@ -4827,6 +4887,39 @@
 			"parallaxX": 0,
 			"parallaxY": 0,
 			"scaleRate": 0,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [],
+			"sid": 230761550010795,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",
 			"drawOrder": "z-order",

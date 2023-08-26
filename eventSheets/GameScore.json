@@ -415,15 +415,15 @@
 											"objectClass": "System",
 											"sid": 176379084152508,
 											"parameters": {
-												"object": "Message_Text",
-												"expression": "Message_Text.Type = \"Level\""
+												"object": "SFtext",
+												"expression": "SFtext.Type = \"Level\""
 											}
 										}
 									],
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "Message_Text",
+											"objectClass": "SFtext",
 											"sid": 535199255673755,
 											"parameters": {
 												"text": "Functions.Get_LanguageText(\"Level\")&\" \"&JSON.Get(\"Player.Level\")"

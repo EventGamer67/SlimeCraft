@@ -30,6 +30,34 @@
 			"desc": "",
 			"show": true,
 			"sid": 744655912867085
+		},
+		{
+			"name": "active",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 610243117550478
+		},
+		{
+			"name": "Enabled",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 950612407348619
+		},
+		{
+			"name": "MainTag",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 436178804940509
+		},
+		{
+			"name": "Type_",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 177842620660609
 		}
 	],
 	"behaviorTypes": [

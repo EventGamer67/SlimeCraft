@@ -1,0 +1,163 @@
+{
+	"name": "Commands_es",
+	"events": [
+		{
+			"functionName": "ToggleSwitched",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "tag",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 149514551535179
+				},
+				{
+					"name": "State",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 947561013759949
+				},
+				{
+					"name": "States",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 915397709847618
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 564792125961621,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "что то сделает"
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 557350094532670,
+							"parameters": {
+								"path": "\"Save.Toggles.\"&tag",
+								"value": "States"
+							}
+						}
+					],
+					"sid": 637991043664459
+				}
+			]
+		},
+		{
+			"functionName": "BtnClicked",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": true,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "MainTag",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 568084205747100
+				},
+				{
+					"name": "Type",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 164152885408808
+				},
+				{
+					"name": "BtnUID",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 765628104643014
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 131837247746868,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 160670212210548,
+							"parameters": {
+								"value": "MainTag = \"Menu\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 880994836335066
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 279247051441816,
+							"parameters": {
+								"value": "MainTag = \"Main\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "mainButtonClicked",
+							"sid": 319838136251298,
+							"parameters": [
+								"BtnUID",
+								"Type"
+							]
+						}
+					],
+					"sid": 767223873931923
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 940476945632820,
+							"parameters": {
+								"value": "MainTag = \"Popup\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "PopupActionsWrapper",
+							"sid": 947174041106363,
+							"parameters": [
+								"Type",
+								"BtnUID"
+							]
+						}
+					],
+					"sid": 176600404548800
+				}
+			]
+		}
+	],
+	"sid": 705198249845872
+}

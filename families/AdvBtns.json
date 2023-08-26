@@ -44,6 +44,41 @@
 			"desc": "",
 			"show": true,
 			"sid": 749308384651428
+		},
+		{
+			"name": "SwitchFramesOnClick",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 212949359061787
+		},
+		{
+			"name": "wA",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 317214948495606
+		},
+		{
+			"name": "hA",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 631776625984783
+		},
+		{
+			"name": "MainTag",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 322664302293426
+		},
+		{
+			"name": "Type",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 996412256921573
 		}
 	],
 	"behaviorTypes": [
@@ -58,7 +93,7 @@
 		"Inventory_Blank",
 		"FoodBtn",
 		"Sprite24",
-		"Movement_Button",
+		"SPBtn",
 		"Button",
 		"Sprite31",
 		"Sprite36"

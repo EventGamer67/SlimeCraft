@@ -1,0 +1,3396 @@
+{
+	"name": "AnimatedTriggers_es",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "old",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-start",
+							"objectClass": "Touch",
+							"sid": 992988546335614
+						}
+					],
+					"actions": [],
+					"sid": 820572337095515,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 666809394958274,
+									"parameters": {
+										"object": "AdvBtns"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "AdvBtns",
+									"sid": 576274058626808,
+									"parameters": {
+										"instance-variable": "active"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 928394500163094,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-topbottom",
+											"objectClass": "AdvBtns",
+											"sid": 176933505734907,
+											"parameters": {
+												"which": "top"
+											}
+										},
+										{
+											"id": "is-visible",
+											"objectClass": "AdvBtns",
+											"sid": 267735112678152
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "AdvBtns",
+											"sid": 296557212897616,
+											"parameters": {
+												"instance-variable": "touched"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "AdvBtns",
+											"sid": 978637932252900,
+											"parameters": {
+												"instance-variable": "touched",
+												"value": "true"
+											}
+										},
+										{
+											"id": "stop-all-tweens",
+											"objectClass": "AdvBtns",
+											"sid": 561414094416524,
+											"behaviorType": "Tween"
+										},
+										{
+											"id": "tween-two-properties",
+											"objectClass": "AdvBtns",
+											"sid": 466483903879126,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"minimize\"",
+												"property": "size",
+												"end-x": "Self.w*0.8",
+												"end-y": "Self.h*0.8",
+												"time": "0.1",
+												"ease": "easeoutsine",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 955151445493109
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 877969594495692
+						}
+					],
+					"actions": [],
+					"sid": 889944697397862,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 683026166997694,
+									"parameters": {
+										"object": "AdvBtns",
+										"expression": "AdvBtns.touched = 1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-all-tweens",
+									"objectClass": "AdvBtns",
+									"sid": 949650734236097,
+									"behaviorType": "Tween"
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "AdvBtns",
+									"sid": 668871033651976,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"appear\"",
+										"property": "size",
+										"end-x": "Self.w",
+										"end-y": "Self.h",
+										"time": "0.1",
+										"ease": "easeoutback",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 481082645079383
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "AdvBtns",
+									"sid": 172975438561296,
+									"parameters": {
+										"instance-variable": "touched",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 489550587727148,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 245961221880826,
+											"parameters": {
+												"value": "AdvBtns.ObjectTypeName = \"Button\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 419557617314836,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 690560956129642,
+													"parameters": {
+														"object": "Button",
+														"expression": "Button.UID = AdvBtns.UID"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 309785750912978
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 695102932667701,
+											"parameters": {
+												"value": "AdvBtns.ObjectTypeName = \"Sprite36\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 373121119578975,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 356590801467016,
+													"parameters": {
+														"object": "Sprite36",
+														"expression": "Sprite36.UID = AdvBtns.UID"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 323986555665805,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"callFunction": "CompleteQuest",
+															"sid": 661761902830611
+														}
+													],
+													"sid": 626985165268957
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 212044099132693,
+											"parameters": {
+												"value": "AdvBtns.ObjectTypeName = \"Movement_Button\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 607684128255494,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 775136758700619,
+													"parameters": {
+														"object": "SPBtn",
+														"expression": "SPBtn.UID = AdvBtns.UID"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 327131932512552,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-animation-frame",
+															"objectClass": "SPBtn",
+															"sid": 264003759539941,
+															"parameters": {
+																"comparison": 0,
+																"number": "9"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "ShowLeaderBoard",
+															"sid": 352231148600697
+														}
+													],
+													"sid": 975516339662224
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-animation-frame",
+															"objectClass": "SPBtn",
+															"sid": 351331903367037,
+															"parameters": {
+																"comparison": 0,
+																"number": "11"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "ShowShop",
+															"sid": 593391787040599
+														}
+													],
+													"sid": 366522225752423
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 262050042242546,
+											"parameters": {
+												"value": "AdvBtns.ObjectTypeName = \"FoodBtn\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 946370966761704,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 700097089903043,
+													"parameters": {
+														"object": "FoodBtn",
+														"expression": "FoodBtn.UID = AdvBtns.UID"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 826049736176955,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"callFunction": "ClickOnFoodBtn",
+															"sid": 858202142966873
+														}
+													],
+													"sid": 444384878277090
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"callFunction": "SwitchBuildMode",
+															"sid": 404184476832178,
+															"parameters": [
+																"BuildMode = \"Main\" ? \"Back\" : \"Main\""
+															]
+														}
+													],
+													"sid": 792358944896867
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "disableOtherBtns",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "CurrentLayer",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 323417168072670
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 802688331728935,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 181930475132565,
+									"parameters": {
+										"object": "AdvBtns",
+										"expression": "AdvBtns.LayerName <> CurrentLayer"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "AdvBtns",
+									"sid": 538230632837864,
+									"parameters": {
+										"instance-variable": "active",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 951668794416063
+						}
+					]
+				},
+				{
+					"functionName": "enableCurBtns",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "CurrentLayer",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 233260445677022
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 432388529437676,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 710454594130169,
+									"parameters": {
+										"name": "\"token\"",
+										"start-index": "0",
+										"end-index": "tokencount(CurrentLayer,\",\") "
+									}
+								}
+							],
+							"actions": [],
+							"sid": 769792265508952,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 680422738485989,
+											"parameters": {
+												"object": "AdvBtns",
+												"expression": "AdvBtns.LayerName = tokenat(CurrentLayer,loopindex(\"token\"),\",\")"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "AdvBtns",
+											"sid": 579681901534520,
+											"parameters": {
+												"instance-variable": "active",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 930581406878661
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 430943512683725,
+							"parameters": {
+								"object": "AdvBtns"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 862158916733596,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 153551911975601,
+									"parameters": {
+										"object": "AdvBtns"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 489268487282539,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "AdvBtns",
+											"sid": 779667231212054,
+											"parameters": {
+												"instance-variable": "active"
+											}
+										},
+										{
+											"id": "pick-topbottom",
+											"objectClass": "AdvBtns",
+											"sid": 313018397903889,
+											"parameters": {
+												"which": "top"
+											}
+										},
+										{
+											"id": "is-visible",
+											"objectClass": "AdvBtns",
+											"sid": 450090964412782
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "AdvBtns",
+											"sid": 425394446541660,
+											"parameters": {
+												"instance-variable": "touched"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 179694020122432,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-playing",
+													"objectClass": "AdvBtns",
+													"sid": 165132501700974,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"minimize\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-playing",
+													"objectClass": "AdvBtns",
+													"sid": 655437730371446,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"Close\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-playing",
+													"objectClass": "AdvBtns",
+													"sid": 967233474916726,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"Open\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-playing",
+													"objectClass": "AdvBtns",
+													"sid": 227322744122601,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"appear\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "tween-two-properties",
+													"objectClass": "AdvBtns",
+													"sid": 798403177590518,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"hover\"",
+														"property": "size",
+														"end-x": "Self.w*1.1",
+														"end-y": "Self.h*1.1",
+														"time": "0.1",
+														"ease": "easeoutquad",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												}
+											],
+											"sid": 898608040753781
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 454156329114411
+								}
+							],
+							"actions": [],
+							"sid": 366688996214135,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "AdvBtns",
+											"sid": 956061864220328,
+											"parameters": {
+												"instance-variable": "touched"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-playing",
+											"objectClass": "AdvBtns",
+											"sid": 831159019766443,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"minimize\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-playing",
+											"objectClass": "AdvBtns",
+											"sid": 656084813415568,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"appear\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-playing",
+											"objectClass": "AdvBtns",
+											"sid": 849337154044514,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"Close\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-playing",
+											"objectClass": "AdvBtns",
+											"sid": 320360467868819,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"Open\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-two-properties",
+											"objectClass": "AdvBtns",
+											"sid": 363386789777334,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"standart\"",
+												"property": "size",
+												"end-x": "Self.w",
+												"end-y": "Self.h",
+												"time": "0.1",
+												"ease": "easeoutquad",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 693839793661214
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-start",
+							"objectClass": "Touch",
+							"sid": 743135747399710
+						}
+					],
+					"actions": [],
+					"sid": 942647797324402,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 555304255817003,
+									"parameters": {
+										"object": "9PBtns"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 598410519885777,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-topbottom",
+											"objectClass": "9PBtns",
+											"sid": 468097890202499,
+											"parameters": {
+												"which": "top"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "9PBtns",
+											"sid": 588630969949868,
+											"parameters": {
+												"instance-variable": "Touched"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "stop-all-tweens",
+											"objectClass": "9PBtns",
+											"sid": 226717227391037,
+											"behaviorType": "Tween"
+										},
+										{
+											"id": "tween-two-properties",
+											"objectClass": "9PBtns",
+											"sid": 353569351879818,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"minimize\"",
+												"property": "size",
+												"end-x": "Self.w*0.9",
+												"end-y": "Self.h*0.9",
+												"time": "0.1",
+												"ease": "easeoutsine",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "9PBtns",
+											"sid": 611417035342033,
+											"parameters": {
+												"instance-variable": "Touched",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 568467615916868
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 359209789752179
+						}
+					],
+					"actions": [],
+					"sid": 234163032164324,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 471331645137630,
+									"parameters": {
+										"object": "9PBtns",
+										"expression": "9PBtns.touched = 1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "9PBtns",
+									"sid": 664199495520000,
+									"parameters": {
+										"instance-variable": "Touched",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 547210406417863,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 643337272805840,
+											"parameters": {
+												"value": "9PBtns.ObjectTypeName = \"ShopItem\""
+											}
+										},
+										{
+											"id": "is-touching-object",
+											"objectClass": "Touch",
+											"sid": 962213325118816,
+											"parameters": {
+												"object": "9PBtns"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "9PBtns",
+											"sid": 832570235330774,
+											"parameters": {
+												"instance-variable": "Clickables"
+											}
+										},
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 248478778069385,
+											"parameters": {
+												"object": "ShopItem",
+												"expression": "ShopItem.UID = 9PBtns.UID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "PurchaseItem",
+											"sid": 671381478711762,
+											"parameters": [
+												"ShopItem.Item"
+											]
+										}
+									],
+									"sid": 358345928163342
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 228905357351120,
+							"parameters": {
+								"object": "9PBtns"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 798778965160013,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "9PBtns",
+									"sid": 215097067525612,
+									"parameters": {
+										"instance-variable": "Clickables"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "9PBtns",
+									"sid": 181300710453867,
+									"parameters": {
+										"instance-variable": "Touched"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-playing",
+									"objectClass": "9PBtns",
+									"sid": 909644947600229,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"minimize\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-playing",
+									"objectClass": "9PBtns",
+									"sid": 347894015075931,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"standart\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-playing",
+									"objectClass": "9PBtns",
+									"sid": 211223347632932,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"hover\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-playing",
+									"objectClass": "9PBtns",
+									"sid": 130888124450052,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"appear\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 939077715554924,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 353332890422873,
+											"parameters": {
+												"object": "9PBtns"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 942476486677207,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "stop-all-tweens",
+													"objectClass": "9PBtns",
+													"sid": 527728433015156,
+													"behaviorType": "Tween"
+												},
+												{
+													"id": "tween-two-properties",
+													"objectClass": "9PBtns",
+													"sid": 230441690195994,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"hover\"",
+														"property": "size",
+														"end-x": "Self.w*1.1",
+														"end-y": "Self.h*1.1",
+														"time": "0.1",
+														"ease": "easeoutquart",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												}
+											],
+											"sid": 489409940098200
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 366704052478525
+										}
+									],
+									"actions": [],
+									"sid": 399376292065703,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "stop-all-tweens",
+													"objectClass": "9PBtns",
+													"sid": 490389039145649,
+													"behaviorType": "Tween"
+												},
+												{
+													"id": "tween-two-properties",
+													"objectClass": "9PBtns",
+													"sid": 298904375069758,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"standart\"",
+														"property": "size",
+														"end-x": "Self.w",
+														"end-y": "Self.h",
+														"time": "0.1",
+														"ease": "easeoutquart",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												}
+											],
+											"sid": 193919071006989
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 831314579447458
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "SPbtns",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-start",
+							"objectClass": "Touch",
+							"sid": 430633248539887
+						},
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 894925118285635,
+							"parameters": {
+								"value": "Touch.SpeedForID(Touch.TouchID) < 50"
+							}
+						},
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 254749519814335,
+							"parameters": {
+								"value": "Functions.IsInteractible = 1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 308215943383736,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 383591169436949,
+									"parameters": {
+										"object": "AdvBtns"
+									}
+								},
+								{
+									"id": "pick-topbottom",
+									"objectClass": "AdvBtns",
+									"sid": 775730420919050,
+									"parameters": {
+										"which": "top"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "AdvBtns",
+									"sid": 714191031171178,
+									"parameters": {
+										"instance-variable": "active"
+									}
+								},
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 216622609160740,
+									"parameters": {
+										"value": "Functions.currentBtnTop(1) = 1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 101376795751234,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-visible",
+											"objectClass": "AdvBtns",
+											"sid": 924208483809972
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "AdvBtns",
+											"sid": 369561838460534,
+											"parameters": {
+												"instance-variable": "touched"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "AdvBtns",
+											"sid": 117104993750427,
+											"parameters": {
+												"instance-variable": "touched",
+												"value": "true"
+											}
+										},
+										{
+											"id": "stop-all-tweens",
+											"objectClass": "AdvBtns",
+											"sid": 440558952030327,
+											"behaviorType": "Tween"
+										},
+										{
+											"id": "tween-two-properties",
+											"objectClass": "AdvBtns",
+											"sid": 300014693047870,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"minimize\"",
+												"property": "size",
+												"end-x": "Self.w*(1-Self.wA)",
+												"end-y": "Self.h*(1-Self.hA)",
+												"time": "0.1",
+												"ease": "easeoutsine",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 690106167710331,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "AdvBtns",
+													"sid": 347323605813816,
+													"parameters": {
+														"instance-variable": "SwitchFramesOnClick"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "AdvBtns",
+													"sid": 388317469691350,
+													"parameters": {
+														"frame-number": "1"
+													}
+												}
+											],
+											"sid": 679924251444516
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 200529452669490
+						},
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 272651343221617,
+							"parameters": {
+								"value": "Functions.IsInteractible = 1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 706284315066460,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 843485805610465,
+									"parameters": {
+										"object": "AdvBtns",
+										"expression": "AdvBtns.touched = 1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-all-tweens",
+									"objectClass": "AdvBtns",
+									"sid": 979847790255700,
+									"behaviorType": "Tween"
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "AdvBtns",
+									"sid": 675679078279114,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"appear\"",
+										"property": "size",
+										"end-x": "Self.w",
+										"end-y": "Self.h",
+										"time": "0.1",
+										"ease": "easeoutback",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 281127666989059,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "AdvBtns",
+											"sid": 958745015202769,
+											"parameters": {
+												"instance-variable": "SwitchFramesOnClick"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "AdvBtns",
+											"sid": 516225671277389,
+											"parameters": {
+												"frame-number": "0"
+											}
+										}
+									],
+									"sid": 476358858290744
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "wait-for-previous-actions",
+											"objectClass": "System",
+											"sid": 938329478904541
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "AdvBtns",
+											"sid": 573345358302550,
+											"parameters": {
+												"instance-variable": "touched",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 221148406391241,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 599844683161097,
+													"parameters": {
+														"value": "AdvBtns.ObjectTypeName = \"SPBtn\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "BtnClicked",
+													"sid": 338391584325342,
+													"parameters": [
+														"AdvBtns.MainTag",
+														"AdvBtns.type",
+														"AdvBtns.UID"
+													]
+												},
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 412495338357352,
+													"parameters": {
+														"audio-file": "ClickSound",
+														"loop": "not-looping",
+														"volume": "JSON.Get(\"Save.Sound\") = 1 ? 0 : -Infinity",
+														"stereo-pan": "0",
+														"tag-optional": "\"Sound\""
+													}
+												}
+											],
+											"sid": 239634756005820,
+											"isOrBlock": true
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 865408472229645,
+							"parameters": {
+								"object": "AdvBtns"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 765564760832340,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 596460600650165,
+									"parameters": {
+										"object": "AdvBtns",
+										"expression": "AdvBtns.touched = 1"
+									}
+								},
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 795168793074378,
+									"parameters": {
+										"object": "AdvBtns"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "AdvBtns",
+									"sid": 651447328234695,
+									"parameters": {
+										"instance-variable": "touched",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 535017890240712
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 281940298983512,
+									"parameters": {
+										"object": "AdvBtns"
+									}
+								},
+								{
+									"id": "pick-topbottom",
+									"objectClass": "AdvBtns",
+									"sid": 630537646201543,
+									"parameters": {
+										"which": "top"
+									}
+								},
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 517512982149756,
+									"parameters": {
+										"value": "Functions.currentHoverBtnTop(1) = 1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 751517452736727,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "AdvBtns",
+											"sid": 972267777557533,
+											"parameters": {
+												"instance-variable": "active"
+											}
+										},
+										{
+											"id": "is-visible",
+											"objectClass": "AdvBtns",
+											"sid": 948161839478959
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "AdvBtns",
+											"sid": 335704225521334,
+											"parameters": {
+												"instance-variable": "touched"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 656383289233907,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-playing",
+													"objectClass": "AdvBtns",
+													"sid": 340282383604881,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"minimize\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-playing",
+													"objectClass": "AdvBtns",
+													"sid": 836618468918912,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"Close\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-playing",
+													"objectClass": "AdvBtns",
+													"sid": 732538791033532,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"Open\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-playing",
+													"objectClass": "AdvBtns",
+													"sid": 903164256253643,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"hover\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-playing",
+													"objectClass": "AdvBtns",
+													"sid": 218484347802293,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"appear\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "tween-two-properties",
+													"objectClass": "AdvBtns",
+													"sid": 343177264207831,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"hover\"",
+														"property": "size",
+														"end-x": "Self.w*(1+Self.wA)",
+														"end-y": "Self.h*(1+Self.hA)",
+														"time": "0.1",
+														"ease": "easeoutquad",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												}
+											],
+											"sid": 110771118082184
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 328416402099294
+								}
+							],
+							"actions": [],
+							"sid": 265420992192773,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "AdvBtns",
+											"sid": 339558107410550,
+											"parameters": {
+												"instance-variable": "touched"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-playing",
+											"objectClass": "AdvBtns",
+											"sid": 237898054215269,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"minimize\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-playing",
+											"objectClass": "AdvBtns",
+											"sid": 883524906242493,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"appear\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-playing",
+											"objectClass": "AdvBtns",
+											"sid": 458846121750425,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"Close\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-playing",
+											"objectClass": "AdvBtns",
+											"sid": 511758148944919,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"Open\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-two-properties",
+											"objectClass": "AdvBtns",
+											"sid": 195742747572630,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"standart\"",
+												"property": "size",
+												"end-x": "Self.w",
+												"end-y": "Self.h",
+												"time": "0.1",
+												"ease": "easeoutquad",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 906973297942606
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 427335342112621
+		},
+		{
+			"functionName": "currentBtnTop",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "seek_AdvBtns",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 463019486884489
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 510903610726132,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 496941760611719,
+							"parameters": {
+								"object": "9PBtns"
+							}
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 331418394660118,
+							"parameters": {
+								"object": "AdvBtns"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 396614722543503,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-topbottom",
+									"objectClass": "9PBtns",
+									"sid": 418245877762536,
+									"parameters": {
+										"which": "top"
+									}
+								},
+								{
+									"id": "pick-topbottom",
+									"objectClass": "AdvBtns",
+									"sid": 774977143458900,
+									"parameters": {
+										"which": "top"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 300169629811551,
+									"parameters": {
+										"value": "seek_AdvBtns = 1 ? (AdvBtns.TotalZElevation > 9PBtns.TotalZElevation ? 1 : 0) : (AdvBtns.TotalZElevation > 9PBtns.TotalZElevation  ? 0 : 1)"
+									}
+								}
+							],
+							"sid": 830204437096542
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 489530274782987
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 665082988967336,
+							"parameters": {
+								"value": "1"
+							}
+						}
+					],
+					"sid": 410072502220083
+				}
+			]
+		},
+		{
+			"functionName": "currentHoverBtnTop",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "seek_AdvBtns",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 700844056843819
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 604534865380732,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 250092035905547,
+							"parameters": {
+								"object": "9PBtns"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 707097663400222,
+							"parameters": {
+								"object": "AdvBtns"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 700735652563224,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-topbottom",
+									"objectClass": "9PBtns",
+									"sid": 830388514945506,
+									"parameters": {
+										"which": "top"
+									}
+								},
+								{
+									"id": "pick-topbottom",
+									"objectClass": "AdvBtns",
+									"sid": 114396363765151,
+									"parameters": {
+										"which": "top"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 454704506498904,
+									"parameters": {
+										"value": "seek_AdvBtns = 1 ? (AdvBtns.TotalZElevation > 9PBtns.TotalZElevation ? 1 : 0) : (AdvBtns.TotalZElevation > 9PBtns.TotalZElevation ? 0 : 1)"
+									}
+								}
+							],
+							"sid": 169407715180425
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 418860641913806
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 326800967618479,
+							"parameters": {
+								"value": "1"
+							}
+						}
+					],
+					"sid": 536165170539517
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "9Pbtns",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-start",
+							"objectClass": "Touch",
+							"sid": 336567691500715
+						},
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 731408428485798,
+							"parameters": {
+								"value": "Functions.IsInteractible = 1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 150796167796850,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 865613023185753,
+									"parameters": {
+										"object": "9PBtns"
+									}
+								},
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 219805730925718,
+									"parameters": {
+										"value": "Touch.SpeedForID(Touch.TouchID) < 50"
+									}
+								},
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 875681760234862,
+									"parameters": {
+										"value": "Functions.currentBtnTop(0) = 1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 896230591954146,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-topbottom",
+											"objectClass": "9PBtns",
+											"sid": 636656413495934,
+											"parameters": {
+												"which": "top"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "9PBtns",
+											"sid": 995654963809696,
+											"parameters": {
+												"instance-variable": "Touched"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "9PBtns",
+											"sid": 636006419056340,
+											"parameters": {
+												"instance-variable": "active"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "stop-all-tweens",
+											"objectClass": "9PBtns",
+											"sid": 339303556059617,
+											"behaviorType": "Tween"
+										},
+										{
+											"id": "tween-two-properties",
+											"objectClass": "9PBtns",
+											"sid": 873692517802139,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"minimize\"",
+												"property": "size",
+												"end-x": "Self.w*0.9",
+												"end-y": "Self.h*0.9",
+												"time": "0.1",
+												"ease": "easeoutsine",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "9PBtns",
+											"sid": 610942498359660,
+											"parameters": {
+												"instance-variable": "Touched",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 201586353079865
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 723829749872126
+						},
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 921552917331516,
+							"parameters": {
+								"value": "Functions.IsInteractible = 1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 380961428793420,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 401711388272053,
+									"parameters": {
+										"object": "9PBtns",
+										"expression": "9PBtns.touched = 1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "9PBtns",
+									"sid": 863451148503572,
+									"parameters": {
+										"instance-variable": "Touched",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 935309954789076,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 514586147871982,
+											"disabled": true,
+											"parameters": {
+												"value": "9PBtns.ObjectTypeName = \"9Pbtn\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "BtnClicked",
+											"sid": 288986705729243,
+											"parameters": [
+												"9PBtns.MainTag",
+												"9PBtns.Type_",
+												"9PBtns.UID"
+											]
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 327076272843114,
+											"parameters": {
+												"audio-file": "ClickSound",
+												"loop": "not-looping",
+												"volume": "JSON.Get(\"Save.Sound\") = 1 ? 0 : -Infinity",
+												"stereo-pan": "0",
+												"tag-optional": "\"Sound\""
+											}
+										}
+									],
+									"sid": 647598118636568
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 187084909120884,
+							"parameters": {
+								"object": "9PBtns"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 434152315646199,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "9PBtns",
+									"sid": 327695285155548,
+									"parameters": {
+										"instance-variable": "Touched"
+									}
+								},
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 910439826712002,
+									"parameters": {
+										"object": "9PBtns"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "9PBtns",
+									"sid": 789577307510648,
+									"parameters": {
+										"instance-variable": "Touched",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 448312640383177
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "9PBtns",
+									"sid": 488408938455455,
+									"parameters": {
+										"instance-variable": "active"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "9PBtns",
+									"sid": 934589766875346,
+									"parameters": {
+										"instance-variable": "Touched"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-playing",
+									"objectClass": "9PBtns",
+									"sid": 911239700888478,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"minimize\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-playing",
+									"objectClass": "9PBtns",
+									"sid": 901410064436540,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"standart\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-playing",
+									"objectClass": "9PBtns",
+									"sid": 618219757391058,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"hover\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-playing",
+									"objectClass": "9PBtns",
+									"sid": 307258891495561,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"waves\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-playing",
+									"objectClass": "9PBtns",
+									"sid": 569907431611265,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"appear\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 611939004029855,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 311947700507531,
+											"parameters": {
+												"object": "9PBtns"
+											}
+										},
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 743967925908414,
+											"parameters": {
+												"value": "Functions.currentHoverBtnTop(0) = 1"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 700682498214459,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "stop-all-tweens",
+													"objectClass": "9PBtns",
+													"sid": 923161487612689,
+													"behaviorType": "Tween"
+												},
+												{
+													"id": "tween-two-properties",
+													"objectClass": "9PBtns",
+													"sid": 840029245561450,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"hover\"",
+														"property": "size",
+														"end-x": "Self.w*1.1",
+														"end-y": "Self.h*1.1",
+														"time": "0.1",
+														"ease": "easeoutquart",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												}
+											],
+											"sid": 443153940768779
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 617199737501731
+										}
+									],
+									"actions": [],
+									"sid": 486048381471694,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "stop-all-tweens",
+													"objectClass": "9PBtns",
+													"sid": 916115902123227,
+													"behaviorType": "Tween"
+												},
+												{
+													"id": "tween-two-properties",
+													"objectClass": "9PBtns",
+													"sid": 743412281297289,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"standart\"",
+														"property": "size",
+														"end-x": "Self.w",
+														"end-y": "Self.h",
+														"time": "0.1",
+														"ease": "easeoutquart",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												}
+											],
+											"sid": 251973399478831
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 892104302975915
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Scrollings",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "lastTouchYScroll",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 296130974384169
+				},
+				{
+					"eventType": "variable",
+					"name": "DeltaY",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 892728290570738
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-start",
+							"objectClass": "Touch",
+							"sid": 497771228884222
+						}
+					],
+					"actions": [],
+					"sid": 851667903309434,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 981057793848209,
+									"parameters": {
+										"object": "Scrollings"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Scrollings",
+									"sid": 882510091909814,
+									"parameters": {
+										"instance-variable": "Active"
+									}
+								},
+								{
+									"id": "pick-topbottom",
+									"objectClass": "Scrollings",
+									"sid": 619440999037353,
+									"parameters": {
+										"which": "top"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 302443534196911,
+									"parameters": {
+										"variable": "lastTouchYScroll",
+										"value": "Touch.Y"
+									}
+								}
+							],
+							"sid": 368429179820673,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Scrollings",
+											"sid": 430221683540827,
+											"parameters": {
+												"child": "spriteScroll",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spriteScroll",
+											"sid": 848944481864583,
+											"parameters": {
+												"instance-variable": "dragScroll",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "spriteScroll",
+											"sid": 641711319499921,
+											"parameters": {
+												"instance-variable": "sY",
+												"value": "Self.Y"
+											}
+										}
+									],
+									"sid": 187938665361282
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 300317611005677
+						}
+					],
+					"actions": [],
+					"sid": 140261978545692,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "spriteScroll",
+									"sid": 975013912860787,
+									"parameters": {
+										"instance-variable": "dragScroll",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "spriteScroll",
+									"sid": 699165765370027,
+									"parameters": {
+										"instance-variable": "dragScroll",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 792671280649634
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 970475383831210,
+							"parameters": {
+								"object": "spriteScroll"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 288606246049403,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "spriteScroll",
+									"sid": 756536959104579,
+									"parameters": {
+										"instance-variable": "enabled"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 629621003989907,
+									"parameters": {
+										"variable": "DeltaY",
+										"value": "lastTouchYScroll - Touch.Y"
+									}
+								}
+							],
+							"sid": 590443145500640,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "spriteScroll",
+											"sid": 780680413873135,
+											"parameters": {
+												"instance-variable": "dragScroll",
+												"comparison": 0,
+												"value": "1"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "spriteScroll",
+											"sid": 374134851728809,
+											"parameters": {
+												"instance-variable": "scrollY"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-y",
+											"objectClass": "spriteScroll",
+											"sid": 749993402737763,
+											"parameters": {
+												"y": "clamp(Self.sY-DeltaY,Self.minY,Self.maxY)"
+											}
+										}
+									],
+									"sid": 885931328012082,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 474461480431380,
+													"parameters": {
+														"value": "Touch.SpeedForID(Touch.TouchID) > 50"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 485173905854342,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 972337852848663,
+															"parameters": {
+																"object": "AdvBtns",
+																"expression": "AdvBtns.touched = 1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "AdvBtns",
+															"sid": 770595745411514,
+															"parameters": {
+																"instance-variable": "touched",
+																"value": "0"
+															}
+														}
+													],
+													"sid": 227776103110349
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 326364178584689,
+															"parameters": {
+																"object": "9PBtns",
+																"expression": "9PBtns.touched = 1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "9PBtns",
+															"sid": 210810715155494,
+															"parameters": {
+																"instance-variable": "Touched",
+																"value": "false"
+															}
+														}
+													],
+													"sid": 739894910492174
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-parent",
+											"objectClass": "spriteScroll",
+											"sid": 582951304216891,
+											"parameters": {
+												"parent": "Scrollings",
+												"which": "own"
+											}
+										},
+										{
+											"id": "pick-children",
+											"objectClass": "Scrollings",
+											"sid": 215854416321803,
+											"parameters": {
+												"child": "ScrollPick",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "ScrollPick",
+											"sid": 302043282841771,
+											"parameters": {
+												"x": "Scrollings.BBoxRight",
+												"y": "lerp(Scrollings.BBoxTop+(ScrollPick.Height/2), Scrollings.BBoxBottom-(ScrollPick.Height/2), 1 - Functions.Normalize(spriteScroll.Y,spriteScroll.minY+(ScrollPick.Height/2),spriteScroll.maxY-(ScrollPick.Height/2)  )  ) "
+											}
+										}
+									],
+									"sid": 977599745976926
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-mouse-wheel",
+							"objectClass": "Mouse",
+							"sid": 643905576793069,
+							"parameters": {
+								"direction": "down"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 544197418533397,
+							"parameters": {
+								"object": "Scrollings"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Scrollings",
+							"sid": 668792548818773,
+							"parameters": {
+								"instance-variable": "Active"
+							}
+						},
+						{
+							"id": "pick-topbottom",
+							"objectClass": "Scrollings",
+							"sid": 726237390785140,
+							"parameters": {
+								"which": "top"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "Scrollings",
+							"sid": 122160028443554,
+							"parameters": {
+								"child": "spriteScroll",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "spriteScroll",
+							"sid": 808297134874764,
+							"parameters": {
+								"y": "clamp(Self.Y-60,Self.minY,Self.maxY)"
+							}
+						}
+					],
+					"sid": 745694843344289
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-mouse-wheel",
+							"objectClass": "Mouse",
+							"sid": 423923841289462,
+							"parameters": {
+								"direction": "up"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 208603398424959,
+							"parameters": {
+								"object": "Scrollings"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Scrollings",
+							"sid": 371222473046319,
+							"parameters": {
+								"instance-variable": "Active"
+							}
+						},
+						{
+							"id": "pick-topbottom",
+							"objectClass": "Scrollings",
+							"sid": 424651884361626,
+							"parameters": {
+								"which": "top"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "Scrollings",
+							"sid": 402887628959610,
+							"parameters": {
+								"child": "spriteScroll",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "spriteScroll",
+							"sid": 600739575620101,
+							"parameters": {
+								"y": "clamp(Self.Y+60,Self.minY,Self.maxY)"
+							}
+						}
+					],
+					"sid": 279043569728150
+				}
+			],
+			"sid": 333474889573059
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Toggles",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "RestoreToggleState",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "ToggleUID",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 800936624606752
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 406407324344566,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 195685777754743,
+									"parameters": {
+										"object": "Toggles",
+										"expression": "Toggles.UID= ToggleUID"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 351733187562262,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 324117237917468,
+											"parameters": {
+												"value": "JSON.Get(\"Save.Toggles.\"&Toggles.Tag) = 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "SetToggle",
+											"sid": 603567847636607,
+											"parameters": [
+												"Toggles.UID",
+												true
+											]
+										}
+									],
+									"sid": 484069962857150
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 427002191999637
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "SetToggle",
+											"sid": 795663341213875,
+											"parameters": [
+												"Toggles.UID",
+												false
+											]
+										}
+									],
+									"sid": 784472086577075
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "SetToggle",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "ToggleUID",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 203519238927305
+						},
+						{
+							"name": "Enabled",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 581920607583906
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 950501066742298,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 182308711423475,
+									"parameters": {
+										"object": "Toggles",
+										"expression": "Toggles.UID= ToggleUID"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "Toggles",
+									"sid": 697305826515975,
+									"parameters": {
+										"child": "TogglePointer",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 867335041572428,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Toggles",
+											"sid": 379713186878463,
+											"parameters": {
+												"instance-variable": "State",
+												"value": "Enabled"
+											}
+										},
+										{
+											"id": "tween-two-properties",
+											"objectClass": "TogglePointer",
+											"sid": 964706118985866,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "position",
+												"end-x": " Toggles.DragX = 1 ? Toggles.state = 0 ? Toggles.BBoxLeft+(Self.Width/2) : Toggles.BBoxRight-(Self.Width/2) : Toggles.X",
+												"end-y": "Toggles.DragY = 1 ? Toggles.state = 0 ? Toggles.BBoxTop+(Self.Height/2) : Toggles.BBoxBottom-(Self.Height/2) : Toggles.Y",
+												"time": "0.1",
+												"ease": "easeoutcubic",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "TogglePointer",
+											"sid": 669205060001458,
+											"parameters": {
+												"color": "Toggles.state = 0 ? rgbEx(100,20,20) : rgbEx(20,100,20)"
+											}
+										},
+										{
+											"callFunction": "ToggleSwitched",
+											"sid": 941672079677881,
+											"parameters": [
+												"Toggles.tag",
+												false,
+												"Toggles.state"
+											]
+										}
+									],
+									"sid": 441272643200777,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "Toggles",
+													"sid": 608512041802972,
+													"parameters": {
+														"child": "SFtext",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-position",
+													"objectClass": "SFtext",
+													"sid": 669403632050825,
+													"parameters": {
+														"x": " Toggles.DragX = 1 ? Toggles.state = 1 ? Toggles.BBoxLeft+(Self.Width/2) : Toggles.BBoxRight-(Self.Width/2) : Toggles.X",
+														"y": "Toggles.DragY = 1 ? Toggles.state = 1 ? Toggles.BBoxTop+(Self.Height/2) : Toggles.BBoxBottom-(Self.Height/2) : Toggles.Y"
+													}
+												},
+												{
+													"id": "set-text",
+													"objectClass": "SFtext",
+													"sid": 586272625769645,
+													"parameters": {
+														"text": "Functions.Get_LanguageText(Toggles.State = 0 ? \"Off\" : \"On\")"
+													}
+												},
+												{
+													"callFunction": "TrimSF",
+													"sid": 355907787449736,
+													"parameters": [
+														"0.001"
+													]
+												}
+											],
+											"sid": 303224909302932
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 517628468411791,
+							"parameters": {
+								"object": "Toggles"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 607855433865556,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 235773658836607,
+									"parameters": {
+										"value": "Toggles.State = 1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "SetToggle",
+									"sid": 912662606949205,
+									"parameters": [
+										"Toggles.UID",
+										false
+									]
+								}
+							],
+							"sid": 307243348507464,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 454596828930553,
+											"parameters": {
+												"value": "Toggles.Tag = \"Music\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "ToggleSoundandMusic",
+											"sid": 341733771635079,
+											"parameters": [
+												true,
+												false,
+												false,
+												false,
+												false,
+												true
+											]
+										}
+									],
+									"sid": 496956237232154
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 640492455482682,
+											"parameters": {
+												"value": "Toggles.Tag = \"Sound\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "ToggleSoundandMusic",
+											"sid": 231684749711422,
+											"parameters": [
+												false,
+												true,
+												false,
+												false,
+												true,
+												false
+											]
+										}
+									],
+									"sid": 118697547092457
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 653602043951827
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "SetToggle",
+									"sid": 856230548860303,
+									"parameters": [
+										"Toggles.UID",
+										true
+									]
+								}
+							],
+							"sid": 402120733719736,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 704019971188899,
+											"parameters": {
+												"value": "Toggles.Tag = \"Music\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "ToggleSoundandMusic",
+											"sid": 786898345543746,
+											"parameters": [
+												true,
+												false,
+												true,
+												false,
+												false,
+												false
+											]
+										}
+									],
+									"sid": 419136974551462
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 991449508731177,
+											"parameters": {
+												"value": "Toggles.Tag = \"Sound\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "ToggleSoundandMusic",
+											"sid": 853296864806754,
+											"parameters": [
+												false,
+												true,
+												false,
+												true,
+												false,
+												false
+											]
+										}
+									],
+									"sid": 244671371085610
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 596460442799863
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "tools",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "SwitchButton",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "BtnUID",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 114133826963606
+						},
+						{
+							"name": "Enable",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 100573063477624
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 912367643189760,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"type": "script",
+									"script": "const btn = runtime.getInstanceByUid(localVars.BtnUID);\nconst childrens = btn.allChildren();\n//btn.instVars.Enabled = localVars.Enable;\nbtn.instVars.active = localVars.Enable;\nbtn.colorRgb = localVars.Enable ? [1,1,1] : [0.5,0.5,0.5];\nfor(const child of childrens)\n{\n\tchild.colorRgb = localVars.Enable ? [1,1,1] : [0.5,0.5,0.5];\n}"
+								}
+							],
+							"sid": 820664366123813
+						}
+					]
+				}
+			],
+			"sid": 246779399998240
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "State",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "can_interactive",
+					"type": "boolean",
+					"initialValue": "true",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 626049769871601
+				},
+				{
+					"functionName": "IsInteractible",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 374830927502281,
+							"parameters": {
+								"value": "can_interactive"
+							}
+						}
+					],
+					"sid": 914177919232037
+				},
+				{
+					"functionName": "SetInteractive",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "enable",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 841041783872257
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 458228766707115,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 132468799302987,
+									"parameters": {
+										"variable": "enable"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 537754833158577,
+									"parameters": {
+										"variable": "can_interactive",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 120408438153860
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 964430717582233
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 522644043252678,
+									"parameters": {
+										"variable": "can_interactive",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 400700368519904
+						}
+					]
+				}
+			],
+			"sid": 353838692700161
+		}
+	],
+	"sid": 342024419572520
+}

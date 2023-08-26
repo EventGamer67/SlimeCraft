@@ -348,7 +348,11 @@
 			"Torch_Light_Colored",
 			"spriteScroll",
 			"QuestCompleteIndicator",
-			"CanPlaceTileMask"
+			"CanPlaceTileMask",
+			"PopupW",
+			"Sprite15",
+			"ScrollPick",
+			"TogglePointer"
 		],
 		"subfolders": [
 			{
@@ -368,7 +372,7 @@
 					"FoodBtn",
 					"Inventory_Blank",
 					"InventoryBlank",
-					"Movement_Button",
+					"SPBtn",
 					"MessageBlank",
 					"JoyStick",
 					"JoyStickBlank",
@@ -386,7 +390,8 @@
 					"Sprite11",
 					"Sprite12",
 					"Sprite13",
-					"Sprite14"
+					"Sprite14",
+					"WindowBlank"
 				],
 				"subfolders": [],
 				"name": "ui"
@@ -450,7 +455,7 @@
 				"items": [
 					"Cam",
 					"Cam2",
-					"Message_Text"
+					"SFtext"
 				],
 				"subfolders": [],
 				"name": "tools"
@@ -510,7 +515,9 @@
 			"Usables",
 			"AdditionalBlockInterfaces",
 			"ScrollView",
-			"9PBtns"
+			"9PBtns",
+			"Scrollings",
+			"Toggles"
 		],
 		"subfolders": []
 	},
@@ -529,21 +536,30 @@
 			"Main_es",
 			"Player_es",
 			"UI",
-			"Init",
+			"Init_es",
 			"Menu_es",
 			"Loader_es",
-			"Functions_es",
-			"Console",
+			"Console_es",
 			"SceneLoader_es",
-			"Enemy",
-			"AnimatedTriggers",
-			"Chat",
+			"Enemy_es",
+			"Chat_es",
 			"QuestTracking",
 			"GameScore",
 			"returner",
 			"Comics_es"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"AnimatedTriggers_es",
+					"Popup_es",
+					"Functions_es",
+					"Commands_es"
+				],
+				"subfolders": [],
+				"name": "External_es"
+			}
+		]
 	},
 	"rootFileFolders": {
 		"script": {
@@ -1181,6 +1197,14 @@
 					"name": "place2.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 238657028411479,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "ClickSound.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 893617235538225,
 					"file-info": {
 						"purpose": "none"
 					}

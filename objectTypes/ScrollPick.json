@@ -1,0 +1,61 @@
+{
+	"name": "ScrollPick",
+	"plugin-id": "Sprite",
+	"sid": 634566430032073,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 90,
+						"height": 218,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 492182,
+						"collisionPoly": {
+							"points": [
+								0.25555555555555554,
+								0,
+								0.7444444444444445,
+								0,
+								0.9777777777777777,
+								0.07339449541284403,
+								0.9444444444444444,
+								0.9541284403669725,
+								0.8888888888888888,
+								0.9770642201834863,
+								0.8111111111111111,
+								0.9908256880733946,
+								0.18888888888888888,
+								0.9908256880733946,
+								0.1111111111111111,
+								0.9770642201834863,
+								0.022222222222222223,
+								0.9220183486238532,
+								0.05555555555555555,
+								0.04128440366972477
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 353954563331575,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -113,15 +113,15 @@
 									"objectClass": "System",
 									"sid": 468449058096660,
 									"parameters": {
-										"object": "Message_Text",
-										"expression": "Message_Text.Type = \"Task\""
+										"object": "SFtext",
+										"expression": "SFtext.Type = \"Task\""
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-default-color",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 655839467029006,
 									"parameters": {
 										"color": "rgbEx(100, 100,100)"
@@ -138,7 +138,7 @@
 								},
 								{
 									"id": "typewriter-text",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 972467877432892,
 									"parameters": {
 										"text": "Text",
@@ -147,7 +147,7 @@
 								},
 								{
 									"id": "set-size",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 994252435098508,
 									"parameters": {
 										"width": "Self.Width",
@@ -156,7 +156,7 @@
 								},
 								{
 									"id": "set-text",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 319770789445314,
 									"disabled": true,
 									"parameters": {
@@ -202,8 +202,8 @@
 													"parameters": {
 														"object-to-create": "Inventory_Item",
 														"layer": "\"UI\"",
-														"x": "Message_Text.BBoxLeft+5",
-														"y": "Message_Text.BBoxBottom+3+(10*counter)",
+														"x": "SFtext.BBoxLeft+5",
+														"y": "SFtext.BBoxBottom+3+(10*counter)",
 														"create-hierarchy": true,
 														"template-name": "\"Task\""
 													}
@@ -256,7 +256,7 @@
 												},
 												{
 													"id": "append-text",
-													"objectClass": "Message_Text",
+													"objectClass": "SFtext",
 													"sid": 346128763148608,
 													"disabled": true,
 													"parameters": {
@@ -295,15 +295,15 @@
 									"objectClass": "System",
 									"sid": 236425656248204,
 									"parameters": {
-										"object": "Message_Text",
-										"expression": "Message_Text.Type = \"Task\""
+										"object": "SFtext",
+										"expression": "SFtext.Type = \"Task\""
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "typewriter-text",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 581206317874488,
 									"parameters": {
 										"text": "Text",
@@ -337,7 +337,7 @@
 									"actions": [
 										{
 											"id": "add-child",
-											"objectClass": "Message_Text",
+											"objectClass": "SFtext",
 											"sid": 352136095335481,
 											"parameters": {
 												"child": "Inventory_Item",
@@ -518,7 +518,7 @@
 													"objectClass": "Inventory_Item",
 													"sid": 474673077108628,
 													"parameters": {
-														"child": "Message_Text",
+														"child": "SFtext",
 														"which": "own"
 													}
 												}
@@ -526,7 +526,7 @@
 											"actions": [
 												{
 													"id": "set-text",
-													"objectClass": "Message_Text",
+													"objectClass": "SFtext",
 													"sid": 704605810338289,
 													"parameters": {
 														"text": "Functions.Get_ItemInInventoryCount(Inventory_Item.AnimationName)&\"/\"&Inventory_Item.Count_"
@@ -534,7 +534,7 @@
 												},
 												{
 													"id": "set-default-color",
-													"objectClass": "Message_Text",
+													"objectClass": "SFtext",
 													"sid": 286645776283965,
 													"parameters": {
 														"color": "Functions.Get_ItemInInventoryCount(Inventory_Item.AnimationName) >= Inventory_Item.Count_ ? rgbEx(50,100,50) : rgbEx(100,100,100)"
@@ -613,15 +613,15 @@
 															"objectClass": "System",
 															"sid": 518587176310327,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"Task\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"Task\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 816582423868092,
 															"parameters": {
 																"text": "Functions.Get_LanguageText(\"QuestComplete\")"
@@ -629,7 +629,7 @@
 														},
 														{
 															"id": "set-default-color",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 208790944681625,
 															"parameters": {
 																"color": "rgbEx(50, 100, 50)"

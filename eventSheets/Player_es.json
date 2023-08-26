@@ -63,7 +63,7 @@
 					"objectClass": "System",
 					"sid": 958261620473335,
 					"parameters": {
-						"object-to-create": "Message_Text",
+						"object-to-create": "SFtext",
 						"layer": "Layer",
 						"x": "X",
 						"y": "Y",
@@ -73,7 +73,7 @@
 				},
 				{
 					"id": "set-instvar-value",
-					"objectClass": "Message_Text",
+					"objectClass": "SFtext",
 					"sid": 254907809730105,
 					"parameters": {
 						"instance-variable": "Type",
@@ -98,7 +98,7 @@
 					"actions": [
 						{
 							"id": "typewriter-text",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 304560426600398,
 							"parameters": {
 								"text": "JSON.Get(\"Languages.\"&JSON.Get(\"Player.Language\")&\".\"&Message)",
@@ -120,7 +120,7 @@
 					"actions": [
 						{
 							"id": "typewriter-text",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 944506761809701,
 							"parameters": {
 								"text": "Message",
@@ -136,7 +136,7 @@
 					"actions": [
 						{
 							"id": "tween-one-property",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 262377012715999,
 							"behaviorType": "Tween",
 							"parameters": {
@@ -1617,7 +1617,7 @@
 																											"objectClass": "Inventory_Item",
 																											"sid": 911243174186189,
 																											"parameters": {
-																												"child": "Message_Text",
+																												"child": "SFtext",
 																												"which": "own"
 																											}
 																										}
@@ -1625,7 +1625,7 @@
 																									"actions": [
 																										{
 																											"id": "set-text",
-																											"objectClass": "Message_Text",
+																											"objectClass": "SFtext",
 																											"sid": 596879834093225,
 																											"parameters": {
 																												"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -2233,7 +2233,7 @@
 																											"objectClass": "Inventory_Item",
 																											"sid": 258102285330709,
 																											"parameters": {
-																												"child": "Message_Text",
+																												"child": "SFtext",
 																												"which": "own"
 																											}
 																										}
@@ -2241,7 +2241,7 @@
 																									"actions": [
 																										{
 																											"id": "set-text",
-																											"objectClass": "Message_Text",
+																											"objectClass": "SFtext",
 																											"sid": 589231417098658,
 																											"parameters": {
 																												"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -2650,7 +2650,7 @@
 																							"objectClass": "Inventory_Item",
 																							"sid": 637028357184476,
 																							"parameters": {
-																								"child": "Message_Text",
+																								"child": "SFtext",
 																								"which": "own"
 																							}
 																						}
@@ -2658,7 +2658,7 @@
 																					"actions": [
 																						{
 																							"id": "set-text",
-																							"objectClass": "Message_Text",
+																							"objectClass": "SFtext",
 																							"sid": 153425481059200,
 																							"parameters": {
 																								"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -2901,7 +2901,7 @@
 																							"objectClass": "Inventory_Item",
 																							"sid": 590007929810440,
 																							"parameters": {
-																								"child": "Message_Text",
+																								"child": "SFtext",
 																								"which": "own"
 																							}
 																						}
@@ -2909,7 +2909,7 @@
 																					"actions": [
 																						{
 																							"id": "set-text",
-																							"objectClass": "Message_Text",
+																							"objectClass": "SFtext",
 																							"sid": 951136938819389,
 																							"parameters": {
 																								"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -3239,7 +3239,7 @@
 																					"objectClass": "Inventory_Item",
 																					"sid": 660965005218277,
 																					"parameters": {
-																						"child": "Message_Text",
+																						"child": "SFtext",
 																						"which": "own"
 																					}
 																				}
@@ -3247,7 +3247,7 @@
 																			"actions": [
 																				{
 																					"id": "set-text",
-																					"objectClass": "Message_Text",
+																					"objectClass": "SFtext",
 																					"sid": 126060629353016,
 																					"parameters": {
 																						"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -3512,7 +3512,7 @@
 																					"objectClass": "Inventory_Item",
 																					"sid": 856151130978956,
 																					"parameters": {
-																						"child": "Message_Text",
+																						"child": "SFtext",
 																						"which": "own"
 																					}
 																				}
@@ -3520,7 +3520,7 @@
 																			"actions": [
 																				{
 																					"id": "set-text",
-																					"objectClass": "Message_Text",
+																					"objectClass": "SFtext",
 																					"sid": 664060216157511,
 																					"parameters": {
 																						"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -3907,7 +3907,7 @@
 																							"objectClass": "Inventory_Item",
 																							"sid": 488520240051938,
 																							"parameters": {
-																								"child": "Message_Text",
+																								"child": "SFtext",
 																								"which": "own"
 																							}
 																						}
@@ -3915,7 +3915,7 @@
 																					"actions": [
 																						{
 																							"id": "set-text",
-																							"objectClass": "Message_Text",
+																							"objectClass": "SFtext",
 																							"sid": 604721781617690,
 																							"parameters": {
 																								"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -4143,7 +4143,7 @@
 													"objectClass": "Touch",
 													"sid": 784891872580926,
 													"parameters": {
-														"object": "Movement_Button"
+														"object": "SPBtn"
 													},
 													"isInverted": true
 												}
@@ -9018,7 +9018,7 @@
 													"objectClass": "System",
 													"sid": 978815802600096,
 													"parameters": {
-														"object-to-create": "Message_Text",
+														"object-to-create": "SFtext",
 														"layer": "\"TopUI\"",
 														"x": "Functions.Get_Center_X(\"UI\")",
 														"y": "Functions.Get_Center_Y(\"UI\")",
@@ -9037,8 +9037,8 @@
 															"objectClass": "System",
 															"sid": 706956604739427,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"RewRespawn\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"RewRespawn\""
 															}
 														}
 													],
@@ -9464,16 +9464,7 @@
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "evaluate-expression",
-									"objectClass": "System",
-									"sid": 235240735152557,
-									"parameters": {
-										"value": "FoodBtn.Type = \"Trade\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [],
 							"sid": 166392534884631,
 							"disabled": true,
@@ -9526,17 +9517,7 @@
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 116082641893629,
-									"parameters": {
-										"object": "FoodBtn",
-										"expression": "FoodBtn.Type = \"Trade\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [],
 							"sid": 699436693755408,
 							"disabled": true,
@@ -10942,14 +10923,6 @@
 										{
 											"id": "evaluate-expression",
 											"objectClass": "System",
-											"sid": 126607110125018,
-											"parameters": {
-												"value": "FoodBtn.Type = \"Eat\""
-											}
-										},
-										{
-											"id": "evaluate-expression",
-											"objectClass": "System",
 											"sid": 295171557137671,
 											"parameters": {
 												"value": "Sprite.Hungry < Sprite19.Count*2"
@@ -10961,17 +10934,7 @@
 									"children": [
 										{
 											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-by-evaluate",
-													"objectClass": "System",
-													"sid": 772523009406070,
-													"parameters": {
-														"object": "FoodBtn",
-														"expression": "FoodBtn.Type = \"Eat\""
-													}
-												}
-											],
+											"conditions": [],
 											"actions": [],
 											"sid": 887355830416299,
 											"children": [
@@ -11181,7 +11144,7 @@
 																							"objectClass": "Inventory_Item",
 																							"sid": 860975133544487,
 																							"parameters": {
-																								"child": "Message_Text",
+																								"child": "SFtext",
 																								"which": "own"
 																							}
 																						}
@@ -11189,7 +11152,7 @@
 																					"actions": [
 																						{
 																							"id": "set-text",
-																							"objectClass": "Message_Text",
+																							"objectClass": "SFtext",
 																							"sid": 496153801368798,
 																							"parameters": {
 																								"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -11274,17 +11237,7 @@
 											"children": [
 												{
 													"eventType": "block",
-													"conditions": [
-														{
-															"id": "pick-by-evaluate",
-															"objectClass": "System",
-															"sid": 364341451359172,
-															"parameters": {
-																"object": "FoodBtn",
-																"expression": "FoodBtn.Type = \"Eat\""
-															}
-														}
-													],
+													"conditions": [],
 													"actions": [
 														{
 															"id": "set-opacity",
@@ -12641,7 +12594,7 @@
 																			"objectClass": "Inventory_Item",
 																			"sid": 958777822951532,
 																			"parameters": {
-																				"child": "Message_Text",
+																				"child": "SFtext",
 																				"which": "own"
 																			}
 																		}
@@ -12649,12 +12602,12 @@
 																	"actions": [
 																		{
 																			"id": "move-to-top",
-																			"objectClass": "Message_Text",
+																			"objectClass": "SFtext",
 																			"sid": 945727340549183
 																		},
 																		{
 																			"id": "set-text",
-																			"objectClass": "Message_Text",
+																			"objectClass": "SFtext",
 																			"sid": 728492272114444,
 																			"parameters": {
 																				"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -12897,7 +12850,7 @@
 																	"objectClass": "Inventory_Item",
 																	"sid": 881646113616844,
 																	"parameters": {
-																		"child": "Message_Text",
+																		"child": "SFtext",
 																		"which": "own"
 																	}
 																}
@@ -12905,12 +12858,12 @@
 															"actions": [
 																{
 																	"id": "move-to-top",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 133756387110784
 																},
 																{
 																	"id": "set-text",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 800436480418159,
 																	"parameters": {
 																		"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -13025,7 +12978,7 @@
 																	"objectClass": "SellSlot",
 																	"sid": 111343660705131,
 																	"parameters": {
-																		"child": "Message_Text",
+																		"child": "SFtext",
 																		"which": "own"
 																	}
 																}
@@ -13048,7 +13001,7 @@
 																	"conditions": [
 																		{
 																			"id": "compare-instance-variable",
-																			"objectClass": "Message_Text",
+																			"objectClass": "SFtext",
 																			"sid": 524041880417320,
 																			"parameters": {
 																				"instance-variable": "Type",
@@ -13060,7 +13013,7 @@
 																	"actions": [
 																		{
 																			"id": "set-text",
-																			"objectClass": "Message_Text",
+																			"objectClass": "SFtext",
 																			"sid": 475027435057626,
 																			"parameters": {
 																				"text": "JSON.Get(\"Settings.Config.Traders.\"&Trader&\".Offers.\"&JSON.CurrentKey&\".Cost\")"
@@ -13074,7 +13027,7 @@
 																	"conditions": [
 																		{
 																			"id": "compare-instance-variable",
-																			"objectClass": "Message_Text",
+																			"objectClass": "SFtext",
 																			"sid": 968547889652720,
 																			"parameters": {
 																				"instance-variable": "Type",
@@ -13086,7 +13039,7 @@
 																	"actions": [
 																		{
 																			"id": "set-text",
-																			"objectClass": "Message_Text",
+																			"objectClass": "SFtext",
 																			"sid": 733852070089849,
 																			"parameters": {
 																				"text": "JSON.Get(\"Settings.Config.Traders.\"&Trader&\".Offers.\"&JSON.CurrentKey&\".Count\")"

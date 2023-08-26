@@ -1,41 +1,50 @@
 {
-	"name": "Button",
+	"name": "PopupW",
 	"plugin-id": "Sprite",
-	"sid": 996226256220909,
+	"sid": 184447640141536,
 	"isGlobal": false,
-	"instanceVariables": [],
-	"behaviorTypes": [],
+	"instanceVariables": [
+		{
+			"name": "w",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 981873169230734
+		},
+		{
+			"name": "h",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 332543506250684
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 939901904572316
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 102,
-						"height": 29,
+						"width": 250,
+						"height": 250,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6432317,
-						"collisionPoly": {
-							"points": [
-								0.019807923169267706,
-								0,
-								0.9801920768307323,
-								0,
-								0.9801920768307323,
-								1,
-								0.019807923169267706,
-								1
-							]
-						},
+						"imageSpriteId": 4853827,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 825622739953257,
+				"sid": 882798081457101,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

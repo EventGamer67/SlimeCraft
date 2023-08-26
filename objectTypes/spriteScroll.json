@@ -108,6 +108,13 @@
 			"desc": "",
 			"show": false,
 			"sid": 157463072990161
+		},
+		{
+			"name": "sY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 327233379119334
 		}
 	],
 	"behaviorTypes": [

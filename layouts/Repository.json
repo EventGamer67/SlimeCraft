@@ -7,6 +7,73 @@
 			"subLayers": [],
 			"instances": [
 				{
+					"type": "WindowBlank",
+					"properties": {
+						"left-margin": 6,
+						"right-margin": 6,
+						"top-margin": 6,
+						"bottom-margin": 6,
+						"edges": "tile",
+						"fill": "tile",
+						"initially-visible": true,
+						"origin": "center",
+						"seams": "overlap"
+					},
+					"uid": 219,
+					"instanceVariables": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 218,
+						"uid": 219,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": true,
+							"v": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 147,
+						"y": -389,
+						"width": 176,
+						"height": 96,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "InventoryBlank",
 					"properties": {
 						"left-margin": 6,
@@ -2500,7 +2567,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Я не дотягиваюсь...",
 						"enable-bbcode": true,
@@ -2962,7 +3029,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Play"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -3030,6 +3101,22 @@
 											},
 											{
 												"iv": "selected",
+												"state": true
+											},
+											{
+												"iv": "SwitchFramesOnClick",
+												"state": true
+											},
+											{
+												"iv": "wA",
+												"state": true
+											},
+											{
+												"iv": "hA",
+												"state": true
+											},
+											{
+												"iv": "MainTag",
 												"state": true
 											},
 											{
@@ -3469,7 +3556,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Iron",
 						"enable-bbcode": true,
@@ -3736,7 +3823,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Resume"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -3824,7 +3915,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "SaveExit"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -4416,7 +4511,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Close"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -4487,7 +4586,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "To_one"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -4558,7 +4661,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Div"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -4859,7 +4966,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Trader",
 						"enable-bbcode": true,
@@ -4954,6 +5061,10 @@
 						"action": "",
 						"active": true,
 						"selected": false,
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
 						"Type": ""
 					},
 					"behaviors": {
@@ -5066,7 +5177,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "3000",
 						"enable-bbcode": true,
@@ -5219,7 +5330,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "3000",
 						"enable-bbcode": true,
@@ -5355,7 +5466,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "0",
 						"enable-bbcode": true,
@@ -5819,7 +5930,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Close"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -5890,7 +6005,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "CreateNewWorld"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -6424,7 +6543,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Play"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -6496,7 +6619,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Close"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -6540,7 +6667,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Delete"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -6596,7 +6727,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Trader",
 						"enable-bbcode": true,
@@ -6676,7 +6807,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "New",
 						"enable-bbcode": true,
@@ -7094,7 +7225,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Create"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -7166,7 +7301,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Create",
 						"enable-bbcode": true,
@@ -7245,7 +7380,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Name",
 						"enable-bbcode": true,
@@ -7388,7 +7523,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "WorldName",
 						"enable-bbcode": true,
@@ -7791,7 +7926,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Yes"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -7863,7 +8002,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Yes",
 						"enable-bbcode": true,
@@ -7942,7 +8081,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Name",
 						"enable-bbcode": true,
@@ -8037,7 +8176,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "No"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -8109,7 +8252,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "No",
 						"enable-bbcode": true,
@@ -8794,7 +8937,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Furnace",
 						"enable-bbcode": true,
@@ -8889,7 +9032,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Close"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -9021,7 +9168,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "To_one"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -9092,7 +9243,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Div"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -9911,7 +10066,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "To_one"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -9982,7 +10141,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Div"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -10101,7 +10264,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Inventory",
 						"enable-bbcode": true,
@@ -10237,7 +10400,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "0",
 						"enable-bbcode": true,
@@ -10393,7 +10556,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Close"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -11121,7 +11288,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "To_one"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -11192,7 +11363,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Div"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -11311,7 +11486,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "WorkBench",
 						"enable-bbcode": true,
@@ -11447,7 +11622,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "0",
 						"enable-bbcode": true,
@@ -11603,7 +11778,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Close"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -12452,7 +12631,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "10:10",
 						"enable-bbcode": true,
@@ -13672,7 +13851,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "",
 						"enable-bbcode": true,
@@ -13767,7 +13946,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Close"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -14101,7 +14284,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "10:10",
 						"enable-bbcode": true,
@@ -14223,6 +14406,20 @@
 					},
 					"uid": 280,
 					"instanceVariables": {
+						"ScrollX": false,
+						"ScrollY": false,
+						"Active": true,
+						"Scrolling": false,
+						"DeltaScrollX": 0,
+						"DeltaScrollY": 0,
+						"MaxYScroll": 0,
+						"MaxXScroll": 0,
+						"MinXScroll": 0,
+						"minYScroll": 0,
+						"Tag": "",
+						"State": 0,
+						"DragX": false,
+						"DragY": false,
 						"Type": "Reward"
 					},
 					"behaviors": {
@@ -14379,7 +14576,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Complete",
 						"enable-bbcode": true,
@@ -14458,7 +14655,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Complete",
 						"enable-bbcode": true,
@@ -14866,7 +15063,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Crafts"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -15209,7 +15410,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "10:10",
 						"enable-bbcode": true,
@@ -15722,7 +15923,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Send"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -15777,7 +15982,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "",
 						"enable-bbcode": true,
@@ -15856,7 +16061,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "",
 						"enable-bbcode": true,
@@ -15951,7 +16156,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Close"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -16604,7 +16813,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "",
 						"enable-bbcode": true,
@@ -16874,7 +17083,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "",
 						"enable-bbcode": true,
@@ -16969,7 +17178,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Close"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -17040,7 +17253,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Right"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -17111,7 +17328,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Left"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -17166,7 +17387,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "",
 						"enable-bbcode": true,
@@ -17261,7 +17482,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Block"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -17332,7 +17557,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Material"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -17403,7 +17632,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Instrument"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -20078,7 +20311,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "4",
 						"enable-bbcode": true,
@@ -20310,7 +20543,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Close"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -20490,7 +20727,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Trader",
 						"enable-bbcode": true,
@@ -20860,7 +21097,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "64",
 						"enable-bbcode": true,
@@ -20911,7 +21148,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Total time played: 10:10:10",
 						"enable-bbcode": true,
@@ -21186,7 +21423,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "10:10",
 						"enable-bbcode": true,
@@ -21265,7 +21502,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "0",
 						"enable-bbcode": true,
@@ -21902,7 +22139,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "",
 						"enable-bbcode": true,
@@ -22042,7 +22279,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Respawn"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -22114,7 +22355,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "You died",
 						"enable-bbcode": true,
@@ -22445,7 +22686,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "RespawnReturn"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -22820,7 +23065,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "10:10",
 						"enable-bbcode": true,
@@ -23161,7 +23406,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Chop-Chop",
 						"enable-bbcode": true,
@@ -23240,7 +23485,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Chop you first tree",
 						"enable-bbcode": true,
@@ -23378,7 +23623,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Rewards",
 						"enable-bbcode": true,
@@ -23516,7 +23761,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Chop you first tree",
 						"enable-bbcode": true,
@@ -23654,7 +23899,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Progress",
 						"enable-bbcode": true,
@@ -24090,7 +24335,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Progress",
 						"enable-bbcode": true,
@@ -24185,7 +24430,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Back"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -24256,7 +24505,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "QuestBook"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -24328,7 +24581,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Complete!",
 						"enable-bbcode": true,
@@ -24407,7 +24660,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Quest tree",
 						"enable-bbcode": true,
@@ -24598,7 +24851,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Close"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -24778,7 +25035,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Trader",
 						"enable-bbcode": true,
@@ -24978,7 +25235,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "0",
 						"enable-bbcode": true,
@@ -25214,7 +25471,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "64",
 						"enable-bbcode": true,
@@ -25293,7 +25550,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Create",
 						"enable-bbcode": true,
@@ -25372,7 +25629,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Create",
 						"enable-bbcode": true,
@@ -25451,7 +25708,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Create",
 						"enable-bbcode": true,
@@ -25530,7 +25787,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Create",
 						"enable-bbcode": true,
@@ -25609,7 +25866,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Pause",
 						"enable-bbcode": true,
@@ -26237,7 +26494,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "999",
 						"enable-bbcode": true,
@@ -26316,7 +26573,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "10:10",
 						"enable-bbcode": true,
@@ -26469,7 +26726,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "999",
 						"enable-bbcode": true,
@@ -26564,7 +26821,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "ToggleChat"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -27144,7 +27405,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "To_one"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -27215,7 +27480,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Div"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -27334,7 +27603,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Inventory",
 						"enable-bbcode": true,
@@ -27470,7 +27739,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "0",
 						"enable-bbcode": true,
@@ -27626,7 +27895,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Close"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -27763,6 +28036,10 @@
 						"Clickables": true,
 						"w": 58,
 						"h": 39,
+						"active": false,
+						"Enabled": false,
+						"MainTag": "",
+						"Type_": "",
 						"Item": "Coins",
 						"Cost": 0,
 						"CostType": "Video",
@@ -27978,7 +28255,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "+300",
 						"enable-bbcode": true,
@@ -28075,6 +28352,10 @@
 						"Clickables": true,
 						"w": 36,
 						"h": 36,
+						"active": false,
+						"Enabled": false,
+						"MainTag": "",
+						"Type_": "",
 						"Item": "",
 						"Cost": 0,
 						"CostType": "",
@@ -28174,6 +28455,22 @@
 											},
 											{
 												"iv": "Value",
+												"state": true
+											},
+											{
+												"iv": "active",
+												"state": true
+											},
+											{
+												"iv": "Enabled",
+												"state": true
+											},
+											{
+												"iv": "MainTag",
+												"state": true
+											},
+											{
+												"iv": "Type_",
 												"state": true
 											}
 										]
@@ -28411,7 +28708,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "999",
 						"enable-bbcode": true,
@@ -28641,7 +28938,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Apple",
 						"enable-bbcode": true,
@@ -28721,7 +29018,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "999",
 						"enable-bbcode": true,
@@ -28825,7 +29122,8 @@
 						"maxY": 0,
 						"case": "",
 						"type": "Items",
-						"popupDisable": false
+						"popupDisable": false,
+						"sY": 0
 					},
 					"behaviors": {
 						"Tween": {
@@ -28883,7 +29181,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Video",
 						"enable-bbcode": true,
@@ -29106,6 +29404,987 @@
 							1
 						],
 						"angle": 0.005919792102327293,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PopupW",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 31,
+					"instanceVariables": {
+						"w": 0,
+						"h": 0
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 34,
+						"y": -183,
+						"width": 20,
+						"height": 20,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PopupW",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 218,
+					"instanceVariables": {
+						"w": 20,
+						"h": 20
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"template": {
+						"mode": "template",
+						"templateName": "Inventory",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"initial-animation",
+												true
+											],
+											[
+												"initial-frame",
+												true
+											],
+											[
+												"enable-collisions",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": [
+											{
+												"iv": "w",
+												"state": true
+											},
+											{
+												"iv": "h",
+												"state": true
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": [
+									{
+										"key": "Tween",
+										"state": [
+											[
+												"enabled",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "effect",
+								"component": []
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											],
+											[
+												"twpx",
+												true
+											],
+											[
+												"twpy",
+												true
+											],
+											[
+												"twpz",
+												true
+											],
+											[
+												"twpw",
+												true
+											],
+											[
+												"twph",
+												true
+											],
+											[
+												"twpa",
+												true
+											],
+											[
+												"dwp",
+												true
+											],
+											[
+												"ssm",
+												true
+											]
+										]
+									}
+								]
+							}
+						],
+						"replicasUIDs": null
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 218,
+						"children": [
+							{
+								"uid": 219,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": true,
+									"v": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 147,
+						"y": -389,
+						"width": 20,
+						"height": 20,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 413,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 74,
+						"y": -422,
+						"width": 15,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 429,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 90,
+						"y": -422,
+						"width": 15.000000000000002,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 430,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 74,
+						"y": -406,
+						"width": 15.000000000000002,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 431,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 90,
+						"y": -406,
+						"width": 15.000000000000002,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 480,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 106,
+						"y": -422,
+						"width": 15.000000000000002,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 484,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 122,
+						"y": -422,
+						"width": 15.000000000000002,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 485,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 106,
+						"y": -406,
+						"width": 15.000000000000002,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 486,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 122,
+						"y": -406,
+						"width": 15.000000000000002,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 487,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 74,
+						"y": -390,
+						"width": 15.000000000000002,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 488,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 90,
+						"y": -390,
+						"width": 15.000000000000002,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 489,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 74,
+						"y": -374,
+						"width": 15.000000000000002,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 490,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 90,
+						"y": -374,
+						"width": 15.000000000000002,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 491,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 106,
+						"y": -390,
+						"width": 15.000000000000002,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 492,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 122,
+						"y": -390,
+						"width": 15.000000000000002,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 493,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 106,
+						"y": -374,
+						"width": 15.000000000000002,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 494,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 122,
+						"y": -374,
+						"width": 15.000000000000002,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 495,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 74,
+						"y": -358,
+						"width": 15.000000000000002,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 496,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 90,
+						"y": -358,
+						"width": 15.000000000000002,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 497,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 106,
+						"y": -358,
+						"width": 15.000000000000002,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite15",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 498,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 122,
+						"y": -358,
+						"width": 15.000000000000002,
+						"height": 15,
+						"originX": 0.504424778761062,
+						"originY": 0.5043478260869565,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ScrollPick",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 499,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 499,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 322.5,
+						"y": -273,
+						"width": 7,
+						"height": 18,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TogglePointer",
+					"properties": {
+						"left-margin": 60,
+						"right-margin": 60,
+						"top-margin": 60,
+						"bottom-margin": 60,
+						"edges": "tile",
+						"fill": "tile",
+						"initially-visible": true,
+						"origin": "center",
+						"seams": "overlap"
+					},
+					"uid": 500,
+					"instanceVariables": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 500,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 250.44773740421334,
+						"y": -215.28663375958075,
+						"width": 145,
+						"height": 94,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
 						"zElevation": 0
 					}
 				}
@@ -34243,7 +35522,11 @@
 						"action": "",
 						"active": true,
 						"selected": false,
-						"Type": "Create"
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
 					},
 					"behaviors": {
 						"Tween": {
@@ -34315,7 +35598,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Create",
 						"enable-bbcode": true,
@@ -34394,7 +35677,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "Name",
 						"enable-bbcode": true,
@@ -34537,7 +35820,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "WorldName",
 						"enable-bbcode": true,
@@ -34677,7 +35960,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "",
 						"enable-bbcode": true,

@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"eventType": "include",
-			"includeSheet": "AnimatedTriggers"
+			"includeSheet": "AnimatedTriggers_es"
 		},
 		{
 			"eventType": "include",
@@ -190,15 +190,15 @@
 							"objectClass": "System",
 							"sid": 898932426351224,
 							"parameters": {
-								"object": "Message_Text",
-								"expression": "Message_Text.Type = \"Comics\""
+								"object": "SFtext",
+								"expression": "SFtext.Type = \"Comics\""
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "typewriter-text",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 616836359131147,
 							"parameters": {
 								"text": "Functions.Get_LanguageText(\"Comics1\")",
@@ -215,7 +215,7 @@
 						},
 						{
 							"id": "typewriter-text",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 229264856729003,
 							"parameters": {
 								"text": "Functions.Get_LanguageText(\"Comics2\")",
@@ -293,7 +293,7 @@
 									"objectClass": "System",
 									"sid": 924607601159657,
 									"parameters": {
-										"object": "Message_Text"
+										"object": "SFtext"
 									}
 								},
 								{
@@ -301,15 +301,15 @@
 									"objectClass": "System",
 									"sid": 627688738754186,
 									"parameters": {
-										"object": "Message_Text",
-										"expression": "Message_Text.Type = \"Comics\""
+										"object": "SFtext",
+										"expression": "SFtext.Type = \"Comics\""
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "typewriter-text",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 856538001578880,
 									"parameters": {
 										"text": "Functions.Get_LanguageText(\"Comics3\")",
@@ -326,7 +326,7 @@
 								},
 								{
 									"id": "typewriter-text",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 437441897385659,
 									"parameters": {
 										"text": "Functions.Get_LanguageText(\"Comics4\")",
@@ -396,7 +396,7 @@
 								},
 								{
 									"id": "typewriter-text",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 993224229438800,
 									"parameters": {
 										"text": "Functions.Get_LanguageText(\"Comics5\")",
@@ -502,8 +502,8 @@
 									"objectClass": "System",
 									"sid": 694444433920684,
 									"parameters": {
-										"object": "Message_Text",
-										"expression": "Message_Text.Type = \"Comics\""
+										"object": "SFtext",
+										"expression": "SFtext.Type = \"Comics\""
 									}
 								}
 							],
@@ -515,14 +515,14 @@
 									"conditions": [
 										{
 											"id": "is-running-typewriter-text",
-											"objectClass": "Message_Text",
+											"objectClass": "SFtext",
 											"sid": 655722899875269
 										}
 									],
 									"actions": [
 										{
 											"id": "typewriter-finish",
-											"objectClass": "Message_Text",
+											"objectClass": "SFtext",
 											"sid": 819346863254507
 										}
 									],
@@ -659,15 +659,15 @@
 							"objectClass": "System",
 							"sid": 560725195533141,
 							"parameters": {
-								"object": "Message_Text",
-								"expression": "Message_Text.Type = \"NewName\""
+								"object": "SFtext",
+								"expression": "SFtext.Type = \"NewName\""
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-text",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 971845681650899,
 							"parameters": {
 								"text": "TextInput.Text"
@@ -684,15 +684,15 @@
 							"objectClass": "System",
 							"sid": 605470100956377,
 							"parameters": {
-								"object": "Message_Text",
-								"expression": "Message_Text.Type = \"NameLen\""
+								"object": "SFtext",
+								"expression": "SFtext.Type = \"NameLen\""
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-text",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 813121646046647,
 							"parameters": {
 								"text": "len(TextInput.Text)&\"/8\""
@@ -700,7 +700,7 @@
 						},
 						{
 							"id": "set-default-color",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 878146908529941,
 							"parameters": {
 								"color": "len(TextInput.Text) > 8 ? rgbEx(100,50,50) : rgbEx(100,100,100)"
@@ -929,12 +929,12 @@
 			"conditions": [
 				{
 					"id": "on-created",
-					"objectClass": "Message_Text",
+					"objectClass": "SFtext",
 					"sid": 382521454081309
 				},
 				{
 					"id": "is-boolean-instance-variable-set",
-					"objectClass": "Message_Text",
+					"objectClass": "SFtext",
 					"sid": 468194802065546,
 					"parameters": {
 						"instance-variable": "Translatable"
@@ -944,7 +944,7 @@
 			"actions": [
 				{
 					"id": "set-text",
-					"objectClass": "Message_Text",
+					"objectClass": "SFtext",
 					"sid": 707429269183373,
 					"parameters": {
 						"text": "Functions.Get_LanguageText(Self.Type)"

@@ -1,0 +1,82 @@
+{
+	"name": "Scrollings",
+	"plugin-id": "NinePatch",
+	"sid": 819219303800606,
+	"instanceVariables": [
+		{
+			"name": "ScrollX",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 359863387421371
+		},
+		{
+			"name": "ScrollY",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 344020525542087
+		},
+		{
+			"name": "Active",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 432001080833924
+		},
+		{
+			"name": "Scrolling",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 245610526169998
+		},
+		{
+			"name": "DeltaScrollX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 983391672264579
+		},
+		{
+			"name": "DeltaScrollY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 355078526578983
+		},
+		{
+			"name": "MaxYScroll",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 586785959658274
+		},
+		{
+			"name": "MaxXScroll",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 209445940630055
+		},
+		{
+			"name": "MinXScroll",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 703473430009558
+		},
+		{
+			"name": "minYScroll",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 137198142949513
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"9patch4"
+	]
+}

@@ -22,6 +22,13 @@
 			],
 			"actions": [
 				{
+					"callFunction": "ExternalBgImage",
+					"sid": 805179542868583,
+					"parameters": [
+						"\"https://cdn.eponesh.com/static/images/64e/8ee/64e8eea7abba729ad58177bf-2559x1291.webp\""
+					]
+				},
+				{
 					"id": "set-animation",
 					"objectClass": "Sprite12",
 					"sid": 170144745854636,
@@ -288,15 +295,15 @@
 									"objectClass": "System",
 									"sid": 402663615034036,
 									"parameters": {
-										"object": "Message_Text",
-										"expression": "Message_Text.Type = \"defineinput\""
+										"object": "SFtext",
+										"expression": "SFtext.Type = \"defineinput\""
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "typewriter-text",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 272620181950611,
 									"parameters": {
 										"text": "Functions.Get_LanguageText(\"defineinput\")",
@@ -323,7 +330,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 956642267460433,
 							"parameters": {
 								"text": "\"\""

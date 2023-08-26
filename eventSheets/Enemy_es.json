@@ -1,5 +1,5 @@
 {
-	"name": "Enemy",
+	"name": "Enemy_es",
 	"events": [
 		{
 			"functionName": "SpawnEnemy",
@@ -1149,7 +1149,7 @@
 							"objectClass": "System",
 							"sid": 968381944136174,
 							"parameters": {
-								"object-to-create": "Message_Text",
+								"object-to-create": "SFtext",
 								"layer": "Enemies.LayerName",
 								"x": "Enemies.X",
 								"y": "Enemies.BBoxTop",
@@ -1159,7 +1159,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 213241640342187,
 							"parameters": {
 								"text": "damage"
@@ -1167,7 +1167,7 @@
 						},
 						{
 							"id": "tween-one-property",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 139967293215605,
 							"behaviorType": "Tween",
 							"parameters": {
@@ -1184,7 +1184,7 @@
 						},
 						{
 							"id": "tween-one-property",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 221354862995497,
 							"behaviorType": "Tween",
 							"parameters": {

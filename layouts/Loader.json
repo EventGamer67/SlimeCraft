@@ -65,7 +65,7 @@
 					}
 				},
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "",
 						"enable-bbcode": true,
@@ -132,7 +132,7 @@
 				0,
 				1
 			],
-			"isTransparent": false,
+			"isTransparent": true,
 			"parallaxX": 1,
 			"parallaxY": 1,
 			"scaleRate": 1,

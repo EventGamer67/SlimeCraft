@@ -41,14 +41,14 @@
 							"objectClass": "System",
 							"sid": 949338370359796,
 							"parameters": {
-								"object": "Movement_Button"
+								"object": "SPBtn"
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-instvar-value",
-							"objectClass": "Movement_Button",
+							"objectClass": "SPBtn",
 							"sid": 725926187268675,
 							"parameters": {
 								"instance-variable": "So",
@@ -178,18 +178,18 @@
 							"objectClass": "System",
 							"sid": 759101649246874,
 							"parameters": {
-								"object": "Movement_Button",
-								"expression": "Movement_Button.touched"
+								"object": "SPBtn",
+								"expression": "SPBtn.touched"
 							}
 						},
 						{
 							"id": "is-visible",
-							"objectClass": "Movement_Button",
+							"objectClass": "SPBtn",
 							"sid": 287717619493015
 						},
 						{
 							"id": "is-boolean-instance-variable-set",
-							"objectClass": "Movement_Button",
+							"objectClass": "SPBtn",
 							"sid": 107386580653910,
 							"parameters": {
 								"instance-variable": "active"
@@ -197,7 +197,7 @@
 						},
 						{
 							"id": "is-boolean-instance-variable-set",
-							"objectClass": "Movement_Button",
+							"objectClass": "SPBtn",
 							"sid": 938065520880664,
 							"parameters": {
 								"instance-variable": "touched"
@@ -207,7 +207,7 @@
 					"actions": [
 						{
 							"id": "set-boolean-instvar",
-							"objectClass": "Movement_Button",
+							"objectClass": "SPBtn",
 							"sid": 846707867965242,
 							"disabled": true,
 							"parameters": {
@@ -221,16 +221,6 @@
 						{
 							"eventType": "block",
 							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Movement_Button",
-									"sid": 448136520820324,
-									"parameters": {
-										"instance-variable": "Type",
-										"comparison": 0,
-										"value": "\"Inventory\""
-									}
-								},
 								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
@@ -264,7 +254,7 @@
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "Movement_Button",
+											"objectClass": "SPBtn",
 											"sid": 585445533800558,
 											"parameters": {
 												"instance-variable": "What",
@@ -315,18 +305,7 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Movement_Button",
-									"sid": 380269977662008,
-									"parameters": {
-										"instance-variable": "Type",
-										"comparison": 0,
-										"value": "\"Left\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"id": "simulate-control",
@@ -358,18 +337,7 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Movement_Button",
-									"sid": 347606131715370,
-									"parameters": {
-										"instance-variable": "Type",
-										"comparison": 0,
-										"value": "\"Right\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"id": "simulate-control",
@@ -401,18 +369,7 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Movement_Button",
-									"sid": 763359323122051,
-									"parameters": {
-										"instance-variable": "Type",
-										"comparison": 0,
-										"value": "\"Jump\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [],
 							"sid": 334310473486209,
 							"children": [
@@ -504,16 +461,6 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Movement_Button",
-									"sid": 358767000615110,
-									"parameters": {
-										"instance-variable": "Type",
-										"comparison": 0,
-										"value": "\"Instrument\""
-									}
-								},
-								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
 									"sid": 255547709779784
@@ -527,7 +474,7 @@
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "Movement_Button",
+											"objectClass": "SPBtn",
 											"sid": 944634672436011,
 											"parameters": {
 												"instance-variable": "What",
@@ -629,7 +576,7 @@
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "Movement_Button",
+											"objectClass": "SPBtn",
 											"sid": 743172529177066,
 											"parameters": {
 												"instance-variable": "What",
@@ -727,16 +674,6 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Movement_Button",
-									"sid": 936744117627977,
-									"parameters": {
-										"instance-variable": "Type",
-										"comparison": 0,
-										"value": "\"Pause\""
-									}
-								},
-								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
 									"sid": 914821157601091
@@ -811,16 +748,6 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Movement_Button",
-									"sid": 381576099759946,
-									"parameters": {
-										"instance-variable": "Type",
-										"comparison": 0,
-										"value": "\"Quest\""
-									}
-								},
-								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
 									"sid": 446366615885297
@@ -871,16 +798,6 @@
 						{
 							"eventType": "block",
 							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Movement_Button",
-									"sid": 949628905542850,
-									"parameters": {
-										"instance-variable": "Type",
-										"comparison": 0,
-										"value": "\"Chat\""
-									}
-								},
 								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
@@ -948,18 +865,7 @@
 			"children": [
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Button",
-							"sid": 497170024597596,
-							"parameters": {
-								"instance-variable": "Type",
-								"comparison": 0,
-								"value": "\"Resume\""
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [],
 					"sid": 265133682639232,
 					"children": [
@@ -971,15 +877,15 @@
 									"objectClass": "System",
 									"sid": 398836259160463,
 									"parameters": {
-										"object": "Message_Text",
-										"expression": "Message_Text.TemplateName = \"Pause\""
+										"object": "SFtext",
+										"expression": "SFtext.TemplateName = \"Pause\""
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "destroy",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 816209685137909
 								},
 								{
@@ -1022,18 +928,7 @@
 				},
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Button",
-							"sid": 417411510031244,
-							"parameters": {
-								"instance-variable": "Type",
-								"comparison": 0,
-								"value": "\"SaveExit\""
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [],
 					"sid": 846817124472609,
 					"children": [
@@ -1043,7 +938,7 @@
 							"actions": [
 								{
 									"id": "destroy",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 661752862984364
 								},
 								{
@@ -1184,17 +1079,7 @@
 											"children": [
 												{
 													"eventType": "block",
-													"conditions": [
-														{
-															"id": "pick-by-evaluate",
-															"objectClass": "System",
-															"sid": 536926887110400,
-															"parameters": {
-																"object": "Button",
-																"expression": "Button.Type = \"RespawnReturn\""
-															}
-														}
-													],
+													"conditions": [],
 													"actions": [
 														{
 															"callFunction": "ReDrawInventory",
@@ -1371,15 +1256,15 @@
 																	"objectClass": "System",
 																	"sid": 962295542252679,
 																	"parameters": {
-																		"object": "Message_Text",
-																		"expression": "Message_Text.Type = \"YouDied\""
+																		"object": "SFtext",
+																		"expression": "SFtext.Type = \"YouDied\""
 																	}
 																}
 															],
 															"actions": [
 																{
 																	"id": "destroy",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 317993404625650
 																}
 															],
@@ -1452,17 +1337,7 @@
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 268339988845443,
-									"parameters": {
-										"object": "Button",
-										"expression": "Button.Type = \"Respawn\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"callFunction": "enableCurBtns",
@@ -1661,15 +1536,15 @@
 											"objectClass": "System",
 											"sid": 656535520703856,
 											"parameters": {
-												"object": "Message_Text",
-												"expression": "Message_Text.Type = \"YouDied\""
+												"object": "SFtext",
+												"expression": "SFtext.Type = \"YouDied\""
 											}
 										}
 									],
 									"actions": [
 										{
 											"id": "destroy",
-											"objectClass": "Message_Text",
+											"objectClass": "SFtext",
 											"sid": 160541346690128
 										}
 									],
@@ -1720,23 +1595,11 @@
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 157377879733642,
-											"parameters": {
-												"object": "Movement_Button",
-												"expression": "Movement_Button.Type",
-												"comparison": 0,
-												"value": "\"Instrument\""
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [
 										{
 											"id": "set-visible",
-											"objectClass": "Movement_Button",
+											"objectClass": "SPBtn",
 											"sid": 326935874855432,
 											"parameters": {
 												"visibility": "visible"
@@ -1744,7 +1607,7 @@
 										},
 										{
 											"id": "set-instvar-value",
-											"objectClass": "Movement_Button",
+											"objectClass": "SPBtn",
 											"sid": 436357671898337,
 											"parameters": {
 												"instance-variable": "What",
@@ -1797,23 +1660,11 @@
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 641994646039610,
-											"parameters": {
-												"object": "Movement_Button",
-												"expression": "Movement_Button.Type",
-												"comparison": 0,
-												"value": "\"Instrument\""
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [
 										{
 											"id": "set-visible",
-											"objectClass": "Movement_Button",
+											"objectClass": "SPBtn",
 											"sid": 650690022039688,
 											"parameters": {
 												"visibility": "invisible"
@@ -1821,7 +1672,7 @@
 										},
 										{
 											"id": "set-instvar-value",
-											"objectClass": "Movement_Button",
+											"objectClass": "SPBtn",
 											"sid": 971702184479612,
 											"parameters": {
 												"instance-variable": "What",
@@ -1874,23 +1725,11 @@
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 384783369247295,
-											"parameters": {
-												"object": "Movement_Button",
-												"expression": "Movement_Button.Type",
-												"comparison": 0,
-												"value": "\"Instrument\""
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [
 										{
 											"id": "set-visible",
-											"objectClass": "Movement_Button",
+											"objectClass": "SPBtn",
 											"sid": 567907854087041,
 											"parameters": {
 												"visibility": "visible"
@@ -1898,7 +1737,7 @@
 										},
 										{
 											"id": "set-instvar-value",
-											"objectClass": "Movement_Button",
+											"objectClass": "SPBtn",
 											"sid": 401437439378395,
 											"parameters": {
 												"instance-variable": "What",
@@ -1926,23 +1765,11 @@
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 560119624572964,
-											"parameters": {
-												"object": "Movement_Button",
-												"expression": "Movement_Button.Type",
-												"comparison": 0,
-												"value": "\"Instrument\""
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [
 										{
 											"id": "set-visible",
-											"objectClass": "Movement_Button",
+											"objectClass": "SPBtn",
 											"sid": 538035859269479,
 											"parameters": {
 												"visibility": "invisible"
@@ -2013,19 +1840,7 @@
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 554395827796131,
-									"parameters": {
-										"object": "Inventory_Blank",
-										"expression": "Inventory_Blank.Type",
-										"comparison": 0,
-										"value": "\"Close\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"id": "set-animation-frame",
@@ -2098,18 +1913,7 @@
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Inventory_Blank",
-											"sid": 386957188216971,
-											"parameters": {
-												"instance-variable": "Type",
-												"comparison": 0,
-												"value": "\"Close\""
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [
 										{
 											"id": "set-size",
@@ -2837,16 +2641,6 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-instance-variable",
-											"objectClass": "Inventory_Blank",
-											"sid": 705228252720343,
-											"parameters": {
-												"instance-variable": "Type",
-												"comparison": 0,
-												"value": "\"Crafts\""
-											}
-										},
-										{
 											"id": "pick-last-created",
 											"objectClass": "System",
 											"sid": 257792863324100,
@@ -2917,18 +2711,7 @@
 								},
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Inventory_Blank",
-											"sid": 160011681185968,
-											"parameters": {
-												"instance-variable": "Type",
-												"comparison": 0,
-												"value": "\"Send\""
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [
 										{
 											"callFunction": "SendMessage",
@@ -2939,18 +2722,7 @@
 								},
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Inventory_Blank",
-											"sid": 571219086398550,
-											"parameters": {
-												"instance-variable": "Type",
-												"comparison": 0,
-												"value": "\"ToggleChat\""
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [
 										{
 											"id": "set-value",
@@ -2978,16 +2750,6 @@
 								{
 									"eventType": "block",
 									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Inventory_Blank",
-											"sid": 484847126638444,
-											"parameters": {
-												"instance-variable": "Type",
-												"comparison": 0,
-												"value": "\"To_one\""
-											}
-										},
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
@@ -3097,7 +2859,7 @@
 															"objectClass": "Inventory_Item",
 															"sid": 419257464891364,
 															"parameters": {
-																"child": "Message_Text",
+																"child": "SFtext",
 																"which": "own"
 															}
 														}
@@ -3105,7 +2867,7 @@
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 830584480497383,
 															"parameters": {
 																"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -3137,16 +2899,6 @@
 								{
 									"eventType": "block",
 									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Inventory_Blank",
-											"sid": 163575041322030,
-											"parameters": {
-												"instance-variable": "Type",
-												"comparison": 0,
-												"value": "\"Div\""
-											}
-										},
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
@@ -3265,7 +3017,7 @@
 															"objectClass": "Inventory_Item",
 															"sid": 868418739672831,
 															"parameters": {
-																"child": "Message_Text",
+																"child": "SFtext",
 																"which": "own"
 															}
 														}
@@ -3273,7 +3025,7 @@
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 400051998338277,
 															"parameters": {
 																"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -4138,7 +3890,7 @@
 																			"objectClass": "Inventory_Item",
 																			"sid": 679740456507944,
 																			"parameters": {
-																				"child": "Message_Text",
+																				"child": "SFtext",
 																				"which": "own"
 																			}
 																		}
@@ -4146,7 +3898,7 @@
 																	"actions": [
 																		{
 																			"id": "set-text",
-																			"objectClass": "Message_Text",
+																			"objectClass": "SFtext",
 																			"sid": 722408220183982,
 																			"parameters": {
 																				"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -4730,7 +4482,7 @@
 															"objectClass": "Inventory_Item",
 															"sid": 702918898140051,
 															"parameters": {
-																"child": "Message_Text",
+																"child": "SFtext",
 																"which": "own"
 															}
 														}
@@ -4738,7 +4490,7 @@
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 499019007450279,
 															"parameters": {
 																"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -4963,7 +4715,7 @@
 													"objectClass": "Inventory_Item",
 													"sid": 879514970256545,
 													"parameters": {
-														"child": "Message_Text",
+														"child": "SFtext",
 														"which": "own"
 													}
 												}
@@ -4971,12 +4723,12 @@
 											"actions": [
 												{
 													"id": "move-to-top",
-													"objectClass": "Message_Text",
+													"objectClass": "SFtext",
 													"sid": 942143152857359
 												},
 												{
 													"id": "set-text",
-													"objectClass": "Message_Text",
+													"objectClass": "SFtext",
 													"sid": 892805772790305,
 													"parameters": {
 														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -5208,7 +4960,7 @@
 															"objectClass": "Inventory_Item",
 															"sid": 528529916405335,
 															"parameters": {
-																"child": "Message_Text",
+																"child": "SFtext",
 																"which": "own"
 															}
 														}
@@ -5216,12 +4968,12 @@
 													"actions": [
 														{
 															"id": "move-to-top",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 905116952466488
 														},
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 635596926338994,
 															"parameters": {
 																"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -5902,7 +5654,7 @@
 																	"objectClass": "Inventory_Item",
 																	"sid": 620489319709319,
 																	"parameters": {
-																		"child": "Message_Text",
+																		"child": "SFtext",
 																		"which": "own"
 																	}
 																}
@@ -5910,7 +5662,7 @@
 															"actions": [
 																{
 																	"id": "set-text",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 490219712300200,
 																	"parameters": {
 																		"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -6264,7 +6016,7 @@
 															"objectClass": "Inventory_Item",
 															"sid": 438267129102268,
 															"parameters": {
-																"child": "Message_Text",
+																"child": "SFtext",
 																"which": "own"
 															}
 														}
@@ -6272,7 +6024,7 @@
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 784009347637888,
 															"parameters": {
 																"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -8382,7 +8134,7 @@
 																													"objectClass": "Inventory_Item",
 																													"sid": 194468409354018,
 																													"parameters": {
-																														"child": "Message_Text",
+																														"child": "SFtext",
 																														"which": "own"
 																													}
 																												}
@@ -8390,7 +8142,7 @@
 																											"actions": [
 																												{
 																													"id": "set-text",
-																													"objectClass": "Message_Text",
+																													"objectClass": "SFtext",
 																													"sid": 464604811008239,
 																													"parameters": {
 																														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -8453,7 +8205,7 @@
 																													"objectClass": "Inventory_Item",
 																													"sid": 554238771193110,
 																													"parameters": {
-																														"child": "Message_Text",
+																														"child": "SFtext",
 																														"which": "own"
 																													}
 																												}
@@ -8461,7 +8213,7 @@
 																											"actions": [
 																												{
 																													"id": "set-text",
-																													"objectClass": "Message_Text",
+																													"objectClass": "SFtext",
 																													"sid": 962851115154872,
 																													"parameters": {
 																														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -9929,17 +9681,7 @@
 											"children": [
 												{
 													"eventType": "block",
-													"conditions": [
-														{
-															"id": "pick-by-evaluate",
-															"objectClass": "System",
-															"sid": 437504084440424,
-															"parameters": {
-																"object": "FoodBtn",
-																"expression": "FoodBtn.Type = \"Eat\""
-															}
-														}
-													],
+													"conditions": [],
 													"actions": [
 														{
 															"id": "set-visible",
@@ -9968,17 +9710,7 @@
 											"children": [
 												{
 													"eventType": "block",
-													"conditions": [
-														{
-															"id": "pick-by-evaluate",
-															"objectClass": "System",
-															"sid": 324737084697270,
-															"parameters": {
-																"object": "FoodBtn",
-																"expression": "FoodBtn.Type = \"Eat\""
-															}
-														}
-													],
+													"conditions": [],
 													"actions": [
 														{
 															"id": "set-visible",
@@ -10079,17 +9811,7 @@
 										},
 										{
 											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-by-evaluate",
-													"objectClass": "System",
-													"sid": 798248749937270,
-													"parameters": {
-														"object": "FoodBtn",
-														"expression": "FoodBtn.Type = \"Eat\""
-													}
-												}
-											],
+											"conditions": [],
 											"actions": [
 												{
 													"id": "set-visible",
@@ -11156,7 +10878,7 @@
 																							"objectClass": "Inventory_Item",
 																							"sid": 701435750845744,
 																							"parameters": {
-																								"child": "Message_Text",
+																								"child": "SFtext",
 																								"which": "own"
 																							}
 																						}
@@ -11164,7 +10886,7 @@
 																					"actions": [
 																						{
 																							"id": "set-text",
-																							"objectClass": "Message_Text",
+																							"objectClass": "SFtext",
 																							"sid": 780990617660819,
 																							"parameters": {
 																								"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -11375,7 +11097,7 @@
 																					"objectClass": "Inventory_Item",
 																					"sid": 805511021695752,
 																					"parameters": {
-																						"child": "Message_Text",
+																						"child": "SFtext",
 																						"which": "own"
 																					}
 																				}
@@ -11383,7 +11105,7 @@
 																			"actions": [
 																				{
 																					"id": "set-text",
-																					"objectClass": "Message_Text",
+																					"objectClass": "SFtext",
 																					"sid": 992246751564845,
 																					"parameters": {
 																						"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -11912,7 +11634,7 @@
 																	"objectClass": "Inventory_Item",
 																	"sid": 694826609514745,
 																	"parameters": {
-																		"child": "Message_Text",
+																		"child": "SFtext",
 																		"which": "own"
 																	}
 																}
@@ -11920,12 +11642,12 @@
 															"actions": [
 																{
 																	"id": "move-to-top",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 252602280832320
 																},
 																{
 																	"id": "set-text",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 182755918090835,
 																	"parameters": {
 																		"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -12145,7 +11867,7 @@
 															"objectClass": "Inventory_Item",
 															"sid": 849788672332953,
 															"parameters": {
-																"child": "Message_Text",
+																"child": "SFtext",
 																"which": "own"
 															}
 														}
@@ -12153,12 +11875,12 @@
 													"actions": [
 														{
 															"id": "move-to-top",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 478446999998156
 														},
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 534971723883832,
 															"parameters": {
 																"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -12391,7 +12113,7 @@
 																	"objectClass": "Inventory_Item",
 																	"sid": 437255394820689,
 																	"parameters": {
-																		"child": "Message_Text",
+																		"child": "SFtext",
 																		"which": "own"
 																	}
 																}
@@ -12399,12 +12121,12 @@
 															"actions": [
 																{
 																	"id": "move-to-top",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 781974973910737
 																},
 																{
 																	"id": "set-text",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 455925125685223,
 																	"parameters": {
 																		"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -13013,7 +12735,7 @@
 							"objectClass": "System",
 							"sid": 144173085571170,
 							"parameters": {
-								"object-to-create": "Message_Text",
+								"object-to-create": "SFtext",
 								"layer": "\"TopUI\"",
 								"x": "Functions.Get_Center_X(\"TopUI\")",
 								"y": "Functions.Get_Center_Y(\"TopUI\")",
@@ -13049,8 +12771,8 @@
 									"objectClass": "System",
 									"sid": 703237247170343,
 									"parameters": {
-										"object": "Message_Text",
-										"expression": "Message_Text.TemplateName = \"Pause\""
+										"object": "SFtext",
+										"expression": "SFtext.TemplateName = \"Pause\""
 									}
 								}
 							],
@@ -13062,7 +12784,7 @@
 									"conditions": [
 										{
 											"id": "pick-children",
-											"objectClass": "Message_Text",
+											"objectClass": "SFtext",
 											"sid": 942173336277240,
 											"parameters": {
 												"child": "SoundBtn",
@@ -13090,7 +12812,7 @@
 											"objectClass": "System",
 											"sid": 303823622539118,
 											"parameters": {
-												"object": "Message_Text"
+												"object": "SFtext"
 											}
 										}
 									],
@@ -13105,8 +12827,8 @@
 													"objectClass": "System",
 													"sid": 829736280272699,
 													"parameters": {
-														"object": "Message_Text",
-														"expression": "Message_Text.Type = \"Resume\""
+														"object": "SFtext",
+														"expression": "SFtext.Type = \"Resume\""
 													}
 												}
 											],
@@ -13129,8 +12851,8 @@
 													"objectClass": "System",
 													"sid": 829359623464397,
 													"parameters": {
-														"object": "Message_Text",
-														"expression": "Message_Text.Type = \"SaveExit\""
+														"object": "SFtext",
+														"expression": "SFtext.Type = \"SaveExit\""
 													}
 												}
 											],
@@ -13601,15 +13323,15 @@
 							"objectClass": "System",
 							"sid": 254140571876804,
 							"parameters": {
-								"object": "Message_Text",
-								"expression": "Message_Text.Type = \"Coin\""
+								"object": "SFtext",
+								"expression": "SFtext.Type = \"Coin\""
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-text",
-							"objectClass": "Message_Text",
+							"objectClass": "SFtext",
 							"sid": 130425058620793,
 							"parameters": {
 								"text": "JSON.Get(\"Player.Coins\")"
@@ -13723,19 +13445,7 @@
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 659269103988731,
-											"parameters": {
-												"object": "Inventory_Blank",
-												"expression": "Inventory_Blank.Type",
-												"comparison": 0,
-												"value": "\"Div\""
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [
 										{
 											"id": "set-animation-frame",
@@ -13750,19 +13460,7 @@
 								},
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 777405442106284,
-											"parameters": {
-												"object": "Inventory_Blank",
-												"expression": "Inventory_Blank.Type",
-												"comparison": 0,
-												"value": "\"ToOne\""
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [
 										{
 											"id": "set-animation-frame",
@@ -13811,19 +13509,7 @@
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 949347248575603,
-									"parameters": {
-										"object": "Inventory_Blank",
-										"expression": "Inventory_Blank.Type",
-										"comparison": 0,
-										"value": "\"Div\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"id": "set-animation-frame",
@@ -13838,19 +13524,7 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 491871490259159,
-									"parameters": {
-										"object": "Inventory_Blank",
-										"expression": "Inventory_Blank.Type",
-										"comparison": 0,
-										"value": "\"ToOne\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"id": "set-animation-frame",
@@ -14493,7 +14167,7 @@
 													"objectClass": "Inventory_Item",
 													"sid": 773457322806265,
 													"parameters": {
-														"child": "Message_Text",
+														"child": "SFtext",
 														"which": "own"
 													}
 												}
@@ -14501,12 +14175,12 @@
 											"actions": [
 												{
 													"id": "move-to-top",
-													"objectClass": "Message_Text",
+													"objectClass": "SFtext",
 													"sid": 261539893332437
 												},
 												{
 													"id": "set-text",
-													"objectClass": "Message_Text",
+													"objectClass": "SFtext",
 													"sid": 666361433830459,
 													"parameters": {
 														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -14726,7 +14400,7 @@
 											"objectClass": "Inventory_Item",
 											"sid": 473034203116168,
 											"parameters": {
-												"child": "Message_Text",
+												"child": "SFtext",
 												"which": "own"
 											}
 										}
@@ -14734,12 +14408,12 @@
 									"actions": [
 										{
 											"id": "move-to-top",
-											"objectClass": "Message_Text",
+											"objectClass": "SFtext",
 											"sid": 799424249349900
 										},
 										{
 											"id": "set-text",
-											"objectClass": "Message_Text",
+											"objectClass": "SFtext",
 											"sid": 255995620768172,
 											"parameters": {
 												"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -15221,7 +14895,7 @@
 													"objectClass": "Inventory_Item",
 													"sid": 181863162960091,
 													"parameters": {
-														"child": "Message_Text",
+														"child": "SFtext",
 														"which": "own"
 													}
 												}
@@ -15229,12 +14903,12 @@
 											"actions": [
 												{
 													"id": "move-to-top",
-													"objectClass": "Message_Text",
+													"objectClass": "SFtext",
 													"sid": 179040959587625
 												},
 												{
 													"id": "set-text",
-													"objectClass": "Message_Text",
+													"objectClass": "SFtext",
 													"sid": 831450044680294,
 													"parameters": {
 														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -15459,7 +15133,7 @@
 											"objectClass": "Inventory_Item",
 											"sid": 276171521600156,
 											"parameters": {
-												"child": "Message_Text",
+												"child": "SFtext",
 												"which": "own"
 											}
 										}
@@ -15467,12 +15141,12 @@
 									"actions": [
 										{
 											"id": "move-to-top",
-											"objectClass": "Message_Text",
+											"objectClass": "SFtext",
 											"sid": 432972490127313
 										},
 										{
 											"id": "set-text",
-											"objectClass": "Message_Text",
+											"objectClass": "SFtext",
 											"sid": 380964609891157,
 											"parameters": {
 												"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -15604,7 +15278,7 @@
 									"objectClass": "Inventory_Item",
 									"sid": 175122036082809,
 									"parameters": {
-										"child": "Message_Text",
+										"child": "SFtext",
 										"which": "own"
 									}
 								}
@@ -15612,7 +15286,7 @@
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 784240158994905,
 									"parameters": {
 										"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -15742,7 +15416,7 @@
 									"objectClass": "Inventory_Item",
 									"sid": 792943160724209,
 									"parameters": {
-										"child": "Message_Text",
+										"child": "SFtext",
 										"which": "own"
 									}
 								}
@@ -15750,7 +15424,7 @@
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 277521587866942,
 									"parameters": {
 										"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -15880,7 +15554,7 @@
 									"objectClass": "Inventory_Item",
 									"sid": 265205656664701,
 									"parameters": {
-										"child": "Message_Text",
+										"child": "SFtext",
 										"which": "own"
 									}
 								}
@@ -15888,7 +15562,7 @@
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 639440174209377,
 									"parameters": {
 										"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -16379,7 +16053,7 @@
 																	"objectClass": "Inventory_Item",
 																	"sid": 456533239091808,
 																	"parameters": {
-																		"child": "Message_Text",
+																		"child": "SFtext",
 																		"which": "own"
 																	}
 																}
@@ -16387,12 +16061,12 @@
 															"actions": [
 																{
 																	"id": "move-to-top",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 402106809940154
 																},
 																{
 																	"id": "set-text",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 565904602290712,
 																	"parameters": {
 																		"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -16628,7 +16302,7 @@
 																	"objectClass": "Inventory_Item",
 																	"sid": 924951997803157,
 																	"parameters": {
-																		"child": "Message_Text",
+																		"child": "SFtext",
 																		"which": "own"
 																	}
 																}
@@ -16636,12 +16310,12 @@
 															"actions": [
 																{
 																	"id": "move-to-top",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 233578276327239
 																},
 																{
 																	"id": "set-text",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 652899499030983,
 																	"parameters": {
 																		"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -16838,7 +16512,7 @@
 													"objectClass": "Inventory_Item",
 													"sid": 564303803255858,
 													"parameters": {
-														"child": "Message_Text",
+														"child": "SFtext",
 														"which": "own"
 													}
 												}
@@ -16846,7 +16520,7 @@
 											"actions": [
 												{
 													"id": "set-text",
-													"objectClass": "Message_Text",
+													"objectClass": "SFtext",
 													"sid": 503672603854229,
 													"parameters": {
 														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -17039,7 +16713,7 @@
 													"objectClass": "Inventory_Item",
 													"sid": 125351740537769,
 													"parameters": {
-														"child": "Message_Text",
+														"child": "SFtext",
 														"which": "own"
 													}
 												}
@@ -17047,7 +16721,7 @@
 											"actions": [
 												{
 													"id": "set-text",
-													"objectClass": "Message_Text",
+													"objectClass": "SFtext",
 													"sid": 794130565968222,
 													"parameters": {
 														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -17240,7 +16914,7 @@
 													"objectClass": "Inventory_Item",
 													"sid": 622003532391212,
 													"parameters": {
-														"child": "Message_Text",
+														"child": "SFtext",
 														"which": "own"
 													}
 												}
@@ -17248,7 +16922,7 @@
 											"actions": [
 												{
 													"id": "set-text",
-													"objectClass": "Message_Text",
+													"objectClass": "SFtext",
 													"sid": 343456713948773,
 													"parameters": {
 														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -17680,7 +17354,7 @@
 													"objectClass": "Inventory_Item",
 													"sid": 597170764503505,
 													"parameters": {
-														"child": "Message_Text",
+														"child": "SFtext",
 														"which": "own"
 													}
 												}
@@ -17688,12 +17362,12 @@
 											"actions": [
 												{
 													"id": "move-to-top",
-													"objectClass": "Message_Text",
+													"objectClass": "SFtext",
 													"sid": 203022353353495
 												},
 												{
 													"id": "set-text",
-													"objectClass": "Message_Text",
+													"objectClass": "SFtext",
 													"sid": 877711139307219,
 													"parameters": {
 														"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -17936,7 +17610,7 @@
 											"objectClass": "Inventory_Item",
 											"sid": 250025976012007,
 											"parameters": {
-												"child": "Message_Text",
+												"child": "SFtext",
 												"which": "own"
 											}
 										}
@@ -17944,12 +17618,12 @@
 									"actions": [
 										{
 											"id": "move-to-top",
-											"objectClass": "Message_Text",
+											"objectClass": "SFtext",
 											"sid": 185734517868948
 										},
 										{
 											"id": "set-text",
-											"objectClass": "Message_Text",
+											"objectClass": "SFtext",
 											"sid": 902443994448582,
 											"parameters": {
 												"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -18448,7 +18122,7 @@
 																	"objectClass": "Inventory_Item",
 																	"sid": 423995434625758,
 																	"parameters": {
-																		"child": "Message_Text",
+																		"child": "SFtext",
 																		"which": "own"
 																	}
 																}
@@ -18456,12 +18130,12 @@
 															"actions": [
 																{
 																	"id": "move-to-top",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 952134269841783
 																},
 																{
 																	"id": "set-text",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 492905349696397,
 																	"parameters": {
 																		"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -18704,7 +18378,7 @@
 															"objectClass": "Inventory_Item",
 															"sid": 354501717459879,
 															"parameters": {
-																"child": "Message_Text",
+																"child": "SFtext",
 																"which": "own"
 															}
 														}
@@ -18712,12 +18386,12 @@
 													"actions": [
 														{
 															"id": "move-to-top",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 925056958703205
 														},
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 790899008743027,
 															"parameters": {
 																"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -19233,7 +18907,7 @@
 																	"objectClass": "Inventory_Item",
 																	"sid": 915312156782093,
 																	"parameters": {
-																		"child": "Message_Text",
+																		"child": "SFtext",
 																		"which": "own"
 																	}
 																}
@@ -19241,12 +18915,12 @@
 															"actions": [
 																{
 																	"id": "move-to-top",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 821979699346021
 																},
 																{
 																	"id": "set-text",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 554592895398722,
 																	"parameters": {
 																		"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -19489,7 +19163,7 @@
 															"objectClass": "Inventory_Item",
 															"sid": 837088880229419,
 															"parameters": {
-																"child": "Message_Text",
+																"child": "SFtext",
 																"which": "own"
 															}
 														}
@@ -19497,12 +19171,12 @@
 													"actions": [
 														{
 															"id": "move-to-top",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 652947967730226
 														},
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 217271162125106,
 															"parameters": {
 																"text": "Inventory_Item.Count_ = 1 ? \"\" : Inventory_Item.Count_"
@@ -20007,7 +19681,7 @@
 													"objectClass": "InventoryBlank",
 													"sid": 186305265815520,
 													"parameters": {
-														"child": "Message_Text",
+														"child": "SFtext",
 														"which": "own"
 													}
 												}
@@ -20044,15 +19718,15 @@
 															"objectClass": "System",
 															"sid": 646853785725585,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"QuestName\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"QuestName\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 720484180668513,
 															"parameters": {
 																"text": "\"\""
@@ -20060,7 +19734,7 @@
 														},
 														{
 															"id": "move-to-top",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 558579445594623
 														}
 													],
@@ -20074,15 +19748,15 @@
 															"objectClass": "System",
 															"sid": 300578127441696,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"Rewards\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"Rewards\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 748312916408119,
 															"parameters": {
 																"text": "\"\""
@@ -20099,15 +19773,15 @@
 															"objectClass": "System",
 															"sid": 146595644246593,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"Progress\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"Progress\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 451656794136199,
 															"parameters": {
 																"text": "\"\""
@@ -20124,15 +19798,15 @@
 															"objectClass": "System",
 															"sid": 614005640307510,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"QuestReq\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"QuestReq\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 545848285388588,
 															"parameters": {
 																"text": "\"\""
@@ -20149,15 +19823,15 @@
 															"objectClass": "System",
 															"sid": 923683179816734,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"QuestDesc\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"QuestDesc\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 330243062439762,
 															"parameters": {
 																"text": "\"\""
@@ -20174,15 +19848,15 @@
 															"objectClass": "System",
 															"sid": 273811404225156,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"QuestTree\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"QuestTree\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 983065033384459,
 															"parameters": {
 																"text": "Functions.Get_LanguageText(\"QuestTree\")"
@@ -20374,15 +20048,15 @@
 													"objectClass": "System",
 													"sid": 153664839570878,
 													"parameters": {
-														"object": "Message_Text",
-														"expression": "Message_Text.Type = \"QuestTree\""
+														"object": "SFtext",
+														"expression": "SFtext.Type = \"QuestTree\""
 													}
 												}
 											],
 											"actions": [
 												{
 													"id": "move-to-top",
-													"objectClass": "Message_Text",
+													"objectClass": "SFtext",
 													"sid": 991076202207400
 												}
 											],
@@ -21733,7 +21407,7 @@
 													"objectClass": "9patch4",
 													"sid": 420214607573465,
 													"parameters": {
-														"child": "Message_Text",
+														"child": "SFtext",
 														"which": "own"
 													}
 												}
@@ -21741,7 +21415,7 @@
 											"actions": [
 												{
 													"id": "set-text",
-													"objectClass": "Message_Text",
+													"objectClass": "SFtext",
 													"sid": 415721362944453,
 													"parameters": {
 														"text": "tag"
@@ -21755,8 +21429,8 @@
 													"parameters": {
 														"tags": "\"\"",
 														"property": "size",
-														"end-x": "max(Message_Text.TextWidth,8)+10",
-														"end-y": "max(Message_Text.TextHeight,12)",
+														"end-x": "max(SFtext.TextWidth,8)+10",
+														"end-y": "max(SFtext.TextHeight,12)",
 														"time": "0.3",
 														"ease": "easeoutcubic",
 														"destroy-on-complete": "no",
@@ -21951,7 +21625,7 @@
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 568507735812347,
 															"disabled": true,
 															"parameters": {
@@ -21966,8 +21640,8 @@
 															"parameters": {
 																"tags": "\"\"",
 																"property": "size",
-																"end-x": "max(Message_Text.TextWidth,8,(JSON.ArraySize(\"Quests.\"&QuestElementBlank.tag&\".Requirements\"))*(16+3))+10",
-																"end-y": "max(Message_Text.TextHeight+23,12)",
+																"end-x": "max(SFtext.TextWidth,8,(JSON.ArraySize(\"Quests.\"&QuestElementBlank.tag&\".Requirements\"))*(16+3))+10",
+																"end-y": "max(SFtext.TextHeight+23,12)",
 																"time": "0.3",
 																"ease": "easeoutcubic",
 																"destroy-on-complete": "no",
@@ -22029,7 +21703,7 @@
 															"objectClass": "System",
 															"sid": 566382005493888,
 															"parameters": {
-																"object": "Message_Text"
+																"object": "SFtext"
 															}
 														}
 													],
@@ -22053,7 +21727,7 @@
 																	"objectClass": "9patch4",
 																	"sid": 475170591046608,
 																	"parameters": {
-																		"child": "Message_Text",
+																		"child": "SFtext",
 																		"which": "own"
 																	}
 																}
@@ -22061,7 +21735,7 @@
 															"actions": [
 																{
 																	"id": "set-text",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 335202608803629,
 																	"parameters": {
 																		"text": "Functions.GetQuestRewardIcons(QuestElementBlank.tag)"
@@ -22110,8 +21784,8 @@
 																	"parameters": {
 																		"tags": "\"\"",
 																		"property": "size",
-																		"end-x": "max(Message_Text.TextWidth,9patch5.Width,(JSON.ArraySize(\"Quests.\"&QuestElementBlank.tag&\".Reward\"))*(16+3))+10",
-																		"end-y": "max(Message_Text.TextHeight+40,12)",
+																		"end-x": "max(SFtext.TextWidth,9patch5.Width,(JSON.ArraySize(\"Quests.\"&QuestElementBlank.tag&\".Reward\"))*(16+3))+10",
+																		"end-y": "max(SFtext.TextHeight+40,12)",
 																		"time": "0.3",
 																		"ease": "easeoutcubic",
 																		"destroy-on-complete": "no",
@@ -22222,7 +21896,7 @@
 																		},
 																		{
 																			"id": "set-text",
-																			"objectClass": "Message_Text",
+																			"objectClass": "SFtext",
 																			"sid": 683675488451824,
 																			"disabled": true,
 																			"parameters": {
@@ -22237,8 +21911,8 @@
 																			"parameters": {
 																				"tags": "\"\"",
 																				"property": "size",
-																				"end-x": "max(Message_Text.TextWidth,8,(JSON.ArraySize(\"Quests.\"&QuestElementBlank.tag&\".Requirements\"))*(16+3))+10",
-																				"end-y": "max(Message_Text.TextHeight+23,12)",
+																				"end-x": "max(SFtext.TextWidth,8,(JSON.ArraySize(\"Quests.\"&QuestElementBlank.tag&\".Requirements\"))*(16+3))+10",
+																				"end-y": "max(SFtext.TextHeight+23,12)",
 																				"time": "0.3",
 																				"ease": "easeoutcubic",
 																				"destroy-on-complete": "no",
@@ -22291,7 +21965,7 @@
 																					"objectClass": "System",
 																					"sid": 346415857874542,
 																					"parameters": {
-																						"object": "Message_Text"
+																						"object": "SFtext"
 																					}
 																				}
 																			],
@@ -22316,7 +21990,7 @@
 																							"objectClass": "9patch4",
 																							"sid": 756396782826371,
 																							"parameters": {
-																								"child": "Message_Text",
+																								"child": "SFtext",
 																								"which": "own"
 																							}
 																						}
@@ -22324,7 +21998,7 @@
 																					"actions": [
 																						{
 																							"id": "set-text",
-																							"objectClass": "Message_Text",
+																							"objectClass": "SFtext",
 																							"sid": 247631353867173,
 																							"parameters": {
 																								"text": "Functions.GetQuestRewardIcons(QuestElementBlank.tag)"
@@ -22373,8 +22047,8 @@
 																							"parameters": {
 																								"tags": "\"\"",
 																								"property": "size",
-																								"end-x": "max(Message_Text.TextWidth,9patch5.Width,(JSON.ArraySize(\"Quests.\"&QuestElementBlank.tag&\".Reward\"))*(16+3))+10",
-																								"end-y": "max(Message_Text.TextHeight+40,12)",
+																								"end-x": "max(SFtext.TextWidth,9patch5.Width,(JSON.ArraySize(\"Quests.\"&QuestElementBlank.tag&\".Reward\"))*(16+3))+10",
+																								"end-y": "max(SFtext.TextHeight+40,12)",
 																								"time": "0.3",
 																								"ease": "easeoutcubic",
 																								"destroy-on-complete": "no",
@@ -22421,7 +22095,7 @@
 																	"actions": [
 																		{
 																			"id": "set-text",
-																			"objectClass": "Message_Text",
+																			"objectClass": "SFtext",
 																			"sid": 731123750006673,
 																			"disabled": true,
 																			"parameters": {
@@ -22436,8 +22110,8 @@
 																			"parameters": {
 																				"tags": "\"\"",
 																				"property": "size",
-																				"end-x": "max(Message_Text.TextWidth,8)+10",
-																				"end-y": "max(Message_Text.TextHeight,12)",
+																				"end-x": "max(SFtext.TextWidth,8)+10",
+																				"end-y": "max(SFtext.TextHeight,12)",
 																				"time": "0.3",
 																				"ease": "easeoutcubic",
 																				"destroy-on-complete": "no",
@@ -22696,7 +22370,7 @@
 													"objectClass": "InventoryBlank",
 													"sid": 286930042259447,
 													"parameters": {
-														"child": "Message_Text",
+														"child": "SFtext",
 														"which": "own"
 													}
 												}
@@ -22712,15 +22386,15 @@
 															"objectClass": "System",
 															"sid": 180613596244457,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"QuestName\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"QuestName\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 982433751169469,
 															"parameters": {
 																"text": "\"\""
@@ -22737,15 +22411,15 @@
 															"objectClass": "System",
 															"sid": 969917010185593,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"Rewards\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"Rewards\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 258792174089858,
 															"parameters": {
 																"text": "\"\""
@@ -22762,15 +22436,15 @@
 															"objectClass": "System",
 															"sid": 324029226997098,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"Progress\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"Progress\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 992483389505006,
 															"parameters": {
 																"text": "\"\""
@@ -22787,15 +22461,15 @@
 															"objectClass": "System",
 															"sid": 583706372417241,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"QuestReq\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"QuestReq\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 174835055326710,
 															"parameters": {
 																"text": "\"\""
@@ -22812,15 +22486,15 @@
 															"objectClass": "System",
 															"sid": 340578012694200,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"QuestDesc\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"QuestDesc\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 639169762737225,
 															"parameters": {
 																"text": "\"\""
@@ -22837,15 +22511,15 @@
 															"objectClass": "System",
 															"sid": 468041014962330,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"QuestTree\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"QuestTree\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 804682599873176,
 															"parameters": {
 																"text": "Functions.Get_LanguageText(\"QuestTree\")"
@@ -23083,7 +22757,7 @@
 													"objectClass": "Sprite36",
 													"sid": 174665870625793,
 													"parameters": {
-														"child": "Message_Text",
+														"child": "SFtext",
 														"which": "own"
 													}
 												}
@@ -23129,19 +22803,10 @@
 																},
 																{
 																	"id": "set-text",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 223507603940420,
 																	"parameters": {
 																		"text": "\"Track\""
-																	}
-																},
-																{
-																	"id": "set-instvar-value",
-																	"objectClass": "Sprite36",
-																	"sid": 578745882903654,
-																	"parameters": {
-																		"instance-variable": "Type",
-																		"value": "\"Track\""
 																	}
 																}
 															],
@@ -23193,19 +22858,10 @@
 																},
 																{
 																	"id": "set-text",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 251160492620907,
 																	"parameters": {
 																		"text": "\"Complete\""
-																	}
-																},
-																{
-																	"id": "set-instvar-value",
-																	"objectClass": "Sprite36",
-																	"sid": 920757113403583,
-																	"parameters": {
-																		"instance-variable": "Type",
-																		"value": "\"Complete\""
 																	}
 																}
 															],
@@ -23310,7 +22966,7 @@
 													"objectClass": "InventoryBlank",
 													"sid": 929220904786253,
 													"parameters": {
-														"child": "Message_Text",
+														"child": "SFtext",
 														"which": "own"
 													}
 												}
@@ -23326,15 +22982,15 @@
 															"objectClass": "System",
 															"sid": 851980351879894,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"QuestName\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"QuestName\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "set-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 220368925896152,
 															"parameters": {
 																"text": "Functions.Get_LanguageText(Quest)"
@@ -23358,15 +23014,15 @@
 															"objectClass": "System",
 															"sid": 380327128463397,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"QuestDesc\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"QuestDesc\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "typewriter-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 738072576267433,
 															"parameters": {
 																"text": "Functions.Get_LanguageText(JSON.Get(\"Quests.\"&Quest&\".Description\"))",
@@ -23384,15 +23040,15 @@
 															"objectClass": "System",
 															"sid": 788610614665516,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"QuestReq\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"QuestReq\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "typewriter-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 177586616684249,
 															"parameters": {
 																"text": "Functions.Get_LanguageText(JSON.Get(\"Quests.\"&Quest&\".Req\"))",
@@ -23410,15 +23066,15 @@
 															"objectClass": "System",
 															"sid": 296762472733170,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"Progress\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"Progress\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "typewriter-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 555346212991026,
 															"parameters": {
 																"text": "Functions.Get_LanguageText(\"Progress\")",
@@ -23436,15 +23092,15 @@
 															"objectClass": "System",
 															"sid": 282035002146462,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"Rewards\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"Rewards\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "typewriter-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 366613933385973,
 															"parameters": {
 																"text": "Functions.Get_LanguageText(\"Rewards\")",
@@ -23462,15 +23118,15 @@
 															"objectClass": "System",
 															"sid": 338729897292667,
 															"parameters": {
-																"object": "Message_Text",
-																"expression": "Message_Text.Type = \"QuestTree\""
+																"object": "SFtext",
+																"expression": "SFtext.Type = \"QuestTree\""
 															}
 														}
 													],
 													"actions": [
 														{
 															"id": "typewriter-text",
-															"objectClass": "Message_Text",
+															"objectClass": "SFtext",
 															"sid": 546795603912712,
 															"parameters": {
 																"text": "\"\"",
@@ -23642,7 +23298,7 @@
 																					"objectClass": "QuestItemBlank",
 																					"sid": 403846324727056,
 																					"parameters": {
-																						"child": "Message_Text",
+																						"child": "SFtext",
 																						"which": "own"
 																					}
 																				}
@@ -23677,7 +23333,7 @@
 																				},
 																				{
 																					"id": "set-text",
-																					"objectClass": "Message_Text",
+																					"objectClass": "SFtext",
 																					"sid": 199213544258825,
 																					"disabled": true,
 																					"parameters": {
@@ -23686,7 +23342,7 @@
 																				},
 																				{
 																					"id": "set-text",
-																					"objectClass": "Message_Text",
+																					"objectClass": "SFtext",
 																					"sid": 605033315561624,
 																					"parameters": {
 																						"text": "tokenat(JSON.CurrentValue,1,\",\")&\"x\""
@@ -23694,7 +23350,7 @@
 																				},
 																				{
 																					"id": "set-default-color",
-																					"objectClass": "Message_Text",
+																					"objectClass": "SFtext",
 																					"sid": 170107458393415,
 																					"disabled": true,
 																					"parameters": {
@@ -23855,7 +23511,7 @@
 																					"objectClass": "QuestItemBlank",
 																					"sid": 297500532997529,
 																					"parameters": {
-																						"child": "Message_Text",
+																						"child": "SFtext",
 																						"which": "own"
 																					}
 																				}
@@ -23889,7 +23545,7 @@
 																				},
 																				{
 																					"id": "set-default-color",
-																					"objectClass": "Message_Text",
+																					"objectClass": "SFtext",
 																					"sid": 824823209338136,
 																					"parameters": {
 																						"color": "Functions.CheckItemIsInInventory(tokenat(JSON.CurrentValue,0,\",\"),int(tokenat(JSON.CurrentValue,1,\",\"))) = 1 ? rgbEx(20,100,20) : rgbEx(100,20,20)"
@@ -23913,7 +23569,7 @@
 																					"actions": [
 																						{
 																							"id": "set-text",
-																							"objectClass": "Message_Text",
+																							"objectClass": "SFtext",
 																							"sid": 981176347225532,
 																							"parameters": {
 																								"text": "(Functions.Get_ItemInInventoryCount(tokenat(JSON.CurrentValue,0,\",\")) > 0 ? \"+\" : 0) &\"/\"&tokenat(JSON.CurrentValue,1,\",\")"
@@ -23934,7 +23590,7 @@
 																					"actions": [
 																						{
 																							"id": "set-text",
-																							"objectClass": "Message_Text",
+																							"objectClass": "SFtext",
 																							"sid": 240196435597015,
 																							"parameters": {
 																								"text": "Functions.Get_ItemInInventoryCount(tokenat(JSON.CurrentValue,0,\",\"))&\"/\"&tokenat(JSON.CurrentValue,1,\",\")"
@@ -24493,9 +24149,9 @@
 															"sid": 824859402036456,
 															"parameters": {
 																"object-to-create": "Inventory_Item",
-																"layer": "Message_Text.LayerName",
-																"x": "Message_Text.X-((NumberOfRequ*(16+3))/2)+(loopindexAdv*(16+3))",
-																"y": "Message_Text.BBoxTop+19",
+																"layer": "SFtext.LayerName",
+																"x": "SFtext.X-((NumberOfRequ*(16+3))/2)+(loopindexAdv*(16+3))",
+																"y": "SFtext.BBoxTop+19",
 																"create-hierarchy": true,
 																"template-name": "\"Icon\""
 															}
@@ -24537,7 +24193,7 @@
 																	"objectClass": "Inventory_Item",
 																	"sid": 971434667424410,
 																	"parameters": {
-																		"child": "Message_Text",
+																		"child": "SFtext",
 																		"which": "own"
 																	}
 																}
@@ -24545,7 +24201,7 @@
 															"actions": [
 																{
 																	"id": "set-text",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 531595307767470,
 																	"parameters": {
 																		"text": "tokenat(JSON.CurrentValue,1,\",\")&\"x\""
@@ -24553,7 +24209,7 @@
 																},
 																{
 																	"id": "set-default-color",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 864684358969487,
 																	"parameters": {
 																		"color": "Functions.CheckItemIsInInventory(tokenat(JSON.CurrentValue,0,\",\"),int(tokenat(JSON.CurrentValue,1,\",\"))) = 1 ? rgbEx(20,100,20) : rgbEx(100,20,20)"
@@ -24955,9 +24611,9 @@
 															"sid": 871973649800997,
 															"parameters": {
 																"object-to-create": "Inventory_Item",
-																"layer": "Message_Text.LayerName",
-																"x": "Message_Text.X-((NumberOfRewards*(16+3))/2)+(loopindexAdv*(16+3))",
-																"y": "Message_Text.BBoxBottom-Message_Text.TextHeight-13",
+																"layer": "SFtext.LayerName",
+																"x": "SFtext.X-((NumberOfRewards*(16+3))/2)+(loopindexAdv*(16+3))",
+																"y": "SFtext.BBoxBottom-SFtext.TextHeight-13",
 																"create-hierarchy": true,
 																"template-name": "\"Icon\""
 															}
@@ -24991,7 +24647,7 @@
 																	"objectClass": "Inventory_Item",
 																	"sid": 600973481030872,
 																	"parameters": {
-																		"child": "Message_Text",
+																		"child": "SFtext",
 																		"which": "own"
 																	}
 																}
@@ -24999,7 +24655,7 @@
 															"actions": [
 																{
 																	"id": "set-text",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 169717575413657,
 																	"parameters": {
 																		"text": "tokenat(JSON.CurrentValue,1,\",\")&\"x\""
@@ -25431,7 +25087,7 @@
 									"objectClass": "System",
 									"sid": 106661679463296,
 									"parameters": {
-										"object": "Message_Text"
+										"object": "SFtext"
 									}
 								}
 							],
@@ -25455,7 +25111,7 @@
 											"objectClass": "9patch4",
 											"sid": 478265205398251,
 											"parameters": {
-												"child": "Message_Text",
+												"child": "SFtext",
 												"which": "own"
 											}
 										}
@@ -25498,7 +25154,7 @@
 											"objectClass": "9patch4",
 											"sid": 373989836350317,
 											"parameters": {
-												"child": "Message_Text",
+												"child": "SFtext",
 												"which": "own"
 											}
 										}
@@ -25541,7 +25197,7 @@
 											"objectClass": "9patch4",
 											"sid": 389074958400294,
 											"parameters": {
-												"child": "Message_Text",
+												"child": "SFtext",
 												"which": "own"
 											}
 										}
@@ -25566,7 +25222,7 @@
 										},
 										{
 											"id": "set-text",
-											"objectClass": "Message_Text",
+											"objectClass": "SFtext",
 											"sid": 464884794076349,
 											"parameters": {
 												"text": "\"Choose any quest\""
@@ -25580,8 +25236,8 @@
 											"parameters": {
 												"tags": "\"\"",
 												"property": "size",
-												"end-x": "max(Message_Text.TextWidth,8)+10",
-												"end-y": "max(Message_Text.TextHeight,12)",
+												"end-x": "max(SFtext.TextWidth,8)+10",
+												"end-y": "max(SFtext.TextHeight,12)",
 												"time": "0.3",
 												"ease": "easeoutcubic",
 												"destroy-on-complete": "yes",
@@ -25726,7 +25382,7 @@
 									"objectClass": "System",
 									"sid": 955307272019295,
 									"parameters": {
-										"object": "Message_Text"
+										"object": "SFtext"
 									}
 								}
 							],
@@ -25750,7 +25406,7 @@
 											"objectClass": "9patch4",
 											"sid": 480991438505197,
 											"parameters": {
-												"child": "Message_Text",
+												"child": "SFtext",
 												"which": "own"
 											}
 										}
@@ -25793,7 +25449,7 @@
 											"objectClass": "9patch4",
 											"sid": 667665973886077,
 											"parameters": {
-												"child": "Message_Text",
+												"child": "SFtext",
 												"which": "own"
 											}
 										}
@@ -25836,7 +25492,7 @@
 											"objectClass": "9patch4",
 											"sid": 639082060956849,
 											"parameters": {
-												"child": "Message_Text",
+												"child": "SFtext",
 												"which": "own"
 											}
 										}
@@ -25862,7 +25518,7 @@
 										},
 										{
 											"id": "set-text",
-											"objectClass": "Message_Text",
+											"objectClass": "SFtext",
 											"sid": 931463250395490,
 											"parameters": {
 												"text": "\"Choose any quest\""
@@ -25876,8 +25532,8 @@
 											"parameters": {
 												"tags": "\"\"",
 												"property": "size",
-												"end-x": "max(Message_Text.TextWidth,8)+10",
-												"end-y": "max(Message_Text.TextHeight,12)",
+												"end-x": "max(SFtext.TextWidth,8)+10",
+												"end-y": "max(SFtext.TextHeight,12)",
 												"time": "0.3",
 												"ease": "easeoutcubic",
 												"destroy-on-complete": "no",
@@ -26277,7 +25933,7 @@
 											"objectClass": "InventoryBlank",
 											"sid": 280391457589994,
 											"parameters": {
-												"child": "Message_Text",
+												"child": "SFtext",
 												"which": "own"
 											}
 										}
@@ -26293,15 +25949,15 @@
 													"objectClass": "System",
 													"sid": 822557654964635,
 													"parameters": {
-														"object": "Message_Text",
-														"expression": "Message_Text.Type = \"Chat\""
+														"object": "SFtext",
+														"expression": "SFtext.Type = \"Chat\""
 													}
 												}
 											],
 											"actions": [
 												{
 													"id": "set-text",
-													"objectClass": "Message_Text",
+													"objectClass": "SFtext",
 													"sid": 841673402932268,
 													"parameters": {
 														"text": "\"\""
@@ -26342,7 +25998,7 @@
 															"actions": [
 																{
 																	"id": "set-text",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 753172815378368,
 																	"parameters": {
 																		"text": "Self.Text&newline&Chat.At(loopindex(\"x\"))"
@@ -26357,7 +26013,7 @@
 															"actions": [
 																{
 																	"id": "set-height",
-																	"objectClass": "Message_Text",
+																	"objectClass": "SFtext",
 																	"sid": 251296150189382,
 																	"parameters": {
 																		"height": "Self.TextHeight"
@@ -26498,15 +26154,15 @@
 											"objectClass": "System",
 											"sid": 105758997062477,
 											"parameters": {
-												"object": "Message_Text",
-												"expression": "Message_Text.Type = \"ChatInput\""
+												"object": "SFtext",
+												"expression": "SFtext.Type = \"ChatInput\""
 											}
 										}
 									],
 									"actions": [
 										{
 											"id": "set-text",
-											"objectClass": "Message_Text",
+											"objectClass": "SFtext",
 											"sid": 451617025450948,
 											"parameters": {
 												"text": "\"\""
@@ -26632,7 +26288,7 @@
 							"objectClass": "Book9path",
 							"sid": 329661380470373,
 							"parameters": {
-								"child": "Message_Text",
+								"child": "SFtext",
 								"which": "own"
 							}
 						}
@@ -26657,14 +26313,14 @@
 									"objectClass": "System",
 									"sid": 572898052677843,
 									"parameters": {
-										"value": "Message_Text.Type = \"rescount\""
+										"value": "SFtext.Type = \"rescount\""
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 933124841347444,
 									"parameters": {
 										"visibility": "invisible"
@@ -26681,15 +26337,15 @@
 									"objectClass": "System",
 									"sid": 791581798476863,
 									"parameters": {
-										"object": "Message_Text",
-										"expression": "Message_Text.Type = \"Desc\""
+										"object": "SFtext",
+										"expression": "SFtext.Type = \"Desc\""
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 916768707194887,
 									"parameters": {
 										"text": "Functions.Get_LanguageText(\"ChooseCategory\")"
@@ -26772,16 +26428,7 @@
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "evaluate-expression",
-									"objectClass": "System",
-									"sid": 455243382384601,
-									"parameters": {
-										"value": "Sprite31.Type = \"Block\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"callFunction": "FillList",
@@ -26795,16 +26442,7 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "evaluate-expression",
-									"objectClass": "System",
-									"sid": 632022229548644,
-									"parameters": {
-										"value": "Sprite31.Type = \"Material\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"callFunction": "FillList",
@@ -26818,16 +26456,7 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "evaluate-expression",
-									"objectClass": "System",
-									"sid": 796701380752481,
-									"parameters": {
-										"value": "Sprite31.Type = \"Instrument\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"callFunction": "FillList",
@@ -26841,16 +26470,7 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "evaluate-expression",
-									"objectClass": "System",
-									"sid": 600911810543767,
-									"parameters": {
-										"value": "Sprite31.Type = \"Right\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"id": "set-instvar-value",
@@ -26873,16 +26493,7 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "evaluate-expression",
-									"objectClass": "System",
-									"sid": 101174891385041,
-									"parameters": {
-										"value": "Sprite31.Type = \"Left\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"id": "set-instvar-value",
@@ -26905,16 +26516,7 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "evaluate-expression",
-									"objectClass": "System",
-									"sid": 909218542707013,
-									"parameters": {
-										"value": "Sprite31.Type = \"Back\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"callFunction": "HidePage",
@@ -26994,7 +26596,7 @@
 							"objectClass": "Book9path",
 							"sid": 228311027235950,
 							"parameters": {
-								"child": "Message_Text",
+								"child": "SFtext",
 								"which": "own"
 							}
 						}
@@ -27021,16 +26623,7 @@
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "evaluate-expression",
-									"objectClass": "System",
-									"sid": 514243842760556,
-									"parameters": {
-										"value": "Sprite31.Type = \"Right\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"id": "set-visible",
@@ -27045,16 +26638,7 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "evaluate-expression",
-									"objectClass": "System",
-									"sid": 439206460226626,
-									"parameters": {
-										"value": "Sprite31.Type = \"Left\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"id": "set-visible",
@@ -27075,14 +26659,14 @@
 									"objectClass": "System",
 									"sid": 912738500753603,
 									"parameters": {
-										"value": "Message_Text.Type = \"rescount\""
+										"value": "SFtext.Type = \"rescount\""
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 422630891657226,
 									"parameters": {
 										"visibility": "visible"
@@ -27099,15 +26683,15 @@
 									"objectClass": "System",
 									"sid": 378797744558957,
 									"parameters": {
-										"object": "Message_Text",
-										"expression": "Message_Text.Type = \"Desc\""
+										"object": "SFtext",
+										"expression": "SFtext.Type = \"Desc\""
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 921312608538870,
 									"parameters": {
 										"text": "\"\""
@@ -27594,7 +27178,7 @@
 							"objectClass": "Book9path",
 							"sid": 496934919270590,
 							"parameters": {
-								"child": "Message_Text",
+								"child": "SFtext",
 								"which": "own"
 							}
 						}
@@ -27610,15 +27194,15 @@
 									"objectClass": "System",
 									"sid": 773221815170967,
 									"parameters": {
-										"object": "Message_Text",
-										"expression": "Message_Text.Type = \"Name\""
+										"object": "SFtext",
+										"expression": "SFtext.Type = \"Name\""
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 844690186004362,
 									"parameters": {
 										"text": "Functions.Get_LanguageText(TempList.At(Book9path.List))"
@@ -27642,15 +27226,15 @@
 									"objectClass": "System",
 									"sid": 622278853624907,
 									"parameters": {
-										"object": "Message_Text",
-										"expression": "Message_Text.Type = \"Number\""
+										"object": "SFtext",
+										"expression": "SFtext.Type = \"Number\""
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 825501417947321,
 									"parameters": {
 										"text": "Book9path.List+1&\"/\"&TempList.Width"
@@ -27674,15 +27258,15 @@
 									"objectClass": "System",
 									"sid": 628921609770105,
 									"parameters": {
-										"object": "Message_Text",
-										"expression": "Message_Text.Type = \"rescount\""
+										"object": "SFtext",
+										"expression": "SFtext.Type = \"rescount\""
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "Message_Text",
+									"objectClass": "SFtext",
 									"sid": 277836058338431,
 									"parameters": {
 										"text": "JSON.Get(\"Data.Recipes.\"&TempList.At(Book9path.List)&\".Result.Count\")"
@@ -28399,7 +27983,7 @@
 																	"objectClass": "ShopItem",
 																	"sid": 320193864276590,
 																	"parameters": {
-																		"child": "Message_Text",
+																		"child": "SFtext",
 																		"which": "own"
 																	}
 																}
@@ -28412,7 +27996,7 @@
 																	"conditions": [
 																		{
 																			"id": "compare-instance-variable",
-																			"objectClass": "Message_Text",
+																			"objectClass": "SFtext",
 																			"sid": 824744398557192,
 																			"parameters": {
 																				"instance-variable": "Type",
@@ -28424,7 +28008,7 @@
 																	"actions": [
 																		{
 																			"id": "set-text",
-																			"objectClass": "Message_Text",
+																			"objectClass": "SFtext",
 																			"sid": 682585499114043,
 																			"parameters": {
 																				"text": "ShopItem.Value"
@@ -28445,7 +28029,7 @@
 																	"conditions": [
 																		{
 																			"id": "compare-instance-variable",
-																			"objectClass": "Message_Text",
+																			"objectClass": "SFtext",
 																			"sid": 656216526698207,
 																			"parameters": {
 																				"instance-variable": "Type",
@@ -28457,7 +28041,7 @@
 																	"actions": [
 																		{
 																			"id": "set-text",
-																			"objectClass": "Message_Text",
+																			"objectClass": "SFtext",
 																			"sid": 781971568503408,
 																			"parameters": {
 																				"text": "ShopItem.Cost"
@@ -28478,7 +28062,7 @@
 																	"conditions": [
 																		{
 																			"id": "compare-instance-variable",
-																			"objectClass": "Message_Text",
+																			"objectClass": "SFtext",
 																			"sid": 232648125636533,
 																			"parameters": {
 																				"instance-variable": "Type",
@@ -28490,7 +28074,7 @@
 																	"actions": [
 																		{
 																			"id": "set-text",
-																			"objectClass": "Message_Text",
+																			"objectClass": "SFtext",
 																			"sid": 275797980458484,
 																			"parameters": {
 																				"text": "Functions.Get_LanguageText(ShopItem.Item)"

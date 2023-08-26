@@ -623,7 +623,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Message_Text",
+					"type": "SFtext",
 					"properties": {
 						"text": "",
 						"enable-bbcode": true,
