@@ -88,6 +88,7 @@
 					},
 					"uid": 393,
 					"instanceVariables": {
+						"Tag": "",
 						"Type": "Trade",
 						"SubType": "",
 						"SlotY": 0,
@@ -176,6 +177,10 @@
 											},
 											{
 												"iv": "h",
+												"state": true
+											},
+											{
+												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -653,6 +658,7 @@
 					},
 					"uid": 142,
 					"instanceVariables": {
+						"Tag": "",
 						"Type": "Quest",
 						"SubType": "",
 						"SlotY": 0,
@@ -741,6 +747,10 @@
 											},
 											{
 												"iv": "h",
+												"state": true
+											},
+											{
+												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -2692,6 +2702,7 @@
 					},
 					"uid": 9,
 					"instanceVariables": {
+						"Tag": "",
 						"Type": "Inventory",
 						"SubType": "",
 						"SlotY": 0,
@@ -4111,6 +4122,7 @@
 					},
 					"uid": 167,
 					"instanceVariables": {
+						"Tag": "",
 						"Type": "Trade",
 						"SubType": "",
 						"SlotY": 0,
@@ -4199,6 +4211,10 @@
 											},
 											{
 												"iv": "h",
+												"state": true
+											},
+											{
+												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -4917,6 +4933,16 @@
 					"uid": 174,
 					"instanceVariables": {
 						"Type": "",
+						"ScrollX": false,
+						"ScrollY": true,
+						"Active": true,
+						"Scrolling": false,
+						"DeltaScrollX": 0,
+						"DeltaScrollY": 0,
+						"MaxYScroll": 0,
+						"MaxXScroll": 0,
+						"MinXScroll": 0,
+						"minYScroll": 0,
 						"input": false
 					},
 					"behaviors": {},
@@ -5620,6 +5646,7 @@
 					},
 					"uid": 189,
 					"instanceVariables": {
+						"Tag": "",
 						"Type": "WorldChooser",
 						"SubType": "",
 						"SlotY": 0,
@@ -5708,6 +5735,10 @@
 											},
 											{
 												"iv": "h",
+												"state": true
+											},
+											{
+												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -6096,12 +6127,39 @@
 					"uid": 199,
 					"instanceVariables": {
 						"Type": "",
+						"ScrollX": false,
+						"ScrollY": true,
+						"Active": true,
+						"Scrolling": false,
+						"DeltaScrollX": 0,
+						"DeltaScrollY": 0,
+						"MaxYScroll": 0,
+						"MaxXScroll": 0,
+						"MinXScroll": 0,
+						"minYScroll": 0,
 						"input": false
 					},
 					"behaviors": {},
 					"sceneGraphData": {
 						"parent-uid": 189,
 						"uid": 199,
+						"children": [
+							{
+								"uid": 507,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
 						"flags": {
 							"x": true,
 							"y": true,
@@ -6159,6 +6217,7 @@
 					},
 					"uid": 192,
 					"instanceVariables": {
+						"Tag": "",
 						"Type": "WorldSlot",
 						"SubType": "",
 						"SlotY": 0,
@@ -6247,6 +6306,10 @@
 											},
 											{
 												"iv": "h",
+												"state": true
+											},
+											{
+												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -6540,14 +6603,14 @@
 						"touched": false,
 						"w": 22,
 						"h": 22,
-						"action": "",
+						"action": "Menu",
 						"active": true,
 						"selected": false,
 						"SwitchFramesOnClick": false,
-						"wA": 0,
-						"hA": 0,
-						"MainTag": "",
-						"Type": ""
+						"wA": 0.2,
+						"hA": 0.2,
+						"MainTag": "Menu",
+						"Type": "PlayWorld"
 					},
 					"behaviors": {
 						"Tween": {
@@ -6900,6 +6963,7 @@
 					},
 					"uid": 201,
 					"instanceVariables": {
+						"Tag": "",
 						"Type": "WorldCreate",
 						"SubType": "",
 						"SlotY": 0,
@@ -6988,6 +7052,10 @@
 											},
 											{
 												"iv": "h",
+												"state": true
+											},
+											{
+												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -7474,6 +7542,16 @@
 					"uid": 206,
 					"instanceVariables": {
 						"Type": "",
+						"ScrollX": false,
+						"ScrollY": true,
+						"Active": true,
+						"Scrolling": false,
+						"DeltaScrollX": 0,
+						"DeltaScrollY": 0,
+						"MaxYScroll": 0,
+						"MaxXScroll": 0,
+						"MinXScroll": 0,
+						"minYScroll": 0,
 						"input": true
 					},
 					"behaviors": {},
@@ -7616,6 +7694,7 @@
 					},
 					"uid": 211,
 					"instanceVariables": {
+						"Tag": "",
 						"Type": "MessageBox",
 						"SubType": "",
 						"SlotY": 0,
@@ -7704,6 +7783,10 @@
 											},
 											{
 												"iv": "h",
+												"state": true
+											},
+											{
+												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -8383,6 +8466,7 @@
 					},
 					"uid": 224,
 					"instanceVariables": {
+						"Tag": "",
 						"Type": "Furnace",
 						"SubType": "",
 						"SlotY": 0,
@@ -8471,6 +8555,10 @@
 											},
 											{
 												"iv": "h",
+												"state": true
+											},
+											{
+												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -8888,6 +8976,16 @@
 					"uid": 226,
 					"instanceVariables": {
 						"Type": "",
+						"ScrollX": false,
+						"ScrollY": true,
+						"Active": true,
+						"Scrolling": false,
+						"DeltaScrollX": 0,
+						"DeltaScrollY": 0,
+						"MaxYScroll": 0,
+						"MaxXScroll": 0,
+						"MinXScroll": 0,
+						"minYScroll": 0,
 						"input": false
 					},
 					"behaviors": {},
@@ -9621,6 +9719,7 @@
 					},
 					"uid": 157,
 					"instanceVariables": {
+						"Tag": "",
 						"Type": "Inventory",
 						"SubType": "",
 						"SlotY": 0,
@@ -9709,6 +9808,10 @@
 											},
 											{
 												"iv": "h",
+												"state": true
+											},
+											{
+												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -10215,6 +10318,16 @@
 					"uid": 212,
 					"instanceVariables": {
 						"Type": "",
+						"ScrollX": false,
+						"ScrollY": true,
+						"Active": true,
+						"Scrolling": false,
+						"DeltaScrollX": 0,
+						"DeltaScrollY": 0,
+						"MaxYScroll": 0,
+						"MaxXScroll": 0,
+						"MinXScroll": 0,
+						"minYScroll": 0,
 						"input": false
 					},
 					"behaviors": {},
@@ -10858,6 +10971,7 @@
 					},
 					"uid": 247,
 					"instanceVariables": {
+						"Tag": "",
 						"Type": "WorkBench",
 						"SubType": "",
 						"SlotY": 0,
@@ -10946,6 +11060,10 @@
 											},
 											{
 												"iv": "h",
+												"state": true
+											},
+											{
+												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -11437,6 +11555,16 @@
 					"uid": 250,
 					"instanceVariables": {
 						"Type": "",
+						"ScrollX": false,
+						"ScrollY": true,
+						"Active": true,
+						"Scrolling": false,
+						"DeltaScrollX": 0,
+						"DeltaScrollY": 0,
+						"MaxYScroll": 0,
+						"MaxXScroll": 0,
+						"MinXScroll": 0,
+						"minYScroll": 0,
 						"input": false
 					},
 					"behaviors": {},
@@ -12788,6 +12916,16 @@
 					"uid": 164,
 					"instanceVariables": {
 						"Type": "",
+						"ScrollX": false,
+						"ScrollY": true,
+						"Active": true,
+						"Scrolling": false,
+						"DeltaScrollX": 0,
+						"DeltaScrollY": 0,
+						"MaxYScroll": 0,
+						"MaxXScroll": 0,
+						"MinXScroll": 0,
+						"minYScroll": 0,
 						"input": false
 					},
 					"behaviors": {},
@@ -14406,16 +14544,6 @@
 					},
 					"uid": 280,
 					"instanceVariables": {
-						"ScrollX": false,
-						"ScrollY": false,
-						"Active": true,
-						"Scrolling": false,
-						"DeltaScrollX": 0,
-						"DeltaScrollY": 0,
-						"MaxYScroll": 0,
-						"MaxXScroll": 0,
-						"MinXScroll": 0,
-						"minYScroll": 0,
 						"Tag": "",
 						"State": 0,
 						"DragX": false,
@@ -15504,6 +15632,7 @@
 					},
 					"uid": 287,
 					"instanceVariables": {
+						"Tag": "",
 						"Type": "Chat",
 						"SubType": "",
 						"SlotY": 0,
@@ -15592,6 +15721,10 @@
 											},
 											{
 												"iv": "h",
+												"state": true
+											},
+											{
+												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -15858,6 +15991,16 @@
 					"uid": 288,
 					"instanceVariables": {
 						"Type": "",
+						"ScrollX": false,
+						"ScrollY": true,
+						"Active": true,
+						"Scrolling": false,
+						"DeltaScrollX": 0,
+						"DeltaScrollY": 0,
+						"MaxYScroll": 0,
+						"MaxXScroll": 0,
+						"MinXScroll": 0,
+						"minYScroll": 0,
 						"input": true
 					},
 					"behaviors": {},
@@ -20404,6 +20547,7 @@
 					},
 					"uid": 289,
 					"instanceVariables": {
+						"Tag": "",
 						"Type": "Trade",
 						"SubType": "",
 						"SlotY": 0,
@@ -20478,6 +20622,16 @@
 					"uid": 330,
 					"instanceVariables": {
 						"Type": "",
+						"ScrollX": false,
+						"ScrollY": true,
+						"Active": true,
+						"Scrolling": false,
+						"DeltaScrollX": 0,
+						"DeltaScrollY": 0,
+						"MaxYScroll": 0,
+						"MaxXScroll": 0,
+						"MinXScroll": 0,
+						"minYScroll": 0,
 						"input": false
 					},
 					"behaviors": {},
@@ -20678,6 +20832,16 @@
 					"uid": 324,
 					"instanceVariables": {
 						"Type": "",
+						"ScrollX": false,
+						"ScrollY": true,
+						"Active": true,
+						"Scrolling": false,
+						"DeltaScrollX": 0,
+						"DeltaScrollY": 0,
+						"MaxYScroll": 0,
+						"MaxXScroll": 0,
+						"MinXScroll": 0,
+						"minYScroll": 0,
 						"input": false
 					},
 					"behaviors": {},
@@ -24986,6 +25150,16 @@
 					"uid": 398,
 					"instanceVariables": {
 						"Type": "",
+						"ScrollX": false,
+						"ScrollY": true,
+						"Active": true,
+						"Scrolling": false,
+						"DeltaScrollX": 0,
+						"DeltaScrollY": 0,
+						"MaxYScroll": 0,
+						"MaxXScroll": 0,
+						"MinXScroll": 0,
+						"minYScroll": 0,
 						"input": false
 					},
 					"behaviors": {},
@@ -25129,6 +25303,16 @@
 					"uid": 403,
 					"instanceVariables": {
 						"Type": "",
+						"ScrollX": false,
+						"ScrollY": true,
+						"Active": true,
+						"Scrolling": false,
+						"DeltaScrollX": 0,
+						"DeltaScrollY": 0,
+						"MaxYScroll": 0,
+						"MaxXScroll": 0,
+						"MinXScroll": 0,
+						"minYScroll": 0,
 						"input": false
 					},
 					"behaviors": {},
@@ -27005,6 +27189,7 @@
 					},
 					"uid": 457,
 					"instanceVariables": {
+						"Tag": "",
 						"Type": "Inventory",
 						"SubType": "",
 						"SlotY": 0,
@@ -27093,6 +27278,10 @@
 											},
 											{
 												"iv": "h",
+												"state": true
+											},
+											{
+												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -27554,6 +27743,16 @@
 					"uid": 462,
 					"instanceVariables": {
 						"Type": "",
+						"ScrollX": false,
+						"ScrollY": true,
+						"Active": true,
+						"Scrolling": false,
+						"DeltaScrollX": 0,
+						"DeltaScrollY": 0,
+						"MaxYScroll": 0,
+						"MaxXScroll": 0,
+						"MinXScroll": 0,
+						"minYScroll": 0,
 						"input": false
 					},
 					"behaviors": {},
@@ -27969,6 +28168,16 @@
 					"uid": 468,
 					"instanceVariables": {
 						"Type": "Items",
+						"ScrollX": false,
+						"ScrollY": true,
+						"Active": true,
+						"Scrolling": false,
+						"DeltaScrollX": 0,
+						"DeltaScrollY": 0,
+						"MaxYScroll": 0,
+						"MaxXScroll": 0,
+						"MinXScroll": 0,
+						"minYScroll": 0,
 						"input": false
 					},
 					"behaviors": {},
@@ -28442,22 +28651,6 @@
 												"state": true
 											},
 											{
-												"iv": "Item",
-												"state": true
-											},
-											{
-												"iv": "Cost",
-												"state": true
-											},
-											{
-												"iv": "CostType",
-												"state": true
-											},
-											{
-												"iv": "Value",
-												"state": true
-											},
-											{
 												"iv": "active",
 												"state": true
 											},
@@ -28471,6 +28664,22 @@
 											},
 											{
 												"iv": "Type_",
+												"state": true
+											},
+											{
+												"iv": "Item",
+												"state": true
+											},
+											{
+												"iv": "Cost",
+												"state": true
+											},
+											{
+												"iv": "CostType",
+												"state": true
+											},
+											{
+												"iv": "Value",
 												"state": true
 											}
 										]
@@ -29429,8 +29638,8 @@
 						}
 					},
 					"world": {
-						"x": 34,
-						"y": -183,
+						"x": 855,
+						"y": -100,
 						"width": 20,
 						"height": 20,
 						"originX": 0.5,
@@ -29699,7 +29908,7 @@
 					"world": {
 						"x": 74,
 						"y": -422,
-						"width": 15,
+						"width": 15.000000000000002,
 						"height": 15,
 						"originX": 0.504424778761062,
 						"originY": 0.5043478260869565,
@@ -30383,6 +30592,1061 @@
 							0,
 							0,
 							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "InventoryBlank",
+					"properties": {
+						"left-margin": 6,
+						"right-margin": 6,
+						"top-margin": 6,
+						"bottom-margin": 6,
+						"edges": "tile",
+						"fill": "tile",
+						"initially-visible": true,
+						"origin": "center",
+						"seams": "overlap"
+					},
+					"uid": 502,
+					"instanceVariables": {
+						"Tag": "",
+						"Type": "WorldChooser",
+						"SubType": "",
+						"SlotY": 0,
+						"w": 304,
+						"h": 160
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"template": {
+						"mode": "replica",
+						"templateName": "",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"left-margin",
+												true
+											],
+											[
+												"right-margin",
+												true
+											],
+											[
+												"top-margin",
+												true
+											],
+											[
+												"bottom-margin",
+												true
+											],
+											[
+												"edges",
+												true
+											],
+											[
+												"fill",
+												true
+											],
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"origin",
+												true
+											],
+											[
+												"seams",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": [
+											{
+												"iv": "Type",
+												"state": true
+											},
+											{
+												"iv": "SubType",
+												"state": true
+											},
+											{
+												"iv": "SlotY",
+												"state": true
+											},
+											{
+												"iv": "w",
+												"state": true
+											},
+											{
+												"iv": "h",
+												"state": true
+											},
+											{
+												"iv": "Tag",
+												"state": true
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": [
+									{
+										"key": "Tween",
+										"state": [
+											[
+												"enabled",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "effect",
+								"component": []
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											],
+											[
+												"twpx",
+												true
+											],
+											[
+												"twpy",
+												true
+											],
+											[
+												"twpz",
+												true
+											],
+											[
+												"twpw",
+												true
+											],
+											[
+												"twph",
+												true
+											],
+											[
+												"twpa",
+												true
+											],
+											[
+												"dwp",
+												true
+											],
+											[
+												"ssm",
+												true
+											]
+										]
+									}
+								]
+							}
+						],
+						"replicasUIDs": null
+					},
+					"sceneGraphData": {
+						"parent-uid": 501,
+						"uid": 502,
+						"children": [
+							{
+								"uid": 505,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": true,
+									"v": true,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 504,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": true,
+									"v": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 1093,
+						"y": 189,
+						"width": 304,
+						"height": 160,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Inventory_Blank",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Close",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 503,
+					"instanceVariables": {
+						"touched": false,
+						"w": 22,
+						"h": 22,
+						"action": "Close",
+						"active": true,
+						"selected": false,
+						"SwitchFramesOnClick": false,
+						"wA": 0.2,
+						"hA": 0.2,
+						"MainTag": "Popup",
+						"Type": "Close"
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 501,
+						"uid": 503,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": false,
+							"w": true,
+							"h": true,
+							"a": false,
+							"o": true,
+							"v": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 1260,
+						"y": 120,
+						"width": 21.733085498559575,
+						"height": 21.733085498559575,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite24",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 505,
+					"instanceVariables": {
+						"touched": false,
+						"w": 62,
+						"h": 23,
+						"action": "",
+						"active": true,
+						"selected": false,
+						"SwitchFramesOnClick": false,
+						"wA": 0,
+						"hA": 0,
+						"MainTag": "",
+						"Type": ""
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 502,
+						"uid": 505,
+						"children": [
+							{
+								"uid": 506,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": true,
+									"v": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": true,
+							"v": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 1209,
+						"y": 253,
+						"width": 62.573658739854906,
+						"height": 23.31450791505653,
+						"originX": 0.52,
+						"originY": 0.6111111111111112,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SFtext",
+					"properties": {
+						"text": "New",
+						"enable-bbcode": true,
+						"character-width": 136,
+						"character-height": 150,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
+						"spacing-data": "[[84,\" \"],[17,\"l.:!|\"],[24,\"'\"],[31,\",;\"],[38,\"()`\"],[45,\"Iijt1[]\"],[59,\"f-\\\"°*<>гт\"],[66,\"ч\"],[73,\"ABCDEFGHJKLMNOPQRSTUVWXYZabcdeghkmnopqrsuvwxyz023456789?~#&\\\\/@+=$£€%АБВГЕЁЗИЙКМНОПРСТУХЧЬЭЯабвеёзийкмнопрсухьэя\"],[80,\"Лл\"],[87,\"_ЦШфцш\"],[94,\"ДЪдъ\"],[101,\"ФЩЫЮжщыю\"],[129,\"Ж\"]]",
+						"scale": 0.09,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "left",
+						"read-aloud": false
+					},
+					"uid": 506,
+					"instanceVariables": {
+						"Type": "New",
+						"Translatable": true
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 505,
+						"uid": 506,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": true,
+							"v": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 1180,
+						"y": 251,
+						"width": 54.949057104857786,
+						"height": 15.2638143382473,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "scrollZone",
+					"properties": {
+						"left-margin": 3,
+						"right-margin": 3,
+						"top-margin": 3,
+						"bottom-margin": 3,
+						"edges": "stretch",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "top-left",
+						"seams": "overlap"
+					},
+					"uid": 504,
+					"instanceVariables": {
+						"Type": "",
+						"ScrollX": false,
+						"ScrollY": true,
+						"Active": true,
+						"Scrolling": false,
+						"DeltaScrollX": 0,
+						"DeltaScrollY": 0,
+						"MaxYScroll": 0,
+						"MaxXScroll": 0,
+						"MinXScroll": 0,
+						"minYScroll": 0,
+						"input": false
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 502,
+						"uid": 504,
+						"children": [
+							{
+								"uid": 508,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": true,
+							"v": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 945,
+						"y": 113,
+						"width": 296.0595161016698,
+						"height": 124,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PopupW",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 501,
+					"instanceVariables": {
+						"w": 20,
+						"h": 20
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"template": {
+						"mode": "template",
+						"templateName": "Worlds",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"initial-animation",
+												true
+											],
+											[
+												"initial-frame",
+												true
+											],
+											[
+												"enable-collisions",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": [
+											{
+												"iv": "w",
+												"state": true
+											},
+											{
+												"iv": "h",
+												"state": true
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": [
+									{
+										"key": "Tween",
+										"state": [
+											[
+												"enabled",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "effect",
+								"component": []
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											],
+											[
+												"twpx",
+												true
+											],
+											[
+												"twpy",
+												true
+											],
+											[
+												"twpz",
+												true
+											],
+											[
+												"twpw",
+												true
+											],
+											[
+												"twph",
+												true
+											],
+											[
+												"twpa",
+												true
+											],
+											[
+												"dwp",
+												true
+											],
+											[
+												"ssm",
+												true
+											]
+										]
+									}
+								]
+							}
+						],
+						"replicasUIDs": null
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 501,
+						"children": [
+							{
+								"uid": 503,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": false,
+									"w": true,
+									"h": true,
+									"a": false,
+									"o": true,
+									"v": true,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 502,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 1093,
+						"y": 182,
+						"width": 20,
+						"height": 20,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spriteScroll",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 507,
+					"instanceVariables": {
+						"signScroll": 0,
+						"speedScroll": 0,
+						"dragScroll": 0,
+						"InertXScroll": 0,
+						"InertYScroll": 0,
+						"enabled": true,
+						"scrollX": false,
+						"scrollY": false,
+						"minX": 0,
+						"maxX": 0,
+						"minY": 0,
+						"maxY": 0,
+						"case": "",
+						"type": "Worlds",
+						"popupDisable": false,
+						"sY": 0
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 199,
+						"uid": 507,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 268,
+						"y": 439,
+						"width": 5,
+						"height": 5,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "spriteScroll",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 508,
+					"instanceVariables": {
+						"signScroll": 0,
+						"speedScroll": 0,
+						"dragScroll": 0,
+						"InertXScroll": 0,
+						"InertYScroll": 0,
+						"enabled": true,
+						"scrollX": false,
+						"scrollY": true,
+						"minX": 0,
+						"maxX": 0,
+						"minY": 0,
+						"maxY": 0,
+						"case": "",
+						"type": "Worlds",
+						"popupDisable": false,
+						"sY": 0
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 504,
+						"uid": 508,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 934,
+						"y": 113,
+						"width": 5,
+						"height": 5,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0
 						],
 						"angle": 0,
 						"zElevation": 0
@@ -35167,6 +36431,7 @@
 					},
 					"uid": 439,
 					"instanceVariables": {
+						"Tag": "",
 						"Type": "ChooseName",
 						"SubType": "",
 						"SlotY": 0,
@@ -35255,6 +36520,10 @@
 											},
 											{
 												"iv": "h",
+												"state": true
+											},
+											{
+												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -35771,6 +37040,16 @@
 					"uid": 443,
 					"instanceVariables": {
 						"Type": "",
+						"ScrollX": false,
+						"ScrollY": true,
+						"Active": true,
+						"Scrolling": false,
+						"DeltaScrollX": 0,
+						"DeltaScrollY": 0,
+						"MaxYScroll": 0,
+						"MaxXScroll": 0,
+						"MinXScroll": 0,
+						"minYScroll": 0,
 						"input": true
 					},
 					"behaviors": {},

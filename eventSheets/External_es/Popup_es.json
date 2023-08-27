@@ -237,9 +237,9 @@
 						{
 							"id": "evaluate-expression",
 							"objectClass": "System",
-							"sid": 854349075939412,
+							"sid": 893232493186911,
 							"parameters": {
-								"value": "Type = \"CloseTable\""
+								"value": "Type = \"Close\""
 							}
 						}
 					],

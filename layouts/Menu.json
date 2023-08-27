@@ -3614,14 +3614,14 @@
 						"touched": false,
 						"w": 84,
 						"h": 28,
-						"action": "",
+						"action": "Worlds",
 						"active": true,
 						"selected": false,
 						"SwitchFramesOnClick": false,
-						"wA": 0,
-						"hA": 0,
-						"MainTag": "",
-						"Type": ""
+						"wA": 0.2,
+						"hA": 0.2,
+						"MainTag": "Menu",
+						"Type": "Worlds"
 					},
 					"behaviors": {
 						"Tween": {
@@ -3678,8 +3678,8 @@
 					"world": {
 						"x": 264,
 						"y": 132,
-						"width": 84.82972596821764,
-						"height": 27.624089486989003,
+						"width": 84,
+						"height": 27,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -3758,7 +3758,7 @@
 						"x": 264,
 						"y": 132,
 						"width": 78,
-						"height": 26,
+						"height": 20.244518722905156,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -4571,84 +4571,6 @@
 			"global": false
 		},
 		{
-			"name": "Fade",
-			"overriden": 0,
-			"subLayers": [],
-			"instances": [
-				{
-					"type": "GameManager",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 111,
-					"instanceVariables": {
-						"Game_State": "Game",
-						"Period": 0.3,
-						"min": 0,
-						"sec": 0,
-						"h": 0
-					},
-					"behaviors": {
-						"Timer": {
-							"properties": {}
-						},
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 175.8957479556541,
-						"y": 410.81608588656854,
-						"width": 36.22955118852435,
-						"height": 36.22955118852435,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				}
-			],
-			"sid": 304318474073151,
-			"effectTypes": [],
-			"isInitiallyVisible": true,
-			"isInitiallyInteractive": true,
-			"color": [
-				1,
-				1,
-				1,
-				0
-			],
-			"backgroundColor": [
-				0,
-				0,
-				0,
-				1
-			],
-			"isTransparent": false,
-			"parallaxX": 1,
-			"parallaxY": 1,
-			"scaleRate": 1,
-			"forceOwnTexture": false,
-			"renderingMode": "3d",
-			"drawOrder": "z-order",
-			"useRenderCells": false,
-			"blendMode": "normal",
-			"zElevation": 0,
-			"global": false
-		},
-		{
 			"name": "Popup Stack",
 			"overriden": 0,
 			"subLayers": [],
@@ -4710,7 +4632,7 @@
 					"parallaxX": 1,
 					"parallaxY": 1,
 					"scaleRate": 1,
-					"forceOwnTexture": false,
+					"forceOwnTexture": true,
 					"renderingMode": "3d",
 					"drawOrder": "z-order",
 					"useRenderCells": false,

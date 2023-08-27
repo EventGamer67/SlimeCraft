@@ -1375,6 +1375,22 @@
 													"parameters": {
 														"value": "AdvBtns.ObjectTypeName = \"SPBtn\""
 													}
+												},
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 765196574153352,
+													"parameters": {
+														"value": "AdvBtns.ObjectTypeName = \"Button\""
+													}
+												},
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 789597270763502,
+													"parameters": {
+														"value": "AdvBtns.ObjectTypeName = \"Inventory_Blank\""
+													}
 												}
 											],
 											"actions": [

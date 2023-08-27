@@ -105,7 +105,16 @@
 							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"callFunction": "menuButtonClicked",
+							"sid": 230104964459364,
+							"parameters": [
+								"BtnUID",
+								"Type"
+							]
+						}
+					],
 					"sid": 880994836335066
 				},
 				{

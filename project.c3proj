@@ -517,7 +517,8 @@
 			"ScrollView",
 			"9PBtns",
 			"Scrollings",
-			"Toggles"
+			"Toggles",
+			"Blanks"
 		],
 		"subfolders": []
 	},

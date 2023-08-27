@@ -1,0 +1,19 @@
+{
+	"name": "Blanks",
+	"plugin-id": "NinePatch",
+	"sid": 601160403396010,
+	"instanceVariables": [
+		{
+			"name": "Tag",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 380871584034166
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"InventoryBlank"
+	]
+}
