@@ -1391,12 +1391,20 @@
 													"parameters": {
 														"value": "AdvBtns.ObjectTypeName = \"Inventory_Blank\""
 													}
+												},
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 835067829740653,
+													"parameters": {
+														"value": "AdvBtns.ObjectTypeName = \"Sprite24\""
+													}
 												}
 											],
 											"actions": [
 												{
 													"callFunction": "BtnClicked",
-													"sid": 338391584325342,
+													"sid": 204127861054414,
 													"parameters": [
 														"AdvBtns.MainTag",
 														"AdvBtns.type",
@@ -1406,7 +1414,7 @@
 												{
 													"id": "play",
 													"objectClass": "Audio",
-													"sid": 412495338357352,
+													"sid": 704712205928474,
 													"parameters": {
 														"audio-file": "ClickSound",
 														"loop": "not-looping",
@@ -2658,6 +2666,218 @@
 														}
 													],
 													"sid": 739894910492174
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-parent",
+													"objectClass": "spriteScroll",
+													"sid": 356869027723857,
+													"parameters": {
+														"parent": "Scrollings",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "script",
+													"script": "const scroll = runtime.objects.spriteScroll.getFirstInstance();\nconst childrens = [...scroll.allChildren()];\nfor(const child of childrens){\n\ttry{\n\t\tif( (child.y < localVars.tb) & (child.y < localVars.bb) )\n\t\t{\n\t\t\tchild.active = child.Enabled;\n\t\t\tconsole.log(child.uid);\n\t\t\tconsole.log('disabled');\n\t\t}\n\t\telse{\n\t\t\tchild.active = 0;\n\t\t\tconsole.log(child.uid);\n\t\t\tconsole.log('enabled');\n\t\t}\n\t}\n\tcatch{console.log('err')}\n}",
+													"disabled": true
+												}
+											],
+											"sid": 802766353100603,
+											"children": [
+												{
+													"eventType": "variable",
+													"name": "tb",
+													"type": "number",
+													"initialValue": "0",
+													"comment": "",
+													"isStatic": true,
+													"isConstant": false,
+													"sid": 448414572841835
+												},
+												{
+													"eventType": "variable",
+													"name": "bb",
+													"type": "number",
+													"initialValue": "0",
+													"comment": "",
+													"isStatic": true,
+													"isConstant": false,
+													"sid": 420404287929080
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 327651264120734,
+															"parameters": {
+																"variable": "tb",
+																"value": "Scrollings.BBoxTop"
+															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 509847405256295,
+															"parameters": {
+																"variable": "bb",
+																"value": "Scrollings.BBoxBottom"
+															}
+														}
+													],
+													"sid": 350719718263518,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "pick-children",
+																	"objectClass": "spriteScroll",
+																	"sid": 287171860040453,
+																	"parameters": {
+																		"child": "Blanks",
+																		"which": "own"
+																	}
+																},
+																{
+																	"id": "pick-children",
+																	"objectClass": "Blanks",
+																	"sid": 110886323681598,
+																	"parameters": {
+																		"child": "AdvBtns",
+																		"which": "own"
+																	}
+																},
+																{
+																	"id": "for-each",
+																	"objectClass": "System",
+																	"sid": 459293338474492,
+																	"parameters": {
+																		"object": "AdvBtns"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 606621102819068,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "is-between-values",
+																			"objectClass": "System",
+																			"sid": 201724411416859,
+																			"parameters": {
+																				"value": "AdvBtns.Y",
+																				"lower-bound": "tb",
+																				"upper-bound": "bb"
+																			}
+																		}
+																	],
+																	"actions": [],
+																	"sid": 273192653896519,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "is-boolean-instance-variable-set",
+																					"objectClass": "AdvBtns",
+																					"sid": 834342225734200,
+																					"parameters": {
+																						"instance-variable": "Enabled"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-boolean-instvar",
+																					"objectClass": "AdvBtns",
+																					"sid": 917865702361862,
+																					"parameters": {
+																						"instance-variable": "active",
+																						"value": "true"
+																					}
+																				},
+																				{
+																					"id": "log",
+																					"objectClass": "Browser",
+																					"sid": 780979400177078,
+																					"parameters": {
+																						"type": "log",
+																						"message": "\"en\""
+																					}
+																				}
+																			],
+																			"sid": 555169090029567
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "else",
+																					"objectClass": "System",
+																					"sid": 574864357365681
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-boolean-instvar",
+																					"objectClass": "AdvBtns",
+																					"sid": 349104379728811,
+																					"parameters": {
+																						"instance-variable": "active",
+																						"value": "false"
+																					}
+																				}
+																			],
+																			"sid": 657626935638923
+																		}
+																	]
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "else",
+																			"objectClass": "System",
+																			"sid": 615629598198537
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "AdvBtns",
+																			"sid": 841872758093455,
+																			"parameters": {
+																				"instance-variable": "active",
+																				"value": "false"
+																			}
+																		},
+																		{
+																			"id": "log",
+																			"objectClass": "Browser",
+																			"sid": 246216735967813,
+																			"parameters": {
+																				"type": "log",
+																				"message": "\"dis\""
+																			}
+																		}
+																	],
+																	"sid": 238491504416232
+																}
+															]
+														}
+													]
 												}
 											]
 										}

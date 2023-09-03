@@ -168,7 +168,17 @@
 			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 361130432770547,
+					"parameters": {
+						"layer": "\"BG Popup\"",
+						"visibility": "visible"
+					}
+				}
+			],
 			"sid": 449074327289459,
 			"children": [
 				{
@@ -415,6 +425,15 @@
 							"sid": 426648811205103,
 							"parameters": {
 								"layer": "\"Popup\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 656240200918217,
+							"parameters": {
+								"layer": "\"BG Popup\"",
 								"visibility": "invisible"
 							}
 						}

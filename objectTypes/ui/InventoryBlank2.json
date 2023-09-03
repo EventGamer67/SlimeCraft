@@ -1,0 +1,62 @@
+{
+	"name": "InventoryBlank2",
+	"plugin-id": "NinePatch",
+	"sid": 261261881701270,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Type",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 867515692168078
+		},
+		{
+			"name": "SubType",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 336377430821636
+		},
+		{
+			"name": "SlotY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 190024559034494
+		},
+		{
+			"name": "w",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 499096197474257
+		},
+		{
+			"name": "h",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 426739580371795
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 163143970248743
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 17,
+		"height": 17,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 9667210,
+		"useCollisionPoly": true
+	}
+}

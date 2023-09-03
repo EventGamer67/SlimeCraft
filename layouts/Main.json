@@ -2294,6 +2294,7 @@
 								"hA": 0,
 								"MainTag": "",
 								"Type": "",
+								"Enabled": true,
 								"So": 0,
 								"What": "Axe"
 							},
@@ -2343,6 +2344,7 @@
 								"hA": 0,
 								"MainTag": "",
 								"Type": "",
+								"Enabled": true,
 								"So": 0,
 								"What": "Axe"
 							},
@@ -2392,6 +2394,7 @@
 								"hA": 0,
 								"MainTag": "",
 								"Type": "",
+								"Enabled": true,
 								"So": 0,
 								"What": "Axe"
 							},
@@ -2441,6 +2444,7 @@
 								"hA": 0,
 								"MainTag": "",
 								"Type": "",
+								"Enabled": true,
 								"So": 0,
 								"What": "Axe"
 							},
@@ -2732,6 +2736,7 @@
 						"hA": 0,
 						"MainTag": "",
 						"Type": "",
+						"Enabled": true,
 						"So": 0,
 						"What": "Inventory"
 					},
@@ -2823,6 +2828,7 @@
 						"hA": 0,
 						"MainTag": "",
 						"Type": "",
+						"Enabled": true,
 						"So": 50,
 						"What": "Pause"
 					},
@@ -2947,6 +2953,7 @@
 						"hA": 0,
 						"MainTag": "",
 						"Type": "",
+						"Enabled": true,
 						"So": 50,
 						"What": "Clock"
 					},
@@ -3403,7 +3410,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -3450,7 +3458,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -3498,6 +3507,7 @@
 						"hA": 0,
 						"MainTag": "",
 						"Type": "",
+						"Enabled": true,
 						"So": 80,
 						"What": "Quest"
 					},
@@ -3667,6 +3677,7 @@
 						"hA": 0,
 						"MainTag": "",
 						"Type": "",
+						"Enabled": true,
 						"So": 50,
 						"What": "Chat"
 					},
@@ -3744,6 +3755,7 @@
 						"hA": 0,
 						"MainTag": "",
 						"Type": "",
+						"Enabled": true,
 						"So": 50,
 						"What": "LeaderBoard"
 					},
@@ -3928,7 +3940,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -3975,7 +3988,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -4102,6 +4116,7 @@
 						"hA": 0,
 						"MainTag": "",
 						"Type": "",
+						"Enabled": true,
 						"So": 50,
 						"What": "Shop"
 					},

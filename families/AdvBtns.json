@@ -79,6 +79,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 996412256921573
+		},
+		{
+			"name": "Enabled",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 934300253236791
 		}
 	],
 	"behaviorTypes": [

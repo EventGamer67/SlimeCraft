@@ -160,6 +160,10 @@
 										"key": "instance-variable",
 										"state": [
 											{
+												"iv": "Tag",
+												"state": true
+											},
+											{
 												"iv": "Type",
 												"state": true
 											},
@@ -177,10 +181,6 @@
 											},
 											{
 												"iv": "h",
-												"state": true
-											},
-											{
-												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -730,6 +730,10 @@
 										"key": "instance-variable",
 										"state": [
 											{
+												"iv": "Tag",
+												"state": true
+											},
+											{
 												"iv": "Type",
 												"state": true
 											},
@@ -747,10 +751,6 @@
 											},
 											{
 												"iv": "h",
-												"state": true
-											},
-											{
-												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -3044,7 +3044,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -3132,6 +3133,10 @@
 											},
 											{
 												"iv": "Type",
+												"state": true
+											},
+											{
+												"iv": "Enabled",
 												"state": true
 											}
 										]
@@ -3838,7 +3843,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -3930,7 +3936,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -4194,6 +4201,10 @@
 										"key": "instance-variable",
 										"state": [
 											{
+												"iv": "Tag",
+												"state": true
+											},
+											{
 												"iv": "Type",
 												"state": true
 											},
@@ -4211,10 +4222,6 @@
 											},
 											{
 												"iv": "h",
-												"state": true
-											},
-											{
-												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -4531,7 +4538,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -4606,7 +4614,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -4681,7 +4690,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -5091,7 +5101,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -5718,6 +5729,10 @@
 										"key": "instance-variable",
 										"state": [
 											{
+												"iv": "Tag",
+												"state": true
+											},
+											{
 												"iv": "Type",
 												"state": true
 											},
@@ -5735,10 +5750,6 @@
 											},
 											{
 												"iv": "h",
-												"state": true
-											},
-											{
-												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -5965,7 +5976,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -6040,7 +6052,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -6289,6 +6302,10 @@
 										"key": "instance-variable",
 										"state": [
 											{
+												"iv": "Tag",
+												"state": true
+											},
+											{
 												"iv": "Type",
 												"state": true
 											},
@@ -6306,10 +6323,6 @@
 											},
 											{
 												"iv": "h",
-												"state": true
-											},
-											{
-												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -6610,7 +6623,8 @@
 						"wA": 0.2,
 						"hA": 0.2,
 						"MainTag": "Menu",
-						"Type": "PlayWorld"
+						"Type": "PlayWorld",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -6686,7 +6700,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -6734,7 +6749,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -7035,6 +7051,10 @@
 										"key": "instance-variable",
 										"state": [
 											{
+												"iv": "Tag",
+												"state": true
+											},
+											{
 												"iv": "Type",
 												"state": true
 											},
@@ -7052,10 +7072,6 @@
 											},
 											{
 												"iv": "h",
-												"state": true
-											},
-											{
-												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -7297,7 +7313,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -7766,6 +7783,10 @@
 										"key": "instance-variable",
 										"state": [
 											{
+												"iv": "Tag",
+												"state": true
+											},
+											{
 												"iv": "Type",
 												"state": true
 											},
@@ -7783,10 +7804,6 @@
 											},
 											{
 												"iv": "h",
-												"state": true
-											},
-											{
-												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -8013,7 +8030,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -8263,7 +8281,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -8538,6 +8557,10 @@
 										"key": "instance-variable",
 										"state": [
 											{
+												"iv": "Tag",
+												"state": true
+											},
+											{
 												"iv": "Type",
 												"state": true
 											},
@@ -8555,10 +8578,6 @@
 											},
 											{
 												"iv": "h",
-												"state": true
-											},
-											{
-												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -9134,7 +9153,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -9270,7 +9290,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -9345,7 +9366,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -9791,6 +9813,10 @@
 										"key": "instance-variable",
 										"state": [
 											{
+												"iv": "Tag",
+												"state": true
+											},
+											{
 												"iv": "Type",
 												"state": true
 											},
@@ -9808,10 +9834,6 @@
 											},
 											{
 												"iv": "h",
-												"state": true
-											},
-											{
-												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -10173,7 +10195,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -10248,7 +10271,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -10673,7 +10697,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -11043,6 +11068,10 @@
 										"key": "instance-variable",
 										"state": [
 											{
+												"iv": "Tag",
+												"state": true
+											},
+											{
 												"iv": "Type",
 												"state": true
 											},
@@ -11060,10 +11089,6 @@
 											},
 											{
 												"iv": "h",
-												"state": true
-											},
-											{
-												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -11410,7 +11435,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -11485,7 +11511,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -11910,7 +11937,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -14088,7 +14116,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -15195,7 +15224,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -15704,6 +15734,10 @@
 										"key": "instance-variable",
 										"state": [
 											{
+												"iv": "Tag",
+												"state": true
+											},
+											{
 												"iv": "Type",
 												"state": true
 											},
@@ -15721,10 +15755,6 @@
 											},
 											{
 												"iv": "h",
-												"state": true
-											},
-											{
-												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -16070,7 +16100,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -16303,7 +16334,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -17325,7 +17357,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -17400,7 +17433,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -17475,7 +17509,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -17629,7 +17664,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -17704,7 +17740,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -17779,7 +17816,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -20701,7 +20739,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -22447,7 +22486,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -22854,7 +22894,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -24598,7 +24639,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -24673,7 +24715,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -25019,7 +25062,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -27009,7 +27053,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -27261,6 +27306,10 @@
 										"key": "instance-variable",
 										"state": [
 											{
+												"iv": "Tag",
+												"state": true
+											},
+											{
 												"iv": "Type",
 												"state": true
 											},
@@ -27278,10 +27327,6 @@
 											},
 											{
 												"iv": "h",
-												"state": true
-											},
-											{
-												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -27598,7 +27643,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -27673,7 +27719,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -28098,7 +28145,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -30598,304 +30646,6 @@
 					}
 				},
 				{
-					"type": "InventoryBlank",
-					"properties": {
-						"left-margin": 6,
-						"right-margin": 6,
-						"top-margin": 6,
-						"bottom-margin": 6,
-						"edges": "tile",
-						"fill": "tile",
-						"initially-visible": true,
-						"origin": "center",
-						"seams": "overlap"
-					},
-					"uid": 502,
-					"instanceVariables": {
-						"Tag": "",
-						"Type": "WorldChooser",
-						"SubType": "",
-						"SlotY": 0,
-						"w": 304,
-						"h": 160
-					},
-					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						}
-					},
-					"template": {
-						"mode": "replica",
-						"templateName": "",
-						"sourceTemplateName": "",
-						"components": [
-							{
-								"id": "plugin",
-								"component": [
-									{
-										"key": "plugin",
-										"state": [
-											[
-												"left-margin",
-												true
-											],
-											[
-												"right-margin",
-												true
-											],
-											[
-												"top-margin",
-												true
-											],
-											[
-												"bottom-margin",
-												true
-											],
-											[
-												"edges",
-												true
-											],
-											[
-												"fill",
-												true
-											],
-											[
-												"initially-visible",
-												true
-											],
-											[
-												"origin",
-												true
-											],
-											[
-												"seams",
-												true
-											]
-										]
-									}
-								]
-							},
-							{
-								"id": "instance-variable",
-								"component": [
-									{
-										"key": "instance-variable",
-										"state": [
-											{
-												"iv": "Type",
-												"state": true
-											},
-											{
-												"iv": "SubType",
-												"state": true
-											},
-											{
-												"iv": "SlotY",
-												"state": true
-											},
-											{
-												"iv": "w",
-												"state": true
-											},
-											{
-												"iv": "h",
-												"state": true
-											},
-											{
-												"iv": "Tag",
-												"state": true
-											}
-										]
-									}
-								]
-							},
-							{
-								"id": "behavior",
-								"component": [
-									{
-										"key": "Tween",
-										"state": [
-											[
-												"enabled",
-												true
-											]
-										]
-									}
-								]
-							},
-							{
-								"id": "effect",
-								"component": []
-							},
-							{
-								"id": "world-instance",
-								"component": [
-									{
-										"key": "world-instance",
-										"state": [
-											[
-												"x",
-												false
-											],
-											[
-												"y",
-												false
-											],
-											[
-												"z",
-												true
-											],
-											[
-												"w",
-												true
-											],
-											[
-												"h",
-												true
-											],
-											[
-												"a",
-												true
-											],
-											[
-												"o",
-												true
-											],
-											[
-												"c",
-												true
-											],
-											[
-												"sx",
-												true
-											],
-											[
-												"sy",
-												true
-											],
-											[
-												"bm",
-												true
-											],
-											[
-												"twpx",
-												true
-											],
-											[
-												"twpy",
-												true
-											],
-											[
-												"twpz",
-												true
-											],
-											[
-												"twpw",
-												true
-											],
-											[
-												"twph",
-												true
-											],
-											[
-												"twpa",
-												true
-											],
-											[
-												"dwp",
-												true
-											],
-											[
-												"ssm",
-												true
-											]
-										]
-									}
-								]
-							}
-						],
-						"replicasUIDs": null
-					},
-					"sceneGraphData": {
-						"parent-uid": 501,
-						"uid": 502,
-						"children": [
-							{
-								"uid": 505,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"o": true,
-									"v": true,
-									"d": true,
-									"sm": "normal"
-								}
-							},
-							{
-								"uid": 504,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"o": true,
-									"v": true,
-									"d": true,
-									"sm": "normal"
-								}
-							}
-						],
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1093,
-						"y": 189,
-						"width": 304,
-						"height": 160,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "Inventory_Blank",
 					"properties": {
 						"initially-visible": true,
@@ -30916,7 +30666,8 @@
 						"wA": 0.2,
 						"hA": 0.2,
 						"MainTag": "Popup",
-						"Type": "Close"
+						"Type": "Close",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -30955,181 +30706,10 @@
 					},
 					"world": {
 						"x": 1260,
-						"y": 120,
+						"y": 118,
 						"width": 21.733085498559575,
 						"height": 21.733085498559575,
 						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "Sprite24",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 505,
-					"instanceVariables": {
-						"touched": false,
-						"w": 62,
-						"h": 23,
-						"action": "",
-						"active": true,
-						"selected": false,
-						"SwitchFramesOnClick": false,
-						"wA": 0,
-						"hA": 0,
-						"MainTag": "",
-						"Type": ""
-					},
-					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						}
-					},
-					"sceneGraphData": {
-						"parent-uid": 502,
-						"uid": 505,
-						"children": [
-							{
-								"uid": 506,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"o": true,
-									"v": true,
-									"d": true,
-									"sm": "normal"
-								}
-							}
-						],
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"o": true,
-							"v": true,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1209,
-						"y": 253,
-						"width": 62.573658739854906,
-						"height": 23.31450791505653,
-						"originX": 0.52,
-						"originY": 0.6111111111111112,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "SFtext",
-					"properties": {
-						"text": "New",
-						"enable-bbcode": true,
-						"character-width": 136,
-						"character-height": 150,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
-						"spacing-data": "[[84,\" \"],[17,\"l.:!|\"],[24,\"'\"],[31,\",;\"],[38,\"()`\"],[45,\"Iijt1[]\"],[59,\"f-\\\"°*<>гт\"],[66,\"ч\"],[73,\"ABCDEFGHJKLMNOPQRSTUVWXYZabcdeghkmnopqrsuvwxyz023456789?~#&\\\\/@+=$£€%АБВГЕЁЗИЙКМНОПРСТУХЧЬЭЯабвеёзийкмнопрсухьэя\"],[80,\"Лл\"],[87,\"_ЦШфцш\"],[94,\"ДЪдъ\"],[101,\"ФЩЫЮжщыю\"],[129,\"Ж\"]]",
-						"scale": 0.09,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "left",
-						"read-aloud": false
-					},
-					"uid": 506,
-					"instanceVariables": {
-						"Type": "New",
-						"Translatable": true
-					},
-					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
-						"Timer": {
-							"properties": {}
-						}
-					},
-					"sceneGraphData": {
-						"parent-uid": 505,
-						"uid": 506,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"o": true,
-							"v": true,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 1180,
-						"y": 251,
-						"width": 54.949057104857786,
-						"height": 15.2638143382473,
-						"originX": 0,
 						"originY": 0.5,
 						"color": [
 							1,
@@ -31171,7 +30751,7 @@
 					},
 					"behaviors": {},
 					"sceneGraphData": {
-						"parent-uid": 502,
+						"parent-uid": 111,
 						"uid": 504,
 						"children": [
 							{
@@ -31216,9 +30796,9 @@
 						}
 					},
 					"world": {
-						"x": 945,
+						"x": 946.0595161016697,
 						"y": 113,
-						"width": 296.0595161016698,
+						"width": 294,
 						"height": 124,
 						"originX": 0,
 						"originY": 0,
@@ -31429,7 +31009,7 @@
 								}
 							},
 							{
-								"uid": 502,
+								"uid": 111,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -31636,7 +31216,7 @@
 						}
 					},
 					"world": {
-						"x": 934,
+						"x": 935,
 						"y": 113,
 						"width": 5,
 						"height": 5,
@@ -31647,6 +31227,284 @@
 							1,
 							1,
 							0
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "InventoryBlank2",
+					"properties": {
+						"left-margin": 6,
+						"right-margin": 6,
+						"top-margin": 6,
+						"bottom-margin": 6,
+						"edges": "tile",
+						"fill": "transparent",
+						"initially-visible": true,
+						"origin": "center",
+						"seams": "overlap"
+					},
+					"uid": 111,
+					"instanceVariables": {
+						"Tag": "",
+						"Type": "WorldChooser",
+						"SubType": "",
+						"SlotY": 0,
+						"w": 304,
+						"h": 160
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 501,
+						"uid": 111,
+						"children": [
+							{
+								"uid": 504,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": true,
+									"v": true,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 505,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": true,
+									"v": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 1093,
+						"y": 175,
+						"width": 304,
+						"height": 134,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite24",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 505,
+					"instanceVariables": {
+						"touched": false,
+						"w": 62,
+						"h": 23,
+						"action": "NewWorld",
+						"active": true,
+						"selected": false,
+						"SwitchFramesOnClick": false,
+						"wA": 0.2,
+						"hA": 0.2,
+						"MainTag": "Menu",
+						"Type": "NewWorld",
+						"Enabled": true
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 111,
+						"uid": 505,
+						"children": [
+							{
+								"uid": 506,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": true,
+									"v": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": true,
+							"v": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 1217,
+						"y": 264,
+						"width": 62.573658739854906,
+						"height": 23.31450791505653,
+						"originX": 0.52,
+						"originY": 0.6111111111111112,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SFtext",
+					"properties": {
+						"text": "New",
+						"enable-bbcode": true,
+						"character-width": 136,
+						"character-height": 150,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
+						"spacing-data": "[[84,\" \"],[17,\"l.:!|\"],[24,\"'\"],[31,\",;\"],[38,\"()`\"],[45,\"Iijt1[]\"],[59,\"f-\\\"°*<>гт\"],[66,\"ч\"],[73,\"ABCDEFGHJKLMNOPQRSTUVWXYZabcdeghkmnopqrsuvwxyz023456789?~#&\\\\/@+=$£€%АБВГЕЁЗИЙКМНОПРСТУХЧЬЭЯабвеёзийкмнопрсухьэя\"],[80,\"Лл\"],[87,\"_ЦШфцш\"],[94,\"ДЪдъ\"],[101,\"ФЩЫЮжщыю\"],[129,\"Ж\"]]",
+						"scale": 0.09,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "left",
+						"read-aloud": false
+					},
+					"uid": 506,
+					"instanceVariables": {
+						"Type": "New",
+						"Translatable": true
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 505,
+						"uid": 506,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": true,
+							"v": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 1188,
+						"y": 262,
+						"width": 54.949057104857786,
+						"height": 15.2638143382473,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
 						],
 						"angle": 0,
 						"zElevation": 0
@@ -36503,6 +36361,10 @@
 										"key": "instance-variable",
 										"state": [
 											{
+												"iv": "Tag",
+												"state": true
+											},
+											{
 												"iv": "Type",
 												"state": false
 											},
@@ -36520,10 +36382,6 @@
 											},
 											{
 												"iv": "h",
-												"state": true
-											},
-											{
-												"iv": "Tag",
 												"state": true
 											}
 										]
@@ -36795,7 +36653,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {

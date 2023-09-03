@@ -45,7 +45,7 @@
 				0.3686274509803922,
 				1
 			],
-			"isTransparent": false,
+			"isTransparent": true,
 			"parallaxX": 1,
 			"parallaxY": 1,
 			"scaleRate": 1,
@@ -3234,7 +3234,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -3529,7 +3530,8 @@
 						"wA": 0,
 						"hA": 0,
 						"MainTag": "",
-						"Type": ""
+						"Type": "",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -3621,7 +3623,8 @@
 						"wA": 0.2,
 						"hA": 0.2,
 						"MainTag": "Menu",
-						"Type": "Worlds"
+						"Type": "Worlds",
+						"Enabled": true
 					},
 					"behaviors": {
 						"Tween": {
@@ -3971,7 +3974,8 @@
 								"wA": 0,
 								"hA": 0,
 								"MainTag": "",
-								"Type": ""
+								"Type": "",
+								"Enabled": true
 							},
 							"behaviors": {
 								"Tween": {
@@ -4595,7 +4599,40 @@
 			"parallaxX": 1,
 			"parallaxY": 1,
 			"scaleRate": 1,
-			"forceOwnTexture": false,
+			"forceOwnTexture": true,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "BG Popup",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [],
+			"sid": 300072775781686,
+			"effectTypes": [],
+			"isInitiallyVisible": false,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				0.4
+			],
+			"backgroundColor": [
+				0,
+				0,
+				0,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": true,
 			"renderingMode": "3d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
@@ -4606,41 +4643,7 @@
 		{
 			"name": "Popup",
 			"overriden": 0,
-			"subLayers": [
-				{
-					"name": "BG Popup",
-					"overriden": 0,
-					"subLayers": [],
-					"instances": [],
-					"sid": 300072775781686,
-					"effectTypes": [],
-					"isInitiallyVisible": true,
-					"isInitiallyInteractive": true,
-					"color": [
-						1,
-						1,
-						1,
-						0.4
-					],
-					"backgroundColor": [
-						0,
-						0,
-						0,
-						1
-					],
-					"isTransparent": false,
-					"parallaxX": 1,
-					"parallaxY": 1,
-					"scaleRate": 1,
-					"forceOwnTexture": true,
-					"renderingMode": "3d",
-					"drawOrder": "z-order",
-					"useRenderCells": false,
-					"blendMode": "normal",
-					"zElevation": 0,
-					"global": false
-				}
-			],
+			"subLayers": [],
 			"instances": [],
 			"sid": 326446534315463,
 			"effectTypes": [],

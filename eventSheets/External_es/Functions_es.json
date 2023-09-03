@@ -2893,6 +2893,79 @@
 				}
 			],
 			"sid": 958004643592040
+		},
+		{
+			"functionName": "getKeyArraySize",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "path",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 280312386148629
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 434636275094093,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "val",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 720672995329191
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "JSON",
+							"sid": 201207658956353,
+							"parameters": {
+								"path": "path"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 432530825317776,
+							"parameters": {
+								"variable": "val",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 302248824235867
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 894596926701597,
+							"parameters": {
+								"value": "val"
+							}
+						}
+					],
+					"sid": 238432146533539
+				}
+			]
 		}
 	],
 	"sid": 921570436268604
