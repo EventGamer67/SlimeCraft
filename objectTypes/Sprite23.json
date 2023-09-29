@@ -40,7 +40,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 1,
@@ -52,7 +53,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 8577149,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 1,
@@ -64,7 +66,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 2214028,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 1,
@@ -76,7 +79,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 638461,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 1,
@@ -88,7 +92,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 1452363,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 1,
@@ -100,7 +105,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 54524,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 1,
@@ -112,7 +118,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 1402945,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 1,
@@ -124,7 +131,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 3836312,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 1,
@@ -136,7 +144,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 3738263,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 1,
@@ -148,7 +157,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 2310221,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 240590095477468,

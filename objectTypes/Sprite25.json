@@ -20,7 +20,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 2573299,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 254498731887152,
@@ -43,7 +44,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 4796188,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 586278302875728,

@@ -20,7 +20,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 6035954,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 50,
@@ -32,7 +33,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 8019053,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 113562360321613,

@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 35000,
+	"savedWithRelease": 35800,
 	"name": "Arrow_Rain",
 	"runtime": "c3",
 	"useWorker": "dom",
@@ -186,6 +186,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "DragnDrop",
+			"name": "Drag & Drop",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "LOS",
 			"name": "Line of sight",
 			"author": "Scirra",
@@ -352,7 +359,8 @@
 			"PopupW",
 			"Sprite15",
 			"ScrollPick",
-			"TogglePointer"
+			"TogglePointer",
+			"TiledBackground8"
 		],
 		"subfolders": [
 			{
@@ -446,8 +454,8 @@
 					"RewardBox",
 					"Rocket",
 					"Sprite",
-					"Sprite18",
-					"Sprite20"
+					"Islands",
+					"Clouds"
 				],
 				"subfolders": [],
 				"name": "objects"

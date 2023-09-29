@@ -165,16 +165,6 @@
 					}
 				},
 				{
-					"callFunction": "BlackoutByTiled",
-					"sid": 486529067143879,
-					"parameters": [
-						true,
-						"\"TopUI\"",
-						"0.01",
-						"100"
-					]
-				},
-				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 108970841918201

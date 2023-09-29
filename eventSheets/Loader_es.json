@@ -22,6 +22,12 @@
 			],
 			"actions": [
 				{
+					"id": "clear-storage",
+					"objectClass": "LocalStorage",
+					"sid": 299069520039583,
+					"disabled": true
+				},
+				{
 					"callFunction": "ExternalBgImage",
 					"sid": 805179542868583,
 					"parameters": [

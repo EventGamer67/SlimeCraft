@@ -1,14 +1,27 @@
 {
-	"name": "Sprite18",
+	"name": "Islands",
 	"plugin-id": "Sprite",
 	"sid": 689194612451611,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "w",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 206790304726803
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Sin",
 			"name": "Sine",
 			"sid": 241343254378978
+		},
+		{
+			"behaviorId": "wrap",
+			"name": "Wrap",
+			"sid": 747037824078898
 		}
 	],
 	"effectTypes": [],
@@ -46,7 +59,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 240,
@@ -78,7 +92,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 80,
@@ -110,7 +125,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 208,
@@ -142,7 +158,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 138177071666994,

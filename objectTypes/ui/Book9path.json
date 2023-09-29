@@ -43,6 +43,7 @@
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
 		"imageSpriteId": 2170897,
-		"useCollisionPoly": true
+		"useCollisionPoly": true,
+		"tag": ""
 	}
 }

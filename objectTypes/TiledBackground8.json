@@ -1,7 +1,7 @@
 {
-	"name": "9patch6",
-	"plugin-id": "NinePatch",
-	"sid": 272645376299519,
+	"name": "TiledBackground8",
+	"plugin-id": "TiledBg",
+	"sid": 221145331885868,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -14,7 +14,7 @@
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 2918946,
+		"imageSpriteId": 4686331,
 		"useCollisionPoly": true,
 		"tag": ""
 	}

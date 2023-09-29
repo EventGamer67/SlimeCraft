@@ -15,21 +15,6 @@
 		},
 		{
 			"eventType": "block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "set-x",
-					"objectClass": "Sprite20",
-					"sid": 106903994123171,
-					"parameters": {
-						"x": "Self.X+(Self.speed*dt*60)"
-					}
-				}
-			],
-			"sid": 972207217063667
-		},
-		{
-			"eventType": "block",
 			"conditions": [
 				{
 					"id": "on-start-of-layout",
@@ -186,7 +171,7 @@
 							"objectClass": "System",
 							"sid": 369714199186066,
 							"parameters": {
-								"object": "Sprite20"
+								"object": "Clouds"
 							}
 						}
 					],
@@ -199,19 +184,19 @@
 							"actions": [
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Sprite20",
-									"sid": 787457053129871,
+									"objectClass": "Clouds",
+									"sid": 772799909082794,
 									"parameters": {
 										"instance-variable": "speed",
-										"value": "random(0.02,0.5)"
+										"value": "random(0.3,1)"
 									}
 								},
 								{
 									"id": "set-animation-frame",
-									"objectClass": "Sprite20",
+									"objectClass": "Clouds",
 									"sid": 978416759788758,
 									"parameters": {
-										"frame-number": "round(random(Sprite20.AnimationFrameCount))"
+										"frame-number": "round(random(Clouds.AnimationFrameCount))"
 									}
 								}
 							],
@@ -237,6 +222,7 @@
 							"id": "set-position",
 							"objectClass": "SFtext",
 							"sid": 388408096030106,
+							"disabled": true,
 							"parameters": {
 								"x": "ViewportLeft(\"UI\")",
 								"y": "ViewportBottom(\"UI\")"
@@ -271,7 +257,7 @@
 							"objectClass": "System",
 							"sid": 358364920443427,
 							"parameters": {
-								"object-to-create": "Sprite18",
+								"object-to-create": "Islands",
 								"layer": "\"Layer 2\"",
 								"x": "random(0,LayoutWidth)",
 								"y": "random(0,LayoutHeight)",
@@ -281,15 +267,15 @@
 						},
 						{
 							"id": "set-animation-frame",
-							"objectClass": "Sprite18",
+							"objectClass": "Islands",
 							"sid": 615018630383897,
 							"parameters": {
-								"frame-number": "random(Sprite18.AnimationFrameCount)"
+								"frame-number": "random(Islands.AnimationFrameCount)"
 							}
 						},
 						{
 							"id": "set-scale",
-							"objectClass": "Sprite18",
+							"objectClass": "Islands",
 							"sid": 647739982407076,
 							"parameters": {
 								"scale": "random(0.1,0.3)"
@@ -297,11 +283,20 @@
 						},
 						{
 							"id": "set-active",
-							"objectClass": "Sprite18",
+							"objectClass": "Islands",
 							"sid": 507801924706078,
 							"behaviorType": "Sine",
 							"parameters": {
 								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Islands",
+							"sid": 176333172416012,
+							"parameters": {
+								"instance-variable": "w",
+								"value": "random(0.1,0.7)"
 							}
 						}
 					],
@@ -386,7 +381,41 @@
 								}
 							],
 							"actions": [],
-							"sid": 323871730480456
+							"sid": 323871730480456,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "AdvBtns",
+											"sid": 965105291310440,
+											"parameters": {
+												"unique-id": "btnUID"
+											}
+										},
+										{
+											"id": "pick-parent",
+											"objectClass": "AdvBtns",
+											"sid": 783203936662570,
+											"parameters": {
+												"parent": "InventoryBlank",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "StartGame",
+											"sid": 766762269258816,
+											"parameters": [
+												"InventoryBlank.SubType"
+											]
+										}
+									],
+									"sid": 674283078692835
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -430,8 +459,7 @@
 								},
 								{
 									"callFunction": "SaveSlots",
-									"sid": 368774682803512,
-									"disabled": true
+									"sid": 368774682803512
 								},
 								{
 									"id": "wait-for-previous-actions",
@@ -1439,7 +1467,7 @@
 						{
 							"id": "on-signal",
 							"objectClass": "System",
-							"sid": 157319129491687,
+							"sid": 351155047092161,
 							"parameters": {
 								"tag": "\"onWorldsShow\""
 							}
@@ -1449,13 +1477,13 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 517788743353984,
+							"sid": 780140287297138,
 							"parameters": {
 								"seconds": "0"
 							}
 						}
 					],
-					"sid": 290596263975945,
+					"sid": 303081682470187,
 					"children": [
 						{
 							"eventType": "block",
@@ -1463,7 +1491,7 @@
 								{
 									"id": "pick-last-created",
 									"objectClass": "System",
-									"sid": 894365654445013,
+									"sid": 881955935151336,
 									"parameters": {
 										"object": "PopupW"
 									}
@@ -1471,7 +1499,7 @@
 								{
 									"id": "pick-children",
 									"objectClass": "PopupW",
-									"sid": 608401402654932,
+									"sid": 529514625426291,
 									"parameters": {
 										"child": "Blanks",
 										"which": "own"
@@ -1480,7 +1508,7 @@
 								{
 									"id": "pick-children",
 									"objectClass": "Blanks",
-									"sid": 522883759534622,
+									"sid": 327361729803539,
 									"parameters": {
 										"child": "Scrollings",
 										"which": "own"
@@ -1489,7 +1517,7 @@
 								{
 									"id": "pick-children",
 									"objectClass": "Scrollings",
-									"sid": 178929087149391,
+									"sid": 709661049019714,
 									"parameters": {
 										"child": "spriteScroll",
 										"which": "own"
@@ -1497,7 +1525,7 @@
 								}
 							],
 							"actions": [],
-							"sid": 929512149195947,
+							"sid": 613185395388005,
 							"children": [
 								{
 									"eventType": "variable",
@@ -1507,7 +1535,7 @@
 									"comment": "",
 									"isStatic": false,
 									"isConstant": false,
-									"sid": 299589454474352
+									"sid": 829610262022455
 								},
 								{
 									"eventType": "variable",
@@ -1517,7 +1545,7 @@
 									"comment": "",
 									"isStatic": false,
 									"isConstant": false,
-									"sid": 138336911869738
+									"sid": 656571455294489
 								},
 								{
 									"eventType": "variable",
@@ -1527,7 +1555,7 @@
 									"comment": "",
 									"isStatic": false,
 									"isConstant": false,
-									"sid": 511452264728271
+									"sid": 461744938213692
 								},
 								{
 									"eventType": "block",
@@ -1536,14 +1564,14 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 337415387762649,
+											"sid": 270085028672899,
 											"parameters": {
 												"variable": "Top",
 												"value": "Scrollings.BBoxTop+17"
 											}
 										}
 									],
-									"sid": 761626778500205
+									"sid": 999785175920713
 								},
 								{
 									"eventType": "block",
@@ -1551,7 +1579,7 @@
 										{
 											"id": "for-each",
 											"objectClass": "JSON",
-											"sid": 725615760447690,
+											"sid": 217808703670726,
 											"parameters": {
 												"path": "\"Worlds\""
 											}
@@ -1561,7 +1589,7 @@
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 946472528600691,
+											"sid": 863901583668208,
 											"parameters": {
 												"object-to-create": "InventoryBlank",
 												"layer": "Scrollings.LayerName",
@@ -1574,7 +1602,7 @@
 										{
 											"id": "tween-one-property",
 											"objectClass": "InventoryBlank",
-											"sid": 191240842537115,
+											"sid": 750791762918109,
 											"behaviorType": "Tween",
 											"parameters": {
 												"tags": "\"\"",
@@ -1591,7 +1619,7 @@
 										{
 											"id": "set-size",
 											"objectClass": "InventoryBlank",
-											"sid": 241935303957037,
+											"sid": 384943310375609,
 											"parameters": {
 												"width": "0",
 												"height": "Self.Height"
@@ -1600,7 +1628,7 @@
 										{
 											"id": "add-child",
 											"objectClass": "spriteScroll",
-											"sid": 665602844440163,
+											"sid": 354695009054747,
 											"parameters": {
 												"child": "InventoryBlank",
 												"transform-x": false,
@@ -1615,7 +1643,7 @@
 											}
 										}
 									],
-									"sid": 983133327605939,
+									"sid": 295080937046037,
 									"children": [
 										{
 											"eventType": "block",
@@ -1623,7 +1651,7 @@
 												{
 													"id": "pick-last-created",
 													"objectClass": "System",
-													"sid": 598406278996537,
+													"sid": 689470550510234,
 													"parameters": {
 														"object": "InventoryBlank"
 													}
@@ -1633,7 +1661,7 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "InventoryBlank",
-													"sid": 884595058214646,
+													"sid": 782797183018186,
 													"parameters": {
 														"instance-variable": "SlotY",
 														"value": "Self.Y"
@@ -1642,7 +1670,7 @@
 												{
 													"id": "set-blend-mode",
 													"objectClass": "InventoryBlank",
-													"sid": 475843123671908,
+													"sid": 843316575316800,
 													"parameters": {
 														"blend-mode": "source-atop"
 													}
@@ -1650,14 +1678,14 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "InventoryBlank",
-													"sid": 954577291451666,
+													"sid": 863477880127434,
 													"parameters": {
 														"instance-variable": "SubType",
 														"value": "JSON.CurrentKey"
 													}
 												}
 											],
-											"sid": 205409355778150,
+											"sid": 185138846641964,
 											"children": [
 												{
 													"eventType": "block",
@@ -1665,7 +1693,7 @@
 														{
 															"id": "pick-children",
 															"objectClass": "InventoryBlank",
-															"sid": 652240095032135,
+															"sid": 271601607895836,
 															"parameters": {
 																"child": "Sprite23",
 																"which": "own"
@@ -1674,7 +1702,7 @@
 														{
 															"id": "pick-children",
 															"objectClass": "InventoryBlank",
-															"sid": 657908948009056,
+															"sid": 895610082276843,
 															"parameters": {
 																"child": "SFtext",
 																"which": "own"
@@ -1682,7 +1710,7 @@
 														}
 													],
 													"actions": [],
-													"sid": 993240413669646,
+													"sid": 884440383513091,
 													"children": [
 														{
 															"eventType": "block",
@@ -1690,7 +1718,7 @@
 																{
 																	"id": "has-key",
 																	"objectClass": "JSON",
-																	"sid": 270828462675032,
+																	"sid": 922424755247077,
 																	"parameters": {
 																		"path": "\"Worlds.\"&JSON.CurrentKey&\".Image\""
 																	}
@@ -1700,7 +1728,7 @@
 																{
 																	"id": "set-animation-frame",
 																	"objectClass": "Sprite23",
-																	"sid": 522705177532357,
+																	"sid": 455536487333506,
 																	"parameters": {
 																		"frame-number": "iteration+1"
 																	}
@@ -1708,7 +1736,7 @@
 																{
 																	"id": "set-from-base64",
 																	"objectClass": "BinaryData",
-																	"sid": 438046535176356,
+																	"sid": 948602475762037,
 																	"parameters": {
 																		"value": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Image\")"
 																	}
@@ -1716,7 +1744,7 @@
 																{
 																	"id": "set-size",
 																	"objectClass": "Sprite23",
-																	"sid": 729814830564841,
+																	"sid": 499685481577201,
 																	"parameters": {
 																		"width": "21",
 																		"height": "21"
@@ -1725,7 +1753,7 @@
 																{
 																	"id": "load-image-from-url",
 																	"objectClass": "Sprite23",
-																	"sid": 188828343310650,
+																	"sid": 595957650889055,
 																	"parameters": {
 																		"uri": "BinaryData.GetURL",
 																		"size": "keep-current-size",
@@ -1735,18 +1763,18 @@
 																{
 																	"id": "wait-for-previous-actions",
 																	"objectClass": "System",
-																	"sid": 633882444393857
+																	"sid": 680346715768756
 																},
 																{
 																	"id": "set-visible",
 																	"objectClass": "Sprite23",
-																	"sid": 282881297704797,
+																	"sid": 306755459608548,
 																	"parameters": {
 																		"visibility": "visible"
 																	}
 																}
 															],
-															"sid": 695295466063702
+															"sid": 873527143529875
 														},
 														{
 															"eventType": "block",
@@ -1754,14 +1782,14 @@
 																{
 																	"id": "else",
 																	"objectClass": "System",
-																	"sid": 506796982984271
+																	"sid": 258243996219728
 																}
 															],
 															"actions": [
 																{
 																	"id": "set-animation-frame",
 																	"objectClass": "Sprite23",
-																	"sid": 926385936212605,
+																	"sid": 632637104065537,
 																	"parameters": {
 																		"frame-number": "0"
 																	}
@@ -1769,7 +1797,7 @@
 																{
 																	"id": "set-size",
 																	"objectClass": "Sprite23",
-																	"sid": 134071920122824,
+																	"sid": 676366302697091,
 																	"parameters": {
 																		"width": "21",
 																		"height": "21"
@@ -1778,13 +1806,13 @@
 																{
 																	"id": "set-visible",
 																	"objectClass": "Sprite23",
-																	"sid": 528469780631977,
+																	"sid": 524773709197517,
 																	"parameters": {
 																		"visibility": "visible"
 																	}
 																}
 															],
-															"sid": 416043192599404
+															"sid": 160658797356743
 														},
 														{
 															"eventType": "block",
@@ -1792,7 +1820,7 @@
 																{
 																	"id": "pick-by-evaluate",
 																	"objectClass": "System",
-																	"sid": 710941968300780,
+																	"sid": 944384402032419,
 																	"parameters": {
 																		"object": "SFtext",
 																		"expression": "SFtext.Type = \"WorldName\""
@@ -1803,13 +1831,13 @@
 																{
 																	"id": "set-text",
 																	"objectClass": "SFtext",
-																	"sid": 640467913388368,
+																	"sid": 377871890954220,
 																	"parameters": {
 																		"text": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Name\")"
 																	}
 																}
 															],
-															"sid": 835183674984661,
+															"sid": 237348865171023,
 															"children": [
 																{
 																	"eventType": "block",
@@ -1817,7 +1845,7 @@
 																		{
 																			"id": "evaluate-expression",
 																			"objectClass": "System",
-																			"sid": 439996379366488,
+																			"sid": 280607209139813,
 																			"parameters": {
 																				"value": "Functions.CheckActualVersion(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Version\")) <> 1"
 																			}
@@ -1827,7 +1855,7 @@
 																		{
 																			"id": "set-default-color",
 																			"objectClass": "SFtext",
-																			"sid": 855515099732156,
+																			"sid": 982505622837599,
 																			"parameters": {
 																				"color": "Functions.CheckActualVersion(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Version\")) = 1 ? rgbEx(100,100,100) : rgbEx(100,50,50)"
 																			}
@@ -1835,13 +1863,13 @@
 																		{
 																			"id": "set-text",
 																			"objectClass": "SFtext",
-																			"sid": 763740640511495,
+																			"sid": 270073249162989,
 																			"parameters": {
 																				"text": "Functions.CheckActualVersion(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Version\")) = 1 ? Self.Text : Self.Text&\" \"&Functions.Get_LanguageText(\"OutDated\")"
 																			}
 																		}
 																	],
-																	"sid": 646606240255652
+																	"sid": 725916382568313
 																},
 																{
 																	"eventType": "block",
@@ -1850,20 +1878,20 @@
 																		{
 																			"id": "wait",
 																			"objectClass": "System",
-																			"sid": 659874535967972,
+																			"sid": 987032750159056,
 																			"parameters": {
 																				"seconds": "0.3"
 																			}
 																		},
 																		{
 																			"callFunction": "TrimSF",
-																			"sid": 577170570548580,
+																			"sid": 955721277506046,
 																			"parameters": [
 																				"0.001"
 																			]
 																		}
 																	],
-																	"sid": 188274647758061
+																	"sid": 557609262435962
 																}
 															]
 														},
@@ -1873,7 +1901,7 @@
 																{
 																	"id": "pick-by-evaluate",
 																	"objectClass": "System",
-																	"sid": 397002900960103,
+																	"sid": 560406341195383,
 																	"parameters": {
 																		"object": "SFtext",
 																		"expression": "SFtext.Type = \"PlayTime\""
@@ -1884,13 +1912,13 @@
 																{
 																	"id": "set-text",
 																	"objectClass": "SFtext",
-																	"sid": 554905330571306,
+																	"sid": 327407323997309,
 																	"parameters": {
 																		"text": "floor(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Ticks\")/7200)&\" \"&Functions.Get_LanguageText(\"Day\")"
 																	}
 																}
 															],
-															"sid": 334317618569217
+															"sid": 204656175397052
 														},
 														{
 															"eventType": "block",
@@ -1898,7 +1926,7 @@
 																{
 																	"id": "pick-by-evaluate",
 																	"objectClass": "System",
-																	"sid": 879395537380769,
+																	"sid": 350860226752238,
 																	"parameters": {
 																		"object": "SFtext",
 																		"expression": "SFtext.Type = \"Coin\""
@@ -1909,13 +1937,13 @@
 																{
 																	"id": "set-text",
 																	"objectClass": "SFtext",
-																	"sid": 995785497322312,
+																	"sid": 350623082934642,
 																	"parameters": {
 																		"text": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Coin\")&\" \"&Functions.Get_LanguageText(\"Coins\")"
 																	}
 																}
 															],
-															"sid": 194908168060125
+															"sid": 606449361978264
 														}
 													]
 												}
@@ -1928,14 +1956,14 @@
 												{
 													"id": "add-to-eventvar",
 													"objectClass": "System",
-													"sid": 882271289992371,
+													"sid": 700605815360811,
 													"parameters": {
 														"variable": "iteration",
 														"value": "1"
 													}
 												}
 											],
-											"sid": 267262356375876
+											"sid": 622731618566713
 										}
 									]
 								},
@@ -1950,7 +1978,7 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "spriteScroll",
-											"sid": 496015608309975,
+											"sid": 978221768263856,
 											"parameters": {
 												"instance-variable": "minY",
 												"value": "Scrollings.BBoxTop-23-(ChildrensCount*30)+(4*30)"
@@ -1959,14 +1987,14 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "spriteScroll",
-											"sid": 935648688035519,
+											"sid": 620718522333563,
 											"parameters": {
 												"instance-variable": "maxY",
 												"value": "Scrollings.BBoxTop-23"
 											}
 										}
 									],
-									"sid": 392570012656322,
+									"sid": 781766149241422,
 									"children": [
 										{
 											"eventType": "block",
@@ -1974,7 +2002,7 @@
 												{
 													"id": "evaluate-expression",
 													"objectClass": "System",
-													"sid": 113392943839229,
+													"sid": 161409740006793,
 													"parameters": {
 														"value": "ChildrensCount > 4"
 													}
@@ -1984,14 +2012,14 @@
 												{
 													"id": "set-boolean-instvar",
 													"objectClass": "spriteScroll",
-													"sid": 740603101326478,
+													"sid": 865681571600835,
 													"parameters": {
 														"instance-variable": "enabled",
 														"value": "true"
 													}
 												}
 											],
-											"sid": 700826502810888
+											"sid": 458928713416845
 										},
 										{
 											"eventType": "block",
@@ -1999,21 +2027,62 @@
 												{
 													"id": "else",
 													"objectClass": "System",
-													"sid": 117903052721777
+													"sid": 102433012502697
 												}
 											],
 											"actions": [
 												{
 													"id": "set-boolean-instvar",
 													"objectClass": "spriteScroll",
-													"sid": 601257669122684,
+													"sid": 306071114783825,
 													"parameters": {
 														"instance-variable": "enabled",
 														"value": "false"
 													}
 												}
 											],
-											"sid": 440726306955653
+											"sid": 447195900942231
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "move-to-top",
+													"objectClass": "Blanks",
+													"sid": 643016954619383
+												},
+												{
+													"id": "move-to-top",
+													"objectClass": "AdvBtns",
+													"sid": 590095372782942
+												}
+											],
+											"sid": 812854178018662,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-children",
+															"objectClass": "AdvBtns",
+															"sid": 507150056944630,
+															"parameters": {
+																"child": "SFtext",
+																"which": "own"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "move-to-top",
+															"objectClass": "SFtext",
+															"sid": 555338250244060
+														}
+													],
+													"sid": 591721598001794
+												}
+											]
 										}
 									]
 								}
@@ -2023,204 +2092,6 @@
 				}
 			],
 			"sid": 805038772981026
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-tap-object",
-					"objectClass": "Touch",
-					"sid": 550337423793525,
-					"parameters": {
-						"object": "Button"
-					}
-				},
-				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "Button",
-					"sid": 842538952337674,
-					"parameters": {
-						"instance-variable": "active"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-animation-frame",
-					"objectClass": "Button",
-					"sid": 398143638993105,
-					"parameters": {
-						"frame-number": "1"
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 893080009925557,
-					"parameters": {
-						"audio-file": "FX_Shoot01",
-						"loop": "not-looping",
-						"volume": "JSON.Get(\"Save.Sound\") = 1 ? 0 : -Infinity",
-						"stereo-pan": "0",
-						"tag-optional": "\"Sound\""
-					}
-				}
-			],
-			"sid": 873785637738809,
-			"disabled": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"callFunction": "StartGame",
-							"sid": 499103894186531,
-							"disabled": true,
-							"parameters": [
-								"\"\""
-							]
-						},
-						{
-							"callFunction": "disableOtherBtns",
-							"sid": 664172045217625,
-							"parameters": [
-								"\"UI\""
-							]
-						},
-						{
-							"callFunction": "ShowWorlds",
-							"sid": 501404242529203
-						}
-					],
-					"sid": 131543809810859,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-all",
-									"objectClass": "System",
-									"sid": 426610642925500,
-									"parameters": {
-										"object": "Button"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 905223467920472,
-							"disabled": true
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"callFunction": "StartGame",
-							"sid": 532067558630240,
-							"parameters": [
-								"\"\""
-							]
-						}
-					],
-					"sid": 630066190142646,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [],
-					"sid": 287221285405611,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "layer-is-visible",
-									"objectClass": "System",
-									"sid": 796761454596955,
-									"parameters": {
-										"layer": "\"Language\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 454233447946825,
-									"parameters": {
-										"layer": "\"Language\"",
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 908838815667698,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 702737544012468
-								}
-							],
-							"actions": [
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 500216419811803,
-									"parameters": {
-										"layer": "\"Language\"",
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 795022178799220,
-							"disabled": true
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"type": "script",
-							"script": "const ysdk = runtime.GamePush.platform.getNativeSDK();\n\nysdk.environment.i18n.tld;\n\nconsole.log(ysdk.environment.i18n.tld);\nconsole.log(ysdk.environment.i18n.lang);\n\nwindow.open(\"https://yandex.\"+ysdk.environment.i18n.tld+\"/games/developer?name=CerberusDev\");"
-						}
-					],
-					"sid": 764006271156795,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 630250560688524
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "Button",
-							"sid": 316174565662534,
-							"parameters": {
-								"frame-number": "0"
-							}
-						}
-					],
-					"sid": 710278098385369,
-					"disabled": true
-				}
-			]
 		},
 		{
 			"eventType": "block",
@@ -2247,240 +2118,6 @@
 				}
 			],
 			"sid": 637063706107676
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-tap-object",
-					"objectClass": "Touch",
-					"sid": 171461734597128,
-					"parameters": {
-						"object": "Sprite13"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-layer-visible",
-					"objectClass": "System",
-					"sid": 162472278915069,
-					"parameters": {
-						"layer": "\"Language\"",
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 819642251144369,
-					"parameters": {
-						"audio-file": "FX_Shoot01",
-						"loop": "not-looping",
-						"volume": "JSON.Get(\"Save.Sound\") = 1 ? 0 : -Infinity",
-						"stereo-pan": "0",
-						"tag-optional": "\"Sound\""
-					}
-				}
-			],
-			"sid": 913342621158115,
-			"disabled": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-value",
-							"objectClass": "JSON",
-							"sid": 443278743480504,
-							"parameters": {
-								"path": "\"Player.Language\"",
-								"value": "Sprite13.Type"
-							}
-						}
-					],
-					"sid": 163805429659234,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "for-each",
-									"objectClass": "System",
-									"sid": 653987481543205,
-									"parameters": {
-										"object": "Text"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "Text",
-									"sid": 960700534941972,
-									"parameters": {
-										"text": "JSON.Get(\"Languages.\"&Sprite13.Type&\".\"&Self.Type)"
-									}
-								}
-							],
-							"sid": 914782513107103,
-							"disabled": true
-						}
-					]
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-tap-object",
-					"objectClass": "Touch",
-					"sid": 546024177470414,
-					"parameters": {
-						"object": "Sprite24"
-					}
-				},
-				{
-					"id": "pick-topbottom",
-					"objectClass": "Sprite24",
-					"sid": 284072152158115,
-					"parameters": {
-						"which": "top"
-					}
-				},
-				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "Sprite24",
-					"sid": 255064180908786,
-					"parameters": {
-						"instance-variable": "active"
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "disableOtherBtns",
-					"sid": 748065183647528,
-					"parameters": [
-						"\"Window\""
-					]
-				}
-			],
-			"sid": 148725908630896,
-			"disabled": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"callFunction": "ShowCreateNewWorldTable",
-							"sid": 318102162491955,
-							"disabled": true
-						}
-					],
-					"sid": 927498249933177,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 606434301763398,
-							"disabled": true
-						},
-						{
-							"callFunction": "enableCurBtns",
-							"sid": 759608864163207,
-							"parameters": [
-								"\"UI\""
-							]
-						}
-					],
-					"sid": 712050917606238,
-					"disabled": true
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-tap",
-					"objectClass": "Touch",
-					"sid": 361397919257257
-				}
-			],
-			"actions": [],
-			"sid": 627356038453052,
-			"disabled": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-focused",
-							"objectClass": "TextInput",
-							"sid": 940523751191359
-						}
-					],
-					"actions": [
-						{
-							"id": "set-unfocused",
-							"objectClass": "TextInput",
-							"sid": 738630517628085
-						}
-					],
-					"sid": 540968846614064,
-					"disabled": true
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-tap-object",
-					"objectClass": "Touch",
-					"sid": 759244904898785,
-					"parameters": {
-						"object": "SFtext"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 940380602908654,
-			"disabled": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "evaluate-expression",
-							"objectClass": "System",
-							"sid": 194054255022389,
-							"parameters": {
-								"value": "SFtext.Type = \"NewWorldName\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-focused",
-							"objectClass": "TextInput",
-							"sid": 309352824785510
-						}
-					],
-					"sid": 216048488768783,
-					"disabled": true
-				}
-			]
 		},
 		{
 			"eventType": "group",
@@ -2872,16 +2509,6 @@
 					"conditions": [],
 					"actions": [
 						{
-							"callFunction": "BlackoutByTiled",
-							"sid": 550818039348368,
-							"parameters": [
-								true,
-								"\"Window\"",
-								"0.5",
-								"70"
-							]
-						},
-						{
 							"id": "create-object",
 							"objectClass": "System",
 							"sid": 813938015428001,
@@ -2968,1823 +2595,6 @@
 					]
 				}
 			]
-		},
-		{
-			"functionName": "ShowWorlds",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "tween-one-property",
-					"objectClass": "InventoryBlank",
-					"sid": 402143723892352,
-					"disabled": true,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "\"Show\"",
-						"property": "offsetY",
-						"end-value": "Functions.Get_Center_Y(\"UI\")",
-						"time": "0.3",
-						"ease": "easeoutcubic",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
-				{
-					"callFunction": "ResetScroll",
-					"sid": 720043099066650
-				},
-				{
-					"callFunction": "BlackoutByTiled",
-					"sid": 557445600955172,
-					"parameters": [
-						true,
-						"\"UI\"",
-						"0.5",
-						"70"
-					]
-				},
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 192087004103903,
-					"parameters": {
-						"object-to-create": "InventoryBlank",
-						"layer": "\"UI\"",
-						"x": "Functions.Get_Center_X(\"UI\")",
-						"y": "Functions.Get_Center_Y(\"UI\")",
-						"create-hierarchy": true,
-						"template-name": "\"WorldChooser\""
-					}
-				},
-				{
-					"id": "set-size",
-					"objectClass": "InventoryBlank",
-					"sid": 440580790678590,
-					"parameters": {
-						"width": "Self.w*0.6",
-						"height": "Self.h*0.6"
-					}
-				},
-				{
-					"id": "tween-two-properties",
-					"objectClass": "InventoryBlank",
-					"sid": 493558742559721,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "\"Show\"",
-						"property": "size",
-						"end-x": "Self.w",
-						"end-y": "Self.h",
-						"time": "0.2",
-						"ease": "easeoutback",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 885525734299543
-				}
-			],
-			"sid": 700984896169943,
-			"disabled": true,
-			"children": [
-				{
-					"eventType": "variable",
-					"name": "iteration",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 635269898804508
-				},
-				{
-					"eventType": "variable",
-					"name": "Top",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 663703539593657
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 769367561018619,
-							"parameters": {
-								"object": "InventoryBlank",
-								"expression": "InventoryBlank.Type = \"WorldChooser\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 986089281115542,
-							"parameters": {
-								"variable": "Top",
-								"value": "InventoryBlank.BBoxTop+23"
-							}
-						}
-					],
-					"sid": 216911115654500,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-children",
-									"objectClass": "InventoryBlank",
-									"sid": 931822528290313,
-									"parameters": {
-										"child": "scrollZone",
-										"which": "own"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "move-to-layer",
-									"objectClass": "scrollZone",
-									"sid": 506540617970325,
-									"parameters": {
-										"layer": "\"Slots\""
-									}
-								}
-							],
-							"sid": 188911005449544,
-							"disabled": true
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 301835794512114,
-							"parameters": {
-								"seconds": "0"
-							}
-						}
-					],
-					"sid": 101338693279458,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "for-each",
-									"objectClass": "JSON",
-									"sid": 237256200027647,
-									"parameters": {
-										"path": "\"Worlds\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 223110559867619,
-									"parameters": {
-										"object-to-create": "InventoryBlank",
-										"layer": "\"Slots\"",
-										"x": "Functions.Get_Center_X(\"Slots\")",
-										"y": "Top+(iteration*30)",
-										"create-hierarchy": true,
-										"template-name": "\"WorldSlot\""
-									}
-								},
-								{
-									"id": "tween-one-property",
-									"objectClass": "InventoryBlank",
-									"sid": 646129120272629,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"\"",
-										"property": "offsetWidth",
-										"end-value": "Self.Width",
-										"time": "0.3",
-										"ease": "easeoutcubic",
-										"destroy-on-complete": "no",
-										"loop": "no",
-										"ping-pong": "no",
-										"repeat-count": "1"
-									}
-								},
-								{
-									"id": "set-size",
-									"objectClass": "InventoryBlank",
-									"sid": 615342219528885,
-									"parameters": {
-										"width": "0",
-										"height": "Self.Height"
-									}
-								}
-							],
-							"sid": 818107791622537,
-							"disabled": true,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-last-created",
-											"objectClass": "System",
-											"sid": 548477226458977,
-											"parameters": {
-												"object": "InventoryBlank"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-instvar-value",
-											"objectClass": "InventoryBlank",
-											"sid": 652521459817497,
-											"parameters": {
-												"instance-variable": "SlotY",
-												"value": "Self.Y"
-											}
-										},
-										{
-											"id": "set-blend-mode",
-											"objectClass": "InventoryBlank",
-											"sid": 124243044277721,
-											"parameters": {
-												"blend-mode": "source-atop"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "InventoryBlank",
-											"sid": 488436210848020,
-											"parameters": {
-												"instance-variable": "SubType",
-												"value": "JSON.CurrentKey"
-											}
-										}
-									],
-									"sid": 285925257142233,
-									"disabled": true,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-children",
-													"objectClass": "InventoryBlank",
-													"sid": 498016897953733,
-													"parameters": {
-														"child": "Sprite23",
-														"which": "own"
-													}
-												},
-												{
-													"id": "pick-children",
-													"objectClass": "InventoryBlank",
-													"sid": 695803271172341,
-													"parameters": {
-														"child": "SFtext",
-														"which": "own"
-													}
-												}
-											],
-											"actions": [],
-											"sid": 993700094256480,
-											"disabled": true,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "has-key",
-															"objectClass": "JSON",
-															"sid": 872679680139824,
-															"parameters": {
-																"path": "\"Worlds.\"&JSON.CurrentKey&\".Image\""
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-animation-frame",
-															"objectClass": "Sprite23",
-															"sid": 937822992782315,
-															"parameters": {
-																"frame-number": "iteration+1"
-															}
-														},
-														{
-															"id": "set-from-base64",
-															"objectClass": "BinaryData",
-															"sid": 985871524998547,
-															"parameters": {
-																"value": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Image\")"
-															}
-														},
-														{
-															"id": "set-size",
-															"objectClass": "Sprite23",
-															"sid": 783914069682014,
-															"parameters": {
-																"width": "21",
-																"height": "21"
-															}
-														},
-														{
-															"id": "load-image-from-url",
-															"objectClass": "Sprite23",
-															"sid": 510930249291610,
-															"parameters": {
-																"uri": "BinaryData.GetURL",
-																"size": "keep-current-size",
-																"cross-origin": "anonymous"
-															}
-														},
-														{
-															"id": "wait-for-previous-actions",
-															"objectClass": "System",
-															"sid": 332982060965842
-														},
-														{
-															"id": "set-visible",
-															"objectClass": "Sprite23",
-															"sid": 440339565183452,
-															"parameters": {
-																"visibility": "visible"
-															}
-														}
-													],
-													"sid": 667595125529897,
-													"disabled": true
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "else",
-															"objectClass": "System",
-															"sid": 975235459402112
-														}
-													],
-													"actions": [
-														{
-															"id": "set-animation-frame",
-															"objectClass": "Sprite23",
-															"sid": 649844708702128,
-															"parameters": {
-																"frame-number": "0"
-															}
-														},
-														{
-															"id": "set-size",
-															"objectClass": "Sprite23",
-															"sid": 394867227552480,
-															"parameters": {
-																"width": "21",
-																"height": "21"
-															}
-														},
-														{
-															"id": "set-visible",
-															"objectClass": "Sprite23",
-															"sid": 752382043285823,
-															"parameters": {
-																"visibility": "visible"
-															}
-														}
-													],
-													"sid": 807681671849952,
-													"disabled": true
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "pick-by-evaluate",
-															"objectClass": "System",
-															"sid": 727577090697483,
-															"parameters": {
-																"object": "SFtext",
-																"expression": "SFtext.Type = \"WorldName\""
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-text",
-															"objectClass": "SFtext",
-															"sid": 865881857954251,
-															"parameters": {
-																"text": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Name\")"
-															}
-														}
-													],
-													"sid": 875597552180249,
-													"disabled": true,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "evaluate-expression",
-																	"objectClass": "System",
-																	"sid": 497734921996908,
-																	"parameters": {
-																		"value": "Functions.CheckActualVersion(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Version\")) <> 1"
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"id": "set-default-color",
-																	"objectClass": "SFtext",
-																	"sid": 243184328142634,
-																	"parameters": {
-																		"color": "Functions.CheckActualVersion(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Version\")) = 1 ? rgbEx(100,100,100) : rgbEx(100,50,50)"
-																	}
-																},
-																{
-																	"id": "set-text",
-																	"objectClass": "SFtext",
-																	"sid": 791065398196404,
-																	"parameters": {
-																		"text": "Functions.CheckActualVersion(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Version\")) = 1 ? Self.Text : Self.Text&\" \"&Functions.Get_LanguageText(\"OutDated\")"
-																	}
-																}
-															],
-															"sid": 990285731432475,
-															"disabled": true
-														},
-														{
-															"eventType": "block",
-															"conditions": [],
-															"actions": [
-																{
-																	"id": "wait",
-																	"objectClass": "System",
-																	"sid": 544818403009575,
-																	"parameters": {
-																		"seconds": "0.3"
-																	}
-																},
-																{
-																	"callFunction": "TrimSF",
-																	"sid": 817108816658737,
-																	"parameters": [
-																		"0.001"
-																	]
-																}
-															],
-															"sid": 680988534425211,
-															"disabled": true
-														}
-													]
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "pick-by-evaluate",
-															"objectClass": "System",
-															"sid": 152844829729470,
-															"parameters": {
-																"object": "SFtext",
-																"expression": "SFtext.Type = \"PlayTime\""
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-text",
-															"objectClass": "SFtext",
-															"sid": 651329626902410,
-															"parameters": {
-																"text": "floor(JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Ticks\")/7200)&\" \"&Functions.Get_LanguageText(\"Day\")"
-															}
-														}
-													],
-													"sid": 148017261162924,
-													"disabled": true
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "pick-by-evaluate",
-															"objectClass": "System",
-															"sid": 322884573133734,
-															"parameters": {
-																"object": "SFtext",
-																"expression": "SFtext.Type = \"Coin\""
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-text",
-															"objectClass": "SFtext",
-															"sid": 915207186898439,
-															"parameters": {
-																"text": "JSON.Get(\"Worlds.\"&JSON.CurrentKey&\".Coin\")&\" \"&Functions.Get_LanguageText(\"Coins\")"
-															}
-														}
-													],
-													"sid": 262701364608019,
-													"disabled": true
-												}
-											]
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "add-to-eventvar",
-											"objectClass": "System",
-											"sid": 277255547101323,
-											"parameters": {
-												"variable": "iteration",
-												"value": "1"
-											}
-										}
-									],
-									"sid": 150651652956192,
-									"disabled": true
-								}
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"functionName": "BlackoutByTiled",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": true,
-			"functionParameters": [
-				{
-					"name": "Open",
-					"type": "boolean",
-					"initialValue": "false",
-					"comment": "",
-					"sid": 232016395390994
-				},
-				{
-					"name": "Layer",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 559087815813235
-				},
-				{
-					"name": "Duration",
-					"type": "number",
-					"initialValue": "0.5",
-					"comment": "",
-					"sid": 170327356727484
-				},
-				{
-					"name": "Opacirty",
-					"type": "number",
-					"initialValue": "70",
-					"comment": "",
-					"sid": 762058741244880
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 994796732593639,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 875316862786652,
-							"parameters": {
-								"variable": "Open"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 855176696175990,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 497975099705171,
-									"parameters": {
-										"object-to-create": "Blackout",
-										"layer": "Layer",
-										"x": "ViewportLeft(Layer)",
-										"y": "ViewportTop(Layer)",
-										"create-hierarchy": false,
-										"template-name": "\"\""
-									}
-								},
-								{
-									"id": "set-opacity",
-									"objectClass": "Blackout",
-									"sid": 746048583525134,
-									"parameters": {
-										"opacity": "0"
-									}
-								},
-								{
-									"id": "set-size",
-									"objectClass": "Blackout",
-									"sid": 326309849777061,
-									"parameters": {
-										"width": "abs(ViewportLeft(Self.LayerName))+ViewportRight(Self.LayerName)",
-										"height": "abs(ViewportTop(Self.LayerName))+ViewportBottom(Self.LayerName)"
-									}
-								},
-								{
-									"id": "tween-one-property",
-									"objectClass": "Blackout",
-									"sid": 469890906117508,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"Show\"",
-										"property": "offsetOpacity",
-										"end-value": "Opacirty",
-										"time": "Duration",
-										"ease": "default",
-										"destroy-on-complete": "no",
-										"loop": "no",
-										"ping-pong": "no",
-										"repeat-count": "1"
-									}
-								},
-								{
-									"id": "wait-for-previous-actions",
-									"objectClass": "System",
-									"sid": 526596171855795,
-									"disabled": true
-								}
-							],
-							"sid": 741478766030889
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 795219542731073,
-							"parameters": {
-								"variable": "Open"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [],
-					"sid": 580753668583168,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-last-created",
-									"objectClass": "System",
-									"sid": 222148574281450,
-									"parameters": {
-										"object": "Blackout"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "tween-one-property",
-									"objectClass": "Blackout",
-									"sid": 160521937765872,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"Close\"",
-										"property": "offsetOpacity",
-										"end-value": "Opacirty",
-										"time": "Duration",
-										"ease": "default",
-										"destroy-on-complete": "yes",
-										"loop": "no",
-										"ping-pong": "no",
-										"repeat-count": "1"
-									}
-								},
-								{
-									"id": "wait-for-previous-actions",
-									"objectClass": "System",
-									"sid": 644413353412877,
-									"disabled": true
-								}
-							],
-							"sid": 860467047493747
-						}
-					]
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-text-changed",
-					"objectClass": "TextInput",
-					"sid": 708790185833143
-				}
-			],
-			"actions": [],
-			"sid": 246426296047553,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 582862734234500,
-							"parameters": {
-								"object": "SFtext",
-								"expression": "SFtext.Type = \"NewWorldName\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "SFtext",
-							"sid": 547849568973822,
-							"parameters": {
-								"text": "TextInput.Text"
-							}
-						}
-					],
-					"sid": 963931032538081
-				}
-			]
-		},
-		{
-			"functionName": "CloseTable",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": true,
-			"functionParameters": [
-				{
-					"name": "Name",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 703058527756419
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 554534045425538,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 955323835913310,
-							"parameters": {
-								"object": "InventoryBlank",
-								"expression": "InventoryBlank.Type = Name"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "tween-two-properties",
-							"objectClass": "InventoryBlank",
-							"sid": 752043547244085,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "size",
-								"end-x": "Self.w*0.6",
-								"end-y": "Self.h*0.6",
-								"time": "0.2",
-								"ease": "easeinback",
-								"destroy-on-complete": "yes",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 482287142593938
-						}
-					],
-					"sid": 435426223128214
-				}
-			]
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Other",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-resized",
-							"objectClass": "Browser",
-							"sid": 232853894167518
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "Blackout",
-							"sid": 555272781804153,
-							"parameters": {
-								"x": "ViewportLeft(Self.LayerName)",
-								"y": "ViewportTop(Self.LayerName)"
-							}
-						},
-						{
-							"id": "set-size",
-							"objectClass": "Blackout",
-							"sid": 419383563751987,
-							"parameters": {
-								"width": "abs(ViewportLeft(Self.LayerName))+ViewportRight(Self.LayerName)",
-								"height": "abs(ViewportTop(Self.LayerName))+ViewportBottom(Self.LayerName)"
-							}
-						}
-					],
-					"sid": 835562794693487
-				},
-				{
-					"functionName": "GetWorldCount",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "number",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 260549682693475,
-					"children": [
-						{
-							"eventType": "variable",
-							"name": "count",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": false,
-							"sid": 620245450642117
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "for-each",
-									"objectClass": "JSON",
-									"sid": 600874306809810,
-									"parameters": {
-										"path": "\"Worlds\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 536066597988107,
-									"parameters": {
-										"variable": "count",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 280601188220083
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "set-function-return-value",
-									"objectClass": "Functions",
-									"sid": 287442056312139,
-									"parameters": {
-										"value": "count"
-									}
-								}
-							],
-							"sid": 262589627051733
-						}
-					]
-				}
-			],
-			"sid": 297151176433022
-		},
-		{
-			"functionName": "MessageBox",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "string",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "AcceptText",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 548611880595058
-				},
-				{
-					"name": "DeclineText",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 644001306983230
-				},
-				{
-					"name": "Question",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 455029563629549
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"callFunction": "BlackoutByTiled",
-					"sid": 512345736641382,
-					"parameters": [
-						true,
-						"\"Window\"",
-						"0.5",
-						"70"
-					]
-				},
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 355543897271960,
-					"parameters": {
-						"object-to-create": "InventoryBlank",
-						"layer": "\"Window\"",
-						"x": "Functions.Get_Center_X(\"Window\")",
-						"y": "Functions.Get_Center_Y(\"Window\")",
-						"create-hierarchy": true,
-						"template-name": "\"MessageBox\""
-					}
-				},
-				{
-					"id": "set-size",
-					"objectClass": "InventoryBlank",
-					"sid": 238188670436995,
-					"parameters": {
-						"width": "Self.w*0.6",
-						"height": "Self.h*0.6"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "InventoryBlank",
-					"sid": 131693287410626,
-					"parameters": {
-						"instance-variable": "SubType",
-						"value": "\"\""
-					}
-				}
-			],
-			"sid": 942530112529797,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-last-created",
-							"objectClass": "System",
-							"sid": 277165703534114,
-							"parameters": {
-								"object": "InventoryBlank"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 130294090368969,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-children",
-									"objectClass": "InventoryBlank",
-									"sid": 161661303039137,
-									"parameters": {
-										"child": "SFtext",
-										"which": "own"
-									}
-								},
-								{
-									"id": "pick-children",
-									"objectClass": "InventoryBlank",
-									"sid": 666467231256673,
-									"parameters": {
-										"child": "Sprite24",
-										"which": "own"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-collisions-enabled",
-									"objectClass": "Sprite24",
-									"sid": 503430221979011,
-									"parameters": {
-										"collisions": "disabled"
-									}
-								}
-							],
-							"sid": 421483698357744,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "SFtext",
-											"sid": 158441753928074,
-											"parameters": {
-												"instance-variable": "Type",
-												"comparison": 0,
-												"value": "\"MessageText\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-text",
-											"objectClass": "SFtext",
-											"sid": 147343703916552,
-											"parameters": {
-												"text": "Functions.Get_LanguageText(Question)\n"
-											}
-										}
-									],
-									"sid": 586579609318180
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 455430907808289,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-children",
-													"objectClass": "Sprite24",
-													"sid": 473943004147649,
-													"parameters": {
-														"child": "SFtext",
-														"which": "own"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-text",
-													"objectClass": "SFtext",
-													"sid": 929443964078992,
-													"parameters": {
-														"text": "Functions.Get_LanguageText(DeclineText)"
-													}
-												}
-											],
-											"sid": 535577392011555
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 767123176052684,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-children",
-													"objectClass": "Sprite24",
-													"sid": 893395343400968,
-													"parameters": {
-														"child": "SFtext",
-														"which": "own"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-text",
-													"objectClass": "SFtext",
-													"sid": 157116370238312,
-													"parameters": {
-														"text": "Functions.Get_LanguageText(AcceptText)"
-													}
-												}
-											],
-											"sid": 729010847955269
-										}
-									]
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-children",
-									"objectClass": "InventoryBlank",
-									"sid": 495383315551575,
-									"parameters": {
-										"child": "Sprite24",
-										"which": "own"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 711294825297416,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "tween-two-properties",
-											"objectClass": "InventoryBlank",
-											"sid": 659776778070032,
-											"behaviorType": "Tween",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "size",
-												"end-x": "Self.w",
-												"end-y": "Self.h",
-												"time": "0.2",
-												"ease": "easeoutback",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
-											}
-										},
-										{
-											"id": "wait-for-previous-actions",
-											"objectClass": "System",
-											"sid": 150220565603939
-										},
-										{
-											"id": "set-collisions-enabled",
-											"objectClass": "Sprite24",
-											"sid": 919926450192404,
-											"parameters": {
-												"collisions": "enabled"
-											}
-										},
-										{
-											"id": "wait-for-signal",
-											"objectClass": "System",
-											"sid": 860168277229373,
-											"parameters": {
-												"tag": "\"Completed\""
-											}
-										},
-										{
-											"callFunction": "CloseTable",
-											"sid": 913920484257374,
-											"parameters": [
-												"InventoryBlank.Type"
-											]
-										},
-										{
-											"callFunction": "BlackoutByTiled",
-											"sid": 965861805828049,
-											"parameters": [
-												false,
-												"\"Window\"",
-												"0.5",
-												"0"
-											]
-										},
-										{
-											"id": "set-function-return-value",
-											"objectClass": "Functions",
-											"sid": 458098323994288,
-											"parameters": {
-												"value": "Functions.Result"
-											}
-										},
-										{
-											"id": "signal",
-											"objectClass": "System",
-											"sid": 148397322685993,
-											"parameters": {
-												"tag": "\"Got\""
-											}
-										}
-									],
-									"sid": 951092865433930
-								}
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Messages",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "variable",
-					"name": "ResultAnswer",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"isStatic": true,
-					"isConstant": false,
-					"sid": 914029984618807
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-tap-object",
-							"objectClass": "Touch",
-							"sid": 460545543070394,
-							"parameters": {
-								"object": "Inventory_Blank"
-							}
-						},
-						{
-							"id": "is-touching-object",
-							"objectClass": "Touch",
-							"sid": 973422661794178,
-							"parameters": {
-								"object": "Sprite24"
-							},
-							"isInverted": true
-						},
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "Inventory_Blank",
-							"sid": 664087133369584,
-							"parameters": {
-								"instance-variable": "active"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 498554750440280,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"callFunction": "disableOtherBtns",
-									"sid": 235383378028635,
-									"parameters": [
-										"\"Window\""
-									]
-								}
-							],
-							"sid": 999557570344170,
-							"children": [
-								{
-									"eventType": "variable",
-									"name": "ResultString",
-									"type": "string",
-									"initialValue": "",
-									"comment": "",
-									"isStatic": true,
-									"isConstant": false,
-									"sid": 402412305251218
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-parent",
-											"objectClass": "Inventory_Blank",
-											"sid": 822429840316848,
-											"parameters": {
-												"parent": "InventoryBlank",
-												"which": "own"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 864588883864887,
-											"parameters": {
-												"variable": "ResultString",
-												"value": "Functions.MessageBox(\"Yes\", \"No\", \"Really delete?\")"
-											}
-										},
-										{
-											"id": "wait-for-signal",
-											"objectClass": "System",
-											"sid": 119433916618207,
-											"parameters": {
-												"tag": "\"Got\""
-											}
-										}
-									],
-									"sid": 917094626473778,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 437523423956233,
-													"parameters": {
-														"variable": "ResultAnswer",
-														"comparison": 0,
-														"value": "\"Yes\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "DeleteWorld",
-													"sid": 314372338606198,
-													"parameters": [
-														"InventoryBlank.SubType"
-													]
-												},
-												{
-													"id": "wait-for-previous-actions",
-													"objectClass": "System",
-													"sid": 663665145171654
-												},
-												{
-													"callFunction": "UpdateWorldsList",
-													"sid": 809965612594207
-												},
-												{
-													"callFunction": "enableCurBtns",
-													"sid": 439721101429410,
-													"parameters": [
-														"\"UI\""
-													]
-												}
-											],
-											"sid": 628451648839343
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 384464486766125,
-													"parameters": {
-														"variable": "ResultAnswer",
-														"comparison": 0,
-														"value": "\"No\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "enableCurBtns",
-													"sid": 856478081911231,
-													"parameters": [
-														"\"UI,Slots\""
-													]
-												}
-											],
-											"sid": 911101591098009
-										}
-									]
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 498424610093659,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-parent",
-											"objectClass": "Inventory_Blank",
-											"sid": 786549570263189,
-											"parameters": {
-												"parent": "InventoryBlank",
-												"which": "own"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 571277410845237,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "evaluate-expression",
-													"objectClass": "System",
-													"sid": 686420342307541,
-													"parameters": {
-														"value": "Functions.CheckActualVersion(JSON.Get(\"Worlds.\"&InventoryBlank.SubType&\".Version\")) <> 1 "
-													}
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "Message",
-													"sid": 887027804971560,
-													"parameters": [
-														"\"Warning\"",
-														"\"OldWorld\"",
-														"\"OldWorld\"",
-														"InventoryBlank.LayerName",
-														"\"\""
-													]
-												},
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 323836307928929,
-													"parameters": {
-														"seconds": "1"
-													}
-												},
-												{
-													"callFunction": "StartGame",
-													"sid": 373231133684398,
-													"parameters": [
-														"InventoryBlank.SubType"
-													]
-												}
-											],
-											"sid": 397997922804551
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 755432936614721
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "StartGame",
-													"sid": 502871286071379,
-													"parameters": [
-														"InventoryBlank.SubType"
-													]
-												}
-											],
-											"sid": 962416966786673
-										}
-									]
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 679641475140928,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-parent",
-											"objectClass": "Inventory_Blank",
-											"sid": 668865531559336,
-											"parameters": {
-												"parent": "InventoryBlank",
-												"which": "own"
-											}
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "CloseTable",
-											"sid": 323727347829242,
-											"parameters": [
-												"InventoryBlank.Type"
-											]
-										},
-										{
-											"callFunction": "BlackoutByTiled",
-											"sid": 522796850344380,
-											"parameters": [
-												false,
-												"InventoryBlank.LayerName",
-												"0.5",
-												"0"
-											]
-										}
-									],
-									"sid": 335303747120307,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "evaluate-expression",
-													"objectClass": "System",
-													"sid": 977286235761046,
-													"parameters": {
-														"value": "InventoryBlank.Type = \"WorldChooser\""
-													}
-												}
-											],
-											"actions": [],
-											"sid": 412745276022879,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "pick-all",
-															"objectClass": "System",
-															"sid": 155745858845823,
-															"parameters": {
-																"object": "InventoryBlank"
-															}
-														},
-														{
-															"id": "pick-by-evaluate",
-															"objectClass": "System",
-															"sid": 759954791157005,
-															"parameters": {
-																"object": "InventoryBlank",
-																"expression": "InventoryBlank.Type = \"WorldSlot\""
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "destroy",
-															"objectClass": "InventoryBlank",
-															"sid": 315061111138987
-														}
-													],
-													"sid": 719204201509413
-												},
-												{
-													"eventType": "block",
-													"conditions": [],
-													"actions": [
-														{
-															"id": "wait-for-previous-actions",
-															"objectClass": "System",
-															"sid": 556657145824388
-														},
-														{
-															"callFunction": "enableCurBtns",
-															"sid": 827910319498170,
-															"parameters": [
-																"\"Layer 0\""
-															]
-														}
-													],
-													"sid": 875161193788821,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "pick-all",
-																	"objectClass": "System",
-																	"sid": 353618685599395,
-																	"parameters": {
-																		"object": "Button"
-																	}
-																}
-															],
-															"actions": [],
-															"sid": 472680455473487
-														}
-													]
-												}
-											]
-										}
-									]
-								}
-							]
-						}
-					]
-				},
-				{
-					"functionName": "Result",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "string",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-function-return-value",
-							"objectClass": "Functions",
-							"sid": 596449230785312,
-							"parameters": {
-								"value": "ResultAnswer"
-							}
-						}
-					],
-					"sid": 981326732452915
-				},
-				{
-					"functionName": "SeekAnswer",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "Answer",
-							"type": "string",
-							"initialValue": "",
-							"comment": "",
-							"sid": 242757707631935
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 247744789263056,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 523099823247510,
-									"parameters": {
-										"variable": "ResultAnswer",
-										"value": "Answer"
-									}
-								},
-								{
-									"id": "signal",
-									"objectClass": "System",
-									"sid": 253252038340517,
-									"parameters": {
-										"tag": "\"Completed\""
-									}
-								}
-							],
-							"sid": 424748122373034
-						}
-					]
-				},
-				{
-					"functionName": "DeleteWorld",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": true,
-					"functionParameters": [
-						{
-							"name": "World",
-							"type": "string",
-							"initialValue": "",
-							"comment": "",
-							"sid": 612908750794429
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 525546172095795,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "remove-item",
-									"objectClass": "LocalStorage",
-									"sid": 467759052399904,
-									"parameters": {
-										"key": "World"
-									}
-								},
-								{
-									"id": "wait-for-previous-actions",
-									"objectClass": "System",
-									"sid": 814007415843069
-								},
-								{
-									"id": "delete-key",
-									"objectClass": "JSON",
-									"sid": 853743723339857,
-									"parameters": {
-										"path": "\"Worlds.\"&World"
-									}
-								},
-								{
-									"callFunction": "SaveSlots",
-									"sid": 337917681834198
-								},
-								{
-									"id": "wait-for-previous-actions",
-									"objectClass": "System",
-									"sid": 243829824232706
-								},
-								{
-									"callFunction": "UpdateWorldsList",
-									"sid": 210323809065091
-								},
-								{
-									"id": "wait-for-previous-actions",
-									"objectClass": "System",
-									"sid": 611286861170068
-								}
-							],
-							"sid": 923509485040087
-						}
-					]
-				}
-			],
-			"sid": 120084600753176
 		},
 		{
 			"eventType": "group",
@@ -4935,6 +2745,7 @@
 							"id": "delete-key",
 							"objectClass": "JSON",
 							"sid": 298947204387954,
+							"disabled": true,
 							"parameters": {
 								"path": "\"Worlds\""
 							}
@@ -4995,6 +2806,7 @@
 									"id": "tween-value",
 									"objectClass": "GameManager",
 									"sid": 142894779877826,
+									"disabled": true,
 									"behaviorType": "Tween",
 									"parameters": {
 										"tags": "\"Fade\"",
@@ -5011,7 +2823,8 @@
 								{
 									"id": "wait-for-previous-actions",
 									"objectClass": "System",
-									"sid": 952672425029264
+									"sid": 952672425029264,
+									"disabled": true
 								}
 							],
 							"sid": 888009901134585,
@@ -5297,6 +3110,226 @@
 				}
 			],
 			"sid": 231138591852343
+		},
+		{
+			"functionName": "DeleteWorld",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": true,
+			"functionParameters": [
+				{
+					"name": "World",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 612908750794429
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 578767322781190,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "remove-item",
+							"objectClass": "LocalStorage",
+							"sid": 616709571670263,
+							"parameters": {
+								"key": "World"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 532258746500877
+						},
+						{
+							"id": "delete-key",
+							"objectClass": "JSON",
+							"sid": 696474491098728,
+							"parameters": {
+								"path": "\"Worlds.\"&World"
+							}
+						},
+						{
+							"callFunction": "SaveSlots",
+							"sid": 594312767555497
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 891036442220488
+						},
+						{
+							"callFunction": "UpdateWorldsList",
+							"sid": 600787520729865
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 469434165433113
+						}
+					],
+					"sid": 111214596955775
+				}
+			]
+		},
+		{
+			"functionName": "GetWorldCount",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 858649165057280,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "count",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 137506820177946
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "JSON",
+							"sid": 462740269716665,
+							"parameters": {
+								"path": "\"Worlds\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 348304473039459,
+							"parameters": {
+								"variable": "count",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 501021192888129
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 495641039752931,
+							"parameters": {
+								"value": "count"
+							}
+						}
+					],
+					"sid": 780310224381068
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "move-at-angle",
+					"objectClass": "Clouds",
+					"sid": 141227093930284,
+					"parameters": {
+						"angle": "-20",
+						"distance": "-(Self.speed*dt*60)"
+					}
+				},
+				{
+					"id": "move-at-angle",
+					"objectClass": "Islands",
+					"sid": 328102381699160,
+					"parameters": {
+						"angle": "-20",
+						"distance": "-(Self.w*dt*60)"
+					}
+				}
+			],
+			"sid": 817477523036324,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-dragging",
+							"objectClass": "Sprite4",
+							"sid": 772768473238330,
+							"behaviorType": "DragDrop"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "Sprite4",
+							"sid": 775035276208386,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"state": "disabled"
+							}
+						}
+					],
+					"sid": 940728071277726
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 637110705395610
+						}
+					],
+					"actions": [],
+					"sid": 223906695934728,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 745341181382724
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Sprite4",
+									"sid": 836996457141273,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"state": "enabled"
+									}
+								}
+							],
+							"sid": 430458344018626
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 743666173854903

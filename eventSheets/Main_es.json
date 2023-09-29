@@ -3845,7 +3845,7 @@
 													"objectClass": "System",
 													"sid": 869496169466599,
 													"parameters": {
-														"object-to-create": "Sprite20",
+														"object-to-create": "Clouds",
 														"layer": "\"Clouds\"",
 														"x": "random(0,LayoutWidth)",
 														"y": "random(0,LayoutHeight)",
@@ -3855,7 +3855,7 @@
 												},
 												{
 													"id": "set-instvar-value",
-													"objectClass": "Sprite20",
+													"objectClass": "Clouds",
 													"sid": 218674577991546,
 													"parameters": {
 														"instance-variable": "speed",
@@ -3864,10 +3864,10 @@
 												},
 												{
 													"id": "set-animation-frame",
-													"objectClass": "Sprite20",
+													"objectClass": "Clouds",
 													"sid": 490605137945342,
 													"parameters": {
-														"frame-number": "random(Sprite20.AnimationFrameCount)"
+														"frame-number": "random(Clouds.AnimationFrameCount)"
 													}
 												}
 											],
@@ -3911,7 +3911,7 @@
 															"objectClass": "System",
 															"sid": 758272516682859,
 															"parameters": {
-																"object-to-create": "Sprite20",
+																"object-to-create": "Clouds",
 																"layer": "choose(\"Clouds\",\"Clouds45\",\"Clouds55\")",
 																"x": "(LayoutWidth/density)*loopindex(\"x\")",
 																"y": "(LayoutHeight/density)*loopindex(\"y\")",
@@ -3921,7 +3921,7 @@
 														},
 														{
 															"id": "set-instvar-value",
-															"objectClass": "Sprite20",
+															"objectClass": "Clouds",
 															"sid": 242179656673785,
 															"parameters": {
 																"instance-variable": "speed",
@@ -3930,15 +3930,15 @@
 														},
 														{
 															"id": "set-animation-frame",
-															"objectClass": "Sprite20",
+															"objectClass": "Clouds",
 															"sid": 748012454694677,
 															"parameters": {
-																"frame-number": "random(Sprite20.AnimationFrameCount)"
+																"frame-number": "random(Clouds.AnimationFrameCount)"
 															}
 														},
 														{
 															"id": "set-width",
-															"objectClass": "Sprite20",
+															"objectClass": "Clouds",
 															"sid": 721251084993490,
 															"parameters": {
 																"width": "choose(-1,1)*Self.Width"
@@ -3967,7 +3967,7 @@
 													"objectClass": "System",
 													"sid": 603285877354512,
 													"parameters": {
-														"object-to-create": "Sprite18",
+														"object-to-create": "Islands",
 														"layer": "choose(\"Clouds\",\"Clouds45\",\"Clouds55\")",
 														"x": "random(0,LayoutWidth)",
 														"y": "random(0,LayoutHeight)",
@@ -3977,15 +3977,15 @@
 												},
 												{
 													"id": "set-animation-frame",
-													"objectClass": "Sprite18",
+													"objectClass": "Islands",
 													"sid": 655912577980031,
 													"parameters": {
-														"frame-number": "random(Sprite18.AnimationFrameCount)"
+														"frame-number": "random(Islands.AnimationFrameCount)"
 													}
 												},
 												{
 													"id": "set-magnitude",
-													"objectClass": "Sprite18",
+													"objectClass": "Islands",
 													"sid": 100051695233151,
 													"behaviorType": "Sine",
 													"parameters": {
@@ -3994,7 +3994,7 @@
 												},
 												{
 													"id": "set-movement",
-													"objectClass": "Sprite18",
+													"objectClass": "Islands",
 													"sid": 507693645985970,
 													"behaviorType": "Sine",
 													"parameters": {
@@ -4019,7 +4019,7 @@
 											"actions": [
 												{
 													"id": "set-x",
-													"objectClass": "Sprite20",
+													"objectClass": "Clouds",
 													"sid": 360034983511547,
 													"parameters": {
 														"x": "Self.X+(Self.speed*dt*60)"
@@ -4033,7 +4033,7 @@
 													"conditions": [
 														{
 															"id": "compare-x",
-															"objectClass": "Sprite20",
+															"objectClass": "Clouds",
 															"sid": 816928866641943,
 															"parameters": {
 																"comparison": 2,
@@ -4044,7 +4044,7 @@
 													"actions": [
 														{
 															"id": "set-y",
-															"objectClass": "Sprite20",
+															"objectClass": "Clouds",
 															"sid": 282285482635380,
 															"parameters": {
 																"y": "random(0,LayoutHeight)"

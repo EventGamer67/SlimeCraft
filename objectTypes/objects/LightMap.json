@@ -15,7 +15,8 @@
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
 		"imageSpriteId": 5682597,
-		"useCollisionPoly": true
+		"useCollisionPoly": true,
+		"tag": ""
 	},
 	"tile-collision-polys": {}
 }

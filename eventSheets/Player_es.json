@@ -15353,16 +15353,6 @@
 							"sid": 997912550011431
 						},
 						{
-							"callFunction": "BlackoutByTiled",
-							"sid": 268116419692386,
-							"parameters": [
-								true,
-								"\"UI\"",
-								"4",
-								"100"
-							]
-						},
-						{
 							"id": "wait-for-previous-actions",
 							"objectClass": "System",
 							"sid": 186163657312870
@@ -15441,16 +15431,6 @@
 							"parameters": {
 								"time-scale": "1"
 							}
-						},
-						{
-							"callFunction": "BlackoutByTiled",
-							"sid": 776984047852156,
-							"parameters": [
-								false,
-								"\"UI\"",
-								"2",
-								"0"
-							]
 						},
 						{
 							"id": "wait-for-previous-actions",
@@ -16371,16 +16351,6 @@
 								"group-name": "\"Dragging\"",
 								"state": "deactivated"
 							}
-						},
-						{
-							"callFunction": "BlackoutByTiled",
-							"sid": 897792151582194,
-							"parameters": [
-								false,
-								"\"Interfaces\"",
-								"0",
-								"0"
-							]
 						},
 						{
 							"id": "set-group-active",

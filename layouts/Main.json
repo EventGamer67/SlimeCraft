@@ -209,7 +209,7 @@
 			],
 			"instances": [
 				{
-					"type": "Sprite20",
+					"type": "Clouds",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -247,7 +247,7 @@
 					}
 				},
 				{
-					"type": "Sprite18",
+					"type": "Islands",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -256,7 +256,9 @@
 						"live-preview": false
 					},
 					"uid": 5,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"w": 0
+					},
 					"behaviors": {
 						"Sine": {
 							"properties": {
@@ -270,6 +272,11 @@
 								"magnitude-random": 0,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Wrap": {
+							"properties": {
+								"wrap-to": "viewport"
 							}
 						}
 					},
@@ -291,7 +298,7 @@
 					}
 				},
 				{
-					"type": "Sprite18",
+					"type": "Islands",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -300,7 +307,9 @@
 						"live-preview": false
 					},
 					"uid": 44,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"w": 0
+					},
 					"behaviors": {
 						"Sine": {
 							"properties": {
@@ -314,6 +323,11 @@
 								"magnitude-random": 0,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Wrap": {
+							"properties": {
+								"wrap-to": "viewport"
 							}
 						}
 					},
@@ -335,7 +349,7 @@
 					}
 				},
 				{
-					"type": "Sprite18",
+					"type": "Islands",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -344,7 +358,9 @@
 						"live-preview": false
 					},
 					"uid": 46,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"w": 0
+					},
 					"behaviors": {
 						"Sine": {
 							"properties": {
@@ -358,6 +374,11 @@
 								"magnitude-random": 0,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Wrap": {
+							"properties": {
+								"wrap-to": "viewport"
 							}
 						}
 					},
@@ -379,7 +400,7 @@
 					}
 				},
 				{
-					"type": "Sprite18",
+					"type": "Islands",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -388,7 +409,9 @@
 						"live-preview": false
 					},
 					"uid": 47,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"w": 0
+					},
 					"behaviors": {
 						"Sine": {
 							"properties": {
@@ -402,6 +425,11 @@
 								"magnitude-random": 0,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Wrap": {
+							"properties": {
+								"wrap-to": "viewport"
 							}
 						}
 					},
@@ -423,7 +451,7 @@
 					}
 				},
 				{
-					"type": "Sprite18",
+					"type": "Islands",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -432,7 +460,9 @@
 						"live-preview": false
 					},
 					"uid": 48,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"w": 0
+					},
 					"behaviors": {
 						"Sine": {
 							"properties": {
@@ -446,6 +476,11 @@
 								"magnitude-random": 0,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Wrap": {
+							"properties": {
+								"wrap-to": "viewport"
 							}
 						}
 					},
@@ -467,7 +502,7 @@
 					}
 				},
 				{
-					"type": "Sprite18",
+					"type": "Islands",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -476,7 +511,9 @@
 						"live-preview": false
 					},
 					"uid": 49,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"w": 0
+					},
 					"behaviors": {
 						"Sine": {
 							"properties": {
@@ -490,6 +527,11 @@
 								"magnitude-random": 0,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Wrap": {
+							"properties": {
+								"wrap-to": "viewport"
 							}
 						}
 					},
@@ -511,7 +553,7 @@
 					}
 				},
 				{
-					"type": "Sprite18",
+					"type": "Islands",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -520,7 +562,9 @@
 						"live-preview": false
 					},
 					"uid": 50,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"w": 0
+					},
 					"behaviors": {
 						"Sine": {
 							"properties": {
@@ -534,6 +578,11 @@
 								"magnitude-random": 0,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Wrap": {
+							"properties": {
+								"wrap-to": "viewport"
 							}
 						}
 					},
@@ -555,7 +604,7 @@
 					}
 				},
 				{
-					"type": "Sprite18",
+					"type": "Islands",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -564,7 +613,9 @@
 						"live-preview": false
 					},
 					"uid": 52,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"w": 0
+					},
 					"behaviors": {
 						"Sine": {
 							"properties": {
@@ -578,6 +629,11 @@
 								"magnitude-random": 0,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Wrap": {
+							"properties": {
+								"wrap-to": "viewport"
 							}
 						}
 					},
@@ -599,7 +655,7 @@
 					}
 				},
 				{
-					"type": "Sprite18",
+					"type": "Islands",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -608,7 +664,9 @@
 						"live-preview": false
 					},
 					"uid": 70,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"w": 0
+					},
 					"behaviors": {
 						"Sine": {
 							"properties": {
@@ -622,6 +680,11 @@
 								"magnitude-random": 0,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Wrap": {
+							"properties": {
+								"wrap-to": "viewport"
 							}
 						}
 					},
@@ -4530,7 +4593,7 @@
 					}
 				},
 				{
-					"type": "Sprite18",
+					"type": "Islands",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -4539,7 +4602,9 @@
 						"live-preview": false
 					},
 					"uid": 8,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"w": 0
+					},
 					"behaviors": {
 						"Sine": {
 							"properties": {
@@ -4553,6 +4618,11 @@
 								"magnitude-random": 0,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Wrap": {
+							"properties": {
+								"wrap-to": "layout"
 							}
 						}
 					},
@@ -4574,7 +4644,7 @@
 					}
 				},
 				{
-					"type": "Sprite18",
+					"type": "Islands",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -4583,7 +4653,9 @@
 						"live-preview": false
 					},
 					"uid": 10,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"w": 0
+					},
 					"behaviors": {
 						"Sine": {
 							"properties": {
@@ -4597,6 +4669,11 @@
 								"magnitude-random": 0,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Wrap": {
+							"properties": {
+								"wrap-to": "layout"
 							}
 						}
 					},
@@ -4618,7 +4695,7 @@
 					}
 				},
 				{
-					"type": "Sprite18",
+					"type": "Islands",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -4627,7 +4704,9 @@
 						"live-preview": false
 					},
 					"uid": 12,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"w": 0
+					},
 					"behaviors": {
 						"Sine": {
 							"properties": {
@@ -4641,6 +4720,11 @@
 								"magnitude-random": 0,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Wrap": {
+							"properties": {
+								"wrap-to": "layout"
 							}
 						}
 					},
@@ -4662,7 +4746,7 @@
 					}
 				},
 				{
-					"type": "Sprite18",
+					"type": "Islands",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -4671,7 +4755,9 @@
 						"live-preview": false
 					},
 					"uid": 13,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"w": 0
+					},
 					"behaviors": {
 						"Sine": {
 							"properties": {
@@ -4685,6 +4771,11 @@
 								"magnitude-random": 0,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Wrap": {
+							"properties": {
+								"wrap-to": "layout"
 							}
 						}
 					},
@@ -4706,7 +4797,7 @@
 					}
 				},
 				{
-					"type": "Sprite18",
+					"type": "Islands",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -4715,7 +4806,9 @@
 						"live-preview": false
 					},
 					"uid": 20,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"w": 0
+					},
 					"behaviors": {
 						"Sine": {
 							"properties": {
@@ -4729,6 +4822,11 @@
 								"magnitude-random": 0,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"Wrap": {
+							"properties": {
+								"wrap-to": "layout"
 							}
 						}
 					},

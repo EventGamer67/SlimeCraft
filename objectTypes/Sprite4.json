@@ -14,6 +14,21 @@
 			"behaviorId": "Sin",
 			"name": "Sine2",
 			"sid": 145158938448609
+		},
+		{
+			"behaviorId": "DragnDrop",
+			"name": "DragDrop",
+			"sid": 147721781583942
+		},
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 445953853173649
+		},
+		{
+			"behaviorId": "wrap",
+			"name": "Wrap",
+			"sid": 221419761791294
 		}
 	],
 	"effectTypes": [],
@@ -51,7 +66,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 515045334220649,

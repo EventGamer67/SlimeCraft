@@ -728,16 +728,6 @@
 											"parameters": [
 												true
 											]
-										},
-										{
-											"callFunction": "BlackoutByTiled",
-											"sid": 502611942342851,
-											"parameters": [
-												true,
-												"\"UI\"",
-												"0.1",
-												"70"
-											]
 										}
 									],
 									"sid": 591005641516060
@@ -760,16 +750,6 @@
 									"eventType": "block",
 									"conditions": [],
 									"actions": [
-										{
-											"callFunction": "BlackoutByTiled",
-											"sid": 965993563691360,
-											"parameters": [
-												true,
-												"\"Shadow\"",
-												"0.1",
-												"70"
-											]
-										},
 										{
 											"callFunction": "ShowQuestBook",
 											"sid": 470447736846407
@@ -819,16 +799,6 @@
 									"eventType": "block",
 									"conditions": [],
 									"actions": [
-										{
-											"callFunction": "BlackoutByTiled",
-											"sid": 789633240445281,
-											"parameters": [
-												true,
-												"\"Interfaces\"",
-												"0.1",
-												"70"
-											]
-										},
 										{
 											"callFunction": "ShowChat",
 											"sid": 432810797458570
@@ -887,16 +857,6 @@
 									"id": "destroy",
 									"objectClass": "SFtext",
 									"sid": 816209685137909
-								},
-								{
-									"callFunction": "BlackoutByTiled",
-									"sid": 443162692052703,
-									"parameters": [
-										false,
-										"\"UI\"",
-										"0.1",
-										"70"
-									]
 								},
 								{
 									"id": "set-group-active",
@@ -2179,16 +2139,6 @@
 																	}
 																},
 																{
-																	"callFunction": "BlackoutByTiled",
-																	"sid": 420752250687127,
-																	"parameters": [
-																		false,
-																		"\"Interfaces\"",
-																		"0.2",
-																		"0"
-																	]
-																},
-																{
 																	"id": "wait-for-previous-actions",
 																	"objectClass": "System",
 																	"sid": 301625350107756
@@ -2265,16 +2215,6 @@
 																		}
 																	],
 																	"actions": [
-																		{
-																			"callFunction": "BlackoutByTiled",
-																			"sid": 403876200738111,
-																			"parameters": [
-																				false,
-																				"\"UI\"",
-																				"0.1",
-																				"0"
-																			]
-																		},
 																		{
 																			"id": "set-group-active",
 																			"objectClass": "System",
@@ -2364,16 +2304,6 @@
 																			}
 																		},
 																		{
-																			"callFunction": "BlackoutByTiled",
-																			"sid": 788131111441383,
-																			"parameters": [
-																				false,
-																				"\"Interfaces\"",
-																				"0.2",
-																				"0"
-																			]
-																		},
-																		{
 																			"id": "wait-for-previous-actions",
 																			"objectClass": "System",
 																			"sid": 143593500483111
@@ -2425,16 +2355,6 @@
 																				"ping-pong": "no",
 																				"repeat-count": "1"
 																			}
-																		},
-																		{
-																			"callFunction": "BlackoutByTiled",
-																			"sid": 972948012952949,
-																			"parameters": [
-																				false,
-																				"\"Interfaces\"",
-																				"0.2",
-																				"0"
-																			]
 																		},
 																		{
 																			"id": "wait-for-previous-actions",
@@ -2607,16 +2527,6 @@
 													}
 												},
 												{
-													"callFunction": "BlackoutByTiled",
-													"sid": 643004653305582,
-													"parameters": [
-														false,
-														"\"Interfaces\"",
-														"0.1",
-														"0"
-													]
-												},
-												{
 													"id": "set-eventvar-value",
 													"objectClass": "System",
 													"sid": 563394837612471,
@@ -2664,16 +2574,6 @@
 														"group-name": "\"Dragging\"",
 														"state": "deactivated"
 													}
-												},
-												{
-													"callFunction": "BlackoutByTiled",
-													"sid": 814699629501878,
-													"parameters": [
-														true,
-														"\"Interfaces\"",
-														"0.1",
-														"70"
-													]
 												},
 												{
 													"id": "set-eventvar-value",
