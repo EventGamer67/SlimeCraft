@@ -1018,7 +1018,7 @@
 						"action": "Worlds",
 						"active": true,
 						"selected": false,
-						"SwitchFramesOnClick": false,
+						"SwitchFramesOnClick": true,
 						"wA": 0.2,
 						"hA": 0.2,
 						"MainTag": "Menu",
@@ -1079,7 +1079,7 @@
 					},
 					"world": {
 						"x": 316,
-						"y": 94,
+						"y": 124,
 						"width": 84,
 						"height": 27,
 						"originX": 0.5,
@@ -1158,7 +1158,7 @@
 					},
 					"world": {
 						"x": 316,
-						"y": 94,
+						"y": 124,
 						"width": 78,
 						"height": 20.244518722905156,
 						"originX": 0.5,
@@ -1261,191 +1261,19 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 79,
-					"instanceVariables": {
-						"touched": false,
-						"w": 84,
-						"h": 28,
-						"action": "Worlds",
-						"active": true,
-						"selected": false,
-						"SwitchFramesOnClick": false,
-						"wA": 0.2,
-						"hA": 0.2,
-						"MainTag": "Menu",
-						"Type": "Worlds",
-						"Enabled": true
-					},
-					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						}
-					},
-					"sceneGraphData": {
-						"parent-uid": null,
-						"uid": 79,
-						"children": [
-							{
-								"uid": 84,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"o": true,
-									"v": true,
-									"d": true,
-									"sm": "normal"
-								}
-							}
-						],
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"o": true,
-							"v": true,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 316,
-						"y": 124,
-						"width": 84,
-						"height": 27,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "SFtext",
-					"properties": {
-						"text": "LoadGame",
-						"enable-bbcode": true,
-						"character-width": 136,
-						"character-height": 150,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
-						"spacing-data": "[[84,\" \"],[17,\"l.:!|\"],[24,\"'\"],[31,\",;\"],[38,\"()`\"],[45,\"Iijt1[]\"],[59,\"f-\\\"°*<>гт\"],[66,\"ч\"],[73,\"ABCDEFGHJKLMNOPQRSTUVWXYZabcdeghkmnopqrsuvwxyz023456789?~#&\\\\/@+=$£€%АБВГЕЁЗИЙКМНОПРСТУХЧЬЭЯабвеёзийкмнопрсухьэя\"],[80,\"Лл\"],[87,\"_ЦШфцш\"],[94,\"ДЪдъ\"],[101,\"ФЩЫЮжщыю\"],[129,\"Ж\"]]",
-						"scale": 0.1,
-						"character-spacing": 1,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "center",
-						"read-aloud": false
-					},
-					"uid": 84,
-					"instanceVariables": {
-						"Type": "LoadGame",
-						"Translatable": true
-					},
-					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						},
-						"Timer": {
-							"properties": {}
-						}
-					},
-					"sceneGraphData": {
-						"parent-uid": 79,
-						"uid": 84,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"o": true,
-							"v": true,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 316,
-						"y": 124,
-						"width": 78,
-						"height": 20.244518722905156,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "Button",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
 					"uid": 91,
 					"instanceVariables": {
 						"touched": false,
 						"w": 84,
 						"h": 28,
-						"action": "Worlds",
+						"action": "Settings",
 						"active": true,
 						"selected": false,
-						"SwitchFramesOnClick": false,
+						"SwitchFramesOnClick": true,
 						"wA": 0.2,
 						"hA": 0.2,
 						"MainTag": "Menu",
-						"Type": "Worlds",
+						"Type": "Settings",
 						"Enabled": true
 					},
 					"behaviors": {
@@ -1610,14 +1438,14 @@
 						"touched": false,
 						"w": 84,
 						"h": 28,
-						"action": "Worlds",
+						"action": "MoreGames",
 						"active": true,
 						"selected": false,
-						"SwitchFramesOnClick": false,
+						"SwitchFramesOnClick": true,
 						"wA": 0.2,
 						"hA": 0.2,
 						"MainTag": "Menu",
-						"Type": "Worlds",
+						"Type": "MoreGames",
 						"Enabled": true
 					},
 					"behaviors": {
@@ -2275,6 +2103,77 @@
 				1
 			],
 			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": true,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Transition",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "TransitionMask",
+					"properties": {
+						"svg-file": 956567615581059,
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 84,
+					"instanceVariables": {
+						"outW": 1200,
+						"outH": 1200
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 188,
+						"y": 102,
+						"width": 0,
+						"height": 0,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0,
+						"blendMode": "destination-out"
+					}
+				}
+			],
+			"sid": 385743627670953,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0,
+				0,
+				0,
+				1
+			],
+			"isTransparent": false,
 			"parallaxX": 1,
 			"parallaxY": 1,
 			"scaleRate": 1,

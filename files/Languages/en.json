@@ -1,4 +1,8 @@
 {
+	"Start":"Start",
+	"LoadGame":"Load game",
+	"Settings":"Settings",
+	"MoreGames":"More games",
 	"Play": "Play",
 	"Language": "Language",
 	"CreateNewWorld": "Create new world",
@@ -178,7 +182,6 @@
 
 	"Quest23":"Too easy",
 	"DQ23":"Reach island level 10",
-	"Req23":"Wait for updates!",
+	"Req23":"Wait for updates!"
 
-	"QuestComplete":"Quest completed"
 }

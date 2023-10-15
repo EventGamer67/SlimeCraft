@@ -164,6 +164,157 @@
 						}
 					],
 					"sid": 176600404548800
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "evaluate-expression",
+							"objectClass": "System",
+							"sid": 326273307416422,
+							"parameters": {
+								"value": "MainTag = \"Other\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 354091448280859,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 155703139854272,
+									"parameters": {
+										"value": "Type = \"ToggleMusic\""
+									}
+								},
+								{
+									"id": "evaluate-expression",
+									"objectClass": "System",
+									"sid": 832761945767342,
+									"parameters": {
+										"value": "Type = \"ToggleSound\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 289231100117124,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 896977472737501,
+											"parameters": {
+												"object": "AdvBtns",
+												"expression": "AdvBtns.UID = BtnUID"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 625928621211576,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 827503453352695,
+													"parameters": {
+														"value": "Type = \"ToggleMusic\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ToggleSoundandMusic",
+													"sid": 124877057358043,
+													"parameters": [
+														true,
+														false,
+														false,
+														false,
+														false,
+														false
+													]
+												}
+											],
+											"sid": 937145507775140,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-animation-frame",
+															"objectClass": "AdvBtns",
+															"sid": 705096594799467,
+															"parameters": {
+																"frame-number": "JSON.Get(\"Save.Music\") = 1 ? 0 : 1 "
+															}
+														}
+													],
+													"sid": 917757580418608
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 739006236767320,
+													"parameters": {
+														"value": "Type = \"ToggleSound\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ToggleSoundandMusic",
+													"sid": 760507527703540,
+													"parameters": [
+														false,
+														true,
+														false,
+														false,
+														false,
+														false
+													]
+												}
+											],
+											"sid": 103046006489360,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-animation-frame",
+															"objectClass": "AdvBtns",
+															"sid": 557985436774807,
+															"parameters": {
+																"frame-number": "JSON.Get(\"Save.Sound\") = 1 ? 0 : 1 "
+															}
+														}
+													],
+													"sid": 493995158228787
+												}
+											]
+										}
+									]
+								}
+							],
+							"isOrBlock": true
+						}
+					]
 				}
 			]
 		}

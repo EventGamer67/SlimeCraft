@@ -1399,6 +1399,14 @@
 													"parameters": {
 														"value": "AdvBtns.ObjectTypeName = \"Sprite24\""
 													}
+												},
+												{
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 567803971842034,
+													"parameters": {
+														"value": "AdvBtns.ObjectTypeName = \"SoundBtn\""
+													}
 												}
 											],
 											"actions": [
@@ -1481,7 +1489,33 @@
 									}
 								}
 							],
-							"sid": 535017890240712
+							"sid": 535017890240712,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "AdvBtns",
+											"sid": 692591035875305,
+											"parameters": {
+												"instance-variable": "SwitchFramesOnClick"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "AdvBtns",
+											"sid": 499745145161427,
+											"parameters": {
+												"frame-number": "0"
+											}
+										}
+									],
+									"sid": 151007563276117
+								}
+							]
 						},
 						{
 							"eventType": "block",

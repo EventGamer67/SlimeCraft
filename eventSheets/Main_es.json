@@ -91,7 +91,34 @@
 					}
 				}
 			],
-			"sid": 419170684028474
+			"sid": 419170684028474,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "TransitionMask",
+							"sid": 375422547541240,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "size",
+								"end-x": "2000",
+								"end-y": "2000",
+								"time": "0.6",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 475522810780878
+				}
+			]
 		},
 		{
 			"functionName": "ReDrawInventory",

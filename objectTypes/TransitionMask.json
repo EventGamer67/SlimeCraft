@@ -1,0 +1,30 @@
+{
+	"name": "TransitionMask",
+	"plugin-id": "SVGPicture",
+	"sid": 341896447395205,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "outW",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 585564956454758
+		},
+		{
+			"name": "outH",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 946074155880982
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 310369884977253
+		}
+	],
+	"effectTypes": []
+}

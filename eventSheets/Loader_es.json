@@ -343,11 +343,34 @@
 							}
 						},
 						{
+							"id": "tween-two-properties",
+							"objectClass": "TransitionMask",
+							"sid": 963309140142393,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "size",
+								"end-x": "0",
+								"end-y": "0",
+								"time": "0.6",
+								"ease": "easeoutsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 647971106687003
+						},
+						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 209211395715592,
+							"sid": 113010813723864,
 							"parameters": {
-								"seconds": "0.2"
+								"seconds": "0.1"
 							}
 						},
 						{

@@ -115,24 +115,6 @@
 					"parameters": {
 						"frame-number": "1-Self.AnimationFrame"
 					}
-				},
-				{
-					"id": "tween-two-properties",
-					"objectClass": "SoundBtn",
-					"sid": 871233065901587,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "size",
-						"end-x": "Self.Width+3",
-						"end-y": "Self.Height+3",
-						"time": "0.1",
-						"ease": "easeoutcubic",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "yes",
-						"repeat-count": "1"
-					}
 				}
 			],
 			"sid": 936540925181908,
